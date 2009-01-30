@@ -32,7 +32,7 @@ public class Loop extends Procedure
     {
         offset => now;
         dur expired;
-        while (expired <= length)
+        while (expired < length)
         {
             expired / length => float ratio;
             procedure.run();
