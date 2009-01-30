@@ -122,6 +122,13 @@ Machine.add("SinusoidalIn.ck");
 Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
 
+// procedures
+Machine.add("Append.ck");
+Machine.add("Prepend.ck");
+Machine.add("Repeat.ck");
+Machine.add("Loop.ck");
+Machine.add("Loops.ck");
+
 // list
 Machine.add("Comparator.ck");
 Machine.add("Iterator.ck");
