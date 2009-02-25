@@ -31,8 +31,18 @@ class LoopsTest extends Assert
     {
         true => exitOnFailure;
         testAppend();
-        testLoop();
-        testLoopN();
+        testLoopProcedureDur();
+        testLoopProcedureDurDur();
+        testLoopProcedureDurDurDur();
+        testLoopFloatProcedureDur();
+        testLoopFloatProcedureDurDur();
+        testLoopFloatProcedureDurDurDur();
+        testLoopProcedureInt();
+        testLoopProcedureDurInt();
+        testLoopProcedureDurDurInt();
+        testLoopFloatProcedureInt();
+        testLoopFloatProcedureDurInt();
+        testLoopFloatProcedureDurDurInt();
         testPrepend();
 
         <<<"LoopsTest ok">>>;
@@ -45,18 +55,88 @@ class LoopsTest extends Assert
         append.run();
     }
 
-    public void testLoop()
+    public void testLoopProcedureDur()
     {
-        Loops.loop(procedure, 4::ms, 8::ms, 64::ms) @=> Procedure loop;
+        Loops.loop(procedure, 64::ms) @=> Procedure loop;
+        assertNotNull(loop);
+        //loop.run();  don't call, will run forever
+    }
+
+    public void testLoopProcedureDurDur()
+    {
+        Loops.loop(procedure, 8::ms, 64::ms) @=> Procedure loop;
         assertNotNull(loop);
         loop.run();
     }
 
-    public void testLoopN()
+    public void testLoopProcedureDurDurDur()
     {
-        Loops.loopN(procedure, 4::ms, 8::ms, 8) @=> Procedure loopN;
-        assertNotNull(loopN);
-        loopN.run();
+        Loops.loop(procedure, 4::ms, 8::ms, 8) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopFloatProcedureDur()
+    {
+        Loops.loop(floatProcedure, 64::ms) @=> Procedure loop;
+        assertNotNull(loop);
+        //loop.run();  don't call, will run forever
+    }
+
+    public void testLoopFloatProcedureDurDur()
+    {
+        Loops.loop(floatProcedure, 8::ms, 64::ms) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopFloatProcedureDurDurDur()
+    {
+        Loops.loop(floatProcedure, 4::ms, 8::ms, 8) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopProcedureInt()
+    {
+        Loops.loop(procedure, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopProcedureDurInt()
+    {
+        Loops.loop(procedure, 8::ms, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopProcedureDurDurInt()
+    {
+        Loops.loop(procedure, 4::ms, 8::ms, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopFloatProcedureInt()
+    {
+        Loops.loop(floatProcedure, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopFloatProcedureDurInt()
+    {
+        Loops.loop(floatProcedure, 8::ms, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
+    }
+
+    public void testLoopFloatProcedureDurDurInt()
+    {
+        Loops.loop(floatProcedure, 4::ms, 8::ms, 4) @=> Procedure loop;
+        assertNotNull(loop);
+        loop.run();
     }
 
     public void testPrepend()

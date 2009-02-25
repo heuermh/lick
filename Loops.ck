@@ -73,25 +73,43 @@ public class Loops
         return loop;
     }
 
-    // compiler is confused, loop(procedure, int) shouldn't match signature with loop(procedure, dur)
-    //fun static Procedure loop(Procedure procedure, int n)
-    fun static Procedure loopN(Procedure procedure, int n)
+    fun static Procedure loop(Procedure procedure, int n)
     {
-        return loopN(procedure, none, none, n);
+        return loop(procedure, none, none, n);
     }
 
-    fun static Procedure loopN(Procedure procedure, dur wait, int n)
+    fun static Procedure loop(Procedure procedure, dur wait, int n)
     {
-        return loopN(procedure, none, wait, n);
+        return loop(procedure, none, wait, n);
     }
 
-    fun static Procedure loopN(Procedure procedure, dur offset, dur wait, int n)
+    fun static Procedure loop(Procedure procedure, dur offset, dur wait, int n)
     {
         Repeat r;
         n => r.n;
         offset => r.offset;
         wait => r.wait;
         procedure @=> r.procedure;
+        return r;
+    }
+
+    fun static Procedure loop(FloatProcedure floatProcedure, int n)
+    {
+        return loop(floatProcedure, none, none, n);
+    }
+
+    fun static Procedure loop(FloatProcedure floatProcedure, dur wait, int n)
+    {
+        return loop(floatProcedure, none, wait, n);
+    }
+
+    fun static Procedure loop(FloatProcedure floatProcedure, dur offset, dur wait, int n)
+    {
+        Repeat r;
+        n => r.n;
+        offset => r.offset;
+        wait => r.wait;
+        floatProcedure @=> r.floatProcedure;
         return r;
     }
 

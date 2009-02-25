@@ -27,13 +27,16 @@ public class Repeat extends Procedure
     dur offset;
     dur wait;
     Procedure procedure;
+    FloatProcedure floatProcedure;
 
     fun void run()
     {
         offset => now;
         for (0 => int i; i < n; i++)
         {
+            i / n => float ratio;
             procedure.run();
+            floatProcedure.run(ratio);
             wait => now;
         }
     }

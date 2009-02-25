@@ -22,6 +22,7 @@
 
 // unit tests
 Machine.add("ArrayListTest.ck");
+Machine.add("LoopsTest.ck");
 Machine.add("GraphTest.ck");
 Machine.add("GraphsTest.ck");
 Machine.add("FloatArrayListTest.ck");
