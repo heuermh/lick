@@ -168,4 +168,28 @@ public class ArrayList extends List
         }
         return result;
     }
+
+    fun List copy()
+    {
+        ArrayList result;
+        for (0 => int i; i < size(); i++)
+        {
+            result.add(get(i));
+        }
+        return result;
+    }
+
+    fun List subList(int fromIndex, int toIndex)
+    {
+        ArrayList result;
+        if (fromIndex > size())
+        {
+            return result;
+        }
+        for (fromIndex => int i; i < Math.min(size(), toIndex); i++)
+        {
+            result.add(get(i));
+        }
+        return result;
+    }
 }

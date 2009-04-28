@@ -74,6 +74,8 @@ class ArrayListTest extends Assert
         testAssign();
         testTransform();
         testCollect();
+        testCopy();
+        testSubList();
         testFoo();
 
         <<<"ArrayListTest ok">>>;
@@ -294,6 +296,52 @@ class ArrayListTest extends Assert
             iterator.next() @=> Object value;
             assertTrue((value == foo) || (value == bar));
         }
+    }
+
+    fun void testCopy()
+    {
+        ArrayList list;
+
+        list.copy() @=> List copy0;
+        assertTrue(copy0.isEmpty());
+
+        list.add(foo);
+        list.add(bar);
+        list.add(baz);
+        list.copy() @=> List copy1;
+        assertTrue(copy1.contains(foo));
+        assertTrue(copy1.contains(bar));
+        assertTrue(copy1.contains(baz));
+        assertFalse(copy1.contains(garply));
+    }
+
+    fun void testSubList()
+    {
+        ArrayList list;
+        list.add(foo);
+        list.add(bar);
+        list.add(baz);
+
+        list.subList(99, 100) @=> List subList0;
+        assertTrue(subList0.isEmpty());
+
+        list.subList(0, 99) @=> List subList1;
+        assertTrue(subList1.contains(foo));
+        assertTrue(subList1.contains(bar));
+        assertTrue(subList1.contains(baz));
+        assertFalse(subList1.contains(garply));
+
+        list.subList(1, 2) @=> List subList2;
+        assertFalse(subList2.contains(foo));
+        assertTrue(subList2.contains(bar));
+        assertFalse(subList2.contains(baz));
+        assertFalse(subList2.contains(garply));
+
+        list.subList(1, 3) @=> List subList3;
+        assertFalse(subList3.contains(foo));
+        assertTrue(subList3.contains(bar));
+        assertTrue(subList3.contains(baz));
+        assertFalse(subList3.contains(garply));
     }
 
     fun void testFoo()
