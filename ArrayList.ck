@@ -59,12 +59,6 @@ public class ArrayList extends List
         }
     }
 
-    fun void set(int index, Object value)
-    {
-        value @=> values[index];
-    }
-
-    // todo:  move to List etc.
     fun int contains(Object value)
     {
         for (0 => int i; i < size(); i++)
@@ -75,6 +69,49 @@ public class ArrayList extends List
             }
         }
         return false;
+    }
+
+    fun int containsAll(List list)
+    {
+        list.iterator() @=> Iterator it;
+        while (it.hasNext())
+        {
+            if (!contains(it.next()))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    fun int indexOf(Object value)
+    {
+        for (0 => int i; i < size(); i++)
+        {
+            if (value == get(i))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    fun int lastIndexOf(Object value)
+    {
+        -1 => int lastIndex;
+        for (0 => int i; i < size(); i++)
+        {
+            if (value == get(i))
+            {
+                i => lastIndex;
+            }
+        }
+        return lastIndex;
+    }
+
+    fun void set(int index, Object value)
+    {
+        value @=> values[index];
     }
 
     fun Iterator iterator()
@@ -117,5 +154,18 @@ public class ArrayList extends List
         {
             fn.evaluate(values[i]) @=> values[i];
         }
+    }
+
+    fun List collect(UnaryPredicate predicate)
+    {
+        ArrayList result;
+        for (0 => int i; i < size(); i++)
+        {
+            if (predicate.test(get(i)))
+            {
+                result.add(get(i));
+            }
+        }
+        return result;
     }
 }

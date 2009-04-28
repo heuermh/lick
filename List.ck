@@ -57,6 +57,41 @@ public class List
         // empty
     }
 
+    fun void remove(Object value)
+    {
+        // empty
+    }
+
+    fun void removeAll(List list)
+    {
+        // empty
+    }
+
+    fun void retainAll(List list)
+    {
+        // empty
+    }
+
+    fun int contains(Object value)
+    {
+        return false;
+    }
+
+    fun int containsAll(List list)
+    {
+        return false;
+    }
+
+    fun int indexOf(Object value)
+    {
+        return -1;
+    }
+
+    fun int lastIndexOf(Object value)
+    {
+        return -1;
+    }
+
     fun void set(int index, Object value)
     {
         // empty
@@ -88,6 +123,11 @@ public class List
     }
 
     fun void transform(UnaryFunction fn)
+    {
+        // empty
+    }
+
+    fun List collect(UnaryPredicate predicate)
     {
         // empty
     }

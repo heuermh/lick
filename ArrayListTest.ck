@@ -64,11 +64,16 @@ class ArrayListTest extends Assert
         testConstructor();
         testSize();
         testGetAddSet();
+        testAddAll();
+        testContains();
+        testContainsAll();
+        testIndexOf();
+        testLastIndexOf();
         testIterator();
         testForEach();
         testAssign();
         testTransform();
-        testAddAll();
+        testCollect();
         testFoo();
 
         <<<"ArrayListTest ok">>>;
@@ -109,6 +114,48 @@ class ArrayListTest extends Assert
         // throws ArrayOutofBounds
         //list.get(99);
         //list.set(baz, 99);
+    }
+
+    fun void testContains()
+    {
+        ArrayList list;
+
+        list.add(foo);
+        assertTrue(list.contains(foo));
+        assertFalse(list.contains(bar));
+    }
+
+    fun void testContainsAll()
+    {
+        ArrayList list0;
+        ArrayList list1;
+
+        list0.add(foo);
+        assertTrue(list0.containsAll(list1));
+    }
+
+    fun void testIndexOf()
+    {
+        ArrayList list;
+
+        list.add(foo);
+        list.add(bar);
+        assertEquals(0, list.indexOf(foo));
+        assertEquals(1, list.indexOf(bar));
+        assertEquals(-1, list.indexOf(baz));
+    }
+
+    fun void testLastIndexOf()
+    {
+        ArrayList list;
+
+        list.add(foo);
+        list.add(bar);
+        list.add(bar);
+        list.add(bar);
+        assertEquals(0, list.lastIndexOf(foo));
+        assertEquals(3, list.lastIndexOf(bar));
+        assertEquals(-1, list.lastIndexOf(baz));
     }
 
     fun void testIterator()
@@ -206,6 +253,26 @@ class ArrayListTest extends Assert
         //list.transform(null);
     }
 
+    fun void testCollect()
+    {
+        ArrayList list;
+
+        list.add(foo);
+        list.add(bar);
+        list.add(baz);
+
+        NeverTrue neverTrue;
+        list.collect(neverTrue) @=> List result0;
+        assertTrue(result0.isEmpty());
+
+        AlwaysTrue alwaysTrue;
+        list.collect(alwaysTrue) @=> List result1;
+        assertTrue(result1.contains(foo));
+        assertTrue(result1.contains(bar));
+        assertTrue(result1.contains(baz));
+        assertFalse(result1.contains(garply));
+    }
+
     fun void testAddAll()
     {
         ArrayList list0;
@@ -236,7 +303,6 @@ class ArrayListTest extends Assert
         list0.add(fooIn);
         list0.get(0) $ Foo @=> Foo fooOut;
         assertEquals(fooIn, fooOut);
-        <<<fooOut.foo()>>>;
     }
 }
 
