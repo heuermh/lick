@@ -58,6 +58,56 @@ public class IntArrayList extends IntList
         }
     }
 
+    fun int contains(int value)
+    {
+        for (0 => int i; i < size(); i++)
+        {
+            if (value == get(i))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    fun int containsAll(IntList list)
+    {
+        list.iterator() @=> IntIterator it;
+        while (it.hasNext())
+        {
+            if (!contains(it.next()))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    fun int indexOf(int value)
+    {
+        for (0 => int i; i < size(); i++)
+        {
+            if (value == get(i))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    fun int lastIndexOf(int value)
+    {
+        -1 => int lastIndex;
+        for (0 => int i; i < size(); i++)
+        {
+            if (value == get(i))
+            {
+                i => lastIndex;
+            }
+        }
+        return lastIndex;
+    }
+
     fun void set(int index, int value)
     {
         value => values[index];
@@ -103,5 +153,42 @@ public class IntArrayList extends IntList
         {
             fn.evaluate(values[i]) => values[i];
         }
+    }
+
+    fun IntList collect(IntPredicate predicate)
+    {
+        IntArrayList result;
+        for (0 => int i; i < size(); i++)
+        {
+            if (predicate.test(get(i)))
+            {
+                result.add(get(i));
+            }
+        }
+        return result;
+    }
+
+    fun IntList copy()
+    {
+        IntArrayList result;
+        for (0 => int i; i < size(); i++)
+        {
+            result.add(get(i));
+        }
+        return result;
+    }
+
+    fun IntList subList(int fromIndex, int toIndex)
+    {
+        IntArrayList result;
+        if (fromIndex > size())
+        {
+            return result;
+        }
+        for (fromIndex => int i; i < Math.min(size(), toIndex); i++)
+        {
+            result.add(get(i));
+        }
+        return result;
     }
 }

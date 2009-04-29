@@ -27,7 +27,7 @@ class NeverTrue extends FloatPredicate
 
 class AlwaysTrue extends FloatPredicate
 {
-    fun int test(int arg)
+    fun int test(float arg)
     {
         return true;
     }
@@ -48,11 +48,18 @@ class FloatArrayListTest extends Assert
         testConstructor();
         testSize();
         testGetAddSet();
+        testContains();
+        testContainsAll();
+        testIndexOf();
+        testLastIndexOf();
         testIterator();
         testForEach();
         testAssign();
         testTransform();
         testAddAll();
+        testCollect();
+        testCopy();
+        testSubList();
 
         <<<"FloatArrayListTest ok">>>;
     }
@@ -218,6 +225,114 @@ class FloatArrayListTest extends Assert
             iterator.next() => float value;
             assertTrue((value == 42.0) || (value == -42.0));
         }
+    }
+
+    fun void testContains()
+    {
+        FloatArrayList list;
+
+        list.add(1.0);
+        assertTrue(list.contains(1.0));
+        assertFalse(list.contains(2.0));
+    }
+
+    fun void testContainsAll()
+    {
+        FloatArrayList list0;
+        FloatArrayList list1;
+
+        list0.add(1.0);
+        assertTrue(list0.containsAll(list1));
+    }
+
+    fun void testIndexOf()
+    {
+        FloatArrayList list;
+
+        list.add(1.0);
+        list.add(2.0);
+        assertEquals(0, list.indexOf(1.0));
+        assertEquals(1, list.indexOf(2.0));
+        assertEquals(-1, list.indexOf(3.0));
+    }
+
+    fun void testLastIndexOf()
+    {
+        FloatArrayList list;
+
+        list.add(1.0);
+        list.add(2.0);
+        list.add(2.0);
+        list.add(2.0);
+        assertEquals(0, list.lastIndexOf(1.0));
+        assertEquals(3, list.lastIndexOf(2.0));
+        assertEquals(-1, list.lastIndexOf(3.0));
+    }
+
+    fun void testCollect()
+    {
+        FloatArrayList list;
+
+        list.add(1.0);
+        list.add(2.0);
+        list.add(3.0);
+
+        NeverTrue neverTrue;
+        list.collect(neverTrue) @=> FloatList result0;
+        assertTrue("result0 is empty", result0.isEmpty());
+
+        AlwaysTrue alwaysTrue;
+        list.collect(alwaysTrue) @=> FloatList result1;
+        assertTrue("result1 contains 1.0", result1.contains(1.0));
+        assertTrue("result1 contains 2.0", result1.contains(2.0));
+        assertTrue("result1 contains 3.0", result1.contains(3.0));
+        assertFalse("result1 should not contain 4.0", result1.contains(4.0));
+    }
+
+    fun void testCopy()
+    {
+        FloatArrayList list;
+
+        list.copy() @=> FloatList copy0;
+        assertTrue(copy0.isEmpty());
+
+        list.add(1.0);
+        list.add(2.0);
+        list.add(3.0);
+        list.copy() @=> FloatList copy1;
+        assertTrue(copy1.contains(1.0));
+        assertTrue(copy1.contains(2.0));
+        assertTrue(copy1.contains(3.0));
+        assertFalse(copy1.contains(4.0));
+    }
+
+    fun void testSubList()
+    {
+        FloatArrayList list;
+        list.add(1.0);
+        list.add(2.0);
+        list.add(3.0);
+
+        list.subList(99, 100) @=> FloatList subList0;
+        assertTrue(subList0.isEmpty());
+
+        list.subList(0, 99) @=> FloatList subList1;
+        assertTrue(subList1.contains(1.0));
+        assertTrue(subList1.contains(2.0));
+        assertTrue(subList1.contains(3.0));
+        assertFalse(subList1.contains(4.0));
+
+        list.subList(1, 2) @=> FloatList subList2;
+        assertFalse(subList2.contains(1.0));
+        assertTrue(subList2.contains(2.0));
+        assertFalse(subList2.contains(3.0));
+        assertFalse(subList2.contains(4.0));
+
+        list.subList(1, 3) @=> FloatList subList3;
+        assertFalse(subList3.contains(1.0));
+        assertTrue(subList3.contains(2.0));
+        assertTrue(subList3.contains(3.0));
+        assertFalse(subList3.contains(4.0));
     }
 }
 

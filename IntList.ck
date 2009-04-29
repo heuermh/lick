@@ -57,6 +57,41 @@ public class IntList
         // empty
     }
 
+    fun void remove(int value)
+    {
+        // empty
+    }
+
+    fun void removeAll(IntList list)
+    {
+        // empty
+    }
+
+    fun void retainAll(IntList list)
+    {
+        // empty
+    }
+
+    fun int contains(int value)
+    {
+        return false;
+    }
+
+    fun int containsAll(IntList list)
+    {
+        return false;
+    }
+
+    fun int indexOf(int value)
+    {
+        return -1;
+    }
+
+    fun int lastIndexOf(int value)
+    {
+        return -1;
+    }
+
     fun void set(int index, int value)
     {
         // empty
@@ -88,6 +123,11 @@ public class IntList
     }
 
     fun void transform(IntFunction fn)
+    {
+        // empty
+    }
+
+    fun IntList collect(IntPredicate predicate)
     {
         // empty
     }

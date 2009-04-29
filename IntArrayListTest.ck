@@ -50,11 +50,18 @@ class IntArrayListTest extends Assert
         testConstructor();
         testSize();
         testGetAddSet();
+        testContains();
+        testContainsAll();
+        testIndexOf();
+        testLastIndexOf();
         testIterator();
         testForEach();
         testAssign();
         testTransform();
         testAddAll();
+        testCollect();
+        testCopy();
+        testSubList();
 
         <<<"IntArrayListTest ok">>>;
     }
@@ -220,6 +227,114 @@ class IntArrayListTest extends Assert
             iterator.next() => int value;
             assertTrue((value == 42) || (value == -42));
         }
+    }
+
+    fun void testContains()
+    {
+        IntArrayList list;
+
+        list.add(1);
+        assertTrue(list.contains(1));
+        assertFalse(list.contains(2));
+    }
+
+    fun void testContainsAll()
+    {
+        IntArrayList list0;
+        IntArrayList list1;
+
+        list0.add(1);
+        assertTrue(list0.containsAll(list1));
+    }
+
+    fun void testIndexOf()
+    {
+        IntArrayList list;
+
+        list.add(1);
+        list.add(2);
+        assertEquals(0, list.indexOf(1));
+        assertEquals(1, list.indexOf(2));
+        assertEquals(-1, list.indexOf(3));
+    }
+
+    fun void testLastIndexOf()
+    {
+        IntArrayList list;
+
+        list.add(1);
+        list.add(2);
+        list.add(2);
+        list.add(2);
+        assertEquals(0, list.lastIndexOf(1));
+        assertEquals(3, list.lastIndexOf(2));
+        assertEquals(-1, list.lastIndexOf(3));
+    }
+
+    fun void testCollect()
+    {
+        IntArrayList list;
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        NeverTrue neverTrue;
+        list.collect(neverTrue) @=> IntList result0;
+        assertTrue(result0.isEmpty());
+
+        AlwaysTrue alwaysTrue;
+        list.collect(alwaysTrue) @=> IntList result1;
+        assertTrue(result1.contains(1));
+        assertTrue(result1.contains(2));
+        assertTrue(result1.contains(3));
+        assertFalse(result1.contains(4));
+    }
+
+    fun void testCopy()
+    {
+        IntArrayList list;
+
+        list.copy() @=> IntList copy0;
+        assertTrue(copy0.isEmpty());
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.copy() @=> IntList copy1;
+        assertTrue(copy1.contains(1));
+        assertTrue(copy1.contains(2));
+        assertTrue(copy1.contains(3));
+        assertFalse(copy1.contains(4));
+    }
+
+    fun void testSubList()
+    {
+        IntArrayList list;
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        list.subList(99, 100) @=> IntList subList0;
+        assertTrue(subList0.isEmpty());
+
+        list.subList(0, 99) @=> IntList subList1;
+        assertTrue(subList1.contains(1));
+        assertTrue(subList1.contains(2));
+        assertTrue(subList1.contains(3));
+        assertFalse(subList1.contains(4));
+
+        list.subList(1, 2) @=> IntList subList2;
+        assertFalse(subList2.contains(1));
+        assertTrue(subList2.contains(2));
+        assertFalse(subList2.contains(3));
+        assertFalse(subList2.contains(4));
+
+        list.subList(1, 3) @=> IntList subList3;
+        assertFalse(subList3.contains(1));
+        assertTrue(subList3.contains(2));
+        assertTrue(subList3.contains(3));
+        assertFalse(subList3.contains(4));
     }
 }
 

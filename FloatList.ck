@@ -57,6 +57,41 @@ public class FloatList
         // empty
     }
 
+    fun void remove(float value)
+    {
+        // empty
+    }
+
+    fun void removeAll(FloatList list)
+    {
+        // empty
+    }
+
+    fun void retainAll(FloatList list)
+    {
+        // empty
+    }
+
+    fun int contains(float value)
+    {
+        return false;
+    }
+
+    fun int containsAll(FloatList list)
+    {
+        return false;
+    }
+
+    fun int indexOf(float value)
+    {
+        return -1;
+    }
+
+    fun int lastIndexOf(float value)
+    {
+        return -1;
+    }
+
     fun void set(int index, float value)
     {
         // empty
@@ -88,6 +123,11 @@ public class FloatList
     }
 
     fun void transform(FloatFunction fn)
+    {
+        // empty
+    }
+
+    fun FloatList collect(FloatPredicate predicate)
     {
         // empty
     }
