@@ -27,6 +27,7 @@ class InterpolationTest extends Assert
         true => exitOnFailure;
         testLinear();
         testBack();
+        testBounce();
         testCircular();
         testElastic();
         testExponential();
@@ -54,6 +55,16 @@ class InterpolationTest extends Assert
         assertInRange(backIn, -1.0, 2.0);
         assertInRange(backOut, -1.0, 2.0);
         assertInRange(backInOut, -1.0, 2.0);
+    }
+
+    public void testBounce()
+    {
+        BounceIn bounceIn;
+        BounceOut bounceOut;
+        BounceInOut bounceInOut;
+        assertInRange(bounceIn, -1.0, 2.0);
+        assertInRange(bounceOut, -1.0, 2.0);
+        assertInRange(bounceInOut, -1.0, 2.0);
     }
 
     public void testCircular()
