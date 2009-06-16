@@ -22,5 +22,10 @@
 
 public class SinusoidalIn extends Interpolation
 {
-    // TODO
+    Math.PI / 2.0 => static float PI_OVER_2;
+
+    fun float evaluate(float value)
+    {
+        return -1.0 * Math.cos(value * PI_OVER_2) + 1.0;
+    }
 }

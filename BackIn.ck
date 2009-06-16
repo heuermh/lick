@@ -20,7 +20,10 @@
 
 */
 
-public class LinearInOut extends Interpolation
+public class BackIn extends Interpolation
 {
-    // TODO
+    fun float evaluate(float value)
+    {
+        return value * value * ((1.70158 + 1.0) * value - 1.70158);
+    }
 }

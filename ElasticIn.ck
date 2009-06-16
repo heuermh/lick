@@ -20,10 +20,14 @@
 
 */
 
-public class RandomFloor extends Interpolation
+public class ElasticIn extends Interpolation
 {
+    Math.PI * 2.0 => static float PI_TIMES_2;
+
     fun float evaluate(float value)
     {
-        return Std.rand2f(value, 1.0);
+        0.3 / 4.0 => float s;
+        value - 1.0 => float q;
+        return -1.0 * (Math.pow(2.0, 10.0 * q) * Math.sin((q - s) * (PI_TIMES_2) / 0.3));
     }
 }

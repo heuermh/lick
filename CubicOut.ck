@@ -22,8 +22,8 @@
 
 public class CubicOut extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return max - (Std.fabs(max - min) * Math.pow(arg, 3.0));
+        return Math.pow(value - 1.0, 3.0) + 1.0;
     }
 }

@@ -22,15 +22,14 @@
 
 public class CubicInOut extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        if (arg < 0.5)
+        2.0 * value => float v;
+        if (v < 1.0)
         {
-            return min + (Std.fabs(max - min) * Math.pow(arg, 3.0));
+            return 0.5 * Math.pow(v, 3.0);
         }
-        else
-        {
-            return max - (Std.fabs(max - min) * Math.pow(1.0 - arg, 3.0));
-        }
+        v - 2.0 => v;
+        return 0.5 * (Math.pow(v, 3.0) + 2.0);
     }
 }

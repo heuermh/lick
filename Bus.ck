@@ -20,10 +20,37 @@
 
 */
 
-public class RandomFloor extends Interpolation
+public class Bus
 {
-    fun float evaluate(float value)
+    ArrayList gain;
+    Connect connect;
+    Disconnect disconnect;
+
+    fun void connect()
     {
-        return Std.rand2f(value, 1.0);
+        gain.forEach(connect);
     }
+
+    fun void disconnect()
+    {
+        gain.forEach(disconnect);
+    }
+}
+
+class Connect extends UnaryProcedure
+{
+    fun void run(Object value)
+    {
+        value $ Gain @=> Gain g;
+        g => dac;
+    }    
+}
+
+class Disconnect extends UnaryProcedure
+{
+    fun void run(Object value)
+    {
+        value $ Gain @=> Gain g;
+        g => dac;
+    }    
 }

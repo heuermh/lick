@@ -22,8 +22,8 @@
 
 public class ExponentialOut extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return max - (Std.fabs(max - min) * Math.pow(2.0, 10 * (arg - 1.0)));
+        return -1.0 * Math.pow(2.0, -10.0 * value) + 1.0;
     }
 }

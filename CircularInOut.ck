@@ -22,5 +22,14 @@
 
 public class CircularInOut extends Interpolation
 {
-    // TODO
+    fun float evaluate(float value)
+    {
+        2.0 * value => float v;
+        if (v < 1.0)
+        {
+            return -0.5 * (Math.sqrt(1.0 - Math.pow(v, 2.0)) - 1.0);
+        }
+        v - 2.0 => v;
+        return 0.5 * (Math.sqrt(1.0 - Math.pow(v, 2.0) + 1.0));
+    }
 }

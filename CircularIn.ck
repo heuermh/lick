@@ -22,8 +22,12 @@
 
 public class CircularIn extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return min + (Std.fabs(max - min) * (1 - Math.sqrt(1.0 - (arg * arg))));
+        if (value - 1.0 < 0.001)
+        {
+            return 1.0;
+        }
+        return -1.0 * (Math.sqrt(1.0 - Math.pow(value, 2.0)) - 1.0);
     }
 }

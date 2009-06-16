@@ -20,10 +20,10 @@
 
 */
 
-public class Random extends Interpolation
+public class Random extends FloatFunction
 {
-    fun float evaluate(float arg)
+    fun float evaluate()
     {
-        return Std.rand2f(min, max);
+        return Std.rand2f(0.0, 1.0);
     }
 }

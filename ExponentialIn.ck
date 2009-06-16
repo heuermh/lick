@@ -22,8 +22,8 @@
 
 public class ExponentialIn extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return min + (Std.fabs(max - min) * Math.pow(2.0, 10 * (arg - 1.0)));
+        return Math.pow(2.0, 10.0 * (value - 1.0));
     }
 }

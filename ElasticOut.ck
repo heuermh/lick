@@ -20,10 +20,13 @@
 
 */
 
-public class LinearIn extends Interpolation
+public class ElasticOut extends Interpolation
 {
-    fun float evaluate(float arg)
+    Math.PI * 2.0 => static float PI_TIMES_2;
+
+    fun float evaluate(float value)
     {
-        return min + (Std.fabs(max - min) * arg);
+        0.3 / 4.0 => float s;
+        return Math.pow(2.0, -10.0 * value) * Math.sin((value - s) * (PI_TIMES_2) / 0.3) + 1.0;
     }
 }

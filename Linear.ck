@@ -20,10 +20,10 @@
 
 */
 
-public class RandomFloor extends Interpolation
+public class Linear extends Interpolation
 {
-    fun float evaluate(float value)
+    fun float evaluate(float arg)
     {
-        return Std.rand2f(value, 1.0);
+        return arg;
     }
 }

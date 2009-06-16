@@ -22,8 +22,8 @@
 
 public class CircularOut extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return max - (Std.fabs(max - min) * (1 - Math.sqrt(1.0 - (arg * arg))));
+        return Math.sqrt(1.0 - Math.pow(value - 1.0, 2.0));
     }
 }

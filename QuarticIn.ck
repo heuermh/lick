@@ -22,8 +22,8 @@
 
 public class QuarticIn extends Interpolation
 {
-    fun float evaluate(float arg)
+    fun float evaluate(float value)
     {
-        return min + (Std.fabs(max - min) * Math.pow(arg, 4.0));
+        return Math.pow(value, 4.0);
     }
 }

@@ -22,5 +22,8 @@
 
 public class SinusoidalInOut extends Interpolation
 {
-    // TODO
+    fun float evaluate(float value)
+    {
+        return -0.5 * (Math.cos(value * Math.PI) - 1.0);
+    }
 }

@@ -22,5 +22,14 @@
 
 public class ExponentialInOut extends Interpolation
 {
-    // TODO
+    fun float evaluate(float value)
+    {
+        2.0 * value => float v;
+        if (v < 1.0)
+        {
+            return 0.5 * Math.pow(2.0, 10.0 * (v - 1.0));
+        }
+        v - 1.0 => v;
+        return 0.5 * (-1.0 * Math.pow(2.0, -10.0 * v) + 2.0);
+    }
 }

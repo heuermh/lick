@@ -20,10 +20,11 @@
 
 */
 
-public class RandomFloor extends Interpolation
+public class BackOut extends Interpolation
 {
     fun float evaluate(float value)
     {
-        return Std.rand2f(value, 1.0);
+        value - 1.0 => float v;
+        return v * v * ((1.70158 + 1.0) * v + 1.70158) + 1.0;
     }
 }

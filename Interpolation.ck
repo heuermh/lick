@@ -22,6 +22,5 @@
 
 public class Interpolation extends FloatFunction
 {
-    0.0 => float min;
-    1.0 => float max;
+    // empty
 }

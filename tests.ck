@@ -27,3 +27,4 @@ Machine.add("GraphTest.ck");
 Machine.add("GraphsTest.ck");
 Machine.add("FloatArrayListTest.ck");
 Machine.add("IntArrayListTest.ck");
+Machine.add("InterpolationTest.ck");

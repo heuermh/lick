@@ -94,18 +94,22 @@ Machine.add("IntFunctions.ck");
 
 // interpolation
 Machine.add("Interpolation.ck");
+Machine.add("BackIn.ck");
+Machine.add("BackOut.ck");
+Machine.add("BackInOut.ck");
 Machine.add("CircularIn.ck");
 Machine.add("CircularInOut.ck");
 Machine.add("CircularOut.ck");
 Machine.add("CubicIn.ck");
 Machine.add("CubicInOut.ck");
 Machine.add("CubicOut.ck");
+Machine.add("ElasticIn.ck");
+Machine.add("ElasticOut.ck");
+Machine.add("ElasticInOut.ck");
 Machine.add("ExponentialIn.ck");
 Machine.add("ExponentialInOut.ck");
 Machine.add("ExponentialOut.ck");
-Machine.add("LinearIn.ck");
-Machine.add("LinearInOut.ck");
-Machine.add("LinearOut.ck");
+Machine.add("Linear.ck");
 Machine.add("QuadraticIn.ck");
 Machine.add("QuadraticInOut.ck");
 Machine.add("QuadraticOut.ck");
