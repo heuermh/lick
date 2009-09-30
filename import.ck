@@ -158,6 +158,10 @@ Machine.add("FloatList.ck");
 Machine.add("FloatListIterator.ck");
 Machine.add("FloatArrayList.ck");
 
+// set
+Machine.add("Set.ck");
+Machine.add("ArraySet.ck");
+
 // graphs
 Machine.add("Node.ck");
 Machine.add("Edge.ck");
