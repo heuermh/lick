@@ -63,6 +63,7 @@ class ArrayListTest extends Assert
         true => exitOnFailure;
         testConstructor();
         testSize();
+        testClear();
         testGetAddSet();
         testAddAll();
         testContains();
@@ -98,6 +99,21 @@ class ArrayListTest extends Assert
         assertFalse(list.isEmpty());
 
         assertEquals(0, list.size(0));
+        assertTrue(list.isEmpty());
+    }
+
+    fun void testClear()
+    {
+        ArrayList list;
+        assertNotNull(list);
+        assertEquals(0, list.size());
+        assertTrue(list.isEmpty());
+
+        assertEquals(16, list.size(16));
+        assertFalse(list.isEmpty());
+
+        list.clear();
+        assertEquals(0, list.size());
         assertTrue(list.isEmpty());
     }
 

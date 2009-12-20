@@ -34,6 +34,11 @@ public class FloatArrayList extends FloatList
         return values.size(capacity);
     }
 
+    fun void clear()
+    {
+        values.size(0);
+    }
+
     fun float get(int index)
     {
         return values[index];

@@ -47,6 +47,7 @@ class FloatArrayListTest extends Assert
         true => exitOnFailure;
         testConstructor();
         testSize();
+        testClear();
         testGetAddSet();
         testContains();
         testContainsAll();

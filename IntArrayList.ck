@@ -34,6 +34,11 @@ public class IntArrayList extends IntList
         return values.size(capacity);
     }
 
+    fun void clear()
+    {
+        values.size(0);
+    }
+
     fun int get(int index)
     {
         return values[index];

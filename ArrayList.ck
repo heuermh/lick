@@ -34,6 +34,11 @@ public class ArrayList extends List
         return values.size(capacity);
     }
 
+    fun void clear()
+    {
+        values.size(0);
+    }
+
     fun Object get(int index)
     {
         return values[index];
