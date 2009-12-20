@@ -47,7 +47,8 @@ class GraphsTest extends Assert
     fun void testRandomWalk()
     {
         Graph graph;
-        PrintValues printValues;
+        //PrintValues printValues;
+        UnaryProcedure printValues;
         //<<<"graph", graph>>>;
 
         // create 10 nodes
@@ -76,7 +77,7 @@ class GraphsTest extends Assert
         // random walk 10 times
         for (0 => int i; i < 10; i++)
         {
-            <<<"random walk", i>>>;
+            //<<<"random walk", i>>>;
             Graphs.randomWalk(graph, printValues);
         }
     }
