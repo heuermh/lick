@@ -171,4 +171,8 @@ Machine.add("Graphs.ck");
 // unit test
 Machine.add("Assert.ck");
 
+// devices
+Machine.add("NanoPad.ck");
+//Machine.add("SooperLooker.ck");
+
 <<<"LiCK imported.">>>;
