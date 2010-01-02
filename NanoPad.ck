@@ -75,13 +75,13 @@ public class NanoPad
                     {
                         spork ~ button4.run(velocity);
                     }
-                   if (note == 51)
-                   {
+                    if (note == 51)
+                    {
                         spork ~ button5.run(velocity);
                     }
                     if (note == 49)
                     {
-                    spork ~ button6.run(velocity);
+                        spork ~ button6.run(velocity);
                     }
                     if (note == 36)
                     {
