@@ -22,6 +22,7 @@
 
 class Sample extends IntProcedure
 {
+    1.0 => float rate;
     0.8 => float maxGain;
 
     SndBuf buf => dac;
@@ -33,7 +34,7 @@ class Sample extends IntProcedure
     {
         0 => buf.pos;
         (value / 127.0) * maxGain => buf.gain;
-        1.0 => buf.rate;
+        rate => buf.rate;
     }
 }
 

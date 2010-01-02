@@ -22,6 +22,7 @@
 
 class Sample extends IntProcedure
 {
+    1.0 => float rate;
     0.8 => float maxGain;
 
     SndBuf buf => dac;
