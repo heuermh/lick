@@ -24,6 +24,8 @@ public class NanoPad
 {
     MidiIn min;
     MidiMsg msg;
+    int lastX;
+    int lastY;
     // assign a custom int procedure to each button press
     IntProcedure button1;
     IntProcedure button2;
@@ -37,6 +39,8 @@ public class NanoPad
     IntProcedure button10;
     IntProcedure button11;
     IntProcedure button12;
+    // assign a custom int int procedure to XY pad changes
+    IntIntProcedure xy;
 
     fun int open(int device)
     {
@@ -103,6 +107,19 @@ public class NanoPad
                     {
                         spork ~ button12.run(velocity);
                     }
+                }
+                if (control == 224)
+                {
+                    if (note == velocity)
+                    {
+                        note => lastX;
+                        spork ~ xy.run(lastX, lastY);
+                    }
+                }
+                if (control == 176)
+                {
+                    velocity => lastY;
+                    spork ~ xy.run(lastX, lastY);
                 }
             }
         }
