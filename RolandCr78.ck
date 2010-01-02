@@ -183,11 +183,11 @@ public class RolandCr78
         samples.add(tamborine);
 
         PlaySample playSample;
-        //32 => playSample.velocity;
-        //samples.forEach(playSample);
+        32 => playSample.velocity;
+        samples.forEach(playSample);
 
-        //64 => playSample.velocity;
-        //samples.forEach(playSample);
+        64 => playSample.velocity;
+        samples.forEach(playSample);
 
         127 => playSample.velocity;
         samples.forEach(playSample);
