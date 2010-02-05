@@ -18,6 +18,7 @@ LiCK includes:
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
+ - Sample-based drum machine emulators
  - "ChucK-Unit", an Assert class for creating unit tests
 
 For further documentation, please see
