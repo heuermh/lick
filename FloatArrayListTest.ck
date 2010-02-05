@@ -85,6 +85,21 @@ class FloatArrayListTest extends Assert
         assertTrue(list.isEmpty());
     }
 
+    fun void testClear()
+    {
+        FloatArrayList list;
+        assertNotNull(list);
+        assertEquals(0, list.size());
+        assertTrue(list.isEmpty());
+
+        assertEquals(16, list.size(16));
+        assertFalse(list.isEmpty());
+
+        list.clear();
+        assertEquals(0, list.size());
+        assertTrue(list.isEmpty());
+    }
+
     fun void testGetAddSet()
     {
         FloatArrayList list;
