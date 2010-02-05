@@ -134,6 +134,7 @@ Machine.add("SinusoidalOut.ck");
 Machine.add("Append.ck");
 Machine.add("Prepend.ck");
 Machine.add("Repeat.ck");
+Machine.add("Sleep.ck");
 Machine.add("Loop.ck");
 Machine.add("Loops.ck");
 

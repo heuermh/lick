@@ -31,6 +31,7 @@ class LoopsTest extends Assert
     {
         true => exitOnFailure;
         testAppend();
+        testAppendWait();
         testLoopProcedureDur();
         testLoopProcedureDurDur();
         testLoopProcedureDurDurDur();
@@ -44,6 +45,7 @@ class LoopsTest extends Assert
         testLoopFloatProcedureDurInt();
         testLoopFloatProcedureDurDurInt();
         testPrepend();
+        testPrependWait();
 
         <<<"LoopsTest ok">>>;
     }
@@ -51,6 +53,13 @@ class LoopsTest extends Assert
     public void testAppend()
     {
         Loops.append(g, h) @=> Procedure append;
+        assertNotNull(append);
+        append.run();
+    }
+
+    public void testAppendWait()
+    {
+        Loops.append(g, 64::ms) @=> Procedure append;
         assertNotNull(append);
         append.run();
     }
@@ -142,6 +151,13 @@ class LoopsTest extends Assert
     public void testPrepend()
     {
         Loops.prepend(g, h) @=> Procedure prepend;
+        assertNotNull(prepend);
+        prepend.run();
+    }
+
+    public void testPrependWait()
+    {
+        Loops.prepend(64::ms, h) @=> Procedure prepend;
         assertNotNull(prepend);
         prepend.run();
     }

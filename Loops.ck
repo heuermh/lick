@@ -33,6 +33,13 @@ public class Loops
         return append;
     }
 
+    fun static Procedure append(Procedure g, dur wait)
+    {
+        Sleep sleep;
+        wait => sleep.value;
+        return append(g, sleep.asProcedure());
+    }
+
     fun static Procedure loop(Procedure procedure, dur wait)
     {
         return loop(procedure, none, wait, forever);
@@ -72,6 +79,8 @@ public class Loops
         floatProcedure @=> loop.floatProcedure;
         return loop;
     }
+
+    // todo:  rename these repeat( ?
 
     fun static Procedure loop(Procedure procedure, int n)
     {
@@ -119,5 +128,12 @@ public class Loops
         g @=> prepend.g;
         h @=> prepend.h;
         return prepend;
+    }
+
+    fun static Procedure prepend(dur wait, Procedure h)
+    {
+        Sleep sleep;
+        wait => sleep.value;
+        return prepend(sleep.asProcedure(), h);
     }
 }
