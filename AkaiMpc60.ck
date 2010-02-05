@@ -20,24 +20,6 @@
 
 */
 
-class Sample extends IntProcedure
-{
-    1.0 => float rate;
-    0.6 => float maxGain;
-
-    SndBuf buf => dac;
-    {
-        0.0 => buf.gain;
-    }
-
-    fun void run(int value)
-    {
-        0 => buf.pos;
-        (value / 127.0) * maxGain => buf.gain;
-        rate => buf.rate;
-    }
-}
-
 class ClosedHat extends Sample
 {
     {
@@ -128,8 +110,8 @@ class PlaySample extends UnaryProcedure
 
     fun void run(Object value)
     {
-        value $ IntProcedure @=> IntProcedure procedure;
-        procedure.run(velocity);
+        value $ Sample @=> Sample sample;
+        sample.asIntProcedure().run(velocity);
         500::ms => now;
     }
 }

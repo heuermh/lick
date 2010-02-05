@@ -176,6 +176,7 @@ Machine.add("NanoPad.ck");
 //Machine.add("SooperLooper.ck");
 
 // sample-based drum machines
+Machine.add("Sample.ck");
 Machine.add("AkaiMpc60.ck");
 Machine.add("EmuDrumulator.ck");
 Machine.add("OberheimDmx.ck");

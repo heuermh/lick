@@ -42,7 +42,7 @@ public class VoiceOfSaturn
         0.8 => osc1.gain;
         0.5 => osc1.width;
         20.0 => osc2.freq;
-        0.8 => osc2.gain;
+        0.2 => osc2.gain;
         1.0 => sqrLfo.freq;
         0.8 => sqrLfo.gain;
         1.0 => triLfo.freq;
