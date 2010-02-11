@@ -61,19 +61,19 @@ public class VoiceOfSaturn
     {
         while (true)
         {
-            if (_osc2Mode == ON)
+            if (isOsc2On())
             {
                 ((osc2.last() + 2.0) / 2.0) * 0.5 => osc1.width;
             }
-            if (_lfoMode == ON)
+            if (isLfoOn())
             {
                 // todo  the docu describes this as amplitude mod
                 // but the video shows this is modulating the freq
-                if (_lfoType == SQUARE_LFO)
+                if (isSquareLfo())
                 {
                     ((sqrLfo.last() + 1.0) / 2.0) * 0.8 => osc1.gain;
                 }
-                if (_lfoType == TRIANGLE_LFO)
+                if (isTriangleLfo())
                 {
                     ((triLfo.last() + 1.0) / 2.0) * 0.8 => osc1.gain;
                 }
@@ -82,19 +82,53 @@ public class VoiceOfSaturn
         }
     }
 
-    fun void osc1Pitch(float pitch)
+    fun float osc1Pitch()
+    {
+        return osc1.freq();
+    }
+
+    fun float osc1Pitch(float pitch)
     {
         pitch => osc1.freq;
+        return osc1.freq();
     }
 
-    fun void osc2Pitch(float pitch)
+    fun float osc2Pitch()
+    {
+        return osc2.freq();
+    }
+
+    fun float osc2Pitch(float pitch)
     {
         pitch => osc2.freq;
+        return osc2.freq();
     }
 
-    fun void osc2Mode(int mode)
+    fun int osc2Mode()
+    {
+        return _osc2Mode;
+    }
+
+    fun int osc2Mode(int mode)
     {
         mode => _osc2Mode;
+        return _osc2Mode;
+    }
+
+    fun int isOsc2On()
+    {
+        return (_osc2Mode == ON);
+    }
+
+    fun int isOsc2Off()
+    {
+        return (_osc2Mode == OFF);
+    }
+
+    /*
+    fun float oscRange()
+    {
+        return oscRange;
     }
 
     fun void oscRange(float range)
@@ -102,31 +136,95 @@ public class VoiceOfSaturn
         // todo  don't know what this does
         // video shows this also modulates frequency
     }
+    */
 
-    fun void volume(float volume)
+    fun float volume()
     {
-        volume => master.gain;
+        return master.gain();
     }
 
-    fun void lfoRate(float rate)
+    fun float volume(float volume)
+    {
+        volume => master.gain;
+        return master.gain();
+    }
+
+    fun float lfoRate()
+    {
+        return sqrLfo.freq();
+    }
+
+    fun float lfoRate(float rate)
     {
         rate => sqrLfo.freq;
         rate => triLfo.freq;
+        return sqrLfo.freq();
     }
 
-    fun void lfoDepth(float depth)
+    fun float lfoDepth()
+    {
+        return sqrLfo.gain();
+    }
+
+    fun float lfoDepth(float depth)
     {
         depth => sqrLfo.gain;
         depth => triLfo.gain;
+        return sqrLfo.gain();
     }
 
-    fun void lfoType(int type)
+    fun int lfoType()
+    {
+        return _lfoType;
+    }
+
+    fun int lfoType(int type)
     {
         type => _lfoType;
+        return _lfoType;
     }
 
-    fun void lfoMode(int mode)
+    fun int isSquareLfo()
+    {
+        return (_lfoType == SQUARE_LFO);
+    }
+
+    fun int isTriangleLfo()
+    {
+        return (_lfoType == TRIANGLE_LFO);
+    }
+
+    fun void toggleLfo()
+    {
+        _lfoType => int currentLfoType;
+        if (currentLfoType == SQUARE_LFO)
+        {
+            lfoType(TRIANGLE_LFO);
+        }
+        else if (currentLfoType == TRIANGLE_LFO)
+        {
+            lfoType(SQUARE_LFO);
+        }
+    }
+
+    fun int lfoMode()
+    {
+        return _lfoMode;
+    }
+
+    fun int lfoMode(int mode)
     {
         mode => _lfoMode;
+        return _lfoMode;
+    }
+
+    fun int isLfoOn()
+    {
+        return (_lfoMode == ON);
+    }
+
+    fun int isLfoOff()
+    {
+        return (_lfoMode == OFF);
     }
 }

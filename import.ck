@@ -173,8 +173,14 @@ Machine.add("Graphs.ck");
 Machine.add("Assert.ck");
 
 // devices
+Machine.add("Keyboard.ck");
+Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
 //Machine.add("SooperLooper.ck");
+
+// simulators
+// Machine.add("DroneLab.ck");
+Machine.add("VoiceOfSaturn.ck");
 
 // sample-based drum machines
 Machine.add("Sample.ck");
