@@ -46,6 +46,14 @@ class XYPadLogger extends FloatFloatProcedure
     }
 }
 
+class MultiToggleLogger extends IntIntFloatProcedure
+{
+    fun void run(int x, int y, float value)
+    {
+        <<<x, y, value>>>;
+    }
+}
+
 class AccelerometerLogger extends FloatFloatFloatProcedure
 {
     fun void run(float x, float y, float z)
@@ -60,15 +68,16 @@ FloatLogger fader;
 FloatLogger pushButton;
 FloatLogger toggleButton;
 XYPadLogger xyPad;
+MultiToggleLogger multiToggle;
 AccelerometerLogger accelerometer;
 
 touchOscServer.addPing(ping);
 touchOscServer.addAccelerometer(accelerometer);
-//touchOscServer.addFader("/1/fader2", fader);  error in PDF doc?
-touchOscServer.addFader("/1/fader1", fader);
-touchOscServer.addFader("/1/fader2", fader);
-touchOscServer.addFader("/1/fader3", fader);
-touchOscServer.addFader("/1/fader4", fader);
+//touchOscServer.addFaderH("/1/fader2", fader);  error in PDF doc?
+touchOscServer.addFaderV("/1/fader1", fader);
+touchOscServer.addFaderV("/1/fader2", fader);
+touchOscServer.addFaderV("/1/fader3", fader);
+touchOscServer.addFaderV("/1/fader4", fader);
 touchOscServer.addToggleButton("/1/toggle1", toggleButton);
 touchOscServer.addToggleButton("/1/toggle2", toggleButton);
 touchOscServer.addToggleButton("/1/toggle3", toggleButton);
@@ -98,7 +107,7 @@ touchOscServer.addToggleButton("/3/toggle1", toggleButton);
 touchOscServer.addToggleButton("/3/toggle2", toggleButton);
 touchOscServer.addToggleButton("/3/toggle3", toggleButton);
 touchOscServer.addToggleButton("/3/toggle4", toggleButton);
-//touchOscServer.addMultiToggle("/4/multitoggle", multiToggle);
+touchOscServer.addMultiToggle("/4/multitoggle", 8, 8, multiToggle);
 touchOscServer.addToggleButton("/4/toggle1", toggleButton);
 touchOscServer.addToggleButton("/4/toggle2", toggleButton);
 touchOscServer.addToggleButton("/4/toggle3", toggleButton);

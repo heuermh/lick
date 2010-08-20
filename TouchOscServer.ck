@@ -25,11 +25,10 @@ class Control
     string address;
     string values;
     OscRecv @ server;
-    OscEvent @ event;
 
     fun void connect()
     {
-        server.event(address + ", " + values) @=> event;
+        server.event(address + ", " + values) @=> OscEvent event;
         spork ~ _waitForEvent(event);
     }
 
@@ -154,15 +153,80 @@ class RotaryH extends Control
 
 class MultiToggle extends Control
 {
-    // use implementation from mac, with ArrayList instead of OscEvent[][]
+    8 => int width;
+    8 => int height;
+    ArrayList events;
+    IntIntFloatProcedure @ procedure;
+
+    fun void connect()
+    {
+	for (0 => int x; x < width; x++)
+	{
+	    for (0 => int y; y < height; y++)
+	    {
+	    	server.event(address + "/" + x + "/" + y + ", f") @=> OscEvent event;
+		events.add(event);
+		spork ~ _waitForEvent(event);
+	    }
+	}
+    }
+
+    fun void handle(OscEvent event)
+    {
+	events.indexOf(event) => int index;
+	index % width => int x;
+	index / width => int y;
+        event.getFloat() => float value;
+        procedure.run(x, y, value);
+    }
 }
 
 class MultiFaderV extends Control
 {
+    8 => int height;
+    ArrayList events;
+    IntFloatProcedure @ procedure;
+
+    fun void connect()
+    {
+	for (0 => int y; y < height; y++)
+	{
+	    server.event(address + "/" + y + ", f") @=> OscEvent event;
+	    events.add(event);
+	    spork ~ _waitForEvent(event);
+	}
+    }
+
+    fun void handle(OscEvent event)
+    {
+	events.indexOf(event) => int y;
+        event.getFloat() => float value;
+        procedure.run(y, value);
+    }
 }
 
 class MultiFaderH extends Control
 {
+    8 => int width;
+    ArrayList events;
+    IntFloatProcedure @ procedure;
+
+    fun void connect()
+    {
+	for (0 => int x; x < width; x++)
+	{
+	    server.event(address + "/" + x + ", f") @=> OscEvent event;
+	    events.add(event);
+	    spork ~ _waitForEvent(event);
+	}
+    }
+
+    fun void handle(OscEvent event)
+    {
+	events.indexOf(event) => int x;
+        event.getFloat() => float value;
+        procedure.run(x, value);
+    }
 }
 
 public class TouchOscServer
@@ -354,15 +418,37 @@ public class TouchOscServer
         rotaryH.connect();
     }
 
-    fun void addMultiToggle(string address)
+    fun void addMultiToggle(string address, int width, int height, IntIntFloatProcedure procedure)
     {
+	MultiToggle multiToggle;
+	address => multiToggle.address;
+	", f" => multiToggle.values;
+	width => multiToggle.width;
+	height => multiToggle.height;
+	server @=> multiToggle.server;
+	procedure @=> multiToggle.procedure;
+	multiToggle.connect();
     }
 
-    fun void addMultiFaderV(string address)
+    fun void addMultiFaderV(string address, int height, IntFloatProcedure procedure)
     {
+	MultiFaderV multiFaderV;
+	address => multiFaderV.address;
+	", f" => multiFaderV.values;
+	height => multiFaderV.height;
+	server @=> multiFaderV.server;
+	procedure @=> multiFaderV.procedure;
+	multiFaderV.connect();
     }
 
-    fun void addMultiFaderH(string address)
+    fun void addMultiFaderH(string address, int width, IntFloatProcedure procedure)
     {
+	MultiFaderH multiFaderH;
+	address => multiFaderH.address;
+	", f" => multiFaderH.values;
+	width => multiFaderH.width;
+	server @=> multiFaderH.server;
+	procedure @=> multiFaderH.procedure;
+	multiFaderH.connect();
     }
 }
