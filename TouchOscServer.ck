@@ -160,9 +160,9 @@ class MultiToggle extends Control
 
     fun void connect()
     {
-	for (0 => int x; x < width; x++)
+	for (1 => int x; x < (width + 1); x++)
 	{
-	    for (0 => int y; y < height; y++)
+	    for (1 => int y; y < (height + 1); y++)
 	    {
 	    	server.event(address + "/" + x + "/" + y + ", f") @=> OscEvent event;
 		events.add(event);
@@ -174,8 +174,8 @@ class MultiToggle extends Control
     fun void handle(OscEvent event)
     {
 	events.indexOf(event) => int index;
-	index % width => int x;
-	index / width => int y;
+	index % width + 1 => int x;
+	index / width + 1 => int y;
         event.getFloat() => float value;
         procedure.run(x, y, value);
     }
@@ -189,7 +189,7 @@ class MultiFaderV extends Control
 
     fun void connect()
     {
-	for (0 => int y; y < height; y++)
+	for (1 => int y; y < (height + 1); y++)
 	{
 	    server.event(address + "/" + y + ", f") @=> OscEvent event;
 	    events.add(event);
@@ -199,7 +199,7 @@ class MultiFaderV extends Control
 
     fun void handle(OscEvent event)
     {
-	events.indexOf(event) => int y;
+	events.indexOf(event) + 1 => int y;
         event.getFloat() => float value;
         procedure.run(y, value);
     }
@@ -213,7 +213,7 @@ class MultiFaderH extends Control
 
     fun void connect()
     {
-	for (0 => int x; x < width; x++)
+	for (1 => int x; x < (width + 1); x++)
 	{
 	    server.event(address + "/" + x + ", f") @=> OscEvent event;
 	    events.add(event);
@@ -223,7 +223,7 @@ class MultiFaderH extends Control
 
     fun void handle(OscEvent event)
     {
-	events.indexOf(event) => int x;
+	events.indexOf(event) + 1 => int x;
         event.getFloat() => float value;
         procedure.run(x, value);
     }
