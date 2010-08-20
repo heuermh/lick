@@ -176,7 +176,9 @@ Machine.add("Assert.ck");
 Machine.add("Keyboard.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
+Machine.add("Monome.ck");
 //Machine.add("SooperLooper.ck");
+Machine.add("TouchOscServer.ck");
 
 // simulators
 // Machine.add("DroneLab.ck");
