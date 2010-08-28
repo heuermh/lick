@@ -69,10 +69,38 @@ class HighTom extends Sample
     }
 }
 
-class Kick extends Sample
+class KickA extends Sample
 {
     {
-        "samples/RolandTr808/Kick.wav" => buf.read;
+        "samples/RolandTr808/KickA.wav" => buf.read;
+    }
+}
+
+class KickB extends Sample
+{
+    {
+        "samples/RolandTr808/KickB.wav" => buf.read;
+    }
+}
+
+class KickC extends Sample
+{
+    {
+        "samples/RolandTr808/KickC.wav" => buf.read;
+    }
+}
+
+class KickD extends Sample
+{
+    {
+        "samples/RolandTr808/KickD.wav" => buf.read;
+    }
+}
+
+class KickE extends Sample
+{
+    {
+        "samples/RolandTr808/KickE.wav" => buf.read;
     }
 }
 
@@ -125,10 +153,38 @@ class Rim extends Sample
     }
 }
 
-class Snare extends Sample
+class SnareA extends Sample
 {
     {
-        "samples/RolandTr808/Snare.wav" => buf.read;
+        "samples/RolandTr808/SnareA.wav" => buf.read;
+    }
+}
+
+class SnareB extends Sample
+{
+    {
+        "samples/RolandTr808/SnareB.wav" => buf.read;
+    }
+}
+
+class SnareC extends Sample
+{
+    {
+        "samples/RolandTr808/SnareC.wav" => buf.read;
+    }
+}
+
+class SnareD extends Sample
+{
+    {
+        "samples/RolandTr808/SnareD.wav" => buf.read;
+    }
+}
+
+class SnareE extends Sample
+{
+    {
+        "samples/RolandTr808/SnareE.wav" => buf.read;
     }
 }
 
@@ -153,7 +209,11 @@ public class RolandTr808
     Crash crash;
     HighConga highConga;
     HighTom highTom;
-    Kick kick;
+    KickA kickA;
+    KickB kickB;
+    KickC kickC;
+    KickD kickD;
+    KickE kickE;
     LowConga lowConga;
     LowTom lowTom;
     Maracas maracas;
@@ -161,7 +221,11 @@ public class RolandTr808
     MiddleTom middleTom;
     OpenHat openHat;
     Rim rim;
-    Snare snare;
+    SnareA snareA;
+    SnareB snareB;
+    SnareC snareC;
+    SnareD snareD;
+    SnareE snareE;
 
     fun void demo()
     {
@@ -173,7 +237,11 @@ public class RolandTr808
         samples.add(crash);
         samples.add(highConga);
         samples.add(highTom);
-        samples.add(kick);
+        samples.add(kickA);
+        samples.add(kickB);
+        samples.add(kickC);
+        samples.add(kickD);
+        samples.add(kickE);
         samples.add(lowConga);
         samples.add(lowTom);
         samples.add(maracas);
@@ -181,7 +249,11 @@ public class RolandTr808
         samples.add(middleTom);
         samples.add(openHat);
         samples.add(rim);
-        samples.add(snare);
+        samples.add(snareA);
+        samples.add(snareB);
+        samples.add(snareC);
+        samples.add(snareD);
+        samples.add(snareE);
 
         PlaySample playSample;
         32 => playSample.velocity;
