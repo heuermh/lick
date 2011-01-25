@@ -176,9 +176,10 @@ Machine.add("Assert.ck");
 
 // devices
 Machine.add("Keyboard.ck");
+Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
-Machine.add("Monome.ck");
+Machine.add("Ozone.ck");
 //Machine.add("SooperLooper.ck");
 Machine.add("TouchOscServer.ck");
 
