@@ -142,78 +142,78 @@ public class Ozone // may work for other MIDI keyboards, see notes below
                     if (velocity == 0)
                     {
                         0 => _lastKey[note];
-                        keyOff.run(note);
+                        spork ~ keyOff.run(note);
                     }
                     else
                     {
                         velocity => _lastKey[note];
-                        keyOn.run(note, velocity);
+                        spork ~ keyOn.run(note, velocity);
                     }
                 }
                 else if (control == 224)
                 {
                     note => _lastPitchBend[0];
                     velocity => _lastPitchBend[1];
-                    pitchBend.run(note, velocity);
+                    spork ~ pitchBend.run(note, velocity);
                 }
                 else if (control == 176)
                 {
                     if (note == 1)
                     {
                         velocity => _lastModulation;
-                        modulation.run(velocity);
+                        spork ~ modulation.run(velocity);
                     }
                     else if (note == 74)
                     {
                         velocity => _lastRotary[1];
-                        rotary1.run(velocity);
+                        spork ~ rotary1.run(velocity);
                     }
                     else if (note == 71)
                     {
                         velocity => _lastRotary[2];
-                        rotary2.run(velocity);
+                        spork ~ rotary2.run(velocity);
                     }
                     else if (note == 81)
                     {
                         velocity => _lastRotary[3];
-                        rotary3.run(velocity);
+                        spork ~ rotary3.run(velocity);
                     }
                     else if (note == 91)
                     {
                         velocity => _lastRotary[4];
-                        rotary4.run(velocity);
+                        spork ~ rotary4.run(velocity);
                     }
                     else if (note == 16)
                     {
                         velocity => _lastRotary[5];
-                        rotary5.run(velocity);
+                        spork ~ rotary5.run(velocity);
                     }
                     else if (note == 80)
                     {
                         velocity => _lastRotary[6];
-                        rotary6.run(velocity);
+                        spork ~ rotary6.run(velocity);
                     }
                     else if (note == 19)
                     {
                         velocity => _lastRotary[7];
-                        rotary7.run(velocity);
+                        spork ~ rotary7.run(velocity);
                     }
                     else if (note == 2)
                     {
                         velocity => _lastRotary[8];
-                        rotary8.run(velocity);
+                        spork ~ rotary8.run(velocity);
                     }
                     else if (note == 64)
                     {
                         if (velocity == 127)
                         {
                             true => _lastSustainPedal;
-                            sustainPedalOn.run();
+                            spork ~ sustainPedalOn.run();
                         }
                         else if (velocity == 0)
                         {
                             false => _lastSustainPedal;
-                            sustainPedalOff.run();
+                            spork ~ sustainPedalOff.run();
                         }
                     }
                 }
