@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2010 held jointly by the individual authors.
+    Copyright (c) 2007-2011 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -24,8 +24,11 @@ public class NanoPad
 {
     MidiIn min;
     MidiMsg msg;
-    int lastX;
-    int lastY;
+
+    // cached values
+    int _lastX;
+    int _lastY;
+
     // assign a custom int procedure to each button press
     IntProcedure button1;
     IntProcedure button2;
@@ -41,6 +44,16 @@ public class NanoPad
     IntProcedure button12;
     // assign a custom int int procedure to XY pad changes
     IntIntProcedure xy;
+
+    fun int getX()
+    {
+        return _lastX;
+    }
+
+    fun int getY()
+    {
+        return _lastY;
+    }
 
     fun int open(int device)
     {
@@ -112,14 +125,14 @@ public class NanoPad
                 {
                     if (note == velocity)
                     {
-                        note => lastX;
-                        spork ~ xy.run(lastX, lastY);
+                        note => _lastX;
+                        spork ~ xy.run(_lastX, _lastY);
                     }
                 }
                 if (control == 176)
                 {
-                    velocity => lastY;
-                    spork ~ xy.run(lastX, lastY);
+                    velocity => _lastY;
+                    spork ~ xy.run(_lastX, _lastY);
                 }
             }
         }
