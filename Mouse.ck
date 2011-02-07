@@ -30,6 +30,12 @@ public class Mouse
     float wheelY;
     IntProcedure buttonUp;
     IntProcedure buttonDown;
+    Procedure leftButtonUp;
+    Procedure leftButtonDown;
+    Procedure middleButtonUp;
+    Procedure middleButtonDown;
+    Procedure rightButtonUp;
+    Procedure rightButtonDown;
     FloatFloatProcedure mouseMotion;
     FloatFloatProcedure wheelMotion;
 
@@ -45,10 +51,34 @@ public class Mouse
                 if (msg.isButtonUp())
                 {
                     spork ~ buttonUp.run(msg.which);
+                    if (msg.which == 0)
+                    {
+                        spork ~ leftButtonUp.run();
+                    }
+                    else if (msg.which == 1)
+                    {
+                        spork ~ middleButtonUp.run();
+                    }
+                    else if (msg.which == 2)
+                    {
+                        spork ~ rightButtonUp.run();
+                    }
                 }
                 if (msg.isButtonDown())
                 {
                     spork ~ buttonDown.run(msg.which);
+                    if (msg.which == 0)
+                    {
+                        spork ~ leftButtonDown.run();
+                    }
+                    else if (msg.which == 1)
+                    {
+                        spork ~ middleButtonDown.run();
+                    }
+                    else if (msg.which == 2)
+                    {
+                        spork ~ rightButtonDown.run();
+                    }
                 }
                 if (msg.isMouseMotion())
                 {

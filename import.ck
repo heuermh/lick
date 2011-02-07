@@ -176,6 +176,8 @@ Machine.add("Assert.ck");
 
 // devices
 Machine.add("Keyboard.ck");
+Machine.add("Joystick.ck");
+Machine.add("LogitechGamepadF310.ck");
 Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
