@@ -1,5 +1,5 @@
 LiCK  Library for ChucK.
-Copyright (c) 2007-2010 held jointly by the individual authors.
+Copyright (c) 2007-2011 held jointly by the individual authors.
 
 LiCK is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,6 +19,8 @@ LiCK includes:
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
  - Sample-based drum machine emulators
+ - HID device classes (keyboard, mouse, joystick, etc.)
+ - Monome, TouchOSC integration
  - "ChucK-Unit", an Assert class for creating unit tests
 
 For further documentation, please see
