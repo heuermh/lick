@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2010 held jointly by the individual authors.
+    Copyright (c) 2007-2011 held jointly by the individual authors.
 
     This file is part of LiCK.
 
