@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2010 held jointly by the individual authors.
+    Copyright (c) 2007-2011 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -25,6 +25,7 @@ public class Monome
     OscRecv client;
     OscSend engine;
     OscEvent press;
+    "/40h" => string namespace;
     9090 => int clientPort;
     "localhost" => string engineHost;
     9091 => int enginePort;
@@ -33,7 +34,7 @@ public class Monome
     {
         clientPort => client.port;
         client.listen();
-        client.event("/40h/press, iii") @=> press;
+        client.event(namespace + "/press, iii") @=> press;
         spork ~ _waitForEvent();
         engine.setHost(engineHost, enginePort);
     }
@@ -62,25 +63,25 @@ public class Monome
 
     fun void buttonPressed(int x, int y)
     {
-        // called via /40h/press x,y,1 event
+        // called via e.g. /40h/press x,y,1 event
         //<<<"buttonPressed", x, y>>>;
     }
 
     fun void buttonReleased(int x, int y)
     {
-        // called via /40h/press x,y,0 event
+        // called via e.g. /40h/press x,y,0 event
         //<<<"buttonReleased", x, y>>>;
     }
 
     fun void clear()
     {
-        engine.startMsg("/40h/clear", "i");
+        engine.startMsg(namespace + "/clear", "i");
         0 => engine.addInt;
     }
 
     fun void ledOn(int x, int y)
     {
-        engine.startMsg("/40h/led", "iii");
+        engine.startMsg(namespace + "/led", "iii");
         x => engine.addInt;
         y => engine.addInt;
         1 => engine.addInt;
@@ -88,7 +89,7 @@ public class Monome
 
     fun void ledOff(int x, int y)
     {
-        engine.startMsg("/40h/led", "iii");
+        engine.startMsg(namespace + "/led", "iii");
         x => engine.addInt;
         y => engine.addInt;
         0 => engine.addInt;
@@ -96,35 +97,35 @@ public class Monome
 
     fun void rowOn(int row)
     {
-        engine.startMsg("/40h/led_row", "ii");
+        engine.startMsg(namespace + "/led_row", "ii");
         row => engine.addInt;
         255 => engine.addInt;
     }
 
     fun void rowOff(int row)
     {
-        engine.startMsg("/40h/led_row", "ii");
+        engine.startMsg(namespace + "/led_row", "ii");
         row => engine.addInt;
         0 => engine.addInt;
     }
 
     fun void columnOn(int column)
     {
-        engine.startMsg("/40h/led_col", "ii");
+        engine.startMsg(namespace + "/led_col", "ii");
         column => engine.addInt;
         255 => engine.addInt;
     }
 
     fun void columnOff(int column)
     {
-        engine.startMsg("/40h/led_col", "ii");
+        engine.startMsg(namespace + "/led_col", "ii");
         column => engine.addInt;
         0 => engine.addInt;
     }
 
     fun void frameOn()
     {
-        engine.startMsg("/40h/frame", "iiiiiiii");
+        engine.startMsg(namespace + "/frame", "iiiiiiii");
         255 => engine.addInt;
         255 => engine.addInt;
         255 => engine.addInt;
@@ -137,7 +138,7 @@ public class Monome
 
     fun void frameOff()
     {
-        engine.startMsg("/40h/frame", "iiiiiiii");
+        engine.startMsg(namespace + "/frame", "iiiiiiii");
         0 => engine.addInt;
         0 => engine.addInt;
         0 => engine.addInt;
