@@ -47,6 +47,7 @@ Machine.add("IntIntFloatProcedure.ck");
 Machine.add("IntIntPredicate.ck");
 Machine.add("IntIntProcedure.ck");
 Machine.add("IntFloatProcedure.ck");
+Machine.add("IntFloatFloatProcedure.ck");
 Machine.add("IntPredicate.ck");
 Machine.add("IntProcedure.ck");
 Machine.add("Predicate.ck");
@@ -183,6 +184,7 @@ Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
 Machine.add("Ozone.ck");
 //Machine.add("SooperLooper.ck");
+Machine.add("ControlOscServer.ck");
 Machine.add("TouchOscServer.ck");
 
 // simulators
