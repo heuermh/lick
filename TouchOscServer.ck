@@ -160,22 +160,22 @@ class MultiToggle extends Control
 
     fun void connect()
     {
-	for (1 => int x; x < (width + 1); x++)
-	{
-	    for (1 => int y; y < (height + 1); y++)
-	    {
-	    	server.event(address + "/" + x + "/" + y + ", f") @=> OscEvent event;
-		events.add(event);
-		spork ~ _waitForEvent(event);
-	    }
-	}
+        for (1 => int x; x < (width + 1); x++)
+        {
+            for (1 => int y; y < (height + 1); y++)
+            {
+                server.event(address + "/" + x + "/" + y + ", " + values) @=> OscEvent event;
+                events.add(event);
+                spork ~ _waitForEvent(event);
+            }
+        }
     }
 
     fun void handle(OscEvent event)
     {
-	events.indexOf(event) => int index;
-	index % width + 1 => int x;
-	index / width + 1 => int y;
+        events.indexOf(event) => int index;
+        index % width + 1 => int x;
+        index / width + 1 => int y;
         event.getFloat() => float value;
         procedure.run(x, y, value);
     }
@@ -189,17 +189,17 @@ class MultiFaderV extends Control
 
     fun void connect()
     {
-	for (1 => int y; y < (height + 1); y++)
-	{
-	    server.event(address + "/" + y + ", f") @=> OscEvent event;
-	    events.add(event);
-	    spork ~ _waitForEvent(event);
-	}
+        for (1 => int y; y < (height + 1); y++)
+        {
+            server.event(address + "/" + y + ", " + values) @=> OscEvent event;
+            events.add(event);
+            spork ~ _waitForEvent(event);
+        }
     }
 
     fun void handle(OscEvent event)
     {
-	events.indexOf(event) + 1 => int y;
+        events.indexOf(event) + 1 => int y;
         event.getFloat() => float value;
         procedure.run(y, value);
     }
@@ -213,17 +213,17 @@ class MultiFaderH extends Control
 
     fun void connect()
     {
-	for (1 => int x; x < (width + 1); x++)
-	{
-	    server.event(address + "/" + x + ", f") @=> OscEvent event;
-	    events.add(event);
-	    spork ~ _waitForEvent(event);
-	}
+        for (1 => int x; x < (width + 1); x++)
+        {
+            server.event(address + "/" + x + ", " + values) @=> OscEvent event;
+            events.add(event);
+            spork ~ _waitForEvent(event);
+        }
     }
 
     fun void handle(OscEvent event)
     {
-	events.indexOf(event) + 1 => int x;
+        events.indexOf(event) + 1 => int x;
         event.getFloat() => float value;
         procedure.run(x, value);
     }
@@ -352,7 +352,7 @@ public class TouchOscServer
     {
         PushButton pushButton;
         address => pushButton.address;
-        ", f" => pushButton.values;
+        "f" => pushButton.values;
         server @=> pushButton.server;
         procedure @=> pushButton.procedure;
         pushButton.connect();
@@ -362,7 +362,7 @@ public class TouchOscServer
     {
         ToggleButton toggleButton;
         address => toggleButton.address;
-        ", f" => toggleButton.values;
+        "f" => toggleButton.values;
         server @=> toggleButton.server;
         procedure @=> toggleButton.procedure;
         toggleButton.connect();
@@ -372,7 +372,7 @@ public class TouchOscServer
     {
         XYPad xyPad;
         address => xyPad.address;
-        ", ff" => xyPad.values;
+        "ff" => xyPad.values;
         server @=> xyPad.server;
         procedure @=> xyPad.procedure;
         xyPad.connect();
@@ -382,7 +382,7 @@ public class TouchOscServer
     {
         FaderV faderV;
         address => faderV.address;
-        ", f" => faderV.values;
+        "f" => faderV.values;
         server @=> faderV.server;
         procedure @=> faderV.procedure;
         faderV.connect();
@@ -392,7 +392,7 @@ public class TouchOscServer
     {
         FaderH faderH;
         address => faderH.address;
-        ", f" => faderH.values;
+        "f" => faderH.values;
         server @=> faderH.server;
         procedure @=> faderH.procedure;
         faderH.connect();
@@ -402,7 +402,7 @@ public class TouchOscServer
     {
         RotaryV rotaryV;
         address => rotaryV.address;
-        ", f" => rotaryV.values;
+        "f" => rotaryV.values;
         server @=> rotaryV.server;
         procedure @=> rotaryV.procedure;
         rotaryV.connect();
@@ -412,7 +412,7 @@ public class TouchOscServer
     {
         RotaryH rotaryH;
         address => rotaryH.address;
-        ", f" => rotaryH.values;
+        "f" => rotaryH.values;
         server @=> rotaryH.server;
         procedure @=> rotaryH.procedure;
         rotaryH.connect();
@@ -420,35 +420,35 @@ public class TouchOscServer
 
     fun void addMultiToggle(string address, int width, int height, IntIntFloatProcedure procedure)
     {
-	MultiToggle multiToggle;
-	address => multiToggle.address;
-	", f" => multiToggle.values;
-	width => multiToggle.width;
-	height => multiToggle.height;
-	server @=> multiToggle.server;
-	procedure @=> multiToggle.procedure;
-	multiToggle.connect();
+        MultiToggle multiToggle;
+        address => multiToggle.address;
+        "f" => multiToggle.values;
+        width => multiToggle.width;
+        height => multiToggle.height;
+        server @=> multiToggle.server;
+        procedure @=> multiToggle.procedure;
+        multiToggle.connect();
     }
 
     fun void addMultiFaderV(string address, int height, IntFloatProcedure procedure)
     {
-	MultiFaderV multiFaderV;
-	address => multiFaderV.address;
-	", f" => multiFaderV.values;
-	height => multiFaderV.height;
-	server @=> multiFaderV.server;
-	procedure @=> multiFaderV.procedure;
-	multiFaderV.connect();
+        MultiFaderV multiFaderV;
+        address => multiFaderV.address;
+        "f" => multiFaderV.values;
+        height => multiFaderV.height;
+        server @=> multiFaderV.server;
+        procedure @=> multiFaderV.procedure;
+        multiFaderV.connect();
     }
 
     fun void addMultiFaderH(string address, int width, IntFloatProcedure procedure)
     {
-	MultiFaderH multiFaderH;
-	address => multiFaderH.address;
-	", f" => multiFaderH.values;
-	width => multiFaderH.width;
-	server @=> multiFaderH.server;
-	procedure @=> multiFaderH.procedure;
-	multiFaderH.connect();
+        MultiFaderH multiFaderH;
+        address => multiFaderH.address;
+        "f" => multiFaderH.values;
+        width => multiFaderH.width;
+        server @=> multiFaderH.server;
+        procedure @=> multiFaderH.procedure;
+        multiFaderH.connect();
     }
 }
