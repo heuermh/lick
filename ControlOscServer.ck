@@ -229,7 +229,7 @@ class Slider extends Control
 
 public class ControlOscServer
 {
-    //OscSend client;
+    OscSend client;
     OscRecv server;
     8000 => int port;
 
@@ -237,6 +237,51 @@ public class ControlOscServer
     {
         port => server.port;
         server.listen();
+    }
+
+    fun void _send(string clientHost, int clientPort, string address, float value)
+    {
+        client.setHost(clientHost, clientPort);
+        client.startMsg(address, "f");
+        value => client.addFloat;
+        <<<"osc send ", clientHost, clientPort, address, value>>>;
+    }
+
+    fun void _send(string clientHost, int clientPort, string address, float value0, float value1)
+    {
+        client.setHost(clientHost, clientPort);
+        client.startMsg(address, "ff");
+        value0 => client.addFloat;
+        value1 => client.addFloat;
+        <<<"osc send ", clientHost, clientPort, address, value0, value1>>>;
+    }
+
+    fun void _send(string clientHost, int clientPort, string address, string value)
+    {
+        client.setHost(clientHost, clientPort);
+        client.startMsg(address, "s");
+        value => client.addString;
+        <<<"osc send ", clientHost, clientPort, address, value>>>;
+    }
+
+    fun void label(string clientHost, int clientPort, string address, string value)
+    {
+        _send(clientHost, clientPort, address, value);
+    }
+
+    fun void button(string clientHost, int clientPort, string address, float value)
+    {
+        _send(clientHost, clientPort, address, value);
+    }
+
+    fun void knob(string clientHost, int clientPort, string address, float value)
+    {
+        _send(clientHost, clientPort, address, value);
+    }
+
+    fun void slider(string clientHost, int clientPort, string address, float value)
+    {
+        _send(clientHost, clientPort, address, value);
     }
 
     fun void addAccelerometer(string address, FloatFloatFloatProcedure procedure)
