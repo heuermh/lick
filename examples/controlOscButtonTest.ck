@@ -29,8 +29,8 @@ class Status extends FloatProcedure
     fun void run(float value)
     {
         <<<status, value>>>;
-        controlOsc.label("192.168.11.17", 51000, "/status", status + ", " + value);
-        controlOsc.label("192.168.11.17", 51000, status + "Label", status + ", " + value);
+        controlOsc.label("192.168.1.100", 9000, "/status", status + ", " + value);
+        controlOsc.label("192.168.1.100", 9000, status + "Label", status + ", " + value);
     }
 }
 
@@ -62,7 +62,7 @@ while (true)
 {
     10::second => now;
     <<<"heartbeat">>>;
-    controlOsc.button("192.168.11.17", 51000, "/visualToggleButton", 1.0);
+    controlOsc.button("192.168.1.100", 9000, "/visualToggleButton", 1.0);
 }
 
 /*

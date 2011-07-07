@@ -172,6 +172,10 @@ Machine.add("Edge.ck");
 Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
+// intervals
+Machine.add("Interval.ck");
+Machine.add("Intervals.ck");
+
 // unit test
 Machine.add("Assert.ck");
 
