@@ -23,27 +23,28 @@
 BeeThree bt => dac;
 440 => bt.freq;
 
-Intervals.octave() @=> Interval right;
-Intervals.inversion(Intervals.octave()) @=> Interval left;
+ArrayList keyMapping;
+keyMapping.size(256);
+keyMapping.assign(Intervals.unison());
+
+// asdf, in US keyboard layout
+keyMapping.set(30, Intervals.majorSeventh().invert());
+keyMapping.set(31, Intervals.perfectFifth().invert());
+keyMapping.set(32, Intervals.perfectFourth().invert());
+keyMapping.set(33, Intervals.majorThird().invert());
+// jkl;
+keyMapping.set(36, Intervals.majorThird());
+keyMapping.set(37, Intervals.perfectFourth());
+keyMapping.set(38, Intervals.perfectFifth());
+keyMapping.set(39, Intervals.majorSeventh());
 
 class KeyDown extends IntProcedure
 {
     fun void run(int value)
     {
-        if (value == 32) // 'd'
-        {
-            left.evaluate(bt.freq()) => bt.freq;
-            bt.noteOn(1.0);
-        }
-        else if (value == 37) // 'k'
-        {
-            right.evaluate(bt.freq()) => bt.freq;
-            bt.noteOn(1.0);
-        }
-        else // any other key
-        {
-            bt.noteOn(1.0);
-        }
+        keyMapping.get(value) $ Interval @=> Interval interval;
+        interval.evaluate(bt.freq()) => bt.freq;
+        bt.noteOn(1.0);
     }
 }
 

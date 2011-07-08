@@ -33,10 +33,27 @@ public class Interval extends FloatFunction
         return (antecedent / consequent) * value;
     }
 
-    fun void inversion()
+    // todo:  need a better verb for this
+    fun Interval invert()
     {
         antecedent => float tmp;
         consequent => antecedent;
         tmp => consequent;
+        return this;
+    }
+
+    fun Interval inversion()
+    {
+        /*
+          For intervals identified by their ratio, the inversion is determined by
+          reversing the ratio and multiplying by 2. For example, the inversion of a
+          5:4 ratio is an 8:5 ratio.
+
+          http://en.wikipedia.org/wiki/Interval_(music)#Inversion
+        */
+        antecedent => float tmp;
+        consequent * 2.0 => antecedent;
+        tmp => consequent;
+        return this;
     }
 }
