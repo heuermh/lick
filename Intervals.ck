@@ -440,7 +440,7 @@ class Octave extends Interval
     2.0 => antecedent;
     "2:1" => ratio;
     "Octave" => name;
-    "Octave or diapason" => name;
+    "Octave or diapason" => description;
 }
 
 class Fifteenth extends Interval
@@ -448,7 +448,7 @@ class Fifteenth extends Interval
     4.0 => antecedent;
     "4:1" => ratio;
     "Fifteenth" => name;
-    "Fifteenth or two octaves" => name;
+    "Fifteenth or two octaves" => description;
 }
 
 class MinorSecond extends Interval
