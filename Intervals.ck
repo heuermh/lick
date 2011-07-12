@@ -406,15 +406,36 @@ public class Intervals
         return interval;
     }
 
-    fun static Interval invert(Interval interval)
+    fun static Interval asc(Interval interval)
     {
-        Interval invert;
-        interval.antecedent => invert.antecedent;
-        interval.consequent => invert.consequent;
-        interval.ratio => invert.ratio;
-        interval.name => invert.name;
-        interval.description => invert.description;
-        return invert.invert();
+        return ascending(interval);
+    }
+
+    fun static Interval ascending(Interval interval)
+    {
+        Interval ascending;
+        interval.antecedent => ascending.antecedent;
+        interval.consequent => ascending.consequent;
+        interval.ratio => ascending.ratio;
+        interval.name => ascending.name;
+        interval.description => ascending.description;
+        return ascending.asc();
+    }
+
+    fun static Interval desc(Interval interval)
+    {
+        return descending(interval);
+    }
+
+    fun static Interval descending(Interval interval)
+    {
+        Interval descending;
+        interval.antecedent => descending.antecedent;
+        interval.consequent => descending.consequent;
+        interval.ratio => descending.ratio;
+        interval.name => descending.name;
+        interval.description => descending.description;
+        return descending.desc();
     }
 
     fun static Interval inversion(Interval interval)

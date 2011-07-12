@@ -28,12 +28,12 @@ keyMapping.size(256);
 keyMapping.assign(Intervals.unison());
 
 // asdf, in US keyboard layout
-keyMapping.set(30, Intervals.majorSeventh().invert());
-keyMapping.set(31, Intervals.perfectFifth().invert());
-keyMapping.set(32, Intervals.perfectFourth().invert());
-keyMapping.set(33, Intervals.majorThird().invert());
+keyMapping.set(30, Intervals.majorSeventh().desc());
+keyMapping.set(31, Intervals.perfectFifth().desc());
+keyMapping.set(32, Intervals.perfectFourth().desc());
+keyMapping.set(33, Intervals.majorThird().desc());
 // jkl;
-keyMapping.set(36, Intervals.majorThird());
+keyMapping.set(36, Intervals.majorThird()); // asc() is default
 keyMapping.set(37, Intervals.perfectFourth());
 keyMapping.set(38, Intervals.perfectFifth());
 keyMapping.set(39, Intervals.majorSeventh());
