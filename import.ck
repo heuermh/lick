@@ -172,9 +172,11 @@ Machine.add("Edge.ck");
 Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
-// intervals
+// intervals, chords
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
+Machine.add("Chord.ck");
+Machine.add("Chords.ck");
 
 // unit test
 Machine.add("Assert.ck");
