@@ -21,24 +21,7 @@
 */
 
 BeeThree bt => dac;
-
-261.6256 => float c;
-440.0 => float a;
-
-Play play;
-Chords.majorTriad(c, "C") @=> Chord c_maj;
-Chords.minorTriad(a, "A") @=> Chord a_min;
-
-2::second => now;
-
-for (0 => int i; i < 10; i++)
-{
-    <<<c_maj.symbol>>>;
-    c_maj.forEach(play);
-
-    <<<a_maj.symbol>>>;
-    a_maj.forEach(play);
-}
+bt.noteOff(1.0);
 
 class Play extends FloatProcedure
 {
@@ -51,3 +34,23 @@ class Play extends FloatProcedure
         100::ms => now;
     }
 }
+
+261.6256 => float c;
+440.0 => float a;
+
+Play play;
+Chords.majorTriad(c, "C") @=> Chord c_maj;
+Chords.minorTriad(a, "A") @=> Chord a_min;
+
+2::second => now;
+
+for (0 => int i; i < 4; i++)
+{
+    <<<c_maj.symbol>>>;
+    c_maj.forEach(play);
+
+    <<<a_min.symbol>>>;
+    a_min.forEach(play);
+}
+
+play.run(c_maj.root);

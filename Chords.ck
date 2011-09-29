@@ -20,23 +20,312 @@
 
 */
 
-public class Chords
+class Fifth extends Chord
 {
-    fun static MajorFifth majorFifth(float root)
+    Interval @ fifth;
+
+    fun void forEach(FloatProcedure procedure)
     {
-        MajorFifth majorFifth;
-        root => majorFifth.root;
-        return majorFifth;
+        procedure.run(root);
+        procedure.run(fifth.evaluate(root));
     }
 
-    fun static MajorTriad majorTriad(float root, string name)
+    fun Interval sampleInterval()
     {
-        MajorFifth majorFifth;
-        root => majorFifth.root;
-        name + " " + majorFifth.name => majorFifth.name;
-        name + " " + majorFifth.description => majorFifth.description;
-        name + majorFifth.symbol => majorFifth.symbol;
-        return majorFifth;
+        if (Std.rand2(0, 1))
+        {
+            return unison;
+        }
+        else
+        {
+            return fifth;
+        }
+    }
+}
+
+class PerfectFifth extends Fifth
+{
+    Intervals.perfectFifth() @=> fifth;
+    "PerfectFifth" => name;
+    "perfect fifth" => description;
+    "5" => symbol;
+}
+
+class AugmentedFifth extends Fifth
+{
+    Intervals.minorSixth() @=> fifth;
+    "AugmentedFifth" => name;
+    "augmented fifth" => description;
+    "aug5" => symbol;
+}
+
+class DiminishedFifth extends Fifth
+{
+    Intervals.augmentedFourth() @=> fifth;
+    "DiminishedFifth" => name;
+    "diminished fifth" => description;
+    "dim5" => symbol;
+}
+
+class Triad extends Fifth
+{
+    Interval @ third;
+
+    fun void forEach(FloatProcedure procedure)
+    {
+        procedure.run(root);
+        procedure.run(third.evaluate(root));
+        procedure.run(fifth.evaluate(root));
+    }
+
+    fun Interval sampleInterval()
+    {
+        Std.rand2(0, 2) => int s;
+        if (s == 0)
+        {
+            return unison;
+        }
+        else if (s == 1)
+        {
+            return third;
+        }
+        else
+        {
+            return fifth;
+        }
+    }
+}
+
+class MajorTriad extends Triad
+{
+    Intervals.majorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    "MajorTriad" => name;
+    "major triad" => description;
+    "maj" => symbol;
+}
+
+class MinorTriad extends Triad
+{
+    Intervals.minorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    "MinorTriad" => name;
+    "minor triad" => description;
+    "min" => symbol;
+}
+
+class AugmentedTriad extends Triad
+{
+    Intervals.majorThird() @=> third;
+    Intervals.minorSixth() @=> fifth;
+    "AugmentedTriad" => name;
+    "augmented triad" => description;
+    "aug" => symbol;
+}
+
+class DiminishedTriad extends Triad
+{
+    Intervals.minorThird() @=> third;
+    Intervals.augmentedFourth() @=> fifth;
+    "DiminishedTriad" => name;
+    "diminished triad" => description;
+    "dim" => symbol;
+}
+
+class Seventh extends Triad
+{
+    Interval @ seventh;
+
+    fun void forEach(FloatProcedure procedure)
+    {
+        procedure.run(root);
+        procedure.run(third.evaluate(root));
+        procedure.run(fifth.evaluate(root));
+        procedure.run(seventh.evaluate(root));
+    }
+
+    fun Interval sampleInterval()
+    {
+        Std.rand2(0, 3) => int s;
+        if (s == 0)
+        {
+            return unison;
+        }
+        else if (s == 1)
+        {
+            return third;
+        }
+        else if (s == 1)
+        {
+            return fifth;
+        }
+        else
+        {
+            return seventh;
+        }
+    }
+}
+
+class DiminishedSeventh extends Seventh
+{
+    Intervals.minorThird() @=> third;
+    Intervals.augmentedFourth() @=> fifth;
+    Intervals.majorSixth() @=> seventh;
+    "DiminishedSeventh" => name;
+    "diminished seventh" => description;
+    "dim7" => symbol;
+}
+
+class HalfDiminishedSeventh extends Seventh
+{
+    Intervals.minorThird() @=> third;
+    Intervals.augmentedFourth() @=> fifth;
+    Intervals.minorSeventh() @=> seventh;
+    "HalfDiminishedSeventh" => name;
+    "half-diminished seventh" => description;
+    "min7(b5)" => symbol;
+}
+
+class MinorSeventh extends Seventh
+{
+    Intervals.minorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    Intervals.minorSeventh() @=> seventh;
+    "MinorSeventh" => name;
+    "minor seventh" => description;
+    "min7" => symbol;
+}
+
+class MinorMajorSeventh extends Seventh
+{
+    Intervals.minorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    Intervals.majorSeventh() @=> seventh;
+    "MinorMajorSeventh" => name;
+    "minor major seventh" => description;
+    "min/maj7" => symbol;
+}
+
+class DominantSeventh extends Seventh
+{
+    Intervals.majorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    Intervals.minorSeventh() @=> seventh;
+    "DominantSeventh" => name;
+    "dominant seventh" => description;
+    "dom7" => symbol;
+}
+
+class MajorSeventh extends Seventh
+{
+    Intervals.majorThird() @=> third;
+    Intervals.perfectFifth() @=> fifth;
+    Intervals.majorSeventh() @=> seventh;
+    "MajorSeventh" => name;
+    "major seventh" => description;
+    "maj7" => symbol;
+}
+
+class AugmentedSeventh extends Seventh
+{
+    Intervals.majorThird() @=> third;
+    Intervals.minorSixth() @=> fifth;
+    Intervals.minorSeventh() @=> seventh;
+    "AugmentedSeventh" => name;
+    "augmented seventh" => description;
+    "aug7" => symbol;
+}
+
+class AugmentedMajorSeventh extends Seventh
+{
+    Intervals.majorThird() @=> third;
+    Intervals.minorSixth() @=> fifth;
+    Intervals.majorSeventh() @=> seventh;
+    "AugmentedMajorSeventh" => name;
+    "augmented major seventh" => description;
+    "maj7(#5)" => symbol;
+}
+
+class IntervalListChord extends Chord
+{
+    List @ intervals;
+
+    fun void forEach(FloatProcedure procedure)
+    {
+        procedure.run(root);
+        intervals.iterator() @=> Iterator iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() $ Interval @=> Interval interval;
+            procedure.run(interval.evaluate(root));
+        }
+    }
+
+    fun Interval sampleInterval()
+    {
+        if (Std.rand2(0, intervals.size() + 1))
+        {
+            intervals.sample() $ Interval @=> Interval interval;
+            return interval;
+        }
+        else
+        {
+            return unison;
+        }
+    }
+}
+
+public class Chords
+{
+    fun static PerfectFifth perfectFifth(float root)
+    {
+        PerfectFifth perfectFifth;
+        root => perfectFifth.root;
+        return perfectFifth;
+    }
+
+    fun static PerfectFifth perfectFifth(float root, string name)
+    {
+        PerfectFifth perfectFifth;
+        root => perfectFifth.root;
+        name + " " + perfectFifth.name => perfectFifth.name;
+        name + " " + perfectFifth.description => perfectFifth.description;
+        name + perfectFifth.symbol => perfectFifth.symbol;
+        return perfectFifth;
+    }
+
+    fun static AugmentedFifth augmentedFifth(float root)
+    {
+        AugmentedFifth augmentedFifth;
+        root => augmentedFifth.root;
+        return augmentedFifth;
+    }
+
+    fun static AugmentedFifth augmentedFifth(float root, string name)
+    {
+        AugmentedFifth augmentedFifth;
+        root => augmentedFifth.root;
+        name + " " + augmentedFifth.name => augmentedFifth.name;
+        name + " " + augmentedFifth.description => augmentedFifth.description;
+        name + augmentedFifth.symbol => augmentedFifth.symbol;
+        return augmentedFifth;
+    }
+
+    fun static DiminishedFifth diminishedFifth(float root)
+    {
+        DiminishedFifth diminishedFifth;
+        root => diminishedFifth.root;
+        return diminishedFifth;
+    }
+
+    fun static DiminishedFifth diminishedFifth(float root, string name)
+    {
+        DiminishedFifth diminishedFifth;
+        root => diminishedFifth.root;
+        name + " " + diminishedFifth.name => diminishedFifth.name;
+        name + " " + diminishedFifth.description => diminishedFifth.description;
+        name + diminishedFifth.symbol => diminishedFifth.symbol;
+        return diminishedFifth;
     }
 
     fun static MajorTriad majorTriad(float root)
@@ -158,21 +447,21 @@ public class Chords
         return minorSeventh;
     }
 
-    fun static MajorMinorSeventh majorMinorSeventh(float root)
+    fun static MinorMajorSeventh minorMajorSeventh(float root)
     {
-        MajorMinorSeventh majorMinorSeventh;
-        root => majorMinorSeventh.root;
-        return majorMinorSeventh;
+        MinorMajorSeventh minorMajorSeventh;
+        root => minorMajorSeventh.root;
+        return minorMajorSeventh;
     }
 
-    fun static MajorMinorSeventh majorMinorSeventh(float root, string name)
+    fun static MinorMajorSeventh minorMajorSeventh(float root, string name)
     {
-        MajorMinorSeventh majorMinorSeventh;
-        root => majorMinorSeventh.root;
-        name + " " + majorMinorSeventh.name => majorMinorSeventh.name;
-        name + " " + majorMinorSeventh.description => majorMinorSeventh.description;
-        name + majorMinorSeventh.symbol => majorMinorSeventh.symbol;
-        return majorMinorSeventh;
+        MinorMajorSeventh minorMajorSeventh;
+        root => minorMajorSeventh.root;
+        name + " " + minorMajorSeventh.name => minorMajorSeventh.name;
+        name + " " + minorMajorSeventh.description => minorMajorSeventh.description;
+        name + minorMajorSeventh.symbol => minorMajorSeventh.symbol;
+        return minorMajorSeventh;
     }
 
     fun static DominantSeventh dominantSeventh(float root)
@@ -260,7 +549,7 @@ public class Chords
         return triad;
     }
 
-    fun static Seventh seventh(float root, Interval interval0, Interval interval1, Interval interval2)
+    fun static Seventh seventh(float root, Interval third, Interval fifth, Interval seventh)
     {
         Seventh chord;
         root => chord.root;
@@ -334,244 +623,5 @@ public class Chords
         root => intervalListChord.root;
         intervals @=> intervalListChord.intervals;
         return intervalListChord;
-    }
-}
-
-class Fifth extends Chord
-{
-    Interval @ fifth;
-
-    fun void forEach(FloatProcedure procedure)
-    {
-        procedure.run(root);
-        procedure.run(fifth.evaluate(root));
-    }
-
-    fun Interval sampleInterval()
-    {
-        if (rand(0, 1))
-        {
-            return unison;
-        }
-        else
-        {
-            return fifth;
-        }
-    }
-}
-
-class MajorFifth extends Fifth
-{
-    Intervals.majorFifth() @=> fifth;
-    "MajorFifth" => name;
-    "major fifth" => description;
-    "5" => symbol;
-}
-
-class Triad extends Fifth
-{
-    Interval @ third;
-
-    fun void forEach(FloatProcedure procedure)
-    {
-        procedure.run(root);
-        procedure.run(third.evaluate(root));
-        procedure.run(fifth.evaluate(root));
-    }
-
-    fun Interval sampleInterval()
-    {
-        rand(0, 2) => int sample;
-        if (sample == 0)
-        {
-            return unison;
-        }
-        else if (sample == 1)
-        {
-            return third;
-        }
-        else
-        {
-            return fifth;
-        }
-    }
-}
-
-class MajorTriad extends Triad
-{
-    Intervals.majorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    "MajorTriad" => name;
-    "major triad" => description;
-    "maj" => symbol;
-}
-
-class MinorTriad extends Triad
-{
-    Intervals.minorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    "MinorTriad" => name;
-    "minor triad" => description;
-    "min" => symbol;
-}
-
-class AugmentedTriad extends Triad
-{
-    Intervals.majorThird() @=> third;
-    Intervals.augmentedFifth() @=> fifth;
-    "AugmentedTriad" => name;
-    "augmented triad" => description;
-    "aug" => symbol;
-}
-
-class DiminishedTriad extends Triad
-{
-    Intervals.minorThird() @=> third;
-    Intervals.diminishedFifth() @=> fifth;
-    "DiminishedTriad" => name;
-    "diminished triad" => description;
-    "dim" => symbol;
-}
-
-class Seventh extends Triad
-{
-    Interval @ seventh;
-
-    fun void forEach(FloatProcedure procedure)
-    {
-        procedure.run(root);
-        procedure.run(third.evaluate(root));
-        procedure.run(fifth.evaluate(root));
-        procedure.run(seventh.evaluate(root));
-    }
-
-    fun Interval sampleInterval()
-    {
-        rand(0, 3) => int sample;
-        if (sample == 0)
-        {
-            return unison;
-        }
-        else if (sample == 1)
-        {
-            return third;
-        }
-        else if (sample == 1)
-        {
-            return fifth;
-        }
-        else
-        {
-            return seventh;
-        }
-    }
-}
-
-class DiminishedSeventh extends Seventh
-{
-    Intervals.minorThird() @=> third;
-    Intervals.diminishedFifth() @=> fifth;
-    Intervals.diminishedSeventh() @=> seventh;
-    "DiminishedSeventh" => name;
-    "diminished seventh" => description;
-    "dim7" => symbol;
-}
-
-class HalfDiminishedSeventh extends Seventh
-{
-    Intervals.minorThird() @=> third;
-    Intervals.diminishedFifth() @=> fifth;
-    Intervals.minorSeventh() @=> seventh;
-    "HalfDiminishedSeventh" => name;
-    "half-diminished seventh" => description;
-    "min7(b5)" => symbol;
-}
-
-class MinorSeventh extends Seventh
-{
-    Intervals.minorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    Intervals.minorSeventh() @=> seventh;
-    "MinorSeventh" => name;
-    "minor seventh" => description;
-    "min7" => symbol;
-}
-
-class MinorMajorSeventh extends Seventh
-{
-    Intervals.minorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    Intervals.majorSeventh() @=> seventh;
-    "MinorMajorSeventh" => name;
-    "minor major seventh" => description;
-    "min/maj7" => symbol;
-}
-
-class DominantSeventh extends Seventh
-{
-    Intervals.majorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    Intervals.minorSeventh() @=> seventh;
-    "DominantSeventh" => name;
-    "dominant seventh" => description;
-    "dom7" => symbol;
-}
-
-class MajorSeventh extends Seventh
-{
-    Intervals.majorThird() @=> third;
-    Intervals.perfectFifth() @=> fifth;
-    Intervals.majorSeventh() @=> seventh;
-    "MajorSeventh" => name;
-    "major seventh" => description;
-    "maj7" => symbol;
-}
-
-class AugmentedSeventh extends Seventh
-{
-    Intervals.majorThird() @=> third;
-    Intervals.augmentedFifth() @=> fifth;
-    Intervals.minorSeventh() @=> seventh;
-    "AugmentedSeventh" => name;
-    "augmented seventh" => description;
-    "aug7" => symbol;
-}
-
-class AugmentedMajorSeventh extends Seventh
-{
-    Intervals.majorThird() @=> third;
-    Intervals.augmentedFifth() @=> fifth;
-    Intervals.majorSeventh() @=> seventh;
-    "AugmentedMajorSeventh" => name;
-    "augmented major seventh" => description;
-    "maj7(#5)" => symbol;
-}
-
-class IntervalListChord extends Chord
-{
-    List @ intervals;
-
-    fun void forEach(FloatProcedure procedure)
-    {
-        procedure.run(root);
-        intervals.iterator() @=> Iterator iterator;
-        while (iterator.hasNext())
-        {
-            iterator.next() @=> Interval interval;
-            procedure.run(interval.evaluate(root));
-        }
-    }
-
-    fun Interval sampleInterval()
-    {
-        if (rand(0, intervals.size() + 1))
-        {
-            intervals.sample() $ Interval @=> Interval interval;
-            return interval;
-        }
-        else
-        {
-            return unison;
-        }
     }
 }
