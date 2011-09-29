@@ -20,7 +20,8 @@ LiCK includes:
  - Composite procedures for building loops
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
- - Monome, TouchOSC integration
+ - Monome, ControlOSC, TouchOSC integration
+ - Intervals, Chords, Scales
  - "ChucK-Unit", an Assert class for creating unit tests
 
 For further documentation, please see
