@@ -107,6 +107,36 @@ public class Intervals
         return majorSeventh;
     }
 
+    fun static MinorNinth minorNinth()
+    {
+        MinorNinth minorNinth;
+        return minorNinth;
+    }
+
+    fun static MajorNinth majorNinth()
+    {
+        MajorNinth majorNinth;
+        return majorNinth;
+    }
+
+    fun static PerfectEleventh perfectEleventh()
+    {
+        PerfectEleventh perfectEleventh;
+        return perfectEleventh;
+    }
+
+    fun static MinorThirteenth minorThirteenth()
+    {
+        MinorThirteenth minorThirteenth;
+        return minorThirteenth;
+    }
+
+    fun static MajorThirteenth majorThirteenth()
+    {
+        MajorThirteenth majorThirteenth;
+        return majorThirteenth;
+    }
+
     fun static PythagoreanComma pythagoreanComma()
     {
         PythagoreanComma pythagoreanComma;
@@ -569,6 +599,46 @@ class MajorSeventh extends Interval
     "2^(11/12):1" => ratio;
     "MajorSeventh" => name;
     "Equal-tempered major seventh" => description;
+}
+
+class MinorNinth extends Interval
+{
+    Math.pow(2, (13.0/12.0)) => antecedent;
+    "2^(13/12):1" => ratio;
+    "MinorNinth" => name;
+    "Equal-tempered minor ninth, compound of octave and minor second" => description;
+}
+
+class MajorNinth extends Interval
+{
+    Math.pow(2, (14.0/12.0)) => antecedent;
+    "2^(14/12):1" => ratio;
+    "MajorNinth" => name;
+    "Equal-tempered major ninth, compound of octave and major second" => description;
+}
+
+class PerfectEleventh extends Interval
+{
+    Math.pow(2, (17.0/12.0)) => antecedent;
+    "2^(17/12):1" => ratio;
+    "PerfectEleventh" => name;
+    "Perfect eleventh, compound of octave and perfect fourth" => description;
+}
+
+class MinorThirteenth extends Interval
+{
+    Math.pow(2, (21.0/12.0)) => antecedent;
+    "2^(21/12):1" => ratio;
+    "MinorThirteenth" => name;
+    "Equal-tempered minor thirteenth, compound of octave and minor sixth" => description;
+}
+
+class MajorThirteenth extends Interval
+{
+    Math.pow(2, (20.0/12.0)) => antecedent;
+    "2^(20/12):1" => ratio;
+    "MajorThirteenth" => name;
+    "Equal-tempered major thirteenth, compound of octave and major sixth" => description;
 }
 
 class PythagoreanComma extends Interval

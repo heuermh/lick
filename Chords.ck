@@ -248,7 +248,7 @@ class AugmentedMajorSeventh extends Seventh
 
 class IntervalListChord extends Chord
 {
-    List @ intervals;
+    ArrayList @ intervals;
 
     fun void forEach(FloatProcedure procedure)
     {
@@ -273,6 +273,173 @@ class IntervalListChord extends Chord
             return unison;
         }
     }
+}
+
+class DominantNinth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    "DominantNinth" => name;
+    "dominant ninth" => description;
+    "9" => symbol;
+}
+
+class DominantEleventh extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    "DominantEleventh" => name;
+    "dominant eleventh" => description;
+    "11" => symbol;
+}
+
+class DominantThirteenth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    intervals.add(Intervals.majorThirteenth());
+    "DominantThirteenth" => name;
+    "dominant thirteenth" => description;
+    "13" => symbol;
+}
+
+class MajorNinth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorSeventh());
+    intervals.add(Intervals.majorNinth());
+    "MajorNinth" => name;
+    "major ninth" => description;
+    "maj9" => symbol;
+}
+
+class MajorEleventh extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    "MajorEleventh" => name;
+    "major eleventh" => description;
+    "maj11" => symbol;
+}
+
+class MajorThirteenth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    intervals.add(Intervals.majorThirteenth());
+    "MajorThirteenth" => name;
+    "major thirteenth" => description;
+    "maj13" => symbol;
+}
+
+class MinorNinth extends IntervalListChord
+{
+    intervals.add(Intervals.minorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    "MinorNinth" => name;
+    "minor ninth" => description;
+    "min9" => symbol;
+}
+
+class MinorEleventh extends IntervalListChord
+{
+    intervals.add(Intervals.minorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    "MinorEleventh" => name;
+    "minor eleventh" => description;
+    "min11" => symbol;
+}
+
+class MinorThirteenth extends IntervalListChord
+{
+    intervals.add(Intervals.minorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.minorSeventh());
+    intervals.add(Intervals.majorNinth());
+    intervals.add(Intervals.perfectEleventh());
+    intervals.add(Intervals.majorThirteenth());
+    "MinorThirteenth" => name;
+    "minor thirteenth" => description;
+    "min13" => symbol;
+}
+
+class AddNine extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorNinth());
+    "AddNine" => name;
+    "add nine" => description;
+    "add9" => symbol;
+}
+
+class MajorFourth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.perfectEleventh());
+    "MajorFourth" => name;
+    "major fourth" => description;
+    "add11" => symbol;
+}
+
+class MajorSixth extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorSixth());
+    "MajorSixth" => name;
+    "major sixth" => description;
+    "6" => symbol;
+}
+
+class SixNine extends IntervalListChord
+{
+    intervals.add(Intervals.majorThird());
+    intervals.add(Intervals.perfectFifth());
+    intervals.add(Intervals.majorSixth());
+    intervals.add(Intervals.majorNinth());
+    "SixNine" => name;
+    "six-nine" => description;
+    "6/9" => symbol;
+}
+
+class SuspendedSecond extends IntervalListChord
+{
+    intervals.add(Intervals.majorSecond());
+    intervals.add(Intervals.perfectFifth());
+    "SuspendedSecond" => name;
+    "suspended second" => description;
+    "sus2" => symbol;
+}
+
+class SuspendedFourth extends IntervalListChord
+{
+    intervals.add(Intervals.perfectFourth());
+    intervals.add(Intervals.perfectFifth());
+    "SuspendedFourth" => name;
+    "suspended fourth" => description;
+    "sus4" => symbol;
 }
 
 public class Chords
@@ -532,6 +699,261 @@ public class Chords
         return augmentedMajorSeventh;
     }
 
+    fun static DominantNinth dominantNinth(float root)
+    {
+        DominantNinth dominantNinth;
+        root => dominantNinth.root;
+        return dominantNinth;
+    }
+
+    fun static DominantNinth dominantNinth(float root, string name)
+    {
+        DominantNinth dominantNinth;
+        root => dominantNinth.root;
+        name + " " + dominantNinth.name => dominantNinth.name;
+        name + " " + dominantNinth.description => dominantNinth.description;
+        name + dominantNinth.symbol => dominantNinth.symbol;
+        return dominantNinth;
+    }
+
+    fun static MinorNinth minorNinth(float root)
+    {
+        MinorNinth minorNinth;
+        root => minorNinth.root;
+        return minorNinth;
+    }
+
+    fun static MinorNinth minorNinth(float root, string name)
+    {
+        MinorNinth minorNinth;
+        root => minorNinth.root;
+        name + " " + minorNinth.name => minorNinth.name;
+        name + " " + minorNinth.description => minorNinth.description;
+        name + minorNinth.symbol => minorNinth.symbol;
+        return minorNinth;
+    }
+
+    fun static MajorNinth majorNinth(float root)
+    {
+        MajorNinth majorNinth;
+        root => majorNinth.root;
+        return majorNinth;
+    }
+
+    fun static MajorNinth majorNinth(float root, string name)
+    {
+        MajorNinth majorNinth;
+        root => majorNinth.root;
+        name + " " + majorNinth.name => majorNinth.name;
+        name + " " + majorNinth.description => majorNinth.description;
+        name + majorNinth.symbol => majorNinth.symbol;
+        return majorNinth;
+    }
+
+    fun static DominantEleventh dominantEleventh(float root)
+    {
+        DominantEleventh dominantEleventh;
+        root => dominantEleventh.root;
+        return dominantEleventh;
+    }
+
+    fun static DominantEleventh dominantEleventh(float root, string name)
+    {
+        DominantEleventh dominantEleventh;
+        root => dominantEleventh.root;
+        name + " " + dominantEleventh.name => dominantEleventh.name;
+        name + " " + dominantEleventh.description => dominantEleventh.description;
+        name + dominantEleventh.symbol => dominantEleventh.symbol;
+        return dominantEleventh;
+    }
+
+    fun static MinorEleventh minorEleventh(float root)
+    {
+        MinorEleventh minorEleventh;
+        root => minorEleventh.root;
+        return minorEleventh;
+    }
+
+    fun static MinorEleventh minorEleventh(float root, string name)
+    {
+        MinorEleventh minorEleventh;
+        root => minorEleventh.root;
+        name + " " + minorEleventh.name => minorEleventh.name;
+        name + " " + minorEleventh.description => minorEleventh.description;
+        name + minorEleventh.symbol => minorEleventh.symbol;
+        return minorEleventh;
+    }
+
+    fun static MajorEleventh majorEleventh(float root)
+    {
+        MajorEleventh majorEleventh;
+        root => majorEleventh.root;
+        return majorEleventh;
+    }
+
+    fun static MajorEleventh majorEleventh(float root, string name)
+    {
+        MajorEleventh majorEleventh;
+        root => majorEleventh.root;
+        name + " " + majorEleventh.name => majorEleventh.name;
+        name + " " + majorEleventh.description => majorEleventh.description;
+        name + majorEleventh.symbol => majorEleventh.symbol;
+        return majorEleventh;
+    }
+
+    fun static DominantThirteenth dominantThirteenth(float root)
+    {
+        DominantThirteenth dominantThirteenth;
+        root => dominantThirteenth.root;
+        return dominantThirteenth;
+    }
+
+    fun static DominantThirteenth dominantThirteenth(float root, string name)
+    {
+        DominantThirteenth dominantThirteenth;
+        root => dominantThirteenth.root;
+        name + " " + dominantThirteenth.name => dominantThirteenth.name;
+        name + " " + dominantThirteenth.description => dominantThirteenth.description;
+        name + dominantThirteenth.symbol => dominantThirteenth.symbol;
+        return dominantThirteenth;
+    }
+
+    fun static MinorThirteenth minorThirteenth(float root)
+    {
+        MinorThirteenth minorThirteenth;
+        root => minorThirteenth.root;
+        return minorThirteenth;
+    }
+
+    fun static MinorThirteenth minorThirteenth(float root, string name)
+    {
+        MinorThirteenth minorThirteenth;
+        root => minorThirteenth.root;
+        name + " " + minorThirteenth.name => minorThirteenth.name;
+        name + " " + minorThirteenth.description => minorThirteenth.description;
+        name + minorThirteenth.symbol => minorThirteenth.symbol;
+        return minorThirteenth;
+    }
+
+    fun static MajorThirteenth majorThirteenth(float root)
+    {
+        MajorThirteenth majorThirteenth;
+        root => majorThirteenth.root;
+        return majorThirteenth;
+    }
+
+    fun static MajorThirteenth majorThirteenth(float root, string name)
+    {
+        MajorThirteenth majorThirteenth;
+        root => majorThirteenth.root;
+        name + " " + majorThirteenth.name => majorThirteenth.name;
+        name + " " + majorThirteenth.description => majorThirteenth.description;
+        name + majorThirteenth.symbol => majorThirteenth.symbol;
+        return majorThirteenth;
+    }
+
+    fun static AddNine addNine(float root)
+    {
+        AddNine addNine;
+        root => addNine.root;
+        return addNine;
+    }
+
+    fun static AddNine addNine(float root, string name)
+    {
+        AddNine addNine;
+        root => addNine.root;
+        name + " " + addNine.name => addNine.name;
+        name + " " + addNine.description => addNine.description;
+        name + addNine.symbol => addNine.symbol;
+        return addNine;
+    }
+
+    fun static MajorFourth majorFourth(float root)
+    {
+        MajorFourth majorFourth;
+        root => majorFourth.root;
+        return majorFourth;
+    }
+
+    fun static MajorFourth majorFourth(float root, string name)
+    {
+        MajorFourth majorFourth;
+        root => majorFourth.root;
+        name + " " + majorFourth.name => majorFourth.name;
+        name + " " + majorFourth.description => majorFourth.description;
+        name + majorFourth.symbol => majorFourth.symbol;
+        return majorFourth;
+    }
+
+    fun static MajorSixth majorSixth(float root)
+    {
+        MajorSixth majorSixth;
+        root => majorSixth.root;
+        return majorSixth;
+    }
+
+    fun static MajorSixth majorSixth(float root, string name)
+    {
+        MajorSixth majorSixth;
+        root => majorSixth.root;
+        name + " " + majorSixth.name => majorSixth.name;
+        name + " " + majorSixth.description => majorSixth.description;
+        name + majorSixth.symbol => majorSixth.symbol;
+        return majorSixth;
+    }
+
+    fun static SixNine sixNine(float root)
+    {
+        SixNine sixNine;
+        root => sixNine.root;
+        return sixNine;
+    }
+
+    fun static SixNine sixNine(float root, string name)
+    {
+        SixNine sixNine;
+        root => sixNine.root;
+        name + " " + sixNine.name => sixNine.name;
+        name + " " + sixNine.description => sixNine.description;
+        name + sixNine.symbol => sixNine.symbol;
+        return sixNine;
+    }
+
+    fun static SuspendedSecond suspendedSecond(float root)
+    {
+        SuspendedSecond suspendedSecond;
+        root => suspendedSecond.root;
+        return suspendedSecond;
+    }
+
+    fun static SuspendedSecond suspendedSecond(float root, string name)
+    {
+        SuspendedSecond suspendedSecond;
+        root => suspendedSecond.root;
+        name + " " + suspendedSecond.name => suspendedSecond.name;
+        name + " " + suspendedSecond.description => suspendedSecond.description;
+        name + suspendedSecond.symbol => suspendedSecond.symbol;
+        return suspendedSecond;
+    }
+
+    fun static SuspendedFourth suspendedFourth(float root)
+    {
+        SuspendedFourth suspendedFourth;
+        root => suspendedFourth.root;
+        return suspendedFourth;
+    }
+
+    fun static SuspendedFourth suspendedFourth(float root, string name)
+    {
+        SuspendedFourth suspendedFourth;
+        root => suspendedFourth.root;
+        name + " " + suspendedFourth.name => suspendedFourth.name;
+        name + " " + suspendedFourth.description => suspendedFourth.description;
+        name + suspendedFourth.symbol => suspendedFourth.symbol;
+        return suspendedFourth;
+    }
+
     fun static Fifth fifth(float root, Interval fifth)
     {
         Fifth chord;
@@ -617,7 +1039,7 @@ public class Chords
         return intervalListChord;
     }
 
-    fun static IntervalListChord chord(float root, List intervals)
+    fun static IntervalListChord chord(float root, ArrayList intervals)
     {
         IntervalListChord intervalListChord;
         root => intervalListChord.root;
