@@ -41,3 +41,6 @@ euclid.addPattern("/pattern0", dump0);
 euclid.addPattern("/pattern1", dump1);
 
 euclid.connect();
+<<<"ready">>>;
+
+1::hour => now;

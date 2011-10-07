@@ -22,9 +22,9 @@
 
 class Pattern extends IntIntProcedure
 {
-    IntIntProcedure @ procedure;
-    IntIntProcedure @ noteOnProcedure;
-    IntIntProcedure @ noteOffProcedure;
+    IntIntProcedure procedure;
+    IntIntProcedure noteOnProcedure;
+    IntIntProcedure noteOffProcedure;
 
     fun void run(int pitch, int velocity)
     {

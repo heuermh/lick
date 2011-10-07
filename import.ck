@@ -192,6 +192,8 @@ Machine.add("Ozone.ck");
 //Machine.add("SooperLooper.ck");
 Machine.add("ControlOscServer.ck");
 Machine.add("TouchOscServer.ck");
+Machine.add("EuclidOsc.ck");
+Machine.add("EuclidMidi.ck");
 
 // simulators
 // Machine.add("DroneLab.ck");

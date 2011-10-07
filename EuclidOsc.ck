@@ -54,13 +54,13 @@ class Control
 class Pattern extends Control
 {
     "iiii" => values;
-    IntProcedure @ noteProcedure;
-    IntProcedure @ channelProcedure;
-    IntProcedure @ pitchProcedure;
-    IntProcedure @ velocityProcedure;
-    IntIntIntProcedure @ noteOnProcedure;
-    IntIntIntProcedure @ noteOffProcedure;
-    IntIntIntIntProcedure @ procedure;
+    IntProcedure noteProcedure;
+    IntProcedure channelProcedure;
+    IntProcedure pitchProcedure;
+    IntProcedure velocityProcedure;
+    IntIntIntProcedure noteOnProcedure;
+    IntIntIntProcedure noteOffProcedure;
+    IntIntIntIntProcedure procedure;
 
     fun void handle(OscEvent event)
     {
@@ -111,7 +111,7 @@ public class EuclidOsc
         address => pattern.address;
         server @=> pattern.server;
         noteOnProcedure @=> pattern.noteOnProcedure;
-        noteOffProcedure @=> pattern.noteOffrocedure;
+        noteOffProcedure @=> pattern.noteOffProcedure;
         pattern.connect();
     }
 
