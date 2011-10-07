@@ -39,6 +39,7 @@ class Control
             event => now;
             while (event.nextMsg())
             {
+                // todo:  should this also be sporked?
                 handle(event);
             }
         }
@@ -58,6 +59,8 @@ class Pattern extends Control
     IntProcedure channelProcedure;
     IntProcedure pitchProcedure;
     IntProcedure velocityProcedure;
+    IntIntProcedure noteOnPitchVelocityProcedure;
+    IntIntProcedure noteOffPitchVelocityProcedure;
     IntIntIntProcedure noteOnProcedure;
     IntIntIntProcedure noteOffProcedure;
     IntIntIntIntProcedure procedure;
@@ -74,10 +77,12 @@ class Pattern extends Control
         velocityProcedure.run(velocity);
         if (note)
         {
+            noteOnPitchVelocityProcedure.run(pitch, velocity);
             noteOnProcedure.run(channel, pitch, velocity);
         }
         else
         {
+            noteOffPitchVelocityProcedure.run(pitch, velocity);
             noteOffProcedure.run(channel, pitch, velocity);
         }
         procedure.run(note, channel, pitch, velocity);
@@ -112,6 +117,16 @@ public class EuclidOsc
         server @=> pattern.server;
         noteOnProcedure @=> pattern.noteOnProcedure;
         noteOffProcedure @=> pattern.noteOffProcedure;
+        pattern.connect();
+    }
+
+    fun void addPattern(string address, IntIntProcedure noteOnPitchVelocityProcedure, IntIntProcedure noteOffPitchVelocityProcedure)
+    {
+        Pattern pattern;
+        address => pattern.address;
+        server @=> pattern.server;
+        noteOnPitchVelocityProcedure @=> pattern.noteOnPitchVelocityProcedure;
+        noteOffPitchVelocityProcedure @=> pattern.noteOffPitchVelocityProcedure;
         pattern.connect();
     }
 
