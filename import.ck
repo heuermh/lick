@@ -194,6 +194,7 @@ Machine.add("ControlOscServer.ck");
 Machine.add("TouchOscServer.ck");
 Machine.add("EuclidOsc.ck");
 Machine.add("EuclidMidi.ck");
+Machine.add("IanniXOsc.ck");
 
 // simulators
 // Machine.add("DroneLab.ck");
