@@ -167,31 +167,6 @@ public class IanniXOsc
         cursor.connect();
     }
 
-    /*
-    // /cursor cursor_id cursor_xPos cursor_yPos ?
-    fun void addCursor(float cursorId, FloatFloatFloatProcedure procedure)
-    {
-        Cursor cursor;
-        cursorId => cursor.id;
-        "fff" => cursor.values;
-        server @=> cursor.server;
-        procedure @=> cursor.intIntIntProcedure;
-        cursor.connect();
-    }
-
-    // /cursor cursor_id cursor_xPos cursor_yPos ? ?
-    fun void addCursor(int cursorId, IntIntIntIntProcedure procedure)
-    {
-        Cursor cursor;
-        cursorId => cursor.id;
-        "iiii" => cursor.values;
-        server @=> cursor.server;
-        procedure @=> cursor.intIntIntIntProcedure;
-        cursor.connect();
-    }
-    // todo:  are cursor_time, cursor_time_percent, cursor_value_x, cursor_value_y, cursor_angle, cursor_nb_loop ints or floats?
-    */
-
     // /curve curve_id curve_xPos
     fun void addCurve(float curveId, FloatProcedure procedure)
     {
@@ -235,7 +210,6 @@ public class IanniXOsc
         procedure @=> collision.floatFloatProcedure;
         collision.connect();
     }
-    // todo:  are collision_value_x, collision_value_y ints or floats?
 
     // /trigger trigger_id trigger_value
     fun void addTrigger(float triggerId, Procedure triggerOn, Procedure triggerOff)
