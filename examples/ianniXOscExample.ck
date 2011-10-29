@@ -60,20 +60,12 @@ DumpX cursorX;
 DumpXY cursorXY;
 "cursor" => cursorXY.name;
 
-DumpXY curveXY;
-"curve" => curveXY.name;
-
-DumpXY collisionXY;
-"collision" => collisionXY.name;
-
 DumpXY triggerXY;
 "trigger" => triggerXY.name;
 
 IanniXOsc ianniX;
 //ianniX.addCursor(3, cursorX);
 ianniX.addCursor(3, cursorXY);
-ianniX.addCurve(2, curveXY);
-ianniX.addCollision(0, collisionXY);
 ianniX.addTrigger(1, triggerOn, triggerOff);
 //ianniX.addTrigger(1, triggerXY, triggerXY);
 
