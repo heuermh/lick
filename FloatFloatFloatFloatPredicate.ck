@@ -20,10 +20,12 @@
 
 */
 
-public class FloatFloatFloatFloatProcedure
+public class FloatFloatFloatFloatPredicate
 {
-    fun void run(float arg0, float arg1, float arg2, float arg3)
+    false => int default;
+
+    fun int test(float arg0, float arg1, float arg2, float arg3)
     {
-        // empty
+        return false;
     }
 }
