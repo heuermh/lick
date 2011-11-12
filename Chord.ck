@@ -26,6 +26,7 @@ public class Chord
     "Chord" => string description;
     "" => string symbol;
     0.0 => float root;
+    ArrayList intervals;
     Intervals.unison() @=> Interval unison;
 
     fun void forEach(FloatProcedure procedure)
@@ -40,6 +41,6 @@ public class Chord
 
     fun Interval sampleInterval()
     {
-	return unison;
+        return unison;
     }
 }

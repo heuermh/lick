@@ -142,6 +142,7 @@ Machine.add("Repeat.ck");
 Machine.add("Sleep.ck");
 Machine.add("Loop.ck");
 Machine.add("Loops.ck");
+Machine.add("LoopBuilder.ck");
 
 // list
 Machine.add("Comparator.ck");
@@ -174,11 +175,13 @@ Machine.add("Edge.ck");
 Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
-// intervals, chords
+// intervals, chords, arpeggiator
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
 Machine.add("Chord.ck");
 Machine.add("Chords.ck");
+Machine.add("Arpeggiator.ck");
+Machine.add("Arpeggiators.ck");
 
 // unit test
 Machine.add("Assert.ck");

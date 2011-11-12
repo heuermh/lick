@@ -24,6 +24,21 @@ class Fifth extends Chord
 {
     Interval @ fifth;
 
+    /*
+        or would this work?
+
+    {
+        intervals.add(unison);
+        intervals.add(fifth);
+    }
+
+    */
+    fun void updateIntervals()
+    {
+        intervals.add(unison);
+        intervals.add(fifth);
+    }
+
     fun void forEach(FloatProcedure procedure)
     {
         procedure.run(root);
@@ -70,6 +85,13 @@ class DiminishedFifth extends Fifth
 class Triad extends Fifth
 {
     Interval @ third;
+
+    fun void updateIntervals()
+    {
+        intervals.add(unison);
+        intervals.add(third);
+        intervals.add(fifth);
+    }
 
     fun void forEach(FloatProcedure procedure)
     {
@@ -135,6 +157,14 @@ class DiminishedTriad extends Triad
 class Seventh extends Triad
 {
     Interval @ seventh;
+
+    fun void updateIntervals()
+    {
+        intervals.add(unison);
+        intervals.add(third);
+        intervals.add(fifth);
+        intervals.add(seventh);
+    }
 
     fun void forEach(FloatProcedure procedure)
     {
@@ -248,11 +278,8 @@ class AugmentedMajorSeventh extends Seventh
 
 class IntervalListChord extends Chord
 {
-    ArrayList @ intervals;
-
     fun void forEach(FloatProcedure procedure)
     {
-        procedure.run(root);
         intervals.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
         {
@@ -263,20 +290,14 @@ class IntervalListChord extends Chord
 
     fun Interval sampleInterval()
     {
-        if (Std.rand2(0, intervals.size() + 1))
-        {
-            intervals.sample() $ Interval @=> Interval interval;
-            return interval;
-        }
-        else
-        {
-            return unison;
-        }
+        intervals.sample() $ Interval @=> Interval interval;
+        return interval;
     }
 }
 
 class DominantNinth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -288,6 +309,7 @@ class DominantNinth extends IntervalListChord
 
 class DominantEleventh extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -300,6 +322,7 @@ class DominantEleventh extends IntervalListChord
 
 class DominantThirteenth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -313,6 +336,7 @@ class DominantThirteenth extends IntervalListChord
 
 class MajorNinth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorSeventh());
@@ -324,6 +348,7 @@ class MajorNinth extends IntervalListChord
 
 class MajorEleventh extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorSeventh());
@@ -336,6 +361,7 @@ class MajorEleventh extends IntervalListChord
 
 class MajorThirteenth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorSeventh());
@@ -349,6 +375,7 @@ class MajorThirteenth extends IntervalListChord
 
 class MinorNinth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.minorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -360,6 +387,7 @@ class MinorNinth extends IntervalListChord
 
 class MinorEleventh extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.minorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -372,6 +400,7 @@ class MinorEleventh extends IntervalListChord
 
 class MinorThirteenth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.minorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.minorSeventh());
@@ -385,6 +414,7 @@ class MinorThirteenth extends IntervalListChord
 
 class AddNine extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorNinth());
@@ -395,6 +425,7 @@ class AddNine extends IntervalListChord
 
 class MajorFourth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.perfectEleventh());
@@ -405,6 +436,7 @@ class MajorFourth extends IntervalListChord
 
 class MajorSixth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorSixth());
@@ -415,6 +447,7 @@ class MajorSixth extends IntervalListChord
 
 class SixNine extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorThird());
     intervals.add(Intervals.perfectFifth());
     intervals.add(Intervals.majorSixth());
@@ -426,6 +459,7 @@ class SixNine extends IntervalListChord
 
 class SuspendedSecond extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.majorSecond());
     intervals.add(Intervals.perfectFifth());
     "SuspendedSecond" => name;
@@ -435,6 +469,7 @@ class SuspendedSecond extends IntervalListChord
 
 class SuspendedFourth extends IntervalListChord
 {
+    intervals.add(Intervals.unison());
     intervals.add(Intervals.perfectFourth());
     intervals.add(Intervals.perfectFifth());
     "SuspendedFourth" => name;
@@ -448,6 +483,7 @@ public class Chords
     {
         PerfectFifth perfectFifth;
         root => perfectFifth.root;
+        perfectFifth.updateIntervals();
         return perfectFifth;
     }
 
@@ -455,6 +491,7 @@ public class Chords
     {
         PerfectFifth perfectFifth;
         root => perfectFifth.root;
+        perfectFifth.updateIntervals();
         name + " " + perfectFifth.name => perfectFifth.name;
         name + " " + perfectFifth.description => perfectFifth.description;
         name + perfectFifth.symbol => perfectFifth.symbol;
@@ -465,6 +502,7 @@ public class Chords
     {
         AugmentedFifth augmentedFifth;
         root => augmentedFifth.root;
+        augmentedFifth.updateIntervals();
         return augmentedFifth;
     }
 
@@ -472,6 +510,7 @@ public class Chords
     {
         AugmentedFifth augmentedFifth;
         root => augmentedFifth.root;
+        augmentedFifth.updateIntervals();
         name + " " + augmentedFifth.name => augmentedFifth.name;
         name + " " + augmentedFifth.description => augmentedFifth.description;
         name + augmentedFifth.symbol => augmentedFifth.symbol;
@@ -482,6 +521,7 @@ public class Chords
     {
         DiminishedFifth diminishedFifth;
         root => diminishedFifth.root;
+        diminishedFifth.updateIntervals();
         return diminishedFifth;
     }
 
@@ -489,6 +529,7 @@ public class Chords
     {
         DiminishedFifth diminishedFifth;
         root => diminishedFifth.root;
+        diminishedFifth.updateIntervals();
         name + " " + diminishedFifth.name => diminishedFifth.name;
         name + " " + diminishedFifth.description => diminishedFifth.description;
         name + diminishedFifth.symbol => diminishedFifth.symbol;
@@ -499,6 +540,7 @@ public class Chords
     {
         MajorTriad majorTriad;
         root => majorTriad.root;
+        majorTriad.updateIntervals();
         return majorTriad;
     }
 
@@ -506,6 +548,7 @@ public class Chords
     {
         MajorTriad majorTriad;
         root => majorTriad.root;
+        majorTriad.updateIntervals();
         name + " " + majorTriad.name => majorTriad.name;
         name + " " + majorTriad.description => majorTriad.description;
         name + majorTriad.symbol => majorTriad.symbol;
@@ -516,6 +559,7 @@ public class Chords
     {
         MinorTriad minorTriad;
         root => minorTriad.root;
+        minorTriad.updateIntervals();
         return minorTriad;
     }
 
@@ -523,6 +567,7 @@ public class Chords
     {
         MinorTriad minorTriad;
         root => minorTriad.root;
+        minorTriad.updateIntervals();
         name + " " + minorTriad.name => minorTriad.name;
         name + " " + minorTriad.description => minorTriad.description;
         name + minorTriad.symbol => minorTriad.symbol;
@@ -533,6 +578,7 @@ public class Chords
     {
         AugmentedTriad augmentedTriad;
         root => augmentedTriad.root;
+        augmentedTriad.updateIntervals();
         return augmentedTriad;
     }
 
@@ -540,6 +586,7 @@ public class Chords
     {
         AugmentedTriad augmentedTriad;
         root => augmentedTriad.root;
+        augmentedTriad.updateIntervals();
         name + " " + augmentedTriad.name => augmentedTriad.name;
         name + " " + augmentedTriad.description => augmentedTriad.description;
         name + augmentedTriad.symbol => augmentedTriad.symbol;
@@ -550,6 +597,7 @@ public class Chords
     {
         DiminishedTriad diminishedTriad;
         root => diminishedTriad.root;
+        diminishedTriad.updateIntervals();
         return diminishedTriad;
     }
 
@@ -557,6 +605,7 @@ public class Chords
     {
         DiminishedTriad diminishedTriad;
         root => diminishedTriad.root;
+        diminishedTriad.updateIntervals();
         name + " " + diminishedTriad.name => diminishedTriad.name;
         name + " " + diminishedTriad.description => diminishedTriad.description;
         name + diminishedTriad.symbol => diminishedTriad.symbol;
@@ -567,6 +616,7 @@ public class Chords
     {
         DiminishedSeventh diminishedSeventh;
         root => diminishedSeventh.root;
+        diminishedSeventh.updateIntervals();
         return diminishedSeventh;
     }
 
@@ -574,6 +624,7 @@ public class Chords
     {
         DiminishedSeventh diminishedSeventh;
         root => diminishedSeventh.root;
+        diminishedSeventh.updateIntervals();
         name + " " + diminishedSeventh.name => diminishedSeventh.name;
         name + " " + diminishedSeventh.description => diminishedSeventh.description;
         name + diminishedSeventh.symbol => diminishedSeventh.symbol;
@@ -584,6 +635,7 @@ public class Chords
     {
         HalfDiminishedSeventh halfDiminishedSeventh;
         root => halfDiminishedSeventh.root;
+        halfDiminishedSeventh.updateIntervals();
         return halfDiminishedSeventh;
     }
 
@@ -591,6 +643,7 @@ public class Chords
     {
         HalfDiminishedSeventh halfDiminishedSeventh;
         root => halfDiminishedSeventh.root;
+        halfDiminishedSeventh.updateIntervals();
         name + " " + halfDiminishedSeventh.name => halfDiminishedSeventh.name;
         name + " " + halfDiminishedSeventh.description => halfDiminishedSeventh.description;
         name + halfDiminishedSeventh.symbol => halfDiminishedSeventh.symbol;
@@ -601,6 +654,7 @@ public class Chords
     {
         MinorSeventh minorSeventh;
         root => minorSeventh.root;
+        minorSeventh.updateIntervals();
         return minorSeventh;
     }
 
@@ -608,6 +662,7 @@ public class Chords
     {
         MinorSeventh minorSeventh;
         root => minorSeventh.root;
+        minorSeventh.updateIntervals();
         name + " " + minorSeventh.name => minorSeventh.name;
         name + " " + minorSeventh.description => minorSeventh.description;
         name + minorSeventh.symbol => minorSeventh.symbol;
@@ -618,6 +673,7 @@ public class Chords
     {
         MinorMajorSeventh minorMajorSeventh;
         root => minorMajorSeventh.root;
+        minorMajorSeventh.updateIntervals();
         return minorMajorSeventh;
     }
 
@@ -625,6 +681,7 @@ public class Chords
     {
         MinorMajorSeventh minorMajorSeventh;
         root => minorMajorSeventh.root;
+        minorMajorSeventh.updateIntervals();
         name + " " + minorMajorSeventh.name => minorMajorSeventh.name;
         name + " " + minorMajorSeventh.description => minorMajorSeventh.description;
         name + minorMajorSeventh.symbol => minorMajorSeventh.symbol;
@@ -635,6 +692,7 @@ public class Chords
     {
         DominantSeventh dominantSeventh;
         root => dominantSeventh.root;
+        dominantSeventh.updateIntervals();
         return dominantSeventh;
     }
 
@@ -642,6 +700,7 @@ public class Chords
     {
         DominantSeventh dominantSeventh;
         root => dominantSeventh.root;
+        dominantSeventh.updateIntervals();
         name + " " + dominantSeventh.name => dominantSeventh.name;
         name + " " + dominantSeventh.description => dominantSeventh.description;
         name + dominantSeventh.symbol => dominantSeventh.symbol;
@@ -652,6 +711,7 @@ public class Chords
     {
         MajorSeventh majorSeventh;
         root => majorSeventh.root;
+        majorSeventh.updateIntervals();
         return majorSeventh;
     }
 
@@ -659,6 +719,7 @@ public class Chords
     {
         MajorSeventh majorSeventh;
         root => majorSeventh.root;
+        majorSeventh.updateIntervals();
         name + " " + majorSeventh.name => majorSeventh.name;
         name + " " + majorSeventh.description => majorSeventh.description;
         name + majorSeventh.symbol => majorSeventh.symbol;
@@ -669,6 +730,7 @@ public class Chords
     {
         AugmentedSeventh augmentedSeventh;
         root => augmentedSeventh.root;
+        augmentedSeventh.updateIntervals();
         return augmentedSeventh;
     }
 
@@ -676,6 +738,7 @@ public class Chords
     {
         AugmentedSeventh augmentedSeventh;
         root => augmentedSeventh.root;
+        augmentedSeventh.updateIntervals();
         name + " " + augmentedSeventh.name => augmentedSeventh.name;
         name + " " + augmentedSeventh.description => augmentedSeventh.description;
         name + augmentedSeventh.symbol => augmentedSeventh.symbol;
@@ -686,6 +749,7 @@ public class Chords
     {
         AugmentedMajorSeventh augmentedMajorSeventh;
         root => augmentedMajorSeventh.root;
+        augmentedMajorSeventh.updateIntervals();
         return augmentedMajorSeventh;
     }
 
@@ -693,6 +757,7 @@ public class Chords
     {
         AugmentedMajorSeventh augmentedMajorSeventh;
         root => augmentedMajorSeventh.root;
+        augmentedMajorSeventh.updateIntervals();
         name + " " + augmentedMajorSeventh.name => augmentedMajorSeventh.name;
         name + " " + augmentedMajorSeventh.description => augmentedMajorSeventh.description;
         name + augmentedMajorSeventh.symbol => augmentedMajorSeventh.symbol;
