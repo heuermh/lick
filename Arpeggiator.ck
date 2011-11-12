@@ -30,27 +30,22 @@ public class Arpeggiator extends Procedure
     fun void run()
     {
         reset() => int i;
-        <<<"i reset",i>>>;
         while (hasNext(i))
         {
-            <<<"i before",i>>>;
             intervals.get(i) $ Interval @=> Interval interval;
             procedure.run(interval.evaluate(root));
             next(i) => i;
-            <<<"i after",i>>>;
             rate => now;
         }
     }
 
     fun int reset()
     {
-        <<<"reset">>>;
         return 0;
     }
 
     fun int next(int index)
     {
-        <<<"next",index>>>;
         return index + 1;
     }
 
