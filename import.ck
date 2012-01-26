@@ -176,6 +176,7 @@ Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
 // intervals, chords, arpeggiator
+Machine.add("TimeSignature.ck");
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
 Machine.add("Chord.ck");
