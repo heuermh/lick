@@ -207,6 +207,9 @@ Machine.add("VoiceOfSaturn.ck");
 
 // sample-based drum machines
 Machine.add("Sample.ck");
+Machine.add("CompositeSample.ck");
+Machine.add("HandedSample.ck");
+Machine.add("Samples.ck");
 Machine.add("AkaiMpc60.ck");
 Machine.add("EmuDrumulator.ck");
 Machine.add("OberheimDmx.ck");
@@ -215,5 +218,6 @@ Machine.add("RolandTr66.ck");
 Machine.add("RolandTr606.ck");
 Machine.add("RolandTr808.ck");
 Machine.add("RolandTr909.ck");
+Machine.add("BigMono.ck");
 
 <<<"LiCK imported.">>>;
