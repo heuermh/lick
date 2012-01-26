@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project ppqn="24" tempo="102.6">
+<patterns>
+<pattern id="4d90e43d-315c-4ab9-9651-a3f4c9bd4c52">
+<events notes="6" rotation="0" steps="16"/>
+<midi channel="0" pitch="102" velocity="112"/>
+<osc address="/eu/kick"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="-6" y="-13"/>
+<name><![CDATA[kick]]></name>
+</pattern>
+<pattern id="93a06dd1-0fa5-4ebe-95d4-ac138817517c">
+<events notes="5" rotation="2" steps="16"/>
+<midi channel="0" pitch="120" velocity="83"/>
+<osc address="/eu/snare"/>
+<settings mute="true" notelength="6" quantization="16" solo="false"/>
+<location x="155" y="2"/>
+<name><![CDATA[snare]]></name>
+</pattern>
+<pattern id="6de1160d-b4de-4baf-807a-a531b5ab28f2">
+<events notes="21" rotation="0" steps="32"/>
+<midi channel="0" pitch="110" velocity="82"/>
+<osc address="/eu/closedHat"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="236" y="132"/>
+<name><![CDATA[closedHat]]></name>
+</pattern>
+<pattern id="cedb8b63-cd06-4c54-927b-446820b32120">
+<events notes="2" rotation="4" steps="16"/>
+<midi channel="0" pitch="114" velocity="80"/>
+<osc address="/eu/hardSnare"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="57" y="137"/>
+<name><![CDATA[hardSnare]]></name>
+</pattern>
+<pattern id="a15a9731-96e6-4bbd-bc0d-9e3872df1ff7">
+<events notes="1" rotation="2" steps="32"/>
+<midi channel="0" pitch="110" velocity="66"/>
+<osc address="/eu/crash"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="328" y="1"/>
+<name><![CDATA[crash]]></name>
+</pattern>
+<pattern id="22357534-e471-4b9f-bec8-301e1ef4dd2d">
+<events notes="4" rotation="0" steps="16"/>
+<midi channel="0" pitch="120" velocity="58"/>
+<osc address="/eu/openHat"/>
+<settings mute="true" notelength="6" quantization="16" solo="false"/>
+<location x="399" y="146"/>
+<name><![CDATA[openHat]]></name>
+</pattern>
+</patterns>
+</project>

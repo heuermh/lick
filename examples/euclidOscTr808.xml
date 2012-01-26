@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project ppqn="24" tempo="102.6">
+<patterns>
+<pattern id="4d90e43d-315c-4ab9-9651-a3f4c9bd4c52">
+<events notes="6" rotation="0" steps="16"/>
+<midi channel="0" pitch="60" velocity="110"/>
+<osc address="/eu/kickA"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="-6" y="-13"/>
+<name><![CDATA[kickA]]></name>
+</pattern>
+<pattern id="93a06dd1-0fa5-4ebe-95d4-ac138817517c">
+<events notes="5" rotation="2" steps="16"/>
+<midi channel="0" pitch="120" velocity="29"/>
+<osc address="/eu/snareB"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="152" y="4"/>
+<name><![CDATA[snareA]]></name>
+</pattern>
+<pattern id="6de1160d-b4de-4baf-807a-a531b5ab28f2">
+<events notes="21" rotation="0" steps="32"/>
+<midi channel="0" pitch="110" velocity="11"/>
+<osc address="/eu/closedHat"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="236" y="132"/>
+<name><![CDATA[closedHat]]></name>
+</pattern>
+<pattern id="cedb8b63-cd06-4c54-927b-446820b32120">
+<events notes="2" rotation="4" steps="16"/>
+<midi channel="0" pitch="114" velocity="80"/>
+<osc address="/eu/kickE"/>
+<settings mute="false" notelength="6" quantization="16" solo="false"/>
+<location x="57" y="137"/>
+<name><![CDATA[kickE]]></name>
+</pattern>
+</patterns>
+</project>
