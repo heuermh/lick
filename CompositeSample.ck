@@ -85,6 +85,7 @@ class CompositeSampleFloatFloatProcedure extends FloatFloatProcedure
 public class CompositeSample extends Sample
 //    implements Procedure, IntProcedure, IntIntProcedure, FloatProcedure, FloatFloatProcedure
 {
+    -1 => int _index;
     ArrayList samples;
 
     // hack to simulate multiple inheritance
@@ -112,8 +113,12 @@ public class CompositeSample extends Sample
 
     fun Sample _sample()
     {
-        ((minGain + gain)/(maxGain) * samples.size()) $ int => int index;
-        samples.get(index - 1) $ Sample @=> Sample sample;
+        if (_index < 0)
+        {
+            samples.size() - 1 => _index;
+        }
+        samples.get(_index) $ Sample @=> Sample sample;
+        _index - 1 => _index;
         return sample;
     }
 

@@ -131,4 +131,278 @@ public class Samples
         sample.samples.add(sample7);
         return sample;
     }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1)
+    {
+        RandomSample sample;
+        sample.samples.size(2);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2)
+    {
+        RandomSample sample;
+        sample.samples.size(3);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3)
+    {
+        RandomSample sample;
+        sample.samples.size(4);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4)
+    {
+        RandomSample sample;
+        sample.samples.size(5);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5)
+    {
+        RandomSample sample;
+        sample.samples.size(6);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6)
+    {
+        RandomSample sample;
+        sample.samples.size(7);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        return sample;
+    }
+
+    fun static RandomSample createRandomSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6, Sample sample7)
+    {
+        RandomSample sample;
+        sample.samples.size(8);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        sample.samples.add(sample7);
+        return sample;
+    }
+
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(2);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(3);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(4);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(5);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(6);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(7);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        return sample;
+    }
+
+    fun static PitchSensitiveSample createPitchSensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6, Sample sample7)
+    {
+        PitchSensitiveSample sample;
+        sample.samples.size(8);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        sample.samples.add(sample7);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(2);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(3);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(4);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(5);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(6);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(7);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        return sample;
+    }
+
+    fun static VelocitySensitiveSample createVelocitySensitiveSample(Sample sample0, Sample sample1, Sample sample2, Sample sample3, Sample sample4, Sample sample5, Sample sample6, Sample sample7)
+    {
+        VelocitySensitiveSample sample;
+        sample.samples.size(8);
+        sample.samples.clear();
+        sample.samples.add(sample0);
+        sample.samples.add(sample1);
+        sample.samples.add(sample2);
+        sample.samples.add(sample3);
+        sample.samples.add(sample4);
+        sample.samples.add(sample5);
+        sample.samples.add(sample6);
+        sample.samples.add(sample7);
+        return sample;
+    }
 }

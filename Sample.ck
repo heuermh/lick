@@ -102,6 +102,7 @@ public class Sample
     0.8 => float gain;
     0.0 => float minGain;
     0.8 => float maxGain;
+    "Sample" => string name;
     SndBuf buf => dac;
 
     // hack to simulate multiple inheritance

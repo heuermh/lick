@@ -154,4 +154,3 @@ public class HandedSample extends Sample
         return _handedFloatFloatProcedure;
     }
 }
-

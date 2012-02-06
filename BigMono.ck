@@ -20,9 +20,10 @@
 
 */
 
-class BellRide extends CompositeSample
+class BellRide extends VelocitySensitiveSample
 {
     {
+        "BellRide" => name;
         samples.size(16);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/SabHHXEvo20_Bell01.wav"));
@@ -47,6 +48,7 @@ class BellRide extends CompositeSample
 class ClosedHat extends HandedSample
 {
     {
+        "ClosedHat" => name;
         leftHandSamples.size(16);
         leftHandSamples.clear();
         leftHandSamples.add(Samples.createSample("samples/BigMono/ZildMstrsnd-DynClsdLH01.wav"));
@@ -87,9 +89,10 @@ class ClosedHat extends HandedSample
     }
 }
 
-class Crash extends CompositeSample
+class Crash extends VelocitySensitiveSample
 {
     {
+        "Crash" => name;
         samples.size(8);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/ZildjinCrsh 1-Dyn01.wav"));
@@ -105,11 +108,13 @@ class Crash extends CompositeSample
 
 class CrossStick extends Sample
 {
+    // empty
 }
 
-class DarkCrash extends CompositeSample
+class DarkCrash extends VelocitySensitiveSample
 {
     {
+        "DarkCrash" => name;
         samples.size(8);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/ZildjinCrsh 2-Dyn01.wav"));
@@ -126,6 +131,7 @@ class DarkCrash extends CompositeSample
 class HighTom extends HandedSample
 {
     {
+        "HighTom" => name;
         leftHandSamples.size(16);
         leftHandSamples.clear();
         leftHandSamples.add(Samples.createSample("samples/BigMono/CLudwigTom1-DynLH01.wav"));
@@ -166,9 +172,10 @@ class HighTom extends HandedSample
     }
 }
 
-class Kick extends CompositeSample
+class Kick extends VelocitySensitiveSample
 {
     {
+        "Kick" => name;
         samples.size(12);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/CLudwigKick-Dyn01.wav"));
@@ -186,9 +193,10 @@ class Kick extends CompositeSample
     }
 }
 
-class LooseHat extends CompositeSample
+class LooseHat extends VelocitySensitiveSample
 {
     {
+        "LooseHat" => name;
         samples.size(16);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/ZildMstrsnd-DynSmiOpn01.wav"));
@@ -213,6 +221,7 @@ class LooseHat extends CompositeSample
 class LowTom extends HandedSample
 {
     {
+        "LowTom" => name;
         leftHandSamples.size(16);
         leftHandSamples.clear();
         leftHandSamples.add(Samples.createSample("samples/BigMono/CLudwigTom2-DynLH01.wav"));
@@ -253,9 +262,10 @@ class LowTom extends HandedSample
     }
 }
 
-class OpenHat extends CompositeSample
+class OpenHat extends VelocitySensitiveSample
 {
     {
+        "OpenHat" => name;
         samples.size(16);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/ZildMstrsnd-DynOpn01.wav"));
@@ -277,9 +287,10 @@ class OpenHat extends CompositeSample
     }
 }
 
-class PedalledHat extends CompositeSample
+class PedalledHat extends VelocitySensitiveSample
 {
     {
+        "PedalledHat" => name;
         samples.size(10);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/ZildMstrsnd-DynPed01.wav"));
@@ -295,9 +306,10 @@ class PedalledHat extends CompositeSample
     }
 }
 
-class Ride extends CompositeSample
+class Ride extends VelocitySensitiveSample
 {
     {
+        "Ride" => name;
         samples.size(16);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/SabHHXEvo20-Dyn01.wav"));
@@ -319,9 +331,10 @@ class Ride extends CompositeSample
     }
 }
 
-class Rim extends CompositeSample
+class Rim extends VelocitySensitiveSample
 {
     {
+        "Rim" => name;
         samples.size(8);
         samples.clear();
         samples.add(Samples.createSample("samples/BigMono/Rodgers_RimClck01.wav"));
@@ -338,6 +351,7 @@ class Rim extends CompositeSample
 class Snare extends HandedSample
 {
     {
+        "Snare" => name;
         leftHandSamples.size(16);
         leftHandSamples.clear();
         leftHandSamples.add(Samples.createSample("samples/BigMono/Rodgers_DynLH01.wav"));
@@ -381,6 +395,7 @@ class Snare extends HandedSample
 class HardSnare extends HandedSample
 {
     {
+        "HardSnare" => name;
         leftHandSamples.size(8);
         leftHandSamples.clear();
         leftHandSamples.add(Samples.createSample("samples/BigMono/Rodgers_HrdLH01.wav"));
@@ -412,7 +427,7 @@ class PlaySamples extends UnaryProcedure
         value $ Sample @=> Sample sample;
         for (125 => int gain; gain > 10; gain - 10 => gain)
         {
-            <<<sample, gain>>>;
+            <<<sample.name, gain>>>;
             sample.asIntProcedure().run(gain);
             1200::ms => now;
             sample.asIntProcedure().run(gain);
@@ -430,9 +445,10 @@ public class BigMono
 {
     //BellRide bellRide;
     ClosedHat closedHat;
+    // todo:  demo ends/fails at Crash 15
     Crash crash;
     //CrossStick crossStick;
-    //DarkCrash darkCrash;
+    DarkCrash darkCrash;
     HardSnare hardSnare;
     //HighTom highTom;
     Kick kick;
@@ -448,10 +464,10 @@ public class BigMono
     {
         ArrayList samples;
         //samples.add(bellRide);
-        samples.add(closedHat);
-        samples.add(crash);
+        //samples.add(closedHat);
+        //samples.add(crash);
         //samples.add(crossStick);
-        //samples.add(darkCrash);
+        samples.add(darkCrash);
         samples.add(hardSnare);
         //samples.add(highTom);
         samples.add(kick);
@@ -465,5 +481,6 @@ public class BigMono
 
         PlaySamples playSamples;
         samples.forEach(playSamples);
+        <<<"done.">>>;
     }
 }

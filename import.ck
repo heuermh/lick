@@ -213,6 +213,9 @@ Machine.add("VoiceOfSaturn.ck");
 // sample-based drum machines
 Machine.add("Sample.ck");
 Machine.add("CompositeSample.ck");
+Machine.add("RandomSample.ck");
+Machine.add("PitchSensitiveSample.ck");
+Machine.add("VelocitySensitiveSample.ck");
 Machine.add("HandedSample.ck");
 Machine.add("Samples.ck");
 Machine.add("AkaiMpc60.ck");
