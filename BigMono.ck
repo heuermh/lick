@@ -414,13 +414,13 @@ class PlaySamples extends UnaryProcedure
         {
             <<<sample, gain>>>;
             sample.asIntProcedure().run(gain);
-            600::ms => now;
+            1200::ms => now;
             sample.asIntProcedure().run(gain);
-            600::ms => now;
+            1200::ms => now;
             sample.asIntProcedure().run(gain);
-            600::ms => now;
+            1200::ms => now;
             sample.asIntProcedure().run(gain);
-            600::ms => now;
+            1200::ms => now;
         }
     }
 }
@@ -428,39 +428,39 @@ class PlaySamples extends UnaryProcedure
 // Analogue Drums Big Mono
 public class BigMono
 {
-    BellRide bellRide;
+    //BellRide bellRide;
     ClosedHat closedHat;
     Crash crash;
     //CrossStick crossStick;
-    DarkCrash darkCrash;
+    //DarkCrash darkCrash;
     HardSnare hardSnare;
-    HighTom highTom;
+    //HighTom highTom;
     Kick kick;
-    LooseHat looseHat;
-    LowTom lowTom;
+    //LooseHat looseHat;
+    //LowTom lowTom;
     OpenHat openHat;
-    PedalledHat pedalledHat;
-    Ride ride;
-    Rim rim;
+    //PedalledHat pedalledHat;
+    //Ride ride;
+    //Rim rim;
     Snare snare;
 
     fun void demo()
     {
         ArrayList samples;
-        samples.add(bellRide);
+        //samples.add(bellRide);
         samples.add(closedHat);
         samples.add(crash);
         //samples.add(crossStick);
-        samples.add(darkCrash);
+        //samples.add(darkCrash);
         samples.add(hardSnare);
-        samples.add(highTom);
+        //samples.add(highTom);
         samples.add(kick);
-        samples.add(looseHat);
-        samples.add(lowTom);
+        //samples.add(looseHat);
+        //samples.add(lowTom);
         samples.add(openHat);
-        samples.add(pedalledHat);
-        samples.add(ride);
-        samples.add(rim);
+        //samples.add(pedalledHat);
+        //samples.add(ride);
+        //samples.add(rim);
         samples.add(snare);
 
         PlaySamples playSamples;
