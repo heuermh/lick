@@ -25,9 +25,9 @@ public class Repeat extends Procedure
 {
     int n;
     dur offset;
-    dur wait;
     Procedure procedure;
     FloatProcedure floatProcedure;
+    DurProvider waitProvider;
 
     fun void run()
     {
@@ -37,6 +37,7 @@ public class Repeat extends Procedure
             i / n => float ratio;
             procedure.run();
             floatProcedure.run(ratio);
+            waitProvider.evaluate() => dur wait;
             wait => now;
         }
     }

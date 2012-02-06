@@ -135,6 +135,10 @@ Machine.add("SinusoidalIn.ck");
 Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
 
+// duration providers
+Machine.add("DurProvider.ck");
+Machine.add("HumanizedDurProvider.ck");
+
 // procedures
 Machine.add("Append.ck");
 Machine.add("Prepend.ck");

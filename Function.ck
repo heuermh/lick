@@ -20,7 +20,7 @@
 
 */
 
-public class Function // or Factory
+public class Function // or Factory, Provider
 {
     Object @ default;
 

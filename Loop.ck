@@ -23,10 +23,10 @@
 public class Loop extends Procedure
 {
     dur offset;
-    dur wait;
     dur length;
     Procedure procedure;
     FloatProcedure floatProcedure;
+    DurProvider waitProvider;
 
     fun void run()
     {
@@ -37,6 +37,7 @@ public class Loop extends Procedure
             expired / length => float ratio;
             procedure.run();
             floatProcedure.run(ratio);
+            waitProvider.evaluate() => dur wait;
             wait => now;
             wait +=> expired;
         }

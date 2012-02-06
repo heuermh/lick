@@ -104,11 +104,17 @@ public class CompositeSample extends Sample
 
     fun void play()
     {
-        ((minGain + gain)/(maxGain) * samples.size()) $ int => int index;
-        samples.get(index - 1) $ Sample @=> Sample sample;
+        _sample() @=> Sample sample;
         rate => sample.rate;
         gain => sample.gain;
         sample.play();
+    }
+
+    fun Sample _sample()
+    {
+        ((minGain + gain)/(maxGain) * samples.size()) $ int => int index;
+        samples.get(index - 1) $ Sample @=> Sample sample;
+        return sample;
     }
 
     fun Procedure asProcedure()

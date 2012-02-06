@@ -52,11 +52,18 @@ public class Loops
 
     fun static Procedure loop(Procedure procedure, dur offset, dur wait, dur length)
     {
+        DurProvider waitProvider;
+        wait => waitProvider.duration;
+        return loop(procedure, offset, waitProvider, length);
+    }
+
+    fun static Procedure loop(Procedure procedure, dur offset, DurProvider waitProvider, dur length)
+    {
         Loop loop;
         offset => loop.offset;
-        wait => loop.wait;
         length => loop.length;
         procedure @=> loop.procedure;
+        waitProvider @=> loop.waitProvider;
         return loop;
     }
 
@@ -72,15 +79,20 @@ public class Loops
 
     fun static Procedure loop(FloatProcedure floatProcedure, dur offset, dur wait, dur length)
     {
-        Loop loop;
-        offset => loop.offset;
-        wait => loop.wait;
-        length => loop.length;
-        floatProcedure @=> loop.floatProcedure;
-        return loop;
+        DurProvider waitProvider;
+        wait => waitProvider.duration;
+        return loop(floatProcedure, offset, waitProvider, length);
     }
 
-    // todo:  rename these repeat( ?
+    fun static Procedure loop(FloatProcedure floatProcedure, dur offset, DurProvider waitProvider, dur length)
+    {
+        Loop loop;
+        offset => loop.offset;
+        length => loop.length;
+        floatProcedure @=> loop.floatProcedure;
+        waitProvider @=> loop.waitProvider;
+        return loop;
+    }
 
     fun static Procedure loop(Procedure procedure, int n)
     {
@@ -94,11 +106,18 @@ public class Loops
 
     fun static Procedure loop(Procedure procedure, dur offset, dur wait, int n)
     {
+        DurProvider waitProvider;
+        wait => waitProvider.duration;
+        return loop(procedure, offset, waitProvider, n);
+    }
+
+    fun static Procedure loop(Procedure procedure, dur offset, DurProvider waitProvider, int n)
+    {
         Repeat r;
         n => r.n;
         offset => r.offset;
-        wait => r.wait;
         procedure @=> r.procedure;
+        waitProvider @=> r.waitProvider;
         return r;
     }
 
@@ -114,11 +133,18 @@ public class Loops
 
     fun static Procedure loop(FloatProcedure floatProcedure, dur offset, dur wait, int n)
     {
+        DurProvider waitProvider;
+        wait => waitProvider.duration;
+        return loop(floatProcedure, offset, waitProvider, n);
+    }
+
+    fun static Procedure loop(FloatProcedure floatProcedure, dur offset, DurProvider waitProvider, int n)
+    {
         Repeat r;
         n => r.n;
         offset => r.offset;
-        wait => r.wait;
         floatProcedure @=> r.floatProcedure;
+        waitProvider @=> r.waitProvider;
         return r;
     }
 
