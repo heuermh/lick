@@ -445,7 +445,6 @@ public class BigMono
 {
     //BellRide bellRide;
     ClosedHat closedHat;
-    // todo:  demo ends/fails at Crash 15
     Crash crash;
     //CrossStick crossStick;
     DarkCrash darkCrash;
@@ -464,8 +463,8 @@ public class BigMono
     {
         ArrayList samples;
         //samples.add(bellRide);
-        //samples.add(closedHat);
-        //samples.add(crash);
+        samples.add(closedHat);
+        samples.add(crash);
         //samples.add(crossStick);
         samples.add(darkCrash);
         samples.add(hardSnare);

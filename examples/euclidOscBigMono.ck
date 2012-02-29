@@ -31,6 +31,7 @@ euclid.addPattern("/eu/hardSnare", bigMono.hardSnare.asIntIntProcedure(), noop);
 euclid.addPattern("/eu/openHat", bigMono.openHat.asIntIntProcedure(), noop);
 euclid.addPattern("/eu/closedHat", bigMono.closedHat.asIntIntProcedure(), noop);
 euclid.addPattern("/eu/crash", bigMono.crash.asIntIntProcedure(), noop);
+euclid.addPattern("/eu/darkCrash", bigMono.darkCrash.asIntIntProcedure(), noop);
 
 euclid.connect();
 <<<"ready">>>;

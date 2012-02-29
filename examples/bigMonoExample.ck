@@ -26,6 +26,12 @@ TimeSignature.common(98) @=> TimeSignature t;
 spork ~ Loops.loop(bigMono.kick.asProcedure(), t.half(), t.bar * 8).run();
 spork ~ Loops.loop(bigMono.kick.asProcedure(), t.whole() + t.eighth(), t.whole() + t.half(), t.bar * 2).run();
 spork ~ Loops.loop(bigMono.snare.asProcedure(), t.quarter(), t.half(), t.bar * 8).run();
-spork ~ Loops.loop(bigMono.closedHat.asProcedure(), t.eighth(), t.bar * 4 * 8).run();
+
+// humanize eighth notes
+t.eighthProvider() @=> HumanizedDurProvider eighth;
+0.0025 => eighth.anticipation;
+0.005 => eighth.delay;
+
+spork ~ Loops.loop(bigMono.closedHat.asProcedure(), t.whole(), eighth, t.bar * 4 * 8).run();
 
 1::minute => now;

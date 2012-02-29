@@ -27,7 +27,7 @@ public class HumanizedDurProvider extends DurProvider
 
     fun dur evaluate()
     {
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay);
     }
 
     fun static HumanizedDurProvider create(dur duration, float anticipation, float delay)
