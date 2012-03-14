@@ -28,7 +28,7 @@ class BreveProvider extends HumanizedDurProvider
     {
         timeSignature.d => duration;
         //return super.evaluate();  not supported
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -44,7 +44,7 @@ class SemibreveProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.w => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -60,7 +60,7 @@ class MinimProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.h => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -76,7 +76,7 @@ class CrotchetProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.q => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -92,7 +92,7 @@ class QuaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.e => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -108,7 +108,7 @@ class SemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.s => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -124,7 +124,7 @@ class DemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.t => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -140,7 +140,7 @@ class HemiDemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.f => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -156,7 +156,7 @@ class SemiHemiDemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.u => duration;
-        return duration - (duration * Std.rand2f(0.0, anticipation)) + (duration * Std.rand2f(0.0, delay));
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
     }
 }
 
@@ -179,6 +179,7 @@ public class TimeSignature
     dur t;
     dur f;
     dur u;
+    Random random;
 
     fun void update()
     {
@@ -192,6 +193,124 @@ public class TimeSignature
         b / 8 => t;
         b / 16 => f;
         b / 32 => u;
+    }
+
+/*
+    // increase tempo 1% over one measure
+    fun void accel()
+    {
+        tempo(1.1, beat * q);
+    }
+
+    // increase tempo by the specified factor over one measure
+    fun void accel(float value)
+    {
+        tempo(1.0 + value, beat * q);
+    }
+
+    // increase tempo by the specified factor interpolated over a length of time
+    fun void accel(float value, dur length)
+    {
+	tempo(1.0 + value, length);
+    }
+
+    // increase tempo by the specified factor interpolated over a length of time with the specified interpolation function
+    fun void accel(float value, dur length, Interpolation interpolation)
+    {
+        tempo(1.0 + value, length, interpolation);
+    }
+
+    // decrease tempo 1% over one measure
+    fun void ritard()
+    {
+        tempo(0.9, beat * q);
+    }
+
+    // decrease tempo by the specified factor over one measure
+    fun void ritard(float value)
+    {
+	tempo(1.0 - value, beat * q);
+    }
+
+    // decrease tempo by the specified factor interpolated over a length of time
+    fun void ritard(float value, dur length)
+    {
+        tempo(1.0 - value, length);
+    }
+
+    // decrease tempo by the specified factor interpolated over a length of time with the specified interpolation function
+    fun void ritard(float value, dur length, Interpolation interpolation)
+    {
+        tempo(1.0 - value, length, interpolation);
+    }
+*/
+    // change tempo to current bpm * value immediately
+    fun void tempo(float value)
+    {
+	tempo((bpm * value) $ int);
+    }
+
+    // change tempo to target bpm immediately
+    fun void tempo(int targetBpm)
+    {
+        targetBpm => bpm;
+        update();
+    }
+
+    // change tempo to current bpm * value interpolated over a length of time
+    fun void tempo(float value, dur length)
+    {
+        <<<"changing tempo to relative value",value,bpm,((bpm * value) $ int)>>>;
+        tempo((bpm * value) $ int, length);
+    }
+
+    // change tempo to target bpm interpolated over a length of time
+    fun void tempo(int targetBpm, dur length)
+    {
+        <<<"changing tempo to target bpm",targetBpm>>>;
+        CubicIn cubicIn;
+	<<<"   target bpm",targetBpm>>>;
+        tempo(targetBpm, length, cubicIn);
+    }
+
+    // change tempo to current bpm * value interpolated over a length of time with the specified interpolation function
+/*
+    fun void tempo(float value, dur length, Interpolation interpolation)
+    {
+        <<<"changing tempo to relative value",value,bpm,((bpm * value) $ int)>>>;
+        tempo((bpm * value) $ int, length, interpolation);
+    }
+*/
+
+    fun void tempo(int targetBpm, dur length, Interpolation interpolation)
+    {
+        <<<"current bpm",bpm,"target bpm",targetBpm,"length",length>>>;
+        bpm => int originalBpm;
+        length / 100.0 => dur step;
+	for (0 => int i; i < 100; i++)
+	{
+            step => now;
+            originalBpm + (interpolation.evaluate(i / 100.0) * (originalBpm - targetBpm)) $ int => bpm;
+	    <<<"   step",i,originalBpm,interpolation.evaluate(i / 100.0),(originalBpm - targetBpm),bpm>>>;
+	    update();
+	}
+    }
+
+    fun void _tempo(int targetBpm, dur length, Interpolation interpolation)
+    {
+        <<<"_tempo current bpm",bpm,"target bpm",targetBpm,"length",length>>>;
+        bpm => int originalBpm;
+        length / 100.0 => dur step;
+	for (0 => int i; i < 100; i++)
+	{
+            step => now;
+            originalBpm + (interpolation.evaluate(i / 100.0) * (targetBpm - originalBpm)) $ int => bpm;
+	    <<<"   step",i,originalBpm,interpolation.evaluate(i / 100.0),(targetBpm - originalBpm),bpm>>>;
+	    update();
+	}
+	// just in case we didn't get there due to rounding error
+	tempo(targetBpm);
+	<<<"   final",bpm>>>;
     }
 
     fun dur breve()
@@ -436,6 +555,17 @@ public class TimeSignature
         bar => timeSignature.bar;
         beat => timeSignature.beat;
         bpm => timeSignature.bpm;
+        timeSignature.update();
+        return timeSignature;
+    }
+
+    fun static TimeSignature create(int bar, int beat, int bpm, Random random)
+    {
+        TimeSignature timeSignature;
+        bar => timeSignature.bar;
+        beat => timeSignature.beat;
+        bpm => timeSignature.bpm;
+	random @=> timeSignature.random;
         timeSignature.update();
         return timeSignature;
     }

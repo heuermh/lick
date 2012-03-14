@@ -24,10 +24,11 @@ public class HumanizedDurProvider extends DurProvider
 {
     0.05 => float anticipation;
     0.05 => float delay;
+    Random random;
 
     fun dur evaluate()
     {
-        return Humanize.humanize(duration, anticipation, delay);
+        return Humanize.humanize(duration, anticipation, delay, random);
     }
 
     fun static HumanizedDurProvider create(dur duration, float anticipation, float delay)
@@ -36,6 +37,16 @@ public class HumanizedDurProvider extends DurProvider
         duration => humanizedDurProvider.duration;
         anticipation => humanizedDurProvider.anticipation;
         delay => humanizedDurProvider.delay;
+        return humanizedDurProvider;
+    }
+
+    fun static HumanizedDurProvider create(dur duration, float anticipation, float delay, Random random)
+    {
+        HumanizedDurProvider humanizedDurProvider;
+        duration => humanizedDurProvider.duration;
+        anticipation => humanizedDurProvider.anticipation;
+        delay => humanizedDurProvider.delay;
+	random @=> humanizedDurProvider.random;
         return humanizedDurProvider;
     }
 }

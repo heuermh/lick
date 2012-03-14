@@ -52,5 +52,65 @@ public class Humanize
         return value + Std.rand2f(0.0, delay) * value;
     }
 
-    // gaussian, etc.
+
+    fun static dur humanize(dur value, Random random)
+    {
+        return humanize(value, 0.05, 0.05, random);
+    }
+
+    fun static dur humanize(dur value, float anticipation, float delay, Random random)
+    {
+        return value - random.evaluate() * anticipation * value + random.evaluate() * delay * value;
+    }
+
+    fun static dur anticipate(dur value, Random random)
+    {
+        return anticipate(value, 0.1, random);
+    }
+
+    fun static dur anticipate(dur value, float anticipation, Random random)
+    {
+        return value - random.evaluate() * anticipation * value;
+    }
+
+    fun static dur delay(dur value, Random random)
+    {
+        return delay(value, 0.1, random);
+    }
+
+    fun static dur delay(dur value, float delay, Random random)
+    {
+        return value + random.evaluate() * delay * value;
+    }
+
+
+    fun dur humanizeGaussian(dur value)
+    {
+        return humanizeGaussian(value, 0.05, 0.05);
+    }
+
+    fun dur humanizeGaussian(dur value, float anticipation, float delay)
+    {
+        return value + GaussianRandom.nextGaussian() * anticipation * value - GaussianRandom.nextGaussian() * delay * value;
+    }
+
+    fun static dur anticipateGaussian(dur value)
+    {
+        return anticipateGaussian(value, 0.1);
+    }
+
+    fun static dur anticipateGaussian(dur value, float anticipation)
+    {
+        return value - GaussianRandom.nextGaussian() * anticipation * value;
+    }
+
+    fun static dur delayGaussian(dur value)
+    {
+        return delayGaussian(value, 0.1);
+    }
+
+    fun static dur delayGaussian(dur value, float delay)
+    {
+        return value + GaussianRandom.nextGaussian() * delay * value;
+    }
 }

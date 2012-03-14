@@ -129,6 +129,7 @@ Machine.add("QuinticIn.ck");
 Machine.add("QuinticInOut.ck");
 Machine.add("QuinticOut.ck");
 Machine.add("Random.ck");
+Machine.add("GaussianRandom.ck");
 Machine.add("RandomFloor.ck");
 Machine.add("RandomThreshold.ck");
 Machine.add("SinusoidalIn.ck");
