@@ -22,52 +22,187 @@
 
 TimeSignature.common(120) @=> TimeSignature t;
 
-<<<"waiting one whole note . . .",now>>>;
-t.w => now;
-<<<"done",now>>>;
+<<<"intial tempo",t.bpm,"bpm">>>;
 
-<<<"changing tempo to 60 bpm immediately">>>;
+<<<"   waiting one whole note . . .",now>>>;
+t.w => now;
+<<<"   done",now>>>;
+
+
 t.tempo(60);
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"changing tempo back to 120 bpm immediately">>>;
-t.tempo(120);
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
+
+<<<"sporking tempo increase by 2.0 over one measure (at current tempo) . . .",now>>>;
+spork ~ t.accel(2.0);
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"sporking tempo change to 60 bpm over four whole notes (at current tempo). . .",now>>>;
-CubicIn cubicIn;
+
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
+
+<<<"sporking tempo decrease by 0.5 over one measure (at current tempo) . . .",now>>>;
+spork ~ t.decel(0.5);
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one whole note . . .",now>>>;
+t.w => now;
+<<<"   done",now>>>;
+
+
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
+
+<<<"sporking tempo increase by 2.0 over two whole notes (at current tempo) . . .",now>>>;
+spork ~ t.accel(2.0, t.w * 2);
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one whole note . . .",now>>>;
+t.w => now;
+<<<"   done",now>>>;
+
+
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
+
+<<<"sporking tempo decrease by 0.5 over two whole notes (at current tempo) . . .",now>>>;
+spork ~ t.decel(0.5, t.w * 2);
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one quarter note . . .",now>>>;
+t.q => now;
+<<<"   done",now>>>;
+
+<<<"   waiting one whole note . . .",now>>>;
+t.w => now;
+<<<"   done",now>>>;
+
+
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
+
+<<<"sporking tempo change to 120 bpm over four whole notes (at current tempo) . . .",now>>>;
 CubicOut cubicOut;
-60 => int foo;
-<<<"foo",foo>>>;
-spork ~ t._tempo(foo, t.w * 4, cubicOut);
-//t._tempo(foo, t.w * 4, cubicOut);
+spork ~ t.tempo(120, t.w * 4, cubicOut);
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-<<<"waiting one whole note . . .",now>>>;
+<<<"   waiting one whole note . . .",now>>>;
 t.w => now;
-<<<"done",now>>>;
+<<<"   done",now>>>;
 
-//1::minute => now;
+<<<"   waiting one whole note . . .",now>>>;
+t.w => now;
+<<<"   done",now>>>;
+
+
+<<<"\ncurrent tempo",t.bpm,"bpm">>>;
 
 <<<"ok">>>;

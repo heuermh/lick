@@ -195,122 +195,93 @@ public class TimeSignature
         b / 32 => u;
     }
 
-/*
-    // increase tempo 1% over one measure
-    fun void accel()
-    {
-        tempo(1.1, beat * q);
-    }
-
     // increase tempo by the specified factor over one measure
     fun void accel(float value)
     {
-        tempo(1.0 + value, beat * q);
+        if (value < 1.0)
+        {
+            <<<"accel(float) should use values above 1.0, was",value>>>;
+        }
+        CubicIn cubicIn;
+        tempo((bpm * value) $ int, beat * q, cubicIn);
     }
 
     // increase tempo by the specified factor interpolated over a length of time
     fun void accel(float value, dur length)
     {
-	tempo(1.0 + value, length);
+        if (value < 1.0)
+        {
+            <<<"accel(float) should use values above 1.0, was",value>>>;
+        }
+        CubicIn cubicIn;
+        tempo((bpm * value) $ int, length, cubicIn);
     }
 
     // increase tempo by the specified factor interpolated over a length of time with the specified interpolation function
     fun void accel(float value, dur length, Interpolation interpolation)
     {
-        tempo(1.0 + value, length, interpolation);
-    }
-
-    // decrease tempo 1% over one measure
-    fun void ritard()
-    {
-        tempo(0.9, beat * q);
+        if (value < 1.0)
+        {
+            <<<"accel(float) should use values above 1.0, was",value>>>;
+        }
+        tempo((bpm * value) $ int, length, interpolation);
     }
 
     // decrease tempo by the specified factor over one measure
-    fun void ritard(float value)
+    fun void decel(float value)
     {
-	tempo(1.0 - value, beat * q);
+        if (value > 1.0)
+        {
+            <<<"decel(float) should use values below 1.0, was",value>>>;
+        }
+        CubicOut cubicOut;
+        tempo((bpm * value) $ int, beat * q, cubicOut);
     }
 
     // decrease tempo by the specified factor interpolated over a length of time
-    fun void ritard(float value, dur length)
+    fun void decel(float value, dur length)
     {
-        tempo(1.0 - value, length);
+        if (value > 1.0)
+        {
+            <<<"decel(float) should use values below 1.0, was",value>>>;
+        }
+        CubicOut cubicOut;
+        tempo((bpm * value) $ int, length, cubicOut);
     }
 
     // decrease tempo by the specified factor interpolated over a length of time with the specified interpolation function
-    fun void ritard(float value, dur length, Interpolation interpolation)
+    fun void decel(float value, dur length, Interpolation interpolation)
     {
-        tempo(1.0 - value, length, interpolation);
-    }
-*/
-    // change tempo to current bpm * value immediately
-    fun void tempo(float value)
-    {
-	tempo((bpm * value) $ int);
+        if (value > 1.0)
+        {
+            <<<"decel(float) should use values below 1.0, was",value>>>;
+        }
+        tempo((bpm * value) $ int, length, interpolation);
     }
 
     // change tempo to target bpm immediately
     fun void tempo(int targetBpm)
     {
+        <<<"changing tempo from current bpm",bpm,"to target bpm",targetBpm,"immediately">>>;
         targetBpm => bpm;
         update();
     }
 
-    // change tempo to current bpm * value interpolated over a length of time
-    fun void tempo(float value, dur length)
-    {
-        <<<"changing tempo to relative value",value,bpm,((bpm * value) $ int)>>>;
-        tempo((bpm * value) $ int, length);
-    }
-
-    // change tempo to target bpm interpolated over a length of time
-    fun void tempo(int targetBpm, dur length)
-    {
-        <<<"changing tempo to target bpm",targetBpm>>>;
-        CubicIn cubicIn;
-	<<<"   target bpm",targetBpm>>>;
-        tempo(targetBpm, length, cubicIn);
-    }
-
-    // change tempo to current bpm * value interpolated over a length of time with the specified interpolation function
-/*
-    fun void tempo(float value, dur length, Interpolation interpolation)
-    {
-        <<<"changing tempo to relative value",value,bpm,((bpm * value) $ int)>>>;
-        tempo((bpm * value) $ int, length, interpolation);
-    }
-*/
-
+    // change tempo to target bpm interpolated over a length of time with the specified interpolation function
     fun void tempo(int targetBpm, dur length, Interpolation interpolation)
     {
-        <<<"current bpm",bpm,"target bpm",targetBpm,"length",length>>>;
-        bpm => int originalBpm;
-        length / 100.0 => dur step;
-	for (0 => int i; i < 100; i++)
-	{
-            step => now;
-            originalBpm + (interpolation.evaluate(i / 100.0) * (originalBpm - targetBpm)) $ int => bpm;
-	    <<<"   step",i,originalBpm,interpolation.evaluate(i / 100.0),(originalBpm - targetBpm),bpm>>>;
-	    update();
-	}
-    }
-
-    fun void _tempo(int targetBpm, dur length, Interpolation interpolation)
-    {
-        <<<"_tempo current bpm",bpm,"target bpm",targetBpm,"length",length>>>;
+        <<<"changing tempo from current bpm",bpm,"to target bpm",targetBpm,"over length",length,"...">>>;
         bpm => int originalBpm;
         length / 100.0 => dur step;
 	for (0 => int i; i < 100; i++)
 	{
             step => now;
             originalBpm + (interpolation.evaluate(i / 100.0) * (targetBpm - originalBpm)) $ int => bpm;
-	    <<<"   step",i,originalBpm,interpolation.evaluate(i / 100.0),(targetBpm - originalBpm),bpm>>>;
 	    update();
 	}
 	// just in case we didn't get there due to rounding error
-	tempo(targetBpm);
-	<<<"   final",bpm>>>;
+        targetBpm => bpm;
+        update();
     }
 
     fun dur breve()

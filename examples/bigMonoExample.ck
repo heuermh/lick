@@ -34,10 +34,11 @@ t.eighthProvider() @=> HumanizedDurProvider eighth;
 
 spork ~ Loops.loop(bigMono.closedHat.asProcedure(), t.whole(), eighth, t.bar * 4 * 8).run();
 
-<<<"waiting one whole note . . .">>>;
-t.w => now;
+<<<"waiting three whole notes . . .">>>;
+3 * t.w => now;
 
 <<<"changing tempo to 60 bpm immediately . . .">>>;
+<<<"   (note that only loops based on dur providers are affected)">>>;
 t.tempo(60);
 
 <<<"waiting two whole notes . . .">>>;
@@ -46,7 +47,10 @@ t.tempo(60);
 <<<"changing tempo back to 98 bpm immediately . . .">>>;
 t.tempo(98);
 
-//<<<"starting ritard over four whole notes . . .">>>;
-//t.ritard(0.5, t.bar * 24 * t.q);
+<<<"waiting two whole notes . . .">>>;
+2 * t.w => now;
+
+<<<"sporking tempo decrease by half over six whole notes (at current tempo) . . .">>>;
+spork ~ t.decel(0.5, t.w * 6);
 
 1::minute => now;
