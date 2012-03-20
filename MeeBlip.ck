@@ -27,7 +27,7 @@ public class MeeBlip
 
     {
         0.8 => osc.gain;
-	adsr.keyOff();
+        adsr.keyOff();
     }
 
     // MIDI instrument API
@@ -36,7 +36,7 @@ public class MeeBlip
     {
         <<<"note on", note, velocity>>>;
         freq(midi2freq(note));
-	noteOn(midi2vel(velocity));
+        noteOn(midi2vel(velocity));
     }
 
     fun void noteOff(int note, int velocity)
