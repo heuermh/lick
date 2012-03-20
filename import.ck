@@ -193,10 +193,16 @@ Machine.add("Arpeggiators.ck");
 // unit test
 Machine.add("Assert.ck");
 
+// midi
+Machine.add("ControlChangeMidiMsg.ck");
+Machine.add("NoteOffMidiMsg.ck");
+Machine.add("NoteOnMidiMsg.ck");
+
 // devices
 Machine.add("Keyboard.ck");
 Machine.add("Joystick.ck");
 Machine.add("LogitechGamepadF310.ck");
+Machine.add("MeeBlipMidi.ck");
 Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
@@ -209,6 +215,7 @@ Machine.add("EuclidMidi.ck");
 Machine.add("IanniXOsc.ck");
 
 // simulators
+Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
 Machine.add("VoiceOfSaturn.ck");
 
