@@ -20,7 +20,7 @@
 
 */
 
-// functors
+// functors, package functor
 Machine.add("BinaryFunction.ck");
 Machine.add("BinaryPredicate.ck");
 Machine.add("BinaryProcedure.ck");
@@ -97,7 +97,7 @@ Machine.add("Functions.ck");
 Machine.add("FloatFunctions.ck");
 Machine.add("IntFunctions.ck");
 
-// interpolation
+// interpolation, package interpolate
 Machine.add("Interpolation.ck");
 Machine.add("BackIn.ck");
 Machine.add("BackOut.ck");
@@ -136,12 +136,12 @@ Machine.add("SinusoidalIn.ck");
 Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
 
-// duration providers
+// duration providers, package duration
 Machine.add("DurProvider.ck");
 Machine.add("Humanize.ck");
 Machine.add("HumanizedDurProvider.ck");
 
-// procedures
+// procedures, package loop
 Machine.add("Append.ck");
 Machine.add("Prepend.ck");
 Machine.add("Repeat.ck");
@@ -150,7 +150,7 @@ Machine.add("Loop.ck");
 Machine.add("Loops.ck");
 Machine.add("LoopBuilder.ck");
 
-// list
+// list, package collect
 Machine.add("Comparator.ck");
 Machine.add("Iterator.ck");
 Machine.add("List.ck");
@@ -182,7 +182,7 @@ Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
 // intervals, chords, arpeggiator
-Machine.add("TimeSignature.ck");
+Machine.add("TimeSignature.ck"); // package duration?
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
 Machine.add("Chord.ck");
@@ -190,36 +190,36 @@ Machine.add("Chords.ck");
 Machine.add("Arpeggiator.ck");
 Machine.add("Arpeggiators.ck");
 
-// unit test
+// unit test, package test
 Machine.add("Assert.ck");
 
-// midi
+// midi, package midi
 Machine.add("ControlChangeMidiMsg.ck");
 Machine.add("NoteOffMidiMsg.ck");
 Machine.add("NoteOnMidiMsg.ck");
 
-// devices
+// devices, package device
 Machine.add("Keyboard.ck");
 Machine.add("Joystick.ck");
 Machine.add("LogitechGamepadF310.ck");
-Machine.add("MeeBlipMidi.ck");
+Machine.add("MeeBlipMidi.ck"); // to package midi?
 Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
 Machine.add("Ozone.ck");
 //Machine.add("SooperLooper.ck");
-Machine.add("ControlOscServer.ck");
+Machine.add("ControlOscServer.ck"); // package osc?
 Machine.add("TouchOscServer.ck");
 Machine.add("EuclidOsc.ck");
 Machine.add("EuclidMidi.ck");
 Machine.add("IanniXOsc.ck");
 
-// simulators
+// simulators, package simulator
 Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
 Machine.add("VoiceOfSaturn.ck");
 
-// sample-based drum machines
+// sample-based drum machines, package sample
 Machine.add("Sample.ck");
 Machine.add("CompositeSample.ck");
 Machine.add("RandomSample.ck");
