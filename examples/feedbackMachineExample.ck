@@ -22,25 +22,25 @@
 
 FeedbackMachine fm;
 
-1200::ms => fm.delay1.max;
-1200::ms => fm.delay1.delay;
-0.40 => fm.feedback1.gain;
-0.80 => fm.output1.gain;
+1200::ms => fm.delay1.delay.max;
+1200::ms => fm.delay1.delay.delay;
+0.40 => fm.delay1.feedback.gain;
+0.80 => fm.delay1.output.gain;
 
-1600::ms => fm.delay2.max;
-1600::ms => fm.delay2.delay;
-0.40 => fm.feedback2.gain;
-0.80 => fm.output2.gain;
+1600::ms => fm.delay2.delay.max;
+1600::ms => fm.delay2.delay.delay;
+0.40 => fm.delay2.feedback.gain;
+0.80 => fm.delay2.output.gain;
 
-200::ms => fm.delay3.max;
-200::ms => fm.delay3.delay;
-0.90 => fm.feedback3.gain;
-0.80 => fm.output3.gain;
+200::ms => fm.delay3.delay.max;
+200::ms => fm.delay3.delay.delay;
+0.90 => fm.delay3.feedback.gain;
+0.80 => fm.delay3.output.gain;
 
-300::ms => fm.delay4.max;
-300::ms => fm.delay4.delay;
-0.90 => fm.feedback4.gain;
-0.80 => fm.output4.gain;
+300::ms => fm.delay4.delay.max;
+300::ms => fm.delay4.delay.delay;
+0.90 => fm.delay4.feedback.gain;
+0.80 => fm.delay4.output.gain;
 
 0.1 => fm.route1to2.gain;
 0.0 => fm.route1to3.gain;
