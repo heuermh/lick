@@ -21,7 +21,7 @@
 */
 
 BigMono bigMono;
-TimeSignature.common(98) @=> TimeSignature t;
+TimeSignature.common(130) @=> TimeSignature t;
 
 spork ~ Loops.loop(bigMono.kick.asProcedure(), t.half(), t.bar * 8).run();
 spork ~ Loops.loop(bigMono.kick.asProcedure(), t.whole() + t.eighth(), t.whole() + t.half(), t.bar * 2).run();
@@ -39,13 +39,13 @@ spork ~ Loops.loop(bigMono.closedHat.asProcedure(), t.whole(), eighth, t.bar * 4
 
 <<<"changing tempo to 60 bpm immediately . . .">>>;
 <<<"   (note that only loops based on dur providers are affected)">>>;
-t.tempo(60);
+t.tempo(65);
 
 <<<"waiting two whole notes . . .">>>;
 2 * t.w => now;
 
-<<<"changing tempo back to 98 bpm immediately . . .">>>;
-t.tempo(98);
+<<<"changing tempo back to 130 bpm immediately . . .">>>;
+t.tempo(130);
 
 <<<"waiting two whole notes . . .">>>;
 2 * t.w => now;
