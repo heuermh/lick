@@ -237,4 +237,18 @@ Machine.add("RolandTr808.ck");
 Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 
+// delay stuff
+Machine.add("MonoDelay.ck");
+Machine.add("MonoDelayA.ck");
+Machine.add("MonoDelayL.ck");
+Machine.add("StereoDelay.ck");
+Machine.add("StereoDelayA.ck");
+Machine.add("StereoDelayL.ck");
+Machine.add("FeedbackMachine.ck");
+Machine.add("FeedbackMachineA.ck");
+Machine.add("FeedbackMachineL.ck");
+Machine.add("StereoFeedbackMachine.ck");
+Machine.add("StereoFeedbackMachineA.ck");
+Machine.add("StereoFeedbackMachineL.ck");
+
 <<<"LiCK imported.">>>;
