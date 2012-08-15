@@ -78,6 +78,6 @@ for (0 => int i; i < 10; i++)
     800::ms => now;
 }
 
-8::second => now;
+12::second => now;
 
 <<<"done">>>;

@@ -27,8 +27,8 @@ StereoFeedbackMachine fm;
 0.40 => fm.delay1.feedbackL.gain;
 0.80 => fm.delay1.outputL.gain;
 
-1200::ms => fm.delay1.delayR.max;
-1200::ms => fm.delay1.delayR.delay;
+1100::ms => fm.delay1.delayR.max;
+1100::ms => fm.delay1.delayR.delay;
 0.40 => fm.delay1.feedbackR.gain;
 0.80 => fm.delay1.outputR.gain;
 
@@ -37,8 +37,8 @@ StereoFeedbackMachine fm;
 0.40 => fm.delay2.feedbackL.gain;
 0.80 => fm.delay2.outputL.gain;
 
-1600::ms => fm.delay2.delayR.max;
-1600::ms => fm.delay2.delayR.delay;
+1800::ms => fm.delay2.delayR.max;
+1800::ms => fm.delay2.delayR.delay;
 0.40 => fm.delay2.feedbackR.gain;
 0.80 => fm.delay2.outputR.gain;
 
@@ -47,8 +47,8 @@ StereoFeedbackMachine fm;
 0.90 => fm.delay3.feedbackL.gain;
 0.80 => fm.delay3.outputL.gain;
 
-200::ms => fm.delay3.delayR.max;
-200::ms => fm.delay3.delayR.delay;
+100::ms => fm.delay3.delayR.max;
+100::ms => fm.delay3.delayR.delay;
 0.90 => fm.delay3.feedbackR.gain;
 0.80 => fm.delay3.outputR.gain;
 
@@ -57,8 +57,8 @@ StereoFeedbackMachine fm;
 0.90 => fm.delay4.feedbackL.gain;
 0.80 => fm.delay4.outputL.gain;
 
-300::ms => fm.delay4.delayR.max;
-300::ms => fm.delay4.delayR.delay;
+500::ms => fm.delay4.delayR.max;
+500::ms => fm.delay4.delayR.delay;
 0.90 => fm.delay4.feedbackR.gain;
 0.80 => fm.delay4.outputR.gain;
 
@@ -75,18 +75,18 @@ StereoFeedbackMachine fm;
 0.3 => fm.route4Lto2L.gain;
 0.0 => fm.route4Lto3L.gain;
 
-0.1 => fm.route1Rto2R.gain;
-0.0 => fm.route1Rto3R.gain;
-0.3 => fm.route1Rto4R.gain;
-0.0 => fm.route2Rto1R.gain;
+0.0 => fm.route1Rto2R.gain;
+0.1 => fm.route1Rto3R.gain;
+0.0 => fm.route1Rto4R.gain;
+0.3 => fm.route2Rto1R.gain;
 0.1 => fm.route2Rto3R.gain;
 0.0 => fm.route2Rto4R.gain;
-0.0 => fm.route3Rto1R.gain;
-0.2 => fm.route3Rto2R.gain;
-0.1 => fm.route3Rto4R.gain;
-0.0 => fm.route4Rto1R.gain;
-0.3 => fm.route4Rto2R.gain;
-0.0 => fm.route4Rto3R.gain;
+0.2 => fm.route3Rto1R.gain;
+0.0 => fm.route3Rto2R.gain;
+0.0 => fm.route3Rto4R.gain;
+0.1 => fm.route4Rto1R.gain;
+0.0 => fm.route4Rto2R.gain;
+0.3 => fm.route4Rto3R.gain;
 
 
 BeeThree bt;
@@ -116,6 +116,6 @@ for (0 => int i; i < 10; i++)
     800::ms => now;
 }
 
-8::second => now;
+12::second => now;
 
 <<<"done">>>;
