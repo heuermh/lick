@@ -245,9 +245,11 @@ Machine.add("StereoDelay.ck");
 Machine.add("StereoDelayA.ck");
 Machine.add("StereoDelayL.ck");
 Machine.add("FeedbackMachine.ck");
+Machine.add("FeedbackMachines.ck");
 Machine.add("FeedbackMachineA.ck");
 Machine.add("FeedbackMachineL.ck");
 Machine.add("StereoFeedbackMachine.ck");
+Machine.add("StereoFeedbackMachines.ck");
 Machine.add("StereoFeedbackMachineA.ck");
 Machine.add("StereoFeedbackMachineL.ck");
 

@@ -143,4 +143,51 @@ public class StereoFeedbackMachineL
         delay3.outputR => wetR;
         delay4.outputR => wetR;
     }
+
+    fun void panic()
+    {
+        feedback(0.0);
+        route(0.0);
+    }
+
+    fun void feedback(float f)
+    {
+        f => delay1.feedbackL.gain;
+        f => delay2.feedbackL.gain;
+        f => delay3.feedbackL.gain;
+        f => delay4.feedbackL.gain;
+        f => delay1.feedbackR.gain;
+        f => delay2.feedbackR.gain;
+        f => delay3.feedbackR.gain;
+        f => delay4.feedbackR.gain;
+    }
+
+    fun void route(float f)
+    {
+        f => route1Lto2L.gain;
+        f => route1Lto3L.gain;
+        f => route1Lto4L.gain;
+        f => route2Lto1L.gain;
+        f => route2Lto3L.gain;
+        f => route2Lto4L.gain;
+        f => route3Lto1L.gain;
+        f => route3Lto2L.gain;
+        f => route3Lto4L.gain;
+        f => route4Lto1L.gain;
+        f => route4Lto2L.gain;
+        f => route4Lto3L.gain;
+
+        f => route1Rto2R.gain;
+        f => route1Rto3R.gain;
+        f => route1Rto4R.gain;
+        f => route2Rto1R.gain;
+        f => route2Rto3R.gain;
+        f => route2Rto4R.gain;
+        f => route3Rto1R.gain;
+        f => route3Rto2R.gain;
+        f => route3Rto4R.gain;
+        f => route4Rto1R.gain;
+        f => route4Rto2R.gain;
+        f => route4Rto3R.gain;
+    }
 }

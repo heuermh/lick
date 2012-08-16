@@ -85,4 +85,34 @@ public class FeedbackMachine
         delay3.output => wet;
         delay4.output => wet;
     }
+
+    fun void panic()
+    {
+        feedback(0.0);
+        route(0.0);
+    }
+
+    fun void feedback(float f)
+    {
+        f => delay1.feedback.gain;
+        f => delay2.feedback.gain;
+        f => delay3.feedback.gain;
+        f => delay4.feedback.gain;
+    }
+
+    fun void route(float f)
+    {
+        f => route1to2.gain;
+        f => route1to3.gain;
+        f => route1to4.gain;
+        f => route2to1.gain;
+        f => route2to3.gain;
+        f => route2to4.gain;
+        f => route3to1.gain;
+        f => route3to2.gain;
+        f => route3to4.gain;
+        f => route4to1.gain;
+        f => route4to2.gain;
+        f => route4to3.gain;
+    }
 }
