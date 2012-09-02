@@ -68,18 +68,18 @@ public class AnimoogMidi
     0 => static int OFF;
     64 => static int ON;
     0 => static int LP;
-    1 => static int BP;
-    2 => static int HP;
+    1 * 41 => static int BP;
+    2 * 41 => static int HP;
     0 => static int LOOPING;
-    1 => static int BACK_FORTH;
-    2 => static int ONCE;
-    1 => static int TWO_VOICES;
-    2 => static int FOUR_VOICES;
+    1 * 41 => static int BACK_FORTH;
+    2 * 41 => static int ONCE;
+    1 * 41 => static int TWO_VOICES;
+    2 * 41=> static int FOUR_VOICES;
     0 => static int SINE;
-    1 => static int RAMP;
-    2 => static int SAWTOOTH;
-    3 => static int SQUARE;
-    4 => static int SAMPLE_AND_HOLD;
+    1 * 25 => static int RAMP;
+    2 * 25 => static int SAWTOOTH;
+    3 * 25 => static int SQUARE;
+    4 * 25 => static int SAMPLE_AND_HOLD;
 
     MidiOut out;
     ControlChangeMidiMsg ccMsg;
@@ -144,7 +144,7 @@ public class AnimoogMidi
     fun void filter(int filter)
     {
          ccMsg.number(FILTER_CC);
-         ccMsg.value(41 * filter);
+         ccMsg.value(filter);
          out.send(ccMsg);
     }
 
@@ -296,7 +296,7 @@ public class AnimoogMidi
     fun void pathMode(int pathMode)
     {
          ccMsg.number(PATH_MODE_CC);
-         ccMsg.value(41 * pathMode);
+         ccMsg.value(pathMode);
          out.send(ccMsg);
     }
 
@@ -354,7 +354,7 @@ public class AnimoogMidi
     fun void thickUnison(int thickUnison)
     {
          ccMsg.number(THICK_UNISON_CC);
-         ccMsg.value(41 * thickUnison);
+         ccMsg.value(thickUnison);
          out.send(ccMsg);
     }
 
@@ -371,7 +371,7 @@ public class AnimoogMidi
     fun void delaySync(int delaySync)
     {
          ccMsg.number(DELAY_SYNC_CC);
-         ccMsg.value(41 * delaySync);
+         ccMsg.value(delaySync);
          out.send(ccMsg);
     }
 
@@ -709,7 +709,7 @@ public class AnimoogMidi
     fun void lfoShape(int lfoShape)
     {
          ccMsg.number(LFO_SHAPE_CC);
-         ccMsg.value(25 * lfoShape);
+         ccMsg.value(lfoShape);
          out.send(ccMsg);
     }
 
