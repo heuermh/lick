@@ -626,12 +626,12 @@ public class Animoog
 
     fun float midi2freq(int n)
     {
-        return 0.0;
+        return Std.mtof(n);
     }
 
     fun float midi2vel(int v)
     {
-        return 0.0;
+        return (v / 127.0);
     }
 
     fun int toCC(float value)

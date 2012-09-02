@@ -530,12 +530,20 @@ http://meeblip.com/use-one/micro-kit-assembly/
 
     fun int freq2midi(float f)
     {
-        return 0;
+        return Std.ftom(f) $ int;
     }
 
     fun int vel2midi(float v)
     {
-        return 0;
+        if (v < 0.0)
+        {
+            return 0;
+        }
+        if (v > 1.0)
+        {
+            return 127;
+        }
+        return (v * 127.0) $ int;
     }
 
     fun int toCC(float value)
