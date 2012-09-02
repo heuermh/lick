@@ -197,24 +197,28 @@ Machine.add("Assert.ck");
 Machine.add("ControlChangeMidiMsg.ck");
 Machine.add("NoteOffMidiMsg.ck");
 Machine.add("NoteOnMidiMsg.ck");
+Machine.add("AnimoogMidi.ck");
+Machine.add("MeeBlipMidi.ck");
+Machine.add("EuclidMidi.ck");
 
 // devices, package device
 Machine.add("Keyboard.ck");
 Machine.add("Joystick.ck");
 Machine.add("LogitechGamepadF310.ck");
-Machine.add("MeeBlipMidi.ck"); // to package midi?
 Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
 Machine.add("Ozone.ck");
-//Machine.add("SooperLooper.ck");
-Machine.add("ControlOscServer.ck"); // package osc?
-Machine.add("TouchOscServer.ck");
+
+// osc, package osc
+Machine.add("ControlOscServer.ck");
 Machine.add("EuclidOsc.ck");
-Machine.add("EuclidMidi.ck");
 Machine.add("IanniXOsc.ck");
+//Machine.add("SooperLooper.ck");
+Machine.add("TouchOscServer.ck");
 
 // simulators, package simulator
+Machine.add("Animoog.ck");
 Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
 Machine.add("VoiceOfSaturn.ck");

@@ -538,8 +538,16 @@ http://meeblip.com/use-one/micro-kit-assembly/
         return 0;
     }
 
-    fun int toCC(float v)
+    fun int toCC(float value)
     {
-        return 0;
+        if (value < 0.0)
+        {
+            return 0;
+        }
+        if (value > 1.0)
+        {
+            return 127;
+        }
+        return (value * 127.0) $ int;
     }
 }
