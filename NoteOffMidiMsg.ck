@@ -24,11 +24,13 @@ public class NoteOffMidiMsg extends MidiMsg
 {
     {
         // set status byte, default to channel 1
+        0x80 => data1;
     }
 
     fun void channel(int channel)
     {
         // update status byte, x in 8x
+        ((0x8 & 0xf) << 4) | ((channel - 1) & 0xf) => data1;
     }
 
     fun void note(int note)

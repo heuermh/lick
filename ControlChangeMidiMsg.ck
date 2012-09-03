@@ -24,20 +24,22 @@ public class ControlChangeMidiMsg extends MidiMsg
 {
     {
         // set status byte, default to channel 1
+        0xB0 => data1;
     }
 
     fun void channel(int channel)
     {
         // update status byte, x in Bx
+        ((0xB & 0xf) << 4) | ((channel - 1) & 0xf) => data1;
     }
 
     fun void number(int number)
     {
-        // update first data byte
+        number & 0x7f => data2;
     }
 
     fun void value(int value)
     {
-        // update second data byte
+        value & 0x7f => data3;
     }
 }

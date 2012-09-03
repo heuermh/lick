@@ -24,20 +24,22 @@ public class NoteOnMidiMsg extends MidiMsg
 {
     {
         // set status byte, default to channel 1
+        0x90 => data1;
     }
 
     fun void channel(int channel)
     {
         // update status byte, x in 9x
+        ((0x9 & 0xf) << 4) | ((channel - 1) & 0xf) => data1;
     }
 
     fun void note(int note)
     {
-        // update first data byte
+        note & 0x7f => data2;
     }
 
     fun void velocity(int velocity)
     {
-        // update second data byte
+        velocity & 0x7f => data3;
     }
 }

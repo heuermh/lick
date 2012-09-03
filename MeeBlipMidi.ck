@@ -554,8 +554,8 @@ http://meeblip.com/use-one/micro-kit-assembly/
         }
         if (value > 1.0)
         {
-            return 127;
+            return 121;
         }
-        return (value * 127.0) $ int;
+        return (value * 121.0) $ int;
     }
 }

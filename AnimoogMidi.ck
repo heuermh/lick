@@ -62,8 +62,9 @@ public class AnimoogMidi
     35 => static int LFO_SYNC_CC;
     36 => static int LFO_RATE_CC;
     37 => static int LFO_SHAPE_CC;
-    38 => static int ORIGIN_X_CC;
-    39 => static int ORIGIN_Y_CC;
+    38 => static int LFO_KB_TRIG_CC;
+    39 => static int ORIGIN_X_CC;
+    40 => static int ORIGIN_Y_CC;
 
     0 => static int OFF;
     64 => static int ON;
@@ -718,11 +719,28 @@ public class AnimoogMidi
         lfoShape(toCC(_lfoShape));
     }
 
+    fun void lfoKeyTriggerOn()
+    {
+        lfoKeyTrigger(ON);
+    }
+
+    fun void lfoKeyTriggerOff()
+    {
+        lfoKeyTrigger(OFF);
+    }
+
+    fun void lfoKeyTrigger(int keyTrigger)
+    {
+         ccMsg.number(LFO_KB_TRIG_CC);
+         ccMsg.value(keyTrigger);
+         out.send(ccMsg);
+    }
+
     fun void originX(int originX)
     {
          ccMsg.number(ORIGIN_X_CC);
          ccMsg.value(originX);
-         out.send(ccMsg);        
+         out.send(ccMsg);
     }
 
     fun void originX(float _originX)
@@ -771,8 +789,8 @@ public class AnimoogMidi
         }
         if (value > 1.0)
         {
-            return 127;
+            return 121;
         }
-        return (value * 127.0) $ int;
+        return (value * 121.0) $ int;
     }
 }
