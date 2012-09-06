@@ -46,7 +46,7 @@ public class IntArrayList extends IntList
 
     fun int sample()
     {
-        return values[Math.rand2(0, size() - 1)];
+        return values[Math.random2(0, size() - 1)];
     }
 
     fun void add(int value)

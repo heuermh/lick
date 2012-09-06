@@ -20,11 +20,13 @@
 
 */
 
-TimeSignature.common(96) @=> TimeSignature t;
+// download waveforms from http://www.adventurekid.se/AKRT
 
 SndBuf akwf;
 "samples/AKWF/AKWF_raw/AKWF_raw_0022.wav" => akwf.read;
 akwf.loop(true);
+
+TimeSignature.common(96) @=> TimeSignature t;
 
 ADSR adsr;
 adsr.set(t.s, t.h, 0.9, t.e);

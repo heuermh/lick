@@ -46,7 +46,7 @@ public class FloatArrayList extends FloatList
 
     fun float sample()
     {
-        return values[Math.rand2(0, size() - 1)];
+        return values[Math.random2(0, size() - 1)];
     }
 
     fun void add(float value)

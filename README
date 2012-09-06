@@ -25,6 +25,15 @@ LiCK includes:
  - Mono and stereo Delays, FeedbackMachines
  - "ChucK-Unit", an Assert class for creating unit tests
 
+
+LiCK requires:
+
+chuck-1.3.1.0 (chimera) or later
+
+http://chuck.cs.princeton.edu/
+http://chuck.stanford.edu/
+
+
 For further documentation, please see
 
 http://wiki.github.com/heuermh/lick
