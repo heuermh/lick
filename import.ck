@@ -198,6 +198,7 @@ Machine.add("ControlChangeMidiMsg.ck");
 Machine.add("NoteOffMidiMsg.ck");
 Machine.add("NoteOnMidiMsg.ck");
 Machine.add("AnimoogMidi.ck");
+Machine.add("GarageBandMidi.ck");
 Machine.add("MeeBlipMidi.ck");
 Machine.add("EuclidMidi.ck");
 
@@ -219,6 +220,7 @@ Machine.add("TouchOscServer.ck");
 
 // simulators, package simulator
 Machine.add("Animoog.ck");
+Machine.add("GarageBand.ck");
 Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
 Machine.add("VoiceOfSaturn.ck");

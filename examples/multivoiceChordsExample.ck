@@ -41,10 +41,15 @@ class Play extends FloatProcedure
 
     fun void run(float value)
     {
+        <<<"play", value, voice>>>;
         value => bt[voice].freq;
+        <<<"play set freq to bt[voice]">>>;
         bt[voice].noteOn(1.0);
+        <<<"bt[voice] note on">>>;
         length => now;
+        <<<"bt[voice] note off">>>;
         bt[voice].noteOff(1.0);
+        <<<"play done">>>;
     }
 }
 
@@ -56,15 +61,18 @@ class PlayVoices extends FloatProcedure
 
     fun void run(float value)
     {
+        <<<"play voices", value>>>;
         Play play;
         length => play.length;
         voice => play.voice;
+        <<<"sporking play.run", value>>>;
         spork ~ play.run(value);
         voice++;
     }
 
     fun void finish()
     {
+        <<<"play voices finish">>>;
         length => now;
         0 => voice;
     }
@@ -79,9 +87,11 @@ class PlayChord extends Procedure
 
     fun void run()
     {
-        <<<chord.symbol>>>;
+        <<<"play chord, ", chord.symbol>>>;
         length => playVoices.length;
+        <<<"play chord, chord.forEach">>>;
         chord.forEach(playVoices);
+        <<<"play chord, finish">>>;
         playVoices.finish();
     }
 }
