@@ -244,6 +244,8 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 
 // delay stuff
+Machine.add("Trem.ck");
+Machine.add("Tremolo.ck");
 Machine.add("MonoDelay.ck");
 Machine.add("MonoDelayA.ck");
 Machine.add("MonoDelayL.ck");
