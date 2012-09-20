@@ -46,6 +46,7 @@ public class Tremolo
         rate => sinLfo.freq;
         rate => sqrLfo.freq;
         rate => triLfo.freq;
+        return rate;
     }
 
     fun float depth(float depth)
@@ -53,6 +54,7 @@ public class Tremolo
         depth * sinMix => sinLfo.gain;
         depth * sqrMix => sqrLfo.gain;
         depth * triMix => triLfo.gain;
+        return depth;
     }
 
     fun void update()

@@ -40,6 +40,7 @@ public class Trem extends Chugen
         rate => sinLfo.freq;
         rate => sqrLfo.freq;
         rate => triLfo.freq;
+        return rate;
     }
 
     fun float depth(float depth)
@@ -47,6 +48,7 @@ public class Trem extends Chugen
         depth * sinMix => sinLfo.gain;
         depth * sqrMix => sqrLfo.gain;
         depth * triMix => triLfo.gain;
+        return depth;
     }
 
     fun float tick(float in)
