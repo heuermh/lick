@@ -199,6 +199,7 @@ Machine.add("GarageBand.ck");
 Machine.add("Loopy.ck");
 Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
+Machine.add("SooperLooper.ck");
 Machine.add("VoiceOfSaturn.ck");
 
 // midi, package midi
@@ -224,7 +225,7 @@ Machine.add("Ozone.ck");
 Machine.add("ControlOscServer.ck");
 Machine.add("EuclidOsc.ck");
 Machine.add("IanniXOsc.ck");
-//Machine.add("SooperLooperOsc.ck");
+Machine.add("SooperLooperOsc.ck");
 Machine.add("TouchOscServer.ck");
 
 // sample-based drum machines, package sample

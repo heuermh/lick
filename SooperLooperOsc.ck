@@ -20,7 +20,8 @@
 
 */
 
-public class SooperLooperOsc
+// interacts with SooperLooper app over OSC
+public class SooperLooperOsc extends SooperLooper
 {
     OscRecv client;
     OscSend engine;
