@@ -20,23 +20,23 @@
 
 */
 
-// unit test for SooperLooper
+// unit test for SooperLooperOsc
 
-class SooperLooperTest extends Assert
+class SooperLooperOscTest extends Assert
 {
     {
         true => exitOnFailure;
-        testSooperLooper();
+        testSooperLooperOsc();
 
-        <<<"SooperLooperTest ok">>>;
+        <<<"SooperLooperOscTest ok">>>;
     }
 
-    fun void testSooperLooper()
+    fun void testSooperLooperOsc()
     {
-        SooperLooper sl;
+        SooperLooperOsc sl;
         assertNotNull(sl);
     }
 }
 
-SooperLooperTest sooperLooperTest;
+SooperLooperOscTest sooperLooperOscTest;
 1::second => now;

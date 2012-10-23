@@ -224,7 +224,7 @@ Machine.add("Ozone.ck");
 Machine.add("ControlOscServer.ck");
 Machine.add("EuclidOsc.ck");
 Machine.add("IanniXOsc.ck");
-//Machine.add("SooperLooper.ck");
+//Machine.add("SooperLooperOsc.ck");
 Machine.add("TouchOscServer.ck");
 
 // sample-based drum machines, package sample

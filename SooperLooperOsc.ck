@@ -20,7 +20,7 @@
 
 */
 
-public class SooperLooper
+public class SooperLooperOsc
 {
     OscRecv client;
     OscSend engine;
