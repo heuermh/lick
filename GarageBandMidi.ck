@@ -658,7 +658,7 @@ class HipHopDrumMachine extends DrumKit
 
 
 // interacts with the GarageBand iOS app over MIDI
-public class GarageBandMidi
+public class GarageBandMidi extends GarageBand
 {
     MidiOut out;
     ControlChangeMidiMsg ccMsg;
@@ -688,7 +688,6 @@ public class GarageBandMidi
 
     // todo:  this class should use polyphony
     // todo:  refactor common code to AbstractMidiApp or some such
-    // todo:  midi class should extend from non-midi class if possible
 
 
     // MIDI instrument API

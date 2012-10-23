@@ -24,4 +24,191 @@
 public class GarageBand
 {
 
+    fun void noteOn(int note, int velocity)
+    {
+    }
+
+    fun void noteOff(int note, int velocity)
+    {
+    }
+
+    fun void noteOn(float velocity)
+    {
+    }
+
+    fun void noteOff(float velocity)
+    {
+    }
+
+    fun void freq(float frequency)
+    {
+    }
+
+    fun void classicStudioKit()
+    {
+    }
+
+    fun void vintageKit()
+    {
+    }
+
+    fun void liveRockKit()
+    {
+    }
+
+    fun void classicDrumMachine()
+    {
+    }
+
+    fun void houseDrumMachine()
+    {
+    }
+
+    fun void hipHopDrumMachine()
+    {
+    }
+
+    fun void kick(int velocity)
+    {
+    }
+
+    fun void kick(float velocity)
+    {
+    }
+
+    fun void sideStick(int velocity)
+    {
+    }
+
+    fun void sideStick(float velocity)
+    {
+    }
+
+    fun void claves(int velocity)
+    {
+    }
+
+    fun void claves(float velocity)
+    {
+    }
+
+    fun void snare(int velocity)
+    {
+    }
+
+    fun void snare(float velocity)
+    {
+    }
+
+    fun void rim(int velocity)
+    {
+    }
+
+    fun void rim(float velocity)
+    {
+    }
+
+    fun void clap(int velocity)
+    {
+    }
+
+    fun void clap(float velocity)
+    {
+    }
+
+    fun void lowTom(int velocity)
+    {
+    }
+
+    fun void lowTom(float velocity)
+    {
+    }
+
+    fun void middleTom(int velocity)
+    {
+    }
+
+    fun void middleTom(float velocity)
+    {
+    }
+
+    fun void highTom(int velocity)
+    {
+    }
+
+    fun void highTom(float velocity)
+    {
+    }
+
+    fun void closedHat(int velocity)
+    {
+    }
+
+    fun void closedHat(float velocity)
+    {
+    }
+
+    fun void openHat(int velocity)
+    {
+    }
+
+    fun void openHat(float velocity)
+    {
+    }
+
+    fun void pedalHat(int velocity)
+    {
+    }
+
+    fun void pedalHat(float velocity)
+    {
+    }
+
+    fun void ride(int velocity)
+    {
+    }
+
+    fun void ride(float velocity)
+    {
+    }
+
+    fun void crash(int velocity)
+    {
+    }
+
+    fun void crash(float velocity)
+    {
+    }
+
+    fun void cowbell(int velocity)
+    {
+    }
+
+    fun void cowbell(float velocity)
+    {
+    }
+
+    fun void fx(int velocity)
+    {
+    }
+
+    fun void fx(float velocity)
+    {
+    }
+
+    fun void bell(int velocity)
+    {
+    }
+
+    fun void bell(float velocity)
+    {
+    }
+
+    fun void shaker(int velocity)
+    {
+    }
+
+    fun void shaker(float velocity)
+    {
+    }
 }
