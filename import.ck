@@ -193,12 +193,21 @@ Machine.add("Arpeggiators.ck");
 // unit test, package test
 Machine.add("Assert.ck");
 
+// simulators, package simulator
+Machine.add("Animoog.ck");
+Machine.add("GarageBand.ck");
+Machine.add("Loopy.ck");
+Machine.add("MeeBlip.ck");
+// Machine.add("DroneLab.ck");
+Machine.add("VoiceOfSaturn.ck");
+
 // midi, package midi
 Machine.add("ControlChangeMidiMsg.ck");
 Machine.add("NoteOffMidiMsg.ck");
 Machine.add("NoteOnMidiMsg.ck");
 Machine.add("AnimoogMidi.ck");
 Machine.add("GarageBandMidi.ck");
+Machine.add("LoopyMidi.ck");
 Machine.add("MeeBlipMidi.ck");
 Machine.add("EuclidMidi.ck");
 
@@ -217,13 +226,6 @@ Machine.add("EuclidOsc.ck");
 Machine.add("IanniXOsc.ck");
 //Machine.add("SooperLooper.ck");
 Machine.add("TouchOscServer.ck");
-
-// simulators, package simulator
-Machine.add("Animoog.ck");
-Machine.add("GarageBand.ck");
-Machine.add("MeeBlip.ck");
-// Machine.add("DroneLab.ck");
-Machine.add("VoiceOfSaturn.ck");
 
 // sample-based drum machines, package sample
 Machine.add("Sample.ck");
