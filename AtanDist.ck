@@ -20,6 +20,7 @@
 
 */
 
+// see http://electro-music.com/forum/topic-19287.html&postorder=asc
 class F extends FloatFunction
 {
     Math.PI / 2.0 => static float PI_OVER_TWO;

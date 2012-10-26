@@ -20,6 +20,7 @@
 
 */
 
+// see http://electro-music.com/forum/topic-19287.html&postorder=asc
 public class Clip extends Chugen
 {
     1.0 => static float DEFAULT_MAX;

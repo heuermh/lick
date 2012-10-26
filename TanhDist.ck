@@ -20,6 +20,7 @@
 
 */
 
+// see http://electro-music.com/forum/topic-19287.html&postorder=asc
 public class TanhDist extends WaveShaper
 {
     {
