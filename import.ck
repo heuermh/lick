@@ -247,6 +247,9 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 
 // delay stuff
+Machine.add("SinTrem.ck");
+Machine.add("SqrTrem.ck");
+Machine.add("TriTrem.ck");
 Machine.add("Trem.ck");
 Machine.add("Tremolo.ck");
 Machine.add("MonoDelay.ck");
@@ -264,4 +267,14 @@ Machine.add("StereoFeedbackMachines.ck");
 Machine.add("StereoFeedbackMachineA.ck");
 Machine.add("StereoFeedbackMachineL.ck");
 
-<<<"LiCK imported.">>>;
+// dist stuff
+Machine.add("GainShaper.ck");
+Machine.add("WaveShaper.ck");
+Machine.add("Dist.ck");
+Machine.add("FrostburnDist.ck");
+Machine.add("KijjazDist.ck");
+Machine.add("KijjazDist2.ck");
+Machine.add("KijjazDist3.ck");
+Machine.add("KijjazDist4.ck");
+
+<<<"LiCK imported.">>;
