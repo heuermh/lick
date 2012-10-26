@@ -270,6 +270,7 @@ Machine.add("StereoFeedbackMachineL.ck");
 // dist stuff
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
+Machine.add("Clip.ck");
 Machine.add("Dist.ck");
 Machine.add("AtanDist.ck");
 Machine.add("TanhDist.ck");
