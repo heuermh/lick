@@ -271,10 +271,12 @@ Machine.add("StereoFeedbackMachineL.ck");
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
 Machine.add("Dist.ck");
+Machine.add("AtanDist.ck");
+Machine.add("TanhDist.ck");
 Machine.add("FrostburnDist.ck");
 Machine.add("KijjazDist.ck");
 Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
 
-<<<"LiCK imported.">>;
+<<<"LiCK imported.">>>;
