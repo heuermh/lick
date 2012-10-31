@@ -274,6 +274,7 @@ Machine.add("Clip.ck");
 Machine.add("Dist.ck");
 Machine.add("AtanDist.ck");
 Machine.add("TanhDist.ck");
+//Machine.add("RibbonDist.ck");
 Machine.add("FrostburnDist.ck");
 Machine.add("KijjazDist.ck");
 Machine.add("KijjazDist2.ck");
