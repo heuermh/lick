@@ -32,7 +32,7 @@ Clip clip;
 Dist dist;
 AtanDist atanDist;
 TanhDist tanhDist;
-//RibbonDist ribbonDist;
+RibbonDist ribbonDist;
 FrostburnDist frostburnDist;
 KijjazDist kijjazDist;
 KijjazDist2 kijjazDist2;
@@ -83,7 +83,6 @@ t.w => now;
 adsr.keyOff();
 t.w => now;
 
-/*
 <<<"ribbon dist">>>;
 adsr =< tanhDist;
 tanhDist =< dac;
@@ -96,11 +95,6 @@ t.w => now;
 <<<"frostburn dist">>>;
 adsr =< ribbonDist;
 ribbonDist =< dac;
-*/
-
-<<<"frostburn dist">>>;
-adsr =< tanhDist;
-tanhDist =< dac;
 adsr => frostburnDist => dac;
 adsr.keyOn();
 t.w => now;
