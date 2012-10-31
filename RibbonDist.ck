@@ -1,4 +1,4 @@
-\/*
+/*
 
     LiCK  Library for ChucK.
     Copyright (c) 2007-2012 held jointly by the individual authors.
