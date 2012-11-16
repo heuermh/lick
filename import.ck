@@ -220,6 +220,8 @@ Machine.add("Monome.ck");
 Machine.add("Mouse.ck");
 Machine.add("NanoPad.ck");
 Machine.add("Ozone.ck");
+Machine.add("StompKeyboard.ck");
+Machine.add("StompMidi.ck");
 
 // osc, package osc
 Machine.add("ControlOscServer.ck");
