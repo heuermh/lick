@@ -181,12 +181,14 @@ Machine.add("Edge.ck");
 Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
-// intervals, chords, arpeggiator
+// intervals, chords, scales, arpeggiator
 Machine.add("TimeSignature.ck"); // package duration?
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
 Machine.add("Chord.ck");
 Machine.add("Chords.ck");
+Machine.add("Scale.ck");
+Machine.add("Scales.ck");
 Machine.add("Arpeggiator.ck");
 Machine.add("Arpeggiators.ck");
 
