@@ -75,7 +75,7 @@ DumpKeyOff keyOff;
 DumpSustainOn sustainOn;
 DumpSustainOff sustainOff;
 
-Ozone ozone;
+MAudioOzone ozone;
 pitch @=> ozone.pitchBend;
 mod @=> ozone.modulation;
 mod @=> ozone.rotary1;
