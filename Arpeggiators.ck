@@ -197,4 +197,150 @@ public class Arpeggiators
         procedure @=> arpeggiator.procedure;
         return arpeggiator;
     }
+
+    fun static UpArpeggiator up(Scale scale, FloatProcedure procedure)
+    {
+        UpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownArpeggiator down(Scale scale, FloatProcedure procedure)
+    {
+        DownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static UpDownArpeggiator upDown(Scale scale, FloatProcedure procedure)
+    {
+        UpDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownUpArpeggiator downUp(Scale scale, FloatProcedure procedure)
+    {
+        DownUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static RandomArpeggiator random(Scale scale, FloatProcedure procedure)
+    {
+        RandomArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+
+    fun static UpArpeggiator up(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        UpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownArpeggiator down(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        DownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static UpDownArpeggiator upDown(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        UpDownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpArpeggiator downUp(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        DownUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static RandomArpeggiator random(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        RandomArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static UpArpeggiator up(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        UpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownArpeggiator down(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        DownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static UpDownArpeggiator upDown(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        UpDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpArpeggiator downUp(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        DownUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static RandomArpeggiator random(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        RandomArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
 }
