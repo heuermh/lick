@@ -324,7 +324,7 @@ public class LogitechGamepadF310 // extends Joystick
                         msg.axisPosition => _lastRightStickX;
                         spork ~ rightStick.run(_lastRightStickX, _lastRightStickY);
                     }
-                    else if (msg.which == 5)
+                    else if ((msg.which == 5) || (msg.which == 3))
                     {
                         msg.axisPosition => _lastRightStickY;
                         spork ~ rightStick.run(_lastRightStickX, _lastRightStickY);
