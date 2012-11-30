@@ -103,6 +103,7 @@ public class StereoFeedbackMachines
     fun static StereoFeedbackMachine oneTwoIntoThreeFour(float f)
     {
         StereoFeedbackMachine fm;
+        fm.feedback(0.0);
         0.0 => fm.delay1.feedbackL.gain;
         0.0 => fm.delay2.feedbackL.gain;
         0.0 => fm.delay1.feedbackR.gain;
