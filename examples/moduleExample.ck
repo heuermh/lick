@@ -37,17 +37,16 @@ class SinModule extends Module
 
 class TremoloModule extends Module
 {
-    SinModule lfo;
-    SinOsc lfoRateLfo;
+    SinModule gainLfo;
+    SinOsc rateLfo;
 
     {
-        8.0 => lfo.sin.freq;
-        1.0 => lfo.sin.gain;
-        lfo => _cv;
+        1.0 => gainLfo.sin.gain;
+        gainLfo => _cv;
 
-        0.25 => lfoRateLfo.freq;
-        1.0 => lfoRateLfo.gain;
-        lfoRateLfo => lfo._cv;
+        0.25 => rateLfo.freq;
+        1.0 => rateLfo.gain;
+        rateLfo => gainLfo._cv;
     }
 
     fun float tick(float in, float cv)
