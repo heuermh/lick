@@ -135,6 +135,7 @@ Machine.add("RandomThreshold.ck");
 Machine.add("SinusoidalIn.ck");
 Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
+Machine.add("Interpolate.ck");
 
 // duration providers, package duration
 Machine.add("DurProvider.ck");
