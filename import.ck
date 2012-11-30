@@ -286,4 +286,14 @@ Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
 
+// chugen stuff
+Machine.add("Module.ck");
+Machine.add("Module2.ck");
+Machine.add("Module3.ck");
+Machine.add("Module4.ck");
+Machine.add("Module5.ck");
+Machine.add("Module6.ck");
+Machine.add("Module7.ck");
+Machine.add("Module8.ck");
+
 <<<"LiCK imported.">>>;
