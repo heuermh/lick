@@ -20,47 +20,46 @@
 
 */
 
-class SinModule extends Module
+MonoDelay d;
+Gain wet;
+Gain dry;
+
+1.0 => dry.gain;
+0.0 => wet.gain;
+
+200::ms => d.delay.max;
+200::ms => d.delay.delay;
+0.95 => d.feedback.gain;
+0.80 => d.output.gain;
+
+adc => d.input;
+adc => dry => dac;
+d.output => wet => dac;
+
+class Toggle extends Procedure
 {
-    SinOsc sin;
+    0 => int state;
 
+    fun void run()
     {
-        sin => blackhole;
-    }
-
-    fun float tick(float in, float cv)
-    {
-        Interpolate.linear(cv, -1.0, 1.0, 2.0, 8.0) => sin.freq;
-        return sin.last();
+        if (state)
+        {
+            1.0 => dry.gain;
+            0.0 => wet.gain;
+            0 => state;
+        }
+        else
+        {
+            0.2 => dry.gain;
+            0.8 => wet.gain;
+            1 => state;
+        }
+        <<<dry.gain(), wet.gain()>>>;
     }
 }
 
-class TremoloModule extends Module
-{
-    SinModule gainLfo;
-    SinOsc rateLfo;
+Toggle toggle;
+StompKeyboard stomp;
+toggle @=> stomp.button0Down;
 
-    {
-        1.0 => gainLfo.sin.gain;
-        gainLfo => _cv;
-
-        0.25 => rateLfo.freq;
-        1.0 => rateLfo.gain;
-        rateLfo => gainLfo._cv;
-    }
-
-    fun float tick(float in, float cv)
-    {
-        Interpolate.linear(cv, -1.0, 1.0, 0.0, 1.0) => gain;
-        return in;
-    }
-}
-
-adc => TremoloModule trem => dac;
-//SinOsc sin => TremoloModule trem => dac;
-//0.4 => sin.gain;
-//220.0 => sin.freq;
-//20::second => now;
-1::week => now;
-
-<<<"done">>>;
+stomp.open(0);
