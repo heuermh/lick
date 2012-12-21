@@ -18,11 +18,16 @@ LiCK includes:
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
+ - Intervals, Chords, Scales, Arpeggiators
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
+ - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
+ - MIDI support for iOS apps (Animoog, GarageBand, Loopy, etc.)
+ - OSC support for desktop apps (IanniX, SooperLooper, etc.)
  - Monome, ControlOSC, TouchOSC integration
- - Intervals, Chords, Scales, Arpeggiators
  - Mono and stereo Delays, FeedbackMachines
+ - WaveShaper chugen, Distortion and Tremolo chugens
+ - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
  - "ChucK-Unit", an Assert class for creating unit tests
 
 
