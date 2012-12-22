@@ -44,6 +44,9 @@ public class FeedbackMachineL
     MonoDelayL delay3;
     MonoDelayL delay4;
 
+    // engaged by default
+    true => int engaged;
+
     {
         0.0 => route1to2.gain;
         0.0 => route1to3.gain;
@@ -114,5 +117,29 @@ public class FeedbackMachineL
         f => route4to1.gain;
         f => route4to2.gain;
         f => route4to3.gain;
+    }
+
+    fun void engage()
+    {
+        if (!engaged)
+        {
+            input => delay1.input;
+            input => delay2.input;
+            input => delay3.input;
+            input => delay4.input;
+            true => engaged;
+        }
+    }
+
+    fun void disengage()
+    {
+        if (engaged)
+        {
+            input =< delay1.input;
+            input =< delay2.input;
+            input =< delay3.input;
+            input =< delay4.input;
+            false => engaged;
+        }
     }
 }

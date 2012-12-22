@@ -60,6 +60,9 @@ public class StereoFeedbackMachine
     StereoDelay delay3;
     StereoDelay delay4;
 
+    // engaged by default
+    true => int engaged;
+
     {
         // setup left channel
         0.0 => route1Lto2L.gain;
@@ -189,5 +192,41 @@ public class StereoFeedbackMachine
         f => route4Rto1R.gain;
         f => route4Rto2R.gain;
         f => route4Rto3R.gain;
+    }
+
+    fun void engage()
+    {
+        if (!engaged)
+        {
+            inputL =< delay1.inputL;
+            inputL =< delay2.inputL;
+            inputL =< delay3.inputL;
+            inputL =< delay4.inputL;
+
+            inputR => delay1.inputR;
+            inputR => delay2.inputR;
+            inputR => delay3.inputR;
+            inputR => delay4.inputR;
+
+            true => engaged;
+        }
+    }
+
+    fun void disengage()
+    {
+        if (engaged)
+        {
+            inputL => delay1.inputL;
+            inputL => delay2.inputL;
+            inputL => delay3.inputL;
+            inputL => delay4.inputL;
+
+            inputR => delay1.inputR;
+            inputR => delay2.inputR;
+            inputR => delay3.inputR;
+            inputR => delay4.inputR;
+
+            false => engaged;
+        }
     }
 }

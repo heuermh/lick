@@ -32,10 +32,12 @@ FeedbackMachines.fourMono(0.95) @=> FeedbackMachine fm;
 700::ms => fm.delay4.delay.delay;
 
 adc => fm.input;
-1.0 => fm.dry.gain;
-0.0 => fm.wet.gain;
+0.4 => fm.dry.gain;
+0.6 => fm.wet.gain;
 fm.dry => dac;
 fm.wet => dac;
+
+fm.disengage();
 
 class Toggle extends Procedure
 {
@@ -45,18 +47,15 @@ class Toggle extends Procedure
     {
         if (state)
         {
-            // todo:  spork a fade from wet to dry
-            1.0 => fm.dry.gain;
-            0.0 => fm.wet.gain;
+            fm.disengage();
             0 => state;
         }
         else
         {
-            0.2 => fm.dry.gain;
-            0.8 => fm.wet.gain;
+            fm.engage();
             1 => state;
         }
-        <<<fm.dry.gain(), fm.wet.gain()>>>;
+        <<<fm.dry.gain(), fm.wet.gain(), state>>>;
     }
 }
 
