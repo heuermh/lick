@@ -37,25 +37,14 @@ adc => fm.input;
 fm.dry => dac;
 fm.wet => dac;
 
-fm.disengage();
+fm.stop();
 
 class Toggle extends Procedure
 {
-    0 => int state;
-
     fun void run()
     {
-        if (state)
-        {
-            fm.disengage();
-            0 => state;
-        }
-        else
-        {
-            fm.engage();
-            1 => state;
-        }
-        <<<fm.dry.gain(), fm.wet.gain(), state>>>;
+        fm.toggle();
+        <<<"running",fm.running>>>;
     }
 }
 

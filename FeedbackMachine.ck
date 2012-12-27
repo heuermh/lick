@@ -44,8 +44,8 @@ public class FeedbackMachine
     MonoDelay delay3;
     MonoDelay delay4;
 
-    // engaged by default
-    true => int engaged;
+    // running by default
+    true => int running;
 
     {
         0.0 => route1to2.gain;
@@ -119,27 +119,62 @@ public class FeedbackMachine
         f => route4to3.gain;
     }
 
-    fun void engage()
+    fun void start()
     {
-        if (!engaged)
+        if (!running)
         {
             input => delay1.input;
             input => delay2.input;
             input => delay3.input;
             input => delay4.input;
-            true => engaged;
+            true => running;
         }
     }
 
-    fun void disengage()
+    fun void _stagger(dur wait)
     {
-        if (engaged)
+        wait => now;
+        input => delay1.input;
+
+        wait => now;
+        input => delay2.input;
+
+        wait => now;
+        input => delay3.input;
+
+        wait => now;
+        input => delay4.input;
+    }
+
+    fun void staggeredStart(dur wait)
+    {
+        if (!running)
+        {
+            spork ~ _stagger(wait);
+        }
+    }
+
+    fun void stop()
+    {
+        if (running)
         {
             input =< delay1.input;
             input =< delay2.input;
             input =< delay3.input;
             input =< delay4.input;
-            false => engaged;
+            false => running;
+        }
+    }
+
+    fun void toggle()
+    {
+        if (running)
+        {
+            stop();
+        }
+        else
+        {
+            start();
         }
     }
 }
