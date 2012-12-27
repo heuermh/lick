@@ -150,7 +150,8 @@ public class FeedbackMachineL
     {
         if (!running)
         {
-            spork ~ _stagger(wait);
+            //spork ~ _stagger(wait);
+            _stagger(wait);
             true => running;
         }
     }
