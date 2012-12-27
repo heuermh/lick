@@ -42,12 +42,14 @@ class Toggle extends Procedure
     }
 }
 
+// todo:  might be interesting to use intervals from a scale here
+
 class FreqUp extends Procedure
 {
     fun void run()
     {
         freq + (freq / 10.0) => freq;
-        <<<"freq", smear.freq(freq)>>>;
+        <<<"freq up", smear.freq(freq)>>>;
     }
 }
 
@@ -56,7 +58,7 @@ class FreqDown extends Procedure
     fun void run()
     {
         freq - (freq / 10.0) => freq;
-        <<<"freq", smear.freq(freq)>>>;
+        <<<"freq down", smear.freq(freq)>>>;
     }
 }
 
