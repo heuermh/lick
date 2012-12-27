@@ -236,6 +236,7 @@ public class StereoFeedbackMachineA
         if (!running)
         {
             spork ~ _stagger(wait);
+            true => running;
         }
     }
 

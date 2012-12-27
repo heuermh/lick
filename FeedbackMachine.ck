@@ -151,6 +151,7 @@ public class FeedbackMachine
         if (!running)
         {
             spork ~ _stagger(wait);
+            true => running;
         }
     }
 
