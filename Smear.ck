@@ -76,7 +76,7 @@ public class Smear
         while (iterator.hasNext())
         {
             iterator.next() $ MonoDelay @=> MonoDelay delay;
-            Math.random2f((f / 10.0), (-f / 10.0)) => float variation;
+            Math.random2f((f / 50.0), (-f / 50.0)) => float variation;
             f + variation => float delayFreq;
             (1.0 / delayFreq) * 1::second => dur delayDelay;
             <<<"freq f", f, "variation", variation, "delayFreq", delayFreq, "delayDelay", delayDelay, "max", delay.delay.max()>>>;
