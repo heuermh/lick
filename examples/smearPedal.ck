@@ -23,8 +23,8 @@
 8 => int z;
 0.8 => float m;
 20.0 => float freq;
-0.8 => float feedback;
-Smear.create(z, m, freq, feedback) @=> Smear smear;
+0.8 => float inverseFeedback;  // use inverse so feedback limit approaches 1.0 instead of 0.0
+Smear.create(z, m, freq, 1.0 - inverseFeedback) @=> Smear smear;
 
 adc => smear.input;
 0.4 => smear.dry.gain;
@@ -49,7 +49,7 @@ class FreqUp extends Procedure
 {
     fun void run()
     {
-        freq + (freq / 10.0) => freq;
+        constrain(freq + (freq / 10.0), 1.0, 20000.0) => freq;
         <<<"freq up", smear.freq(freq)>>>;
     }
 }
@@ -58,19 +58,17 @@ class FreqDown extends Procedure
 {
     fun void run()
     {
-        freq - (freq / 10.0) => freq;
+        constrain(freq - (freq / 10.0), 1.0, 20000.0) => freq;
         <<<"freq down", smear.freq(freq)>>>;
     }
 }
-
-// todo:  limit to [0.0 - 1.0]
 
 class FeedbackUp extends Procedure
 {
     fun void run()
     {
-        feedback + (feedback / 10.0) => feedback;
-        <<<"feedback up", smear.feedback(feedback)>>>;
+        constrain(inverseFeedback - (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
+        <<<"feedback up", smear.feedback(1.0 - inverseFeedback)>>>;
     }
 }
 
@@ -78,9 +76,22 @@ class FeedbackDown extends Procedure
 {
     fun void run()
     {
-        feedback - (feedback / 10.0) => feedback;
-        <<<"feedback down", smear.feedback(feedback)>>>;
+        constrain(inverseFeedback + (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
+        <<<"feedback down", smear.feedback(1.0 - inverseFeedback)>>>;
     }
+}
+
+fun float constrain(float value, float min, float max)
+{
+    if (value < min)
+    {
+        return min;
+    }
+    if (value > max)
+    {
+        return max;
+    }
+    return value;
 }
 
 Toggle toggle;
