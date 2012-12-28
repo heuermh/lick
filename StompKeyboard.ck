@@ -49,50 +49,50 @@ public class StompKeyboard
             {
                 if (msg.isButtonUp())
                 {
-                    if (30 == msg.which)
+                    if (39 == msg.which)
                     {
                         spork ~ button0Up.run();
                     }
-                    else if (31 == msg.which)
+                    else if (30 == msg.which)
                     {
                         spork ~ button1Up.run();
                     }
-                    else if (32 == msg.which)
+                    else if (31 == msg.which)
                     {
                         spork ~ button2Up.run();
                     }
-                    else if (33 == msg.which)
+                    else if (32 == msg.which)
                     {
                         spork ~ button3Up.run();
                     }
-                    else if (34 == msg.which)
+                    else if (33 == msg.which)
                     {
                         spork ~ button4Up.run();
                     }
-                    else if (35 == msg.which)
+                    else if (34 == msg.which)
                     {
                         spork ~ button5Up.run();
                     }
                 }
                 if (msg.isButtonDown())
                 {
-                    if (30 == msg.which)
+                    if (39 == msg.which)
                     {
                         spork ~ button0Down.run();
                     }
-                    else if (31 == msg.which)
+                    else if (30 == msg.which)
                     {
                         spork ~ button1Down.run();
                     }
-                    else if (32 == msg.which)
+                    else if (31 == msg.which)
                     {
                         spork ~ button2Down.run();
                     }
-                    else if (33 == msg.which)
+                    else if (32 == msg.which)
                     {
                         spork ~ button3Down.run();
                     }
-                    else if (34 == msg.which)
+                    else if (33 == msg.which)
                     {
                         spork ~ button4Down.run();
                     }
@@ -110,11 +110,11 @@ public class StompKeyboard
 
   default stomp key mapping
 
-  button0  "0"  30
-  button1  "1"  31
-  button2  "2"  32
-  button3  "3"  33
-  button4  "4"  34
-  button5  "5"  35
+  button0  "0"  39
+  button1  "1"  30
+  button2  "2"  31
+  button3  "3"  32
+  button4  "4"  33
+  button5  "5"  34
 
 */
