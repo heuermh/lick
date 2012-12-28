@@ -58,7 +58,7 @@ public class Smear
         }
     }
 
-    fun void feedback(float f)
+    fun float feedback(float f)
     {
         delays.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
@@ -66,6 +66,7 @@ public class Smear
             iterator.next() $ MonoDelay @=> MonoDelay delay;
             f => delay.feedback.gain;
         }
+        return f;
     }
 
     fun float freq(float f)
@@ -145,13 +146,14 @@ public class Smear
         }
     }
 
-    fun static Smear create(int z, float m, float f)
+    fun static Smear create(int z, float m, float f, float d)
     {
         Smear smear;
         z => smear.size;
         smear.init();
         smear.freq(f);
         smear.smear(m);
+        smear.feedback(d);
 
         return smear;
     }

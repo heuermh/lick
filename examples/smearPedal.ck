@@ -23,7 +23,8 @@
 8 => int z;
 0.8 => float m;
 20.0 => float freq;
-Smear.create(z, m, freq) @=> Smear smear;
+0.8 => float feedback;
+Smear.create(z, m, freq, feedback) @=> Smear smear;
 
 adc => smear.input;
 0.4 => smear.dry.gain;
@@ -62,12 +63,36 @@ class FreqDown extends Procedure
     }
 }
 
+// todo:  limit to [0.0 - 1.0]
+
+class FeedbackUp extends Procedure
+{
+    fun void run()
+    {
+        feedback + (feedback / 10.0) => feedback;
+        <<<"feedback up", smear.feedback(feedback)>>>;
+    }
+}
+
+class FeedbackDown extends Procedure
+{
+    fun void run()
+    {
+        feedback - (feedback / 10.0) => feedback;
+        <<<"feedback down", smear.feedback(feedback)>>>;
+    }
+}
+
 Toggle toggle;
 FreqUp freqUp;
 FreqDown freqDown;
+FeedbackUp feedbackUp;
+FeedbackDown feedbackDown;
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
 freqUp @=> stomp.button1Down;
 freqDown @=> stomp.button2Down;
+feedbackUp @=> stomp.button3Down;
+feedbackDown @=> stomp.button4Down;
 
 stomp.open(0);
