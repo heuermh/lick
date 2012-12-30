@@ -20,29 +20,32 @@
 
 */
 
-public class SinTrem extends Chugen
+public class Constrain
 {
-    SinOsc lfo;
 
+    fun static int constrain(int value, int min, int max)
     {
-        lfo => blackhole;
+        if (value < min)
+        {
+            return min;
+        }
+        if (value > max)
+        {
+            return max;
+        }
+        return value;
     }
 
-    fun float rate(float rate)
+    fun static float constrainf(float value, float min, float max)
     {
-        rate => lfo.freq;
-        return rate;
-    }
-
-    fun float depth(float depth)
-    {
-        depth => lfo.gain;
-        return depth;
-    }
-
-    fun float tick(float in)
-    {
-        Interpolate.linear(lfo.last(), -1.0, 1.0, 0.0, 1.0) => gain;
-        return in;
+        if (value < min)
+        {
+           return min;
+        }
+        if (value > max)
+        {
+            return max;
+        }
+        return value;
     }
 }

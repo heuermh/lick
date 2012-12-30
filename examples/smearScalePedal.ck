@@ -50,7 +50,7 @@ class FreqUp extends Procedure
 {
     fun void run()
     {
-        constrain(interval + 1, 0, scale.intervals.size() - 1) => interval;
+        Constrain.constrain(interval + 1, 0, scale.intervals.size() - 1) => interval;
         scale.intervals.get(interval) $ Interval @=> Interval i;
         <<<"freq up", interval, smear.freq(i.evaluate(root))>>>;
     }
@@ -60,7 +60,7 @@ class FreqDown extends Procedure
 {
     fun void run()
     {
-        constrain(interval - 1, 0, scale.intervals.size() - 1) => interval;
+        Constrain.constrain(interval - 1, 0, scale.intervals.size() - 1) => interval;
         scale.intervals.get(interval) $ Interval @=> Interval i;
         <<<"freq down", interval, smear.freq(i.evaluate(root))>>>;
     }
@@ -70,7 +70,7 @@ class FeedbackUp extends Procedure
 {
     fun void run()
     {
-        constrainf(inverseFeedback - (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
+        Constrain.constrainf(inverseFeedback - (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
         <<<"feedback up", smear.feedback(1.0 - inverseFeedback)>>>;
     }
 }
@@ -79,35 +79,9 @@ class FeedbackDown extends Procedure
 {
     fun void run()
     {
-        constrainf(inverseFeedback + (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
+        Constrain.constrainf(inverseFeedback + (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
         <<<"feedback down", smear.feedback(1.0 - inverseFeedback)>>>;
     }
-}
-
-fun int constrain(int value, int min, int max)
-{
-    if (value < min)
-    {
-        return min;
-    }
-    if (value > max)
-    {
-        return max;
-    }
-    return value;
-}
-
-fun float constrainf(float value, float min, float max)
-{
-    if (value < min)
-    {
-        return min;
-    }
-    if (value > max)
-    {
-        return max;
-    }
-    return value;
 }
 
 Toggle toggle;

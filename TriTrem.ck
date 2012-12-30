@@ -42,12 +42,7 @@ public class TriTrem extends Chugen
 
     fun float tick(float in)
     {
-        interp(lfo.last(), -1.0, 1.0, 0.0, 1.0) => gain;
+        Interpolate.linear(lfo.last(), -1.0, 1.0, 0.0, 1.0) => gain;
         return in;
-    }
-
-    fun float interp(float value, float sourceMin, float sourceMax, float targetMin, float targetMax)
-    {
-        return targetMin + (targetMax - targetMin) * ((value - sourceMin) / (sourceMax - sourceMin));
     }
 }

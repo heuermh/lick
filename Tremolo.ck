@@ -63,12 +63,7 @@ public class Tremolo
         {
             1::samp => now;
             sinLfo.last() * sinMix + sqrLfo.last() * sqrMix + triLfo.last() * triMix => float last;
-            interp(last, -1.0, 1.0, 0.0, 1.0) => tremolo.gain;
+            Interpolate.linear(last, -1.0, 1.0, 0.0, 1.0) => tremolo.gain;
         }
-    }
-
-    fun float interp(float value, float sourceMin, float sourceMax, float targetMin, float targetMax)
-    {
-        return targetMin + (targetMax - targetMin) * ((value - sourceMin) / (sourceMax - sourceMin));
     }
 }

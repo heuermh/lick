@@ -54,12 +54,7 @@ public class Trem extends Chugen
     fun float tick(float in)
     {
         sinLfo.last() * sinMix + sqrLfo.last() * sqrMix + triLfo.last() * triMix => float last;
-        interp(last, -1.0, 1.0, 0.0, 1.0) => gain;
+        Interpolate.linear(last, -1.0, 1.0, 0.0, 1.0) => gain;
         return in;
-    }
-
-    fun float interp(float value, float sourceMin, float sourceMax, float targetMin, float targetMax)
-    {
-        return targetMin + (targetMax - targetMin) * ((value - sourceMin) / (sourceMax - sourceMin));
     }
 }

@@ -136,6 +136,7 @@ Machine.add("SinusoidalIn.ck");
 Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
 Machine.add("Interpolate.ck");
+Machine.add("Constrain.ck");
 
 // duration providers, package duration
 Machine.add("DurProvider.ck");
