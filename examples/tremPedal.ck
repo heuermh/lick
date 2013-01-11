@@ -23,9 +23,6 @@
 TimeSignature.common(98) @=> TimeSignature ts;
 
 0.8 => float depth;
-0.33 => float sqrMix;
-0.33 => float sinMix;
-0.33 => float triMix;
 
 float rates[7];
 ts.t/1::second => rates[0];
@@ -38,80 +35,25 @@ ts.d/1::second => rates[6];
 0 => int rateIndex;
 
 Trem trem;
-sqrMix => trem.sqrMix;
-sinMix => trem.sinMix;
-triMix => trem.triMix;
 depth => trem.depth;
 rates[rateIndex] => trem.rate;
 
-// todo:  move to Trem
 fun void moreSqr()
 {
-    if (sqrMix < 1.0)
-    {
-        Math.max(sqrMix * 1.1, 0.1) => float d;
-
-        d => float sqrWeight;
-        Math.max(sinMix - d/2.0, 0.0) => float sinWeight;
-        Math.max(triMix - d/2.0, 0.0) => float triWeight;
-
-        sqrWeight + sinWeight + triWeight => float totalWeight;
-
-        sqrWeight/totalWeight => sqrMix;
-        sinWeight/totalWeight => sinMix;
-        triWeight/totalWeight => triMix;
-    }
-
-    <<<"more sqr", sqrMix, sinMix, triMix, (sqrMix + sinMix + triMix)>>>;
-    sqrMix => trem.sqrMix;
-    sinMix => trem.sinMix;
-    triMix => trem.triMix;
+    trem.moreSqr();
+    <<<"more sqr", trem.sqrMix, trem.sinMix, trem.triMix>>>;
 }
 
 fun void moreSin()
 {
-    if (sinMix < 1.0)
-    {
-        Math.max(sinMix * 1.1, 0.1) => float d;
-
-        d => float sinWeight;
-        Math.max(sqrMix - d/2.0, 0.0) => float sqrWeight;
-        Math.max(triMix - d/2.0, 0.0) => float triWeight;
-
-        sqrWeight + sinWeight + triWeight => float totalWeight;
-
-        sqrWeight/totalWeight => sqrMix;
-        sinWeight/totalWeight => sinMix;
-        triWeight/totalWeight => triMix;
-    }
-
-    <<<"more sin", sqrMix, sinMix, triMix, (sqrMix + sinMix + triMix)>>>;
-    sqrMix => trem.sqrMix;
-    sinMix => trem.sinMix;
-    triMix => trem.triMix;
+    trem.moreSin();
+    <<<"more sin", trem.sqrMix, trem.sinMix, trem.triMix>>>;
 }
 
 fun void moreTri()
 {
-    if (triMix < 1.0)
-    {
-        Math.max(triMix * 1.1, 0.1) => float d;
-
-        d => float triWeight;
-        Math.max(sqrMix - d/2.0, 0.0) => float sqrWeight;
-        Math.max(sinMix - d/2.0, 0.0) => float sinWeight;
-
-        sqrWeight + sinWeight + triWeight => float totalWeight;
-
-        sqrWeight/totalWeight => sqrMix;
-        sinWeight/totalWeight => sinMix;
-        triWeight/totalWeight => triMix;
-    }
-
-    <<<"more tri", sqrMix, sinMix, triMix, (sqrMix + sinMix + triMix)>>>;
-    sqrMix => trem.sqrMix;
-    sinMix => trem.sinMix;
-    triMix => trem.triMix;
+    trem.moreTri();
+    <<<"more tri", trem.sqrMix, trem.sinMix, trem.triMix>>>;
 }
 
 fun void increaseDepth()

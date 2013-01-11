@@ -51,6 +51,62 @@ public class Trem extends Chugen
         return depth;
     }
 
+    fun void moreSqr()
+    {
+        if (sqrMix < 1.0)
+        {
+            Math.max(sqrMix * 1.1, 0.1) => float d;
+
+            d => float sqrWeight;
+            Math.max(sinMix - d / 2.0, 0.0) => float sinWeight;
+            Math.max(triMix - d / 2.0, 0.0) => float triWeight;
+
+            sqrWeight + sinWeight + triWeight => float totalWeight;
+            sqrWeight / totalWeight => sqrMix;
+            sinWeight / totalWeight => sinMix;
+            triWeight / totalWeight => triMix;
+        }
+    }
+
+    fun void moreSin()
+    {
+        if (sinMix < 1.0)
+        {
+            Math.max(sinMix * 1.1, 0.1) => float d;
+
+            d => float sinWeight;
+            Math.max(sqrMix - d / 2.0, 0.0) => float sqrWeight;
+            Math.max(triMix - d / 2.0, 0.0) => float triWeight;
+
+            sqrWeight + sinWeight + triWeight => float totalWeight;
+            sqrWeight / totalWeight => sqrMix;
+            sinWeight / totalWeight => sinMix;
+            triWeight / totalWeight => triMix;
+        }
+    }
+
+    fun void moreTri()
+    {
+        if (triMix < 1.0)
+        {
+            Math.max(triMix * 1.1, 0.1) => float d;
+
+            d => float triWeight;
+            Math.max(sqrMix - d / 2.0, 0.0) => float sqrWeight;
+            Math.max(sinMix - d / 2.0, 0.0) => float sinWeight;
+
+            sqrWeight + sinWeight + triWeight => float totalWeight;
+            sqrWeight / totalWeight => sqrMix;
+            sinWeight / totalWeight => sinMix;
+            triWeight / totalWeight => triMix;
+        }
+    }
+
+    fun void moreCowbell()
+    {
+        <<<"Guess what? I got a fever! And the only prescription... is more cowbell!">>>;
+    }
+
     fun float tick(float in)
     {
         sinLfo.last() * sinMix + sqrLfo.last() * sqrMix + triLfo.last() * triMix => float last;
