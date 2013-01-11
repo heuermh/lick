@@ -96,7 +96,7 @@ public class StompKeyboard
                     {
                         spork ~ button4Down.run();
                     }
-                    else if (35 == msg.which)
+                    else if (34 == msg.which)
                     {
                         spork ~ button5Down.run();
                     }
