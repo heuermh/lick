@@ -40,11 +40,13 @@ adc => Gain in;
 Gain out => dac;
 
 in => Gain dry;
-in => Dist d0 => Gain dist0;
-in => Dist d1 => Dist d2 => Gain dist1;
-in => Dist d3 => Dist d4 => Dist d5 => Gain dist2;
-in => Dist d6 => Dist d7 => Dist d8 => Dist d9 => Gain dist3;
-in => Dist d10 => Dist d11 => Dist d12 => Dist d13 => Dist d14 => Gain dist4;
+in => Dist d1 => Dist d2 => Dist d3 => Gain dist0;
+in => AtanDist atanDist => Gain dist1;
+in => TanhDist tanhDist => Gain dist2;
+in => FrostburnDist fd => Gain dist3;
+in => Clip clip => AtanDist d4 => Gain dist4;
+
+clip.range(0.3);
 
 1.0 => in.gain;
 1.0 => dry.gain;
