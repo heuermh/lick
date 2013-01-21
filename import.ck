@@ -205,6 +205,7 @@ Machine.add("MeeBlip.ck");
 // Machine.add("DroneLab.ck");
 Machine.add("SooperLooper.ck");
 Machine.add("VoiceOfSaturn.ck");
+Machine.add("TwoPots.ck");
 
 // midi, package midi
 Machine.add("ControlChangeMidiMsg.ck");
@@ -215,6 +216,8 @@ Machine.add("GarageBandMidi.ck");
 Machine.add("LoopyMidi.ck");
 Machine.add("MeeBlipMidi.ck");
 Machine.add("EuclidMidi.ck");
+Machine.add("StompMidi.ck");
+Machine.add("TwoPotsMidi.ck");
 
 // devices, package device
 Machine.add("Keyboard.ck");
@@ -226,7 +229,6 @@ Machine.add("NanoPad.ck");
 Machine.add("MAudioOzone.ck");
 Machine.add("AlesisQX25.ck");
 Machine.add("StompKeyboard.ck");
-Machine.add("StompMidi.ck");
 
 // osc, package osc
 Machine.add("ControlOscServer.ck");
