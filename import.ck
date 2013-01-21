@@ -288,6 +288,7 @@ Machine.add("KijjazDist.ck");
 Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
+Machine.add("Thicken.ck");
 
 // chugen stuff
 Machine.add("Module.ck");
