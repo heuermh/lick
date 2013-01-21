@@ -22,7 +22,7 @@
 
 TimeSignature.common(98) @=> TimeSignature ts;
 
-0.8 => float depth;
+1.0 => float depth;
 
 float rates[7];
 ts.t/1::second => rates[0];
