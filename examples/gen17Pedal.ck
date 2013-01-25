@@ -33,9 +33,9 @@ class MoreEvens extends Procedure
 {
     fun void run()
     {
-        coefs[2] * 1.1 => coefs[2];
-        coefs[4] * 1.1 => coefs[4];
-        coefs[6] * 1.1 => coefs[6];
+        coefs[1] * 1.1 => coefs[1];
+        coefs[3] * 1.1 => coefs[3];
+        coefs[5] * 1.1 => coefs[5];
         coefs => gen17.coefs;
     }
 }
@@ -44,9 +44,9 @@ class LessEvens extends Procedure
 {
     fun void run()
     {
-        coefs[2] * 0.8 => coefs[2];
-        coefs[4] * 0.8 => coefs[4];
-        coefs[6] * 0.8 => coefs[6];
+        coefs[1] * 0.8 => coefs[1];
+        coefs[3] * 0.8 => coefs[3];
+        coefs[5] * 0.8 => coefs[5];
         coefs => gen17.coefs;
     }
 }
@@ -55,10 +55,10 @@ class MoreOdds extends Procedure
 {
     fun void run()
     {
-        coefs[1] * 1.1 => coefs[1];
-        coefs[3] * 1.1 => coefs[3];
-        coefs[5] * 1.1 => coefs[5];
-        coefs[7] * 1.1 => coefs[7];
+        coefs[0] * 1.1 => coefs[0];
+        coefs[2] * 1.1 => coefs[2];
+        coefs[4] * 1.1 => coefs[4];
+        coefs[6] * 1.1 => coefs[6];
         coefs => gen17.coefs;
     }
 }
@@ -67,10 +67,10 @@ class LessOdds extends Procedure
 {
     fun void run()
     {
-        coefs[1] * 0.8 => coefs[1];
-        coefs[3] * 0.8 => coefs[3];
-        coefs[5] * 0.8 => coefs[5];
-        coefs[7] * 0.8 => coefs[7];
+        coefs[0] * 0.8 => coefs[0];
+        coefs[2] * 0.8 => coefs[2];
+        coefs[4] * 0.8 => coefs[4];
+        coefs[6] * 0.8 => coefs[6];
         coefs => gen17.coefs;
     }
 }
