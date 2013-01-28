@@ -302,4 +302,7 @@ Machine.add("Module6.ck");
 Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
+// chubgraph stuff
+Machine.add("Mesmerizer.ck");
+
 <<<"LiCK imported.">>>;
