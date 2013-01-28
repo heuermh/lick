@@ -27,9 +27,8 @@
 // Buy one here:  http://www.catalinbread.com/PARE
 //
 
-adc => Gain in;
+//adc => Gain in;
 
-/*
 SinOsc low => Gain in;
 0.3 => low.gain;
 220.0 => low.freq;
@@ -37,7 +36,6 @@ SinOsc low => Gain in;
 SinOsc high => in;
 0.3 => high.gain;
 440.0 => high.freq;
-*/
 
 // your guitar signal is split into two
 in => Gain stage0;
@@ -54,10 +52,10 @@ stage1 => LPF lpf;
 stage1Gain => stage1.gain;
 
 // these stages are tuned to share some common frequences so that when it modulates they have a nice swirly soup in the midrange.
-//330.0 => float filterFreq;
-//0.0 => float filterSpread;
-4400.0 => float filterFreq;
-2200.0 => float filterSpread;
+330.0 => float filterFreq;
+0.0 => float filterSpread;
+//4400.0 => float filterFreq;
+//2200.0 => float filterSpread;
 filterFreq + filterSpread => lpf.freq;
 filterFreq - filterSpread => hpf.freq;
 
