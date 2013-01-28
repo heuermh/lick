@@ -38,8 +38,10 @@ high => mesmerizer;
 while (true)
 {
     5::second => now;
-    Math.random2f(0.05, 10.0) => mesmerizer.lfoRate;
-    Math.random2f(0.01, 0.00001) => mesmerizer.phasorLfoDepth;
+    Math.random2f(0.05, 10.0) => float lfoFreq;
+    Math.random2f(0.01, 0.00001) => float phasorLfoDepth;
 
-    <<<"lfo rate", mesmerizer.lfoRate(), "phasor lfo depth", mesmerizer.phasorLfoDepth()>>>;
+    lfoFreq => mesmerizer.lfoFreq;
+    phasorLfoDepth => mesmerizer.phasorLfoDepth;
+    <<<"lfo freq", lfoFreq, "phasor lfo depth", phasorLfoDepth>>>;
 }

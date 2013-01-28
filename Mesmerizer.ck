@@ -59,8 +59,8 @@ public class Mesmerizer extends Chubgraph
     1.0 => float _phasorLfoFreq;
     0.00001 => float _phasorLfoDepth;
 
-    0.0 => _dryGain;
-    1.0 => _wetGain;
+    0.0 => float _dryGain;
+    1.0 => float _wetGain;
 
     inlet => Gain stage0 => HPF hpf;
     inlet => Gain stage1 => LPF lpf;
