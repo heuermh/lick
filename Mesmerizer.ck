@@ -97,6 +97,8 @@ public class Mesmerizer extends Chubgraph
 
     TremoloModule trem0;
     TremoloModule trem1;
+    phasor0 => lfo0 => trem0._cv;
+    phasor1 => lfo1 => trem1._cv;
 
     inlet => Gain dry => outlet;
     Gain wet => outlet;
@@ -104,8 +106,8 @@ public class Mesmerizer extends Chubgraph
     _dryGain => dry.gain;
     _wetGain => wet.gain;
 
-    phasor0 => lfo0 => trem0._cv => wet;
-    phasor1 => lfo1 => trem1._cv => wet;
+    hpf => trem0 => wet;
+    lpf => trem1 => wet;
 
     // running by default
     true => int running;
