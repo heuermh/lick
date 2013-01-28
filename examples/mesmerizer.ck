@@ -111,56 +111,6 @@ phasorLfo1 => phasor1._cv;
 phasor0 => lfo0;
 phasor1 => lfo1;
 
-/*
-Phasor phasor0;
-0.0 => float phasor0Phase;
-phasor0Phase => phasor0.phase;
-lfoFreq => phasor0.freq;
-
-Phasor phasor1;
-0.5 => float phasor1Phase;
-phasor1Phase => phasor1.phase;
-lfoFreq => phasor1.freq;
-
-phasor0 => lfo0;
-phasor1 => lfo1;
-
--1.0 => float lfo0Phase;
-1.0 => float lfo1Phase;
-
-lfo0Phase => lfo0.phase;
-lfo1Phase => lfo1.phase;
-
-Step step0 => lfo0;
-Step step1 => lfo1;
-
--1.0 => step0.next;
-1.0 => step1.next;
-
-Step step0 => SinOsc phaseLfo0;
-Step step1 => SinOsc phaseLfo1;
-
-0 => phaseLfo0.sync;
-1 => phaseLfo1.sync;
-0.0 => step0.next;
-1.0 => step1.next;
-
-0.02 => float phaseLfo0Depth;
-0.02 => float phaseLfo1Depth;
-1.0 => float phaseLfo0Rate;
-1.0 => float phaseLfo1Rate;
-
-phaseLfo0Depth => phaseLfo0.gain;
-phaseLfo1Depth => phaseLfo1.gain;
-phaseLfo0Rate => phaseLfo0.freq;
-phaseLfo1Rate => phaseLfo1.freq;
-
-phaseLfo0 => lfo0;
-phaseLfo1 => lfo1;
-*/
-
-// ...now use lfo0 and lfo1 in a module to affect gain
-
 class TremoloModule extends Module
 {
     fun float tick(float in, float cv)
