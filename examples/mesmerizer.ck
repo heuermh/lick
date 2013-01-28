@@ -74,7 +74,7 @@ SinOsc lfo1 => blackhole;
 8.0 => float lfoFreq;
 lfoFreq => lfo0.freq;
 lfoFreq => lfo1.freq;
-1.0 => lfoDepth;
+1.0 => float lfoDepth;
 lfoDepth => lfo0.gain;
 lfoDepth => lfo1.gain;
 
