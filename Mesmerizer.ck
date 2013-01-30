@@ -110,7 +110,7 @@ public class Mesmerizer extends Chubgraph
     lpf => trem1 => wet;
 
     // running by default
-    true => int running;
+    true => int _running;
 
     fun float stage0Gain(float f)
     {
@@ -119,11 +119,21 @@ public class Mesmerizer extends Chubgraph
         return f;
     }
 
+    fun float stage0Gain()
+    {
+        return _stage0Gain;
+    }
+
     fun float stage1Gain(float f)
     {
         f => _stage1Gain;
         _stage1Gain => stage1.gain;
         return f;
+    }
+
+    fun float stage1Gain()
+    {
+        return _stage0Gain;
     }
 
     fun float filterFreq(float f)
@@ -134,12 +144,22 @@ public class Mesmerizer extends Chubgraph
         return f;
     }
 
+    fun float filterFreq()
+    {
+        return _filterFreq;
+    }
+
     fun float filterSpread(float f)
     {
         f => _filterSpread;
         _filterFreq - _filterSpread => hpf.freq;
         _filterFreq + _filterSpread => lpf.freq;
         return f;
+    }
+
+    fun float filterSpread()
+    {
+        return _filterSpread;
     }
 
     fun float lfoFreq(float f)
@@ -152,12 +172,22 @@ public class Mesmerizer extends Chubgraph
         return f;
     }
 
+    fun float lfoFreq()
+    {
+        return _lfoFreq;
+    }
+
     fun float lfoDepth(float f)
     {
         f => _lfoDepth;
         _lfoDepth => lfo0.gain;
         _lfoDepth => lfo1.gain;
         return f;
+    }
+
+    fun float lfoDepth()
+    {
+        return _lfoDepth;
     }
 
     fun float phasorLfoFreq(float f)
@@ -168,6 +198,11 @@ public class Mesmerizer extends Chubgraph
         return f;
     }
 
+    fun float phasorLfoFreq()
+    {
+        return _phasorLfoFreq;
+    }
+
     fun float phasorLfoDepth(float f)
     {
         f => _phasorLfoDepth;
@@ -176,38 +211,49 @@ public class Mesmerizer extends Chubgraph
         return f;
     }
 
-    fun void mix(float f)
+    fun float phasorLfoDepth()
+    {
+        return _phasorLfoDepth;
+    }
+
+    fun float mix(float f)
     {
         f => _wetGain;
         1.0 - f => _dryGain;
 
         _wetGain => wet.gain;
         _dryGain => dry.gain;
+        return _wetGain;
+    }
+
+    fun float mix()
+    {
+        return _wetGain;
     }
 
     fun void start()
     {
-        if (!running)
+        if (!_running)
         {
             _dryGain => dry.gain;
             _wetGain => wet.gain;
-            true => running;
+            true => _running;
         }
     }
 
     fun void stop()
     {
-        if (running)
+        if (_running)
         {
             1.0 => dry.gain;
             0.0 => wet.gain;
-            false => running;
+            false => _running;
         }
     }
 
     fun void toggle()
     {
-        if (running)
+        if (_running)
         {
             stop();
         }
@@ -215,5 +261,10 @@ public class Mesmerizer extends Chubgraph
         {
             start();
         }
+    }
+
+    fun int running()
+    {
+        return _running;
     }
 }

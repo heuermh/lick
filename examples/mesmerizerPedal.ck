@@ -27,7 +27,7 @@ class Toggle extends Procedure
     fun void run()
     {
         mesmerizer.toggle();
-        <<<"running", mesmerizer.running>>>;
+        <<<"running", mesmerizer.running()>>>;
     }
 }
 
@@ -35,9 +35,8 @@ class IncreaseLfoFreq extends Procedure
 {
     fun void run()
     {
-        mesmerizer.lfoFreq() * 1.1 => float lfoFreq;
-        lfoFreq => mesmerizer.lfoFreq;
-        <<<"lfo freq", lfoFreq>>>;
+        mesmerizer.lfoFreq() * 1.1 => mesmerizer.lfoFreq;
+        <<<"lfo freq", mesmerizer.lfoFreq()>>>;
     }
 }
 
@@ -45,9 +44,8 @@ class DecreaseLfoFreq extends Procedure
 {
     fun void run()
     {
-        mesmerizer.lfoFreq() * 0.9 => float lfoFreq;
-        lfoFreq => mesmerizer.lfoFreq;
-        <<<"lfo freq", lfoFreq>>>;
+        mesmerizer.lfoFreq() * 0.9 => mesmerizer.lfoFreq;
+        <<<"lfo freq", mesmerizer.lfoFreq()>>>;
     }
 }
 
@@ -55,9 +53,8 @@ class IncreasePhasorLfoDepth extends Procedure
 {
     fun void run()
     {
-        mesmerizer.phasorLfoDepth() * 1.1 => float phasorLfoDepth;
-        phaserLfoDepth => mesmerizer.phasorLfoDepth;
-        <<<"phasor lfo depth", phasorLfoDepth>>>;
+        mesmerizer.phasorLfoDepth() * 1.1 => mesmerizer.phasorLfoDepth;
+        <<<"phasor lfo depth", mesmerizer.phasorLfoDepth()>>>;
     }
 }
 
@@ -65,9 +62,8 @@ class DecreasePhasorLfoDepth extends Procedure
 {
     fun void run()
     {
-        mesmerizer.phasorLfoDepth() * 0.9 => float phasorLfoDepth;
-        phasorLfoDepth => mesmerizer.phasorLfoDepth;
-        <<<"phasor lfo depth", phasorLfoDepth>>>;
+        mesmerizer.phasorLfoDepth() * 0.9 => mesmerizer.phasorLfoDepth;
+        <<<"phasor lfo depth", mesmerizer.phasorLfoDepth()>>>;
     }
 }
 
