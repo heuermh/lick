@@ -27,7 +27,7 @@ class Toggle extends Procedure
     fun void run()
     {
         thicken.toggle();
-        <<<"running", thicken.running>>>;
+        <<<"running", thicken.running()>>>;
     }
 }
 

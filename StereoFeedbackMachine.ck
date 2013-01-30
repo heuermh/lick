@@ -61,7 +61,7 @@ public class StereoFeedbackMachine
     StereoDelay delay4;
 
     // running by default
-    true => int running;
+    true => int _running;
 
     {
         // setup left channel
@@ -196,7 +196,7 @@ public class StereoFeedbackMachine
 
     fun void start()
     {
-        if (!running)
+        if (!_running)
         {
             inputL =< delay1.inputL;
             inputL =< delay2.inputL;
@@ -208,7 +208,7 @@ public class StereoFeedbackMachine
             inputR => delay3.inputR;
             inputR => delay4.inputR;
 
-            true => running;
+            true => _running;
         }
     }
 
@@ -233,17 +233,17 @@ public class StereoFeedbackMachine
 
     fun void staggeredStart(dur wait)
     {
-        if (!running)
+        if (!_running)
         {
             //spork ~ _stagger(wait);
             _stagger(wait);
-            true => running;
+            true => _running;
         }
     }
 
     fun void stop()
     {
-        if (running)
+        if (_running)
         {
             inputL => delay1.inputL;
             inputL => delay2.inputL;
@@ -255,13 +255,13 @@ public class StereoFeedbackMachine
             inputR => delay3.inputR;
             inputR => delay4.inputR;
 
-            false => running;
+            false => _running;
         }
     }
 
     fun void toggle()
     {
-        if (running)
+        if (_running)
         {
             stop();
         }
@@ -269,5 +269,10 @@ public class StereoFeedbackMachine
         {
             start();
         }
+    }
+
+    fun int running()
+    {
+        return _running;
     }
 }

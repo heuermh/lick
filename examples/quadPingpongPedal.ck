@@ -44,7 +44,7 @@ class Toggle extends Procedure
     fun void run()
     {
         fm.toggle();
-        <<<"running",fm.running>>>;
+        <<<"running", fm.running()>>>;
     }
 }
 

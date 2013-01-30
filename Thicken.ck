@@ -31,31 +31,31 @@ public class Thicken extends Chubgraph
     1::ms => delay.delay;
 
     // running by default
-    true => int running;
+    true => int _running;
 
     fun void start()
     {
-        if (!running)
+        if (!_running)
         {
             0.5 => dry.gain;
             0.5 => wet.gain;
-            true => running;
+            true => _running;
         }
     }
 
     fun void stop()
     {
-        if (running)
+        if (_running)
         {
             1.0 => dry.gain;
             0.0 => wet.gain;
-            false => running;
+            false => _running;
         }
     }
 
     fun void toggle()
     {
-        if (running)
+        if (_running)
         {
             stop();
         }
@@ -63,5 +63,10 @@ public class Thicken extends Chubgraph
         {
             start();
         }
+    }
+
+    fun int running()
+    {
+        return _running;
     }
 }

@@ -30,7 +30,7 @@ public class Smear
     ArrayList delays;
 
     // running by default, after init() is called
-    true => int running;
+    true => int _running;
 
     20.0 => float _freq;
     0.8 => float _smear;
@@ -112,17 +112,17 @@ public class Smear
 
     fun void staggeredStart(dur wait)
     {
-        if (!running)
+        if (!_running)
         {
             //spork ~ _stagger(wait);
             _stagger(wait);
-            true => running;
+            true => _running;
         }
     }
 
     fun void stop()
     {
-        if (running)
+        if (_running)
         {
             delays.iterator() @=> Iterator iterator;
             while (iterator.hasNext())
@@ -130,13 +130,13 @@ public class Smear
                 iterator.next() $ MonoDelay @=> MonoDelay delay;
                 input =< delay.input;
             }
-            false => running;
+            false => _running;
         }
     }
 
     fun void toggle()
     {
-        if (running)
+        if (_running)
         {
             stop();
         }
@@ -144,6 +144,11 @@ public class Smear
         {
             start();
         }
+    }
+
+    fun int running()
+    {
+        return _running;
     }
 
     fun static Smear create(int z, float m, float f, float d)

@@ -42,7 +42,7 @@ class Toggle extends Procedure
     fun void run()
     {
         smear.toggle();
-        <<<"running",smear.running>>>;
+        <<<"running", smear.running()>>>;
     }
 }
 

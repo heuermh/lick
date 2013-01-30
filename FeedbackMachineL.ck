@@ -45,7 +45,7 @@ public class FeedbackMachineL
     MonoDelayL delay4;
 
     // running by default
-    true => int running;
+    true => int _running;
 
     {
         0.0 => route1to2.gain;
@@ -121,13 +121,13 @@ public class FeedbackMachineL
 
     fun void start()
     {
-        if (!running)
+        if (!_running)
         {
             input => delay1.input;
             input => delay2.input;
             input => delay3.input;
             input => delay4.input;
-            true => running;
+            true => _running;
         }
     }
 
@@ -148,29 +148,29 @@ public class FeedbackMachineL
 
     fun void staggeredStart(dur wait)
     {
-        if (!running)
+        if (!_running)
         {
             //spork ~ _stagger(wait);
             _stagger(wait);
-            true => running;
+            true => _running;
         }
     }
 
     fun void stop()
     {
-        if (running)
+        if (_running)
         {
             input =< delay1.input;
             input =< delay2.input;
             input =< delay3.input;
             input =< delay4.input;
-            false => running;
+            false => _running;
         }
     }
 
     fun void toggle()
     {
-        if (running)
+        if (_running)
         {
             stop();
         }
@@ -178,5 +178,10 @@ public class FeedbackMachineL
         {
             start();
         }
+    }
+
+    fun int running()
+    {
+        return _running;
     }
 }
