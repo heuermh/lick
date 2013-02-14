@@ -276,6 +276,7 @@ Machine.add("StereoFeedbackMachines.ck");
 Machine.add("StereoFeedbackMachineA.ck");
 Machine.add("StereoFeedbackMachineL.ck");
 Machine.add("Smear.ck");
+Machine.add("Swirl.ck");
 
 // dist stuff
 Machine.add("GainShaper.ck");
