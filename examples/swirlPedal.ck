@@ -34,7 +34,7 @@ TriOsc lfo2;
 
 Swirl swirl;
 
-dac => swirl.input;
+adc => swirl.input;
 lfo0 => swirl.cv;
 lfo1 => swirl.cv;
 lfo2 => swirl.cv;
