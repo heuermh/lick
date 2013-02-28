@@ -30,7 +30,7 @@ class Tri1 extends IntProcedure
 {
     fun void run(int value)
     {
-        220.0 * (value - 47) => tri1.freq;
+        220.0 * value => tri1.freq;
     }
 }
 
@@ -38,7 +38,7 @@ class Tri2 extends IntProcedure
 {
     fun void run(int value)
     {
-        55.1 * (value - 47) => tri2.freq;
+        55.1 * value => tri2.freq;
     }
 }
 
