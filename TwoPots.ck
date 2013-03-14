@@ -24,6 +24,8 @@ public class TwoPots
 {
     IntProcedure pot1;
     IntProcedure pot2;
+    IntProcedure pot1HighRes;
+    IntProcedure pot2HighRes;
 
     fun void lowColor1(int r, int g, int b)
     {
