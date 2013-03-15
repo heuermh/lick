@@ -79,7 +79,7 @@ Pot 2
 
 CC13
 
-Pot 1 HSB
+Pot 1 MSB
 
 CC16
 
@@ -87,7 +87,7 @@ Pot 1 LSB
 
 CC48
 
-Pot 2 HSB
+Pot 2 MSB
 
 CC17
 
