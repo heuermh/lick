@@ -25,26 +25,9 @@ public class TwoPotsMidi extends TwoPots
     MidiIn min;
     MidiMsg msg;
 
-    0 => int pot1q1;
-    0 => int pot1q2;
-    0 => int pot1q3;
-    0 => int pot1q4;
-    0 => int pot2q1;
-    0 => int pot2q2;
-    0 => int pot2q3;
-    0 => int pot2q4;
-    5::ms => dur rate;
-
     fun int open(int device)
     {
         min.open(device);
-
-        spork ~ _wait();
-        spork ~ _send();
-    }
-
-    fun void _wait()
-    {
         while (true)
         {
             min => now;
@@ -55,57 +38,31 @@ public class TwoPotsMidi extends TwoPots
                 msg.data3 => int value;
 
                 // if control == 173?
-                if (change == 1)
+                if (change == 12)
                 {
                     spork ~ pot1.run(value);
                 }
-                else if (change == 2)
+                else if (change == 13)
                 {
                     spork ~ pot2.run(value);
                 }
-                else if (change == 3)
+                else if (change == 16)
                 {
-                    value => pot1q1;
+                    spork ~ pot1Msb.run(value);
                 }
-                else if (change == 4)
+                else if (change == 17)
                 {
-                    value => pot1q2;
+                    spork ~ pot2Msb.run(value);
                 }
-                else if (change == 5)
+                else if (change == 48)
                 {
-                    value => pot1q3;
+                    spork ~ pot1Lsb.run(value);
                 }
-                else if (change == 6)
+                else if (change == 49)
                 {
-                    value => pot1q4;
-                }
-                else if (change == 3)
-                {
-                    value => pot2q1;
-                }
-                else if (change == 4)
-                {
-                    value => pot2q2;
-                }
-                else if (change == 5)
-                {
-                    value => pot2q3;
-                }
-                else if (change == 6)
-                {
-                    value => pot2q4;
+                    spork ~ pot2Lsb.run(value);
                 }
             }
-        }
-    }
-
-    fun void _send()
-    {
-        while (true)
-        {
-            rate => now;
-            pot1HighRes.run(pot1q1 + pot1q2 + pot1q3 + pot1q4);
-            pot2HighRes.run(pot2q1 + pot2q2 + pot2q3 + pot2q4);
         }
     }
 }
@@ -114,26 +71,74 @@ public class TwoPotsMidi extends TwoPots
 
   Two Pots Notes
 
-Pot 1, low res
+Pot 1
 
-CC1
+CC12
 
-Pot 2, low res
+Pot 2
 
-CC2
+CC13
 
-Pot 1, high res split
+Pot 1 HSB
 
-CC3
-CC4
-CC5
-CC6
+CC16
 
-Pot 2, high res split
+Pot 1 LSB
 
-CC7
-CC8
-CC9
-CC10
+CC48
+
+Pot 2 HSB
+
+CC17
+
+Pot 2 LSB
+
+CC49
+
+*/
+
+/**
+
+Two Pots Teensy 2.0 sketch
+
+int pot1 = 0;
+int pot2 = 0;
+
+int redPin =  15;
+int greenPin =  12;
+int bluePin =  14;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+void loop() {
+  // pot1 is left, pot2 is right
+  pot1 = analogRead(1);
+  pot2 = analogRead(0);
+
+  int red = (1023 - pot1) / 4;
+  int blue = (1023 - pot2) / 4;
+
+  analogWrite(redPin, constrain(red, 0, 255));
+  analogWrite(greenPin, 255);
+  analogWrite(bluePin, constrain(blue, 0, 255));
+
+  // coarse on cc12 and cc13
+  usbMIDI.sendControlChange(12, constrain(pot1 / 8, 0, 127), 1);
+  usbMIDI.sendControlChange(13, constrain(pot2 / 8, 0, 127), 1);
+
+  // fine via MSB and LSB, cc 16 and 48
+  usbMIDI.sendControlChange(16, (pot1 >> 7) & 0x7f, 1);
+  usbMIDI.sendControlChange(48, pot1 & 0x7f, 1);
+
+  // and cc 17 and 49
+  usbMIDI.sendControlChange(17, (pot2 >> 7) & 0x7f, 1);
+  usbMIDI.sendControlChange(49, pot2 & 0x7f, 1);
+
+  delay(5);
+}
 
 */
