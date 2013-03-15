@@ -79,5 +79,5 @@ lfo5 => stage2.cv;
 stage2.outputL => dac.chan(0);
 stage2.outputR => dac.chan(1);
 
-20::second => now;
+60::second => now;
 <<<"done">>>;
