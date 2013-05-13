@@ -39,6 +39,12 @@ public class Loopy
         <<<"toggle mute">>>;
     }
 
+    // or muteAndUnmuteNextMutedTrack() ?
+    fun void muteAndPlayNextMutedTrack()
+    {
+        <<<"mute and play next muted track">>>;
+    }
+
     fun void toggleRecord()
     {
         <<<"toggle record">>>;
@@ -49,6 +55,16 @@ public class Loopy
         <<<"toggle record select next track">>>;
     }
 
+    fun void toggleRecordMuteSelectNextTrack()
+    {
+        <<<"toggle record mute select next track">>>;
+    }
+
+    fun void toggleRecordMuteRecordNextTrack()
+    {
+        <<<"toggle record mute record next track">>>;
+    }
+
     fun void toggleRecordOverdub()
     {
         <<<"toggle record overdub">>>;
@@ -57,6 +73,11 @@ public class Loopy
     fun void toggleRecordWithoutCountIn()
     {
         <<<"toggle record without count in/out">>>;
+    }
+
+    fun void toggleReverse()
+    {
+        <<<"toggle reverse">>>;
     }
 
     fun void clearTrack()
@@ -132,5 +153,15 @@ public class Loopy
     fun void cancelPendingActions()
     {
         <<<"cancel pending actions">>>;
+    }
+
+    fun void toggleMetronome()
+    {
+        <<<"toggle metronome">>>;
+    }
+
+    fun void toggleFading()
+    {
+        <<<"toggle fading">>>;
     }
 }

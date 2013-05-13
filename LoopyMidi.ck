@@ -30,25 +30,31 @@ public class LoopyMidi extends Loopy
     0 => int SELECT_NEXT_TRACK;
     1 => int SELECT_PREVIOUS_TRACK;
     2 => int TOGGLE_MUTE;
-    3 => int TOGGLE_RECORD;
-    4 => int TOGGLE_RECORD_SELECT_NEXT_TRACK;
-    5 => int TOGGLE_RECORD_OVERDUB;
-    6 => int TOGGLE_RECORD_WITHOUT_COUNT_IN;
-    7 => int CLEAR_TRACK;
-    8 => int RERECORD_TRACK;
-    9 => int SOLO_TRACK;
-    10 => int TOGGLE_MUTE_ALL_TRACKS;
-    11 => int CLEAR_ALL_TRACKS;
-    12 => int SELECT_TRACK;
-    13 => int TAP_TEMPO;
-    14 => int DOUBLE_CLOCK_LENGTH;
-    15 => int HALVE_CLOCK_LENGTH;
-    16 => int TOGGLE_SESSION_PAUSE;
-    17 => int TOGGLE_SESSION_PAUSE_RESTART;
-    18 => int RESTART_SESSION;
-    19 => int RESET_SESSION;
-    20 => int TOGGLE_TRACK_SYNC;
-    21 => int CANCEL_PENDING_ACTIONS;
+    3 => int TOGGLE_MUTE_AND_PLAY_NEXT_TRACK;
+    4 => int TOGGLE_RECORD;
+    5 => int TOGGLE_RECORD_SELECT_NEXT_TRACK;
+    6 => int TOGGLE_RECORD_MUTE_SELECT_NEXT_TRACK;
+    7 => int TOGGLE_RECORD_MUTE_RECORD_NEXT_TRACK;
+    8 => int TOGGLE_RECORD_OVERDUB;
+    9 => int TOGGLE_RECORD_WITHOUT_COUNT_IN;
+    10 => int TOGGLE_REVERSE;
+    11 => int CLEAR_TRACK;
+    12 => int RERECORD_TRACK;
+    13 => int SOLO_TRACK;
+    14 => int TOGGLE_MUTE_ALL_TRACKS;
+    15 => int CLEAR_ALL_TRACKS;
+    16 => int SELECT_TRACK;
+    17 => int TAP_TEMPO;
+    18 => int DOUBLE_CLOCK_LENGTH;
+    19 => int HALVE_CLOCK_LENGTH;
+    20 => int TOGGLE_SESSION_PAUSE;
+    21 => int TOGGLE_SESSION_PAUSE_RESTART;
+    22 => int RESTART_SESSION;
+    23 => int RESET_SESSION;
+    24 => int TOGGLE_TRACK_SYNC;
+    25 => int CANCEL_PENDING_ACTIONS;
+    26 => int TOGGLE_METRONOME;
+    27 => int TOGGLE_FADING;
     // CC value to trigger Loopy action
     65 => int CC_VALUE;
 
@@ -84,6 +90,16 @@ public class LoopyMidi extends Loopy
         _cc(TOGGLE_RECORD_SELECT_NEXT_TRACK);
     }
 
+    fun void toggleRecordMuteSelectNextTrack()
+    {
+        _cc(TOGGLE_RECORD_MUTE_SELECT_NEXT_TRACK);
+    }
+
+    fun void toggleRecordMuteRecordNextTrack()
+    {
+        _cc(TOGGLE_RECORD_MUTE_RECORD_NEXT_TRACK);
+    }
+
     fun void toggleRecordOverdub()
     {
         _cc(TOGGLE_RECORD_OVERDUB);
@@ -92,6 +108,11 @@ public class LoopyMidi extends Loopy
     fun void toggleRecordWithoutCountIn()
     {
         _cc(TOGGLE_RECORD_WITHOUT_COUNT_IN);
+    }
+
+    fun void toggleReverse()
+    {
+        _cc(TOGGLE_REVERSE);
     }
 
     fun void clearTrack()
@@ -167,5 +188,15 @@ public class LoopyMidi extends Loopy
     fun void cancelPendingActions()
     {
         _cc(CANCEL_PENDING_ACTIONS);
+    }
+
+    fun void toggleMetronome()
+    {
+        _cc(TOGGLE_METRONOME);
+    }
+
+    fun void toggleFading()
+    {
+        _cc(TOGGLE_FADING);
     }
 }
