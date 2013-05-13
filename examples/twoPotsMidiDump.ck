@@ -20,28 +20,37 @@
 
 */
 
-public class TwoPots
+class Dump extends IntProcedure
 {
-    IntProcedure pot1; // cc 12
-    IntProcedure pot2;  // cc 13
-    IntProcedure pot1Msb; // cc 16
-    IntProcedure pot1Lsb; // cc 48 (16+32)
-    IntProcedure pot2Msb; // cc 17
-    IntProcedure pot2Lsb; // cc 49 (17+32)
+    "dump" => string name;
 
-    fun void lowColor1(int r, int g, int b)
+    fun void run(int value)
     {
-    }
-
-    fun void highColor1(int r, int g, int b)
-    {
-    }
-
-    fun void lowColor2(int r, int g, int b)
-    {
-    }
-
-    fun void highColor2(int r, int g, int b)
-    {
+        <<<now, name, value>>>;
     }
 }
+
+TwoPotsMidi twoPotsMidi;
+Dump pot1;
+Dump pot2;
+Dump pot1Msb;
+Dump pot1Lsb;
+Dump pot2Msb;
+Dump pot2Lsb;
+
+"pot1" => pot1.name;
+"         pot2" => pot2.name;
+"                 pot1Msb" => pot1Msb.name;
+"                            pot1Lsb" => pot1Lsb.name;
+"                                       pot2Msb" => pot2Msb.name;
+"                                                  pot2Lsb" => pot2Lsb.name;
+
+pot1 @=> twoPotsMidi.pot1;
+pot2 @=> twoPotsMidi.pot2;
+pot1Msb @=> twoPotsMidi.pot1Msb;
+pot1Lsb @=> twoPotsMidi.pot1Lsb;
+pot2Msb @=> twoPotsMidi.pot2Msb;
+pot2Lsb @=> twoPotsMidi.pot2Lsb;
+
+
+twoPotsMidi.open(0);
