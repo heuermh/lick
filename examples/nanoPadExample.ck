@@ -24,7 +24,7 @@ class Dump extends IntProcedure
 {
   fun void run(int velocity)
   {
-    <<<"Velocity: ", velocity>>>
+    <<<"Velocity: ", velocity>>>;
   }
 }
 
