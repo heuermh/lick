@@ -306,4 +306,8 @@ Machine.add("Module8.ck");
 // chubgraph stuff
 Machine.add("Mesmerizer.ck");
 
+// unsorted . . .
+Machine.add("SubGen.ck");
+Machine.add("SeptSubGen.ck");
+
 <<<"LiCK imported.">>>;
