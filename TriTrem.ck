@@ -24,20 +24,38 @@ public class TriTrem extends Chugen
 {
     TriOsc lfo;
 
+    1.0 => float _rate;
+    1.0 => float _depth;
+
     {
         lfo => blackhole;
+
+        rate(_rate);
+        depth(_depth);
+    }
+
+    fun float rate()
+    {
+        return _rate;
     }
 
     fun float rate(float rate)
     {
-        rate => lfo.freq;
-        return rate;
+        rate => _rate;
+        _rate => lfo.freq;
+        return _rate;
+    }
+
+    fun float depth()
+    {
+        return _depth;
     }
 
     fun float depth(float depth)
     {
-        depth => lfo.gain;
-        return depth;
+        depth => _depth;
+        _depth => lfo.gain;
+        return _depth;
     }
 
     fun float tick(float in)

@@ -31,6 +31,8 @@ public class Tremolo
     0.33 => float sinMix;
     0.33 => float sqrMix;
     0.33 => float triMix;
+    1.0 => float _rate;
+    1.0 => float _depth;
 
     {
         input => tremolo => output;
@@ -38,23 +40,38 @@ public class Tremolo
         sqrLfo => blackhole;
         triLfo => blackhole;
 
+        rate(_rate);
+        depth(_depth);
+
         spork ~ update();
+    }
+
+    fun float rate()
+    {
+        return _rate;
     }
 
     fun float rate(float rate)
     {
-        rate => sinLfo.freq;
-        rate => sqrLfo.freq;
-        rate => triLfo.freq;
-        return rate;
+        rate => _rate;
+        _rate => sinLfo.freq;
+        _rate => sqrLfo.freq;
+        _rate => triLfo.freq;
+        return _rate;
+    }
+
+    fun float depth()
+    {
+        return _depth;
     }
 
     fun float depth(float depth)
     {
-        depth * sinMix => sinLfo.gain;
-        depth * sqrMix => sqrLfo.gain;
-        depth * triMix => triLfo.gain;
-        return depth;
+        depth => _depth;
+        _depth * sinMix => sinLfo.gain;
+        _depth * sqrMix => sqrLfo.gain;
+        _depth * triMix => triLfo.gain;
+        return _depth;
     }
 
     fun void update()

@@ -58,6 +58,12 @@ public class Swirl
         return _pan.pan();
     }
 
+    fun float pan(float pan)
+    {
+        pan => _pan.pan;
+        return pan;
+    }
+
     fun void start()
     {
         if (!_running)

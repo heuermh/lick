@@ -34,6 +34,7 @@ public class Smear
 
     20.0 => float _freq;
     0.8 => float _smear;
+    0.0 => float _feedback;
 
     {
         input => dry;
@@ -58,36 +59,52 @@ public class Smear
         }
     }
 
-    fun float feedback(float f)
+    fun float feedback()
     {
-        delays.iterator() @=> Iterator iterator;
-        while (iterator.hasNext())
-        {
-            iterator.next() $ MonoDelay @=> MonoDelay delay;
-            f => delay.feedback.gain;
-        }
-        return f;
+        return _feedback;
     }
 
-    fun float freq(float f)
+    fun float feedback(float feedback)
     {
-        f => _freq;
+        feedback => _feedback;
         delays.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
         {
             iterator.next() $ MonoDelay @=> MonoDelay delay;
-            Math.random2f((f / 50.0), (-f / 50.0)) => float variation;
-            f + variation => float delayFreq;
+            _feedback => delay.feedback.gain;
+        }
+        return _feedback;
+    }
+
+    fun float freq()
+    {
+        return _freq;
+    }
+
+    fun float freq(float freq)
+    {
+        freq => _freq;
+        delays.iterator() @=> Iterator iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() $ MonoDelay @=> MonoDelay delay;
+            Math.random2f((_freq / 50.0), (-_freq / 50.0)) => float variation;
+            _freq + variation => float delayFreq;
             (1.0 / delayFreq) * 1::second => dur delayDelay;
-            <<<"freq f", f, "variation", variation, "delayFreq", delayFreq, "delayDelay", delayDelay, "max", delay.delay.max()>>>;
+            <<<"freq f", _freq, "variation", variation, "delayFreq", delayFreq, "delayDelay", delayDelay, "max", delay.delay.max()>>>;
             delayDelay => delay.delay.delay;
         }
         return _freq;
     }
 
-    fun float smear(float m)
+    fun float smear()
     {
-        m => _smear;
+        return _smear;
+    }
+
+    fun float smear(float smear)
+    {
+        smear => _smear;
         return _smear;
     }
 
