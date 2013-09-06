@@ -63,6 +63,11 @@ public class SubGen
     }
 
 
+    fun float freq()
+    {
+        return _freq;
+    }
+
     fun float freq(float freq)
     {
         freq => _freq;
@@ -71,6 +76,11 @@ public class SubGen
         _freq => sqrOsc.freq;
         _freq => triOsc.freq;
         return _freq;
+    }
+
+    fun float phase()
+    {
+        return _phase;
     }
 
     fun float phase(float phase)

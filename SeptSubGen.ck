@@ -59,11 +59,21 @@ public class SeptSubGen
     }
 
 
+    fun float freq()
+    {
+        return _freq;
+    }
+
     fun float freq(float freq)
     {
         freq => _freq;
         _updateFreq();
         return _freq;
+    }
+
+    fun float freqSpread()
+    {
+        return _freqSpread;
     }
 
     fun float freqSpread(float freqSpread)
@@ -83,7 +93,12 @@ public class SeptSubGen
         _freq + _freqSpread => gen5.freq;
         _freq - _freqSpread => gen6.freq;
 
-        //<<<gen0._freq, gen1._freq, gen2._freq, gen3._freq, gen4._freq, gen5._freq, gen6._freq>>>;
+        //<<<gen0.freq(), gen1.freq(), gen2.freq(), gen3.freq(), gen4.freq(), gen5.freq(), gen6.freq()>>>;
+    }
+
+    fun float phase()
+    {
+        return _phase;
     }
 
     fun float phase(float phase)
@@ -91,6 +106,11 @@ public class SeptSubGen
         phase => _phase;
         _updatePhase();
         return _phase;
+    }
+
+    fun float phaseSpread()
+    {
+        return _phaseSpread;
     }
 
     fun float phaseSpread(float phaseSpread)
@@ -110,6 +130,6 @@ public class SeptSubGen
         _phase + _phaseSpread => gen5.phase;
         _phase - _phaseSpread => gen6.phase;
 
-        //<<<gen0._phase, gen1._phase, gen2._phase, gen3._phase, gen4._phase, gen5._phase, gen6._phase>>>;
+        //<<<gen0.phase(), gen1.phase(), gen2.phase(), gen3.phase(), gen4.phase(), gen5.phase(), gen6.phase()>>>;
     }
 }

@@ -68,7 +68,7 @@ for (0 => int i; i < 14; i++)
     sept.gen4.delay.feedbackL.gain() * 1.1 => sept.gen4.delay.feedbackL.gain;
     sept.gen4.delay.feedbackR.gain() * 1.1 => sept.gen4.delay.feedbackR.gain;
 
-    sept.freqSpread(sept._freqSpread + 1);
+    sept.freqSpread(sept.freqSpread() + 1);
 }
 
 <<<"done">>>;
