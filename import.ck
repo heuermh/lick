@@ -304,6 +304,7 @@ Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
 // chubgraph stuff
+Machine.add("CryBaby.ck");
 Machine.add("Mesmerizer.ck");
 
 // unsorted . . .
