@@ -21,7 +21,7 @@
 */
 
 MeeBlipMidi meeBlip;
-meeBlip.out.open(0); // or add a new connect(int) method?
+meeBlip.open(0);
 
 <<<"setting up ...">>>;
 

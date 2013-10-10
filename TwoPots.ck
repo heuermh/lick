@@ -29,6 +29,11 @@ public class TwoPots
     IntProcedure pot2Msb; // cc 17
     IntProcedure pot2Lsb; // cc 49 (17+32)
 
+    fun void open(int device)
+    {
+        <<<"open", device>>>;
+    }
+
     fun void lowColor1(int r, int g, int b)
     {
     }

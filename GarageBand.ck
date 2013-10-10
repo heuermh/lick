@@ -24,6 +24,11 @@
 public class GarageBand
 {
 
+    fun void open(int device)
+    {
+        <<<"open", device>>>;
+    }
+
     fun void noteOn(int note, int velocity)
     {
     }

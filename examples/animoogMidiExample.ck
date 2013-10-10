@@ -22,7 +22,7 @@
 
 // first open a network MIDI session to Animoog app on iPad/iPhone
 AnimoogMidi animoog;
-animoog.out.open(0); // or add a new connect(int) method?
+animoog.open(0);
 
 <<<"setting up . . .">>>;
 

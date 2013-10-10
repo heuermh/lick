@@ -90,6 +90,11 @@ public class AnimoogMidi
     440.0 => float _freq;
 
 
+    fun void open(int device)
+    {
+        out.open(device);
+    }
+
     // MIDI instrument API
 
     fun void noteOn(int note, int velocity)

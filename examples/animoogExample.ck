@@ -21,6 +21,7 @@
 */
 
 Animoog animoog;
+animoog.open(0);
 
 animoog.lpFilter();
 animoog.filterDrive(0.8);

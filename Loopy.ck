@@ -24,6 +24,11 @@
 public class Loopy
 {
 
+    fun void open(int device)
+    {
+        <<<"open", device>>>;
+    }
+
     fun void selectNextTrack()
     {
         <<<"select next track">>>;

@@ -22,7 +22,7 @@
 
 // first open a network MIDI session to GarageBand app on iPad/iPhone
 GarageBandMidi garageBand;
-garageBand.out.open(0);
+garageBand.open(0);
 
 <<<"setting up . . .">>>;
 

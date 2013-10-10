@@ -46,6 +46,12 @@ public class Animoog
         adsr.keyOff();
     }
 
+
+    fun void open(int device)
+    {
+        <<<"open", device>>>;
+    }
+
     // MIDI instrument API
 
     fun void noteOn(int note, int velocity)

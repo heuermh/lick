@@ -58,6 +58,11 @@ public class LoopyMidi extends Loopy
     // CC value to trigger Loopy action
     65 => int CC_VALUE;
 
+    fun void open(int device)
+    {
+        out.open(device);
+    }
+
     fun void _cc(int number)
     {
         ccMsg.number(number);

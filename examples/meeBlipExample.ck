@@ -21,6 +21,7 @@
 */
 
 MeeBlip meeBlip;
+meeBlip.open(0);
 
 meeBlip.fmOn();
 meeBlip.oscASawtoothWave();
