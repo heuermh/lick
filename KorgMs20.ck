@@ -106,7 +106,7 @@ public class KorgMs20
         1.0 => playSample.rate;
         0.4 => playSample.gain;
 
-        <<<"as recorded">>>;
+        <<<"as recorded (MIDI C3)">>>;
         samples.forEach(playSample);
 
         <<<"up a perfect fifth">>>;
