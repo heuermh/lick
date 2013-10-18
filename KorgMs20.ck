@@ -106,7 +106,7 @@ public class KorgMs20
         1.0 => playSample.rate;
         0.4 => playSample.gain;
 
-        <<<"as recorded (MIDI C3)">>>;
+        <<<"as recorded (C3)">>>;
         samples.forEach(playSample);
 
         <<<"up a perfect fifth">>>;
@@ -114,7 +114,7 @@ public class KorgMs20
         samples.forEach(playSample);
 
         <<<"down a minor third">>>;
-        Intervals.desc(Intervals.minorThird()).evaluate(1.0) => playSample.rate;
+        Intervals.minorThird().desc().evaluate(1.0) => playSample.rate;
         samples.forEach(playSample);
     }
 }
