@@ -20,33 +20,29 @@
 
 */
 
-public class TwoPots
+public class AdsrSample
 {
-    IntProcedure pot1; // cc 12
-    IntProcedure pot2;  // cc 13
-    IntProcedure pot1Msb; // cc 16
-    IntProcedure pot1Lsb; // cc 48 (16+32)
-    IntProcedure pot2Msb; // cc 17
-    IntProcedure pot2Lsb; // cc 49 (17+32)
+    1.0 => float rate;
+    0.8 => float gain;
+    "Sample" => string name;
+    SndBuf buf => ADSR adsr => dac;
 
-    fun int open(int device)
     {
-        <<<"open", device>>>;
+        0.0 => buf.gain;
+        1 => buf.loop;
+        adsr.set(20::ms, 20::ms, 0.9, 400::ms);
     }
 
-    fun void lowColor1(int r, int g, int b)
+    fun void keyOn()
     {
+        0 => buf.pos;
+        rate => buf.rate;
+        gain => buf.gain;
+        adsr.keyOn(1);
     }
 
-    fun void highColor1(int r, int g, int b)
+    fun void keyOff()
     {
-    }
-
-    fun void lowColor2(int r, int g, int b)
-    {
-    }
-
-    fun void highColor2(int r, int g, int b)
-    {
+        adsr.keyOff(1);
     }
 }

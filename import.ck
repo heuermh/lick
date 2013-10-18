@@ -239,6 +239,7 @@ Machine.add("TouchOscServer.ck");
 
 // sample-based drum machines, package sample
 Machine.add("Sample.ck");
+Machine.add("AdsrSample.ck");
 Machine.add("CompositeSample.ck");
 Machine.add("RandomSample.ck");
 Machine.add("PitchSensitiveSample.ck");
@@ -254,6 +255,7 @@ Machine.add("RolandTr606.ck");
 Machine.add("RolandTr808.ck");
 Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
+Machine.add("KorgMs20.ck");
 
 // delay stuff
 Machine.add("SinTrem.ck");

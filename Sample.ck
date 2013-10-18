@@ -104,6 +104,7 @@ public class Sample
     0.8 => float maxGain;
     "Sample" => string name;
     SndBuf buf => dac;
+    //SndBuf buf => ADSR adsr => dac;
 
     // hack to simulate multiple inheritance
     SampleProcedure _procedure;

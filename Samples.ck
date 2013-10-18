@@ -29,6 +29,13 @@ public class Samples
         return sample;
     }
 
+    fun static AdsrSample createAdsrSample(string path)
+    {
+        AdsrSample sample;
+        path => sample.buf.read;
+        return sample;
+    }
+
     fun static HandedSample createHandedSample(Sample leftHand, Sample rightHand)
     {
         HandedSample sample;

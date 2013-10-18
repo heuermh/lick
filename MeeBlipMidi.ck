@@ -31,7 +31,7 @@ public class MeeBlipMidi
     440.0 => float _freq;
 
 
-    fun void open(int device)
+    fun int open(int device)
     {
         out.open(device);
     }

@@ -31,7 +31,7 @@ public class MeeBlip
     }
 
 
-    fun void open(int device)
+    fun int open(int device)
     {
         <<<"open", device>>>;
     }
