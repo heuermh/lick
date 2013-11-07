@@ -234,6 +234,7 @@ Machine.add("StompKeyboard.ck");
 Machine.add("ControlOscServer.ck");
 Machine.add("EuclidOsc.ck");
 Machine.add("IanniXOsc.ck");
+Machine.add("LeapMotionOsc.ck");
 Machine.add("SooperLooperOsc.ck");
 Machine.add("TouchOscServer.ck");
 
