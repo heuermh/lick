@@ -42,3 +42,7 @@ http://chuck.stanford.edu/
 For further documentation, please see
 
 http://wiki.github.com/heuermh/lick
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/heuermh/lick/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
