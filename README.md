@@ -1,5 +1,8 @@
+LiCK
+====
+
 LiCK  Library for ChucK.
-========================
+
 
 ```
 Copyright (c) 2007-2013 held jointly by the individual authors.
@@ -27,7 +30,7 @@ LiCK includes:
  - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
  - MIDI support for iOS apps (Animoog, GarageBand, Loopy, etc.)
  - OSC support for desktop apps (IanniX, SooperLooper, etc.)
- - Monome, ControlOSC, TouchOSC integration
+ - LeapMotion, Monome, ControlOSC, TouchOSC integration
  - Mono and stereo Delays, FeedbackMachines
  - WaveShaper chugen, Distortion and Tremolo chugens
  - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
