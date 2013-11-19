@@ -29,7 +29,7 @@ LiCK includes:
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
  - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
- - MIDI support for iOS apps (Animoog, GarageBand, Loopy, etc.)
+ - MIDI support for iOS apps (Animoog, GarageBand, Filtatron, Loopy, etc.)
  - OSC support for desktop apps (IanniX, SooperLooper, etc.)
  - LeapMotion, Monome, ControlOSC, TouchOSC integration
  - Mono and stereo Delays, FeedbackMachines
