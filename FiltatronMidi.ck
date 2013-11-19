@@ -55,9 +55,14 @@ public class FiltatronMidi
     28 => static int DELAY_MOD_DEPTH_CC;
     29 => static int LINE_LEVEL_CC;
 
+    0 => static int OFF;
+    64 => static int ON;
+    0 => static int SAMPLER_PLAY;
+    1 => static int SAMPLER_PAUSE;
+
     MidiOut out;
     ControlChangeMidiMsg ccMsg;
-
+    SAMPLER_PAUSE => int _sampler;
 
     fun void open(int device)
     {
@@ -69,9 +74,9 @@ public class FiltatronMidi
 
     fun void vcoFreq(int vcoFreq)
     {
-         ccMsg.number(VCO_FREQ_CC);
-         ccMsg.value(vcoFreq);
-         out.send(ccMsg);
+        ccMsg.number(VCO_FREQ_CC);
+        ccMsg.value(vcoFreq);
+        out.send(ccMsg);
     }
 
     fun void vcoFreq(float _vcoFreq)
@@ -81,9 +86,9 @@ public class FiltatronMidi
 
     fun void vcoWaveform(int vcoWaveform)
     {
-         ccMsg.number(VCO_WAVEFORM_CC);
-         ccMsg.value(vcoWaveform);
-         out.send(ccMsg);
+        ccMsg.number(VCO_WAVEFORM_CC);
+        ccMsg.value(vcoWaveform);
+        out.send(ccMsg);
     }
 
     fun void vcoWaveform(float _vcoWaveform)
@@ -93,9 +98,9 @@ public class FiltatronMidi
 
     fun void vcoLevel(int vcoLevel)
     {
-         ccMsg.number(VCO_LEVEL_CC);
-         ccMsg.value(vcoLevel);
-         out.send(ccMsg);
+        ccMsg.number(VCO_LEVEL_CC);
+        ccMsg.value(vcoLevel);
+        out.send(ccMsg);
     }
 
     fun void vcoLevel(float _vcoLevel)
@@ -105,9 +110,9 @@ public class FiltatronMidi
 
     fun void vcoRelease(int vcoRelease)
     {
-         ccMsg.number(VCO_RELEASE_CC);
-         ccMsg.value(vcoRelease);
-         out.send(ccMsg);
+        ccMsg.number(VCO_RELEASE_CC);
+        ccMsg.value(vcoRelease);
+        out.send(ccMsg);
     }
 
     fun void vcoRelease(float _vcoRelease)
@@ -117,9 +122,9 @@ public class FiltatronMidi
 
     fun void vcoReleaseEnabled(int vcoReleaseEnabled)
     {
-         ccMsg.number(VCO_RELEASE_ENABLED_CC);
-         ccMsg.value(vcoReleaseEnabled);
-         out.send(ccMsg);
+        ccMsg.number(VCO_RELEASE_ENABLED_CC);
+        ccMsg.value(vcoReleaseEnabled);
+        out.send(ccMsg);
     }
 
     fun void vcoReleaseEnabled(float _vcoReleaseEnabled)
@@ -127,35 +132,33 @@ public class FiltatronMidi
         vcoReleaseEnabled(toCC(_vcoReleaseEnabled));
     }
 
-    fun void play(int play)
+    fun void samplerPlay()
     {
-         ccMsg.number(SAMPLER_PLAY_PAUSE_CC);
-         ccMsg.value(play);
-         out.send(ccMsg);
+        if (_sampler == SAMPLER_PAUSE)
+        {
+            ccMsg.number(SAMPLER_PLAY_PAUSE_CC);
+            ccMsg.value(ON);
+            out.send(ccMsg);
+            SAMPLER_PLAY => _sampler;
+        }
     }
 
-    fun void play(float _play)
+    fun void samplerPause()
     {
-        play(toCC(_play));
-    }
-
-    fun void pause(int pause)
-    {
-         ccMsg.number(SAMPLER_PLAY_PAUSE_CC);
-         ccMsg.value(pause);
-         out.send(ccMsg);
-    }
-
-    fun void pause(float _pause)
-    {
-        pause(toCC(_pause));
+        if (_sampler == SAMPLER_PLAY)
+        {
+            ccMsg.number(SAMPLER_PLAY_PAUSE_CC);
+            ccMsg.value(OFF);
+            out.send(ccMsg);
+            SAMPLER_PAUSE => _sampler;
+        }
     }
 
     fun void samplerRate(int samplerRate)
     {
-         ccMsg.number(SAMPLER_RATE_CC);
-         ccMsg.value(samplerRate);
-         out.send(ccMsg);
+        ccMsg.number(SAMPLER_RATE_CC);
+        ccMsg.value(samplerRate);
+        out.send(ccMsg);
     }
 
     fun void samplerRate(float _samplerRate)
@@ -165,9 +168,9 @@ public class FiltatronMidi
 
     fun void samplerLevel(int samplerLevel)
     {
-         ccMsg.number(SAMPLER_LEVEL_CC);
-         ccMsg.value(samplerLevel);
-         out.send(ccMsg);
+        ccMsg.number(SAMPLER_LEVEL_CC);
+        ccMsg.value(samplerLevel);
+        out.send(ccMsg);
     }
 
     fun void samplerLevel(float _samplerLevel)
@@ -177,9 +180,9 @@ public class FiltatronMidi
 
     fun void loopStart(int loopStart)
     {
-         ccMsg.number(SAMPLER_LOOP_START_CC);
-         ccMsg.value(loopStart);
-         out.send(ccMsg);
+        ccMsg.number(SAMPLER_LOOP_START_CC);
+        ccMsg.value(loopStart);
+        out.send(ccMsg);
     }
 
     fun void loopStart(float _loopStart)
@@ -189,9 +192,9 @@ public class FiltatronMidi
 
     fun void loopEnd(int loopEnd)
     {
-         ccMsg.number(SAMPLER_LOOP_END_CC);
-         ccMsg.value(loopEnd);
-         out.send(ccMsg);
+        ccMsg.number(SAMPLER_LOOP_END_CC);
+        ccMsg.value(loopEnd);
+        out.send(ccMsg);
     }
 
     fun void loopEnd(float _loopEnd)
@@ -201,9 +204,9 @@ public class FiltatronMidi
 
     fun void vcfCutoff(int vcfCutoff)
     {
-         ccMsg.number(VCF_CUTOFF_CC);
-         ccMsg.value(vcfCutoff);
-         out.send(ccMsg);
+        ccMsg.number(VCF_CUTOFF_CC);
+        ccMsg.value(vcfCutoff);
+        out.send(ccMsg);
     }
 
     fun void vcfCutoff(float _vcfCutoff)
@@ -213,9 +216,9 @@ public class FiltatronMidi
 
     fun void vcfResonance(int vcfResonance)
     {
-         ccMsg.number(VCF_RESONANCE_CC);
-         ccMsg.value(vcfResonance);
-         out.send(ccMsg);
+        ccMsg.number(VCF_RESONANCE_CC);
+        ccMsg.value(vcfResonance);
+        out.send(ccMsg);
     }
 
     fun void vcfResonance(float _vcfResonance)
@@ -225,9 +228,9 @@ public class FiltatronMidi
 
     fun void vcfSeparation(int vcfSeparation)
     {
-         ccMsg.number(VCF_SEPARATION_CC);
-         ccMsg.value(vcfSeparation);
-         out.send(ccMsg);
+        ccMsg.number(VCF_SEPARATION_CC);
+        ccMsg.value(vcfSeparation);
+        out.send(ccMsg);
     }
 
     fun void vcfSeparation(float _vcfSeparation)
@@ -237,9 +240,9 @@ public class FiltatronMidi
 
     fun void vcfType(int vcfType)
     {
-         ccMsg.number(VCF_TYPE_CC);
-         ccMsg.value(vcfType);
-         out.send(ccMsg);
+        ccMsg.number(VCF_TYPE_CC);
+        ccMsg.value(vcfType);
+        out.send(ccMsg);
     }
 
     fun void vcfType(float _vcfType)
@@ -249,9 +252,9 @@ public class FiltatronMidi
 
     fun void vcfMix(int vcfMix)
     {
-         ccMsg.number(VCF_MIX_CC);
-         ccMsg.value(vcfMix);
-         out.send(ccMsg);
+        ccMsg.number(VCF_MIX_CC);
+        ccMsg.value(vcfMix);
+        out.send(ccMsg);
     }
 
     fun void vcfMix(float _vcfMix)
@@ -261,9 +264,9 @@ public class FiltatronMidi
 
     fun void envSpeed(int envSpeed)
     {
-         ccMsg.number(ENV_SPEED_CC);
-         ccMsg.value(envSpeed);
-         out.send(ccMsg);
+        ccMsg.number(ENV_SPEED_CC);
+        ccMsg.value(envSpeed);
+        out.send(ccMsg);
     }
 
     fun void envSpeed(float _envSpeed)
@@ -273,9 +276,9 @@ public class FiltatronMidi
 
     fun void envAmount(int envAmount)
     {
-         ccMsg.number(ENV_AMOUNT_CC);
-         ccMsg.value(envAmount);
-         out.send(ccMsg);
+        ccMsg.number(ENV_AMOUNT_CC);
+        ccMsg.value(envAmount);
+        out.send(ccMsg);
     }
 
     fun void envAmount(float _envAmount)
@@ -285,9 +288,9 @@ public class FiltatronMidi
 
     fun void lfoRate(int lfoRate)
     {
-         ccMsg.number(LFO_RATE_CC);
-         ccMsg.value(lfoRate);
-         out.send(ccMsg);
+        ccMsg.number(LFO_RATE_CC);
+        ccMsg.value(lfoRate);
+        out.send(ccMsg);
     }
 
     fun void lfoRate(float _lfoRate)
@@ -297,9 +300,9 @@ public class FiltatronMidi
 
     fun void lfoRateSync(int lfoRateSync)
     {
-         ccMsg.number(LFO_RATE_SYNC_CC);
-         ccMsg.value(lfoRateSync);
-         out.send(ccMsg);
+        ccMsg.number(LFO_RATE_SYNC_CC);
+        ccMsg.value(lfoRateSync);
+        out.send(ccMsg);
     }
 
     fun void lfoRateSync(float _lfoRateSync)
@@ -309,9 +312,9 @@ public class FiltatronMidi
 
     fun void lfoAmount(int lfoAmount)
     {
-         ccMsg.number(LFO_AMOUNT_CC);
-         ccMsg.value(lfoAmount);
-         out.send(ccMsg);
+        ccMsg.number(LFO_AMOUNT_CC);
+        ccMsg.value(lfoAmount);
+        out.send(ccMsg);
     }
 
     fun void lfoAmount(float _lfoAmount)
@@ -321,9 +324,9 @@ public class FiltatronMidi
 
     fun void lfoWaveform(int lfoWaveform)
     {
-         ccMsg.number(LFO_WAVEFORM_CC);
-         ccMsg.value(lfoWaveform);
-         out.send(ccMsg);
+        ccMsg.number(LFO_WAVEFORM_CC);
+        ccMsg.value(lfoWaveform);
+        out.send(ccMsg);
     }
 
     fun void lfoWaveform(float _lfoWaveform)
@@ -333,9 +336,9 @@ public class FiltatronMidi
 
     fun void ampDrive(int ampDrive)
     {
-         ccMsg.number(AMP_DRIVE_CC);
-         ccMsg.value(ampDrive);
-         out.send(ccMsg);
+        ccMsg.number(AMP_DRIVE_CC);
+        ccMsg.value(ampDrive);
+        out.send(ccMsg);
     }
 
     fun void ampDrive(float _ampDrive)
@@ -345,9 +348,9 @@ public class FiltatronMidi
 
     fun void ampFeedback(int ampFeedback)
     {
-         ccMsg.number(AMP_FEEDBACK_CC);
-         ccMsg.value(ampFeedback);
-         out.send(ccMsg);
+        ccMsg.number(AMP_FEEDBACK_CC);
+        ccMsg.value(ampFeedback);
+        out.send(ccMsg);
     }
 
     fun void ampFeedback(float _ampFeedback)
@@ -357,8 +360,8 @@ public class FiltatronMidi
 
     fun void delayTime(int delayTime)
     {
-         ccMsg.number(DELAY_TIME_CC);
-         ccMsg.value(delayTime);
+        ccMsg.number(DELAY_TIME_CC);
+        ccMsg.value(delayTime);
          out.send(ccMsg);
     }
 
@@ -369,9 +372,9 @@ public class FiltatronMidi
 
     fun void delayTimeSync(int delayTimeSync)
     {
-         ccMsg.number(DELAY_TIME_SYNC_CC);
-         ccMsg.value(delayTimeSync);
-         out.send(ccMsg);
+        ccMsg.number(DELAY_TIME_SYNC_CC);
+        ccMsg.value(delayTimeSync);
+        out.send(ccMsg);
     }
 
     fun void delayTimeSync(float _delayTimeSync)
@@ -381,9 +384,9 @@ public class FiltatronMidi
 
     fun void delayFeedback(int delayFeedback)
     {
-         ccMsg.number(DELAY_FEEDBACK_CC);
-         ccMsg.value(delayFeedback);
-         out.send(ccMsg);
+        ccMsg.number(DELAY_FEEDBACK_CC);
+        ccMsg.value(delayFeedback);
+        out.send(ccMsg);
     }
 
     fun void delayFeedback(float _delayFeedback)
@@ -393,9 +396,9 @@ public class FiltatronMidi
 
     fun void delayMix(int delayMix)
     {
-         ccMsg.number(DELAY_MIX_CC);
-         ccMsg.value(delayMix);
-         out.send(ccMsg);
+        ccMsg.number(DELAY_MIX_CC);
+        ccMsg.value(delayMix);
+        out.send(ccMsg);
     }
 
     fun void delayMix(float _delayMix)
@@ -405,9 +408,9 @@ public class FiltatronMidi
 
     fun void lineLevel(int lineLevel)
     {
-         ccMsg.number(LINE_LEVEL_CC);
-         ccMsg.value(lineLevel);
-         out.send(ccMsg);
+        ccMsg.number(LINE_LEVEL_CC);
+        ccMsg.value(lineLevel);
+        out.send(ccMsg);
     }
 
     fun void lineLevel(float _lineLevel)
