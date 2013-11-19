@@ -23,10 +23,19 @@
 // AlesisQX25 --> MeeBlip micro MIDI mapping
 MeeBlipMidi meeBlip;
 
+-1 => int lastKey;
+
 class KeyOn extends IntIntProcedure
 {
     fun void run(int value0, int value1)
     {
+        <<<"keyOn", value0, value1>>>;
+
+        if (lastKey >= 0)
+        {
+            meeBlip.noteOff(lastKey, 0);
+        }
+        value0 => lastKey;
         meeBlip.noteOn(value0, value1);
     }
 }
@@ -35,7 +44,8 @@ class KeyOff extends IntProcedure
 {
     fun void run(int value)
     {
-        meeBlip.noteOff(value);
+        <<<"keyOff", value>>>;
+        meeBlip.noteOff(value, 0);
     }
 }
 
@@ -43,6 +53,7 @@ class Modulation extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"oscDetune", value>>>;
         meeBlip.oscDetune(value);
     }
 }
@@ -51,6 +62,7 @@ class Rotary1 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"filterResonance", value>>>;
         meeBlip.filterResonance(value);
     }
 }
@@ -59,6 +71,7 @@ class Rotary2 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"filterCutoff", value>>>;
         meeBlip.filterCutoff(value);
     }
 }
@@ -67,6 +80,7 @@ class Rotary3 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"lfoFreq", value>>>;
         meeBlip.lfoFreq(value);
     }
 }
@@ -75,6 +89,7 @@ class Rotary4 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"lfoLevel", value>>>;
         meeBlip.lfoLevel(value);
     }
 }
@@ -83,6 +98,7 @@ class Rotary5 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"filterDecay", value>>>;
         meeBlip.filterDecay(value);
     }
 }
@@ -91,6 +107,7 @@ class Rotary6 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"filterAttack", value>>>;
         meeBlip.filterAttack(value);
     }
 }
@@ -99,6 +116,7 @@ class Rotary7 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"ampDecay", value>>>;
         meeBlip.ampDecay(value);
     }
 }
@@ -107,6 +125,7 @@ class Rotary8 extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"ampAttack", value>>>;
         meeBlip.ampAttack(value);
     }
 }
@@ -115,6 +134,7 @@ class Slider extends IntProcedure
 {
     fun void run(int value)
     {
+        <<<"portamento", value>>>;
         meeBlip.portamento(value);
     }
 }
@@ -148,5 +168,5 @@ slider @=> qx25.slider;
 
 
 // double-check in & out midi device lists with chuck --probe
-meeBlip.open(0);
-qx25.open(1);
+meeBlip.open(1);
+qx25.open(0);
