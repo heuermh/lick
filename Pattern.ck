@@ -35,6 +35,11 @@ public class Pattern extends Procedure
         pattern.size(capacity);
     }
 
+    fun int get(int index)
+    {
+        return pattern.get(index);
+    }
+
     fun void run()
     {
         if (pattern.get(index))

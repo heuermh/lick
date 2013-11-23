@@ -193,6 +193,9 @@ Machine.add("Scale.ck");
 Machine.add("Scales.ck");
 Machine.add("Arpeggiator.ck");
 Machine.add("Arpeggiators.ck");
+Machine.add("Pattern.ck");
+Machine.add("Patterns.ck");
+Machine.add("Warp.ck");
 
 // unit test, package test
 Machine.add("Assert.ck");
