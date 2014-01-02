@@ -32,21 +32,44 @@ public class Pattern extends Predicate
 
     fun int test()
     {
-        return pattern.get(index);
+        return get(index);
+    }
+
+    fun int next()
+    {
+        return next(index);
+    }
+
+    fun int hasNext()
+    {
+        return hasNext(index);
     }
 
     fun int reset()
     {
+        0 => index;
         return 0;
     }
 
-    fun int next(int index)
+    fun int get(int _index)
     {
-        return index + 1;
+        return pattern.get(_index);
     }
 
-    fun int hasNext(int index)
+    fun int next(int _index)
     {
-        return (index < intervals.size());
+        if (hasNext(_index))
+        {
+            return _index + 1;
+        }
+        else
+        {
+            return reset();
+        }
+    }
+
+    fun int hasNext(int _index)
+    {
+        return (_index < pattern.size());
     }
 }
