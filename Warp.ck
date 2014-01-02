@@ -281,65 +281,429 @@ public class Warp
         return pattern;
     }
 
-    /**
-
-      todo
-
     // 0110012210012122112332112323322344322 34344334554334545544566544565665567765567
     fun static Pattern ghana(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(78);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(2));
+
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 01012301234501234567234567456767
     fun static Pattern glass2(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(32);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 012323454567
     fun static Pattern krama2(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(12);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 012323010123234545232345456767454567
     fun static Pattern jata2(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(36);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 012345452301012345234567674523234567
     fun static Pattern sikha2(Pattern p)
     {
+        Pattern pattern;
+
+        pattern.size(36);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 01232301012345452301012345 23454523234567674523234567
     fun static Pattern ghana2(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(52);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 0123012345674567
     fun static Pattern glass4(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(16);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 01234567
     fun static Pattern krama4(Pattern p)
     {
+        return forward(p);
     }
+
+    // note these last three all are the same
 
     // 012301234567012345674567
     fun static Pattern jata4(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(24);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 012345674567012301234567
     fun static Pattern sikha4(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(24);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
 
     // 012345674567012301234567
     fun static Pattern ghana4(Pattern p)
     {
+        Pattern pattern;
+        pattern.size(24);
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(0));
+        pattern.pattern.add(p.get(1));
+        pattern.pattern.add(p.get(2));
+        pattern.pattern.add(p.get(3));
+        pattern.pattern.add(p.get(4));
+        pattern.pattern.add(p.get(5));
+        pattern.pattern.add(p.get(6));
+        pattern.pattern.add(p.get(7));
+        return pattern;
     }
-
-    */
 }
 

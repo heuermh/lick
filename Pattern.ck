@@ -20,32 +20,33 @@
 
 */
 
-public class Pattern extends Procedure
+public class Pattern extends Predicate
 {
     0 => int index;
     IntArrayList pattern;
-    Procedure @ procedure;
-
-    {
-        pattern.size(16);
-    }
 
     fun void size(int capacity)
     {
         pattern.size(capacity);
     }
 
-    fun int get(int index)
+    fun int test()
     {
         return pattern.get(index);
     }
 
-    fun void run()
+    fun int reset()
     {
-        if (pattern.get(index))
-        {
-            procedure.run();
-        }
-        index++;
+        return 0;
+    }
+
+    fun int next(int index)
+    {
+        return index + 1;
+    }
+
+    fun int hasNext(int index)
+    {
+        return (index < intervals.size());
     }
 }

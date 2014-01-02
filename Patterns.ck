@@ -136,10 +136,10 @@ public class Patterns
     {
         Pattern pattern;
         pattern.size(4);
-        pattern.pattern.add(v0);
-        pattern.pattern.add(v1);
-        pattern.pattern.add(v2);
-        pattern.pattern.add(v3);
+        pattern.pattern.set(0, v0);
+        pattern.pattern.set(1, v1);
+        pattern.pattern.set(2, v2);
+        pattern.pattern.set(3, v3);
         return pattern;
     }
 
@@ -147,14 +147,14 @@ public class Patterns
     {
         Pattern pattern;
         pattern.size(8);
-        pattern.pattern.add(v0);
-        pattern.pattern.add(v1);
-        pattern.pattern.add(v2);
-        pattern.pattern.add(v3);
-        pattern.pattern.add(v4);
-        pattern.pattern.add(v5);
-        pattern.pattern.add(v6);
-        pattern.pattern.add(v7);
+        pattern.pattern.set(0, v0);
+        pattern.pattern.set(1, v1);
+        pattern.pattern.set(2, v2);
+        pattern.pattern.set(3, v3);
+        pattern.pattern.set(4, v4);
+        pattern.pattern.set(5, v5);
+        pattern.pattern.set(6, v6);
+        pattern.pattern.set(7, v7);
         return pattern;
     }
 
@@ -162,22 +162,50 @@ public class Patterns
                                int v8, int v9, int v10, int v11, int v12, int v13, int v14, int v15)
     {
         Pattern pattern;
-        pattern.pattern.add(v0);
-        pattern.pattern.add(v1);
-        pattern.pattern.add(v2);
-        pattern.pattern.add(v3);
-        pattern.pattern.add(v4);
-        pattern.pattern.add(v5);
-        pattern.pattern.add(v6);
-        pattern.pattern.add(v7);
-        pattern.pattern.add(v8);
-        pattern.pattern.add(v9);
-        pattern.pattern.add(v10);
-        pattern.pattern.add(v11);
-        pattern.pattern.add(v12);
-        pattern.pattern.add(v13);
-        pattern.pattern.add(v14);
-        pattern.pattern.add(v15);
+        pattern.size(16);
+        pattern.pattern.set(0, v0);
+        pattern.pattern.set(1, v1);
+        pattern.pattern.set(2, v2);
+        pattern.pattern.set(3, v3);
+        pattern.pattern.set(4, v4);
+        pattern.pattern.set(5, v5);
+        pattern.pattern.set(6, v6);
+        pattern.pattern.set(7, v7);
+        pattern.pattern.set(8, v8);
+        pattern.pattern.set(9, v9);
+        pattern.pattern.set(10, v10);
+        pattern.pattern.set(11, v11);
+        pattern.pattern.set(12, v12);
+        pattern.pattern.set(13, v13);
+        pattern.pattern.set(14, v14);
+        pattern.pattern.set(15, v15);
         return pattern;
+    }
+
+    fun static Pattern pattern(Pattern pattern, Arpeggiator arp)
+    {
+        arp @=> pattern.procedure;
+        return pattern;
+    }
+
+    fun static Pattern pattern(int v0, int v1, int v2, int v3, Arpeggiator arp)
+    {
+        pattern(v0, v1, v2, v3) @=> Pattern p;
+        return pattern(p, arp);
+    }
+
+    fun static Pattern pattern(int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7,
+                               Arpeggiator arp)
+    {
+        pattern(v0, v1, v2, v3, v4, v5, v6, v7) @=> Pattern p;
+        return pattern(p, arp);
+    }
+
+    fun static Pattern pattern(int v0, int v1, int v2, int v3, int v4, int v5, int v6, int v7,
+                               int v8, int v9, int v10, int v11, int v12, int v13, int v14, int v15,
+                               Arpeggiator arp)
+    {
+        pattern(v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15) @=> Pattern p;
+        return pattern(p, arp);
     }
 }
