@@ -312,6 +312,8 @@ Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
 // chubgraph stuff
+Machine.add("Effect.ck");
+Machine.add("Crush.ck");
 Machine.add("CryBaby.ck");
 Machine.add("Mesmerizer.ck");
 

@@ -104,7 +104,24 @@ class MoreTail extends Procedure
     }
 }
 
-adc => gverb => dac;
+FeedbackMachines.cascade(0.8) @=> FeedbackMachine fm;
+
+1700::ms => fm.delay1.delay.max;
+1700::ms => fm.delay1.delay.delay;
+1300::ms => fm.delay2.delay.max;
+1300::ms => fm.delay2.delay.delay;
+1100::ms => fm.delay3.delay.max;
+1100::ms => fm.delay3.delay.delay;
+700::ms => fm.delay4.delay.max;
+700::ms => fm.delay4.delay.delay;
+
+adc => fm.input;
+0.4 => fm.dry.gain;
+0.6 => fm.wet.gain;
+fm.dry => gverb;
+fm.wet => gverb;
+
+gverb => dac;
 
 Toggle toggle;
 MoreRoom moreRoom;
