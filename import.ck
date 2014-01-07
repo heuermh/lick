@@ -316,6 +316,7 @@ Machine.add("Effect.ck");
 Machine.add("Crush.ck");
 Machine.add("CryBaby.ck");
 Machine.add("Mesmerizer.ck");
+Machine.add("Spekt.ck");
 
 // unsorted . . .
 Machine.add("SubGen.ck");
