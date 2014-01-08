@@ -25,6 +25,9 @@ Crush crush;
 5 => int bits;
 12 => int downsample;
 
+bits => crush.bits;
+downsample => crush.downsample;
+
 class Toggle extends Procedure
 {
     fun void run()
