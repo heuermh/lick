@@ -321,5 +321,6 @@ Machine.add("Spekt.ck");
 // unsorted . . .
 Machine.add("SubGen.ck");
 Machine.add("SeptSubGen.ck");
+Machine.add("PitchFollower.ck");
 
 <<<"LiCK imported.">>>;
