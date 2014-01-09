@@ -40,10 +40,15 @@ LiCK includes:
 
 LiCK requires:
 
-chuck-1.3.1.0 (chimera) or later
+chuck-1.3.3.0 (chimera) or later
 
 http://chuck.cs.princeton.edu/
-http://chuck.stanford.edu/
+
+
+Joel Matthys' Fork of CCRMA ChuGins
+
+https://github.com/jwmatthys/chugins
+
 
 
 For further documentation, please see
