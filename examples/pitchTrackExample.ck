@@ -20,44 +20,29 @@
 
 */
 
-public class PitchFollower extends Chubgraph
+0.0 => float last;
+
+adc => PitchTrack pt => blackhole;
+
+512 => pt.frame;
+4 => pt.overlap;
+
+spork ~ _sporkAtSampleRate();
+
+10::minute => now;
+
+<<<"done">>>;
+
+fun void _sporkAtSampleRate()
 {
-    PitchTrack pitchTrack;
-    FloatProcedure @ procedure;
-
-    512 => pitchTrack.frame;
-    4 => pitchTrack.overlap;
-
-    0.0 => float freq;
-    1024::samp => dur rate;
-
-    spork ~ _sporkAtRate();
-    spork ~ _sporkAtSampleRate();
-
-    inlet => pitchTrack => outlet;
-
-    fun void _sporkAtRate()
+    while (true)
     {
-        while (true)
+        1::samp => now;
+        pt.get() => float freq;
+        if (freq != last)
         {
-            rate => now;
-            procedure.run(freq);
+            <<<now, "freq", freq>>>;
+            freq => last;
         }
-    }
-
-    fun void _sporkAtSampleRate()
-    {
-        while (true)
-        {
-            1::samp => now;
-            pitchTrack.get() => freq;
-        }
-    }
-
-    fun static PitchFollower create(FloatProcedure procedure)
-    {
-        PitchFollower pitchFollower;
-        procedure @=> pitchFollower.procedure;
-        return pitchFollower;
     }
 }
