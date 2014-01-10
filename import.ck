@@ -322,5 +322,8 @@ Machine.add("Spekt.ck");
 Machine.add("SubGen.ck");
 Machine.add("SeptSubGen.ck");
 Machine.add("PitchFollower.ck");
+Machine.add("Rectifier.ck");
+Machine.add("Harmonizer.ck");
+Machine.add("Harmonizers.ck");
 
 <<<"LiCK imported.">>>;
