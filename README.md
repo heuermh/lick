@@ -19,7 +19,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ```
 
-LiCK includes:
+====LiCK includes:====
 
  - int, float, and Object Lists
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
@@ -35,10 +35,12 @@ LiCK includes:
  - Mono and stereo Delays, FeedbackMachines
  - WaveShaper chugen, Distortion and Tremolo chugens
  - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
+ - PitShift-based pitch follower, harmonizers, and effects
+ - Chugin wrappers, including C*APS LADSPA plugins
  - "ChucK-Unit", an Assert class for creating unit tests
 
 
-LiCK requires:
+====LiCK requires:====
 
 chuck-1.3.3.0 (chimera) or later
 
@@ -50,6 +52,12 @@ Joel Matthys' Fork of CCRMA ChuGins
 https://github.com/jwmatthys/chugins
 
 
+the C* Audio Plugin Suite
+
+http://quitte.de/dsp/caps.html
+
+
+====Documentation====
 
 For further documentation, please see
 
