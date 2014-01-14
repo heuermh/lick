@@ -264,6 +264,7 @@ Machine.add("BigMono.ck");
 Machine.add("KorgMs20.ck");
 
 // delay stuff
+// todo: refactor to use Effect
 Machine.add("SinTrem.ck");
 Machine.add("SqrTrem.ck");
 Machine.add("TriTrem.ck");
@@ -287,6 +288,7 @@ Machine.add("Smear.ck");
 Machine.add("Swirl.ck");
 
 // dist stuff
+// todo: refactor to use Effect?
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
 Machine.add("Clip.ck");
@@ -300,6 +302,8 @@ Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
 Machine.add("Thicken.ck");
+Machine.add("Rectifier.ck");
+Machine.add("HalfRectifier.ck");
 
 // chugen stuff
 Machine.add("Module.ck");
@@ -311,20 +315,25 @@ Machine.add("Module6.ck");
 Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
-// chubgraph stuff
+// effects
 Machine.add("Effect.ck");
-Machine.add("Crush.ck");
 Machine.add("CryBaby.ck");
+Machine.add("Harmonizer.ck");
+Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
-Machine.add("Spekt.ck");
 
 // unsorted . . .
 Machine.add("SubGen.ck");
 Machine.add("SeptSubGen.ck");
+
+// depends on chugins
+Machine.add("Crush.ck");
 Machine.add("PitchFollower.ck");
-Machine.add("Rectifier.ck");
-Machine.add("HalfRectifier.ck");
-Machine.add("Harmonizer.ck");
-Machine.add("Harmonizers.ck");
+Machine.add("Spekt.ck");
+
+// depends on chugins, LADSPA chugin, C*APS LADSPA plugins, etc.
+Machine.add("Ladspa.ck");
+Machine.add("Caps.ck");
+Machine.add("Scape.ck");
 
 <<<"LiCK imported.">>>;
