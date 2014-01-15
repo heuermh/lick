@@ -334,6 +334,12 @@ Machine.add("Spekt.ck");
 // depends on chugins, LADSPA chugin, C*APS LADSPA plugins, etc.
 Machine.add("Ladspa.ck");
 Machine.add("Caps.ck");
+Machine.add("Amp.ck");
+Machine.add("Cabinet.ck");
+Machine.add("Plate.ck");
+Machine.add("Saturate.ck");
 Machine.add("Scape.ck");
+Machine.add("StereoPlate.ck");
+Machine.add("ToneStack.ck");
 
 <<<"LiCK imported.">>>;
