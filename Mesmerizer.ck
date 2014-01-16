@@ -47,7 +47,7 @@ class TremoloModule extends Module
     }
 }
 
-public class Mesmerizer extends Chubgraph
+public class Mesmerizer extends Effect
 {
     0.5 => float _stage0Gain;
     0.5 => float _stage1Gain;
@@ -58,9 +58,6 @@ public class Mesmerizer extends Chubgraph
     1.0 => float _lfoDepth;
     1.0 => float _phasorLfoFreq;
     0.00001 => float _phasorLfoDepth;
-
-    0.0 => float _dryGain;
-    1.0 => float _wetGain;
 
     inlet => Gain stage0 => HPF hpf;
     inlet => Gain stage1 => LPF lpf;
@@ -100,17 +97,8 @@ public class Mesmerizer extends Chubgraph
     phasor0 => lfo0 => trem0._cv;
     phasor1 => lfo1 => trem1._cv;
 
-    inlet => Gain dry => outlet;
-    Gain wet => outlet;
-
-    _dryGain => dry.gain;
-    _wetGain => wet.gain;
-
     hpf => trem0 => wet;
     lpf => trem1 => wet;
-
-    // running by default
-    true => int _running;
 
     fun float stage0Gain(float f)
     {
@@ -214,57 +202,5 @@ public class Mesmerizer extends Chubgraph
     fun float phasorLfoDepth()
     {
         return _phasorLfoDepth;
-    }
-
-    fun float mix(float f)
-    {
-        f => _wetGain;
-        1.0 - f => _dryGain;
-
-        _wetGain => wet.gain;
-        _dryGain => dry.gain;
-        return _wetGain;
-    }
-
-    fun float mix()
-    {
-        return _wetGain;
-    }
-
-    fun void start()
-    {
-        if (!_running)
-        {
-            _dryGain => dry.gain;
-            _wetGain => wet.gain;
-            true => _running;
-        }
-    }
-
-    fun void stop()
-    {
-        if (_running)
-        {
-            1.0 => dry.gain;
-            0.0 => wet.gain;
-            false => _running;
-        }
-    }
-
-    fun void toggle()
-    {
-        if (_running)
-        {
-            stop();
-        }
-        else
-        {
-            start();
-        }
-    }
-
-    fun int running()
-    {
-        return _running;
     }
 }

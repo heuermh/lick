@@ -20,11 +20,9 @@
 
 */
 
-public class Tremolo
+public class Tremolo extends Effect
 {
-    Gain input;
     Gain tremolo;
-    Gain output;
     SinOsc sinLfo;
     SqrOsc sqrLfo;
     TriOsc triLfo;
@@ -35,7 +33,7 @@ public class Tremolo
     1.0 => float _depth;
 
     {
-        input => tremolo => output;
+        inlet => tremolo => wet;
         sinLfo => blackhole;
         sqrLfo => blackhole;
         triLfo => blackhole;
@@ -43,7 +41,7 @@ public class Tremolo
         rate(_rate);
         depth(_depth);
 
-        spork ~ update();
+        spork ~ _tickAtSampleRate();
     }
 
     fun float rate()
@@ -74,7 +72,7 @@ public class Tremolo
         return _depth;
     }
 
-    fun void update()
+    fun void _tickAtSampleRate()
     {
         while (true)
         {

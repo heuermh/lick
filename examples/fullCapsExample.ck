@@ -22,8 +22,11 @@
 
 // full C*APS for electric guitar example, may bring CPU to its knees
 
-adc => Saturate saturate => Amp amp => Cabinet cabinet => Scape scape => Plate plate => dac;
+adc => NoiseGate noiseGate => ParametricEq eq => Saturate saturate => Amp amp => Cabinet cabinet => Scape scape => Plate plate => dac;
 
+"imperial" => noiseGate.mainsName;
+12.0 => eq.aGain;
+-20.0 => eq.dGain;
 0.2 => saturate.bias;
 "rectify" => saturate.modeName;
 "twin" => amp.tonestackName;

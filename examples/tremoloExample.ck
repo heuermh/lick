@@ -28,8 +28,7 @@ BeeThree bt;
 220.0 => bt.freq;
 bt.noteOff(1.0);
 
-bt => tremolo.input;
-tremolo.output => dac;
+bt => tremolo => dac;
 
 500::ms => now;
 

@@ -21,13 +21,13 @@
 */
 // Super-simple wah-wah pedal class
 // by Perry R. Cook, October 2013
-//     this one uses Chuggraph extension
+//     this one originally used Chuggraph extension, extended to use Effect
 // Based on Julius O. Smith's experiments
 // with his own CryBaby.  See:
 // https://ccrma.stanford.edu/realsimple/faust_strings/faust_strings.pdf
 
-public class CryBaby extends Chubgraph  {
-    inlet => ResonZ wah => outlet;
+public class CryBaby extends Effect {
+    inlet => ResonZ wah => wet;
     3.0 => wah.Q;
     1000.0 => wah.freq;
     

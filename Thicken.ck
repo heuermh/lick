@@ -20,53 +20,11 @@
 
 */
 
-public class Thicken extends Chubgraph
+public class Thicken extends Effect
 {
-    inlet => Gain dry => outlet;
-    inlet => Delay delay => Gain wet => outlet;
+    inlet => Delay delay => wet;
 
-    0.5 => dry.gain;
-    0.5 => wet.gain;
+    0.5 => mix;
     1::ms => delay.max;
     1::ms => delay.delay;
-
-    // running by default
-    true => int _running;
-
-    fun void start()
-    {
-        if (!_running)
-        {
-            0.5 => dry.gain;
-            0.5 => wet.gain;
-            true => _running;
-        }
-    }
-
-    fun void stop()
-    {
-        if (_running)
-        {
-            1.0 => dry.gain;
-            0.0 => wet.gain;
-            false => _running;
-        }
-    }
-
-    fun void toggle()
-    {
-        if (_running)
-        {
-            stop();
-        }
-        else
-        {
-            start();
-        }
-    }
-
-    fun int running()
-    {
-        return _running;
-    }
 }
