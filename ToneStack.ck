@@ -28,17 +28,17 @@ public class ToneStack extends Caps
     string modelNames[10];
     int modelIds[10];
 
-    {
-        "basswoman" => modelNames[0];
-        "twin" => modelNames[1];
-        "wookie" => modelNames[2];
-        "DC 30" => modelNames[3];
-        "juice 800" => modelNames[4];
-        "stanford" => modelNames[5];
-        "HK 20" => modelNames[6];
-        "nihon ace" => modelNames[7];
-        "porky" => modelNames[8];
-        "5F6-A LT" => modelNames[9];
+    {                                   // from ToneStack.cc source:
+        "basswoman" => modelNames[0];   // 59 Bassman 5F6-A procedural implementation
+        "twin" => modelNames[1];        // 69 Twin Reverb AA270             "
+        "wookie" => modelNames[2];      // Mesa Dual Rect. 'Orange'         "
+        "DC 30" => modelNames[3];       // 59/86 Vox AC-30                  "
+        "juice 800" => modelNames[4];   // 59/81 JCM-800 Lead 100 2203      "
+        "stanford" => modelNames[5];    // 64 Princeton AA1164              "
+        "HK 20" => modelNames[6];       // Huges & Kettner Tube 20          "
+        "nihon ace" => modelNames[7];   // Roland Jazz Chorus               "
+        "porky" => modelNames[8];       // Pignose G40V                     "
+        "5F6-A LT" => modelNames[9];    // 59 Bassman 5F6-A lattice filter implementation
 
         0 => modelIds["basswoman"];
         1 => modelIds["twin"];
