@@ -95,6 +95,7 @@ class BlueBox2 extends Effect
 }
 
 BlueBox2 blueBox;
+0.33 => blueBox.mix;
 
 adc => blueBox => dac;
 
