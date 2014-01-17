@@ -27,6 +27,6 @@ public class Caps extends Ladspa
 
     fun void about()
     {
-        <<<"the C* Audio Plugin Suite\nhttp://quitte.de/dsp/caps.html\nGNU Public License, version 3">>>;
+        <<<"the C* Audio Plugin Suite\nhttp://quitte.de/dsp/caps.html\nGNU General Public License, version 3">>>;
     }
 }

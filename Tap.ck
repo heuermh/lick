@@ -21,38 +21,10 @@
 */
 
 // abstract class, don't instantiate
-public class Ladspa extends Effect
+public class Tap extends Ladspa
 {
-    LADSPA ladspa;
-    1 => int _verbose;
-
-    // ubuntu package installs to /usr/lib
-    //"/usr/lib/ladspa/" => string prefix;
-
-    // source installs to /usr/local/lib
-    "/usr/local/lib/ladspa/" => string prefix;
-
-    inlet => ladspa => wet;
-
-    fun void info()
+    fun void about()
     {
-        ladspa.info();
-    }
-
-    fun void list()
-    {
-        ladspa.list();
-    }
-
-    fun int verbose()
-    {
-        return _verbose;
-    }
-
-    fun int verbose(int i)
-    {
-        i => _verbose;
-        _verbose => ladspa.verbose;
-        return _verbose;
+        <<<"TAP-plugins\nTom's Audio Processing plugins\nhttp://tap-plugins.sourceforge.net/index.html\nGNU General Public License, version 2">>>;
     }
 }
