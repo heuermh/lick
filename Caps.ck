@@ -23,7 +23,7 @@
 // abstract class, don't instantiate
 public class Caps extends Ladspa
 {
-    "/usr/local/lib/ladspa/caps.so" => ladspa.load;
+    prefix + "caps.so" => ladspa.load;
 
     fun void about()
     {
