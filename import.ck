@@ -321,6 +321,7 @@ Machine.add("CryBaby.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
+Machine.add("MonoDelay2.ck");
 Machine.add("Thicken.ck");
 Machine.add("Tremolo.ck");
 
