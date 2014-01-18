@@ -114,7 +114,7 @@ public class TapeDelay extends Swh
         Constrain.constrainf(f, 0.0, 4.0) => float v;
         ladspa.set(6, v);
         return v;
-    }2
+    }
 
     fun float tap3Level()
     {
