@@ -350,6 +350,7 @@ Machine.add("Tap.ck");
 Machine.add("TubeWarmth.ck");
 // SWH Plugins
 Machine.add("Swh.ck");
+Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
 
 <<<"LiCK imported.">>>;
