@@ -348,5 +348,8 @@ Machine.add("ToneStack.ck");
 // TAP-plugins
 Machine.add("Tap.ck");
 Machine.add("TubeWarmth.ck");
+// SWH Plugins
+Machine.add("Swh.ck");
+Machine.add("TapeDelay.ck");
 
 <<<"LiCK imported.">>>;
