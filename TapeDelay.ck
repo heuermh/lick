@@ -20,7 +20,8 @@
 
 */
 
-// wrapper for SWH Plugins Tape Delay Simulation LADSPA plugin, http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#tth_sEc2.104
+// wrapper for SWH Plugins Tape Delay Simulation LADSPA plugin,
+//   http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#tth_sEc2.104
 public class TapeDelay extends Swh
 {
     prefix + "tape_delay_1211.so" => ladspa.load;

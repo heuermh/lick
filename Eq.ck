@@ -144,4 +144,7 @@ public class Eq extends Caps
         ladspa.set(9, v);
         return v;
     }
+
+    // fun void eq(float b0, float b1, ...
+    // fun void band(float b0, float b1, ...
 }

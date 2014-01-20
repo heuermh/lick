@@ -296,8 +296,6 @@ Machine.add("KijjazDist.ck");
 Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
-Machine.add("Rectifier.ck");
-Machine.add("HalfRectifier.ck");
 
 // synth/osc
 Machine.add("SubGen.ck");

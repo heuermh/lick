@@ -20,12 +20,21 @@
 
 */
 
+class DcOffset extends Chugen
+{
+    fun float tick(float in)
+    {
+        return (in * 2.0) - 1.0;
+    }
+}
+
 class Octavia extends Effect
 {
-    Rectifier rectifier;
+    FullRect fullRect;
+    DcOffset dcOffset;
     TanhDist tanhDist;
 
-    inlet => rectifier => tanhDist => wet;
+    inlet => fullRect => dcOffset => tanhDist => wet;
 }
 
 Octavia octavia;

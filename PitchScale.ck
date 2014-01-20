@@ -20,7 +20,8 @@
 
 */
 
-// wrapper for SWH Plugins Higher Quality Pitch Scaler LADSPA plugin, http://www.plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#id1194
+// wrapper for SWH Plugins Higher Quality Pitch Scaler LADSPA plugin,
+//   http://www.plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#id1194
 public class PitchScale extends Swh
 {
     prefix + "pitch_scale_1194.so" => ladspa.load;

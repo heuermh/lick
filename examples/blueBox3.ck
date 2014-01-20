@@ -58,6 +58,7 @@ class BlueBox3 extends Effect
     coefs => gen17.coefs;
 
     inlet => follower => blackhole;
+    inlet => pitchTrack => blackhole;
     osc1 => gen17;
     osc2 => gen17;
     gen17 => wet;
@@ -98,6 +99,7 @@ class BlueBox3 extends Effect
 }
 
 BlueBox3 blueBox;
+0.33 => blueBox.mix;
 
 adc => blueBox => dac;
 

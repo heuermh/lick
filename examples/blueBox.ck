@@ -20,9 +20,18 @@
 
 */
 
+class DcOffset extends Chugen
+{
+    fun float tick(float in)
+    {
+        return (in * 2.0) - 1.0;
+    }
+}
+
 class BlueBox extends Effect
 {
-    HalfRectifier halfRectifier;
+    HalfRect halfRect;
+    DcOffset dcOffset;
     PitShift pitchShift;
     Gen17 gen17;
     Gain pre;
@@ -39,7 +48,7 @@ class BlueBox extends Effect
     0.66 => octaveDown.gain;
     0.33 => twoOctavesDown.gain;
 
-    inlet => halfRectifier => pre;
+    inlet => halfRect => dcOffset => pre;
     pre => octaveDown => gen17;
     pre => pitchShift => twoOctavesDown => gen17;
     gen17 => wet;
