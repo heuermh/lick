@@ -333,6 +333,7 @@ Machine.add("Spekt.ck");
 // depends on LADSPA chugin
 Machine.add("Ladspa.ck");
 
+// C*APS plugins
 Machine.add("Caps.ck");
 Machine.add("Amp.ck");
 Machine.add("Cabinet.ck");
@@ -346,14 +347,17 @@ Machine.add("StereoEq.ck");
 Machine.add("StereoPlate.ck");
 Machine.add("ToneStack.ck");
 
+// CMT plugins
+Machine.add("Cmt.ck");
+Machine.add("Lofi.ck");
+
+// TAP-plugins
 Machine.add("Tap.ck");
 Machine.add("TubeWarmth.ck");
 
+// SWH plugins
 Machine.add("Swh.ck");
 Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
-
-Machine.add("Cmt.ck");
-Machine.add("Lofi.ck");
 
 <<<"LiCK imported.">>>;
