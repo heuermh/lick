@@ -358,4 +358,8 @@ Machine.add("Swh.ck");
 Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
 
+// RubberBand plugins
+Machine.add("RubberBand.ck");
+Machine.add("StereoRubberBand.ck");
+
 <<<"LiCK imported.">>>;
