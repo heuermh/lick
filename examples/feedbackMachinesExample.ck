@@ -71,11 +71,8 @@ fun void demo(FeedbackMachine fm, Chord c)
     700::ms => fm.delay4.delay.max;
     700::ms => fm.delay4.delay.delay;
 
-    bt => fm.input;
-    0.1 => fm.dry.gain;
-    0.9 => fm.wet.gain;
-    fm.dry => dac;
-    fm.wet => dac;
+    bt => fm => dac;
+    0.9 => fm.mix;
 
     500::ms => now;
     <<<c.symbol>>>;
@@ -90,7 +87,6 @@ fun void demo(FeedbackMachine fm, Chord c)
     }
     12::second => now;
 
-    bt =< fm.input;
-    fm.dry =< dac;
-    fm.wet =< dac;
+    bt =< fm;
+    fm =< dac;
 }

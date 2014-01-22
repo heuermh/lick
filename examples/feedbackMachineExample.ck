@@ -59,14 +59,9 @@ FeedbackMachine fm;
 BeeThree bt;
 bt.noteOff(1.0);
 
-bt => fm.input;
+bt => fm => dac;
 
-0.1 => fm.dry.gain;
-0.9 => fm.wet.gain;
-
-fm.dry => dac;
-fm.wet => dac;
-
+0.9 => fm.mix;
 
 500::ms => now;
 for (0 => int i; i < 10; i++)

@@ -20,23 +20,11 @@
 
 */
 
-FeedbackMachines.sink(0.8) @=> FeedbackMachine fm;
+adc => FeedbackMachine fm => dac;
 
-1700::ms => fm.delay1.delay.max;
-1700::ms => fm.delay1.delay.delay;
-1300::ms => fm.delay2.delay.max;
-1300::ms => fm.delay2.delay.delay;
-1100::ms => fm.delay3.delay.max;
-1100::ms => fm.delay3.delay.delay;
-700::ms => fm.delay4.delay.max;
-700::ms => fm.delay4.delay.delay;
-
-adc => fm.input;
-0.4 => fm.dry.gain;
-0.6 => fm.wet.gain;
-fm.dry => dac;
-fm.wet => dac;
-
+fm.sink(0.8);
+fm.delay(1700::ms, 1300::ms, 1100::ms, 700::ms);
+fm.mix(0.6);
 fm.stop();
 
 class Toggle extends Procedure

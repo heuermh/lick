@@ -261,6 +261,40 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 Machine.add("KorgMs20.ck");
 
+// dist stuff
+Machine.add("GainShaper.ck");
+Machine.add("WaveShaper.ck");
+Machine.add("Clip.ck");
+Machine.add("Dist.ck");
+Machine.add("AtanDist.ck");
+Machine.add("TanhDist.ck");
+Machine.add("RibbonDist.ck");
+Machine.add("FrostburnDist.ck");
+Machine.add("KijjazDist.ck");
+Machine.add("KijjazDist2.ck");
+Machine.add("KijjazDist3.ck");
+Machine.add("KijjazDist4.ck");
+
+// cv stuff
+Machine.add("Module.ck");
+Machine.add("Module2.ck");
+Machine.add("Module3.ck");
+Machine.add("Module4.ck");
+Machine.add("Module5.ck");
+Machine.add("Module6.ck");
+Machine.add("Module7.ck");
+Machine.add("Module8.ck");
+
+// effects
+Machine.add("Effect.ck");
+Machine.add("CryBaby.ck");
+Machine.add("Harmonizer.ck");
+Machine.add("Harmonizers.ck");
+Machine.add("Mesmerizer.ck");
+Machine.add("MonoDelay2.ck");
+Machine.add("Thicken.ck");
+Machine.add("Tremolo.ck");
+
 // delay stuff
 Machine.add("SinTrem.ck");
 Machine.add("SqrTrem.ck");
@@ -283,45 +317,11 @@ Machine.add("StereoFeedbackMachineL.ck");
 Machine.add("Smear.ck");
 Machine.add("Swirl.ck");
 
-// dist stuff
-Machine.add("GainShaper.ck");
-Machine.add("WaveShaper.ck");
-Machine.add("Clip.ck");
-Machine.add("Dist.ck");
-Machine.add("AtanDist.ck");
-Machine.add("TanhDist.ck");
-Machine.add("RibbonDist.ck");
-Machine.add("FrostburnDist.ck");
-Machine.add("KijjazDist.ck");
-Machine.add("KijjazDist2.ck");
-Machine.add("KijjazDist3.ck");
-Machine.add("KijjazDist4.ck");
-
 // synth/osc
 Machine.add("SubGen.ck");
 Machine.add("SeptSubGen.ck");
 Machine.add("VoiceOfSaturn.ck");
 // Machine.add("DroneLab.ck");
-
-// cv stuff
-Machine.add("Module.ck");
-Machine.add("Module2.ck");
-Machine.add("Module3.ck");
-Machine.add("Module4.ck");
-Machine.add("Module5.ck");
-Machine.add("Module6.ck");
-Machine.add("Module7.ck");
-Machine.add("Module8.ck");
-
-// effects
-Machine.add("Effect.ck");
-Machine.add("CryBaby.ck");
-Machine.add("Harmonizer.ck");
-Machine.add("Harmonizers.ck");
-Machine.add("Mesmerizer.ck");
-Machine.add("MonoDelay2.ck");
-Machine.add("Thicken.ck");
-Machine.add("Tremolo.ck");
 
 // depends on chugins
 Machine.add("Crush.ck");

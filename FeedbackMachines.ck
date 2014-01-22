@@ -25,31 +25,45 @@ public class FeedbackMachines
     fun static FeedbackMachine fourMono(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(f);
+        fm.fourMono(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine fourMono(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.fourMono(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine dualPingpong(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route2to1.gain;
-        f => fm.route3to4.gain;
-        f => fm.route4to3.gain;
+        fm.dualPingpong(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine dualPingpong(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.dualPingpong(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine quadPingpong(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route2to3.gain;
-        f => fm.route3to4.gain;
-        fm.input =< fm.delay2.input;
-        fm.input =< fm.delay3.input;
-        fm.input =< fm.delay4.input;
+        fm.quadPingpong(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine quadPingpong(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.quadPingpong(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
@@ -62,80 +76,90 @@ public class FeedbackMachines
     fun static FeedbackMachine quadNetwork(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route1to3.gain;
-        f => fm.route1to4.gain;
-        f => fm.route2to1.gain;
-        f => fm.route2to3.gain;
-        f => fm.route2to4.gain;
-        f => fm.route3to1.gain;
-        f => fm.route3to2.gain;
-        f => fm.route3to4.gain;
-        f => fm.route4to1.gain;
-        f => fm.route4to2.gain;
-        f => fm.route4to3.gain;
+        fm.quadNetwork(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine quadNetwork(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.quadNetwork(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine oneTwoIntoThreeFour(float f)
     {
         FeedbackMachine fm;
-        0.0 => fm.delay1.feedback.gain;
-        0.0 => fm.delay2.feedback.gain;
-        f => fm.delay3.feedback.gain;
-        f => fm.delay4.feedback.gain;
-        f => fm.route1to3.gain;
-        f => fm.route2to4.gain;
+        fm.oneTwoIntoThreeFour(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine oneTwoIntoThreeFour(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.oneTwoIntoThreeFour(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine cascade(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route1to3.gain;
-        f => fm.route1to4.gain;
-        f => fm.route2to3.gain;
-        f => fm.route2to4.gain;
-        f => fm.route3to4.gain;
+        fm.cascade(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine cascade(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.cascade(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine sink(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to4.gain;
-        f => fm.route2to4.gain;
-        f => fm.route3to4.gain;
-        f => fm.delay4.feedback.gain;
+        fm.sink(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine sink(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.sink(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine lambda(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route2to3.gain;
-        f => fm.route2to4.gain;
-        f => fm.delay3.feedback.gain;
-        f => fm.delay4.feedback.gain;
+        fm.lambda(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine lambda(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.lambda(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 
     fun static FeedbackMachine diamond(float f)
     {
         FeedbackMachine fm;
-        fm.feedback(0.0);
-        f => fm.route1to2.gain;
-        f => fm.route1to3.gain;
-        f => fm.route2to4.gain;
-        f => fm.route3to4.gain;
-        f => fm.delay2.feedback.gain;
-        f => fm.delay3.feedback.gain;
+        fm.diamond(f);
+        return fm;
+    }
+
+    fun static FeedbackMachine diamond(float f, dur d1, dur d2, dur d3, dur d4)
+    {
+        FeedbackMachine fm;
+        fm.diamond(f);
+        fm.delay(d1, d2, d3, d4);
         return fm;
     }
 }

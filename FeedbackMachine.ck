@@ -20,12 +20,8 @@
 
 */
 
-public class FeedbackMachine
+public class FeedbackMachine extends Effect
 {
-    Gain input;
-    Gain dry;
-    Gain wet;
-
     Gain route1to2;
     Gain route1to3;
     Gain route1to4;
@@ -44,9 +40,6 @@ public class FeedbackMachine
     MonoDelay delay3;
     MonoDelay delay4;
 
-    // running by default
-    true => int _running;
-
     {
         0.0 => route1to2.gain;
         0.0 => route1to3.gain;
@@ -61,10 +54,10 @@ public class FeedbackMachine
         0.0 => route4to2.gain;
         0.0 => route4to3.gain;
 
-        input => delay1.input;
-        input => delay2.input;
-        input => delay3.input;
-        input => delay4.input;
+        inlet => delay1.input;
+        inlet => delay2.input;
+        inlet => delay3.input;
+        inlet => delay4.input;
 
         delay1.delay => route1to2 => delay2.input;
         delay1.delay => route1to3 => delay3.input;
@@ -82,7 +75,6 @@ public class FeedbackMachine
         delay4.delay => route4to2 => delay2.input;
         delay4.delay => route4to3 => delay3.input;
 
-        input => dry;
         delay1.output => wet;
         delay2.output => wet;
         delay3.output => wet;
@@ -119,69 +111,125 @@ public class FeedbackMachine
         f => route4to3.gain;
     }
 
-    fun void start()
+    fun void delay(dur d1, dur d2, dur d3, dur d4)
     {
-        if (!_running)
-        {
-            input => delay1.input;
-            input => delay2.input;
-            input => delay3.input;
-            input => delay4.input;
-            true => _running;
-        }
+        d1 => delay1.delay.max;
+        d1 => delay1.delay.delay;
+        d2 => delay2.delay.max;
+        d2 => delay2.delay.delay;
+        d3 => delay3.delay.max;
+        d3 => delay3.delay.delay;
+        d4 => delay4.delay.max;
+        d4 => delay4.delay.delay;
     }
 
-    fun void _stagger(dur wait)
+    fun void fourMono(float f)
     {
-        wait => now;
-        input => delay1.input;
-
-        wait => now;
-        input => delay2.input;
-
-        wait => now;
-        input => delay3.input;
-
-        wait => now;
-        input => delay4.input;
+        feedback(f);
+        route(0.0);
     }
 
-    fun void staggeredStart(dur wait)
+    fun void dualPingpong(float f)
     {
-        if (!_running)
-        {
-            //spork ~ _stagger(wait);
-            _stagger(wait);
-            true => _running;
-        }
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route2to1.gain;
+        f => route3to4.gain;
+        f => route4to3.gain;
     }
 
-    fun void stop()
+    fun void quadPingpong(float f)
     {
-        if (_running)
-        {
-            input =< delay1.input;
-            input =< delay2.input;
-            input =< delay3.input;
-            input =< delay4.input;
-            false => _running;
-        }
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route2to3.gain;
+        f => route3to4.gain;
+        inlet =< delay2.input;
+        inlet =< delay3.input;
+        inlet =< delay4.input;
     }
 
-    fun void toggle()
+    fun void quadNetwork(float f)
     {
-        if (_running)
-        {
-            stop();
-        }
-        else
-        {
-            start();
-        }
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route1to3.gain;
+        f => route1to4.gain;
+        f => route2to1.gain;
+        f => route2to3.gain;
+        f => route2to4.gain;
+        f => route3to1.gain;
+        f => route3to2.gain;
+        f => route3to4.gain;
+        f => route4to1.gain;
+        f => route4to2.gain;
+        f => route4to3.gain;
     }
 
-    fun int running()
+    fun void oneTwoIntoThreeFour(float f)
     {
-        return _running;
+        route(0.0);
+
+        0.0 => delay1.feedback.gain;
+        0.0 => delay2.feedback.gain;
+        f => delay3.feedback.gain;
+        f => delay4.feedback.gain;
+        f => route1to3.gain;
+        f => route2to4.gain;
+    }
+
+    fun void cascade(float f)
+    {
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route1to3.gain;
+        f => route1to4.gain;
+        f => route2to3.gain;
+        f => route2to4.gain;
+        f => route3to4.gain;
+    }
+
+    fun void sink(float f)
+    {
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to4.gain;
+        f => route2to4.gain;
+        f => route3to4.gain;
+        f => delay4.feedback.gain;
+    }
+
+    fun void lambda(float f)
+    {
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route2to3.gain;
+        f => route2to4.gain;
+        f => delay3.feedback.gain;
+        f => delay4.feedback.gain;
+    }
+
+    fun void diamond(float f)
+    {
+        feedback(0.0);
+        route(0.0);
+
+        f => route1to2.gain;
+        f => route1to3.gain;
+        f => route2to4.gain;
+        f => route3to4.gain;
+        f => delay2.feedback.gain;
+        f => delay3.feedback.gain;
     }
 }
