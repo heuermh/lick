@@ -317,7 +317,10 @@ Machine.add("VoiceOfSaturn.ck");
 
 // depends on chugins
 Machine.add("Crush.ck");
+Machine.add("Expo.ck");
 Machine.add("PitchFollower.ck");
+Machine.add("SigmuGainFollower.ck");
+Machine.add("SigmuPitchFollower.ck");
 Machine.add("Spekt.ck");
 
 // depends on LADSPA chugin
