@@ -75,17 +75,25 @@ public class RubberBand extends Ladspa
 
     fun float interval()
     {
+        /*
+
+          double oct = (m_octaves ? *m_octaves : 0.0);
+          oct += (m_semitones ? *m_semitones : 0.0) / 12;
+          oct += (m_cents ? *m_cents : 0.0) / 1200;
+          m_ratio = pow(2.0, oct);
+
+        */
         octaves() => float o;
         semitones() => float s;
         cents() => float c;
 
-        return (c + (s / 12.0) + (c / 100.0));
+        return Math.pow(2.0, c + (s / 12.0) + (c / 1200.0));
     }
 
     fun float interval(float f)
     {
-        // hmm...
-        return f;
+        // this may work if rubberband doesn't truncate m_octaves to integer
+        return octaves(f);
     }
 
     fun float interval(Interval v)
@@ -93,6 +101,19 @@ public class RubberBand extends Ladspa
         return interval(v.evaluate(1.0));
     }
 
+    /*
+
+      "Crispness" levels:
+
+        0   equivalent to --no-transients --no-lamination --window-long
+        1   equivalent to --detector-soft --no-lamination --window-long (for piano)
+        2   equivalent to --no-transients --no-lamination
+        3   equivalent to --no-transients
+        4   equivalent to --bl-transients
+        5   default processing options
+        6   equivalent to --no-lamination --window-short (may be good for drums)
+
+    */
     fun float crisp()
     {
         return ladspa.get(4);
