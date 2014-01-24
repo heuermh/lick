@@ -101,6 +101,16 @@ public class RubberBand extends Ladspa
         return interval(v.evaluate(1.0));
     }
 
+    fun float shift()
+    {
+        return interval();
+    }
+
+    fun float shift(float f)
+    {
+        return interval(f);
+    }
+
     /*
 
       "Crispness" levels:

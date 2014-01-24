@@ -29,9 +29,9 @@ adc => Tremolo tremolo => MonoDelay2 delay => Amp amp => Cabinet cabinet => GVer
 0.0 => tremolo.sqrMix;
 
 0.1 => delay.mix;
-0.1 => delay.feedback.gain;
-800::ms => delay.delay.max;
-800::ms => delay.delay.delay;
+0.1 => delay.feedback;
+800::ms => delay.max;
+800::ms => delay.delay;
 
 1.0 => amp.bass;
 0.1 => amp.mid;
@@ -72,7 +72,7 @@ class TremMod extends FloatProcedure
         if (delay.running())
         {
             delayMix => delay.mix;
-            delayFeedback => delay.feedback.gain;
+            delayFeedback => delay.feedback;
         }
 
         //<<<f, depth, rate, sinMix, sqrMix, delayMix, delayFeedback>>;

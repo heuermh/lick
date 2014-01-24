@@ -33,9 +33,9 @@ adc => NoiseGate noiseGate => Tremolo tremolo => MonoDelay2 delay => Amp amp => 
 0.4 => tremolo.depth;
 
 0.2 => delay.mix;
-400::ms => delay.delay.max;
-400::ms => delay.delay.delay;
-0.4 => delay.feedback.gain;
+0.4 => delay.feedback;
+400::ms => delay.max;
+400::ms => delay.delay;
 
 1.0 => amp.bass;
 0.1 => amp.mid;

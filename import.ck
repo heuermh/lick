@@ -319,6 +319,7 @@ Machine.add("VoiceOfSaturn.ck");
 Machine.add("Crush.ck");
 Machine.add("Expo.ck");
 Machine.add("PitchFollower.ck");
+Machine.add("SigmuFollower.ck");
 Machine.add("SigmuGainFollower.ck");
 Machine.add("SigmuPitchFollower.ck");
 Machine.add("Spekt.ck");
@@ -355,6 +356,5 @@ Machine.add("TapeDelay.ck");
 
 // RubberBand plugins
 Machine.add("RubberBand.ck");
-Machine.add("StereoRubberBand.ck");
 
 <<<"LiCK imported.">>>;

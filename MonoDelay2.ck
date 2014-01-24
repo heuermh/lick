@@ -22,15 +22,43 @@
 
 public class MonoDelay2 extends Effect
 {
-    Delay delay;
-    Gain pre;
-    Gain feedback;
+    Delay _delay;
+    Gain _pre;
+    Gain _feedback;
 
-    0.2 => feedback.gain;
+    0.2 => _feedback.gain;
 
-    inlet => pre => delay;
-    delay => feedback => pre;
-    delay => wet;
+    inlet => _pre => _delay;
+    _delay => _feedback => _pre;
+    _delay => wet;
 
-    // rename ugens; add methods, feedback, max, delay
+    fun dur delay()
+    {
+        return _delay.delay();
+    }
+
+    fun dur delay(dur d)
+    {
+        d => _delay.delay;
+    }
+
+    fun dur max()
+    {
+        return _delay.max();
+    }
+
+    fun dur max(dur d)
+    {
+        d => _delay.max;
+    }
+
+    fun float feedback()
+    {
+        return _feedback.gain();
+    }
+
+    fun float feedback(float f)
+    {
+        f => _feedback.gain;
+    }
 }
