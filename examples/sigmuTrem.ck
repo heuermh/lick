@@ -19,17 +19,19 @@
 
 */
 
-adc => NoiseGate noiseGate => Tremolo tremolo => Amp amp => Cabinet cabinet => GVerb gverb => dac;
+adc => Tremolo tremolo => MonoDelay2 delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 
--38.0 => noiseGate.open;
--55.0 => noiseGate.close;
-"imperial" => noiseGate.mainsName;
-
+1.0 => tremolo.mix;
 0.4 => tremolo.depth;
 4.0 => tremolo.rate;
-0.9 => tremolo.sinMix;
-0.0 => tremolo.triMix;
-0.1 => tremolo.sqrMix;
+0.8 => tremolo.sinMix;
+0.2 => tremolo.triMix;
+0.0 => tremolo.sqrMix;
+
+0.1 => delay.mix;
+0.1 => delay.feedback.gain;
+800::ms => delay.delay.max;
+800::ms => delay.delay.delay;
 
 1.0 => amp.bass;
 0.1 => amp.mid;
@@ -39,40 +41,62 @@ adc => NoiseGate noiseGate => Tremolo tremolo => Amp amp => Cabinet cabinet => G
 0.1 => amp.bright;
 0.6 => amp.power;
 
+0 => amp.verbose;
 "4x" => amp.overName;
 "stanford" => amp.tonestackName;
 
 "twin A" => cabinet.modelName;
 
-0.9 => gverb.dry;
-0.02 => gverb.early;
-0.07 => gverb.tail;
+0.8 => gverb.dry;
+0.06 => gverb.early;
+0.14 => gverb.tail;
 30.0 => gverb.roomsize;
 
 class TremMod extends FloatProcedure
 {
     fun void run(float f)
     {
-        Math.max(0.4, f) => float depth;
-        //Interpolate.linear(f, 0.0, 1.0, 0.5, 8.0) => float rate;
-        //Math.max(0.1, f) => float sqrMix;
-        //1.0 - sqrMix => float sinMix;
+        Constrain.constrainf(f, 0.4, 1.0) => float depth;
+        Interpolate.linear(f, 0.0, 1.0, 0.1, 6.0) => float rate;
+        Interpolate.linear(f, 0.0, 1.0, 0.0, 0.2) => float sqrMix;
+        0.8 - sqrMix => float sinMix;
 
         depth => tremolo.depth;
-        //rate => tremolo.rate;
-        //sinMix => tremolo.sinMix;
-        //sqrMix => tremolo.sqrMix;
+        rate => tremolo.rate;
+        sinMix => tremolo.sinMix;
+        sqrMix => tremolo.sqrMix;
+
+        Interpolate.linear(f, 0.0, 1.0, 0.05, 0.15) => float delayMix;
+        Interpolate.linear(f, 0.0, 1.0, 0.3, 0.98) => float delayFeedback;
+
+        if (delay.running())
+        {
+            delayMix => delay.mix;
+            delayFeedback => delay.feedback.gain;
+        }
+
+        //<<<f, depth, rate, sinMix, sqrMix, delayMix, delayFeedback>>;
     }
 }
 
 TremMod tremMod;
 SigmuGainFollower.create(tremMod) @=> SigmuGainFollower follower;
 
-500::ms => follower.rate;
+10::ms => follower.rate;
 
 adc => follower => blackhole;
 
-while (true)
+class Toggle extends Procedure
 {
-    1::minute => now;
+    fun void run()
+    {
+        delay.toggle();
+        <<<"running", delay.running()>>>;
+    }
 }
+
+Toggle toggle;
+StompKeyboard stomp;
+toggle @=> stomp.button0Down;
+
+stomp.open(0);

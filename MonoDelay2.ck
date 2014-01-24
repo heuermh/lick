@@ -31,4 +31,6 @@ public class MonoDelay2 extends Effect
     inlet => pre => delay;
     delay => feedback => pre;
     delay => wet;
+
+    // rename ugens; add methods, feedback, max, delay
 }

@@ -48,7 +48,10 @@ public class SigmuGainFollower extends Chubgraph
         {
             1::samp => now;
             sigmu.env() => float db;
-            dbtogain(db) => _gain;
+
+            // appears to not be db, rather between ~10.0 to ~95.0
+            //dbtogain(db) => _gain;
+            db/100.0 => _gain;
         }
     }
 
