@@ -137,6 +137,7 @@ Machine.add("SinusoidalInOut.ck");
 Machine.add("SinusoidalOut.ck");
 Machine.add("Interpolate.ck");
 Machine.add("Constrain.ck");
+Machine.add("Interpolations.ck");
 
 // duration providers, package duration
 Machine.add("DurProvider.ck");
@@ -310,6 +311,8 @@ Machine.add("Smear.ck");
 Machine.add("Swirl.ck");
 
 // synth/osc
+Machine.add("CircleRamp.ck");
+Machine.add("SawRamp.ck");
 Machine.add("SubGen.ck");
 Machine.add("SeptSubGen.ck");
 Machine.add("VoiceOfSaturn.ck");
