@@ -22,16 +22,47 @@
 
 public class Interpolations
 {
-    fun static BounceIn bounceIn()
+
+    fun static Linear linear()
     {
-        BounceIn bounceIn;
-        return bounceIn;
+        Linear linear;
+        return linear;
     }
 
-    fun static BounceOut bounceOut()
+    fun static BackIn backIn()
     {
-        BounceOut bounceOut;
-        return bounceOut;
+        BackIn backIn;
+        return backIn;
+    }
+
+    fun static BackInOut backInOut()
+    {
+        BackInOut backInOut;
+        return backInOut;
+    }
+
+    fun static BackOut backOut()
+    {
+        BackOut backOut;
+        return backOut;
+    }
+
+    fun static CircularIn circularIn()
+    {
+        CircularIn circularIn;
+        return circularIn;
+    }
+
+    fun static CircularInOut circularInOut()
+    {
+        CircularInOut circularInOut;
+        return circularInOut;
+    }
+
+    fun static CircularOut circularOut()
+    {
+        CircularOut circularOut;
+        return circularOut;
     }
 
     fun static CubicIn cubicIn()
@@ -40,17 +71,135 @@ public class Interpolations
         return cubicIn;
     }
 
+    fun static CubicInOut cubicInOut()
+    {
+        CubicInOut cubicInOut;
+        return cubicInOut;
+    }
+
     fun static CubicOut cubicOut()
     {
         CubicOut cubicOut;
         return cubicOut;
     }
 
-    fun static Linear linear()
+    fun static ElasticIn elasticIn()
     {
-        Linear linear;
-        return linear;
+        ElasticIn elasticIn;
+        return elasticIn;
     }
 
-    // todo:  add the rest
+    fun static ElasticInOut elasticInOut()
+    {
+        ElasticInOut elasticInOut;
+        return elasticInOut;
+    }
+
+    fun static ElasticOut elasticOut()
+    {
+        ElasticOut elasticOut;
+        return elasticOut;
+    }
+
+    fun static ExponentialIn exponentialIn()
+    {
+        ExponentialIn exponentialIn;
+        return exponentialIn;
+    }
+
+    fun static ExponentialInOut exponentialInOut()
+    {
+        ExponentialInOut exponentialInOut;
+        return exponentialInOut;
+    }
+
+    fun static ExponentialOut exponentialOut()
+    {
+        ExponentialOut exponentialOut;
+        return exponentialOut;
+    }
+
+    fun static QuadraticIn quadraticIn()
+    {
+        QuadraticIn quadraticIn;
+        return quadraticIn;
+    }
+
+    fun static QuadraticInOut quadraticInOut()
+    {
+        QuadraticInOut quadraticInOut;
+        return quadraticInOut;
+    }
+
+    fun static QuadraticOut quadraticOut()
+    {
+        QuadraticOut quadraticOut;
+        return quadraticOut;
+    }
+
+    fun static QuarticIn quarticIn()
+    {
+        QuarticIn quarticIn;
+        return quarticIn;
+    }
+
+    fun static QuarticInOut quarticInOut()
+    {
+        QuarticInOut quarticInOut;
+        return quarticInOut;
+    }
+
+    fun static QuarticOut quarticOut()
+    {
+        QuarticOut quarticOut;
+        return quarticOut;
+    }
+
+    fun static QuinticIn quinticIn()
+    {
+        QuinticIn quinticIn;
+        return quinticIn;
+    }
+
+    fun static QuinticInOut quinticInOut()
+    {
+        QuinticInOut quinticInOut;
+        return quinticInOut;
+    }
+
+    fun static QuinticOut quinticOut()
+    {
+        QuinticOut quinticOut;
+        return quinticOut;
+    }
+
+    fun static RandomFloor randomFloor()
+    {
+        RandomFloor randomFloor;
+        return randomFloor;
+    }
+
+    fun static RandomThreshold randomThreshold()
+    {
+        RandomThreshold randomThreshold;
+        return randomThreshold;
+    }
+
+    fun static SinusoidalIn sinusoidalIn()
+    {
+        SinusoidalIn sinusoidalIn;
+        return sinusoidalIn;
+    }
+
+    fun static SinusoidalInOut sinusoidalInOut()
+    {
+        SinusoidalInOut sinusoidalInOut;
+        return sinusoidalInOut;
+    }
+
+    fun static SinusoidalOut sinusoidalOut()
+    {
+        SinusoidalOut sinusoidalOut;
+        return sinusoidalOut;
+    }
 }
