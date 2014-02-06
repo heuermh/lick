@@ -36,7 +36,7 @@ GNU General Public License for more details.
  - WaveShaper chugen, Distortion and Tremolo chugens
  - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
  - PitShift-based pitch follower, harmonizers, and effects
- - Chugin wrappers, including C*APS LADSPA plugins
+ - Chugin wrappers, including C*APS, CMT, TAP, SWH, and RubberBand LADSPA plugins
  - "ChucK-Unit", an Assert class for creating unit tests
 
 
@@ -55,6 +55,26 @@ https://github.com/jwmatthys/chugins
 the C* Audio Plugin Suite
 
 http://quitte.de/dsp/caps.html
+
+
+TAP-plugins
+
+http://tap-plugins.sourceforge.net/index.html
+
+
+Computer Music Toolkit (CMT)
+
+http://www.ladspa.org/cmt
+
+
+The SWH Plugins package for the LADSPA plugin system
+
+http://plugin.org.uk/
+
+
+Rubber Band Library
+
+http://breakfastquay.com/rubberband/
 
 
 ####Documentation
