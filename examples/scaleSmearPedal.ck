@@ -26,8 +26,8 @@ Scales.majorBlues(root) @=> Scale scale;
 
 16 => int z;
 0.8 => float m;
-0.005 => float inverseFeedback;  // use inverse so feedback limit approaches 1.0 instead of 0.0
-Smear2.create(z, m, root, 1.0 - inverseFeedback) @=> Smear2 smear;
+0.995 => float f;
+ScaleSmear.create(z, m, f, scale) @=> ScaleSmear smear;
 
 adc => smear => dac;
 0.6 => smear.mix;
@@ -45,9 +45,7 @@ class FreqUp extends Procedure
 {
     fun void run()
     {
-        Constrain.constrain(interval + 1, 0, scale.intervals.size() - 1) => interval;
-        scale.intervals.get(interval) $ Interval @=> Interval i;
-        <<<"freq up", interval, smear.freq(i.evaluate(root))>>>;
+        <<<"freq up", smear.up()>>>;
     }
 }
 
@@ -55,9 +53,7 @@ class FreqDown extends Procedure
 {
     fun void run()
     {
-        Constrain.constrain(interval - 1, 0, scale.intervals.size() - 1) => interval;
-        scale.intervals.get(interval) $ Interval @=> Interval i;
-        <<<"freq down", interval, smear.freq(i.evaluate(root))>>>;
+        <<<"freq down", smear.down()>>>;
     }
 }
 
@@ -65,8 +61,7 @@ class FeedbackUp extends Procedure
 {
     fun void run()
     {
-        Constrain.constrainf(inverseFeedback - (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
-        <<<"feedback up", smear.feedback(1.0 - inverseFeedback)>>>;
+        <<<"feedback up", smear.feedbackUp()>>>;
     }
 }
 
@@ -74,8 +69,23 @@ class FeedbackDown extends Procedure
 {
     fun void run()
     {
-        Constrain.constrainf(inverseFeedback + (inverseFeedback / 10.0), 0.0, 1.0) => inverseFeedback;
-        <<<"feedback down", smear.feedback(1.0 - inverseFeedback)>>>;
+        <<<"feedback down", smear.feedbackDown()>>>;
+    }
+}
+
+class SmearUp extends Procedure
+{
+    fun void run()
+    {
+        <<<"smear up", smear.smearUp()>>>;
+    }
+}
+
+class SmearDown extends Procedure
+{
+    fun void run()
+    {
+        <<<"smear down", smear.smearDown()>>>;
     }
 }
 
@@ -84,11 +94,16 @@ FreqUp freqUp;
 FreqDown freqDown;
 FeedbackUp feedbackUp;
 FeedbackDown feedbackDown;
+SmearUp smearUp;
+SmearDown smearDown;
+
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
 freqUp @=> stomp.button1Down;
 freqDown @=> stomp.button2Down;
 feedbackUp @=> stomp.button3Down;
 feedbackDown @=> stomp.button4Down;
+//smearUp @=> stomp.button5Down;
+//smearDown @=> stomp.button6Down;
 
 stomp.open(0);

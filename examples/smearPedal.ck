@@ -26,11 +26,8 @@
 0.8 => float inverseFeedback;  // use inverse so feedback limit approaches 1.0 instead of 0.0
 Smear.create(z, m, freq, 1.0 - inverseFeedback) @=> Smear smear;
 
-adc => smear.input;
-0.4 => smear.dry.gain;
-0.6 => smear.wet.gain;
-smear.dry => dac;
-smear.wet => dac;
+adc => smear => dac;
+0.6 => smear.mix;
 
 smear.stop();
 

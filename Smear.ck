@@ -20,25 +20,14 @@
 
 */
 
-public class Smear
+public class Smear extends Effect
 {
-    Gain input;
-    Gain dry;
-    Gain wet;
-
-    8 => int size;
-    ArrayList delays;
-
-    // running by default, after init() is called
-    true => int _running;
+    8 => int _size;
+    ArrayList _delays;
 
     20.0 => float _freq;
     0.8 => float _smear;
     0.0 => float _feedback;
-
-    {
-        input => dry;
-    }
 
     fun void panic()
     {
@@ -48,14 +37,13 @@ public class Smear
     // need to call this after ctr
     fun void init()
     {
-        for (0 => int i; i < size; i++)
+        for (0 => int i; i < _size; i++)
         {
             MonoDelay delay;
             1::second => delay.delay.max;
-            input => delay.input;
             delay.output => wet;
 
-            delays.add(delay);
+            _delays.add(delay);
         }
     }
 
@@ -67,7 +55,7 @@ public class Smear
     fun float feedback(float feedback)
     {
         feedback => _feedback;
-        delays.iterator() @=> Iterator iterator;
+        _delays.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
         {
             iterator.next() $ MonoDelay @=> MonoDelay delay;
@@ -84,7 +72,7 @@ public class Smear
     fun float freq(float freq)
     {
         freq => _freq;
-        delays.iterator() @=> Iterator iterator;
+        _delays.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
         {
             iterator.next() $ MonoDelay @=> MonoDelay delay;
@@ -118,12 +106,12 @@ public class Smear
 
     fun void _stagger(dur wait)
     {
-        delays.iterator() @=> Iterator iterator;
+        _delays.iterator() @=> Iterator iterator;
         while (iterator.hasNext())
         {
             iterator.next() $ MonoDelay @=> MonoDelay delay;
             wait => now;
-            input => delay.input;
+            inlet => delay.input;
         }
     }
 
@@ -141,37 +129,20 @@ public class Smear
     {
         if (_running)
         {
-            delays.iterator() @=> Iterator iterator;
+            _delays.iterator() @=> Iterator iterator;
             while (iterator.hasNext())
             {
                 iterator.next() $ MonoDelay @=> MonoDelay delay;
-                input =< delay.input;
+                inlet =< delay.input;
             }
             false => _running;
         }
     }
 
-    fun void toggle()
-    {
-        if (_running)
-        {
-            stop();
-        }
-        else
-        {
-            start();
-        }
-    }
-
-    fun int running()
-    {
-        return _running;
-    }
-
     fun static Smear create(int z, float m, float f, float d)
     {
         Smear smear;
-        z => smear.size;
+        z => smear._size;
         smear.init();
         smear.freq(f);
         smear.smear(m);

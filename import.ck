@@ -308,7 +308,7 @@ Machine.add("FeedbackMachines.ck");
 Machine.add("StereoFeedbackMachine.ck");
 Machine.add("StereoFeedbackMachines.ck");
 Machine.add("Smear.ck");
-Machine.add("Smear2.ck");
+Machine.add("ScaleSmear.ck");
 Machine.add("Swirl.ck");
 
 // synth/osc
