@@ -26,8 +26,8 @@ podHd500.open(0);
 <<<"expession pedals:">>>;
 for (0 => int i; i < 10; i++)
 {
-   Math.random(0, 127) => podHd500.exp1;
-   Math.random(0, 127) => podHd500.exp2;
+   Math.random2(0, 127) => podHd500.exp1;
+   Math.random2(0, 127) => podHd500.exp2;
    200::ms => now;
 }
 <<<"   ok">>>;
