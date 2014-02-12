@@ -20,7 +20,7 @@
 
 */
 
-// send MIDI to POD HD500 hardware
+// send MIDI to POD HD500/HD500x hardware
 public class PodHd500Midi
 {
     // mapping
