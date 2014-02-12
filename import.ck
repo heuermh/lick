@@ -222,6 +222,7 @@ Machine.add("MeeBlipMidi.ck");
 Machine.add("EuclidMidi.ck");
 Machine.add("StompMidi.ck");
 Machine.add("TwoPotsMidi.ck");
+Machine.add("PodHd500Midi.ck");
 
 // devices, package device
 Machine.add("Keyboard.ck");
@@ -233,6 +234,7 @@ Machine.add("NanoPad.ck");
 Machine.add("MAudioOzone.ck");
 Machine.add("AlesisQX25.ck");
 Machine.add("StompKeyboard.ck");
+Machine.add("PodHd500.ck");
 
 // osc, package osc
 Machine.add("ControlOscServer.ck");
