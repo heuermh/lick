@@ -33,14 +33,14 @@ for (0 => int i; i < 10; i++)
 <<<"   ok">>>;
 
 <<<"footswitches:">>>;
-podHd500.fs1();
-podHd500.fs2();
-podHd500.fs3();
-podHd500.fs4();
-podHd500.fs5();
-podHd500.fs6();
-podHd500.fs7();
-podHd500.fs8();
+podHd500.fs1On();
+podHd500.fs2On();
+podHd500.fs3On();
+podHd500.fs4On();
+podHd500.fs5On();
+podHd500.fs6On();
+podHd500.fs7On();
+podHd500.fs8On();
 <<<"   ok">>>;
 
 <<<"done">>>;
