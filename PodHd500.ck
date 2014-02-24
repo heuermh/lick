@@ -20,7 +20,7 @@
 
 */
 
-// recv MIDI from POD HD500 hardware
+// recv MIDI from POD HD500/HD500x hardware
 public class PodHd500
 {
     MidiIn min;
