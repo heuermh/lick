@@ -79,7 +79,7 @@ public class Tunings
     fun static Tuning lowerA()
     {
         std().down(7) @=> Tuning tuning;
-        "Lowered C" => tuning.name;
+        "Lowered A" => tuning.name;
         return tuning;
     }
 
@@ -163,7 +163,7 @@ public class Tunings
     fun static Tuning raiseA()
     {
         std().up(5) @=> Tuning tuning;
-        "Raised C" => tuning.name;
+        "Raised A" => tuning.name;
         return tuning;
     }
 
