@@ -22,6 +22,9 @@
 
 Spekt spekt;
 
+spekt.ascendingEq();
+spekt.randomFeedback();
+
 class Toggle extends Procedure
 {
     fun void run()

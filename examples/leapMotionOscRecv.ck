@@ -67,11 +67,11 @@ leapMotion.addFinger("/finger0-1", finger01);
 leapMotion.addFinger("/finger0-2", finger02);
 leapMotion.addFinger("/finger0-3", finger03);
 leapMotion.addFinger("/finger0-4", finger04);
-leapMotion.addFinger("/finger1-0", finger00);
-leapMotion.addFinger("/finger1-1", finger01);
-leapMotion.addFinger("/finger1-2", finger02);
-leapMotion.addFinger("/finger1-3", finger03);
-leapMotion.addFinger("/finger1-4", finger04);
+leapMotion.addFinger("/finger1-0", finger10);
+leapMotion.addFinger("/finger1-1", finger11);
+leapMotion.addFinger("/finger1-2", finger12);
+leapMotion.addFinger("/finger1-3", finger13);
+leapMotion.addFinger("/finger1-4", finger14);
 
 leapMotion.connect();
 <<<"listening on port", leapMotion.port>>>;
