@@ -49,15 +49,15 @@ public class MidiNote
 
     fun void forEach(IntProcedure procedure)
     {
-        procedure.run(note);
+        procedure.run(_note);
     }
 
     fun void forEach(FloatProcedure procedure)
     {
-        procedure.run(freq);
+        procedure.run(_freq);
     }
 
-    fun static MidiNote create(int note, int name, int simpleName, float freq)
+    fun static MidiNote create(int note, string name, string simpleName, float freq)
     {
         MidiNote midiNote;
         note => midiNote._note;

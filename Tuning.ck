@@ -22,19 +22,19 @@
 
 public class Tuning
 {
-    MidiNote[6] _std;
-    MidiNote[6] @ strings;
+    MidiNote @ _std[6];
+    MidiNote @ strings[6];
     "Standard" => string name;
     "E A D G B E" => string description;
     "E A D G B E" => string delta;
 
     {
-        MidiNotes.note(52) => _std[0];
-        MidiNotes.note(57) => _std[1];
-        MidiNotes.note(62) => _std[2];
-        MidiNotes.note(67) => _std[3];
-        MidiNotes.note(71) => _std[4];
-        MidiNotes.note(76) => _std[5];
+        MidiNotes.note(52) @=> _std[0];
+        MidiNotes.note(57) @=> _std[1];
+        MidiNotes.note(62) @=> _std[2];
+        MidiNotes.note(67) @=> _std[3];
+        MidiNotes.note(71) @=> _std[4];
+        MidiNotes.note(76) @=> _std[5];
 
         _std @=> strings;
     }
@@ -49,20 +49,20 @@ public class Tuning
             _delta(3) + " " + _delta(4) + " " + _delta(5) => delta;
     }
 
-    fun void string _delta(int index)
+    fun string _delta(int index)
     {
-        _std[index] => MidiNote stdMidiNote;
-        strings[index] => MidiNote midiNote;
-        stdMidiNote.simpleName => string s;
-        if (midiNote.note == stdMidiNote.note))
+        _std[index] @=> MidiNote stdMidiNote;
+        strings[index] @=> MidiNote midiNote;
+        stdMidiNote.simpleName() => string s;
+        if (midiNote.note() == stdMidiNote.note())
         {
             return s;
         }
-        else if (midiNote.note < stdMidiNote.note)
+        else if (midiNote.note() < stdMidiNote.note())
         {
-            return s + "d" + (stdMidiNote.note - midiNote.note);
+            return s + "d" + (stdMidiNote.note() - midiNote.note());
         }
-        return s + "u" + (midiNote.note - stdMidiNote.note);
+        return s + "u" + (midiNote.note() - stdMidiNote.note());
     }
 
     fun MidiNote sample()
@@ -71,14 +71,14 @@ public class Tuning
         return strings[i];
     }
 
-    fun float sampleNote()
+    fun int sampleNote()
     {
-        return sample().note;
+        return sample().note();
     }
 
     fun float sampleFreq()
     {
-        return sample().freq;
+        return sample().freq();
     }
 
     fun void forEach(IntProcedure procedure)
@@ -101,27 +101,27 @@ public class Tuning
     {
         if (s1 >= 0)
         {
-            spork ~ procedure.run(strings[0].note + s1);
+            spork ~ procedure.run(strings[0].note() + s1);
         }
         if (s2 >= 0)
         {
-            spork ~ procedure.run(strings[1].note + s2);
+            spork ~ procedure.run(strings[1].note() + s2);
         }
         if (s3 >= 0)
         {
-            spork ~ procedure.run(strings[2].note + s3);
+            spork ~ procedure.run(strings[2].note() + s3);
         }
         if (s4 >= 0)
         {
-            spork ~ procedure.run(strings[3].note + s4);
+            spork ~ procedure.run(strings[3].note() + s4);
         }
         if (s5 >= 0)
         {
-            spork ~ procedure.run(strings[4].note + s5);
+            spork ~ procedure.run(strings[4].note() + s5);
         }
         if (s6 >= 0)
         {
-            spork ~ procedure.run(strings[5].note + s6);
+            spork ~ procedure.run(strings[5].note() + s6);
         }
     }
 
@@ -129,60 +129,60 @@ public class Tuning
     {
         if (s1 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[0].note + s1));
+            spork ~ procedure.run(Std.mtof(strings[0].note() + s1));
         }
         if (s2 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[1].note + s2));
+            spork ~ procedure.run(Std.mtof(strings[1].note() + s2));
         }
         if (s3 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[2].note + s3));
+            spork ~ procedure.run(Std.mtof(strings[2].note() + s3));
         }
         if (s4 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[3].note + s4));
+            spork ~ procedure.run(Std.mtof(strings[3].note() + s4));
         }
         if (s5 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[4].note + s5));
+            spork ~ procedure.run(Std.mtof(strings[4].note() + s5));
         }
         if (s6 >= 0)
         {
-            spork ~ procedure.run(Std.mtof(strings[5].note + s6));
+            spork ~ procedure.run(Std.mtof(strings[5].note() + s6));
         }
     }
 
 
     // with style methods, must assign return value
 
-    fun Tuning transposeUp()
+    fun Tuning up()
     {
-        return transposeUp(1);
+        return up(1);
     }
 
-    fun Tuning transposeUp(int halfSteps)
+    fun Tuning up(int halfSteps)
     {
         return create(name + "(up " + halfSteps + " half steps)",
-            strings[0].note + halfSteps, strings[1].note + halfSteps,
-            strings[2].note + halfSteps, strings[3].note + halfSteps,
-            strings[4].note + halfSteps, strings[5].note + halfSteps);
+            strings[0].note() + halfSteps, strings[1].note() + halfSteps,
+            strings[2].note() + halfSteps, strings[3].note() + halfSteps,
+            strings[4].note() + halfSteps, strings[5].note() + halfSteps);
     }
 
-    fun Tuning transposeDown()
+    fun Tuning down()
     {
-        return transposeDown(1);
+        return down(1);
     }
 
-    fun Tuning transposeDown(int halfSteps)
+    fun Tuning down(int halfSteps)
     {
         return create(name + " (down " + halfSteps + " half steps)",
-            strings[0].note - halfSteps, strings[1].note - halfSteps,
-            strings[2].note - halfSteps, strings[3].note - halfSteps,
-            strings[4].note - halfSteps, strings[5].note - halfSteps);
+            strings[0].note() - halfSteps, strings[1].note() - halfSteps,
+            strings[2].note() - halfSteps, strings[3].note() - halfSteps,
+            strings[4].note() - halfSteps, strings[5].note() - halfSteps);
     }
 
-    fun static Tuning create(string name, MidiNote[] strings)
+    fun static Tuning create(string name, MidiNote strings[])
     {
         Tuning tuning;
         name => tuning.name;
@@ -193,13 +193,13 @@ public class Tuning
 
     fun static Tuning create(string name, int s1, int s2, int s3, int s4, int s5, int s6)
     {
-        MidiNote[6] s;
-        MidiNotes.note(s1) => s[0];
-        MidiNotes.note(s2) => s[1];
-        MidiNotes.note(s3) => s[2];
-        MidiNotes.note(s4) => s[3];
-        MidiNotes.note(s5) => s[4];
-        MidiNotes.note(s6) => s[5];
+        MidiNote @ s[6];
+        MidiNotes.note(s1) @=> s[0];
+        MidiNotes.note(s2) @=> s[1];
+        MidiNotes.note(s3) @=> s[2];
+        MidiNotes.note(s4) @=> s[3];
+        MidiNotes.note(s5) @=> s[4];
+        MidiNotes.note(s6) @=> s[5];
         return create(name, s);
     }
 }

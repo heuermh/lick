@@ -22,11 +22,11 @@
 
 public class MidiNotes
 {
-    static MidiNote[127] notes;
+    static MidiNote @ notes[127];
 
-    static
+    //static
     {
-        MidiNote.create(0, "C0", "C", Std.mtof(0)) => notes[0];
+        MidiNote.create(0, "C0", "C", Std.mtof(0)) @=> notes[0];
         // ...
     }
 
@@ -43,7 +43,7 @@ public class MidiNotes
 
     fun static MidiNote up(MidiNote n, int halfSteps)
     {
-        Constrain(n.note() + halfSteps, 0, 127) => int i;
+        Constrain.constrain(n.note() + halfSteps, 0, 127) => int i;
         return note(i);
     }
 
@@ -54,7 +54,7 @@ public class MidiNotes
 
     fun static MidiNote down(MidiNote n, int halfSteps)
     {
-        Constrain(n.note() - halfSteps, 0, 127) => int i;
+        Constrain.constrain(n.note() - halfSteps, 0, 127) => int i;
         return note(i);
     }
 }
