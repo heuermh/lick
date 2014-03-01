@@ -149,6 +149,26 @@ public class Loops
         return r;
     }
 
+    fun static Procedure loop(Sample s, int n)
+    {
+        return loop(s.asProcedure(), n);
+    }
+
+    fun static Procedure loop(Sample s, dur wait, int n)
+    {
+        return loop(s.asProcedure(), wait, n);
+    }
+
+    fun static Procedure loop(Sample s, dur offset, dur wait, int n)
+    {
+        return loop(s.asProcedure(), offset, wait, n);
+    }
+
+    fun static Procedure loop(Sample s, dur offset, DurProvider waitProvider, int n)
+    {
+        return loop(s.asProcedure(), offset, waitProvider, n);
+    }
+
     fun static Procedure loop(FloatProcedure floatProcedure, int n)
     {
         return loop(floatProcedure, none, none, n);
