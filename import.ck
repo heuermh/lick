@@ -150,8 +150,6 @@ Machine.add("Prepend.ck");
 Machine.add("Repeat.ck");
 Machine.add("Sleep.ck");
 Machine.add("Loop.ck");
-Machine.add("Loops.ck");
-Machine.add("LoopBuilder.ck");
 
 // list, package collect
 Machine.add("Comparator.ck");
@@ -248,7 +246,7 @@ Machine.add("LeapMotionOsc.ck");
 Machine.add("SooperLooperOsc.ck");
 Machine.add("TouchOscServer.ck");
 
-// sample-based drum machines, package sample
+// samples, loops
 Machine.add("Sample.ck");
 Machine.add("AdsrSample.ck");
 Machine.add("CompositeSample.ck");
@@ -257,6 +255,10 @@ Machine.add("PitchSensitiveSample.ck");
 Machine.add("VelocitySensitiveSample.ck");
 Machine.add("HandedSample.ck");
 Machine.add("Samples.ck");
+Machine.add("Loops.ck");
+Machine.add("LoopBuilder.ck");
+
+// sample-based drum machines, package sample
 Machine.add("AkaiMpc60.ck");
 Machine.add("EmuDrumulator.ck");
 Machine.add("OberheimDmx.ck");

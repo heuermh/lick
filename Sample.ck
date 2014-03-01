@@ -104,7 +104,6 @@ public class Sample
     0.8 => float maxGain;
     "Sample" => string name;
     SndBuf buf => dac;
-    //SndBuf buf => ADSR adsr => dac;
 
     // hack to simulate multiple inheritance
     SampleProcedure _procedure;
@@ -127,6 +126,16 @@ public class Sample
         0 => buf.pos;
         rate => buf.rate;
         gain => buf.gain;
+    }
+
+    fun int loop()
+    {
+        return buf.loop();
+    }
+
+    fun int loop(int i)
+    {
+        i => buf.loop;
     }
 
     fun Procedure asProcedure()

@@ -23,6 +23,7 @@
 public class Loops
 {
     0::ms => static dur none;
+    // ChucK bug:  this value appears not to be set as static
     52::week => static dur forever;
 
     fun static Procedure append(Procedure g, Procedure h)
@@ -40,9 +41,15 @@ public class Loops
         return append(g, sleep.asProcedure());
     }
 
+    fun static Procedure append(Sample s, dur wait)
+    {
+        return append(s.asProcedure(), wait);
+    }
+
     fun static Procedure loop(Procedure procedure, dur wait)
     {
-        return loop(procedure, none, wait, forever);
+        //return loop(procedure, none, wait, forever);
+        return loop(procedure, none, wait, 52::week);
     }
 
     fun static Procedure loop(Procedure procedure, dur wait, dur length)
@@ -67,9 +74,30 @@ public class Loops
         return loop;
     }
 
+    fun static Procedure loop(Sample s, dur wait)
+    {
+        return loop(s.asProcedure(), wait);
+    }
+
+    fun static Procedure loop(Sample s, dur wait, dur length)
+    {
+        return loop(s.asProcedure(), wait, length);
+    }
+
+    fun static Procedure loop(Sample s, dur offset, dur wait, dur length)
+    {
+        return loop(s.asProcedure(), offset, wait, length);
+    }
+
+    fun static Procedure loop(Sample s, dur offset, DurProvider waitProvider, dur length)
+    {
+        return loop(s.asProcedure(), offset, waitProvider, length);
+    }
+
     fun static Procedure loop(FloatProcedure floatProcedure, dur wait)
     {
-        return loop(floatProcedure, none, wait, forever);
+        //return loop(floatProcedure, none, wait, forever);
+        return loop(floatProcedure, none, wait, 52::week);
     }
 
     fun static Procedure loop(FloatProcedure floatProcedure, dur wait, dur length)
@@ -161,5 +189,10 @@ public class Loops
         Sleep sleep;
         wait => sleep.value;
         return prepend(sleep.asProcedure(), h);
+    }
+
+    fun static Procedure prepend(dur wait, Sample s)
+    {
+        return prepend(wait, s.asProcedure());
     }
 }
