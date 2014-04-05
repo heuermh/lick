@@ -205,6 +205,7 @@ Machine.add("Assert.ck");
 
 // simulators, package simulator
 Machine.add("Animoog.ck");
+Machine.add("EchoPad.ck");
 Machine.add("Filtatron.ck");
 Machine.add("GarageBand.ck");
 Machine.add("Loopy.ck");
@@ -217,6 +218,7 @@ Machine.add("ControlChangeMidiMsg.ck");
 Machine.add("NoteOffMidiMsg.ck");
 Machine.add("NoteOnMidiMsg.ck");
 Machine.add("AnimoogMidi.ck");
+Machine.add("EchoPadMidi.ck");
 Machine.add("GarageBandMidi.ck");
 Machine.add("FiltatronMidi.ck");
 Machine.add("LoopyMidi.ck");
