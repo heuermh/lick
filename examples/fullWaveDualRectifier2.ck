@@ -46,10 +46,10 @@ class BiasModule extends Module2
 {
     FullWaveDualRectifier @ rect;
 
-    fun float tick(float in, float cv0, float cv1)
+    fun float tick(float in, float v0, float v1)
     {
-        cv0 => rect.rect0.bias;
-        cv1 => rect.rect1.bias;
+        v0 => rect.rect0.bias;
+        v1 => rect.rect1.bias;
         return in;
     }
 }
@@ -68,8 +68,8 @@ BiasModule bias;
 FullWaveDualRectifier rect;
 0.66 => rect.mix;
 
-lfo0 => bias._cv0;
-lfo1 => bias._cv1;
+lfo0 => bias.cv0;
+lfo1 => bias.cv1;
 rect @=> bias.rect;
 
 vco => bias => rect => dac;

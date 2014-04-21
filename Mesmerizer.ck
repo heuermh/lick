@@ -31,18 +31,18 @@ class PhasorModule extends Module
 {
     Phasor phasor => blackhole;
 
-    fun float tick(float in, float cv)
+    fun float tick(float in, float v)
     {
-        phasor.phase() + cv => phasor.phase;
+        phasor.phase() + v => phasor.phase;
         return phasor.last();
     }
 }
 
 class TremoloModule extends Module
 {
-    fun float tick(float in, float cv)
+    fun float tick(float in, float v)
     {
-        Interpolate.linear(cv, -1.0, 1.0, 0.0, 1.0) => gain;
+        Interpolate.linear(v, -1.0, 1.0, 0.0, 1.0) => gain;
         return in;
     }
 }
@@ -87,15 +87,15 @@ public class Mesmerizer extends Effect
     PhasorModule phasor1;
     0.0 => phasor0.phasor.phase;
     _lfoFreq => phasor0.phasor.freq;
-    phasorLfo0 => phasor0._cv;
+    phasorLfo0 => phasor0.cv;
     0.5 => phasor1.phasor.phase;
     _lfoFreq => phasor1.phasor.freq;
-    phasorLfo1 => phasor1._cv;
+    phasorLfo1 => phasor1.cv;
 
     TremoloModule trem0;
     TremoloModule trem1;
-    phasor0 => lfo0 => trem0._cv;
-    phasor1 => lfo1 => trem1._cv;
+    phasor0 => lfo0 => trem0.cv;
+    phasor1 => lfo1 => trem1.cv;
 
     hpf => trem0 => wet;
     lpf => trem1 => wet;

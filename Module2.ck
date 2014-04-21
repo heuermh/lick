@@ -22,22 +22,23 @@
 
 public class Module2 extends Chugen
 {
-    Gain _cv0;
-    Gain _cv1;
+    // chuck LFOs into these
+    Gain cv0;
+    Gain cv1;
 
     {
-        _cv0 => blackhole;
-        _cv1 => blackhole;
+        cv0 => blackhole;
+        cv1 => blackhole;
     }
 
     fun float tick(float in)
     {
-        return tick(in, _cv0.last(), _cv1.last());
+        return tick(in, cv0.last(), cv1.last());
     }
 
     // subclasses override this function
-    fun float tick(float in, float cv0, float cv1)
+    fun float tick(float in, float v0, float v1)
     {
-        return in;        
+        return in;
     }
 }

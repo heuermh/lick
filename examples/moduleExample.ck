@@ -28,9 +28,9 @@ class SinModule extends Module
         sin => blackhole;
     }
 
-    fun float tick(float in, float cv)
+    fun float tick(float in, float v)
     {
-        Interpolate.linear(cv, -1.0, 1.0, 2.0, 8.0) => sin.freq;
+        Interpolate.linear(v, -1.0, 1.0, 2.0, 8.0) => sin.freq;
         return sin.last();
     }
 }
@@ -42,16 +42,16 @@ class TremoloModule extends Module
 
     {
         1.0 => gainLfo.sin.gain;
-        gainLfo => _cv;
+        gainLfo => cv;
 
         0.25 => rateLfo.freq;
         1.0 => rateLfo.gain;
-        rateLfo => gainLfo._cv;
+        rateLfo => gainLfo.cv;
     }
 
-    fun float tick(float in, float cv)
+    fun float tick(float in, float v)
     {
-        Interpolate.linear(cv, -1.0, 1.0, 0.0, 1.0) => gain;
+        Interpolate.linear(v, -1.0, 1.0, 0.0, 1.0) => gain;
         return in;
     }
 }
