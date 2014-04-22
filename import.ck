@@ -300,7 +300,6 @@ Machine.add("Module8.ck");
 Machine.add("Effect.ck");
 Machine.add("CryBaby.ck");
 Machine.add("FullWaveDualRectifier.ck");
-Machine.add("FullWaveDualRectifier2.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");

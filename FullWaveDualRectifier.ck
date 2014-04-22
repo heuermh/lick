@@ -20,13 +20,17 @@
 
 */
 
-class Bias extends Chugen
+class FullRectifier extends Chugen
 {
-    0.0 => float offset; // between -1.0 and 1.0
+    0.0 => float bias;
 
     fun float tick(float in)
     {
-        return offset + in;
+        if (in > bias)
+        {
+            return in;
+        }
+        return bias + (bias - in);
     }
 }
 
@@ -36,23 +40,21 @@ class Bias extends Chugen
 //
 public class FullWaveDualRectifier extends Effect
 {
-    FullRect rect0;
-    Bias bias0;
-    FullRect rect1;
-    Bias bias1;
+    FullRectifier rect0;
+    FullRectifier rect1;
 
     Gain cv0 => blackhole;
     Gain cv1 => blackhole;
     spork ~ _tickAtSampleRate();
 
-    inlet => rect0 => bias0 => rect1 => bias1 => wet;
+    inlet => rect0 => rect1 => wet;
 
     fun void _tickAtSampleRate()
     {
         while (true)
         {
-            cv0.last() => bias0.offset;
-            cv1.last() => bias1.offset;
+            cv0.last() => rect0.bias;
+            cv1.last() => rect1.bias;
             1::samp => now;
         }
     }
