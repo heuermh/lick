@@ -30,6 +30,10 @@ class Bias extends Chugen
     }
 }
 
+//
+// inspired by BMC21. Full Wave Dual Rectifier
+// http://www.bartonmusicalcircuits.com/fwd/
+//
 public class FullWaveDualRectifier extends Effect
 {
     FullRect rect0;

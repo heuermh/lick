@@ -34,6 +34,10 @@ class FullRectifier extends Chugen
     }
 }
 
+//
+// inspired by BMC21. Full Wave Dual Rectifier
+// http://www.bartonmusicalcircuits.com/fwd/
+//
 public class FullWaveDualRectifier2 extends Effect
 {
     FullRectifier rect0;
