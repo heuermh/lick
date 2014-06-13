@@ -26,6 +26,32 @@ public class MidiNote
     string _name;
     string _simpleName;
     float _freq;
+    string _names[12];
+
+    {
+        "C" => _names[0];
+        "C#" => _names[1];
+        "D" => _names[2];
+        "Eb" => _names[3];
+        "E" => _names[4];
+        "F" => _names[5];
+        "F#" => _names[6];
+        "G" => _names[7];
+        "G#" => _names[8];
+        "A" => _names[9];
+        "Bb" => _names[10];
+        "B" => _names[11];
+    }
+
+    fun string _nameFor(int i)
+    {
+        return _names[i % 12] + (i / 12);
+    }
+
+    fun string _simpleNameFor(int i)
+    {
+        return _names[i % 12];
+    }
 
     fun int note()
     {
@@ -57,7 +83,35 @@ public class MidiNote
         procedure.run(_freq);
     }
 
-    fun static MidiNote create(int note, string name, string simpleName, float freq)
+    fun MidiNote up()
+    {
+        return up(1);
+    }
+
+    fun MidiNote up(int halfSteps)
+    {
+        Constrain.constrain(_note + halfSteps, 0, 127) => int i;
+        return forNote(i);
+    }
+
+    fun MidiNote down()
+    {
+        return down(1);
+    }
+
+    fun MidiNote down(int halfSteps)
+    {
+        Constrain.constrain(_note - halfSteps, 0, 127) => int i;
+        return forNote(i);
+    }
+
+    fun static MidiNote forNote(int i)
+    {
+        MidiNote midiNote;
+        return _create(i, midiNote._nameFor(i), midiNote._simpleNameFor(i), Std.mtof(i));
+    }
+
+    fun static MidiNote _create(int note, string name, string simpleName, float freq)
     {
         MidiNote midiNote;
         note => midiNote._note;

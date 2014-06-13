@@ -25,6 +25,7 @@ public class Tunings
 
     fun static Tuning std()
     {
+        //return create("Standard", 52, 57, 62, 67, 71, 76);
         Tuning tuning;
         return tuning;
     }

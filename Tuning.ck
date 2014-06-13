@@ -29,12 +29,12 @@ public class Tuning
     "E A D G B E" => string delta;
 
     {
-        MidiNotes.note(52) @=> _std[0];
-        MidiNotes.note(57) @=> _std[1];
-        MidiNotes.note(62) @=> _std[2];
-        MidiNotes.note(67) @=> _std[3];
-        MidiNotes.note(71) @=> _std[4];
-        MidiNotes.note(76) @=> _std[5];
+        MidiNote.forNote(52) @=> _std[0];
+        MidiNote.forNote(57) @=> _std[1];
+        MidiNote.forNote(62) @=> _std[2];
+        MidiNote.forNote(67) @=> _std[3];
+        MidiNote.forNote(71) @=> _std[4];
+        MidiNote.forNote(76) @=> _std[5];
 
         _std @=> strings;
     }
@@ -194,12 +194,12 @@ public class Tuning
     fun static Tuning create(string name, int s1, int s2, int s3, int s4, int s5, int s6)
     {
         MidiNote @ s[6];
-        MidiNotes.note(s1) @=> s[0];
-        MidiNotes.note(s2) @=> s[1];
-        MidiNotes.note(s3) @=> s[2];
-        MidiNotes.note(s4) @=> s[3];
-        MidiNotes.note(s5) @=> s[4];
-        MidiNotes.note(s6) @=> s[5];
+        MidiNote.forNote(s1) @=> s[0];
+        MidiNote.forNote(s2) @=> s[1];
+        MidiNote.forNote(s3) @=> s[2];
+        MidiNote.forNote(s4) @=> s[3];
+        MidiNote.forNote(s5) @=> s[4];
+        MidiNote.forNote(s6) @=> s[5];
         return create(name, s);
     }
 }

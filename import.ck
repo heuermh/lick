@@ -196,9 +196,10 @@ Machine.add("Pattern.ck");
 Machine.add("Patterns.ck");
 Machine.add("Warp.ck");
 Machine.add("MidiNote.ck");
-Machine.add("MidiNotes.ck");
+//Machine.add("MidiNotes.ck");
 Machine.add("Tuning.ck");
 Machine.add("Tunings.ck");
+Machine.add("SYTunings.ck");
 
 // unit test, package test
 Machine.add("Assert.ck");
