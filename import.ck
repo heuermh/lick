@@ -301,6 +301,7 @@ Machine.add("Module8.ck");
 Machine.add("Effect.ck");
 Machine.add("CryBaby.ck");
 Machine.add("DualRect.ck");
+Machine.add("Freeze.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
