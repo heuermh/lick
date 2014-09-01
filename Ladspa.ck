@@ -27,10 +27,10 @@ public class Ladspa extends Effect
     1 => int _verbose;
 
     // ubuntu package installs to /usr/lib
-    "/usr/lib/ladspa/" => string prefix;
+    //"/usr/lib/ladspa/" => string prefix;
 
     // source installs to /usr/local/lib
-    //"/usr/local/lib/ladspa/" => string prefix;
+    "/usr/local/lib/ladspa/" => string prefix;
 
     inlet => ladspa => wet;
 
