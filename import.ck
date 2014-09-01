@@ -301,11 +301,13 @@ Machine.add("Module8.ck");
 Machine.add("Effect.ck");
 Machine.add("CryBaby.ck");
 Machine.add("DualRect.ck");
+Machine.add("Flutter.ck");
 Machine.add("Freeze.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
 Machine.add("MonoDelay2.ck");
+Machine.add("AnalogDelay.ck");
 Machine.add("Thicken.ck");
 Machine.add("Tremolo.ck");
 
@@ -357,6 +359,7 @@ Machine.add("Scape.ck");
 Machine.add("StereoEq.ck");
 Machine.add("StereoPlate.ck");
 Machine.add("ToneStack.ck");
+Machine.add("Princeton.ck");
 
 // CMT plugins
 Machine.add("Cmt.ck");
