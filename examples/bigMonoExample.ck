@@ -23,16 +23,16 @@
 BigMono bigMono;
 TimeSignature.common(130) @=> TimeSignature t;
 
-spork ~ Loops.loop(bigMono.kick.asProcedure(), t.half(), t.bar * 8).run();
-spork ~ Loops.loop(bigMono.kick.asProcedure(), t.whole() + t.eighth(), t.whole() + t.half(), t.bar * 2).run();
-spork ~ Loops.loop(bigMono.snare.asProcedure(), t.quarter(), t.half(), t.bar * 8).run();
+spork ~ Loops.loop(bigMono.kick, t.half(), t.bar * 8).run();
+spork ~ Loops.loop(bigMono.kick, t.whole() + t.eighth(), t.whole() + t.half(), t.bar * 2).run();
+spork ~ Loops.loop(bigMono.snare, t.quarter(), t.half(), t.bar * 8).run();
 
 // humanize eighth notes
 t.eighthProvider() @=> HumanizedDurProvider eighth;
 0.000125 => eighth.anticipation;
 0.0025 => eighth.delay;
 
-spork ~ Loops.loop(bigMono.closedHat.asProcedure(), t.whole(), eighth, t.bar * 4 * 8).run();
+spork ~ Loops.loop(bigMono.closedHat, t.whole(), eighth, t.bar * 4 * 8).run();
 
 <<<"waiting three whole notes . . .">>>;
 3 * t.w => now;
