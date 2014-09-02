@@ -20,45 +20,13 @@
 
 */
 
-public class MonoDelay2 extends Effect
-{
-    Delay _delay;
-    Gain _pre;
-    Gain _feedback;
+adc => DigitalDelay delay => dac;
 
-    0.2 => _feedback.gain;
+600::ms => delay.max;
+600::ms => delay.delay;
+0.95 => delay.feedback;
+0.80 => delay.mix;
 
-    inlet => _pre => _delay;
-    _delay => _feedback => _pre;
-    _delay => wet;
+1::minute => now;
 
-    fun dur delay()
-    {
-        return _delay.delay();
-    }
-
-    fun dur delay(dur d)
-    {
-        d => _delay.delay;
-    }
-
-    fun dur max()
-    {
-        return _delay.max();
-    }
-
-    fun dur max(dur d)
-    {
-        d => _delay.max;
-    }
-
-    fun float feedback()
-    {
-        return _feedback.gain();
-    }
-
-    fun float feedback(float f)
-    {
-        f => _feedback.gain;
-    }
-}
+<<<"done">>>;

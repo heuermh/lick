@@ -20,45 +20,51 @@
 
 */
 
-public class Constrain
+public class DigitalDelay extends Effect
 {
+    Delay _delay;
+    Gain _pre;
+    Gain _feedback;
 
-    fun static int constrain(int value, int min, int max)
+    0.2 => _feedback.gain;
+
+    inlet => _pre => _delay;
+    _delay => _feedback => _pre;
+    _delay => wet;
+
+    fun dur delay()
     {
-        if (value < min)
-        {
-            return min;
-        }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
+        return _delay.delay();
     }
 
-    fun static float constrainf(float value, float min, float max)
+    fun dur delay(dur d)
     {
-        if (value < min)
-        {
-           return min;
-        }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
+        d => _delay.delay;
     }
 
-    fun static dur constraind(dur value, dur min, dur max)
+    fun dur max()
     {
-        if (value < min)
-        {
-           return min;
-        }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
+        return _delay.max();
+    }
+
+    fun dur max(dur d)
+    {
+        d => _delay.max;
+    }
+
+    fun float feedback()
+    {
+        return _feedback.gain();
+    }
+
+    fun float feedback(float f)
+    {
+        f => _feedback.gain;
+    }
+
+    fun static DigitalDelay create()
+    {
+        DigitalDelay delay;
+        return delay;
     }
 }
