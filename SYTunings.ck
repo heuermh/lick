@@ -30,34 +30,42 @@
 */
 public class SYTunings
 {
-    int _s[1];
-    int _a[1];
-    Tuning @ _t[1][1];
+    int _s[2];
+    int _a[3];
+    Tuning @ _t[2][3];
 
     {
         <<<"initializer...", _s, _a, _t>>>;
         // songs
         0 => _s["The Burning Spear"];
+        1 => _s["Marilyn Moore"];
 
         // artists
-        //2 => _a["k"];
-        //2 => _a["kim"];
-        //2 => _a["K"];
-        //2 => _a["Kim"];
-        //2 => _a["Kim Gordon"];
+        //0 => _a["k"];
+        //0 => _a["kim"];
+        0 => _a["K"];
+        //0 => _a["Kim"];
+        //0 => _a["Kim Gordon"];
         //1 => _a["l"];
         //1 => _a["lee"];
-        //1 => _a["L"];
+        1 => _a["L"];
         //1 => _a["Lee"];
         //1 => _a["Lee Ranaldo"];
-        //0 => _a["t"];
-        //0 => _a["thurston"];
-        //0 => _a["T"];
-        0 => _a["Thurston"];
-        //0 => _a["Thurston Moore"];
+        //2 => _a["t"];
+        //2 => _a["thurston"];
+        2 => _a["T"];
+        //2 => _a["Thurston"];
+        //2 => _a["Thurston Moore"];
 
         // tunings
-        _store("The Burning Spear", "T", _std());
+        <<<"storing The Burning Spear">>>;
+        _store("The Burning Spear", "L", _std());
+
+        <<<"storing Marilyn Moore">>>;
+        //SYTunings._delta("C C D# G G D", 8, 3, -1, 0, -4, -2) @=> Tuning t;
+        //Tuning.create("C C D# G G D", 52 + 8, 57 + 3, 62 + -1, 67 + 0, 71 + -4, 76 + -2) @=> Tuning t;
+        //<<<"t", t>>>;
+        //_store("Marilyn Moore", "T", t);
         <<<"initializer done">>>;
     }
 
@@ -76,6 +84,8 @@ public class SYTunings
         _a[artist] => int a;
         <<<"s", s, "a", a>>>;
         tuning @=> _t[s][a];
+        <<<"tuning", tuning>>>;
+        <<<"_t[s][a]", _t[s][a]>>>;
     }
 
     fun static Tuning _std()

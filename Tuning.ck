@@ -26,7 +26,7 @@ public class Tuning
     MidiNote @ strings[6];
     "Standard" => string name;
     "E A D G B E" => string description;
-    "E A D G B E" => string delta;
+    "s s s s s s" => string delta;
 
     {
         MidiNote.forNote(52) @=> _std[0];

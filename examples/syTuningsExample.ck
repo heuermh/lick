@@ -20,8 +20,10 @@
 
 */
 
-//Tuning tuning;
-//Tunings.std() @=> Tuning std;
 SYTunings syTunings;
+
 syTunings.tuning("The Burning Spear", "Thurston") @=> Tuning burningSpear;
 <<<"The Burning Spear: ", burningSpear.name, burningSpear.description, burningSpear.delta>>>;
+
+syTunings.tuning("Marilyn Moore", "Lee") @=> Tuning marilynMoore;
+<<<"Marilyn Moore: ", marilynMoore.name, marilynMoore.description, marilynMoore.delta>>>;
