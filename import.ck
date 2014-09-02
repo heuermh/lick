@@ -20,7 +20,7 @@
 
 */
 
-// functors, package functor
+// functional interfaces or functors, package fn
 Machine.add("BinaryFunction.ck");
 Machine.add("BinaryPredicate.ck");
 Machine.add("BinaryProcedure.ck");
@@ -97,7 +97,7 @@ Machine.add("Functions.ck");
 Machine.add("FloatFunctions.ck");
 Machine.add("IntFunctions.ck");
 
-// interpolation, package interpolate
+// interpolation, package interp
 Machine.add("Interpolation.ck");
 Machine.add("BackIn.ck");
 Machine.add("BackOut.ck");
@@ -143,13 +143,7 @@ Machine.add("Interpolations.ck");
 Machine.add("DurProvider.ck");
 Machine.add("Humanize.ck");
 Machine.add("HumanizedDurProvider.ck");
-
-// procedures, package loop
-Machine.add("Append.ck");
-Machine.add("Prepend.ck");
-Machine.add("Repeat.ck");
-Machine.add("Sleep.ck");
-Machine.add("Loop.ck");
+Machine.add("TimeSignature.ck");
 
 // list, package collect
 Machine.add("Comparator.ck");
@@ -182,19 +176,22 @@ Machine.add("Edge.ck");
 Machine.add("Graph.ck");
 Machine.add("Graphs.ck");
 
-// intervals, chords, scales, arpeggiator
-Machine.add("TimeSignature.ck"); // package duration?
+// intervals, chords, scales, package interval
 Machine.add("Interval.ck");
 Machine.add("Intervals.ck");
 Machine.add("Chord.ck");
 Machine.add("Chords.ck");
 Machine.add("Scale.ck");
 Machine.add("Scales.ck");
+
+// arp, pattern, package arp
 Machine.add("Arpeggiator.ck");
 Machine.add("Arpeggiators.ck");
 Machine.add("Pattern.ck");
 Machine.add("Patterns.ck");
 Machine.add("Warp.ck");
+
+// midi tunings, package tuning
 Machine.add("MidiNote.ck");
 //Machine.add("MidiNotes.ck");
 Machine.add("Tuning.ck");
@@ -204,7 +201,7 @@ Machine.add("SYTunings.ck");
 // unit test, package test
 Machine.add("Assert.ck");
 
-// simulators, package simulator
+// simulators, package sim
 Machine.add("Animoog.ck");
 Machine.add("EchoPad.ck");
 Machine.add("Filtatron.ck");
@@ -249,7 +246,7 @@ Machine.add("LeapMotionOsc.ck");
 Machine.add("SooperLooperOsc.ck");
 Machine.add("TouchOscServer.ck");
 
-// samples, loops
+// samples, package sample
 Machine.add("Sample.ck");
 Machine.add("AdsrSample.ck");
 Machine.add("CompositeSample.ck");
@@ -258,10 +255,17 @@ Machine.add("PitchSensitiveSample.ck");
 Machine.add("VelocitySensitiveSample.ck");
 Machine.add("HandedSample.ck");
 Machine.add("Samples.ck");
+
+// procedures, package loop
+Machine.add("Append.ck");
+Machine.add("Prepend.ck");
+Machine.add("Repeat.ck");
+Machine.add("Sleep.ck");
+Machine.add("Loop.ck");
 Machine.add("Loops.ck");
 Machine.add("LoopBuilder.ck");
 
-// sample-based drum machines, package sample
+// sample-based drum machines, package sample.drum
 Machine.add("AkaiMpc60.ck");
 Machine.add("EmuDrumulator.ck");
 Machine.add("OberheimDmx.ck");
@@ -273,7 +277,7 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 Machine.add("KorgMs20.ck");
 
-// dist stuff
+// dist stuff, package dist
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
 Machine.add("Clip.ck");
@@ -287,7 +291,7 @@ Machine.add("KijjazDist2.ck");
 Machine.add("KijjazDist3.ck");
 Machine.add("KijjazDist4.ck");
 
-// cv stuff
+// cv stuff, package module
 Machine.add("Module.ck");
 Machine.add("Module2.ck");
 Machine.add("Module3.ck");
@@ -297,8 +301,10 @@ Machine.add("Module6.ck");
 Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
-// effects
+// effects, package effect
 Machine.add("Effect.ck");
+Machine.add("AnalogDelay.ck");
+Machine.add("DigitalDelay.ck");
 Machine.add("CryBaby.ck");
 Machine.add("DualRect.ck");
 Machine.add("Flutter.ck");
@@ -306,12 +312,10 @@ Machine.add("Freeze.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
-Machine.add("AnalogDelay.ck");
-Machine.add("DigitalDelay.ck");
 Machine.add("Thicken.ck");
 Machine.add("Tremolo.ck");
 
-// delay stuff
+// delay stuff, package delay (or effect)
 Machine.add("SinTrem.ck");
 Machine.add("SqrTrem.ck");
 Machine.add("TriTrem.ck");
@@ -326,7 +330,7 @@ Machine.add("Smear.ck");
 Machine.add("ScaleSmear.ck");
 Machine.add("Swirl.ck");
 
-// synth/osc
+// synth/osc, package synth
 Machine.add("CircleRamp.ck");
 Machine.add("SawRamp.ck");
 Machine.add("SubGen.ck");
@@ -334,8 +338,10 @@ Machine.add("SeptSubGen.ck");
 Machine.add("VoiceOfSaturn.ck");
 // Machine.add("DroneLab.ck");
 
-// depends on chugins
+// depends on default chugins, package effect
 Machine.add("Crush.ck");
+
+// package effect.jwmatthys
 Machine.add("Expo.ck");
 Machine.add("PitchFollower.ck");
 Machine.add("SigmuFollower.ck");
@@ -343,10 +349,10 @@ Machine.add("SigmuGainFollower.ck");
 Machine.add("SigmuPitchFollower.ck");
 Machine.add("Spekt.ck");
 
-// depends on LADSPA chugin
+// depends on LADSPA chugin, package ladspa
 Machine.add("Ladspa.ck");
 
-// C*APS plugins
+// C*APS plugins, package ladspa.caps
 Machine.add("Caps.ck");
 Machine.add("Amp.ck");
 Machine.add("Cabinet.ck");
@@ -361,20 +367,20 @@ Machine.add("StereoPlate.ck");
 Machine.add("ToneStack.ck");
 Machine.add("Princeton.ck");
 
-// CMT plugins
+// CMT plugins, package ladspa.cmt
 Machine.add("Cmt.ck");
 Machine.add("Lofi.ck");
 
-// TAP-plugins
+// TAP-plugins, package ladspa.tap
 Machine.add("Tap.ck");
 Machine.add("TubeWarmth.ck");
 
-// SWH plugins
+// SWH plugins, package ladspa.swh
 Machine.add("Swh.ck");
 Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
 
-// RubberBand plugins
+// RubberBand plugins, package ladspa.rubberband
 Machine.add("RubberBand.ck");
 
 <<<"LiCK imported.">>>;
