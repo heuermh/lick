@@ -31,53 +31,19 @@ class Toggle extends Procedure
     }
 }
 
-class RaiseOctave extends Procedure
+class RaiseTrigger extends Procedure
 {
     fun void run()
     {
-        Intervals.octave().desc() => raise.interval;
-        raise.raise();
-    }
-}
-
-class RaisePerfectFifth extends Procedure
-{
-    fun void run()
-    {
-        Intervals.perfectFifth().desc() => raise.interval;
-        raise.raise();
-    }
-}
-
-class RaiseMajorThird extends Procedure
-{
-    fun void run()
-    {
-        Intervals.majorThird().desc() => raise.interval;
-        raise.raise();
-    }
-}
-
-class RaiseMinorSecond extends Procedure
-{
-    fun void run()
-    {
-        Intervals.minorSecond().desc() => raise.interval;
         raise.raise();
     }
 }
 
 Toggle toggle;
-RaiseOctave raiseOctave;
-RaisePerfectFifth raisePerfectFifth;
-RaiseMajorThird raiseMajorThird;
-RaiseMinorSecond raiseMinorSecond;
+RaiseTrigger raiseTrigger;
 
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
-raiseOctave @=> stomp.button1Down;
-raisePerfectFifth @=> stomp.button2Down;
-raiseMajorThird @=> stomp.button3Down;
-raiseMinorSecond @=> stomp.button4Down;
+raiseTrigger @=> stomp.button1Down;
 
 stomp.open(0);
