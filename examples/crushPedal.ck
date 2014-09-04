@@ -79,6 +79,8 @@ class LessDownsample extends Procedure
 
 adc => crush => dac;
 
+1.0 => crush.mix;
+
 Toggle toggle;
 MoreBits moreBits;
 LessBits lessBits;

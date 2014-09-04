@@ -306,12 +306,14 @@ Machine.add("Effect.ck");
 Machine.add("AnalogDelay.ck");
 Machine.add("DigitalDelay.ck");
 Machine.add("CryBaby.ck");
+Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
 Machine.add("Flutter.ck");
 Machine.add("Freeze.ck");
 Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
+Machine.add("Raise.ck");
 Machine.add("Thicken.ck");
 Machine.add("Tremolo.ck");
 

@@ -22,6 +22,7 @@
 
 //
 // something like the Electro-Harmonix Freeze Sound Retainer
+//   doesn't yet really work like that, possibly interesting in its own right
 //
 public class Freeze extends Effect
 {
@@ -61,11 +62,15 @@ public class Freeze extends Effect
                 _lisas.get(_index) $ LiSa @=> LiSa lisa;
                 //<<<"updating lisa", _index, lisa>>>;
 
-                0 => lisa.record;
-                lisa.clear();
+                // only randomly update 1/3 at any one time
+                if (Math.randomf() > 0.66)
+                {
+                    0 => lisa.record;
+                    lisa.clear();
 
-                0::samp => lisa.recPos;
-                1 => lisa.record;
+                    0::samp => lisa.recPos;
+                    1 => lisa.record;
+                }
 
                 _index + 1 => _index;
                 if (_index == _size)

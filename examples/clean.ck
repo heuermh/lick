@@ -20,22 +20,8 @@
 
 */
 
-Freeze.create(64, 2400::ms) @=> Freeze freeze;
-0.4 => freeze.mix;
+adc => dac;
 
-adc => freeze => dac;
+<<<"done">>>;
 
-class Toggle extends Procedure
-{
-    fun void run()
-    {
-        freeze.toggle();
-        <<<"toggle", freeze.running()>>>;
-    }
-}
-
-Toggle toggle;
-StompKeyboard stomp;
-toggle @=> stomp.button0Down;
-
-stomp.open(0);
+1::week => now;

@@ -33,7 +33,7 @@ class GainReset extends FloatProcedure
 
     fun void run(float gain)
     {
-        if (gain < 0.05)
+        if (gain < 0.25)
         {
             <<<"gain reset", gain>>>;
             _raise.reset();
@@ -41,12 +41,28 @@ class GainReset extends FloatProcedure
     }
 }
 
+class PitchReset extends FloatProcedure
+{
+    Raise @ _raise;
+    0.0 => float _freq;
+
+    fun void run(float freq)
+    {
+        if (Math.fabs(freq - _freq) > (freq/25.0)) // todo:  use 5 cents?
+        {
+            <<<"pitch reset", _freq, freq>>>;
+            _raise.reset();
+        }
+        freq => _freq;
+    }
+}
+
 class Raise extends Effect
 {
-    20::ms => dur _rate;
+    2::ms => dur _rate;
 
     0.0 => float _l;
-    400::ms => dur _length;
+    1::second => dur _length;
     now => time _last;
 
     0 => static int RAISING;
@@ -55,44 +71,50 @@ class Raise extends Effect
 
     PitShift _pitchShift;
     GainReset _gainReset;
-    Intervals.octave().desc() @=> Interval _interval;
+    PitchReset _pitchReset;
+    Intervals.perfectFifth().desc() @=> Interval _interval;
     SigmuGainFollower.create(_gainReset) @=> SigmuGainFollower _gainFollower;
+    SigmuPitchFollower.create(_pitchReset) @=> SigmuPitchFollower _pitchFollower;
 
     1.0 => _pitchShift.mix;
     this @=> _gainReset._raise;
+    this @=> _pitchReset._raise;
 
-    inlet => _gainFollower => _pitchShift => wet;
+    inlet => _gainFollower => _pitchFollower => _pitchShift => wet;
 
     spork ~ _sporkAtRate();
 
     fun void _sporkAtRate()
     {
-        now => time current;
-        if (RAISING == _state)
+        while (true)
         {
-            if (current < (_last + _length))
+            now => time current;
+            if (RAISING == _state)
             {
-                1.0 - (_last - current) / _length => _l; // 1.0 - 0.0 for start, 1.0 - 1.0 for end
-                1.0 - (_l * _interval.evaluate(1.0)) => _pitchShift.shift; //1.0 - (1.0 * 0.5) = 0.5 for start, 1.0 - (0.0 * 0.5) = 0.0 for end
+                if (current < (_last + _length))
+                {
+                    1.0 + (_last - current) / _length => _l;
+                    1.0 - (_l * _interval.evaluate(1.0)) => _pitchShift.shift;
+                }
+                else
+                {
+                    <<<"raised">>>;
+                    RAISED => _state;
+                }
             }
-            else
+            else if (RAISED == _state)
             {
-                <<<"raised">>>;
-                RAISED => _state;
+                // just wait for reset
             }
+            _rate => now;
         }
-        else if (RAISED == _state)
-        {
-            // just wait for reset
-        }
-        _rate => now;
     }
 
     fun void reset()
     {
         0.0 => _l;
         now => _last;
-        <<<"raising">>>;
+        <<<"reset, raising">>>;
         RAISING => _state;
         _interval.evaluate(1.0) => _pitchShift.shift; // e.g. 0.5 => shift
     }
@@ -147,3 +169,10 @@ class Raise extends Effect
         return raise;
     }
 }
+
+adc => Raise raise => dac;
+
+0.5 => raise.mix;
+
+<<<"ready">>>;
+1::week => now;

@@ -19,7 +19,7 @@
 
 */
 
-adc => Tremolo tremolo => MonoDelay2 delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
+adc => Tremolo tremolo => DigitalDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 
 1.0 => tremolo.mix;
 0.4 => tremolo.depth;

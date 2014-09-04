@@ -75,7 +75,7 @@ class Drop extends Effect
     PitShift _pitchShift;
     GainReset _gainReset;
     PitchReset _pitchReset;
-    Intervals.octave() @=> Interval _interval;
+    Intervals.octave().desc() @=> Interval _interval;
     SigmuGainFollower.create(_gainReset) @=> SigmuGainFollower _gainFollower;
     SigmuPitchFollower.create(_pitchReset) @=> SigmuPitchFollower _pitchFollower;
 
@@ -89,40 +89,45 @@ class Drop extends Effect
 
     fun void _sporkAtRate()
     {
-        now => time current;
-        if (WAITING == _state)
+        while (true)
         {
-            if (current >= (_last + _wait))
+            now => time current;
+            if (WAITING == _state)
             {
-                <<<"dropping">>>;
-                DROPPING => _state;
+                if (current >= (_last + _wait))
+                {
+                    <<<"dropping">>>;
+                    DROPPING => _state;
+                }
             }
-        }
-        else if (DROPPING == _state)
-        {
-            if (current < (_last + _wait + _length))
+            else if (DROPPING == _state)
             {
-                (_last + _wait - current) / _length => _l;
-                _l * _interval.evaluate(1.0) => _pitchShift.shift;
+                if (current < (_last + _wait + _length))
+                {
+                    Math.fabs((_last + _wait - current) / _length) => _l;
+                    1.0 - (_l * _interval.evaluate(1.0)) => _pitchShift.shift;
+                    <<<"_l", _l, "shift", _pitchShift.shift()>>>;
+                }
+                else
+                {
+                    <<<"dropped">>>;
+                    _interval.evaluate(1.0) => _pitchShift.shift;
+                    DROPPED => _state;
+                }
             }
-            else
+            else if (DROPPED == _state)
             {
-                <<<"dropped">>>;
-                DROPPED => _state;
+                // just wait for reset
             }
+            _rate => now;
         }
-        else if (DROPPED == _state)
-        {
-            // just wait for reset
-        }
-        _rate => now;
     }
 
     fun void reset()
     {
         0.0 => _l;
         now => _last;
-        <<<"waiting">>>;
+        <<<"reset, waiting">>>;
         WAITING => _state;
         1.0 => _pitchShift.shift;
     }
@@ -190,3 +195,10 @@ class Drop extends Effect
         return drop;
     }
 }
+
+adc => Drop drop => dac;
+
+0.5 => drop.mix;
+
+<<<"ready">>>;
+1::week => now;
