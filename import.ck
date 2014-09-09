@@ -280,6 +280,7 @@ Machine.add("KorgMs20.ck");
 // dist stuff, package dist
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
+Machine.add("BucketBrigade.ck");
 Machine.add("Clip.ck");
 Machine.add("Dist.ck");
 Machine.add("AtanDist.ck");
