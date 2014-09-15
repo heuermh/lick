@@ -22,6 +22,8 @@
 
 CircleRamp circleRamp => Saturate saturate => TubeWarmth tubeWarmth => dac;
 
+circleRamp.adsr.set(5::ms, 100::ms, 0.6, 500::ms);
+
 saturate.stop();
 tubeWarmth.stop();
 
@@ -104,7 +106,10 @@ class KeyOff extends IntProcedure
     fun void run(int value)
     {
         <<<"keyOff", value>>>;
-        circleRamp.noteOff();
+        if (value == lastKey)
+        {
+            circleRamp.noteOff();
+        }
     }
 }
 
