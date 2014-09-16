@@ -305,8 +305,10 @@ Machine.add("Module8.ck");
 // effects, package effect
 Machine.add("Effect.ck");
 Machine.add("AnalogDelay.ck");
-Machine.add("DigitalDelay.ck");
+Machine.add("CrossOver2.ck");
+Machine.add("CrossOver3.ck");
 Machine.add("CryBaby.ck");
+Machine.add("DigitalDelay.ck");
 Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
 Machine.add("Flutter.ck");
