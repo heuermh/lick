@@ -183,6 +183,11 @@ public class AlesisQX25
                         spork ~ keyOn.run(note, velocity);
                     }
                 }
+                else if (control == 128)
+                {
+                    0 => _lastKey[note];
+                    spork ~ keyOff.run(note);
+                }
                 else if (control == 224)
                 {
                     note => _lastPitchBend[0];
@@ -308,7 +313,18 @@ public class AlesisQX25
 
 Keys:
 
+Key on
+
 144, key (0 - 120), velocity
+
+Key off
+
+128, key (0 - 120), velocity
+
+Aftertouch
+
+208, value, 13
+
 
 Rotary:
 
