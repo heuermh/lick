@@ -32,88 +32,45 @@ bt => tremolo => dac;
 
 500::ms => now;
 
-<<<tremolo.sinMix, tremolo.sqrMix, tremolo.triMix>>>;
-for (0 => int i; i < 4; i++)
-{
-    rate => tremolo.rate;
-    for (0 => int j; j < 10; j++)
-    {
-        8.0 * (j+1)/10.0 => depth;
-        depth => tremolo.depth;
+tremolo.sawLfo();
+<<<"saw">>>;
+loop();
 
-        <<<"tremolo rate", rate, "depth", depth>>>;
-        bt.noteOn(1.0);
-        800::ms => now;
-        bt.noteOff(1.0);
-        200::ms => now;
-    }
-    2.0 +=> rate;
-}
+tremolo.sinLfo();
+<<<"sin">>>;
+loop();
 
-1.0 => rate;
-1.0 => tremolo.sinMix;
-0.0 => tremolo.sqrMix;
-0.0 => tremolo.triMix;
-<<<tremolo.sinMix, tremolo.sqrMix, tremolo.triMix>>>;
-for (0 => int i; i < 4; i++)
-{
-    rate => tremolo.rate;
-    for (0 => int j; j < 10; j++)
-    {
-        8.0 * (j+1)/10.0 => depth;
-        depth => tremolo.depth;
+tremolo.sqrLfo();
+<<<"sqr">>>;
+loop();
 
-        <<<"tremolo rate", rate, "depth", depth>>>;
-        bt.noteOn(1.0);
-        800::ms => now;
-        bt.noteOff(1.0);
-        200::ms => now;
-    }
-    2.0 +=> rate;
-}
+tremolo.triLfo();
+<<<"tri">>>;
+loop();
 
-1.0 => rate;
-0.0 => tremolo.sinMix;
-1.0 => tremolo.sqrMix;
-0.0 => tremolo.triMix;
-<<<tremolo.sinMix, tremolo.sqrMix, tremolo.triMix>>>;
-for (0 => int i; i < 4; i++)
-{
-    rate => tremolo.rate;
-    for (0 => int j; j < 10; j++)
-    {
-        8.0 * (j+1)/10.0 => depth;
-        depth => tremolo.depth;
-
-        <<<"tremolo rate", rate, "depth", depth>>>;
-        bt.noteOn(1.0);
-        800::ms => now;
-        bt.noteOff(1.0);
-        200::ms => now;
-    }
-    2.0 +=> rate;
-}
-
-1.0 => rate;
-0.0 => tremolo.sinMix;
-0.0 => tremolo.sqrMix;
-1.0 => tremolo.triMix;
-<<<tremolo.sinMix, tremolo.sqrMix, tremolo.triMix>>>;
-for (0 => int i; i < 4; i++)
-{
-    rate => tremolo.rate;
-    for (0 => int j; j < 10; j++)
-    {
-        8.0 * (j+1)/10.0 => depth;
-        depth => tremolo.depth;
-
-        <<<"tremolo rate", rate, "depth", depth>>>;
-        bt.noteOn(1.0);
-        800::ms => now;
-        bt.noteOff(1.0);
-        200::ms => now;
-    }
-    2.0 +=> rate;
-}
+tremolo.lfo(0.3, 0.4, 0.1, 0.2);
+<<<"mix">>>;
+loop();
 
 <<<"done">>>;
+
+fun void loop()
+{
+    1.0 => rate;
+    for (0 => int i; i < 4; i++)
+    {
+        rate => tremolo.rate;
+        for (0 => int j; j < 10; j++)
+        {
+            8.0 * (j+1)/10.0 => depth;
+            depth => tremolo.depth;
+
+            <<<"tremolo rate", rate, "depth", depth>>>;
+            bt.noteOn(1.0);
+            800::ms => now;
+            bt.noteOff(1.0);
+            200::ms => now;
+        }
+        2.0 +=> rate;
+    }
+}

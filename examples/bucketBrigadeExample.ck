@@ -46,9 +46,15 @@ adc => BucketBrigadeDelay bbd => dac;
 
 0.8 => bbd.mix;
 
+/*
 for (1 => int i; i < 10; i++)
 {
     10::second => now;
     bbd.clockRate() * i => bbd.clockRate;
     <<<"clockRate", bbd.clockRate()>>>;
 }
+*/
+
+<<<"ok">>>;
+1::minute => now;
+<<<"done">>>;

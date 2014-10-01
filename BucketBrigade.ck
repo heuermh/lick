@@ -25,6 +25,7 @@ class F extends FloatFunction
     512 => static int STAGES;
 
     0.0 => float _last;
+    now => time _lastTimestamp;
     float _stages[STAGES];
 
     4::samp => dur _clockRate;
@@ -54,6 +55,7 @@ class F extends FloatFunction
     fun float _even()
     {
         _last => _stages[0];
+        now => _lastTimestamp;
         for (0 => int i; i < (STAGES - 1); )
         {
             _stages[i] => _stages[i + 1];
@@ -64,6 +66,7 @@ class F extends FloatFunction
 
     fun float _odd()
     {
+        now => _lastTimestamp;
         for (1 => int i; i < (STAGES - 1); )
         {
             _stages[i] => _stages[i + 1];

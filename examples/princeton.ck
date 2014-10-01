@@ -20,17 +20,15 @@
 
 */
 
-adc => NoiseGate noiseGate => Tremolo tremolo => MonoDelay2 delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
+adc => NoiseGate noiseGate => Tremolo tremolo => AnalogDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 
 -38.0 => noiseGate.open;
 -55.0 => noiseGate.close;
 "imperial" => noiseGate.mainsName;
 
 4.0 => tremolo.rate;
-0.6 => tremolo.sinMix;
-0.3 => tremolo.triMix;
-0.1 => tremolo.sqrMix;
 0.4 => tremolo.depth;
+tremolo.lfo(0.0, 0.6, 0.1, 0.3);
 
 0.2 => delay.mix;
 0.4 => delay.feedback;
