@@ -22,54 +22,72 @@
 
 public class Tremolo extends Effect
 {
-    Gain tremolo;
-    SinOsc sinLfo;
-    SqrOsc sqrLfo;
-    TriOsc triLfo;
-    0.33 => float sinMix;
-    0.33 => float sqrMix;
-    0.33 => float triMix;
-    1.0 => float _rate;
-    1.0 => float _depth;
+    Lfo _lfo;
+    Gain _tremolo;
 
     {
-        inlet => tremolo => wet;
-        sinLfo => blackhole;
-        sqrLfo => blackhole;
-        triLfo => blackhole;
-
-        rate(_rate);
-        depth(_depth);
+        inlet => _tremolo => wet;
+        _lfo => blackhole;
 
         spork ~ _tickAtSampleRate();
     }
 
     fun float rate()
     {
-        return _rate;
+        return _lfo.rate();
     }
 
-    fun float rate(float rate)
+    fun float rate(float f)
     {
-        rate => _rate;
-        _rate => sinLfo.freq;
-        _rate => sqrLfo.freq;
-        _rate => triLfo.freq;
-        return _rate;
+        f => _lfo.rate;
+        return f;
     }
 
     fun float depth()
     {
-        return _depth;
+        return _lfo.depth();
     }
 
-    fun float depth(float depth)
+    fun float depth(float f)
     {
-        depth => _depth;
-        _depth * sinMix => sinLfo.gain;
-        _depth * sqrMix => sqrLfo.gain;
-        _depth * triMix => triLfo.gain;
-        return _depth;
+        f => _lfo.depth;
+        return f;
+    }
+
+    fun float phase()
+    {
+        return _lfo.phase();
+    }
+
+    fun float phase(float f)
+    {
+        f => _lfo.phase;
+        return f;
+    }
+
+    fun void sawLfo()
+    {
+        _lfo.saw();
+    }
+
+    fun void sinLfo()
+    {
+        _lfo.sin();
+    }
+
+    fun void sqrLfo()
+    {
+        _lfo.sqr();
+    }
+
+    fun void triLfo()
+    {
+        _lfo.tri();
+    }
+
+    fun void lfo(float saw, float sin, float sqr, float tri)
+    {
+        _lfo.mix(saw, sin, sqr, tri);
     }
 
     fun void _tickAtSampleRate()
@@ -77,8 +95,7 @@ public class Tremolo extends Effect
         while (true)
         {
             1::samp => now;
-            sinLfo.last() * sinMix + sqrLfo.last() * sqrMix + triLfo.last() * triMix => float last;
-            Interpolate.linear(last, -1.0, 1.0, 0.0, 1.0) => tremolo.gain;
+            _lfo.last() => _tremolo.gain;
         }
     }
 }

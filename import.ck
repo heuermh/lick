@@ -302,6 +302,8 @@ Machine.add("Module6.ck");
 Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
+Machine.add("Lfo.ck");
+
 // effects, package effect
 Machine.add("Effect.ck");
 Machine.add("AnalogDelay.ck");
@@ -317,6 +319,7 @@ Machine.add("Harmonizer.ck");
 Machine.add("Harmonizers.ck");
 Machine.add("Mesmerizer.ck");
 Machine.add("Raise.ck");
+Machine.add("TimeModulator.ck");
 Machine.add("Thicken.ck");
 Machine.add("Tremolo.ck");
 
