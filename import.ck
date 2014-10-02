@@ -312,6 +312,7 @@ Machine.add("CrossOver3.ck");
 Machine.add("CryBaby.ck");
 Machine.add("DigitalDelay.ck");
 Machine.add("Disaster.ck");
+Machine.add("Disaster2.ck");
 Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
 Machine.add("Flutter.ck");
