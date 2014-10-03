@@ -20,7 +20,7 @@
 
 */
 
-adc => Disaster2 disaster => dac;
+adc => Disaster disaster => dac;
 
 0.80 => disaster.mixA;
 0.80 => disaster.mixB;

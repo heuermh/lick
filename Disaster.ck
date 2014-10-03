@@ -24,7 +24,7 @@
 // similar to Disaster Transport SR,
 //   buy one here http://earthquakerdevices.com/shop/disastertransportsr/
 //
-public class Disaster2 extends Chubgraph
+public class Disaster extends Chubgraph
 {
     Gain _inputA;
     Gain _inputB;
@@ -529,9 +529,9 @@ public class Disaster2 extends Chubgraph
     }
 
 
-    fun static Disaster2 create()
+    fun static Disaster create()
     {
-        Disaster2 disaster;
+        Disaster disaster;
         return disaster;
     }
 }
