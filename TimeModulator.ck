@@ -20,8 +20,9 @@
 
 */
 
+//
 // similar to Marshall Time Modulator, http://electro-music.com/forum/topic-19408-0.html
-//   todo:  add stereo/panning; envelope like http://www.pigtronix.com/products/quantum-time-modulator ?
+//
 public class TimeModulator extends Effect
 {
     Delay _a;
@@ -32,14 +33,33 @@ public class TimeModulator extends Effect
 
     400::ms => dur _d;
 
+    /*
+
+                +---------+
+                |         |
+               \./        |
+        in ---> A ---> feedback ---> wet
+                |       ^    ^
+                |       |    |
+                +-----> B    |
+                |      (2x)  |
+                |            |
+                +----------> C
+                            (4x)
+
+    */
+
     {
-        inlet => _a => _b => _feedback => wet;
+        inlet => _a => _feedback => wet;
+        _a => _b => _feedback;
         _a => _c => _feedback;
+        _feedback => _a;
         _lfo => blackhole;
 
-        1.08 * _d => max;
+        1::second => max;
         _d => delay;
-        0.60 => feedback;
+        0.90 => mix;
+        0.96 => feedback;
         0.70 => a;
         0.20 => b;
         0.10 => c;
@@ -167,8 +187,8 @@ public class TimeModulator extends Effect
     {
         while (true)
         {
-            _updateDelay(_d + _lfo.last() * _d);
             1::samp => now;
+            _updateDelay(_d + (_lfo.last() * _d));
         }
     }
 }
