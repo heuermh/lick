@@ -20,9 +20,10 @@
 
 */
 
-adc => Disaster disaster => dac;
+adc => Disaster2 disaster => dac;
 
-0.8 => disaster.mix;
+0.8 => disaster.mixA;
+0.8 => disaster.mixB;
 
 <<<"ready">>>;
 1::minute => now;

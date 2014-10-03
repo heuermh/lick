@@ -24,189 +24,418 @@
 // similar to Disaster Transport SR,
 //   buy one here http://earthquakerdevices.com/shop/disastertransportsr/
 //
-public class Disaster extends Effect
+public class Disaster2 extends Chubgraph
 {
-    Gain _pre;
+    Gain _inputA;
+    Gain _inputB;
     AnalogDelay.create() @=> AnalogDelay _a;
     AnalogDelay.create() @=> AnalogDelay _b;
     GVerb _gverb;
-    Gain _feedback;
+    Gain _feedbackA;
+    Gain _feedbackB;
     Gain _bleed;
+    Gain _bypass;
     Lfo _lfo;
+    dur _lastDelay;
+
+    0 => static int OFF;
+    1 => static int ON;
+
+    ON => int _aState;
+    ON => int _bState;
+    OFF => int _bypassState;
+    0.5 => float _lastA;
+    0.5 => float _lastB;
+
+    /*
+
+                    +------------------+
+                    |                  |
+                   \./                 |
+        in --+-->  inputA ---> A ---> feedbackA -------------+---> out
+             |                 |                             |
+             |                bleed                          |
+             |                 |                             |
+             |                \./                            |
+             +-->  inputB ---> gverb ---> B ---> feedbackB --+
+             |                            ^       |          |
+             |                            |       |          |
+             |                            +-------+          |
+             |                                               |
+             +-->  bypass -----------------------------------+
+
+    */
 
     {
-        inlet => _pre => _a => _feedback => wet;
-        _pre => _gverb => _b => _feedback;
-        _feedback => _pre;
+        inlet => _inputA => _a => _feedbackA => outlet;
+        inlet => _inputB => _gverb => _b => _feedbackB => outlet;
+        _feedbackA => _inputA;
+        _feedbackB => _b;
         _a => _bleed => _gverb;
+        inlet => _bypass => outlet;
         _lfo => blackhole;
 
-        /*
-
-          Switching is not quite correct yet
-
-          "The switches for both delays switch the inputs only. The outputs are always connected.
-          This allows you to have trails by always leaving the bypass switch engaged or to use the
-          bypass switch as the master on/off for true bypass. Additionally, you can feed delay A
-          in to delay B with the bleed control without having delay B switched on for a cleaner
-          rhythmic delay."
-
-        */
-
+        0.5 => _inputA.gain;
+        0.5 => _inputB.gain;
         2::second => _a.max;
         2::second => _b.max;
         1.0 => _a.mix;
+        1.0 => _a.gain;
         0.0 => _a.feedback;
         400::ms => _a.delay;
-        111::ms => _b.delay;
+        400::ms => _lastDelay;
+        133::ms => _b.delay;
         1.0 => _b.mix;
+        1.0 => _b.gain;
         0.0 => _b.feedback;
-        0.1 => _bleed.gain;
-        0.6 => _feedback.gain;
         0.9 => _gverb.dry;
         0.02 => _gverb.early;
         0.07 => _gverb.tail;
         30.0 => _gverb.roomsize;
+        0.8 => _feedbackA.gain;
+        0.8 => _feedbackB.gain;
+        0.0 => _bleed.gain;
+        0.0 => _bypass.gain;
         0.1 => _lfo.rate;
-        0.01 => _lfo.depth;
+        0.001 => _lfo.depth;
         _lfo.sin();
 
         spork ~ _tickAtSampleRate();
     }
 
+    /*
 
-    fun AnalogDelay a()
+      "The switches for both delays switch the inputs only. The outputs are always connected.
+       This allows you to have trails by always leaving the bypass switch engaged or to use the
+       bypass switch as the master on/off for true bypass. Additionally, you can feed delay A
+       in to delay B with the bleed control without having delay B switched on for a cleaner
+       rhythmic delay."
+
+    */
+
+    fun void bypassOn()
     {
-        return _a;
+        if (!_bypassState)
+        {
+            1.0 => _bypass.gain;
+            _inputA.gain() => _lastA;
+            _inputB.gain() => _lastB;       
+            0.0 => _inputA.gain;
+            0.0 => _inputB.gain;
+
+            ON => _bypassState;
+        }
     }
 
-    fun dur aMax()
+    fun void bypassOff()
+    {
+        if (_bypassState)
+        {
+            0.0 => _bypass.gain;
+            _lastA => _inputA.gain;
+            _lastB => _inputB.gain;
+
+            OFF => _bypassState;
+        }
+    }
+
+    fun void toggleBypass()
+    {
+        if (_bypassState)
+        {
+            bypassOff();
+        }
+        else
+        {
+            bypassOn();
+        }
+    }
+
+
+    fun void aOn()
+    {
+        if (_bypassState)
+        {
+            if (_bState)
+            {
+                0.5 => _lastA;
+                0.5 => _lastB;
+            }
+            else
+            {
+                1.0 => _lastA;
+                0.0 => _lastB;
+            }
+        }
+        else
+        {
+            if (_bState)
+            {
+                0.5 => _inputA.gain;
+                0.5 => _inputB.gain;
+            }
+            else
+            {
+                1.0 => _inputA.gain;
+                0.0 => _inputB.gain;
+            }
+        }
+        ON => _aState;
+    }
+
+    fun void aOff()
+    {
+        if (_bypassState)
+        {
+            if (_bState)
+            {
+                0.0 => _lastA;
+                1.0 => _lastB;
+            }
+            else
+            {
+                0.0 => _lastA;
+                0.0 => _lastB;
+            }
+        }
+        else
+        {
+            if (_bState)
+            {
+                0.0 => _inputA.gain;
+                1.0 => _inputB.gain;
+            }
+            else
+            {
+                0.0 => _inputA.gain;
+                0.0 => _inputB.gain;
+            }
+        }
+        OFF => _aState;
+    }
+
+    fun void toggleA()
+    {
+        if (_aState)
+        {
+            aOff();
+        }
+        else
+        {
+            aOn();
+        }
+    }
+
+
+    fun void bOn()
+    {
+        if (_bypassState)
+        {
+            if (_aState)
+            {
+                0.5 => _lastA;
+                0.5 => _lastB;
+            }
+            else
+            {
+                0.0 => _lastA;
+                1.0 => _lastB;
+            }
+        }
+        else
+        {
+            if (_aState)
+            {
+                0.5 => _inputA.gain;
+                0.5 => _inputB.gain;
+            }
+            else
+            {
+                0.0 => _inputA.gain;
+                1.0 => _inputB.gain;
+            }
+        }
+        ON => _bState;
+    }
+
+    fun void bOff()
+    {
+        if (_bypassState)
+        {
+            if (_aState)
+            {
+                1.0 => _lastA;
+                0.0 => _lastB;
+            }
+            else
+            {
+                0.0 => _lastA;
+                0.0 => _lastB;
+            }
+        }
+        else
+        {
+            if (_aState)
+            {
+                1.0 => _inputA.gain;
+                0.0 => _inputB.gain;
+            }
+            else
+            {
+                0.0 => _inputA.gain;
+                0.0 => _inputB.gain;
+            }
+        }
+        OFF => _bState;
+    }
+
+    fun void toggleB()
+    {
+        if (_bState)
+        {
+            bOff();
+        }
+        else
+        {
+            bOn();
+        }
+    }
+
+
+    fun dur maxA()
     {
         return _a.max();
     }
 
-    fun dur aMax(dur d)
+    fun dur maxA(dur d)
     {
         d => _a.max;
         return d;
     }
 
-    fun dur aDelay()
+    fun dur delayA()
     {
         return _a.delay();
     }
 
-    fun dur aDelay(dur d)
+    fun dur delayA(dur d)
     {
         d => _a.delay;
+        d => _lastDelay;
         return d;
     }
 
-    fun float aMix()
+    fun float mixA()
     {
         return _a.mix();
     }
 
-    fun float aMix(float f)
+    fun float mixA(float f)
     {
         f => _a.mix;
         return f;
     }
 
-    fun float aCutoff()
+    fun float cutoffA()
     {
         return _a.cutoff();
     }
 
-    fun float aCutoff(float f)
+    fun float cutoffA(float f)
     {
         f => _a.cutoff;
         return f;
     }
 
-    fun float aResonance()
+    fun float resonanceA()
     {
         return _a.resonance();
     }
 
-    fun float aResonance(float f)
+    fun float resonanceA(float f)
     {
         f => _a.resonance;
         return f;
     }
 
-
-    fun AnalogDelay b()
+    fun float feedbackA()
     {
-        return _b;
+        return _feedbackA.gain();
     }
 
-    fun dur bMax()
+    fun float feedbackA(float f)
+    {
+        f => _feedbackA.gain;
+        return f;
+    }
+
+
+    fun dur maxB()
     {
         return _b.max();
     }
 
-    fun dur bMax(dur d)
+    fun dur maxB(dur d)
     {
         d => _b.max;
         return d;
     }
 
-    fun dur bDelay()
+    fun dur delayB()
     {
         return _b.delay();
     }
 
-    fun dur bDelay(dur d)
+    fun dur delayB(dur d)
     {
         d => _b.delay;
         return d;
     }
 
-    fun float bMix()
+    fun float mixB()
     {
         return _b.mix();
     }
 
-    fun float bMix(float f)
+    fun float mixB(float f)
     {
         f => _b.mix;
         return f;
     }
 
-    fun float bCutoff()
+    fun float cutoffB()
     {
         return _b.cutoff();
     }
 
-    fun float bCutoff(float f)
+    fun float cutoffB(float f)
     {
         f => _b.cutoff;
         return f;
     }
 
-    fun float bResonance()
+    fun float resonanceB()
     {
         return _b.resonance();
     }
 
-    fun float bResonance(float f)
+    fun float resonanceB(float f)
     {
         f => _b.resonance;
         return f;
     }
 
-
-    fun float feedback()
+    fun float feedbackB()
     {
-        return _feedback.gain();
+        return _feedbackB.gain();
     }
 
-    fun float feedback(float f)
+    fun float feedbackB(float f)
     {
-        f => _feedback.gain;
+        f => _feedbackB.gain;
         return f;
     }
+
 
     fun float bleed()
     {
@@ -227,6 +456,8 @@ public class Disaster extends Effect
     fun float reverb(float f)
     {
         (1.0 - f) => _gverb.dry;
+        0.40 * f => _gverb.early;
+        0.60 * f => _gverb.tail;
         return f;
     }
 
@@ -293,14 +524,14 @@ public class Disaster extends Effect
         while (true)
         {
             1::samp => now;
-            _lfo.last() * _a.delay() => _a.delay;
+            _lastDelay + (_lfo.last() * _a.delay()) => _a.delay;
         }
     }
 
 
-    fun static Disaster create()
+    fun static Disaster2 create()
     {
-        Disaster disaster;
+        Disaster2 disaster;
         return disaster;
     }
 }
