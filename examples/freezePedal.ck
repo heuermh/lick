@@ -20,7 +20,7 @@
 
 */
 
-Freeze.create(64, 2400::ms) @=> Freeze freeze;
+Freeze.create() @=> Freeze freeze;
 0.4 => freeze.mix;
 
 adc => freeze => dac;
@@ -34,8 +34,67 @@ class Toggle extends Procedure
     }
 }
 
+class FreezeOn extends Procedure
+{
+    fun void run()
+    {
+        freeze.freeze();
+        <<<"freeze attack ", freeze.attack(), "decay ", freeze.decay(), "spread ", freeze.spread()>>>;
+    }
+}
+
+class FreezeOff extends Procedure
+{
+    fun void run()
+    {
+        freeze.thaw();
+        <<<"thaw">>>;
+    }
+}
+
+class Fast extends Procedure
+{
+    fun void run()
+    {
+        10::ms => freeze.attack;
+        400::ms => freeze.decay;
+        <<<"fast mode">>>;
+    }
+}
+
+class Slow extends Procedure
+{
+    fun void run()
+    {
+        200::ms => freeze.attack;
+        1::second => freeze.decay;
+        <<<"slow mode">>>;
+    }
+}
+
+class ReallySlow extends Procedure
+{
+    fun void run()
+    {
+        800::ms => freeze.attack;
+        3200::ms => freeze.decay;
+        <<<"really slow mode">>>;
+    }
+}
+
 Toggle toggle;
+FreezeOn freezeOn;
+FreezeOff freezeOff;
+Fast fast;
+Slow slow;
+ReallySlow reallySlow;
+
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
+freezeOn @=> stomp.button1Down;
+freezeOff @=> stomp.button2Down;  // would be better if keyboard was momentary
+fast @=> stomp.button3Down;
+slow @=> stomp.button4Down;
+reallySlow @=> stomp.button5Down;
 
 stomp.open(0);

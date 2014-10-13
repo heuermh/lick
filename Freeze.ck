@@ -21,17 +21,28 @@
 */
 
 //
-// something like the Electro-Harmonix Freeze Sound Retainer
-//   doesn't yet really work like that, possibly interesting in its own right
+// similar to Electro-Harmonix Freeze Sound Retainer
+//   buy one here http://www.ehx.com/products/freeze
 //
 public class Freeze extends Effect
 {
     8 => int _size;
     ArrayList _lisas;
     400::ms => dur _rate;
+    40::ms => dur _recRamp;
+    100::ms => dur _attack;
+    800::ms => dur _decay;
+    0.20 => float _spread;
     0 => int _index;
 
-    // need to call this after ctr
+    0 => static int THAWED;
+    1 => static int FREEZING;
+    2 => static int FROZEN;
+    3 => static int THAWING;
+
+    THAWED => int _state;
+
+    // must call this after ctr
     fun void init()
     {
         0 => _running;
@@ -43,9 +54,9 @@ public class Freeze extends Effect
             1 => lisa.loop;
             0 => lisa.play;
             1 => lisa.record;
+            _recRamp => lisa.recRamp;
             lisa.voiceGain(0, 1.0);
             _lisas.add(lisa);
-            //<<<"created lisa", i, lisa>>>;
         }
 
         spork ~ _update();
@@ -57,13 +68,12 @@ public class Freeze extends Effect
         {
             _rate/_size => now;
 
-            if (!_running)
+            if (_state == THAWED)
             {
                 _lisas.get(_index) $ LiSa @=> LiSa lisa;
-                //<<<"updating lisa", _index, lisa>>>;
 
-                // only randomly update 1/3 at any one time
-                if (Math.randomf() > 0.66)
+                // only randomly update (1.0 - spread) at any one time
+                if (Math.randomf() > (1.0 - _spread))
                 {
                     0 => lisa.record;
                     lisa.clear();
@@ -81,44 +91,95 @@ public class Freeze extends Effect
         }
     }
 
-    fun void start()
+    fun dur attack()
     {
-        if (!_running)
+        return _attack;
+    }
+
+    fun dur attack(dur d)
+    {
+        d => _attack;
+        return d;
+    }
+
+    fun dur decay()
+    {
+        return _decay;
+    }
+
+    fun dur decay(dur d)
+    {
+        d => _decay;
+        return d;
+    }
+
+    fun float spread()
+    {
+        return _spread;
+    }
+
+    fun float spread(float f)
+    {
+        Constrain.constrainf(f, 0.0, 1.0) => _spread;
+        return _spread;
+    }
+
+    fun void freeze()
+    {
+        if (_state == THAWED)
         {
+            FREEZING => _state;
             _lisas.iterator() @=> Iterator iterator;
             while (iterator.hasNext())
             {
                 iterator.next() $ LiSa @=> LiSa lisa;
                 0::samp => lisa.playPos;
-                1 => lisa.play;
+                _attack => lisa.rampUp;
                 0 => lisa.record;
-                //<<<"playing lisa", lisa>>>;
             }
-            1 => _running;
+            FROZEN => _state;
         }
     }
 
-    fun void stop()
+    fun void thaw()
     {
-        if (_running)
+        if (_state == FROZEN)
         {
+            THAWING => _state;
             _lisas.iterator() @=> Iterator iterator;
             while (iterator.hasNext())
             {
                 iterator.next() $ LiSa @=> LiSa lisa;
-                0 => lisa.play;
-                1 => lisa.record;
-                //<<<"stopping lisa", lisa>>>;
+                _decay => lisa.rampDown;
             }
-            0 => _running;
+            THAWED => _state;
         }
     }
 
-    fun static Freeze create(int z, dur d)
+    fun static Freeze create()
     {
         Freeze freeze;
-        z => freeze._size;
-        d => freeze._rate;
+        freeze.init();
+        return freeze;
+    }
+
+    fun static Freeze create(int size, dur rate)
+    {
+        Freeze freeze;
+        size => freeze._size;
+        rate => freeze._rate;
+        freeze.init();
+        return freeze;
+    }
+
+    fun static Freeze create(int size, dur rate, dur attack, dur decay, float spread)
+    {
+        Freeze freeze;
+        size => freeze._size;
+        rate => freeze._rate;
+        attack => freeze.attack;
+        decay => freeze.decay;
+        spread => freeze.spread;
         freeze.init();
         return freeze;
     }
