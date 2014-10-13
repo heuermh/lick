@@ -20,13 +20,18 @@
 
 */
 
+//
+// more like a bit crusher than anything else
+//   needs interpolation
+//
+
 class BucketBrigadeDelay extends Effect
 {
     inlet => LPF pre => BucketBrigade bb => Gain boost => LPF post => wet;
     post => Gain feedback => inlet;
 
     1.2 => boost.gain;
-    0.4 => feedback.gain;
+    0.8 => feedback.gain;
     16000.0 => pre.freq;
     8000.0 => post.freq;
 
@@ -46,14 +51,13 @@ adc => BucketBrigadeDelay bbd => dac;
 
 0.8 => bbd.mix;
 
-/*
-for (1 => int i; i < 10; i++)
+<<<"ready">>>;
+for (4 => int i; i < 97; i++)
 {
     10::second => now;
-    bbd.clockRate() * i => bbd.clockRate;
+    i * 1::samp => bbd.clockRate;
     <<<"clockRate", bbd.clockRate()>>>;
 }
-*/
 
 <<<"ok">>>;
 1::minute => now;
