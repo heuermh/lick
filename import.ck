@@ -302,6 +302,9 @@ Machine.add("Module6.ck");
 Machine.add("Module7.ck");
 Machine.add("Module8.ck");
 
+Machine.add("SampleHold.ck");
+Machine.add("SlewStep.ck");
+Machine.add("SmoothSampleHold.ck");
 Machine.add("Lfo.ck");
 
 // effects, package effect
