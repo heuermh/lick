@@ -85,9 +85,19 @@ public class Tremolo extends Effect
         _lfo.tri();
     }
 
-    fun void lfo(float saw, float sin, float sqr, float tri)
+    fun void sampleHoldLfo()
     {
-        _lfo.mix(saw, sin, sqr, tri);
+        _lfo.sampleHold();
+    }
+
+    fun void smoothSampleHoldLfo()
+    {
+        _lfo.smoothSampleHold();
+    }
+
+    fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
+    {
+        _lfo.mix(saw, sin, sqr, tri, sh, ssh);
     }
 
     fun void _tickAtSampleRate()
@@ -95,7 +105,13 @@ public class Tremolo extends Effect
         while (true)
         {
             1::samp => now;
-            _lfo.last() => _tremolo.gain;
+            Interpolate.linear(1.0 - _lfo.depth() + _lfo.last(), -1.0, 1.0, 0.0, 1.0) => _tremolo.gain;
         }
+    }
+
+    fun static Tremolo create()
+    {
+        Tremolo tremolo;
+        return tremolo;
     }
 }

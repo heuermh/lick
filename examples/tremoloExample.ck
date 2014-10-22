@@ -26,10 +26,13 @@ Tremolo tremolo;
 
 BeeThree bt;
 220.0 => bt.freq;
-bt.noteOff(1.0);
 
-bt => tremolo => dac;
+ADSR adsr;
+adsr.set(10::ms, 500::ms, 0.9, 50::ms);
 
+bt => adsr => tremolo => dac;
+
+bt.noteOn(1.0);
 500::ms => now;
 
 tremolo.sawLfo();
@@ -48,7 +51,15 @@ tremolo.triLfo();
 <<<"tri">>>;
 loop();
 
-tremolo.lfo(0.3, 0.4, 0.1, 0.2);
+tremolo.sampleHoldLfo();
+<<<"s/h">>>;
+loop();
+
+tremolo.smoothSampleHoldLfo();
+<<<"smooth s/h">>>;
+loop();
+
+tremolo.lfo(0.2, 0.3, 0.1, 0.2, 0.1, 0.1);
 <<<"mix">>>;
 loop();
 
@@ -56,19 +67,19 @@ loop();
 
 fun void loop()
 {
-    1.0 => rate;
+    2.0 => rate;
     for (0 => int i; i < 4; i++)
     {
         rate => tremolo.rate;
         for (0 => int j; j < 10; j++)
         {
-            8.0 * (j+1)/10.0 => depth;
+            (j+1)/10.0 => depth;
             depth => tremolo.depth;
 
             <<<"tremolo rate", rate, "depth", depth>>>;
-            bt.noteOn(1.0);
+            adsr.keyOn(1);
             800::ms => now;
-            bt.noteOff(1.0);
+            adsr.keyOff(1);
             200::ms => now;
         }
         2.0 +=> rate;

@@ -171,9 +171,39 @@ public class TimeModulator extends Effect
         return f;
     }
 
-    fun void lfoMix(float saw, float sin, float sqr, float tri)
+    fun void sawLfo()
     {
-        _lfo.mix(saw, sin, sqr, tri);
+        _lfo.saw();
+    }
+
+    fun void sinLfo()
+    {
+        _lfo.sin();
+    }
+
+    fun void sqrLfo()
+    {
+        _lfo.sqr();
+    }
+
+    fun void triLfo()
+    {
+        _lfo.tri();
+    }
+
+    fun void sampleHoldLfo()
+    {
+        _lfo.sampleHold();
+    }
+
+    fun void smoothSampleHoldLfo()
+    {
+        _lfo.smoothSampleHold();
+    }
+
+    fun void lfoMix(float saw, float sin, float sqr, float tri, float sh, float ssh)
+    {
+        _lfo.mix(saw, sin, sqr, tri, sh, ssh);
     }
 
     fun void _updateDelay(dur d)

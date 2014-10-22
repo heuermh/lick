@@ -26,10 +26,14 @@ public class Lfo extends Chugen
     SinOsc _sinLfo;
     SqrOsc _sqrLfo;
     TriOsc _triLfo;
+    SampleHold _shLfo;
+    SmoothSampleHold _sshLfo;
     0.0 => float _sawMix;
     1.0 => float _sinMix;
     0.0 => float _sqrMix;
     0.0 => float _triMix;
+    0.0 => float _shMix;
+    0.0 => float _sshMix;
     1.0 => float _rate;
     1.0 => float _depth;
     1.0 => float _phase;
@@ -39,11 +43,14 @@ public class Lfo extends Chugen
         _sinLfo => blackhole;
         _sqrLfo => blackhole;
         _triLfo => blackhole;
+        Noise _n0 => _shLfo => blackhole;
+        Noise _n1 => _sshLfo => blackhole;
 
         rate(_rate);
         depth(_depth);
         phase(_phase);
     }
+
 
     fun float rate()
     {
@@ -57,6 +64,9 @@ public class Lfo extends Chugen
         _rate => _sinLfo.freq;
         _rate => _sqrLfo.freq;
         _rate => _triLfo.freq;
+        _rate => _shLfo.freq;
+        _rate => _sshLfo.freq;
+        _sshLfo.hold()/10.0 => _sshLfo.slew;
         return _rate;
     }
 
@@ -72,6 +82,8 @@ public class Lfo extends Chugen
         _depth => _sinLfo.gain;
         _depth => _sqrLfo.gain;
         _depth => _triLfo.gain;
+        _depth => _shLfo.gain;
+        _depth => _sshLfo.gain;
         return _depth;
     }
 
@@ -92,17 +104,12 @@ public class Lfo extends Chugen
 
     fun void saw()
     {
-        mix(1.0, 0.0, 0.0, 0.0);
-    }
-
-    fun float sawMix()
-    {
-        return _sawMix;
+        mix(1.0, 0.0, 0.0, 0.0, 0.0, 0.0);
     }
 
     fun void sin()
     {
-        mix(0.0, 1.0, 0.0, 0.0);
+        mix(0.0, 1.0, 0.0, 0.0, 0.0, 0.0);
     }
 
     fun float sinMix()
@@ -112,7 +119,7 @@ public class Lfo extends Chugen
 
     fun void sqr()
     {
-        mix(0.0, 0.0, 1.0, 0.0);
+        mix(0.0, 0.0, 1.0, 0.0, 0.0, 0.0);
     }
 
     fun float sqrMix()
@@ -122,7 +129,7 @@ public class Lfo extends Chugen
 
     fun void tri()
     {
-        mix(0.0, 0.0, 0.0, 1.0);
+        mix(0.0, 0.0, 0.0, 1.0, 0.0, 0.0);
     }
 
     fun float triMix()
@@ -130,9 +137,29 @@ public class Lfo extends Chugen
         return _triMix;
     }
 
-    fun void mix(float saw, float sin, float sqr, float tri)
+    fun void sampleHold()
     {
-        if (saw + sin + sqr + tri > 1.0)
+        mix(0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    }
+
+    fun float sampleHoldMix()
+    {
+        return _shMix;
+    }
+
+    fun void smoothSampleHold()
+    {
+        mix(0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    }
+
+    fun float smoothSampleHoldMix()
+    {
+        return _sshMix;
+    }
+
+    fun void mix(float saw, float sin, float sqr, float tri, float sh, float ssh)
+    {
+        if (saw + sin + sqr + tri + sh + ssh > 1.0)
         {
             <<<"mix must not exceed 1.0">>>;
         }
@@ -142,11 +169,18 @@ public class Lfo extends Chugen
             sin => _sinMix;
             sqr => _sqrMix;
             tri => _triMix;
+            sh => _shMix;
+            ssh => _sshMix;
         }
     }
 
     fun float tick(float in)
     {
-        return _sawLfo.last() * _sawMix + _sinLfo.last() * _sinMix + _sqrLfo.last() * _sqrMix + _triLfo.last() * _triMix;
+        return _sawLfo.last() * _sawMix
+             + _sinLfo.last() * _sinMix
+             + _sqrLfo.last() * _sqrMix
+             + _triLfo.last() * _triMix
+             + _shLfo.last() * _shMix
+             + _sshLfo.last() * _sshMix;
     }
 }

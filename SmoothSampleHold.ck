@@ -64,11 +64,9 @@ class SlewStep extends Chugen
 
     fun float next(float f)
     {
-        <<<"before",_last,f,_next>>>;
         _next => _last;
         0 => _samples;
         f => _next;
-        <<<"after",_last,f,_next>>>;
         return f;
     }
 }

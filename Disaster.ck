@@ -514,9 +514,19 @@ public class Disaster extends Chubgraph
         _lfo.tri();
     }
 
-    fun void lfo(float saw, float sin, float sqr, float tri)
+    fun void sampleHoldLfo()
     {
-        _lfo.mix(saw, sin, sqr, tri);
+        _lfo.sampleHold();
+    }
+
+    fun void smoothSampleHoldLfo()
+    {
+        _lfo.smoothSampleHold();
+    }
+
+    fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
+    {
+        _lfo.mix(saw, sin, sqr, tri, sh, ssh);
     }
 
     fun void _tickAtSampleRate()
