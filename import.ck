@@ -317,6 +317,7 @@ Machine.add("DigitalDelay.ck");
 Machine.add("Disaster.ck");
 Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
+Machine.add("Flange.ck");
 Machine.add("Flutter.ck");
 Machine.add("Freeze.ck");
 Machine.add("Harmonizer.ck");
