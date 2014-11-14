@@ -277,6 +277,10 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 Machine.add("KorgMs20.ck");
 
+// noise stuff, package noise
+Machine.add("Pk3.ck");
+Machine.add("Pke.ck");
+
 // dist stuff, package dist
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
