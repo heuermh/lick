@@ -321,6 +321,7 @@ Machine.add("DigitalDelay.ck");
 Machine.add("Disaster.ck");
 Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
+Machine.add("Feedback.ck");
 Machine.add("Flange.ck");
 Machine.add("Flutter.ck");
 Machine.add("Freeze.ck");
@@ -394,6 +395,7 @@ Machine.add("TubeWarmth.ck");
 
 // SWH plugins, package ladspa.swh
 Machine.add("Swh.ck");
+Machine.add("FreqShift.ck");
 Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
 
