@@ -24,7 +24,7 @@
 //   http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#tth_sEc2.10
 public class FreqShift extends Swh
 {
-    prefix + "bodeShifter_1431.so" => ladspa.load;
+    prefix + "bode_shifter_1431.so" => ladspa.load;
     "bodeShifter" => ladspa.activate;
 
     fun float shift()
@@ -43,11 +43,5 @@ public class FreqShift extends Swh
     fun float latency()
     {
         return ladspa.get(1);
-    }
-
-    fun float latency(float f)
-    {
-        ladspa.set(1, f);
-        return f;
     }
 }
