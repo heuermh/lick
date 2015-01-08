@@ -277,6 +277,10 @@ Machine.add("RolandTr909.ck");
 Machine.add("BigMono.ck");
 Machine.add("KorgMs20.ck");
 
+// noise stuff, package noise
+Machine.add("Pk3.ck");
+Machine.add("Pke.ck");
+
 // dist stuff, package dist
 Machine.add("GainShaper.ck");
 Machine.add("WaveShaper.ck");
@@ -317,6 +321,7 @@ Machine.add("DigitalDelay.ck");
 Machine.add("Disaster.ck");
 Machine.add("Drop.ck");
 Machine.add("DualRect.ck");
+Machine.add("Feedback.ck");
 Machine.add("Flange.ck");
 Machine.add("Flutter.ck");
 Machine.add("Freeze.ck");
@@ -393,6 +398,7 @@ Machine.add("TubeWarmth.ck");
 
 // SWH plugins, package ladspa.swh
 Machine.add("Swh.ck");
+Machine.add("FreqShift.ck");
 Machine.add("PitchScale.ck");
 Machine.add("TapeDelay.ck");
 
