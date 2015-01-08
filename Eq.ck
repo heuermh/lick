@@ -145,6 +145,26 @@ public class Eq extends Caps
         return v;
     }
 
-    // fun void eq(float b0, float b1, ...
-    // fun void band(float b0, float b1, ...
+    fun void eq(float b31Hz,
+                float b63Hz,
+                float b125Hz,
+                float b250Hz,
+                float b500Hz,
+                float b1kHz,
+                float b2kHz,
+                float b4kHz,
+                float b8kHz,
+                float b16kHz)
+    {
+        b31Hz => band31Hz;
+        b63Hz => band63Hz;
+        b125Hz => band125Hz;
+        b250Hz => band250Hz;
+        b500Hz => band500Hz;
+        b1kHz => band1kHz;
+        b2kHz => band2kHz;
+        b4kHz => band4kHz;
+        b8kHz => band8kHz;
+        b16kHz => band16kHz;
+    }
 }

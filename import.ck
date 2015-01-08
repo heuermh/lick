@@ -380,6 +380,9 @@ Machine.add("StereoPlate.ck");
 Machine.add("ToneStack.ck");
 Machine.add("Princeton.ck");
 
+// depends on C*APS plugins
+Machine.add("Ring.ck");
+
 // CMT plugins, package ladspa.cmt
 Machine.add("Cmt.ck");
 Machine.add("Lofi.ck");

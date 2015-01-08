@@ -27,13 +27,45 @@
 
 class BucketBrigadeDelay extends Effect
 {
-    inlet => LPF pre => BucketBrigade bb => Gain boost => LPF post => wet;
-    post => Gain feedback => inlet;
 
-    1.2 => boost.gain;
+    /*
+
+       in --> pre ---> antialias ------> emphasis -----> bb ---> deemphasis ------> harmonic ---> post ---> out
+               ^        filter      lift 600Hz to 6kHz        cut 600Hz to 6kHz      filter        |
+               |     4kHz or 10kHz                                                4kHz or 10kHz    |
+               |                                                                                   |
+               +--- feedback <---------------------------------------------------------------------+
+
+     */
+    /*
+    inlet => Gain pre => LPF antialias => Gain emphasis => HPF emphasisHpf => LPF emphasisLpf => BucketBrigade bb;
+    bb => LPF deemphasisLpf => HPF deemphasisHpf => Gain deemphasis => LPF harmonic => Gain post => wet;
+    post => Gain feedback => inlet;
+    */
+
+    inlet => Gain pre => LPF antialias => BucketBrigade bb => LPF harmonic => Gain post => wet;
+    post => Gain feedback => pre;
+
+    1.0 => pre.gain;
+    4000.0 => antialias.freq;
+
+    /*
+    // would be nice to use a bandpass filter here
+    1.4 => emphasis.gain;
+    600.0 => emphasisHpf.freq;  // filter lower than 600Hz
+    6000.0 => emphasisLpf.freq; // filter higher than 6kHz
+    // 40% gain boost for freqs between 600Hz and 6kHz
+
+    // ...and a band reject filter here
+    600.0 => deemphasisLpf.freq;  // filter higher than 600Hz
+    6000.0 => deemphasisHpf.freq; // filter lower than 6kHz
+    1.4 => deemphasis.gain;
+    // 40% gain boost for freqs outside 600Hz to 6kHz
+    */
+
+    4000.0 => harmonic.freq;
+    1.0 => post.gain;
     0.8 => feedback.gain;
-    16000.0 => pre.freq;
-    8000.0 => post.freq;
 
     fun dur clockRate()
     {
