@@ -21,388 +21,385 @@
 */
 
 // functional interfaces or functors, package fn
-Machine.add("BinaryFunction.ck");
-Machine.add("BinaryPredicate.ck");
-Machine.add("BinaryProcedure.ck");
-Machine.add("FloatFloatFloatFloatFunction.ck");
-Machine.add("FloatFloatFloatFloatPredicate.ck");
-Machine.add("FloatFloatFloatFloatProcedure.ck");
-Machine.add("FloatFloatFloatFunction.ck");
-Machine.add("FloatFloatFloatPredicate.ck");
-Machine.add("FloatFloatFloatProcedure.ck");
-Machine.add("FloatFloatFunction.ck");
-Machine.add("FloatFloatPredicate.ck");
-Machine.add("FloatFloatProcedure.ck");
-Machine.add("FloatFunction.ck");
-Machine.add("FloatPredicate.ck");
-Machine.add("FloatProcedure.ck");
-Machine.add("Function.ck");
-Machine.add("IntFunction.ck");
-Machine.add("IntIntFunction.ck");
-Machine.add("IntIntIntFunction.ck");
-Machine.add("IntIntIntIntFunction.ck");
-Machine.add("IntIntIntIntPredicate.ck");
-Machine.add("IntIntIntIntProcedure.ck");
-Machine.add("IntIntIntPredicate.ck");
-Machine.add("IntIntIntProcedure.ck");
-Machine.add("IntIntFloatProcedure.ck");
-Machine.add("IntIntPredicate.ck");
-Machine.add("IntIntProcedure.ck");
-Machine.add("IntFloatProcedure.ck");
-Machine.add("IntFloatFloatProcedure.ck");
-Machine.add("IntPredicate.ck");
-Machine.add("IntProcedure.ck");
-Machine.add("Predicate.ck");
-Machine.add("Procedure.ck");
-Machine.add("QuaternaryFunction.ck");
-Machine.add("QuaternaryPredicate.ck");
-Machine.add("TernaryFunction.ck");
-Machine.add("TernaryPredicate.ck");
-Machine.add("TernaryProcedure.ck");
-Machine.add("UnaryFunction.ck");
-Machine.add("UnaryPredicate.ck");
-Machine.add("UnaryProcedure.ck");
+Machine.add("lick/fn/BinaryFunction.ck");
+Machine.add("lick/fn/BinaryPredicate.ck");
+Machine.add("lick/fn/BinaryProcedure.ck");
+Machine.add("lick/fn/FloatFloatFloatFloatFunction.ck");
+Machine.add("lick/fn/FloatFloatFloatFloatPredicate.ck");
+Machine.add("lick/fn/FloatFloatFloatFloatProcedure.ck");
+Machine.add("lick/fn/FloatFloatFloatFunction.ck");
+Machine.add("lick/fn/FloatFloatFloatPredicate.ck");
+Machine.add("lick/fn/FloatFloatFloatProcedure.ck");
+Machine.add("lick/fn/FloatFloatFunction.ck");
+Machine.add("lick/fn/FloatFloatPredicate.ck");
+Machine.add("lick/fn/FloatFloatProcedure.ck");
+Machine.add("lick/fn/FloatFunction.ck");
+Machine.add("lick/fn/FloatPredicate.ck");
+Machine.add("lick/fn/FloatProcedure.ck");
+Machine.add("lick/fn/Function.ck");
+Machine.add("lick/fn/IntFunction.ck");
+Machine.add("lick/fn/IntIntFunction.ck");
+Machine.add("lick/fn/IntIntIntFunction.ck");
+Machine.add("lick/fn/IntIntIntIntFunction.ck");
+Machine.add("lick/fn/IntIntIntIntPredicate.ck");
+Machine.add("lick/fn/IntIntIntIntProcedure.ck");
+Machine.add("lick/fn/IntIntIntPredicate.ck");
+Machine.add("lick/fn/IntIntIntProcedure.ck");
+Machine.add("lick/fn/IntIntFloatProcedure.ck");
+Machine.add("lick/fn/IntIntPredicate.ck");
+Machine.add("lick/fn/IntIntProcedure.ck");
+Machine.add("lick/fn/IntFloatProcedure.ck");
+Machine.add("lick/fn/IntFloatFloatProcedure.ck");
+Machine.add("lick/fn/IntPredicate.ck");
+Machine.add("lick/fn/IntProcedure.ck");
+Machine.add("lick/fn/Predicate.ck");
+Machine.add("lick/fn/Procedure.ck");
+Machine.add("lick/fn/QuaternaryFunction.ck");
+Machine.add("lick/fn/QuaternaryPredicate.ck");
+Machine.add("lick/fn/TernaryFunction.ck");
+Machine.add("lick/fn/TernaryPredicate.ck");
+Machine.add("lick/fn/TernaryProcedure.ck");
+Machine.add("lick/fn/UnaryFunction.ck");
+Machine.add("lick/fn/UnaryPredicate.ck");
+Machine.add("lick/fn/UnaryProcedure.ck");
 
 // functions
-Machine.add("Acos.ck");
-Machine.add("Asin.ck");
-Machine.add("Atan.ck");
-Machine.add("Ceil.ck");
-Machine.add("Cos.ck");
-Machine.add("Cosh.ck");
-Machine.add("Exp.ck");
-Machine.add("Floor.ck");
-Machine.add("Identity.ck");
-Machine.add("Inverse.ck");
-Machine.add("Log.ck");
-Machine.add("Log10.ck");
-Machine.add("Log2.ck");
-Machine.add("Negate.ck");
-Machine.add("Round.ck");
-Machine.add("Sin.ck");
-Machine.add("Sinh.ck");
-Machine.add("Sqrt.ck");
-Machine.add("Tan.ck");
-Machine.add("Tanh.ck");
-Machine.add("Trunc.ck");
-Machine.add("Uniform.ck");
+Machine.add("lick/fn/Acos.ck");
+Machine.add("lick/fn/Asin.ck");
+Machine.add("lick/fn/Atan.ck");
+Machine.add("lick/fn/Ceil.ck");
+Machine.add("lick/fn/Cos.ck");
+Machine.add("lick/fn/Cosh.ck");
+Machine.add("lick/fn/Exp.ck");
+Machine.add("lick/fn/Floor.ck");
+Machine.add("lick/fn/Identity.ck");
+Machine.add("lick/fn/Inverse.ck");
+Machine.add("lick/fn/Log.ck");
+Machine.add("lick/fn/Log10.ck");
+Machine.add("lick/fn/Log2.ck");
+Machine.add("lick/fn/Negate.ck");
+Machine.add("lick/fn/Round.ck");
+Machine.add("lick/fn/Sin.ck");
+Machine.add("lick/fn/Sinh.ck");
+Machine.add("lick/fn/Sqrt.ck");
+Machine.add("lick/fn/Tan.ck");
+Machine.add("lick/fn/Tanh.ck");
+Machine.add("lick/fn/Trunc.ck");
+Machine.add("lick/fn/Uniform.ck");
 
 // composite functions
-Machine.add("CompositeFloatFunction.ck");
-Machine.add("CompositeFunction.ck");
-Machine.add("CompositeIntFunction.ck");
+Machine.add("lick/fn/CompositeFloatFunction.ck");
+Machine.add("lick/fn/CompositeFunction.ck");
+Machine.add("lick/fn/CompositeIntFunction.ck");
 
 // function convenience classes
-Machine.add("Functions.ck");
-Machine.add("FloatFunctions.ck");
-Machine.add("IntFunctions.ck");
+Machine.add("lick/fn/Functions.ck");
+Machine.add("lick/fn/FloatFunctions.ck");
+Machine.add("lick/fn/IntFunctions.ck");
 
 // interpolation, package interp
-Machine.add("Interpolation.ck");
-Machine.add("BackIn.ck");
-Machine.add("BackOut.ck");
-Machine.add("BackInOut.ck");
-Machine.add("AbstractBounce.ck");
-Machine.add("BounceIn.ck");
-Machine.add("BounceOut.ck");
-Machine.add("BounceInOut.ck");
-Machine.add("CircularIn.ck");
-Machine.add("CircularInOut.ck");
-Machine.add("CircularOut.ck");
-Machine.add("CubicIn.ck");
-Machine.add("CubicInOut.ck");
-Machine.add("CubicOut.ck");
-Machine.add("ElasticIn.ck");
-Machine.add("ElasticOut.ck");
-Machine.add("ElasticInOut.ck");
-Machine.add("ExponentialIn.ck");
-Machine.add("ExponentialInOut.ck");
-Machine.add("ExponentialOut.ck");
-Machine.add("Linear.ck");
-Machine.add("QuadraticIn.ck");
-Machine.add("QuadraticInOut.ck");
-Machine.add("QuadraticOut.ck");
-Machine.add("QuarticIn.ck");
-Machine.add("QuarticInOut.ck");
-Machine.add("QuarticOut.ck");
-Machine.add("QuinticIn.ck");
-Machine.add("QuinticInOut.ck");
-Machine.add("QuinticOut.ck");
-Machine.add("Random.ck");
-Machine.add("GaussianRandom.ck");
-Machine.add("RandomFloor.ck");
-Machine.add("RandomThreshold.ck");
-Machine.add("SinusoidalIn.ck");
-Machine.add("SinusoidalInOut.ck");
-Machine.add("SinusoidalOut.ck");
-Machine.add("Interpolate.ck");
-Machine.add("Constrain.ck");
-Machine.add("Interpolations.ck");
+Machine.add("lick/interpolate/Interpolation.ck");
+Machine.add("lick/interpolate/BackIn.ck");
+Machine.add("lick/interpolate/BackOut.ck");
+Machine.add("lick/interpolate/BackInOut.ck");
+Machine.add("lick/interpolate/AbstractBounce.ck");
+Machine.add("lick/interpolate/BounceIn.ck");
+Machine.add("lick/interpolate/BounceOut.ck");
+Machine.add("lick/interpolate/BounceInOut.ck");
+Machine.add("lick/interpolate/CircularIn.ck");
+Machine.add("lick/interpolate/CircularInOut.ck");
+Machine.add("lick/interpolate/CircularOut.ck");
+Machine.add("lick/interpolate/CubicIn.ck");
+Machine.add("lick/interpolate/CubicInOut.ck");
+Machine.add("lick/interpolate/CubicOut.ck");
+Machine.add("lick/interpolate/ElasticIn.ck");
+Machine.add("lick/interpolate/ElasticOut.ck");
+Machine.add("lick/interpolate/ElasticInOut.ck");
+Machine.add("lick/interpolate/ExponentialIn.ck");
+Machine.add("lick/interpolate/ExponentialInOut.ck");
+Machine.add("lick/interpolate/ExponentialOut.ck");
+Machine.add("lick/interpolate/Linear.ck");
+Machine.add("lick/interpolate/QuadraticIn.ck");
+Machine.add("lick/interpolate/QuadraticInOut.ck");
+Machine.add("lick/interpolate/QuadraticOut.ck");
+Machine.add("lick/interpolate/QuarticIn.ck");
+Machine.add("lick/interpolate/QuarticInOut.ck");
+Machine.add("lick/interpolate/QuarticOut.ck");
+Machine.add("lick/interpolate/QuinticIn.ck");
+Machine.add("lick/interpolate/QuinticInOut.ck");
+Machine.add("lick/interpolate/QuinticOut.ck");
+Machine.add("lick/interpolate/Random.ck");
+Machine.add("lick/interpolate/GaussianRandom.ck");
+Machine.add("lick/interpolate/RandomFloor.ck");
+Machine.add("lick/interpolate/RandomThreshold.ck");
+Machine.add("lick/interpolate/SinusoidalIn.ck");
+Machine.add("lick/interpolate/SinusoidalInOut.ck");
+Machine.add("lick/interpolate/SinusoidalOut.ck");
+Machine.add("lick/interpolate/Interpolate.ck");
+Machine.add("lick/interpolate/Constrain.ck");
+Machine.add("lick/interpolate/Interpolations.ck");
 
 // duration providers, package duration
-Machine.add("DurProvider.ck");
-Machine.add("Humanize.ck");
-Machine.add("HumanizedDurProvider.ck");
-Machine.add("TimeSignature.ck");
+Machine.add("lick/duration/DurProvider.ck");
+Machine.add("lick/duration/Humanize.ck");
+Machine.add("lick/duration/HumanizedDurProvider.ck");
+Machine.add("lick/duration/TimeSignature.ck");
 
 // list, package collect
-Machine.add("Comparator.ck");
-Machine.add("Iterator.ck");
-Machine.add("List.ck");
-Machine.add("ListIterator.ck");
-Machine.add("ArrayList.ck");
+Machine.add("lick/collect/Comparator.ck");
+Machine.add("lick/collect/Iterator.ck");
+Machine.add("lick/collect/List.ck");
+Machine.add("lick/collect/ListIterator.ck");
+Machine.add("lick/collect/ArrayList.ck");
 
 // int list
-Machine.add("IntComparator.ck");
-Machine.add("IntIterator.ck");
-Machine.add("IntList.ck");
-Machine.add("IntListIterator.ck");
-Machine.add("IntArrayList.ck");
+Machine.add("lick/collect/IntComparator.ck");
+Machine.add("lick/collect/IntIterator.ck");
+Machine.add("lick/collect/IntList.ck");
+Machine.add("lick/collect/IntListIterator.ck");
+Machine.add("lick/collect/IntArrayList.ck");
 
 // float list
-Machine.add("FloatComparator.ck");
-Machine.add("FloatIterator.ck");
-Machine.add("FloatList.ck");
-Machine.add("FloatListIterator.ck");
-Machine.add("FloatArrayList.ck");
+Machine.add("lick/collect/FloatComparator.ck");
+Machine.add("lick/collect/FloatIterator.ck");
+Machine.add("lick/collect/FloatList.ck");
+Machine.add("lick/collect/FloatListIterator.ck");
+Machine.add("lick/collect/FloatArrayList.ck");
 
 // set
-Machine.add("Set.ck");
-Machine.add("ArraySet.ck");
+Machine.add("lick/collect/Set.ck");
+Machine.add("lick/collect/ArraySet.ck");
 
 // graphs
-Machine.add("Node.ck");
-Machine.add("Edge.ck");
-Machine.add("Graph.ck");
-Machine.add("Graphs.ck");
+Machine.add("lick/collect/Node.ck");
+Machine.add("lick/collect/Edge.ck");
+Machine.add("lick/collect/Graph.ck");
+Machine.add("lick/collect/Graphs.ck");
 
 // intervals, chords, scales, package interval
-Machine.add("Interval.ck");
-Machine.add("Intervals.ck");
-Machine.add("Chord.ck");
-Machine.add("Chords.ck");
-Machine.add("Scale.ck");
-Machine.add("Scales.ck");
+Machine.add("lick/interval/Interval.ck");
+Machine.add("lick/interval/Intervals.ck");
+Machine.add("lick/interval/Chord.ck");
+Machine.add("lick/interval/Chords.ck");
+Machine.add("lick/interval/Scale.ck");
+Machine.add("lick/interval/Scales.ck");
 
 // arp, pattern, package arp
-Machine.add("Arpeggiator.ck");
-Machine.add("Arpeggiators.ck");
-Machine.add("Pattern.ck");
-Machine.add("Patterns.ck");
-Machine.add("Warp.ck");
+Machine.add("lick/arp/Arpeggiator.ck");
+Machine.add("lick/arp/Arpeggiators.ck");
+Machine.add("lick/arp/Pattern.ck");
+Machine.add("lick/arp/Patterns.ck");
+Machine.add("lick/arp/Warp.ck");
 
 // midi tunings, package tuning
-Machine.add("MidiNote.ck");
-//Machine.add("MidiNotes.ck");
-Machine.add("Tuning.ck");
-Machine.add("Tunings.ck");
-Machine.add("SYTunings.ck");
+Machine.add("lick/tuning/MidiNote.ck");
+Machine.add("lick/tuning/Tuning.ck");
+Machine.add("lick/tuning/Tunings.ck");
+Machine.add("lick/tuning/SYTunings.ck");
 
 // unit test, package test
-Machine.add("Assert.ck");
+Machine.add("lick/test/Assert.ck");
 
 // simulators, package sim
-Machine.add("Animoog.ck");
-Machine.add("EchoPad.ck");
-Machine.add("Filtatron.ck");
-Machine.add("GarageBand.ck");
-Machine.add("Loopy.ck");
-Machine.add("MeeBlip.ck");
-Machine.add("SooperLooper.ck");
-Machine.add("TwoPots.ck");
+Machine.add("lick/sim/Animoog.ck");
+Machine.add("lick/sim/EchoPad.ck");
+Machine.add("lick/sim/Filtatron.ck");
+Machine.add("lick/sim/GarageBand.ck");
+Machine.add("lick/sim/Loopy.ck");
+Machine.add("lick/sim/MeeBlip.ck");
+Machine.add("lick/sim/SooperLooper.ck");
+Machine.add("lick/sim/TwoPots.ck");
 
 // midi, package midi
-Machine.add("ControlChangeMidiMsg.ck");
-Machine.add("NoteOffMidiMsg.ck");
-Machine.add("NoteOnMidiMsg.ck");
-Machine.add("AnimoogMidi.ck");
-Machine.add("EchoPadMidi.ck");
-Machine.add("GarageBandMidi.ck");
-Machine.add("FiltatronMidi.ck");
-Machine.add("LoopyMidi.ck");
-Machine.add("MeeBlipMidi.ck");
-Machine.add("EuclidMidi.ck");
-Machine.add("StompMidi.ck");
-Machine.add("TwoPotsMidi.ck");
-Machine.add("PodHd500Midi.ck");
+Machine.add("lick/midi/ControlChangeMidiMsg.ck");
+Machine.add("lick/midi/NoteOffMidiMsg.ck");
+Machine.add("lick/midi/NoteOnMidiMsg.ck");
+Machine.add("lick/midi/AnimoogMidi.ck");
+Machine.add("lick/midi/EchoPadMidi.ck");
+Machine.add("lick/midi/GarageBandMidi.ck");
+Machine.add("lick/midi/FiltatronMidi.ck");
+Machine.add("lick/midi/LoopyMidi.ck");
+Machine.add("lick/midi/MeeBlipMidi.ck");
+Machine.add("lick/midi/EuclidMidi.ck");
+Machine.add("lick/midi/StompMidi.ck");
+Machine.add("lick/midi/TwoPotsMidi.ck");
+Machine.add("lick/midi/PodHd500Midi.ck");
 
 // devices, package device
-Machine.add("Keyboard.ck");
-Machine.add("Joystick.ck");
-Machine.add("LogitechGamepadF310.ck");
-Machine.add("Monome.ck");
-Machine.add("Mouse.ck");
-Machine.add("NanoPad.ck");
-Machine.add("MAudioOzone.ck");
-Machine.add("AlesisQX25.ck");
-Machine.add("StompKeyboard.ck");
-Machine.add("PodHd500.ck");
+Machine.add("lick/device/Keyboard.ck");
+Machine.add("lick/device/Joystick.ck");
+Machine.add("lick/device/LogitechGamepadF310.ck");
+Machine.add("lick/device/Monome.ck");
+Machine.add("lick/device/Mouse.ck");
+Machine.add("lick/device/NanoPad.ck");
+Machine.add("lick/device/MAudioOzone.ck");
+Machine.add("lick/device/AlesisQX25.ck");
+Machine.add("lick/device/StompKeyboard.ck");
+Machine.add("lick/device/PodHd500.ck");
 
 // osc, package osc
-Machine.add("ControlOscServer.ck");
-Machine.add("EuclidOsc.ck");
-Machine.add("IanniXOsc.ck");
-Machine.add("LeapMotionOsc.ck");
-Machine.add("SooperLooperOsc.ck");
-Machine.add("TouchOscServer.ck");
+Machine.add("lick/osc/ControlOscServer.ck");
+Machine.add("lick/osc/EuclidOsc.ck");
+Machine.add("lick/osc/IanniXOsc.ck");
+Machine.add("lick/osc/LeapMotionOsc.ck");
+Machine.add("lick/osc/SooperLooperOsc.ck");
+Machine.add("lick/osc/TouchOscServer.ck");
 
 // samples, package sample
-Machine.add("Sample.ck");
-Machine.add("AdsrSample.ck");
-Machine.add("CompositeSample.ck");
-Machine.add("RandomSample.ck");
-Machine.add("PitchSensitiveSample.ck");
-Machine.add("VelocitySensitiveSample.ck");
-Machine.add("HandedSample.ck");
-Machine.add("Samples.ck");
+Machine.add("lick/sample/Sample.ck");
+Machine.add("lick/sample/AdsrSample.ck");
+Machine.add("lick/sample/CompositeSample.ck");
+Machine.add("lick/sample/RandomSample.ck");
+Machine.add("lick/sample/PitchSensitiveSample.ck");
+Machine.add("lick/sample/VelocitySensitiveSample.ck");
+Machine.add("lick/sample/HandedSample.ck");
+Machine.add("lick/sample/Samples.ck");
 
 // procedures, package loop
-Machine.add("Append.ck");
-Machine.add("Prepend.ck");
-Machine.add("Repeat.ck");
-Machine.add("Sleep.ck");
-Machine.add("Loop.ck");
-Machine.add("Loops.ck");
-Machine.add("LoopBuilder.ck");
+Machine.add("lick/loop/Append.ck");
+Machine.add("lick/loop/Prepend.ck");
+Machine.add("lick/loop/Repeat.ck");
+Machine.add("lick/loop/Sleep.ck");
+Machine.add("lick/loop/Loop.ck");
+Machine.add("lick/loop/Loops.ck");
+Machine.add("lick/loop/LoopBuilder.ck");
 
-// sample-based drum machines, package sample.drum
-Machine.add("AkaiMpc60.ck");
-Machine.add("EmuDrumulator.ck");
-Machine.add("OberheimDmx.ck");
-Machine.add("RolandCr78.ck");
-Machine.add("RolandTr66.ck");
-Machine.add("RolandTr606.ck");
-Machine.add("RolandTr808.ck");
-Machine.add("RolandTr909.ck");
-Machine.add("BigMono.ck");
-Machine.add("KorgMs20.ck");
+// sample-based drum machines, package drum
+Machine.add("lick/drum/AkaiMpc60.ck");
+Machine.add("lick/drum/EmuDrumulator.ck");
+Machine.add("lick/drum/OberheimDmx.ck");
+Machine.add("lick/drum/RolandCr78.ck");
+Machine.add("lick/drum/RolandTr66.ck");
+Machine.add("lick/drum/RolandTr606.ck");
+Machine.add("lick/drum/RolandTr808.ck");
+Machine.add("lick/drum/RolandTr909.ck");
+Machine.add("lick/drum/BigMono.ck");
+Machine.add("lick/drum/KorgMs20.ck");
 
 // noise stuff, package noise
-Machine.add("Pk3.ck");
-Machine.add("Pke.ck");
+Machine.add("lick/noise/Pk3.ck");
+Machine.add("lick/noise/Pke.ck");
 
 // dist stuff, package dist
-Machine.add("GainShaper.ck");
-Machine.add("WaveShaper.ck");
-Machine.add("BucketBrigade.ck");
-Machine.add("Clip.ck");
-Machine.add("Dist.ck");
-Machine.add("AtanDist.ck");
-Machine.add("TanhDist.ck");
-Machine.add("RibbonDist.ck");
-Machine.add("FrostburnDist.ck");
-Machine.add("KijjazDist.ck");
-Machine.add("KijjazDist2.ck");
-Machine.add("KijjazDist3.ck");
-Machine.add("KijjazDist4.ck");
+Machine.add("lick/dist/GainShaper.ck");
+Machine.add("lick/dist/WaveShaper.ck");
+Machine.add("lick/dist/BucketBrigade.ck");
+Machine.add("lick/dist/Clip.ck");
+Machine.add("lick/dist/Dist.ck");
+Machine.add("lick/dist/AtanDist.ck");
+Machine.add("lick/dist/TanhDist.ck");
+Machine.add("lick/dist/RibbonDist.ck");
+Machine.add("lick/dist/FrostburnDist.ck");
+Machine.add("lick/dist/KijjazDist.ck");
+Machine.add("lick/dist/KijjazDist2.ck");
+Machine.add("lick/dist/KijjazDist3.ck");
+Machine.add("lick/dist/KijjazDist4.ck");
 
 // cv stuff, package module
-Machine.add("Module.ck");
-Machine.add("Module2.ck");
-Machine.add("Module3.ck");
-Machine.add("Module4.ck");
-Machine.add("Module5.ck");
-Machine.add("Module6.ck");
-Machine.add("Module7.ck");
-Machine.add("Module8.ck");
+Machine.add("lick/module/Module.ck");
+Machine.add("lick/module/Module2.ck");
+Machine.add("lick/module/Module3.ck");
+Machine.add("lick/module/Module4.ck");
+Machine.add("lick/module/Module5.ck");
+Machine.add("lick/module/Module6.ck");
+Machine.add("lick/module/Module7.ck");
+Machine.add("lick/module/Module8.ck");
 
-Machine.add("SampleHold.ck");
-Machine.add("SlewStep.ck");
-Machine.add("SmoothSampleHold.ck");
-Machine.add("Lfo.ck");
+// lfo stuff, package lfo
+Machine.add("lick/lfo/SampleHold.ck");
+Machine.add("lick/lfo/SlewStep.ck");
+Machine.add("lick/lfo/SmoothSampleHold.ck");
+Machine.add("lick/lfo/Lfo.ck");
 
 // effects, package effect
-Machine.add("Effect.ck");
-Machine.add("AnalogDelay.ck");
-Machine.add("CrossOver2.ck");
-Machine.add("CrossOver3.ck");
-Machine.add("CryBaby.ck");
-Machine.add("DigitalDelay.ck");
-Machine.add("Disaster.ck");
-Machine.add("Drop.ck");
-Machine.add("DualRect.ck");
-Machine.add("Feedback.ck");
-Machine.add("Flange.ck");
-Machine.add("Flutter.ck");
-Machine.add("Freeze.ck");
-Machine.add("Harmonizer.ck");
-Machine.add("Harmonizers.ck");
-Machine.add("Mesmerizer.ck");
-Machine.add("Raise.ck");
-Machine.add("TimeModulator.ck");
-Machine.add("Thicken.ck");
-Machine.add("Tremolo.ck");
+Machine.add("lick/effect/Effect.ck");
+Machine.add("lick/effect/AnalogDelay.ck");
+Machine.add("lick/effect/CrossOver2.ck");
+Machine.add("lick/effect/CrossOver3.ck");
+Machine.add("lick/effect/Crush.ck");
+Machine.add("lick/effect/CryBaby.ck");
+Machine.add("lick/effect/DigitalDelay.ck");
+Machine.add("lick/effect/Drop.ck");
+Machine.add("lick/effect/DualRect.ck");
+Machine.add("lick/effect/Feedback.ck");
+Machine.add("lick/effect/Flange.ck");
+Machine.add("lick/effect/Flutter.ck");
+Machine.add("lick/effect/Freeze.ck");
+Machine.add("lick/effect/Harmonizer.ck");
+Machine.add("lick/effect/Harmonizers.ck");
+Machine.add("lick/effect/Mesmerizer.ck");
+Machine.add("lick/effect/Raise.ck");
+Machine.add("lick/effect/TimeModulator.ck");
+Machine.add("lick/effect/Thicken.ck");
+Machine.add("lick/effect/Tremolo.ck");
 
-// delay stuff, package delay (or effect)
-Machine.add("SinTrem.ck");
-Machine.add("SqrTrem.ck");
-Machine.add("TriTrem.ck");
-Machine.add("Trem.ck");
-Machine.add("MonoDelay.ck");
-Machine.add("StereoDelay.ck");
-Machine.add("FeedbackMachine.ck");
-Machine.add("FeedbackMachines.ck");
-Machine.add("StereoFeedbackMachine.ck");
-Machine.add("StereoFeedbackMachines.ck");
-Machine.add("Smear.ck");
-Machine.add("ScaleSmear.ck");
-Machine.add("Swirl.ck");
+// delay stuff, package delay
+Machine.add("lick/delay/SinTrem.ck");
+Machine.add("lick/delay/SqrTrem.ck");
+Machine.add("lick/delay/TriTrem.ck");
+Machine.add("lick/delay/Trem.ck");
+Machine.add("lick/delay/MonoDelay.ck");
+Machine.add("lick/delay/StereoDelay.ck");
+Machine.add("lick/delay/FeedbackMachine.ck");
+Machine.add("lick/delay/FeedbackMachines.ck");
+Machine.add("lick/delay/StereoFeedbackMachine.ck");
+Machine.add("lick/delay/StereoFeedbackMachines.ck");
+Machine.add("lick/delay/Smear.ck");
+Machine.add("lick/delay/ScaleSmear.ck");
+Machine.add("lick/delay/Swirl.ck");
 
 // synth/osc, package synth
-Machine.add("CircleRamp.ck");
-Machine.add("SawRamp.ck");
-Machine.add("SubGen.ck");
-Machine.add("SeptSubGen.ck");
-Machine.add("VoiceOfSaturn.ck");
-// Machine.add("DroneLab.ck");
+Machine.add("lick/synth/CircleRamp.ck");
+Machine.add("lick/synth/SawRamp.ck");
+Machine.add("lick/synth/SubGen.ck");
+Machine.add("lick/synth/SeptSubGen.ck");
+Machine.add("lick/synth/VoiceOfSaturn.ck");
 
-// depends on default chugins, package effect
-Machine.add("Crush.ck");
+// depends on jwmatthys' chugins, package jwmatthys
+Machine.add("lick/jwmatthys/Disaster.ck");
+Machine.add("lick/jwmatthys/Expo.ck");
+Machine.add("lick/jwmatthys/PitchFollower.ck");
+Machine.add("lick/jwmatthys/SigmuFollower.ck");
+Machine.add("lick/jwmatthys/SigmuGainFollower.ck");
+Machine.add("lick/jwmatthys/SigmuPitchFollower.ck");
+Machine.add("lick/jwmatthys/Spekt.ck");
 
-// package effect.jwmatthys
-Machine.add("Expo.ck");
-Machine.add("PitchFollower.ck");
-Machine.add("SigmuFollower.ck");
-Machine.add("SigmuGainFollower.ck");
-Machine.add("SigmuPitchFollower.ck");
-Machine.add("Spekt.ck");
-
-// depends on LADSPA chugin, package ladspa
-Machine.add("Ladspa.ck");
+// depends on jwmatthys' LADSPA chugin, package ladspa
+Machine.add("lick/ladspa/Ladspa.ck");
 
 // C*APS plugins, package ladspa.caps
-Machine.add("Caps.ck");
-Machine.add("Amp.ck");
-Machine.add("Cabinet.ck");
-Machine.add("Eq.ck");
-Machine.add("NoiseGate.ck");
-Machine.add("ParametricEq.ck");
-Machine.add("Plate.ck");
-Machine.add("Saturate.ck");
-Machine.add("Scape.ck");
-Machine.add("StereoEq.ck");
-Machine.add("StereoPlate.ck");
-Machine.add("ToneStack.ck");
-Machine.add("Princeton.ck");
+Machine.add("lick/ladspa/caps/Caps.ck");
+Machine.add("lick/ladspa/caps/Amp.ck");
+Machine.add("lick/ladspa/caps/Cabinet.ck");
+Machine.add("lick/ladspa/caps/Eq.ck");
+Machine.add("lick/ladspa/caps/NoiseGate.ck");
+Machine.add("lick/ladspa/caps/ParametricEq.ck");
+Machine.add("lick/ladspa/caps/Plate.ck");
+Machine.add("lick/ladspa/caps/Saturate.ck");
+Machine.add("lick/ladspa/caps/Scape.ck");
+Machine.add("lick/ladspa/caps/StereoEq.ck");
+Machine.add("lick/ladspa/caps/StereoPlate.ck");
+Machine.add("lick/ladspa/caps/ToneStack.ck");
 
-// depends on C*APS plugins
-Machine.add("Ring.ck");
+// depends on C*APS plugins, package ladspa.caps
+Machine.add("lick/ladspa/caps/Princeton.ck");
+Machine.add("lick/ladspa/caps/Ring.ck");
 
 // CMT plugins, package ladspa.cmt
-Machine.add("Cmt.ck");
-Machine.add("Lofi.ck");
+Machine.add("lick/ladspa/cmt/Cmt.ck");
+Machine.add("lick/ladspa/cmt/Lofi.ck");
 
 // TAP-plugins, package ladspa.tap
-Machine.add("Tap.ck");
-Machine.add("TubeWarmth.ck");
+Machine.add("lick/ladspa/tap/Tap.ck");
+Machine.add("lick/ladspa/tap/TubeWarmth.ck");
 
 // SWH plugins, package ladspa.swh
-Machine.add("Swh.ck");
-Machine.add("FreqShift.ck");
-Machine.add("PitchScale.ck");
-Machine.add("TapeDelay.ck");
+Machine.add("lick/ladspa/swh/Swh.ck");
+Machine.add("lick/ladspa/swh/FreqShift.ck");
+Machine.add("lick/ladspa/swh/PitchScale.ck");
+Machine.add("lick/ladspa/swh/TapeDelay.ck");
 
 // RubberBand plugins, package ladspa.rubberband
-Machine.add("RubberBand.ck");
+Machine.add("lick/ladspa/rubberband/RubberBand.ck");
 
 <<<"LiCK imported.">>>;
