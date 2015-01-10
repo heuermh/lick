@@ -314,6 +314,7 @@ Machine.add("lick/lfo/Lfo.ck");
 // effects, package effect
 Machine.add("lick/effect/Effect.ck");
 Machine.add("lick/effect/AnalogDelay.ck");
+Machine.add("lick/effect/Cooper.ck");
 Machine.add("lick/effect/CrossOver2.ck");
 Machine.add("lick/effect/CrossOver3.ck");
 Machine.add("lick/effect/Crush.ck");
