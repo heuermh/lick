@@ -20,40 +20,28 @@
 
 */
 
-adc => NoiseGate noiseGate => Tremolo tremolo => AnalogDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
+Folder2 f => dac;
 
--38.0 => noiseGate.open;
--55.0 => noiseGate.close;
-"imperial" => noiseGate.mainsName;
+0.8 => f.gain;
+110.0 => f.freq;
 
-4.0 => tremolo.rate;
-0.9 => tremolo.depth;
-tremolo.lfo(0.0, 0.6, 0.1, 0.3);
-
-0.2 => delay.mix;
-0.4 => delay.feedback;
-400::ms => delay.max;
-400::ms => delay.delay;
-
-1.0 => amp.bass;
-0.1 => amp.mid;
-0.5 => amp.treble;
-
-0.7 => amp.drive;
-0.1 => amp.bright;
-0.6 => amp.power;
-
-"8x" => amp.overName;
-"stanford" => amp.tonestackName;
-
-"twin A" => cabinet.modelName;
-
-0.9 => gverb.dry;
-0.02 => gverb.early;
-0.07 => gverb.tail;
-30.0 => gverb.roomsize;
-
+<<<"ready">>>;
 while (true)
 {
-    1::minute => now;
+    800::ms => now;
+    for (0.0 => float a; a < 1.6; )
+    {
+        <<<"a", a>>>;//, "_i", f._i, "last", f.last()>>>;
+        a => f.a;
+        40::ms => now;
+        a + 0.01 => a;
+    }
+    100::ms => now;
+    for (1.6 => float a; a > 0.0; )
+    {
+        <<<"a", a>>>;//, "_i", f._i, "last", f.last()>>>;
+        a => f.a;
+        40::ms => now;
+        a - 0.01 => a;
+    }
 }

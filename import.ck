@@ -352,6 +352,8 @@ Machine.add("lick/delay/Swirl.ck");
 
 // synth/osc, package synth
 Machine.add("lick/synth/CircleRamp.ck");
+Machine.add("lick/synth/Folder.ck");
+Machine.add("lick/synth/Folder2.ck");
 Machine.add("lick/synth/SawRamp.ck");
 Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");
