@@ -20,6 +20,7 @@
 
 */
 
+// should perhaps be called SigmuEnvelopeFollower?
 public class SigmuGainFollower extends Chubgraph
 {
     Sigmund sigmu;

@@ -176,6 +176,10 @@ Machine.add("lick/collect/Edge.ck");
 Machine.add("lick/collect/Graph.ck");
 Machine.add("lick/collect/Graphs.ck");
 
+// analysis
+Machine.add("lick/analysis/EnvelopeFollower.ck");
+Machine.add("lick/analysis/EnvelopeTrigger.ck");
+
 // intervals, chords, scales, package interval
 Machine.add("lick/interval/Interval.ck");
 Machine.add("lick/interval/Intervals.ck");
@@ -314,6 +318,7 @@ Machine.add("lick/lfo/Lfo.ck");
 // effects, package effect
 Machine.add("lick/effect/Effect.ck");
 Machine.add("lick/effect/AnalogDelay.ck");
+Machine.add("lick/effect/Chew.ck");
 Machine.add("lick/effect/Cooper.ck");
 Machine.add("lick/effect/CrossOver2.ck");
 Machine.add("lick/effect/CrossOver3.ck");
