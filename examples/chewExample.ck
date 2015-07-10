@@ -35,8 +35,8 @@ sin => Chew chew => dac;
 0.1 => float cutoff;
 for (0 => int i; i < 4; i++)
 {
-    cutoff => chew.top;
-    cutoff => chew.bottom;
+    cutoff => chew.topDepth;
+    cutoff => chew.bottomDepth;
     <<<cutoff>>>;
 
     440.0 => float freq;
@@ -44,8 +44,8 @@ for (0 => int i; i < 4; i++)
     {
         250::ms => now;    
         freq * 1.05 => freq;
-        freq => chew.topFreq;
-        freq => chew.bottomFreq;
+        freq => chew.topRate;
+        freq => chew.bottomRate;
         <<<"  ",freq>>>;
     }
     cutoff * 2 => cutoff;

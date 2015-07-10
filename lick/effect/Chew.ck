@@ -26,10 +26,10 @@ class ChewFunction extends FloatFunction
 
     fun float evaluate(float in)
     {
-        1.0 - chew.top() => float cutoff0;
-        1.0 - chew.top()/2.0 => float dc0;
-        -1.0 + chew.bottom() => float cutoff1;
-        -1.0 + chew.bottom()/2.0 => float dc1;
+        1.0 - chew.topDepth() => float cutoff0;
+        1.0 - chew.topDepth()/2.0 => float dc0;
+        -1.0 + chew.bottomDepth() => float cutoff1;
+        -1.0 + chew.bottomDepth()/2.0 => float dc1;
 
         if (in > cutoff0)
         {
@@ -64,46 +64,46 @@ public class Chew extends Effect
     }
 
 
-    fun float top()
+    fun float topDepth()
     {
         return _lfo0.depth();
     }
 
-    fun float top(float f)
+    fun float topDepth(float f)
     {
         f => _lfo0.depth;
         return f;
     }
 
-    fun float topFreq()
+    fun float topRate()
     {
         return _lfo0.rate();
     }
 
-    fun float topFreq(float f)
+    fun float topRate(float f)
     {
         f => _lfo0.rate;
         return f;
     }
 
 
-    fun float bottom()
+    fun float bottomDepth()
     {
         return _lfo1.depth();
     }
 
-    fun float bottom(float f)
+    fun float bottomDepth(float f)
     {
         f => _lfo1.depth;
         return f;
     }
 
-    fun float bottomFreq()
+    fun float bottomRate()
     {
         return _lfo1.rate();
     }
 
-    fun float bottomFreq(float f)
+    fun float bottomRate(float f)
     {
         f => _lfo1.rate;
         return f;
@@ -115,21 +115,21 @@ public class Chew extends Effect
         return chew;
     }
 
-    fun static Chew create(float top, float bottom)
+    fun static Chew create(float topDepth, float bottomDepth)
     {
         Chew chew;
-        top => chew.top;
-        bottom => chew.bottom;
+        topDepth => chew.topDepth;
+        bottomDepth => chew.bottomDepth;
         return chew;
     }
 
-    fun static Chew create(float top, float topFreq, float bottom, float bottomFreq)
+    fun static Chew create(float topDepth, float topRate, float bottomDepth, float bottomRate)
     {
         Chew chew;
-        top => chew.top;
-        topFreq => chew.topFreq;
-        bottom => chew.bottom;
-        bottomFreq => chew.bottomFreq;
+        topDepth => chew.topDepth;
+        topRate => chew.topRate;
+        bottomDepth => chew.bottomDepth;
+        bottomRate => chew.bottomRate;
         return chew;
     }
 }
