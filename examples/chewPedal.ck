@@ -23,7 +23,7 @@
 Chew chew;
 
 chew.stop();
-0.8 => chew.mix;
+1.0 => chew.mix;
 0.1 => chew.topDepth;
 0.1 => chew.bottomDepth;
 440.0 => chew.topRate;

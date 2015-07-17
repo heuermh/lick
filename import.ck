@@ -317,6 +317,7 @@ Machine.add("lick/lfo/Lfo.ck");
 
 // effects, package effect
 Machine.add("lick/effect/Effect.ck");
+Machine.add("lick/effect/AdsrTremolo.ck");
 Machine.add("lick/effect/AnalogDelay.ck");
 Machine.add("lick/effect/Chew.ck");
 Machine.add("lick/effect/Cooper.ck");
@@ -327,6 +328,7 @@ Machine.add("lick/effect/CryBaby.ck");
 Machine.add("lick/effect/DigitalDelay.ck");
 Machine.add("lick/effect/Drop.ck");
 Machine.add("lick/effect/DualRect.ck");
+Machine.add("lick/effect/EnvelopeTremolo.ck");
 Machine.add("lick/effect/Feedback.ck");
 Machine.add("lick/effect/Flange.ck");
 Machine.add("lick/effect/Flutter.ck");
