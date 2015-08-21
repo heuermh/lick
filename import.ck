@@ -341,6 +341,7 @@ Machine.add("lick/effect/Solstice.ck");
 Machine.add("lick/effect/TimeModulator.ck");
 Machine.add("lick/effect/Thicken.ck");
 Machine.add("lick/effect/Tremolo.ck");
+Machine.add("lick/effect/Currant.ck");
 
 // delay stuff, package delay
 Machine.add("lick/delay/SinTrem.ck");
