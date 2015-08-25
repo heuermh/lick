@@ -336,11 +336,13 @@ Machine.add("lick/effect/Freeze.ck");
 Machine.add("lick/effect/Harmonizer.ck");
 Machine.add("lick/effect/Harmonizers.ck");
 Machine.add("lick/effect/Mesmerizer.ck");
+Machine.add("lick/effect/Overcome.ck");
 Machine.add("lick/effect/Raise.ck");
 Machine.add("lick/effect/Solstice.ck");
 Machine.add("lick/effect/TimeModulator.ck");
 Machine.add("lick/effect/Thicken.ck");
 Machine.add("lick/effect/Tremolo.ck");
+Machine.add("lick/effect/Wolftone.ck");
 Machine.add("lick/effect/Currant.ck");
 
 // delay stuff, package delay
