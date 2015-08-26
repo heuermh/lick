@@ -40,7 +40,7 @@ class Phase extends Chugen
 
     fun void toggle()
     {
-        if (_phase)
+        if (_phase == IN)
         {
             OUT => _phase;
         }
@@ -52,7 +52,7 @@ class Phase extends Chugen
 
     fun float tick(float in)
     {
-        if (_phase)
+        if (_phase == IN)
         {
             return in;
         }
@@ -74,7 +74,7 @@ public class Wolftone extends Effect
 
     {
         2000::ms => _delay.max;
-        20::ms => _delay.delay;
+        18::ms => _delay.delay;
         1.0 => _pitchShift.mix;
         _interval.evaluate(1.0) => _pitchShift.shift;
     }

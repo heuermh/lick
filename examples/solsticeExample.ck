@@ -23,6 +23,8 @@
 adc => Solstice solstice => dac;
 
 0.8 => solstice.mix;
+0.2 => solstice.feedback1;
+0.4 => solstice.feedback2;
 
 <<<"ready">>>;
 1::minute => now;

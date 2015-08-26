@@ -43,7 +43,7 @@ class TogglePhase extends Procedure
 }
 
 Toggle toggle;
-Toggle togglePhase;
+TogglePhase togglePhase;
 
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
