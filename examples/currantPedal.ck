@@ -22,6 +22,8 @@
 
 adc => Currant currant => dac;
 
+1.0 => currant.mix;
+
 class Toggle extends Procedure
 {
     fun void run()
@@ -53,7 +55,7 @@ class IncreaseCutoff extends Procedure
 {
     fun void run()
     {
-        Constrain.constrainf(10.0, 100000.0, currant.cutoff() * 1.1) => currant.cutoff;
+        Constrain.constrainf(currant.cutoff() * 1.1, 10.0, 100000.0) => currant.cutoff;
         <<<"cutoff", currant.cutoff()>>>;
     }
 }
@@ -62,7 +64,7 @@ class DecreaseCutoff extends Procedure
 {
     fun void run()
     {
-        Constrain.constrainf(10.0, 100000.0, currant.cutoff() * 0.9) => currant.cutoff;
+        Constrain.constrainf(currant.cutoff() * 0.9, 10.0, 100000.0) => currant.cutoff;
         <<<"cutoff", currant.cutoff()>>>;
     }
 }

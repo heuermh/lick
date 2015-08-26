@@ -69,12 +69,12 @@ public class Currant extends Effect
     inlet => _bypass => wet;
 
     {
-        0.5 => _post.gain;
-        0.5 => _bypass.gain;
+        0.75 => _post.gain;
+        0.25 => _bypass.gain;
         500.0 => _hpf.freq;
 
-        sawLfo();
-        rate(0.2);
+        lfo(0.05, 0.6, 0.0, 0.1, 0.0, 0.25);
+        rate(3.2);
         depth(1.0);
     }
 
