@@ -33,39 +33,23 @@
 // Buy one here: http://www.parasitstudio.se/store/p7/Green_Currant_Tremolo_PCB.html
 //
 
-class F extends FloatFunction
-{
-    fun float evaluate(float value)
-    {
-        return -1.0 * value;
-    }
-}
-
-class InvertPhase extends WaveShaper
-{
-    {
-        F f;
-        f @=> shape;
-    }
-}
-
 public class Currant extends Effect
 {
     /*
 
-      inlet --> invertPhase --> hpf --> tremolo --> post --> wet
-        |                                                     ^
-        |                                                     |
-        +---------------------> bypass -----------------------+
+      inlet --> invert --> hpf --> tremolo --> post --> wet
+        |                                                ^
+        |                                                |
+        +----------------> bypass -----------------------+
 
     */
-    InvertPhase _invertPhase;
+    Invert _invert;
     HPF _hpf;
     Tremolo _tremolo;
     Gain _post;
     Gain _bypass;
 
-    inlet => _invertPhase => _hpf => _tremolo => _post => wet;
+    inlet => _invert => _hpf => _tremolo => _post => wet;
     inlet => _bypass => wet;
 
     {

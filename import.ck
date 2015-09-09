@@ -290,6 +290,9 @@ Machine.add("lick/dist/WaveShaper.ck");
 Machine.add("lick/dist/BucketBrigade.ck");
 Machine.add("lick/dist/Clip.ck");
 Machine.add("lick/dist/Dist.ck");
+Machine.add("lick/dist/FullRectifier.ck");
+Machine.add("lick/dist/Invert.ck");
+Machine.add("lick/dist/Offset.ck");
 Machine.add("lick/dist/AtanDist.ck");
 Machine.add("lick/dist/TanhDist.ck");
 Machine.add("lick/dist/RibbonDist.ck");
@@ -365,12 +368,14 @@ Machine.add("lick/delay/Swirl.ck");
 
 // synth/osc, package synth
 Machine.add("lick/synth/CircleRamp.ck");
+Machine.add("lick/synth/DoublePulse.ck");
 Machine.add("lick/synth/Folder.ck");
 Machine.add("lick/synth/Folder2.ck");
 Machine.add("lick/synth/SawRamp.ck");
 Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");
 Machine.add("lick/synth/VoiceOfSaturn.ck");
+Machine.add("lick/synth/Wrapper.ck");
 
 // depends on jwmatthys' chugins, package jwmatthys
 Machine.add("lick/jwmatthys/Disaster.ck");

@@ -19,6 +19,7 @@
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
 // Super-simple wah-wah pedal class
 // by Perry R. Cook, October 2013
 //     this one originally used Chuggraph extension, extended to use Effect

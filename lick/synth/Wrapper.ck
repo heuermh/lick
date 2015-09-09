@@ -20,28 +20,23 @@
 
 */
 
-//
-// inspired by BMC21. Full Wave Dual Rectifier
-// http://www.bartonmusicalcircuits.com/fwd/
-//
-public class DualRect extends Effect
+public class Wrapper extends Effect
 {
-    FullRectifier _rect0;
-    FullRectifier _rect1;
+    220.0 => float _freq;
+    DoublePulse _dp => Invert _invert => wet;
 
-    Gain cv0 => blackhole;
-    Gain cv1 => blackhole;
-    spork ~ _tickAtSampleRate();
-
-    inlet => _rect0 => _rect1 => wet;
-
-    fun void _tickAtSampleRate()
     {
-        while (true)
-        {
-            cv0.last() => _rect0.bias;
-            cv1.last() => _rect1.bias;
-            1::samp => now;
-        }
+        _freq => freq;
+    }
+
+    fun float freq()
+    {
+        return _dp.freq();
+    }
+
+    fun float freq(float f)
+    {
+        f => _dp.freq;
+        return f;
     }
 }

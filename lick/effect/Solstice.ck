@@ -24,6 +24,7 @@
 // similar to Solstice effect by user merlinb
 //   http://www.diystompboxes.com/smfforum/index.php?topic=97310.0
 //
+
 public class Solstice extends Effect
 {
     Gain _pre;

@@ -20,7 +20,10 @@
 
 */
 
+//
 // inspired by http://little-scale.blogspot.com/2013/08/hex-subsonic-waveform-m4l-device.html
+//
+
 public class SeptSubGen
 {
     20.0 => float _freq;

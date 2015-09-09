@@ -20,28 +20,16 @@
 
 */
 
-//
-// inspired by BMC21. Full Wave Dual Rectifier
-// http://www.bartonmusicalcircuits.com/fwd/
-//
-public class DualRect extends Effect
+public class Invert extends Chugen
 {
-    FullRectifier _rect0;
-    FullRectifier _rect1;
-
-    Gain cv0 => blackhole;
-    Gain cv1 => blackhole;
-    spork ~ _tickAtSampleRate();
-
-    inlet => _rect0 => _rect1 => wet;
-
-    fun void _tickAtSampleRate()
+    fun float tick(float f)
     {
-        while (true)
-        {
-            cv0.last() => _rect0.bias;
-            cv1.last() => _rect1.bias;
-            1::samp => now;
-        }
+        return -1.0 * f;
+    }
+
+    fun static Invert create()
+    {
+        Invert invert;
+        return invert;
     }
 }
