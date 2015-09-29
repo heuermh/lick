@@ -23,7 +23,7 @@
 public class Reverse extends Feedback
 {
     600::ms => dur _max;
-    200::ms => dur _delay;
+    600::ms => dur _delay;
     ReverseBuffer @ _reverse;
     ReverseBuffer.create(_max) @=> _reverse;
 
@@ -44,6 +44,7 @@ public class Reverse extends Feedback
     fun dur max(dur d)
     {
         d => _max;
+        // todo: might have to disconnect/reconnect here
         ReverseBuffer.create(d) @=> _reverse;
         return _max;
     }

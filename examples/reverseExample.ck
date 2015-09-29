@@ -23,11 +23,10 @@
 adc => Reverse reverse => dac;
 
 <<<"ready">>>;
-10::second => now;
-for (0 => int i; i < reverse._reverse._size; )
+for (1 => int i; i < 13; i++)
 {
-    <<<i, reverse._reverse._f[i]>>>;
-    i + reverse._reverse._stride => i;
+    i => reverse._reverse.stride;
+    <<<"stride", reverse._reverse.stride()>>>;
+    10::second => now;
 }
-30::second => now;
 <<<"done">>>;

@@ -25,7 +25,7 @@ public class Buffer extends Chugen
     1024 => int _size;
     float _f[_size];
     0 => int _index;
-    0 => int _stride;
+    1 => int _stride;
 
     fun int stride()
     {
@@ -44,10 +44,11 @@ public class Buffer extends Chugen
         in => _f[_index];
 
         _index + _stride => _index;
-        if (_index > _size)
+        if (_index >= _size)
         {
             0 => _index;
         }
+        return out;
     }
 
     fun static Buffer create(dur d)

@@ -24,8 +24,9 @@ public class ReverseBuffer extends Chugen
 {
     1024 => int _size;
     float _f[_size];
-    0 => int _index;
-    0 => int _stride;
+    0 => int _read;
+    0 => int _write;
+    1 => int _stride;
 
     fun int stride()
     {
@@ -40,14 +41,16 @@ public class ReverseBuffer extends Chugen
 
     fun float tick(float in)
     {
-        _f[_index] => float out;
-        in => _f[_index];
+        _size - 1 - _write => _read;
+        _f[_read] => float out;
+        in => _f[_write];
 
-        _index - _stride => _index;
-        if (_index < 0)
+        _write + _stride => _write;
+        if (_write >= _size)
         {
-            _size - 1 => _index;
+            0 => _write;
         }
+        return out;
     }
 
     fun static ReverseBuffer create(dur d)
@@ -61,7 +64,6 @@ public class ReverseBuffer extends Chugen
     {
         ReverseBuffer reverse;
         size => reverse._size;
-        size - 1 => reverse._index;
         float f[size];
         f @=> reverse._f;
         return reverse;
