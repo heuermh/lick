@@ -35,6 +35,12 @@
 
 public class Currant extends Effect
 {
+    Invert _invert;
+    HPF _hpf;
+    Tremolo _tremolo;
+    Gain _post;
+    Gain _bypass;
+
     /*
 
       inlet --> invert --> hpf --> tremolo --> post --> wet
@@ -43,11 +49,6 @@ public class Currant extends Effect
         +----------------> bypass -----------------------+
 
     */
-    Invert _invert;
-    HPF _hpf;
-    Tremolo _tremolo;
-    Gain _post;
-    Gain _bypass;
 
     inlet => _invert => _hpf => _tremolo => _post => wet;
     inlet => _bypass => wet;

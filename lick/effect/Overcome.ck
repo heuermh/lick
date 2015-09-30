@@ -157,4 +157,21 @@ public class Overcome extends Effect
             _env.rate() => now;
         }
     }
+
+    fun static Overcome create()
+    {
+        Overcome overcome;
+        return overcome;
+    }
+
+    fun static Overcome create(dur delay, float feedback, float trigger1, float trigger2)
+    {
+        Overcome overcome;
+        delay => overcome.max;
+        delay => overcome.delay;
+        feedback => overcome.feedback;
+        trigger1 => overcome.trigger1;
+        trigger2 => overcome.trigger2;
+        return overcome;
+    }
 }

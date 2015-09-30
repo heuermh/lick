@@ -27,4 +27,10 @@ public class Thicken extends Effect
     0.5 => mix;
     1::ms => delay.max;
     1::ms => delay.delay;
+
+    fun static Thicken create()
+    {
+        Thicken thicken;
+        return thicken;
+    }
 }

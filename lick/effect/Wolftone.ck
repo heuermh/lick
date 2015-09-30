@@ -20,49 +20,6 @@
 
 */
 
-// turn this class into an effect?
-class Phase extends Chugen
-{
-    0 => static int IN;
-    1 => static int OUT;
-    IN => int _phase;
-
-    fun int phase()
-    {
-        return _phase;
-    }
-
-    fun int phase(int i)
-    {
-        i => _phase;
-        return i;
-    }
-
-    fun void toggle()
-    {
-        if (_phase == IN)
-        {
-            OUT => _phase;
-        }
-        else
-        {
-            IN => _phase;
-        }
-    }
-
-    fun float tick(float in)
-    {
-        if (_phase == IN)
-        {
-            return in;
-        }
-        else
-        {
-            return -1.0 * in;
-        }
-    }
-}
-
 public class Wolftone extends Effect
 {
     Delay _delay;

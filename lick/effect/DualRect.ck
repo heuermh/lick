@@ -44,4 +44,12 @@ public class DualRect extends Effect
             1::samp => now;
         }
     }
+
+    fun static DualRect create(Lfo lfo0, Lfo lfo1)
+    {
+        DualRect dualRect;
+        lfo0 => dualRect.cv0;
+        lfo1 => dualRect.cv1;
+        return dualRect;
+    }
 }

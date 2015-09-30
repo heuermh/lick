@@ -39,23 +39,11 @@ public class Flutter extends Effect
     lpf => PitShift shift3 => wet;
 
     {
-        rate(0.1);
-        depth(0.1);
-        tone(0.1);
+        0.1 => rate;
+        0.1 => depth;
+        0.1 => tone;
 
         spork ~ _update();
-    }
-
-    fun void _update()
-    {
-        while (true)
-        {
-            10::ms => now;
-            Math.pow(2.0, 1.0 + lfo0.last()) => shift0.shift;
-            Math.pow(2.0, 1.0 + lfo1.last()) => shift1.shift;
-            Math.pow(2.0, 1.0 + lfo2.last()) => shift2.shift;
-            Math.pow(2.0, 1.0 + lfo3.last()) => shift3.shift;
-        }
     }
 
     fun float rate()
@@ -104,5 +92,32 @@ public class Flutter extends Effect
         f => _tone;
         Interpolate.linear(f, 0.0, 1.0, 440.0, 2640.0) => lpf.freq;
         return _tone;
+    }
+
+    fun void _update()
+    {
+        while (true)
+        {
+            10::ms => now;
+            Math.pow(2.0, 1.0 + lfo0.last()) => shift0.shift;
+            Math.pow(2.0, 1.0 + lfo1.last()) => shift1.shift;
+            Math.pow(2.0, 1.0 + lfo2.last()) => shift2.shift;
+            Math.pow(2.0, 1.0 + lfo3.last()) => shift3.shift;
+        }
+    }
+
+    fun static Flutter create()
+    {
+        Flutter flutter;
+        return flutter;
+    }
+
+    fun static Flutter create(float rate, float depth, float tone)
+    {
+        Flutter flutter;
+        rate => flutter.rate;
+        depth => flutter.depth;
+        tone => flutter.tone;
+        return flutter;
     }
 }

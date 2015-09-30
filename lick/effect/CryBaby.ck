@@ -58,4 +58,10 @@ public class CryBaby extends Effect {
         }            
 //        <<< wah.freq(), wah.Q() >>>;
     }
+
+    fun static CryBaby create()
+    {
+        CryBaby cryBaby;
+        return cryBaby;
+    }
 }

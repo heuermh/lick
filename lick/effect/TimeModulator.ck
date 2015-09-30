@@ -222,4 +222,19 @@ public class TimeModulator extends Effect
             _updateDelay(_d + (_lfo.last() * _d));
         }
     }
+
+    fun static TimeModulator create()
+    {
+        TimeModulator timeModulator;
+        return timeModulator;
+    }
+
+    fun static TimeModulator create(dur delay, float feedback)
+    {
+        TimeModulator timeModulator;
+        delay => timeModulator.max;
+        delay => timeModulator.delay;
+        feedback => timeModulator.feedback;
+        return timeModulator;
+    }
 }

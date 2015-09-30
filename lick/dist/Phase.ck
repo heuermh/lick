@@ -20,35 +20,61 @@
 
 */
 
-// wraps Bitcrusher chugin
-public class Crush extends Effect
+public class Phase extends Chugen
 {
-    Bitcrusher bc;
-    inlet => bc => wet;
+    0 => static int IN;
+    1 => static int OUT;
+    IN => int _phase;
 
-    fun int bits(int i)
+    fun int phase()
     {
-        return bc.bits(i);
+        return _phase;
     }
 
-    fun int bits()
+    fun int phase(int i)
     {
-        return bc.bits();
+        i => _phase;
+        return i;
     }
 
-    fun int downsample(int i)
+    fun int inPhase()
     {
-        return bc.downsampleFactor(i);
+        return (IN == _phase);
     }
 
-    fun int downsample()
+    fun int outOfPhase()
     {
-        return bc.downsampleFactor();
+        return (OUT == _phase);
     }
 
-    fun static Crush create()
+    fun void toggle()
     {
-        Crush crush;
-        return crush;
+        if (_phase == IN)
+        {
+            OUT => _phase;
+        }
+        else
+        {
+            IN => _phase;
+        }
+    }
+
+    fun float tick(float in)
+    {
+        if (_phase == IN)
+        {
+            return in;
+        }
+        else
+        {
+            return -1.0 * in;
+        }
+    }
+
+    fun static Phase create(int i)
+    {
+        Phase phase;
+        i => phase.phase;
+        return phase;
     }
 }

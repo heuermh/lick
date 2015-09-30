@@ -21,26 +21,24 @@
 */
 
 // analog-style delay with dist and filter
-public class AnalogDelay extends Effect
+public class AnalogDelay extends Feedback
 {
     Delay _delay;
-    Gain _pre;
-    Gain _post;
-    Gain _feedback;
     LPF _lpf;
     WaveShaper @ _dist;
 
-    0.2 => _feedback.gain;
-    20000.0 => _lpf.freq;
-    1.0 => _lpf.Q;
+    pre => _delay => post;
 
-    inlet => _pre => _delay;
-    _post => _feedback => _pre;
-    _post => wet;
+    {
+        0.2 => feedback;
+        20000.0 => cutoff;
+        1.0 => resonance;
+    }
 
+    // todo: does this need to be lazy or can @'d ugens be replaced at will?
     fun void _init()
     {
-        _delay => _dist => _lpf => _post;
+        feedbackOut => _dist => _lpf => feedbackIn;
     }
 
     fun dur delay()
@@ -61,16 +59,6 @@ public class AnalogDelay extends Effect
     fun dur max(dur d)
     {
         return _delay.max(d);
-    }
-
-    fun float feedback()
-    {
-        return _feedback.gain();
-    }
-
-    fun float feedback(float f)
-    {
-        return _feedback.gain(f);
     }
 
     fun float cutoff()
@@ -99,11 +87,47 @@ public class AnalogDelay extends Effect
         return create(dist);
     }
 
+    fun static AnalogDelay create(dur delay, float feedback)
+    {
+        Dist dist;
+        return create(dist, delay, feedback);
+    }
+
+    fun static AnalogDelay create(dur delay, float feedback, float cutoff, float resonance)
+    {
+        Dist dist;
+        return create(dist, delay, feedback, cutoff, resonance);
+    }
+
     fun static AnalogDelay create(WaveShaper ws)
     {
         AnalogDelay analogDelay;
         ws @=> analogDelay._dist;
         analogDelay._init();
+        return analogDelay;
+    }
+
+    fun static AnalogDelay create(WaveShaper ws, dur delay, float feedback)
+    {
+        AnalogDelay analogDelay;
+        ws @=> analogDelay._dist;
+        analogDelay._init();
+        delay => analogDelay.max;
+        delay => analogDelay.delay;
+        feedback => analogDelay.feedback;
+        return analogDelay;
+    }
+
+    fun static AnalogDelay create(WaveShaper ws, dur delay, float feedback, float cutoff, float resonance)
+    {
+        AnalogDelay analogDelay;
+        ws @=> analogDelay._dist;
+        analogDelay._init();
+        delay => analogDelay.max;
+        delay => analogDelay.delay;
+        feedback => analogDelay.feedback;
+        cutoff => analogDelay.cutoff;
+        resonance => analogDelay.resonance;
         return analogDelay;
     }
 }

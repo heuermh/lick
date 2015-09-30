@@ -20,17 +20,16 @@
 
 */
 
-public class DigitalDelay extends Effect
+public class DigitalDelay extends Feedback
 {
     Delay _delay;
-    Gain _pre;
-    Gain _feedback;
 
-    0.2 => _feedback.gain;
+    pre => _delay => post;
+    feedbackOut => feedbackIn;
 
-    inlet => _pre => _delay;
-    _delay => _feedback => _pre;
-    _delay => wet;
+    {
+        0.2 => feedback;
+    }
 
     fun dur delay()
     {
@@ -52,19 +51,35 @@ public class DigitalDelay extends Effect
         d => _delay.max;
     }
 
-    fun float feedback()
-    {
-        return _feedback.gain();
-    }
-
-    fun float feedback(float f)
-    {
-        f => _feedback.gain;
-    }
-
     fun static DigitalDelay create()
     {
         DigitalDelay delay;
         return delay;
+    }
+
+    fun static DigitalDelay create(dur delay)
+    {
+        DigitalDelay digitalDelay;
+        delay => digitalDelay.max;
+        delay => digitalDelay.delay;
+        return digitalDelay;
+    }
+
+    fun static DigitalDelay create(dur delay, float feedback)
+    {
+        DigitalDelay digitalDelay;
+        delay => digitalDelay.max;
+        delay => digitalDelay.delay;
+        feedback => digitalDelay.feedback;
+        return digitalDelay;
+    }
+
+    fun static DigitalDelay create(dur max, dur delay, float feedback)
+    {
+        DigitalDelay digitalDelay;
+        max => digitalDelay.max;
+        delay => digitalDelay.delay;
+        feedback => digitalDelay.feedback;
+        return digitalDelay;
     }
 }

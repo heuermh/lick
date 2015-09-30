@@ -20,68 +20,47 @@
 
 */
 
-// needs work ;)
-public class Vibrato extends Effect
-{ 
+// analog-style delay with modulated delay time
+public class ModulatedDelay extends AnalogDelay
+{
     Lfo _lfo;
-    DelayL _delay;
-
-    2.0 => float _rate;
-
-    _lfo => blackhole;
-    inlet => _delay => wet;
 
     {
-        _lfo.sin();
-        4.0 => _lfo.rate;
-        0.5 => _lfo.depth;
-
-        1::second => _delay.max;
-        1::second / _rate => _delay.delay;
+        1.0 => rate;
+        0.1 => depth;
+        sinLfo();
 
         spork ~ _tickAtSampleRate();
     }
 
     fun float rate()
     {
-        return _rate;
-    }
-
-    fun float rate(float f)
-    {
-        f => _rate;
-        1::second / _rate => _delay.delay;
-        return f;
-    }
-
-    fun float lfoRate()
-    {
         return _lfo.rate();
     }
 
-    fun float lfoRate(float f)
+    fun float rate(float f)
     {
         f => _lfo.rate;
         return f;
     }
 
-    fun float lfoDepth()
+    fun float depth()
     {
         return _lfo.depth();
     }
 
-    fun float lfoDepth(float f)
+    fun float depth(float f)
     {
         f => _lfo.depth;
         return f;
     }
 
-    fun float lfoPhase()
+    fun float phase()
     {
         return _lfo.phase();
     }
 
-    fun float lfoPhase(float f)
+    fun float phase(float f)
     {
         f => _lfo.phase;
         return f;
@@ -126,22 +105,23 @@ public class Vibrato extends Effect
     {
         while (true)
         {
-            _rate + ((_lfo.last() + 0.5) * _rate) => float v;
-            if (v > 0.0)
-            {
-                Constrain.constraind(1::second / v, 1::samp, 1::second) => _delay.delay;
-            }
-            else
-            {
-                1::samp => _delay.delay;
-            }
             1::samp => now;
+            _lfo.last() * delay() => delay;
         }
     }
 
-    fun static Vibrato create()
+    fun static ModulatedDelay create(WaveShaper ws, dur delay, float feedback, float cutoff, float resonance, float rate, float depth)
     {
-        Vibrato vibrato;
-        return vibrato;
+        ModulatedDelay modulatedDelay;
+        ws @=> modulatedDelay._dist;
+        modulatedDelay._init();
+        delay => modulatedDelay.max;
+        delay => modulatedDelay.delay;
+        feedback => modulatedDelay.feedback;
+        cutoff => modulatedDelay.cutoff;
+        resonance => modulatedDelay.resonance;
+        rate => modulatedDelay.rate;
+        depth => modulatedDelay.depth;
+        return modulatedDelay;
     }
 }

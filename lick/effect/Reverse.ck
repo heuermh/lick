@@ -81,4 +81,10 @@ public class Reverse extends Feedback
     {
         return _lpf.Q(f);
     }
+
+    fun static Reverse create()
+    {
+        Reverse reverse;
+        return reverse;
+    }
 }

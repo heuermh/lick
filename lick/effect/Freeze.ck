@@ -24,6 +24,7 @@
 // similar to Electro-Harmonix Freeze Sound Retainer
 //   buy one here http://www.ehx.com/products/freeze
 //
+
 public class Freeze extends Effect
 {
     8 => int _size;

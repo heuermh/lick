@@ -203,4 +203,10 @@ public class Mesmerizer extends Effect
     {
         return _phasorLfoDepth;
     }
+
+    fun static Mesmerizer create()
+    {
+        Mesmerizer mesmerizer;
+        return mesmerizer;
+    }
 }

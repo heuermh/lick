@@ -20,12 +20,11 @@
 
 */
 
-/*
+//
+// similar to Portal Mod CrossOver3 (also GPL)
+// https://github.com/portalmod/mod-utilities/tree/master/CrossOver3
+//
 
-  similar to Portal Mod CrossOver3 (also GPL)
-  https://github.com/portalmod/mod-utilities/tree/master/CrossOver3
-
-*/
 public class CrossOver3
 {
     Gain in;

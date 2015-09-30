@@ -113,4 +113,30 @@ public class APF extends Effect
         f => _reverseCoefficient.next;
         return f;
     }
+
+    fun static APF create()
+    {
+        APF apf;
+        return apf;
+    }
+
+    fun static APF create(dur delay, float coefficient)
+    {
+        APF apf;
+        delay => apf.max;
+        delay => apf.delay;
+        -1.0 * coefficient => apf.forwardCoefficient;
+        coefficient => apf.reverseCoefficient;
+        return apf;
+    }
+
+    fun static APF create(dur max, dur delay, float forwardCoefficient, float reverseCoefficient)
+    {
+        APF apf;
+        max => apf.max;
+        delay => apf.delay;
+        forwardCoefficient => apf.forwardCoefficient;
+        reverseCoefficient => apf.reverseCoefficient;
+        return apf;
+    }
 }
