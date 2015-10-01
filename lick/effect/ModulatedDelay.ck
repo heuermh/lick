@@ -106,7 +106,7 @@ public class ModulatedDelay extends AnalogDelay
         while (true)
         {
             1::samp => now;
-            _lfo.last() * delay() => delay;
+            delay() + _lfo.last() * delay() => delay;
         }
     }
 
