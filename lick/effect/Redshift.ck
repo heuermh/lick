@@ -20,17 +20,24 @@
 
 */
 
-public class Flange extends Effect
+public class Redshift extends Feedback
 {
     Lfo _lfo;
-    Delay _delay;
+    APF _apf1;
+    APF _apf2;
+    APF _apf3;
+    APF _apf4;
+    113::ms => dur _d1;
+    _d1 / 3 => dur _d2;
+    _d1 / 9 => dur _d3;
+    _d1 / 27 => dur _d4;
 
     {
-        inlet => _delay => wet;
+        pre => _apf1 => _apf2 => _apf3 => _apf4 => post;
+        feedbackOut => feedbackIn;
         _lfo => blackhole;
 
-        10::ms => _delay.max;
-        1::ms => _delay.delay;
+        0.05 => feedback;
 
         spork ~ _tickAtSampleRate();
     }
@@ -108,14 +115,16 @@ public class Flange extends Effect
         while (true)
         {
             1::samp => now;
-            Interpolate.linear(1.0 - _lfo.depth() + _lfo.last(), -1.0, 1.0, 1.0, 10.0) => float v;
-            1::ms * v => _delay.delay;
+            _d1 + (_lfo.last() * _d1) => _apf1.delay;
+            _d2 + (_lfo.last() * _d2) => _apf2.delay;
+            _d3 + (_lfo.last() * _d3) => _apf3.delay;
+            _d4 + (_lfo.last() * _d4) => _apf4.delay;
         }
     }
 
-    fun static Flange create()
+    fun static Redshift create()
     {
-        Flange flange;
-        return flange;
+        Redshift redshift;
+        return redshift;
     }
 }
