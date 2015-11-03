@@ -20,40 +20,36 @@
 
 */
 
-public class Lfo extends Chugen
+//
+// four out-of-phase LFOs, inspired by
+// Thomas Henry's Voltage Controlled Quadrature Function Generator
+//
+
+public class Quad
 {
-    SawOsc _sawLfo;
-    SinOsc _sinLfo;
-    SqrOsc _sqrLfo;
-    TriOsc _triLfo;
-    Hyper _hyperLfo;
-    SampleHold _shLfo;
-    SmoothSampleHold _sshLfo;
+    Lfo lfo1;
+    Lfo lfo2;
+    Lfo lfo3;
+    Lfo lfo4;
+    1.0 => float _rate;
+    0.8 => float _depth;
     0.0 => float _sawMix;
-    1.0 => float _sinMix;
+    0.0 => float _sinMix;
     0.0 => float _sqrMix;
-    0.0 => float _triMix;
+    1.0 => float _triMix;
     0.0 => float _hyperMix;
     0.0 => float _shMix;
     0.0 => float _sshMix;
-    1.0 => float _rate;
-    1.0 => float _depth;
-    1.0 => float _phase;
 
     {
-        _sawLfo => blackhole;
-        _sinLfo => blackhole;
-        _sqrLfo => blackhole;
-        _triLfo => blackhole;
-        _hyperLfo => blackhole;
-        Noise _n0 => _shLfo => blackhole;
-        Noise _n1 => _sshLfo => blackhole;
-
-        rate(_rate);
-        depth(_depth);
-        phase(_phase);
+        _rate => rate;
+        _depth => depth;
+        0.0 => lfo1.phase;
+        0.25 => lfo2.phase;
+        0.5 => lfo3.phase;
+        0.75 => lfo4.phase;
+        tri();
     }
-
 
     fun float rate()
     {
@@ -63,15 +59,11 @@ public class Lfo extends Chugen
     fun float rate(float f)
     {
         f => _rate;
-        _rate => _sawLfo.freq;
-        _rate => _sinLfo.freq;
-        _rate => _sqrLfo.freq;
-        _rate => _triLfo.freq;
-        _rate => _hyperLfo.rate;
-        _rate => _shLfo.rate;
-        _rate => _sshLfo.rate;
-        _sshLfo.hold()/10.0 => _sshLfo.slew;
-        return _rate;
+        f => lfo1.rate;
+        f => lfo2.rate;
+        f => lfo3.rate;
+        f => lfo4.rate;
+        return f;
     }
 
     fun float depth()
@@ -82,29 +74,10 @@ public class Lfo extends Chugen
     fun float depth(float f)
     {
         f => _depth;
-        _depth => _sawLfo.gain;
-        _depth => _sinLfo.gain;
-        _depth => _sqrLfo.gain;
-        _depth => _triLfo.gain;
-        _depth => _hyperLfo.gain;
-        _depth => _shLfo.gain;
-        _depth => _sshLfo.gain;
-        return _depth;
-    }
-
-    fun float phase()
-    {
-        return _phase;
-    }
-
-    fun float phase(float f)
-    {
-        f => _phase;
-        _phase => _sawLfo.phase;
-        _phase => _sinLfo.phase;
-        _phase => _sqrLfo.phase;
-        _phase => _triLfo.phase;
-        _phase => _hyperLfo.phase;
+        f => lfo1.gain;
+        f => lfo2.gain;
+        f => lfo3.gain;
+        f => lfo4.gain;
         return f;
     }
 
@@ -148,16 +121,6 @@ public class Lfo extends Chugen
         return _triMix;
     }
 
-    fun void hyper()
-    {
-        mix(0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0);
-    }
-
-    fun float hyperMix()
-    {
-        return _hyperMix;
-    }
-
     fun void sampleHold()
     {
         mix(0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
@@ -178,11 +141,6 @@ public class Lfo extends Chugen
         return _sshMix;
     }
 
-    fun void mix(float saw, float sin, float sqr, float tri, float sh, float ssh)
-    {
-        mix(saw, sin, sqr, tri, 0.0, sh, ssh);
-    }
-
     fun void mix(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
     {
         if (saw + sin + sqr + tri + hyper + sh + ssh > 1.0)
@@ -198,17 +156,25 @@ public class Lfo extends Chugen
             hyper => _hyperMix;
             sh => _shMix;
             ssh => _sshMix;
+
+            lfo1.mix(saw, sin, sqr, tri, hyper, sh, ssh);
+            lfo2.mix(saw, sin, sqr, tri, hyper, sh, ssh);
+            lfo3.mix(saw, sin, sqr, tri, hyper, sh, ssh);
+            lfo4.mix(saw, sin, sqr, tri, hyper, sh, ssh);
         }
     }
 
-    fun float tick(float in)
+    fun static Quad create()
     {
-        return _sawLfo.last() * _sawMix
-             + _sinLfo.last() * _sinMix
-             + _sqrLfo.last() * _sqrMix
-             + _triLfo.last() * _triMix
-             + _hyperLfo.last() * _hyperMix
-             + _shLfo.last() * _shMix
-             + _sshLfo.last() * _sshMix;
+        Quad quad;
+        return quad;
+    }
+
+    fun static Quad create(float rate, float depth)
+    {
+        Quad quad;
+        rate => quad.rate;
+        depth => quad.depth;
+        return quad;
     }
 }
