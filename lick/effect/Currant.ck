@@ -124,6 +124,11 @@ public class Currant extends Effect
         _tremolo.triLfo();
     }
 
+    fun void hyperLfo()
+    {
+        _tremolo.hyperLfo();
+    }
+
     fun void sampleHoldLfo()
     {
         _tremolo.sampleHoldLfo();
@@ -134,9 +139,15 @@ public class Currant extends Effect
         _tremolo.smoothSampleHoldLfo();
     }
 
+    // @deprecated
     fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
     {
-        _tremolo.lfo(saw, sin, sqr, tri, sh, ssh);
+        lfo(saw, sin, sqr, tri, 0.0, sh, ssh);
+    }
+
+    fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
+    {
+        _tremolo.lfo(saw, sin, sqr, tri, hyper, sh, ssh);
     }
 
     fun static Currant create()

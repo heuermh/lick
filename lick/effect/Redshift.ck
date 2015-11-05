@@ -95,6 +95,11 @@ public class Redshift extends Feedback
         _lfo.tri();
     }
 
+    fun void hyperLfo()
+    {
+        _lfo.hyper();
+    }
+
     fun void sampleHoldLfo()
     {
         _lfo.sampleHold();
@@ -105,9 +110,15 @@ public class Redshift extends Feedback
         _lfo.smoothSampleHold();
     }
 
+    // @deprecated
     fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
     {
-        _lfo.mix(saw, sin, sqr, tri, sh, ssh);
+        lfo(saw, sin, sqr, tri, 0.0, sh, ssh);
+    }
+
+    fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
+    {
+        _lfo.mix(saw, sin, sqr, tri, hyper, sh, ssh);
     }
 
     fun void _tickAtSampleRate()

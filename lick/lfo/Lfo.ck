@@ -178,6 +178,7 @@ public class Lfo extends Chugen
         return _sshMix;
     }
 
+    // @deprecated
     fun void mix(float saw, float sin, float sqr, float tri, float sh, float ssh)
     {
         mix(saw, sin, sqr, tri, 0.0, sh, ssh);

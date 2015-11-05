@@ -24,6 +24,7 @@
 // inspired by BMC21. Full Wave Dual Rectifier
 // http://www.bartonmusicalcircuits.com/fwd/
 //
+
 public class DualRect extends Effect
 {
     FullRectifier _rect0;
