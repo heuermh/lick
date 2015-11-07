@@ -27,17 +27,22 @@ public class Redshift extends Feedback
     APF _apf2;
     APF _apf3;
     APF _apf4;
+    LPF _lpf;
     113::ms => dur _d1;
     _d1 / 3 => dur _d2;
     _d1 / 9 => dur _d3;
     _d1 / 27 => dur _d4;
 
     {
-        pre => _apf1 => _apf2 => _apf3 => _apf4 => post;
+        pre => _apf1 => _apf2 => _apf3 => _apf4 => _lpf => post;
         feedbackOut => feedbackIn;
         _lfo => blackhole;
 
-        0.05 => feedback;
+        0.2 => rate;
+        0.08 => depth;
+        0.40 => feedback;
+        lfo(0.0, 0.8, 0.0, 0.0, 0.0, 0.2);
+        4000.0 => _lpf.freq;
 
         spork ~ _tickAtSampleRate();
     }
