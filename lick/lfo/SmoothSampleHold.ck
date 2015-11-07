@@ -82,10 +82,20 @@ public class SmoothSampleHold extends Chubgraph
 
     fun float freq()
     {
-        return 1::second / _hold;
+        return rate();
     }
 
     fun float freq(float f)
+    {
+        return rate(f);
+    }
+
+    fun float rate()
+    {
+        return 1::second / _hold;
+    }
+
+    fun float rate(float f)
     {
         1::second / f => _hold;
         return f;

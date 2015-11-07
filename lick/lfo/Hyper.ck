@@ -20,14 +20,29 @@
 
 */
 
-public class SampleHold extends Chubgraph
+class Recover extends Chugen
 {
-    inlet => blackhole;
-    Step _step => outlet;
-    100::samp => dur _hold;
+    fun float tick(float in)
+    {
+        return Interpolate.linear(in, -1.0, 0.0, -1.0, 1.0);
+    }
+}
 
-    sample();
-    spork ~ _tickAtRate();
+//
+// See e.g. http://hammer.ampage.org/files/hypertriangleclock.gif
+//
+
+public class Hyper extends Chubgraph
+{
+    SinOsc _sin => FullRectifier _rect => Invert _invert => Recover _recover => outlet;
+
+    1.0 => float _rate;
+    0.8 => float _depth;
+
+    {
+        _rate => rate;
+        _depth => depth;
+    }
 
     fun float freq()
     {
@@ -41,57 +56,36 @@ public class SampleHold extends Chubgraph
 
     fun float rate()
     {
-        return 1::second / _hold;
+        return _rate;
     }
 
     fun float rate(float f)
     {
-        1::second / f => _hold;
+        f => _rate;
+        f/2.0 => _sin.freq;
         return f;
     }
 
-    fun dur hold()
+    fun float depth()
     {
-        return _hold;
+        return _depth;
     }
 
-    fun dur hold(dur d)
+    fun float depth(float f)
     {
-        d => _hold;
-        return d;
+        f => _depth;
+        f => gain;
+        return f;
     }
 
-    fun void sample()
+    fun float phase()
     {
-        inlet.last() => _step.next;
+        return _sin.phase();
     }
 
-    fun void _tickAtRate()
+    fun float phase(float f)
     {
-        while (true)
-        {
-            _hold => now;
-            sample();
-        }
-    }
-
-    fun static SampleHold create()
-    {
-        SampleHold sampleHold;
-        return sampleHold;
-    }
-
-    fun static SampleHold create(float freq)
-    {
-        SampleHold sampleHold;
-        freq => sampleHold.freq;
-        return sampleHold;
-    }
-
-    fun static SampleHold create(dur hold)
-    {
-        SampleHold sampleHold;
-        hold => sampleHold.hold;
-        return sampleHold;
+        f => _sin.phase;
+        return f;
     }
 }

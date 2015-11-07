@@ -20,37 +20,15 @@
 
 */
 
-//
-// inspired by BMC21. Full Wave Dual Rectifier
-// http://www.bartonmusicalcircuits.com/fwd/
-//
+Quad quad;
+quad.lfo1 => blackhole;
+quad.lfo2 => blackhole;
+quad.lfo3 => blackhole;
+quad.lfo4 => blackhole;
 
-public class DualRect extends Effect
+for (0 => int i; i < 500; i++)
 {
-    FullRectifier _rect0;
-    FullRectifier _rect1;
-
-    Gain cv0 => blackhole;
-    Gain cv1 => blackhole;
-    spork ~ _tickAtSampleRate();
-
-    inlet => _rect0 => _rect1 => wet;
-
-    fun void _tickAtSampleRate()
-    {
-        while (true)
-        {
-            cv0.last() => _rect0.bias;
-            cv1.last() => _rect1.bias;
-            1::samp => now;
-        }
-    }
-
-    fun static DualRect create(Lfo lfo0, Lfo lfo1)
-    {
-        DualRect dualRect;
-        lfo0 => dualRect.cv0;
-        lfo1 => dualRect.cv1;
-        return dualRect;
-    }
+    <<<quad.lfo1.last(), quad.lfo2.last(), quad.lfo3.last(), quad.lfo4.last()>>>;
+    10::ms => now;
 }
+<<<"done">>>;

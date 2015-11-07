@@ -314,10 +314,12 @@ Machine.add("lick/module/Module7.ck");
 Machine.add("lick/module/Module8.ck");
 
 // lfo stuff, package lfo
+Machine.add("lick/lfo/Hyper.ck");
 Machine.add("lick/lfo/SampleHold.ck");
 Machine.add("lick/lfo/SlewStep.ck");
 Machine.add("lick/lfo/SmoothSampleHold.ck");
 Machine.add("lick/lfo/Lfo.ck");
+Machine.add("lick/lfo/Quad.ck");
 
 // effects, package effect
 Machine.add("lick/effect/Effect.ck");

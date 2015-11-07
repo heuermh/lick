@@ -20,7 +20,10 @@
 
 */
 
+//
 // abstract effect with "outboard" feedback loop
+//
+
 public class Feedback extends Effect
 {
     Gain pre;
