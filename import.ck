@@ -352,6 +352,7 @@ Machine.add("lick/effect/Redshift.ck");
 Machine.add("lick/effect/ReverseBuffer.ck");
 Machine.add("lick/effect/Reverse.ck");
 Machine.add("lick/effect/Raise.ck");
+Machine.add("lick/effect/Smother.ck");
 Machine.add("lick/effect/Solstice.ck");
 Machine.add("lick/effect/TimeModulator.ck");
 Machine.add("lick/effect/Thicken.ck");
