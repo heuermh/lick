@@ -123,14 +123,65 @@ public class Patterns
         return pattern(1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1);
     }
 
+    fun static void _dumpChars()
+    {
+        "1+*xXoO" @=> string str;
+        str.length() => int n;
+        for (0 => int i; i < n; i++)
+        {
+            <<<str.charAt(i)>>>;
+        }
+    }
+
     /*
 
-      01010, -+-+-, -x-x-,  o o ,  x x , .x.x., etc.
+      01010, -+-+-, -x-x-, -*-*-,  o o ,  x x ,  * * , .x.x., etc.
 
+    */
     fun static Pattern pattern(string p)
     {
+        p.length() => int n;
+
+        Pattern pattern;
+        pattern.size(n);
+
+        for (0 => int i; i < n; i++)
+        {
+            p.charAt(i) => int c;
+            if (c == 49 || c == 43 || c == 42 || c == 120 || c == 88 || c == 111 || c == 79)
+            {
+                pattern.pattern.set(i, 1);
+            }
+            else
+            {
+                pattern.pattern.set(i, 0);
+            }
+        }
+        return pattern;
     }
-    */
+
+    // choose yer own t
+    fun static Pattern pattern(string p, int t)
+    {
+        p.length() => int n;
+
+        Pattern pattern;
+        pattern.size(n);
+
+        for (0 => int i; i < n; i++)
+        {
+            p.charAt(i) => int c;
+            if (c == t)
+            {
+                pattern.pattern.set(i, 1);
+            }
+            else
+            {
+                pattern.pattern.set(i, 0);
+            }
+        }
+        return pattern;
+    }
 
     fun static Pattern pattern(int v0, int v1, int v2, int v3)
     {

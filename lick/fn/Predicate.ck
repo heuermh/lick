@@ -26,6 +26,6 @@ public class Predicate
 
     fun int test()
     {
-        return false;
+        return default;
     }
 }
