@@ -20,12 +20,22 @@
 
 */
 
-public class Predicate
-{
-    false => int default;
+BeeThree bt;
+220.0 => bt.freq;
+1.0 => bt.noteOff;
 
-    fun int test()
-    {
-        return default;
-    }
+bt => Smother smother => dac;
+
+<<<"ready">>>;
+500::ms => now;
+for (0 => int i; i < 20; i++)
+{
+    <<<i>>>;
+    bt.noteOn(1.0);
+    600::ms => now;
+    bt.noteOff(1.0);
+    600::ms => now;
 }
+
+2::minute => now;
+<<<"done">>>;
