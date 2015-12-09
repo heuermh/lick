@@ -322,7 +322,6 @@ Machine.add("lick/lfo/Lfo.ck");
 Machine.add("lick/lfo/Quad.ck");
 
 // filters, package filter
-Machine.add("lick/filter/APF.ck");
 Machine.add("lick/filter/SVF.ck");
 
 // effects, package effect
@@ -330,13 +329,14 @@ Machine.add("lick/effect/Effect.ck");
 Machine.add("lick/effect/Feedback.ck");
 Machine.add("lick/effect/AdsrTremolo.ck");
 Machine.add("lick/effect/AnalogDelay.ck");
+Machine.add("lick/effect/APF.ck");
 Machine.add("lick/effect/Blueshift.ck");
 Machine.add("lick/effect/Buffer.ck");
+Machine.add("lick/effect/Cee.ck");
 Machine.add("lick/effect/Chew.ck");
 Machine.add("lick/effect/Cooper.ck");
 Machine.add("lick/effect/CrossOver2.ck");
 Machine.add("lick/effect/CrossOver3.ck");
-Machine.add("lick/effect/Crush.ck");
 Machine.add("lick/effect/CryBaby.ck");
 Machine.add("lick/effect/AutoWah.ck");
 Machine.add("lick/effect/DigitalDelay.ck");
@@ -382,8 +382,11 @@ Machine.add("lick/delay/Swirl.ck");
 // synth/osc, package synth
 Machine.add("lick/synth/CircleRamp.ck");
 Machine.add("lick/synth/DoublePulse.ck");
+Machine.add("lick/synth/Fat.ck");
 Machine.add("lick/synth/Folder.ck");
 Machine.add("lick/synth/Folder2.ck");
+Machine.add("lick/synth/Lurverly.ck");
+Machine.add("lick/synth/Mdrone.ck");
 Machine.add("lick/synth/SawRamp.ck");
 Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");
@@ -391,6 +394,7 @@ Machine.add("lick/synth/VoiceOfSaturn.ck");
 Machine.add("lick/synth/Wrapper.ck");
 
 // depends on jwmatthys' chugins, package jwmatthys
+Machine.add("lick/jwmatthys/Crush.ck");
 Machine.add("lick/jwmatthys/Disaster.ck");
 Machine.add("lick/jwmatthys/Expo.ck");
 Machine.add("lick/jwmatthys/PitchFollower.ck");
