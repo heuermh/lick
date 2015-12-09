@@ -24,6 +24,12 @@
 Machine.add("lick/fn/BinaryFunction.ck");
 Machine.add("lick/fn/BinaryPredicate.ck");
 Machine.add("lick/fn/BinaryProcedure.ck");
+Machine.add("lick/fn/Consumer.ck");
+Machine.add("lick/fn/DurConsumer.ck");
+Machine.add("lick/fn/DurFunction.ck");
+Machine.add("lick/fn/DurPredicate.ck");
+Machine.add("lick/fn/DurProcedure.ck");
+Machine.add("lick/fn/DurSupplier.ck");
 Machine.add("lick/fn/FloatFloatFloatFloatFunction.ck");
 Machine.add("lick/fn/FloatFloatFloatFloatPredicate.ck");
 Machine.add("lick/fn/FloatFloatFloatFloatProcedure.ck");
@@ -33,10 +39,13 @@ Machine.add("lick/fn/FloatFloatFloatProcedure.ck");
 Machine.add("lick/fn/FloatFloatFunction.ck");
 Machine.add("lick/fn/FloatFloatPredicate.ck");
 Machine.add("lick/fn/FloatFloatProcedure.ck");
+Machine.add("lick/fn/FloatConsumer.ck");
 Machine.add("lick/fn/FloatFunction.ck");
 Machine.add("lick/fn/FloatPredicate.ck");
 Machine.add("lick/fn/FloatProcedure.ck");
+Machine.add("lick/fn/FloatSupplier.ck");
 Machine.add("lick/fn/Function.ck");
+Machine.add("lick/fn/IntConsumer.ck");
 Machine.add("lick/fn/IntFunction.ck");
 Machine.add("lick/fn/IntIntFunction.ck");
 Machine.add("lick/fn/IntIntIntFunction.ck");
@@ -52,10 +61,12 @@ Machine.add("lick/fn/IntFloatProcedure.ck");
 Machine.add("lick/fn/IntFloatFloatProcedure.ck");
 Machine.add("lick/fn/IntPredicate.ck");
 Machine.add("lick/fn/IntProcedure.ck");
+Machine.add("lick/fn/IntSupplier.ck");
 Machine.add("lick/fn/Predicate.ck");
 Machine.add("lick/fn/Procedure.ck");
 Machine.add("lick/fn/QuaternaryFunction.ck");
 Machine.add("lick/fn/QuaternaryPredicate.ck");
+Machine.add("lick/fn/Supplier.ck");
 Machine.add("lick/fn/TernaryFunction.ck");
 Machine.add("lick/fn/TernaryPredicate.ck");
 Machine.add("lick/fn/TernaryProcedure.ck");
@@ -88,14 +99,30 @@ Machine.add("lick/fn/Trunc.ck");
 Machine.add("lick/fn/Uniform.ck");
 
 // composite functions
+Machine.add("lick/fn/CompositeDurFunction.ck");
 Machine.add("lick/fn/CompositeFloatFunction.ck");
 Machine.add("lick/fn/CompositeFunction.ck");
 Machine.add("lick/fn/CompositeIntFunction.ck");
 
-// function convenience classes
+// conditional functions and procedures
+Machine.add("lick/fn/ConditionalDurFunction.ck");
+Machine.add("lick/fn/ConditionalDurProcedure.ck");
+Machine.add("lick/fn/ConditionalFloatFunction.ck");
+Machine.add("lick/fn/ConditionalFloatProcedure.ck");
+Machine.add("lick/fn/ConditionalFunction.ck");
+Machine.add("lick/fn/ConditionalIntFunction.ck");
+Machine.add("lick/fn/ConditionalIntProcedure.ck");
+Machine.add("lick/fn/ConditionalProcedure.ck");
+
+// convenience classes
+Machine.add("lick/fn/DurFunctions.ck");
+Machine.add("lick/fn/DurProcedures.ck");
 Machine.add("lick/fn/Functions.ck");
 Machine.add("lick/fn/FloatFunctions.ck");
+Machine.add("lick/fn/FloatProcedures.ck");
 Machine.add("lick/fn/IntFunctions.ck");
+Machine.add("lick/fn/IntProcedures.ck");
+Machine.add("lick/fn/Procedures.ck");
 
 // interpolation, package interp
 Machine.add("lick/interpolate/Interpolation.ck");
@@ -189,11 +216,15 @@ Machine.add("lick/interval/Scale.ck");
 Machine.add("lick/interval/Scales.ck");
 
 // arp, pattern, package arp
-Machine.add("lick/arp/Arpeggiator.ck");
-Machine.add("lick/arp/Arpeggiators.ck");
 Machine.add("lick/arp/Pattern.ck");
+Machine.add("lick/arp/PatternedDurProcedure.ck");
+Machine.add("lick/arp/PatternedFloatProcedure.ck");
+Machine.add("lick/arp/PatternedIntProcedure.ck");
+Machine.add("lick/arp/PatternedProcedure.ck");
 Machine.add("lick/arp/Patterns.ck");
 Machine.add("lick/arp/Warp.ck");
+Machine.add("lick/arp/Arpeggiator.ck");
+Machine.add("lick/arp/Arpeggiators.ck");
 
 // midi tunings, package tuning
 Machine.add("lick/tuning/MidiNote.ck");
@@ -362,6 +393,7 @@ Machine.add("lick/effect/Thicken.ck");
 Machine.add("lick/effect/Tremolo.ck");
 Machine.add("lick/effect/Vibrato.ck");
 Machine.add("lick/effect/Wolftone.ck");
+Machine.add("lick/effect/Woosh.ck");
 Machine.add("lick/effect/Currant.ck");
 
 // delay stuff, package delay

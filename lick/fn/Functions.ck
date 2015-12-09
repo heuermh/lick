@@ -29,4 +29,12 @@ public class Functions
         h @=> composite.h;
         return composite;
     }
+
+    fun static UnaryFunction condition(Predicate p, UnaryFunction f)
+    {
+        ConditionalFunction conditional;
+        p @=> conditional.p;
+        f @=> conditional.f;
+        return conditional;
+    }
 }

@@ -30,6 +30,14 @@ public class FloatFunctions
         return composite;
     }
 
+    fun static FloatFunction condition(Predicate p, FloatFunction f)
+    {
+        ConditionalFloatFunction conditional;
+        p @=> conditional.p;
+        f @=> conditional.f;
+        return conditional;
+    }
+    
     fun static FloatFunction identity(FloatFunction fn)
     {
         Identity identity;

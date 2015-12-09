@@ -26,6 +26,6 @@ public class FloatPredicate
 
     fun int test(float arg)
     {
-        return false;
+        return default;
     }
 }

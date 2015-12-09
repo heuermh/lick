@@ -20,9 +20,14 @@
 
 */
 
-public class DurProvider
+public class DurProvider extends DurSupplier
 {
     dur duration;
+
+    fun dur get()
+    {
+        return evaluate();
+    }
 
     fun dur evaluate()
     {

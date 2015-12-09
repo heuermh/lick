@@ -26,6 +26,6 @@ public class IntPredicate
 
     fun int test(int arg)
     {
-        return false;
+        return default;
     }
 }

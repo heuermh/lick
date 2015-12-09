@@ -26,6 +26,6 @@ public class UnaryPredicate
 
     fun int test(Object arg)
     {
-        return false;
+        return default;
     }
 }
