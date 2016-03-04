@@ -385,6 +385,7 @@ Machine.add("lick/effect/Overcome.ck");
 Machine.add("lick/effect/Redshift.ck");
 Machine.add("lick/effect/ReverseBuffer.ck");
 Machine.add("lick/effect/Reverse.ck");
+Machine.add("lick/effect/Revenge.ck");
 Machine.add("lick/effect/Raise.ck");
 Machine.add("lick/effect/Smother.ck");
 Machine.add("lick/effect/Solstice.ck");
