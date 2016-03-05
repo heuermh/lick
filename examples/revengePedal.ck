@@ -22,6 +22,13 @@
 
 adc => Revenge rev => dac;
 
+1.0 => rev.mix;
+
+// sunn-ish, open G
+//12.2498573744 => rev.rate;
+//23731.047242 => rev.cutoff;
+//0.164274 => rev.resonance;
+
 class Toggle extends Procedure
 {
     fun void run()
@@ -90,23 +97,39 @@ class DepthDown extends Procedure
     }
 }
 
-class LpfUp extends Procedure
+class CutoffUp extends Procedure
 {
     fun void run()
     {
         rev.cutoff() * 1.2 => rev.cutoff;
-        Constrain.constrainf(rev.resonance() * 1.2, 0.01, 0.99) => rev.resonance;
-        <<<"cutoff", rev.cutoff(), "resonance", rev.resonance()>>>;
+        <<<"cutoff", rev.cutoff()>>>;
     }
 }
 
-class LpfDown extends Procedure
+class CutoffDown extends Procedure
 {
     fun void run()
     {
         rev.cutoff() * 0.96 => rev.cutoff;
+        <<<"cutoff", rev.cutoff()>>>;
+    }
+}
+
+class ResonanceUp extends Procedure
+{
+    fun void run()
+    {
+        Constrain.constrainf(rev.resonance() * 1.2, 0.01, 0.99) => rev.resonance;
+        <<<"resonance", rev.resonance()>>>;
+    }
+}
+
+class ResonanceDown extends Procedure
+{
+    fun void run()
+    {
         Constrain.constrainf(rev.resonance() * 0.96, 0.01, 0.99) => rev.resonance;
-        <<<"cutoff", rev.cutoff(), "resonance", rev.resonance()>>>;
+        <<<"resonance", rev.resonance()>>>;
     }
 }
 
@@ -116,17 +139,21 @@ RateUp rateUp;
 RateDown rateDown;
 DepthUp depthUp;
 DepthDown depthDown;
-LpfUp lpfUp;
-LpfDown lpfDown;
+CutoffUp cutoffUp;
+CutoffDown cutoffDown;
+ResonanceUp resonanceUp;
+ResonanceDown resonanceDown;
 
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
-shape @=> stomp.button1Down;
-rateUp @=> stomp.button2Down;
-rateDown @=> stomp.button3Down;
-depthUp @=> stomp.button4Down;
-depthDown @=> stomp.button5Down;
-//lpfUp @=> stomp.button6Down;
-//lpfDown @=> stomp.button7Down;
+//shape @=> stomp.button1Down;
+//rateUp @=> stomp.button2Down;
+//rateDown @=> stomp.button3Down;
+//depthUp @=> stomp.button4Down;
+//depthDown @=> stomp.button5Down;
+cutoffUp @=> stomp.button1Down;
+cutoffDown @=> stomp.button2Down;
+resonanceUp @=> stomp.button3Down;
+resonanceDown @=> stomp.button4Down;
 
 stomp.open(1);
