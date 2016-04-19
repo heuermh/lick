@@ -20,16 +20,11 @@
 
 */
 
-public class CircularInOut extends Interpolation
+Interpolations.circularIn() @=> Interpolation in;
+Interpolations.circularOut() @=> Interpolation out;
+Interpolations.circularInOut() @=> Interpolation inOut;
+
+for (0.0 => float f; f < 1.01; f + 0.01 => f)
 {
-    fun float evaluate(float value)
-    {
-        2.0 * value => float v;
-        if (v < 1.0)
-        {
-            return -0.5 * (Math.sqrt(1.0 - Math.pow(v, 2.0)) - 1.0);
-        }
-        v - 2.0 => v;
-        return 0.5 * (Math.sqrt(1.0 - Math.pow(v, 2.0)) + 1.0);
-    }
+    <<<f, in.evaluate(f), out.evaluate(f), inOut.evaluate(f)>>>;
 }

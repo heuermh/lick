@@ -24,10 +24,11 @@ public class CircularIn extends Interpolation
 {
     fun float evaluate(float value)
     {
-        if (value - 1.0 < 0.001)
+        -1.0 * (Math.sqrt(1.0 - Math.pow(value, 2.0)) - 1.0) => float f;
+        if (Math.isnan(f))
         {
             return 1.0;
         }
-        return -1.0 * (Math.sqrt(1.0 - Math.pow(value, 2.0)) - 1.0);
+        return f;
     }
 }
