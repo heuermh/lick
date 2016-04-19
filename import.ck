@@ -396,6 +396,7 @@ Machine.add("lick/effect/Vibrato.ck");
 Machine.add("lick/effect/Wolftone.ck");
 Machine.add("lick/effect/Woosh.ck");
 Machine.add("lick/effect/Currant.ck");
+Machine.add("lick/effect/MotelSix.ck");
 
 // delay stuff, package delay
 Machine.add("lick/delay/SinTrem.ck");

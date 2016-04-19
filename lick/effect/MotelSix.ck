@@ -93,11 +93,14 @@ public class MotelSix extends Effect
 
     inlet => _pitchShift => _tremolo => wet;
     {
-        _tremolo.sinLfo();
+        _tremolo.hyperLfo();
         1.0 => _pitchShift.mix;
         0.0 => _pitchShift.shift;
 
         1.0 => mix;
+        8.0 => rate;
+        20::ms => attack;
+        2::second => release;
 
         spork ~ _updateAtSampleRate();
     }
@@ -202,6 +205,7 @@ public class MotelSix extends Effect
         while (true)
         {
             (now - _last) => dur d;
+            // todo:  might sound better to unchuck pitchShift when not attack or release
             if (_state == ATTACK && d < _attack)
             {
                 _gainAttackRamp.evaluate(d/_gainAttack) => _tremolo.gain;
