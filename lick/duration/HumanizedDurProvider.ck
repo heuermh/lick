@@ -46,7 +46,7 @@ public class HumanizedDurProvider extends DurProvider
         duration => humanizedDurProvider.duration;
         anticipation => humanizedDurProvider.anticipation;
         delay => humanizedDurProvider.delay;
-	random @=> humanizedDurProvider.random;
+        random @=> humanizedDurProvider.random;
         return humanizedDurProvider;
     }
 }

@@ -20,29 +20,35 @@
 
 */
 
-BassDelay bd => dac;
+Poly poly;
 
-2::second => bd.max;
+poly.outputL => LPF lpfL => dac.left;
+poly.outputR => LPF lpfR => dac.right;
 
-2.0 => bd.x;
-0.60 => bd.feedback;
-
-41.203 => float e;
-Scales.majorBlues(e, "E") @=> Scale scale;
-TimeSignature.common(160) @=> TimeSignature t;
-
-while (true)
+class Freq extends IntProcedure
 {
-    for (1 => int i; i < 5; i++)
+    fun void run(int value)
     {
-        //1.0 * i => bd.x;
-
-        bd.noteOn(scale.sample());
-        t.h => now;
-        bd.noteOff();
-        t.e => now;
+        22.0 * value => poly.freq;
     }
-    t.accel(1.02, t.q);
-    bd.feedback() * 1.02 => bd.feedback;
-    <<<bd.feedback()>>>;
 }
+
+class Filter extends IntProcedure
+{
+    fun void run(int value)
+    {
+        (value/255.0) => lpfL.Q;
+        220.0 * value => lpfL.freq;
+
+        (value/255.0) => lpfR.Q;
+        220.0 * value => lpfR.freq;
+    }
+}
+
+TwoPotsMidi twoPotsMidi;
+Freq freq;
+Filter filter;
+freq @=> twoPotsMidi.pot1;
+filter @=> twoPotsMidi.pot2;
+
+twoPotsMidi.open(0);

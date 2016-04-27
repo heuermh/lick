@@ -41,6 +41,13 @@ public class Intervals
         return fifteenth;
     }
 
+    fun static Octaves octaves(int i)
+    {
+        Octaves octaves;
+        octaves._init(i);
+        return octaves;
+    }
+
     fun static MinorSecond minorSecond()
     {
         MinorSecond minorSecond;
@@ -500,6 +507,21 @@ class Fifteenth extends Interval
     "4:1" => ratio;
     "Fifteenth" => name;
     "Fifteenth or two octaves" => description;
+}
+
+class Octaves extends Interval
+{
+    fun void _init(int i)
+    {
+        1.0 * i => antecedent;
+        i + ":1" => ratio;
+        i + " octave" => name;
+        if (i > 1)
+        {
+            name + "s" => name;
+        }
+        name => description;
+    }
 }
 
 class MinorSecond extends Interval

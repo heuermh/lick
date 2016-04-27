@@ -397,6 +397,7 @@ Machine.add("lick/effect/Wolftone.ck");
 Machine.add("lick/effect/Woosh.ck");
 Machine.add("lick/effect/Currant.ck");
 Machine.add("lick/effect/MotelSix.ck");
+Machine.add("lick/effect/OilCan.ck");
 
 // delay stuff, package delay
 Machine.add("lick/delay/SinTrem.ck");
@@ -421,6 +422,7 @@ Machine.add("lick/synth/Folder.ck");
 Machine.add("lick/synth/Folder2.ck");
 Machine.add("lick/synth/Lurverly.ck");
 Machine.add("lick/synth/Mdrone.ck");
+Machine.add("lick/synth/Poly.ck");
 Machine.add("lick/synth/SawRamp.ck");
 Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");

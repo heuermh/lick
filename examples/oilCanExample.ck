@@ -20,29 +20,7 @@
 
 */
 
-BassDelay bd => dac;
+adc => OilCan oilCan => dac.chan(0);
 
-2::second => bd.max;
-
-2.0 => bd.x;
-0.60 => bd.feedback;
-
-41.203 => float e;
-Scales.majorBlues(e, "E") @=> Scale scale;
-TimeSignature.common(160) @=> TimeSignature t;
-
-while (true)
-{
-    for (1 => int i; i < 5; i++)
-    {
-        //1.0 * i => bd.x;
-
-        bd.noteOn(scale.sample());
-        t.h => now;
-        bd.noteOff();
-        t.e => now;
-    }
-    t.accel(1.02, t.q);
-    bd.feedback() * 1.02 => bd.feedback;
-    <<<bd.feedback()>>>;
-}
+<<<"ready">>>;
+1::week => now;

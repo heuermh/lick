@@ -20,29 +20,25 @@
 
 */
 
-BassDelay bd => dac;
+Poly poly;
 
-2::second => bd.max;
+poly.outputL => LPF lpfL => dac.left;
+poly.outputR => LPF lpfR => dac.right;
 
-2.0 => bd.x;
-0.60 => bd.feedback;
-
-41.203 => float e;
-Scales.majorBlues(e, "E") @=> Scale scale;
-TimeSignature.common(160) @=> TimeSignature t;
-
+<<<"ready">>>;
+20.0 => float f;
+220.0 => float cutoff;
+0.1 => float resonance;
 while (true)
 {
-    for (1 => int i; i < 5; i++)
+    f => poly.freq;
+    for (0 => int i; i < 100; i++)
     {
-        //1.0 * i => bd.x;
-
-        bd.noteOn(scale.sample());
-        t.h => now;
-        bd.noteOff();
-        t.e => now;
+        220.0 + (220.0 * i) => lpfL.freq;
+        110.0 + (110.0 * i) => lpfR.freq;
+        0.1 + (i * 0.01) => lpfL.Q;
+        0.0 + (i * 0.01) => lpfR.Q;        
+        100::ms => now;
     }
-    t.accel(1.02, t.q);
-    bd.feedback() * 1.02 => bd.feedback;
-    <<<bd.feedback()>>>;
+    f * 2 => f;
 }
