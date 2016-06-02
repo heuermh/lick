@@ -122,7 +122,7 @@ public class Blueshift extends Feedback
         while (true)
         {
             1::samp => now;
-            Interpolate.linear(1.0 - _lfo.depth() + _lfo.last(), -1.0, 1.0, 1.0, 10.0) => float v;
+            Interpolate.linear(_lfo.last(), -1.0, 1.0, 1.0, 10.0) => float v;
             1::ms * v => _delay.delay;
         }
     }
