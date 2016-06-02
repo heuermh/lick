@@ -116,7 +116,7 @@ public class Tremolo extends Effect
         while (true)
         {
             1::samp => now;
-            Interpolate.linear(1.0 - _lfo.depth() + _lfo.last(), -1.0, 1.0, 0.0, 1.0) => _tremolo.gain;
+            1.0 - _lfo.depth()/2.0 + _lfo.last()/2.0 => _tremolo.gain;
         }
     }
 
