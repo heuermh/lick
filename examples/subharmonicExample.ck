@@ -65,6 +65,75 @@ class SubOsc
     }
 }
 
+class TF extends Effect
+{
+    int _state;
+    0 => static int BAND_PASS;
+    1 => static int LOW_PASS;
+
+    BPF _bpf;
+    LPF _lpf;
+
+    inlet => _bpf => wet;
+    inlet => _lpf => wet;
+
+    {
+        lpf();
+
+        1.0 => mix;
+    }
+
+    fun float freq()
+    {
+        return _bpf.freq();
+    }
+
+    fun float freq(float f)
+    {
+        f => _bpf.freq;
+        f => _lpf.freq;
+        return f;
+    }
+
+    fun float Q()
+    {
+        return _bpf.Q();
+    }
+
+    fun float Q(float f)
+    {
+        f => _bpf.Q;
+        f => _lpf.Q;
+        return f;
+    }
+
+    fun void bpf()
+    {
+        1.0 => _bpf.gain;
+        0.0 => _lpf.gain;
+        BAND_PASS => _state;
+    }
+
+    fun void lpf()
+    {
+        0.0 => _bpf.gain;
+        1.0 => _lpf.gain;
+        LOW_PASS => _state;
+    }
+
+    fun void toggle()
+    {
+        if (_state == BAND_PASS)
+        {
+            lpf();
+        }
+        else
+        {
+            bpf();
+        }
+    }
+}
+
 class Trout
 {
     float freq;
@@ -75,45 +144,28 @@ class Trout
     SubOsc sub;
     Gain mixer;
 
-    BPF bpf1;
-    LPF lpf1;
-    Gain filter1;
+    TF filter1;
+    TF filter2;
+    TF filter3;
+    TF filter4;
 
-    BPF bpf2;
-    LPF lpf2;
-    Gain filter2;
-
-    BPF bpf3;
-    LPF lpf3;
-    Gain filter3;
-
-    BPF bpf4;
-    LPF lpf4;
-    Gain filter4;
-
+    Lfo lfo;
     ADSR adsr;
+    Tremolo rhythm;
+    Gain out;
 
     master => mixer;
     side => mixer;
     noise => mixer;
     sub.out => mixer;
 
-    mixer => bpf1 => filter1;
-    mixer => lpf1 => filter1;
+    mixer => filter1 => rhythm;
+    mixer => filter2 => rhythm;
+    mixer => filter3 => rhythm;
+    mixer => filter4 => rhythm;
 
-    mixer => bpf2 => filter2;
-    mixer => lpf2 => filter2;
-
-    mixer => bpf3 => filter3;
-    mixer => lpf3 => filter3;
-
-    mixer => bpf4 => filter4;
-    mixer => lpf4 => filter4;
-
-    filter1 => adsr;
-    filter2 => adsr;
-    filter3 => adsr;
-    filter4 => adsr;
+    lfo => blackhole;
+    rhythm => adsr => out;
 
     {
         220.0 => freq;
@@ -125,39 +177,34 @@ class Trout
         0.05 => side.gain;
         0.05 => noise.gain;
 
-        1.0 => bpf1.gain;
-        0.0 => lpf1.gain;
-        1.0 => bpf2.gain;
-        0.0 => lpf2.gain;
-        1.0 => bpf3.gain;
-        0.0 => lpf3.gain;
-        1.0 => bpf4.gain;
-        0.0 => lpf4.gain;
+        filter1.bpf();
+        filter2.bpf();
+        filter3.bpf();
+        filter4.bpf();
 
-        700.0 => bpf1.freq;
-        700.0 => lpf1.freq;
-        0.8 => bpf1.Q;
-        0.8 => lpf1.Q;
+        700.0 => filter1.freq;
+        0.8 => filter1.Q;
 
-        1300.0 => bpf2.freq;
-        1300.0 => lpf2.freq;
-        0.7 => bpf2.Q;
-        0.7 => lpf2.Q;
+        1300.0 => filter1.freq;
+        0.7 => filter1.Q;
 
-        2100.0 => bpf3.freq;
-        2100.0 => lpf3.freq;
-        0.6 => bpf3.Q;
-        0.6 => lpf3.Q;
+        2100.0 => filter1.freq;
+        0.6 => filter1.Q;
 
-        2900.0 => bpf4.freq;
-        2900.0 => lpf4.freq;
-        0.5 => bpf4.Q;
-        0.5 => lpf4.Q;
+        3900.0 => filter1.freq;
+        0.5 => filter1.Q;
 
         0.25 => filter1.gain;
         0.25 => filter2.gain;
         0.25 => filter3.gain;
         0.25 => filter4.gain;
+
+        lfo.hyper();
+        1.0 => lfo.rate;
+        0.05 => lfo.depth;
+
+        8.0 => rhythm.rate;
+        0.20 => rhythm.mix;
 
         spork ~ _updateAtSampleRate();
     }
@@ -166,7 +213,7 @@ class Trout
     {
         while (true)
         {
-            freq => sub.freq;
+            freq + lfo.last() => sub.freq;
             freq + 1.0 => side.freq;
             1::samp => now;
         }
@@ -174,14 +221,46 @@ class Trout
 }
 
 Trout t;
-t.adsr => dac;
+t.out => dac;
 
+261.6256 => float c;
+440.0 => float a;
+Scales.majorBlues(c, "C") @=> Scale c_majorBlues;
+Scales.minorBlues(a, "A") @=> Scale a_minorBlues;
+
+TimeSignature.common(110) @=> TimeSignature ts;
+
+0 => int i;
 while (true)
 {
-    Math.random2f(200.0, 2000.0) => t.freq;
-    <<<"freq", t.freq>>>;
+    if (i % 4 == 0 || i % 7 == 0)
+    {
+        a_minorBlues.sample() => t.freq;
+    }
+    else
+    {
+        c_majorBlues.sample() => t.freq;
+    }
+
+    Math.random2f(0.5, 1.5) => t.lfo.rate;
+    Math.random2f(0.05, 0.20) => t.lfo.depth;
+    Math.random2f(0.5, 10.0) => t.rhythm.rate;
+    Math.random2f(0.05, 0.20) => t.rhythm.mix;
+    <<<"freq", t.freq, "lfo rate", t.lfo.rate(), "lfo depth", t.lfo.depth(), "rhythm rate", t.rhythm.rate(), "rhythm mix", t.rhythm.mix()>>>;
+
     1 => t.adsr.keyOn;
-    1200::ms => now;
-    1 => t.adsr.keyOff;
-    200::ms => now;
+    if (i % 3 == 0 || i % 11 == 0)
+    {
+        ts.h => now;
+        1 => t.adsr.keyOff;
+        ts.e => now;
+    }
+    else
+    {
+        ts.q => now;
+        1 => t.adsr.keyOff;
+        ts.s => now;
+    }
+
+    i++;
 }
