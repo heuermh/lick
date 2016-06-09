@@ -213,7 +213,7 @@ class Trout
     {
         while (true)
         {
-            freq + lfo.last() => sub.freq;
+            freq + (freq * lfo.last()) => sub.freq;
             freq + 1.0 => side.freq;
             1::samp => now;
         }
@@ -242,10 +242,10 @@ while (true)
         c_majorBlues.sample() => t.freq;
     }
 
-    Math.random2f(0.5, 1.5) => t.lfo.rate;
-    Math.random2f(0.05, 0.20) => t.lfo.depth;
+    Math.random2f(0.01, 1.0) => t.lfo.rate;
+    Math.random2f(0.01, 0.04) => t.lfo.depth;
     Math.random2f(0.5, 10.0) => t.rhythm.rate;
-    Math.random2f(0.05, 0.20) => t.rhythm.mix;
+    Math.random2f(0.05, 0.50) => t.rhythm.mix;
     <<<"freq", t.freq, "lfo rate", t.lfo.rate(), "lfo depth", t.lfo.depth(), "rhythm rate", t.rhythm.rate(), "rhythm mix", t.rhythm.mix()>>>;
 
     1 => t.adsr.keyOn;
