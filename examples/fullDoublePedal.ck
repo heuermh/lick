@@ -53,13 +53,14 @@ class Slam extends Procedure
 {
     fun void run()
     {
-        <<<"slam!", fullDouble.slam()>>>;
+        fullDouble.slam();
+        <<<"slam!">>>;
     }
 }
 
 adc => fullDouble => dac;
 
-0.8 => fullDouble.mix;
+0.5 => fullDouble.mix;
 
 Toggle toggle;
 Short short;

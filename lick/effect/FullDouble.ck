@@ -32,8 +32,12 @@ public class FullDouble extends Feedback
 
     0 => static int OFF;
     1 => static int ON;
+    2 => static int RECOVERING;
     OFF => static int _slam;
 
+    now => time _last;
+    100::ms => dur _rate;
+    10::second => dur _length;
     0.0 => float _lastFeedback;
 
     /*
@@ -51,6 +55,8 @@ public class FullDouble extends Feedback
 
         0.0 => feedback;
         SHORT => mode;
+
+        spork ~ _sporkAtRate();
     }
 
     fun void short()
@@ -86,15 +92,46 @@ public class FullDouble extends Feedback
     {
         if (ON == _slam)
         {
-            _lastFeedback => feedback;
-            OFF => _slam;
+            now => _last;
+            RECOVERING => _slam;
         }
-        else
+        else if (OFF == _slam)
         {
             feedback() => _lastFeedback;
             0.998 => feedback;
             ON => _slam;
         }
+        else if (RECOVERING == _slam)
+        {
+            // don't reset last feedback
+            0.998 => feedback;
+            ON => _slam;
+        }
         return _slam;
+    }
+
+    fun void _sporkAtRate()
+    {
+        while (true)
+        {
+            now => time current;
+            if (_slam == RECOVERING)
+            {
+                if (current < (_last + _length))
+                {
+                    feedback() - _lastFeedback => float f;
+                    (_length - (current - _last))/_length => float v;
+                    _lastFeedback + (v * f) => feedback;
+
+                    <<<"slam recovering, feedback", feedback()>>>;
+                }
+                else
+                {
+                    OFF => _slam;
+                    <<<"slam off">>>;
+                }
+            }
+            _rate => now;
+        }
     }
 }
