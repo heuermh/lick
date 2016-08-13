@@ -384,6 +384,7 @@ Machine.add("lick/effect/Mesmerizer.ck");
 Machine.add("lick/effect/ModulatedDelay.ck");
 Machine.add("lick/effect/Mixer.ck");
 Machine.add("lick/effect/Overcome.ck");
+Machine.add("lick/effect/PinkDelay.ck");
 Machine.add("lick/effect/Ring.ck");
 Machine.add("lick/effect/Redshift.ck");
 Machine.add("lick/effect/ReverseBuffer.ck");
