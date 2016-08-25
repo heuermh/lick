@@ -430,6 +430,7 @@ Machine.add("lick/synth/Lurverly.ck");
 Machine.add("lick/synth/Mdrone.ck");
 Machine.add("lick/synth/Poly.ck");
 Machine.add("lick/synth/SawRamp.ck");
+Machine.add("lick/synth/Sauce.ck");
 Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");
 Machine.add("lick/synth/VoiceOfSaturn.ck");
