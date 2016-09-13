@@ -267,6 +267,7 @@ Machine.add("lick/device/LogitechGamepadF310.ck");
 Machine.add("lick/device/Monome.ck");
 Machine.add("lick/device/Mouse.ck");
 Machine.add("lick/device/NanoPad.ck");
+Machine.add("lick/device/Nes.ck");
 Machine.add("lick/device/MAudioOzone.ck");
 Machine.add("lick/device/AlesisQX25.ck");
 Machine.add("lick/device/StompKeyboard.ck");
