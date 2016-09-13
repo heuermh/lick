@@ -20,7 +20,6 @@
 
 */
 
-
 // wrapper for Rubber Band Mono Pitch Shifter LADSPA plugin, http://breakfastquay.com/rubberband/
 public class RubberBand extends Ladspa
 {

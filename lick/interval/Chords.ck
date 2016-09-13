@@ -24,15 +24,6 @@ class Fifth extends Chord
 {
     Interval @ fifth;
 
-    /*
-        or would this work?
-
-    {
-        intervals.add(unison);
-        intervals.add(fifth);
-    }
-
-    */
     fun void updateIntervals()
     {
         intervals.add(unison);

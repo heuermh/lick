@@ -21,7 +21,7 @@
 */
 
 // abstract class, do not use directly
-//    use concrete subclasses BounceIn, BounceOut, or BounceInOut
+//   use concrete subclasses BounceIn, BounceOut, or BounceInOut
 public class AbstractBounce extends Interpolation
 {
     fun float easeIn(float value)

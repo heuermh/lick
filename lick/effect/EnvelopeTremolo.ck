@@ -25,10 +25,9 @@ public class EnvelopeTremolo extends Effect
     Envelope _env;
     float _rate;
 
+    inlet => _env => wet;
     {
-        inlet => _env => wet;
-
-        spork ~ _tickAtRate();
+        spork ~ _updateAtRate();
     }
 
     fun float rate()
@@ -57,7 +56,7 @@ public class EnvelopeTremolo extends Effect
         duration() * f => duration;
     }
 
-    fun void _tickAtRate()
+    fun void _updateAtRate()
     {
         while (true)
         {

@@ -27,7 +27,7 @@
 // with his own CryBaby.  See:
 // https://ccrma.stanford.edu/realsimple/faust_strings/faust_strings.pdf
 
-public class CryBaby extends Effect {
+public class CryBaby extends LfoEffect {
     inlet => ResonZ wah => wet;
     3.0 => wah.Q;
     1000.0 => wah.freq;

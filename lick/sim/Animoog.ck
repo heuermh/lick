@@ -20,7 +20,7 @@
 
 */
 
-// emulates the Animoog app
+// emulates the Animoog iOS app
 public class Animoog
 {
     0 => static int OFF;

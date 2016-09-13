@@ -20,57 +20,6 @@
 
 */
 
-class SlewStep extends Chugen
-{
-    0.0 => float _last;
-    0.0 => float _next;
-    0 => int _samples;
-    10::samp => dur _slew;
-    Interpolations.linear() @=> Interpolation _interpolation;
-
-    fun float tick(float in)
-    {
-        // have to count samples rather than calculate difference from now
-        //   since now doesn't work in the tick method in a Chugen
-        //   see https://github.com/spencersalazar/chuck/issues/28
-
-        Constrain.constrainf((_samples * 1::samp) / _slew, 0.0, 1.0) => float f;
-        _interpolation.evaluate(f) => float v;
-        _samples++;
-        return Constrain.constrainf(_last + v * (_next - _last), -1.0, 1.0);
-    }
-
-    fun dur slew()
-    {
-        return _slew;
-    }
-
-    fun dur slew(dur d)
-    {
-        d => _slew;
-        return d;
-    }
-
-    fun Interpolation interpolation()
-    {
-        return _interpolation;
-    }
-
-    fun Interpolation interpolation(Interpolation i)
-    {
-        i @=> _interpolation;
-        return i;
-    }
-
-    fun float next(float f)
-    {
-        _next => _last;
-        0 => _samples;
-        f => _next;
-        return f;
-    }
-}
-
 public class SmoothSampleHold extends Chubgraph
 {
     inlet => blackhole;

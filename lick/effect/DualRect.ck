@@ -32,11 +32,14 @@ public class DualRect extends Effect
 
     Gain cv0 => blackhole;
     Gain cv1 => blackhole;
-    spork ~ _tickAtSampleRate();
 
     inlet => _rect0 => _rect1 => wet;
 
-    fun void _tickAtSampleRate()
+    {
+        spork ~ _updateAtSampleRate();
+    }
+
+    fun void _updateAtSampleRate()
     {
         while (true)
         {

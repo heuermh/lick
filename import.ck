@@ -293,7 +293,11 @@ Machine.add("lick/sample/Samples.ck");
 
 // procedures, package loop
 Machine.add("lick/loop/Append.ck");
+Machine.add("lick/loop/DurAppend.ck");
+Machine.add("lick/loop/FloatAppend.ck");
 Machine.add("lick/loop/Prepend.ck");
+Machine.add("lick/loop/DurPrepend.ck");
+Machine.add("lick/loop/FloatPrepend.ck");
 Machine.add("lick/loop/Repeat.ck");
 Machine.add("lick/loop/Sleep.ck");
 Machine.add("lick/loop/Loop.ck");
@@ -358,7 +362,9 @@ Machine.add("lick/filter/SVF.ck");
 
 // effects, package effect
 Machine.add("lick/effect/Effect.ck");
+Machine.add("lick/effect/LfoEffect.ck");
 Machine.add("lick/effect/Feedback.ck");
+Machine.add("lick/effect/LfoFeedback.ck");
 Machine.add("lick/effect/AdsrTremolo.ck");
 Machine.add("lick/effect/AnalogDelay.ck");
 Machine.add("lick/effect/APF.ck");
@@ -466,7 +472,7 @@ Machine.add("lick/ladspa/caps/ToneStack.ck");
 
 // depends on C*APS plugins, package ladspa.caps
 Machine.add("lick/ladspa/caps/Princeton.ck");
-Machine.add("lick/ladspa/caps/Ring.ck");
+Machine.add("lick/ladspa/caps/Mood.ck");
 
 // CMT plugins, package ladspa.cmt
 Machine.add("lick/ladspa/cmt/Cmt.ck");

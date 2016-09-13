@@ -20,8 +20,10 @@
 
 */
 
+//
 // see
 // http://www.firstpr.com.au/dsp/pink-noise/ for further references
+//
 
 public class Pke extends Chugen
 {

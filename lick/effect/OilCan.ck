@@ -20,9 +20,8 @@
 
 */
 
-public class OilCan extends Feedback
+public class OilCan extends LfoFeedback
 {
-    Lfo _lfo => blackhole;
     pre => Delay _shortTap => post;
     pre => Delay _longTap => post;
     feedbackOut => LPF _lpf => feedbackIn;
@@ -147,46 +146,6 @@ public class OilCan extends Feedback
     fun float resonance(float f)
     {
         return _lpf.Q(f);
-    }
-
-    fun void sawLfo()
-    {
-        _lfo.saw();
-    }
-
-    fun void sinLfo()
-    {
-        _lfo.sin();
-    }
-
-    fun void sqrLfo()
-    {
-        _lfo.sqr();
-    }
-
-    fun void triLfo()
-    {
-        _lfo.tri();
-    }
-
-    fun void hyperLfo()
-    {
-        _lfo.hyper();
-    }
-
-    fun void sampleHoldLfo()
-    {
-        _lfo.sampleHold();
-    }
-
-    fun void smoothSampleHoldLfo()
-    {
-        _lfo.smoothSampleHold();
-    }
-
-    fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
-    {
-        _lfo.mix(saw, sin, sqr, tri, hyper, sh, ssh);
     }
 
     fun void _updateAtSampleRate()

@@ -28,7 +28,7 @@ public class AdsrTremolo extends Effect
     {
         inlet => _adsr => wet;
 
-        spork ~ _tickAtRate();
+        spork ~ _updateAtRate();
     }
 
     fun float rate()
@@ -93,7 +93,7 @@ public class AdsrTremolo extends Effect
         release() * f => release;
     }
 
-    fun void _tickAtRate()
+    fun void _updateAtRate()
     {
         while (true)
         {

@@ -20,6 +20,7 @@
 
 */
 
+// receive MIDI from the NanoPad hardware
 public class NanoPad
 {
     MidiIn min;

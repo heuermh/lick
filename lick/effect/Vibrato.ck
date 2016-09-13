@@ -21,123 +21,42 @@
 */
 
 // needs work ;)
-public class Vibrato extends Effect
+public class Vibrato extends LfoEffect
 { 
-    Lfo _lfo;
     DelayL _delay;
 
-    2.0 => float _rate;
+    2.0 => float _vibratoRate;
 
-    _lfo => blackhole;
     inlet => _delay => wet;
 
     {
-        _lfo.sin();
-        4.0 => _lfo.rate;
-        0.5 => _lfo.depth;
+        sinLfo();
+        4.0 => rate;
+        0.5 => depth;
 
         1::second => _delay.max;
-        1::second / _rate => _delay.delay;
+        1::second / _vibratoRate => _delay.delay;
 
-        spork ~ _tickAtSampleRate();
+        spork ~ _updateAtSampleRate();
     }
 
-    fun float rate()
+    fun float vibratoRate()
     {
-        return _rate;
+        return _vibratoRate;
     }
 
-    fun float rate(float f)
+    fun float vibratoRate(float f)
     {
-        f => _rate;
-        1::second / _rate => _delay.delay;
+        f => _vibratoRate;
+        1::second / _vibratoRate => _delay.delay;
         return f;
     }
 
-    fun float lfoRate()
-    {
-        return _lfo.rate();
-    }
-
-    fun float lfoRate(float f)
-    {
-        f => _lfo.rate;
-        return f;
-    }
-
-    fun float lfoDepth()
-    {
-        return _lfo.depth();
-    }
-
-    fun float lfoDepth(float f)
-    {
-        f => _lfo.depth;
-        return f;
-    }
-
-    fun float lfoPhase()
-    {
-        return _lfo.phase();
-    }
-
-    fun float lfoPhase(float f)
-    {
-        f => _lfo.phase;
-        return f;
-    }
-
-    fun void sawLfo()
-    {
-        _lfo.saw();
-    }
-
-    fun void sinLfo()
-    {
-        _lfo.sin();
-    }
-
-    fun void sqrLfo()
-    {
-        _lfo.sqr();
-    }
-
-    fun void triLfo()
-    {
-        _lfo.tri();
-    }
-
-    fun void hyperLfo()
-    {
-        _lfo.hyper();
-    }
-
-    fun void sampleHoldLfo()
-    {
-        _lfo.sampleHold();
-    }
-
-    fun void smoothSampleHoldLfo()
-    {
-        _lfo.smoothSampleHold();
-    }
-
-    // @deprecated
-    fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
-    {
-        lfo(saw, sin, sqr, tri, 0.0, sh, ssh);
-    }
-
-    fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
-    {
-        _lfo.mix(saw, sin, sqr, tri, hyper, sh, ssh);
-    }
-
-    fun void _tickAtSampleRate()
+    fun void _updateAtSampleRate()
     {
         while (true)
         {
-            _rate + ((_lfo.last() + 0.5) * _rate) => float v;
+            _vibratoRate + ((_lfo.last() + 0.5) * _vibratoRate) => float v;
             if (v > 0.0)
             {
                 Constrain.constraind(1::second / v, 1::samp, 1::second) => _delay.delay;

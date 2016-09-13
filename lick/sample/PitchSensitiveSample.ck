@@ -22,5 +22,10 @@
 
 public class PitchSensitiveSample extends CompositeSample
 {
-    // empty
+    fun Sample _sample()
+    {
+        ((minRate + rate)/(maxRate) * samples.size()) $ int => int index;
+        samples.get(index - 1) $ Sample @=> Sample sample;
+        return sample;
+    }
 }

@@ -20,11 +20,15 @@
 
 */
 
-public class RandomSample extends CompositeSample
+// appends a dur procedure, g followed by h
+public class DurAppend extends DurProcedure
 {
-    fun Sample _sample()
+    DurProcedure g;
+    DurProcedure h;
+
+    fun void run(dur value)
     {
-        samples.sample() $ Sample @=> Sample sample;
-        return sample;
+        g.run(value);
+        h.run(value);
     }
 }

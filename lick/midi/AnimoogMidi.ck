@@ -20,7 +20,7 @@
 
 */
 
-// interacts with the Animoog app over MIDI
+// interacts with the Animoog iOS app over MIDI
 public class AnimoogMidi
 {
     // mapping

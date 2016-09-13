@@ -20,6 +20,7 @@
 
 */
 
+// receive MIDI from the M-Audio Ozone hardware
 public class Ozone // may work for other MIDI keyboards, see notes below
 {
     MidiIn min;

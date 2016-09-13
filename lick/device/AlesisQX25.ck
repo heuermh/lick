@@ -20,6 +20,7 @@
 
 */
 
+// receive MIDI from the Alesis QX25 hardware
 public class AlesisQX25
 {
     MidiIn min;

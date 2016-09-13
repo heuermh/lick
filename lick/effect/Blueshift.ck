@@ -20,104 +20,23 @@
 
 */
 
-public class Blueshift extends Feedback
+public class Blueshift extends LfoFeedback
 {
-    Lfo _lfo;
     Delay _delay;
 
     {
         pre => _delay => post;
         feedbackOut => feedbackIn;
-        _lfo => blackhole;
 
         10::ms => _delay.max;
         1::ms => _delay.delay;
 
         0.05 => feedback;
 
-        spork ~ _tickAtSampleRate();
+        spork ~ _updateAtSampleRate();
     }
 
-    fun float rate()
-    {
-        return _lfo.rate();
-    }
-
-    fun float rate(float f)
-    {
-        f => _lfo.rate;
-        return f;
-    }
-
-    fun float depth()
-    {
-        return _lfo.depth();
-    }
-
-    fun float depth(float f)
-    {
-        f => _lfo.depth;
-        return f;
-    }
-
-    fun float phase()
-    {
-        return _lfo.phase();
-    }
-
-    fun float phase(float f)
-    {
-        f => _lfo.phase;
-        return f;
-    }
-
-    fun void sawLfo()
-    {
-        _lfo.saw();
-    }
-
-    fun void sinLfo()
-    {
-        _lfo.sin();
-    }
-
-    fun void sqrLfo()
-    {
-        _lfo.sqr();
-    }
-
-    fun void triLfo()
-    {
-        _lfo.tri();
-    }
-
-    fun void hyperLfo()
-    {
-        _lfo.hyper();
-    }
-
-    fun void sampleHoldLfo()
-    {
-        _lfo.sampleHold();
-    }
-
-    fun void smoothSampleHoldLfo()
-    {
-        _lfo.smoothSampleHold();
-    }
-
-    // @deprecated
-    fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
-    {
-        lfo(saw, sin, sqr, tri, 0.0, sh, ssh);
-    }
-
-    fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
-    {
-        _lfo.mix(saw, sin, sqr, tri, hyper, sh, ssh);
-    }
-
-    fun void _tickAtSampleRate()
+    fun void _updateAtSampleRate()
     {
         while (true)
         {

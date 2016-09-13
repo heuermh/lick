@@ -20,6 +20,7 @@
 
 */
 
+// emulates the TwoPots midi device
 public class TwoPots
 {
     IntProcedure pot1; // cc 12

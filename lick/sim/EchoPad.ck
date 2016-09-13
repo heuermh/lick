@@ -20,7 +20,7 @@
 
 */
 
-// emulates the EchoPad app
+// emulates the EchoPad iOS app
 // http://www.holdernessmedia.com/home/ios-applications/music/echo-pad
 public class EchoPad
 {

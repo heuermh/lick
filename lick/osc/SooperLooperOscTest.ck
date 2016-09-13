@@ -21,7 +21,6 @@
 */
 
 // unit test for SooperLooperOsc
-
 class SooperLooperOscTest extends Assert
 {
     {

@@ -20,7 +20,7 @@
 
 */
 
-// interacts with the Filtatron app over MIDI
+// interacts with the Filtatron iOS app over MIDI
 public class FiltatronMidi
 {
     // mapping

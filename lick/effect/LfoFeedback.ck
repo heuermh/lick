@@ -20,16 +20,13 @@
 
 */
 
-// analog-style delay with modulated delay time
-public class ModulatedDelay extends AnalogDelay
+// abstract class for feedback effects + lfo
+public class LfoFeedback extends Feedback
 {
     Lfo _lfo;
 
     {
-        1.0 => rate;
-        0.1 => depth;
-        sinLfo();
-
+        _lfo => blackhole;
         spork ~ _updateAtSampleRate();
     }
 
@@ -114,25 +111,14 @@ public class ModulatedDelay extends AnalogDelay
 
     fun void _updateAtSampleRate()
     {
+        /*
+          subclasses should override this method
+
         while (true)
         {
             1::samp => now;
-            delay() + _lfo.last() * delay() => delay;
+            // do something with _lfo.last()
         }
-    }
-
-    fun static ModulatedDelay create(WaveShaper ws, dur delay, float feedback, float cutoff, float resonance, float rate, float depth)
-    {
-        ModulatedDelay modulatedDelay;
-        ws @=> modulatedDelay._dist;
-        modulatedDelay._init();
-        delay => modulatedDelay.max;
-        delay => modulatedDelay.delay;
-        feedback => modulatedDelay.feedback;
-        cutoff => modulatedDelay.cutoff;
-        resonance => modulatedDelay.resonance;
-        rate => modulatedDelay.rate;
-        depth => modulatedDelay.depth;
-        return modulatedDelay;
+        */
     }
 }

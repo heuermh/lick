@@ -20,8 +20,10 @@
 
 */
 
+//
 // Korg MS-20 samples made available by Francis Prève
 // http://francispreve.blogspot.de/2013/10/free-korg-ms-20-ableton-instruments.html
+//
 
 class DetunedPulse extends AdsrSample
 {

@@ -20,7 +20,8 @@
 
 */
 
-// wrapper for TAP-plugins TubeWarmth LADSPA plugin, http://tap-plugins.sourceforge.net/ladspa/tubewarmth.html
+// wrapper for TAP-plugins TubeWarmth LADSPA plugin,
+//   http://tap-plugins.sourceforge.net/ladspa/tubewarmth.html
 public class TubeWarmth extends Tap
 {
     prefix + "tap_tubewarmth.so" => ladspa.load;

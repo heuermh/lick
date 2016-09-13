@@ -20,7 +20,7 @@
 
 */
 
-// emulates the Filtatron app
+// emulates the Filtatron iOS app
 public class Filtatron
 {
     0 => static int SAMPLER_PLAY;

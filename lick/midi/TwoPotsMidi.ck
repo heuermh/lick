@@ -20,6 +20,7 @@
 
 */
 
+// receive MIDI from the TwoPots Teensy hardware
 public class TwoPotsMidi extends TwoPots
 {
     MidiIn min;

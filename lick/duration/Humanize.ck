@@ -52,6 +52,8 @@ public class Humanize
         return value + Std.rand2f(0.0, delay) * value;
     }
 
+    // todo:  add swing
+
 
     fun static dur humanize(dur value, Random random)
     {

@@ -29,7 +29,8 @@ class Recover extends Chugen
 }
 
 //
-// See e.g. http://hammer.ampage.org/files/hypertriangleclock.gif
+// see e.g.
+// http://hammer.ampage.org/files/hypertriangleclock.gif
 //
 
 public class Hyper extends Chubgraph

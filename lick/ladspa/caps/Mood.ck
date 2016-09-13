@@ -21,10 +21,11 @@
 */
 
 //
-// similar to Moodring,
-//   buy the PCB here http://madbeanpedals.com/projects/index.html
+// similar to Moodring
+// buy the PCB here:  http://madbeanpedals.com/projects/index.html
 //
-public class Ring extends Effect
+
+public class Mood extends Effect
 {
     Delay _predelay;
     TanhDist _dist;
@@ -118,20 +119,20 @@ public class Ring extends Effect
         return f;
     }
 
-    fun static Ring createRing()
+    fun static Mood createMood()
     {
-        Ring ring;
-        return ring;
+        Mood mood;
+        return mood;
     }
 
-    fun static Ring createRing(dur predelay, float dist, float reverb, float recovery, float feedback)
+    fun static Mood createMood(dur predelay, float dist, float reverb, float recovery, float feedback)
     {
-        Ring ring;
-        predelay => ring.predelay;
-        dist => ring.dist;
-        reverb => ring.reverb;
-        recovery => ring.recovery;
-        feedback => ring.feedback;
-        return ring;
+        Mood mood;
+        predelay => mood.predelay;
+        dist => mood.dist;
+        reverb => mood.reverb;
+        recovery => mood.recovery;
+        feedback => mood.feedback;
+        return mood;
     }
 }

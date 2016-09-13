@@ -20,11 +20,15 @@
 
 */
 
-public class RandomSample extends CompositeSample
+// prepends a dur procedure, g proceeded by h
+public class DurPrepend extends DurProcedure
 {
-    fun Sample _sample()
+    DurProcedure g;
+    DurProcedure h;
+
+    fun void run(dur value)
     {
-        samples.sample() $ Sample @=> Sample sample;
-        return sample;
+        h.run(value);
+        g.run(value);
     }
 }

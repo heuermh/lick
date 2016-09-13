@@ -20,8 +20,11 @@
 
 */
 
-// interacts with the EchoPad app over MIDI
+//
+// interacts with the EchoPad iOS app over MIDI
 // http://www.holdernessmedia.com/home/ios-applications/music/echo-pad
+//
+
 public class EchoPadMidi extends EchoPad
 {
     MidiOut out;

@@ -20,8 +20,11 @@
 
 */
 
+//
 // see
 // http://www.firstpr.com.au/dsp/pink-noise/ for further references
+//
+
 public class Pk3 extends Chugen
 {
     float b0;

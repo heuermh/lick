@@ -21,8 +21,7 @@
 */
 
 // generic USB NES controller
-
-public class Nes // extends Joystick
+public class Nes
 {
     Hid hid;
     HidMsg msg;

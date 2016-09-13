@@ -20,6 +20,7 @@
 
 */
 
+// send and receive OSC messages from Monome hardware
 public class Monome
 {
     OscRecv client;

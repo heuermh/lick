@@ -20,11 +20,15 @@
 
 */
 
-public class RandomSample extends CompositeSample
+// appends a float procedure, g followed by h
+public class FloatAppend extends FloatProcedure
 {
-    fun Sample _sample()
+    FloatProcedure g;
+    FloatProcedure h;
+
+    fun void run(float value)
     {
-        samples.sample() $ Sample @=> Sample sample;
-        return sample;
+        g.run(value);
+        h.run(value);
     }
 }

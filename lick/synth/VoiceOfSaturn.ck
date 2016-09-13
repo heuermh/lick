@@ -20,6 +20,11 @@
 
 */
 
+//
+// inspired by the Voice of Saturn DIY synth kit
+// buy one here:  http://store.synthrotek.com/Voice_of_Saturn_Synthesizer_Kit
+//
+
 public class VoiceOfSaturn
 {
     PulseOsc osc1;

@@ -273,13 +273,15 @@ public class TimeSignature
         <<<"changing tempo from current bpm",bpm,"to target bpm",targetBpm,"over length",length,"...">>>;
         bpm => int originalBpm;
         length / 100.0 => dur step;
-	for (0 => int i; i < 100; i++)
-	{
+
+        for (0 => int i; i < 100; i++)
+	    {
             step => now;
             originalBpm + (interpolation.evaluate(i / 100.0) * (targetBpm - originalBpm)) $ int => bpm;
-	    update();
-	}
-	// just in case we didn't get there due to rounding error
+	        update();
+	    }
+
+        // just in case we didn't get there due to rounding error
         targetBpm => bpm;
         update();
     }
@@ -536,7 +538,7 @@ public class TimeSignature
         bar => timeSignature.bar;
         beat => timeSignature.beat;
         bpm => timeSignature.bpm;
-	random @=> timeSignature.random;
+        random @=> timeSignature.random;
         timeSignature.update();
         return timeSignature;
     }

@@ -20,15 +20,12 @@
 
 */
 
-/*
+//
+// abstract class Effect
+// to use, chuck inlet to effect to wet, e.g.
+// inlet => MyEffect effect => wet;
+//
 
-  abstract class Effect
-
-  to use, chuck inlet to effect to wet, e.g.
-
-  inlet => MyEffect effect => wet;
-
-*/
 public class Effect extends Chubgraph
 {
     Gain dry;

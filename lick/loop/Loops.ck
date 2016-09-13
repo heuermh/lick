@@ -34,6 +34,24 @@ public class Loops
         return append;
     }
 
+    /*
+    fun static DurProcedure append(DurProcedure g, DurProcedure h)
+    {
+        DurAppend append;
+        g @=> append.g;
+        h @=> append.h;
+        return append;
+    }
+
+    fun static FloatProcedure append(FloatProcedure g, FloatProcedure h)
+    {
+        FloatAppend append;
+        g @=> append.g;
+        h @=> append.h;
+        return append;
+    }
+    */
+
     fun static Procedure append(Procedure g, dur wait)
     {
         Sleep sleep;
@@ -203,6 +221,24 @@ public class Loops
         h @=> prepend.h;
         return prepend;
     }
+
+    /*
+    fun static DurProcedure prepend(DurProcedure g, DurProcedure h)
+    {
+        DurPrepend prepend;
+        g @=> prepend.g;
+        h @=> prepend.h;
+        return prepend;
+    }
+
+    fun static FloatProcedure prepend(FloatProcedure g, FloatProcedure h)
+    {
+        FloatPrepend prepend;
+        g @=> prepend.g;
+        h @=> prepend.h;
+        return prepend;
+    }
+    */
 
     fun static Procedure prepend(dur wait, Procedure h)
     {

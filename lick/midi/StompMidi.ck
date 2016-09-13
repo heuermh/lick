@@ -20,6 +20,7 @@
 
 */
 
+// receive MIDI from the Stomp Teensy hardware
 public class StompMidi
 {
     MidiIn min;

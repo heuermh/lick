@@ -65,7 +65,7 @@ public class Cee extends Feedback
         0.5 => mix;
         0.0 => feedback;
 
-        spork ~ _tickAtSampleRate();
+        spork ~ _updateAtSampleRate();
     }
 
     fun float rate()
@@ -142,7 +142,7 @@ public class Cee extends Feedback
         return _max;
     }
 
-    fun void _tickAtSampleRate()
+    fun void _updateAtSampleRate()
     {
         while (true)
         {
