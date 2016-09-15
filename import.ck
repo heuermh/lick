@@ -214,6 +214,7 @@ Machine.add("lick/interval/Chord.ck");
 Machine.add("lick/interval/Chords.ck");
 Machine.add("lick/interval/Scale.ck");
 Machine.add("lick/interval/Scales.ck");
+Machine.add("lick/interval/Transpose.ck");
 
 // arp, pattern, package arp
 Machine.add("lick/arp/Pattern.ck");

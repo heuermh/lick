@@ -33,6 +33,11 @@ public class Interval extends FloatFunction
         return (antecedent / consequent) * value;
     }
 
+    fun int isAscending()
+    {
+        return (antecedent > consequent);
+    }
+
     fun Interval asc()
     {
         return ascending();
@@ -40,13 +45,18 @@ public class Interval extends FloatFunction
 
     fun Interval ascending()
     {
-        if (antecedent < consequent)
+        if (isDescending())
         {
             antecedent => float tmp;
             consequent => antecedent;
             tmp => consequent;
         }
         return this;
+    }
+
+    fun int isDescending()
+    {
+        return (antecedent < consequent);
     }
 
     fun Interval desc()
@@ -56,7 +66,7 @@ public class Interval extends FloatFunction
 
     fun Interval descending()
     {
-        if (antecedent > consequent)
+        if (isAscending())
         {
             antecedent => float tmp;
             consequent => antecedent;
