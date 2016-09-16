@@ -80,13 +80,99 @@ class UpDownArpeggiator extends Arpeggiator
             }
             else
             {
-                return (index >= 0);
+                return (index > 0);
             }
         }
     }
 }
 
 class DownUpArpeggiator extends Arpeggiator
+{
+    false => int ascending;
+
+    fun int reset()
+    {
+        false => ascending;
+        return (intervals.size() - 1);
+    }
+
+    fun int next(int index)
+    {
+        if (ascending)
+        {
+            return (index + 1);
+        }
+        else
+        {
+            return (index - 1);
+        }
+    }
+
+    fun int hasNext(int index)
+    {
+        if (index)
+        {
+            if (ascending)
+            {
+                return (index < (intervals.size() - 1));
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            true => ascending;
+            return true;
+        }
+    }
+}
+
+class UpDownRepeatLastArpeggiator extends Arpeggiator
+{
+    true => int ascending;
+
+    fun int reset()
+    {
+        true => ascending;
+        return 0;
+    }
+
+    fun int next(int index)
+    {
+        if (ascending)
+        {
+            return (index + 1);
+        }
+        else
+        {
+            return (index - 1);
+        }
+    }
+
+    fun int hasNext(int index)
+    {
+        if (index == (intervals.size() - 1))
+        {
+            0 => ascending;
+            return true;
+        }
+        else
+        {
+            if (ascending)
+            {
+                return true;
+            }
+            else
+            {
+                return (index >= 0);
+            }
+        }
+    }
+}
+
+class DownUpRepeatLastArpeggiator extends Arpeggiator
 {
     false => int ascending;
 
@@ -136,13 +222,13 @@ class RandomArpeggiator extends Arpeggiator
     fun int reset()
     {
         intervals.size() => count;
-        return Std.rand2(0, count);
+        return Std.rand2(0, count - 1);
     }
 
     fun int next(int index)
     {
         count--;
-        return Std.rand2(0, intervals.size());
+        return Std.rand2(0, intervals.size() - 1);
     }
 
     fun int hasNext(int index)
@@ -183,6 +269,24 @@ public class Arpeggiators
     fun static DownUpArpeggiator downUp(Chord chord, FloatProcedure procedure)
     {
         DownUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Chord chord, FloatProcedure procedure)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Chord chord, FloatProcedure procedure)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
@@ -234,6 +338,24 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Scale scale, FloatProcedure procedure)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, FloatProcedure procedure)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Scale scale, FloatProcedure procedure)
     {
         RandomArpeggiator arpeggiator;
@@ -277,6 +399,26 @@ public class Arpeggiators
     fun static DownUpArpeggiator downUp(Chord chord, FloatProcedure procedure, dur rate)
     {
         DownUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
@@ -334,6 +476,26 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Scale scale, FloatProcedure procedure, dur rate)
     {
         RandomArpeggiator arpeggiator;
@@ -381,6 +543,24 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Chord chord, Pattern pattern, FloatProcedure procedure)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Chord chord, Pattern pattern, FloatProcedure procedure)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Chord chord, Pattern pattern, FloatProcedure procedure)
     {
         RandomArpeggiator arpeggiator;
@@ -420,6 +600,24 @@ public class Arpeggiators
     fun static DownUpArpeggiator downUp(Scale scale, Pattern pattern, FloatProcedure procedure)
     {
         DownUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
@@ -476,6 +674,26 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
     {
         RandomArpeggiator arpeggiator;
@@ -519,6 +737,26 @@ public class Arpeggiators
     fun static DownUpArpeggiator downUp(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
     {
         DownUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static UpDownRepeatLastArpeggiator upDownRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        UpDownRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        rate => arpeggiator.rate;
+        return arpeggiator;
+    }
+
+    fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        DownUpRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
