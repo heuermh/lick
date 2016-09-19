@@ -25,7 +25,7 @@ GNU General Public License for more details.
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
- - Intervals, Chords, Scales, Arpeggiators
+ - Intervals, Chords, Scales, Arpeggiators, Patterns, Sequences, Sequencers
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
  - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
@@ -46,6 +46,8 @@ chuck-1.3.3.0 (chimera) or later
 
 http://chuck.cs.princeton.edu/
 
+
+####LiCK optional dependencies:
 
 Joel Matthys' Fork of CCRMA ChuGins
 
@@ -82,7 +84,3 @@ http://breakfastquay.com/rubberband/
 For further documentation, please see
 
 http://wiki.github.com/heuermh/lick
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/heuermh/lick/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
