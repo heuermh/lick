@@ -234,9 +234,6 @@ public class Patterns
         return pattern;
     }
 
-    // todo: is this the best place for these?
-
-    /*
     fun static Procedure condition(Pattern p, Procedure r)
     {
         PatternedProcedure patterned;
@@ -245,16 +242,15 @@ public class Patterns
         return patterned;
     }
 
-    fun static DurProcedure condition(Pattern p, DurProcedure r)
+    fun static DurProcedure conditiond(Pattern p, DurProcedure r)
     {
         PatternedDurProcedure patterned;
         p @=> patterned.p;
         r @=> patterned.r;
         return patterned;
     }
-    */
 
-    fun static FloatProcedure condition(Pattern p, FloatProcedure r)
+    fun static FloatProcedure conditionf(Pattern p, FloatProcedure r)
     {
         PatternedFloatProcedure patterned;
         p @=> patterned.p;
@@ -262,13 +258,11 @@ public class Patterns
         return patterned;
     }
 
-    /*
-    fun static IntProcedure condition(Pattern p, IntProcedure r)
+    fun static IntProcedure conditioni(Pattern p, IntProcedure r)
     {
         PatternedIntProcedure patterned;
         p @=> patterned.p;
         r @=> patterned.r;
         return patterned;
     }
-    */
 }

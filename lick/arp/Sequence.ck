@@ -20,26 +20,26 @@
 
 */
 
-public class Pattern extends Predicate
+public class Sequence extends FloatSupplier
 {
     0 => int index;
-    IntArrayList pattern;
+    FloatArrayList sequence;
 
     fun int size()
     {
-        return pattern.size();
+        return sequence.size();
     }
 
     fun int size(int capacity)
     {
-        pattern.size(capacity);
+        sequence.size(capacity);
     }
 
     // internal iterator
 
-    fun int test()
+    fun float get()
     {
-        return get(index);
+        return this.get(index);
     }
 
     fun int next()
@@ -61,9 +61,9 @@ public class Pattern extends Predicate
 
     // external iterator
 
-    fun int get(int _index)
+    fun float get(int _index)
     {
-        return pattern.get(_index);
+        return sequence.get(_index);
     }
 
     fun int next(int _index)
@@ -73,6 +73,6 @@ public class Pattern extends Predicate
 
     fun int hasNext(int _index)
     {
-        return ((_index + 1) < pattern.size());
+        return ((_index + 1) < sequence.size());
     }
 }

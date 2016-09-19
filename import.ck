@@ -223,9 +223,13 @@ Machine.add("lick/arp/PatternedFloatProcedure.ck");
 Machine.add("lick/arp/PatternedIntProcedure.ck");
 Machine.add("lick/arp/PatternedProcedure.ck");
 Machine.add("lick/arp/Patterns.ck");
+Machine.add("lick/arp/Sequence.ck");
+Machine.add("lick/arp/Sequences.ck");
 Machine.add("lick/arp/Warp.ck");
 Machine.add("lick/arp/Arpeggiator.ck");
 Machine.add("lick/arp/Arpeggiators.ck");
+Machine.add("lick/arp/Sequencer.ck");
+Machine.add("lick/arp/Sequencers.ck");
 
 // midi tunings, package tuning
 Machine.add("lick/tuning/MidiNote.ck");

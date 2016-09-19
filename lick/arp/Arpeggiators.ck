@@ -512,7 +512,7 @@ public class Arpeggiators
         UpArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -521,7 +521,7 @@ public class Arpeggiators
         DownArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -530,7 +530,7 @@ public class Arpeggiators
         UpDownArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -539,7 +539,7 @@ public class Arpeggiators
         DownUpArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -548,7 +548,7 @@ public class Arpeggiators
         UpDownRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -557,7 +557,7 @@ public class Arpeggiators
         DownUpRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -566,7 +566,7 @@ public class Arpeggiators
         RandomArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -575,7 +575,7 @@ public class Arpeggiators
         UpArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -584,7 +584,7 @@ public class Arpeggiators
         DownArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -593,7 +593,7 @@ public class Arpeggiators
         UpDownArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -602,7 +602,7 @@ public class Arpeggiators
         DownUpArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -611,7 +611,7 @@ public class Arpeggiators
         UpDownRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -620,7 +620,7 @@ public class Arpeggiators
         DownUpRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -629,7 +629,7 @@ public class Arpeggiators
         RandomArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         return arpeggiator;
     }
 
@@ -639,7 +639,7 @@ public class Arpeggiators
         UpArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -649,7 +649,7 @@ public class Arpeggiators
         DownArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -659,7 +659,7 @@ public class Arpeggiators
         UpDownArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -669,7 +669,7 @@ public class Arpeggiators
         DownUpArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -679,7 +679,7 @@ public class Arpeggiators
         UpDownRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -689,7 +689,7 @@ public class Arpeggiators
         DownUpRepeatLastArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -699,7 +699,7 @@ public class Arpeggiators
         RandomArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -709,7 +709,7 @@ public class Arpeggiators
         UpArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -719,7 +719,7 @@ public class Arpeggiators
         DownArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -729,7 +729,7 @@ public class Arpeggiators
         UpDownArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -739,7 +739,7 @@ public class Arpeggiators
         DownUpArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -749,7 +749,7 @@ public class Arpeggiators
         UpDownRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -759,7 +759,7 @@ public class Arpeggiators
         DownUpRepeatLastArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
@@ -769,7 +769,7 @@ public class Arpeggiators
         RandomArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
-        Patterns.condition(pattern, procedure) @=> arpeggiator.procedure;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
         rate => arpeggiator.rate;
         return arpeggiator;
     }
