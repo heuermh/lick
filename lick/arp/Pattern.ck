@@ -30,6 +30,8 @@ public class Pattern extends Predicate
         pattern.size(capacity);
     }
 
+    // internally interating methods
+
     fun int test()
     {
         return get(index);
@@ -37,7 +39,8 @@ public class Pattern extends Predicate
 
     fun int next()
     {
-        return next(index);
+        next(index) => index;
+        return index;
     }
 
     fun int hasNext()
@@ -48,8 +51,10 @@ public class Pattern extends Predicate
     fun int reset()
     {
         0 => index;
-        return 0;
+        return index;
     }
+
+    // external interating methods
 
     fun int get(int _index)
     {
@@ -58,18 +63,11 @@ public class Pattern extends Predicate
 
     fun int next(int _index)
     {
-        if (hasNext(_index))
-        {
-            return _index + 1;
-        }
-        else
-        {
-            return reset();
-        }
+        return _index + 1;
     }
 
     fun int hasNext(int _index)
     {
-        return (_index < pattern.size());
+        return ((_index + 1) < pattern.size());
     }
 }

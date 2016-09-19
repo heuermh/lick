@@ -22,15 +22,29 @@
 
 public class PatternedDurProcedure extends DurProcedure
 {
+    0 => int index;
     Pattern p;
     DurProcedure r;
 
     fun void run(dur value)
     {
-        if (p.test())
+        if (p.get(index))
         {
             r.run(value);
         }
-        p.next();
+        if (p.hasNext(index))
+        {
+            p.next(index) => index;
+        }
+        else
+        {
+            reset();
+        }
+    }
+
+    fun int reset()
+    {
+        0 => index;
+        return index;
     }
 }

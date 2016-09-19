@@ -20,25 +20,48 @@
 
 */
 
-class Msg extends FloatProcedure
+class FloatMsg extends FloatProcedure
 {
     fun void run(float value)
     {
         <<<value>>>;
     }
 }
+class IntMsg extends IntProcedure
+{
+    fun void run(int value)
+    {
+        <<<value>>>;
+    }
+}
 
-Patterns.p1() @=> Pattern alternate;
-Patterns.p7() @=> Pattern skipTwo;
-//Patterns.pattern("010101") @=> Pattern alternate;
-//Patterns.pattern("001001") @=> Pattern skipTwo;
+Patterns.pattern("1") @=> Pattern all;
+Patterns.pattern("01") @=> Pattern alternate;
+Patterns.pattern("001") @=> Pattern skipTwo;
+Patterns.pattern("000000001") @=> Pattern long;
+
+IntMsg intMsg;
+<<<"all">>>;
+all.pattern.forEach(intMsg);
+
+<<<"alternate">>>;
+alternate.pattern.forEach(intMsg);
+
+<<<"skipTwo">>>;
+skipTwo.pattern.forEach(intMsg);
+
+<<<"long">>>;
+long.pattern.forEach(intMsg);
 
 110.0 => float a;
 
-Msg msg;
+FloatMsg msg;
 Chords.minorThirteenth(a, "A") @=> Chord a_min13;
 
 2::second => now;
+
+<<<"up x4 all">>>;
+Loops.loop(Arpeggiators.up(a_min13, all, msg), 4).run();
 
 <<<"up x4 alternate">>>;
 Loops.loop(Arpeggiators.up(a_min13, alternate, msg), 4).run();
@@ -46,24 +69,7 @@ Loops.loop(Arpeggiators.up(a_min13, alternate, msg), 4).run();
 <<<"up x4 skipTwo">>>;
 Loops.loop(Arpeggiators.up(a_min13, skipTwo, msg), 4).run();
 
-/*
-<<<"down x4">>>;
-Loops.loop(Arpeggiators.down(a_min13, msg), 4).run();
-
-<<<"upDown x4">>>;
-Loops.loop(Arpeggiators.upDown(a_min13, msg), 4).run();
-
-<<<"downUp x4">>>;
-Loops.loop(Arpeggiators.downUp(a_min13, msg), 4).run();
-
-<<<"upDownRepeatLast x4">>>;
-Loops.loop(Arpeggiators.upDownRepeatLast(a_min13, msg), 4).run();
-
-<<<"downUpRepeatLast x4">>>;
-Loops.loop(Arpeggiators.downUpRepeatLast(a_min13, msg), 4).run();
-
-<<<"random x4">>>;
-Loops.loop(Arpeggiators.random(a_min13, msg), 4).run();
-*/
+<<<"up x4 long">>>;
+Loops.loop(Arpeggiators.up(a_min13, long, msg), 4).run();
 
 <<<"done">>>;

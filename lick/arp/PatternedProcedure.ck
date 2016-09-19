@@ -22,15 +22,29 @@
 
 public class PatternedProcedure extends Procedure
 {
+    0 => int index;
     Pattern p;
     Procedure r;
 
     fun void run()
     {
-        if (p.test())
+        if (p.get(index))
         {
             r.run();
         }
-        p.next();
+        if (p.hasNext(index))
+        {
+            p.next(index) => index;
+        }
+        else
+        {
+            reset();
+        }
+    }
+
+    fun int reset()
+    {
+        0 => index;
+        return index;
     }
 }

@@ -22,16 +22,29 @@
 
 public class PatternedFloatProcedure extends FloatProcedure
 {
+    0 => int index;
     Pattern p;
     FloatProcedure r;
 
     fun void run(float value)
     {
-        if (p.test())
+        if (p.get(index))
         {
             r.run(value);
         }
-        p.next();
+        if (p.hasNext(index))
+        {
+            p.next(index) => index;
+        }
+        else
+        {
+            reset();
+        }
     }
-    // todo:  doesn't this need to be reset?
+
+    fun int reset()
+    {
+        0 => index;
+        return index;
+    }
 }
