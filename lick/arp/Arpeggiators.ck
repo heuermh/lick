@@ -372,7 +372,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -382,7 +382,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -392,7 +392,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -402,7 +402,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -412,7 +412,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -422,7 +422,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -432,7 +432,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -442,7 +442,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -452,7 +452,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -462,7 +462,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -472,7 +472,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -482,7 +482,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -492,7 +492,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -502,7 +502,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -640,7 +640,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -650,7 +650,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -660,7 +660,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -670,7 +670,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -680,7 +680,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -690,7 +690,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -700,7 +700,7 @@ public class Arpeggiators
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -710,7 +710,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -720,7 +720,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -730,7 +730,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -740,7 +740,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -750,7 +750,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -760,7 +760,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 
@@ -770,7 +770,7 @@ public class Arpeggiators
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
-        rate => arpeggiator.rate;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
         return arpeggiator;
     }
 }

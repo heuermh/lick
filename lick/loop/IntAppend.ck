@@ -20,37 +20,15 @@
 
 */
 
-public class Arpeggiator extends Procedure
+// appends an int procedure, g followed by h
+public class IntAppend extends IntProcedure
 {
-    ArrayList @ intervals;
-    FloatProcedure procedure;
-    DurProvider waitProvider;
-    440.0 => float root;
+    IntProcedure g;
+    IntProcedure h;
 
-    fun void run()
+    fun void run(int value)
     {
-        reset() => int i;
-        while (hasNext(i))
-        {
-            intervals.get(i) $ Interval @=> Interval interval;
-            procedure.run(interval.evaluate(root));
-            next(i) => i;
-            waitProvider.evaluate() => now;
-        }
-    }
-
-    fun int reset()
-    {
-        return 0;
-    }
-
-    fun int next(int index)
-    {
-        return index + 1;
-    }
-
-    fun int hasNext(int index)
-    {
-        return (index < intervals.size());
+        g.run(value);
+        h.run(value);
     }
 }

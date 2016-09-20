@@ -20,6 +20,8 @@
 
 */
 
+TimeSignature.common(110) @=> TimeSignature t;
+
 BeeThree bt => ADSR adsr => dac;
 adsr.set(10::ms, 8::ms, 0.8, 60::ms);
 bt.noteOff(1.0);
@@ -49,35 +51,35 @@ Chords.minorThirteenth(d, "D") @=> Chord d_min13;
 
 2::second => now;
 
-Arpeggiators.up(c_maj, play) @=> Arpeggiator upC;
-Arpeggiators.down(c_maj, play) @=> Arpeggiator downC;
-Arpeggiators.upDown(c_maj, play) @=> Arpeggiator upDownC;
-Arpeggiators.downUp(c_maj, play) @=> Arpeggiator downUpC;
+Arpeggiators.up(c_maj, play, t.e) @=> Arpeggiator upC;
+Arpeggiators.down(c_maj, play, t.e) @=> Arpeggiator downC;
+Arpeggiators.upDown(c_maj, play, t.e) @=> Arpeggiator upDownC;
+Arpeggiators.downUp(c_maj, play, t.e) @=> Arpeggiator downUpC;
 
-Arpeggiators.up(a_min, play) @=> Arpeggiator upAm;
-Arpeggiators.down(a_min, play) @=> Arpeggiator downAm;
-Arpeggiators.upDown(a_min, play) @=> Arpeggiator upDownAm;
-Arpeggiators.downUp(a_min, play) @=> Arpeggiator downUpAm;
+Arpeggiators.up(a_min, play, t.e) @=> Arpeggiator upAm;
+Arpeggiators.down(a_min, play, t.e) @=> Arpeggiator downAm;
+Arpeggiators.upDown(a_min, play, t.e) @=> Arpeggiator upDownAm;
+Arpeggiators.downUp(a_min, play, t.e) @=> Arpeggiator downUpAm;
 
-Arpeggiators.upDown(d_11, play) @=> Arpeggiator upDownD11;
-Arpeggiators.upDown(d_min13, play) @=> Arpeggiator upDownDmin13;
+Arpeggiators.upDown(d_11, play, t.e) @=> Arpeggiator upDownD11;
+Arpeggiators.upDown(d_min13, play, t.e) @=> Arpeggiator upDownDmin13;
 
 LoopBuilder loopBuilder;
 loopBuilder.append(upC, 4);
 loopBuilder.append(upAm, 4);
-loopBuilder.append(200.0::ms);
+loopBuilder.append(t.e);
 loopBuilder.append(downC, 4);
 loopBuilder.append(downAm, 4);
-loopBuilder.append(200.0::ms);
+loopBuilder.append(t.e);
 loopBuilder.append(upDownC, 2);
 loopBuilder.append(upDownAm, 2);
-loopBuilder.append(200.0::ms);
+loopBuilder.append(t.e);
 loopBuilder.append(downUpC, 2);
 loopBuilder.append(downUpAm, 2);
-loopBuilder.append(200.0::ms);
+loopBuilder.append(t.e);
 loopBuilder.append(upDownD11);
 loopBuilder.append(upDownDmin13);
-loopBuilder.append(200.0::ms);
+loopBuilder.append(t.e);
 
 Loops.loop(loopBuilder.build(), 2).run();
 

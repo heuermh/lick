@@ -20,6 +20,10 @@
 
 */
 
+<<<"LiCK  Library for ChucK.">>>;
+<<<"Copyright (c) 2007-2016 held jointly by the individual authors.">>>;
+<<<"Licensed GNU General Public License (GPL), version 3 or later.">>>;
+
 // functional interfaces or functors, package fn
 Machine.add("lick/fn/BinaryFunction.ck");
 Machine.add("lick/fn/BinaryPredicate.ck");
@@ -300,9 +304,11 @@ Machine.add("lick/sample/Samples.ck");
 Machine.add("lick/loop/Append.ck");
 Machine.add("lick/loop/DurAppend.ck");
 Machine.add("lick/loop/FloatAppend.ck");
+Machine.add("lick/loop/IntAppend.ck");
 Machine.add("lick/loop/Prepend.ck");
 Machine.add("lick/loop/DurPrepend.ck");
 Machine.add("lick/loop/FloatPrepend.ck");
+Machine.add("lick/loop/IntPrepend.ck");
 Machine.add("lick/loop/Repeat.ck");
 Machine.add("lick/loop/Sleep.ck");
 Machine.add("lick/loop/Loop.ck");
@@ -447,6 +453,8 @@ Machine.add("lick/synth/SubGen.ck");
 Machine.add("lick/synth/SeptSubGen.ck");
 Machine.add("lick/synth/VoiceOfSaturn.ck");
 Machine.add("lick/synth/Wrapper.ck");
+
+<<<"Optional dependencies (may fail to compile):">>>;
 
 // depends on jwmatthys' chugins, package jwmatthys
 Machine.add("lick/jwmatthys/Crush.ck");

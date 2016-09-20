@@ -302,7 +302,7 @@ public class Sequencers
         ForwardSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -311,7 +311,7 @@ public class Sequencers
         ReverseSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -320,7 +320,7 @@ public class Sequencers
         ForwardReverseSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -329,7 +329,7 @@ public class Sequencers
         ReverseForwardSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -338,7 +338,7 @@ public class Sequencers
         ForwardReverseRepeatLastSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -347,7 +347,7 @@ public class Sequencers
         ReverseForwardRepeatLastSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -356,7 +356,7 @@ public class Sequencers
         RandomSequencer sequencer;
         sequence @=> sequencer.sequence;
         procedure @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -423,7 +423,7 @@ public class Sequencers
         ForwardSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -432,7 +432,7 @@ public class Sequencers
         ReverseSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -441,7 +441,7 @@ public class Sequencers
         ForwardReverseSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -450,7 +450,7 @@ public class Sequencers
         ReverseForwardSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -459,7 +459,7 @@ public class Sequencers
         ForwardReverseRepeatLastSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -468,7 +468,7 @@ public class Sequencers
         ReverseForwardRepeatLastSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 
@@ -477,7 +477,7 @@ public class Sequencers
         RandomSequencer sequencer;
         sequence @=> sequencer.sequence;
         Patterns.conditionf(pattern, procedure) @=> sequencer.procedure;
-        rate => sequencer.rate;
+        DurProvider.create(rate) @=> sequencer.waitProvider;
         return sequencer;
     }
 }

@@ -85,7 +85,7 @@ public class ScaleSmear extends Smear
     {
         FloatProcedure noop;
         Arpeggiators.up(scale, noop) @=> Arpeggiator a;
-        rate => a.rate;
+        DurProvider.create(rate) @=> a.waitProvider;
         arp(a);
     }
 
@@ -93,7 +93,7 @@ public class ScaleSmear extends Smear
     {
         FloatProcedure noop;
         Arpeggiators.down(scale, noop) @=> Arpeggiator a;
-        rate => a.rate;
+        DurProvider.create(rate) @=> a.waitProvider;
         arp(a);
     }
 
@@ -101,7 +101,7 @@ public class ScaleSmear extends Smear
     {
         FloatProcedure noop;
         Arpeggiators.upDown(scale, noop) @=> Arpeggiator a;
-        rate => a.rate;
+        DurProvider.create(rate) @=> a.waitProvider;
         arp(a);
     }
 
@@ -109,7 +109,7 @@ public class ScaleSmear extends Smear
     {
         FloatProcedure noop;
         Arpeggiators.downUp(scale, noop) @=> Arpeggiator a;
-        rate => a.rate;
+        DurProvider.create(rate) @=> a.waitProvider;
         arp(a);
     }
 
@@ -117,7 +117,7 @@ public class ScaleSmear extends Smear
     {
         FloatProcedure noop;
         Arpeggiators.random(scale, noop) @=> Arpeggiator a;
-        rate => a.rate;
+        DurProvider.create(rate) @=> a.waitProvider;
         arp(a);
     }
 

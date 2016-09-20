@@ -26,7 +26,7 @@ public class Sequences
     fun static Sequence sequence(string s)
     {
         // todo: create regex that splits on ,|\t\w
-        return sequence(" ");
+        return sequence(s, " ");
     }
 
     // choose yer own delimiter
@@ -35,7 +35,7 @@ public class Sequences
         Sequence sequence;
 
         StringTokenizer st;
-        st.set(delim);
+        st.set(p); // todo: cannot specify the delimiter
 
         while (st.more())
         {

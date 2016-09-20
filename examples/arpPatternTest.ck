@@ -57,19 +57,20 @@ long.pattern.forEach(intMsg);
 
 FloatMsg msg;
 Chords.minorThirteenth(a, "A") @=> Chord a_min13;
+TimeSignature.common(110) @=> TimeSignature t;
 
-2::second => now;
+t.w => now;
 
 <<<"up x4 all">>>;
-Loops.loop(Arpeggiators.up(a_min13, all, msg), 4).run();
+Loops.loop(Arpeggiators.up(a_min13, all, msg, t.e), t.q, 4).run();
 
 <<<"up x4 alternate">>>;
-Loops.loop(Arpeggiators.up(a_min13, alternate, msg), 4).run();
+Loops.loop(Arpeggiators.up(a_min13, alternate, msg, t.e), t.q, 4).run();
 
 <<<"up x4 skipTwo">>>;
-Loops.loop(Arpeggiators.up(a_min13, skipTwo, msg), 4).run();
+Loops.loop(Arpeggiators.up(a_min13, skipTwo, msg, t.e), t.q, 4).run();
 
 <<<"up x4 long">>>;
-Loops.loop(Arpeggiators.up(a_min13, long, msg), 4).run();
+Loops.loop(Arpeggiators.up(a_min13, long, msg, t.e), t.q, 4).run();
 
 <<<"done">>>;

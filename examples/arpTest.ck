@@ -32,28 +32,29 @@ class Msg extends FloatProcedure
 
 Msg msg;
 Chords.minorThirteenth(a, "A") @=> Chord a_min13;
+TimeSignature.common(110) @=> TimeSignature t;
 
-2::second => now;
+t.w => now;
 
 <<<"up x4">>>;
-Loops.loop(Arpeggiators.up(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.up(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"down x4">>>;
-Loops.loop(Arpeggiators.down(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.down(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"upDown x4">>>;
-Loops.loop(Arpeggiators.upDown(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.upDown(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"downUp x4">>>;
-Loops.loop(Arpeggiators.downUp(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.downUp(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"upDownRepeatLast x4">>>;
-Loops.loop(Arpeggiators.upDownRepeatLast(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.upDownRepeatLast(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"downUpRepeatLast x4">>>;
-Loops.loop(Arpeggiators.downUpRepeatLast(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.downUpRepeatLast(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"random x4">>>;
-Loops.loop(Arpeggiators.random(a_min13, msg), 4).run();
+Loops.loop(Arpeggiators.random(a_min13, msg, t.s), t.e, 4).run();
 
 <<<"done">>>;

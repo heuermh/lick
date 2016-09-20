@@ -24,8 +24,7 @@ public class Sequencer extends Procedure
 {
     Sequence sequence;
     FloatProcedure procedure;
-    200::ms => dur rate;
-    440.0 => float root;
+    DurProvider waitProvider;
 
     fun void run()
     {
@@ -35,7 +34,7 @@ public class Sequencer extends Procedure
             sequence.get(i) $ float => float value;
             procedure.run(value);
             next(i) => i;
-            rate => now;
+            waitProvider.evaluate() => now;
         }
     }
 
