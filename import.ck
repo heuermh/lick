@@ -317,6 +317,7 @@ Machine.add("lick/loop/LoopBuilder.ck");
 
 // sample-based drum machines, package drum
 Machine.add("lick/drum/AkaiMpc60.ck");
+Machine.add("lick/drum/BossDr110.ck");
 Machine.add("lick/drum/EmuDrumulator.ck");
 Machine.add("lick/drum/OberheimDmx.ck");
 Machine.add("lick/drum/RolandCr78.ck");
