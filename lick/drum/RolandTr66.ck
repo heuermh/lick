@@ -20,10 +20,13 @@
 
 */
 
-class ClosedHat extends Sample
+class ClosedHat extends RandomSample
 {
     {
-        "samples/RolandTr66/ClosedHat.wav" => buf.read;
+        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat1.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat2.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat3.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat4.wav"));
     }
 }
 
@@ -41,10 +44,23 @@ class HighConga extends Sample
     }
 }
 
-class Kick extends Sample
+class KickA extends RandomSample
 {
     {
-        "samples/RolandTr66/Kick.wav" => buf.read;
+        samples.add(Samples.createSample("samples/RolandTr66/KickA1.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickA2.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickA3.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickA4.wav"));
+    }
+}
+
+class KickB extends RandomSample
+{
+    {
+        samples.add(Samples.createSample("samples/RolandTr66/KickB1.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickB2.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickB3.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/KickB4.wav"));
     }
 }
 
@@ -55,10 +71,11 @@ class LowConga extends Sample
     }
 }
 
-class OpenHat extends Sample
+class OpenHat extends RandomSample
 {
     {
-        "samples/RolandTr66/OpenHat.wav" => buf.read;
+        samples.add(Samples.createSample("samples/RolandTr66/OpenHat1.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/OpenHat2.wav"));
     }
 }
 
@@ -69,10 +86,12 @@ class Rim extends Sample
     }
 }
 
-class Snare extends Sample
+class Snare extends RandomSample
 {
     {
-        "samples/RolandTr66/Snare.wav" => buf.read;
+        samples.add(Samples.createSample("samples/RolandTr66/Snare1.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/Snare2.wav"));
+        samples.add(Samples.createSample("samples/RolandTr66/Snare3.wav"));
     }
 }
 
@@ -93,7 +112,8 @@ public class RolandTr66
     ClosedHat closedHat;
     Crash crash;
     HighConga highConga;
-    Kick kick;
+    KickA kickA;
+    KickB kickB;
     LowConga lowConga;
     OpenHat openHat;
     Rim rim;
@@ -105,7 +125,8 @@ public class RolandTr66
         samples.add(closedHat);
         samples.add(crash);
         samples.add(highConga);
-        samples.add(kick);
+        samples.add(kickA);
+        samples.add(kickB);
         samples.add(lowConga);
         samples.add(openHat);
         samples.add(rim);
