@@ -420,6 +420,7 @@ Machine.add("lick/effect/Thicken.ck");
 Machine.add("lick/effect/Tremolo.ck");
 Machine.add("lick/effect/Tricoder.ck");
 Machine.add("lick/effect/Vibrato.ck");
+Machine.add("lick/effect/Wire.ck");
 Machine.add("lick/effect/Wolftone.ck");
 Machine.add("lick/effect/Woosh.ck");
 Machine.add("lick/effect/Currant.ck");
