@@ -19,7 +19,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 ```
 
-####LiCK includes:
+### LiCK includes:
 
  - int, float, and Object Lists
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
@@ -40,14 +40,14 @@ GNU General Public License for more details.
  - "ChucK-Unit", an Assert class for creating unit tests
 
 
-####LiCK requires:
+### LiCK requires:
 
 chuck-1.3.3.0 (chimera) or later
 
 http://chuck.cs.princeton.edu/
 
 
-####LiCK optional dependencies:
+### LiCK optional dependencies:
 
 Joel Matthys' Fork of CCRMA ChuGins
 
@@ -79,7 +79,7 @@ Rubber Band Library
 http://breakfastquay.com/rubberband/
 
 
-####Documentation
+### Documentation
 
 For further documentation, please see
 
