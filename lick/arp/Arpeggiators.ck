@@ -215,6 +215,63 @@ class DownUpRepeatLastArpeggiator extends Arpeggiator
     }
 }
 
+class PedalToneUpArpeggiator extends Arpeggiator
+{
+    0 => int count;
+
+    fun int reset()
+    {
+        intervals.size() => count;
+        return 0;
+    }
+
+    fun int next(int index)
+    {
+        count--;
+        if (index % 2 == 0)
+        {
+            return 0;
+        }
+        return Std.rand2(0, intervals.size() - 1);
+    }
+
+    fun int hasNext(int index)
+    {
+        return (count >= 0);
+    }
+}
+
+class PedalToneDownArpeggiator extends Arpeggiator
+{
+    // todo
+}
+
+class PedalToneRandomArpeggiator extends Arpeggiator
+{
+    0 => int count;
+
+    fun int reset()
+    {
+        intervals.size() => count;
+        return 0;
+    }
+
+    fun int next(int index)
+    {
+        count--;
+        if ((index % 2) == 0)
+        {
+            return 0;
+        }
+        return Std.rand2(1, intervals.size() - 1);
+    }
+
+    fun int hasNext(int index)
+    {
+        return (count >= 0);
+    }
+}
+
 class RandomArpeggiator extends Arpeggiator
 {
     0 => int count;
