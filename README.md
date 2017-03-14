@@ -6,7 +6,7 @@ LiCK  Library for ChucK.
 
 ```
 LiCK  Library for ChucK.
-Copyright (c) 2007-2016 held jointly by the individual authors.
+Copyright (c) 2007-2017 held jointly by the individual authors.
 
 LiCK is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
