@@ -108,6 +108,11 @@ public class Lfo extends Chugen
         return f;
     }
 
+    fun void retrigger()
+    {
+        0.0 => phase;
+    }
+
     fun void saw()
     {
         mix(1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
