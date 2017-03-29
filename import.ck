@@ -398,6 +398,7 @@ Machine.add("lick/effect/EnvelopeTremolo.ck");
 Machine.add("lick/effect/Flutter.ck");
 Machine.add("lick/effect/Freeze.ck");
 Machine.add("lick/effect/FullDouble.ck");
+Machine.add("lick/effect/Ghost.ck");
 Machine.add("lick/effect/Harmonizer.ck");
 Machine.add("lick/effect/Harmonizers.ck");
 Machine.add("lick/effect/LoopReverb.ck");
