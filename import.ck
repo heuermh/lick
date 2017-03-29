@@ -394,6 +394,7 @@ Machine.add("lick/effect/AutoWah.ck");
 Machine.add("lick/effect/DigitalDelay.ck");
 Machine.add("lick/effect/Drop.ck");
 Machine.add("lick/effect/DualRect.ck");
+Machine.add("lick/effect/Electoronic.ck");
 Machine.add("lick/effect/EnvelopeTremolo.ck");
 Machine.add("lick/effect/Flutter.ck");
 Machine.add("lick/effect/Freeze.ck");
