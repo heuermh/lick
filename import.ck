@@ -419,6 +419,7 @@ Machine.add("lick/effect/Smother.ck");
 Machine.add("lick/effect/Solstice.ck");
 Machine.add("lick/effect/TimeModulator.ck");
 Machine.add("lick/effect/Thicken.ck");
+Machine.add("lick/effect/Totter.ck");
 Machine.add("lick/effect/Tremolo.ck");
 Machine.add("lick/effect/Tricoder.ck");
 Machine.add("lick/effect/Vibrato.ck");
