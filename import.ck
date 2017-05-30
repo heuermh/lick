@@ -319,6 +319,7 @@ Machine.add("lick/loop/LoopBuilder.ck");
 Machine.add("lick/drum/AkaiMpc60.ck");
 Machine.add("lick/drum/BossDr110.ck");
 Machine.add("lick/drum/CasioSa10.ck");
+Machine.add("lick/drum/ElectroHarmonixDrm15.ck");
 Machine.add("lick/drum/EmuDrumulator.ck");
 Machine.add("lick/drum/LellUds.ck");
 Machine.add("lick/drum/OberheimDmx.ck");
