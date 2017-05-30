@@ -63,6 +63,15 @@ public class FloatArrayList extends FloatList
         }
     }
 
+    fun void remove(int index)
+    {
+        for (index => int i; i < size() - 1; i++)
+        {
+            set(i, get(i + 1));
+        }
+        values.size(size() - 1);
+    }
+
     fun int contains(float value)
     {
         for (0 => int i; i < size(); i++)
@@ -195,5 +204,54 @@ public class FloatArrayList extends FloatList
             result.add(get(i));
         }
         return result;
+    }
+
+    fun void sort(FloatComparator c)
+    {
+        _quickSort(0, size() - 1, c);
+    }
+
+    fun void _quickSort(int low, int high, FloatComparator c)
+    {
+        if (low < high)
+        {
+            _partition(low, high, c) => int p;
+            _quickSort(low, p, c);
+            _quickSort(p + 1, high, c);
+        }
+    }
+
+    fun int _partition(int low, int high, FloatComparator c)
+    {
+        get(low) => float pivot;
+        low - 1 => int i;
+        high + 1 => int j;
+        while (true)
+        {
+            do
+            {
+                1 +=> i;
+            }
+            while (c.compare(get(i), pivot) < 0);
+
+            do
+            {
+                j - 1 => j;
+            }
+            while (c.compare(get(j), pivot) > 0);
+
+            if (i >= j)
+            {
+                return j;
+            }
+            swap(i, j);
+        }
+    }
+
+    fun void swap(int a, int b)
+    {
+        get(a) => float temp;
+        set(a, get(b));
+        set(b, temp);
     }
 }

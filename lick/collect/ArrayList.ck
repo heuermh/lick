@@ -64,6 +64,15 @@ public class ArrayList extends List
         }
     }
 
+    fun void remove(int index)
+    {
+        for (index => int i; i < size() - 1; i++)
+        {
+            set(i, get(i + 1));
+        }
+        values.size(size() - 1);
+    }
+
     fun int contains(Object value)
     {
         for (0 => int i; i < size(); i++)
@@ -198,51 +207,52 @@ public class ArrayList extends List
         return result;
     }
 
-    fun void remove(int index) {
-        for (index => int i; i < size() - 1; i++) {
-            set(i, get(i+1));
-        }
-        values.size(size() - 1);
+    fun void sort(Comparator c)
+    {
+        _quickSort(0, size() - 1, c);
     }
 
-    // QuickSort
-    fun void sort(Comparator c) {
-        quickSort(0, size() - 1, c);
-    }
-
-    fun void quickSort(int low, int high, Comparator c) {
-
-        if (low < high) {
-            partition(low, high, c) => int p;
-            quickSort(low, p, c);
-            quickSort(p + 1, high, c);
+    fun void _quickSort(int low, int high, Comparator c)
+    {
+        if (low < high)
+        {
+            _partition(low, high, c) => int p;
+            _quickSort(low, p, c);
+            _quickSort(p + 1, high, c);
         }
     }
 
-    fun int partition(int low, int high, Comparator c) {
+    fun int _partition(int low, int high, Comparator c)
+    {
         get(low) @=> Object pivot;
         low - 1 => int i;
         high + 1 => int j;
-        while (true) {
-            do {
+        while (true)
+        {
+            do
+            {
                 1 +=> i;
-            } while (c.compare(get(i), pivot) < 0);
+            }
+            while (c.compare(get(i), pivot) < 0);
 
-            do {
+            do
+            {
                 j - 1 => j;
-            } while (c.compare(get(j), pivot) > 0);
+            }
+            while (c.compare(get(j), pivot) > 0);
 
-            if (i >= j) {
+            if (i >= j)
+            {
                 return j;
             }
             swap(i, j);
         }
     }
 
-    fun void swap(int a, int b) {
+    fun void swap(int a, int b)
+    {
         get(a) @=> Object temp;
         set(a, get(b));
         set(b, temp);
     }
-
 }
