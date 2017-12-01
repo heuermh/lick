@@ -280,6 +280,7 @@ Machine.add("lick/device/Nes.ck");
 Machine.add("lick/device/MAudioOzone.ck");
 Machine.add("lick/device/AlesisQX25.ck");
 Machine.add("lick/device/StompKeyboard.ck");
+Machine.add("lick/device/RolandA49.ck");
 Machine.add("lick/device/PodHd500.ck");
 
 // osc, package osc
