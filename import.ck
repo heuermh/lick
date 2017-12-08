@@ -207,6 +207,13 @@ Machine.add("lick/collect/Edge.ck");
 Machine.add("lick/collect/Graph.ck");
 Machine.add("lick/collect/Graphs.ck");
 
+// ADSRs
+Machine.add("lick/adsr/AbstractAdsr.ck");
+Machine.add("lick/adsr/Adsr.ck");
+Machine.add("lick/adsr/CompositeAdsr.ck");
+Machine.add("lick/adsr/RandomAdsr.ck");
+Machine.add("lick/adsr/RoundRobinAdsr.ck");
+
 // analysis
 Machine.add("lick/analysis/EnvelopeFollower.ck");
 Machine.add("lick/analysis/EnvelopeTrigger.ck");
