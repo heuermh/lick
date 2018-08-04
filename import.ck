@@ -412,6 +412,7 @@ Machine.add("lick/effect/Ghost.ck");
 Machine.add("lick/effect/Harmonizer.ck");
 Machine.add("lick/effect/Harmonizers.ck");
 Machine.add("lick/effect/LoopReverb.ck");
+Machine.add("lick/effect/Masa.ck");
 Machine.add("lick/effect/Mesmerizer.ck");
 Machine.add("lick/effect/ModulatedDelay.ck");
 Machine.add("lick/effect/Mixer.ck");
