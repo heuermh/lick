@@ -85,6 +85,17 @@ class QuarterProvider extends CrotchetProvider
     // empty
 }
 
+class TripletQuarterProvider extends HumanizedDurProvider
+{
+    TimeSignature @ timeSignature;
+
+    fun dur evaluate()
+    {
+        timeSignature.triplet(timeSignature.q) => duration;
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+    }
+}
+
 class QuaverProvider extends HumanizedDurProvider
 {
     TimeSignature @ timeSignature;
@@ -101,6 +112,28 @@ class EighthProvider extends QuaverProvider
     // empty
 }
 
+class DottedEighthProvider extends HumanizedDurProvider
+{
+    TimeSignature @ timeSignature;
+
+    fun dur evaluate()
+    {
+        timeSignature.dotted(timeSignature.e) => duration;
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+    }
+}
+
+class TripletEighthProvider extends HumanizedDurProvider
+{
+    TimeSignature @ timeSignature;
+
+    fun dur evaluate()
+    {
+        timeSignature.triplet(timeSignature.e) => duration;
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+    }
+}
+
 class SemiquaverProvider extends HumanizedDurProvider
 {
     TimeSignature @ timeSignature;
@@ -115,6 +148,17 @@ class SemiquaverProvider extends HumanizedDurProvider
 class SixteenthProvider extends SemiquaverProvider
 {
     // empty
+}
+
+class TripletSixteenthProvider extends HumanizedDurProvider
+{
+    TimeSignature @ timeSignature;
+
+    fun dur evaluate()
+    {
+        timeSignature.triplet(timeSignature.s) => duration;
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+    }
 }
 
 class DemiSemiquaverProvider extends HumanizedDurProvider
@@ -382,6 +426,13 @@ public class TimeSignature
         return quarterProvider;
     }
 
+    fun TripletQuarterProvider tripletQuarterProvider()
+    {
+        TripletQuarterProvider tripletQuarterProvider;
+        this @=> tripletQuarterProvider.timeSignature;
+        return tripletQuarterProvider;
+    }
+
     fun dur quaver()
     {
         return e;
@@ -406,6 +457,20 @@ public class TimeSignature
         return eighthProvider;
     }
 
+    fun DottedEighthProvider dottedEighthProvider()
+    {
+        DottedEighthProvider dottedEighthProvider;
+        this @=> dottedEighthProvider.timeSignature;
+        return dottedEighthProvider;
+    }
+
+    fun TripletEighthProvider tripletEighthProvider()
+    {
+        TripletEighthProvider tripletEighthProvider;
+        this @=> tripletEighthProvider.timeSignature;
+        return tripletEighthProvider;
+    }
+
     fun dur semiquaver()
     {
         return s;
@@ -428,6 +493,13 @@ public class TimeSignature
         SixteenthProvider sixteenthProvider;
         this @=> sixteenthProvider.timeSignature;
         return sixteenthProvider;
+    }
+
+    fun TripletSixteenthProvider tripletSixteenthProvider()
+    {
+        TripletSixteenthProvider tripletSixteenthProvider;
+        this @=> tripletSixteenthProvider.timeSignature;
+        return tripletSixteenthProvider;
     }
 
     fun dur demiSemiquaver()
@@ -505,6 +577,11 @@ public class TimeSignature
     fun dur dotted(dur note)
     {
         return note + (note / 2);
+    }
+
+    fun dur triplet(dur note)
+    {
+        return (2.0/3.0) * note;
     }
 
     fun static TimeSignature common()
