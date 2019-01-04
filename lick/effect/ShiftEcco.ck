@@ -98,11 +98,10 @@ public class ShiftEcco extends Effect
         0.0 => anticipation;
         0.05 => delay;
 
-        _update();
-        spork ~ _updateAtRate(ts.q);
+        update();
     }
 
-    fun float _update() {
+    fun float update() {
         ts.w => _head1.max;
         ts.w => _head2.max;
         ts.w => _head3.max;
@@ -119,13 +118,6 @@ public class ShiftEcco extends Effect
 
         _dur4.evaluate() => dur d4;
         d4 => _head4.delay;
-    }
-
-    fun void _updateAtRate(dur d) {
-        while (true) {
-            d => now;
-            _update();
-        }
     }
 
     fun void panic() {

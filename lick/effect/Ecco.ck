@@ -95,11 +95,10 @@ public class Ecco extends Effect
         0.0 => anticipation;
         0.05 => delay;
 
-        _update();
-        spork ~ _updateAtRate(ts.q);
+        update();
     }
 
-    fun float _update() {
+    fun float update() {
         ts.w => _head1.max;
         ts.w => _head2.max;
         ts.w => _head3.max;

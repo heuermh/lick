@@ -24,19 +24,23 @@ TimeSignature.common(110) @=> TimeSignature ts;
 ShiftEcco.create(ts) @=> ShiftEcco ecco;
 
 0.8 => ecco.mix;
+ecco.stop();
 
-41.203 => float e;
-Scales.majorBlues(e, "E") @=> Scale scale;
+class Toggle extends Procedure
+{
+    fun void run()
+    {
+        ecco.toggle();
+        <<<"running", ecco.running()>>>;
+    }
+}
 
-BeeThree bt => ecco => dac;
+adc => ecco => dac;
+
+Toggle toggle;
+
+StompKeyboard stomp;
+toggle @=> stomp.button0Down;
 
 <<<"ready">>>;
-
-while (true)
-{
-    scale.sample() => bt.freq;
-    1 => bt.noteOn;
-    ts.h => now;
-    1 => bt.noteOff;
-    ts.e => now;
-}
+stomp.open(0);
