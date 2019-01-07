@@ -117,13 +117,6 @@ public class Ecco extends Effect
         d4 => _head4.delay;
     }
 
-    fun void _updateAtRate(dur d) {
-        while (true) {
-            d => now;
-            _update();
-        }
-    }
-
     fun void panic() {
         0.0 => feedback1;
         0.0 => feedback2;

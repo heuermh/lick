@@ -20,19 +20,19 @@
 
 */
 
-TimeSignature.common(110) @=> TimeSignature ts;
-Ecco.even(ts) @=> Ecco ecco;
+TimeSignature.common(80) @=> TimeSignature ts;
+Ecco.triplet(ts) @=> Ecco ecco;
 
-0.4 => ecco.mix;
+0.3 => ecco.mix;
 
-0.3 => ecco.mix1;
-0.2 => ecco.mix2;
-0.3 => ecco.mix3;
-0.3 => ecco.mix4;
+0.2 => ecco.mix1;
+0.4 => ecco.mix2;
+0.4 => ecco.mix3;
+0.6 => ecco.mix4;
 
 0.2 => ecco.feedback1;
 0.3 => ecco.feedback2;
-0.3 => ecco.feedback3;
+0.2 => ecco.feedback3;
 0.1 => ecco.feedback4;
 
 ecco.stop();

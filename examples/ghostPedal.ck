@@ -22,6 +22,17 @@
 
 Ghost ghost;
 
+0.8 => ghost.mix;
+0.3 => ghost.blend;
+
+191::ms => ghost.black.delay;
+373::ms => ghost.silver.delay;
+597::ms => ghost.white.delay;
+
+0.999 => ghost.black.feedback;
+0.999 => ghost.silver.feedback;
+0.999 => ghost.white.feedback;
+
 class Toggle extends Procedure
 {
     fun void run()
@@ -31,11 +42,7 @@ class Toggle extends Procedure
     }
 }
 
-0.80 => ghost.blend;
-
-0.20 => ghost.black.feedback;
-0.40 => ghost.silver.feedback;
-0.60 => ghost.white.feedback;
+ghost.stop();
 
 adc => ghost => dac;
 

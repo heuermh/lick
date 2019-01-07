@@ -23,7 +23,18 @@
 TimeSignature.common(110) @=> TimeSignature ts;
 ShiftEcco.create(ts) @=> ShiftEcco ecco;
 
-0.8 => ecco.mix;
+0.4 => ecco.mix;
+
+0.1 => ecco.mix1;
+0.2 => ecco.mix2;
+0.4 => ecco.mix3;
+0.6 => ecco.mix4;
+
+0.4 => ecco.feedback1;
+0.3 => ecco.feedback2;
+0.3 => ecco.feedback3;
+0.1 => ecco.feedback4;
+
 ecco.stop();
 
 class Toggle extends Procedure

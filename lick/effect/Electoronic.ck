@@ -92,6 +92,14 @@ public class Electoronic extends Feedback
         return f;
     }
 
+    fun float feedback(float f)
+    {
+        f => feedbackIn.gain;
+        f => head1.feedback;
+        f => head2.feedback;
+        f => head3.feedback;
+    }
+
     fun static Electoronic create(TimeSignature ts)
     {
         Electoronic electoronic;
