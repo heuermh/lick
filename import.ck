@@ -407,6 +407,7 @@ Machine.add(path + "lick/effect/DigitalDelay.ck");
 Machine.add(path + "lick/effect/Drop.ck");
 Machine.add(path + "lick/effect/DualRect.ck");
 Machine.add(path + "lick/effect/Ecco.ck");
+Machine.add(path + "lick/effect/EchoArray.ck");
 Machine.add(path + "lick/effect/Electoronic.ck");
 Machine.add(path + "lick/effect/EnvelopeTremolo.ck");
 Machine.add(path + "lick/effect/Flutter.ck");
