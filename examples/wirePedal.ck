@@ -24,6 +24,8 @@ adc => Wire wire => dac;
 
 0.8 => wire.mix;
 
+wire.stop();
+
 class Toggle extends Procedure
 {
     fun void run()

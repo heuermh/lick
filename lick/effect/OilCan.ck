@@ -47,9 +47,8 @@ public class OilCan extends LfoFeedback
         4.7 => width;
         9.3 => follow;
         10000.0 => cutoff;
-        hyperLfo();
 
-        spork ~ _updateAtSampleRate();
+        hyperLfo();
     }
 
     fun float timing()

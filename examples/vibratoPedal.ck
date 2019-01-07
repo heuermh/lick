@@ -24,6 +24,8 @@ adc => Vibrato vibrato => dac;
 
 0.9 => vibrato.mix;
 
+vibrato.stop();
+
 class Toggle extends Procedure
 {
     fun void run()

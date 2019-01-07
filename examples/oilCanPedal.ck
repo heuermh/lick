@@ -22,6 +22,8 @@
 
 OilCan oilCan;
 
+oilCan.stop();
+
 class Toggle extends Procedure
 {
     fun void run()

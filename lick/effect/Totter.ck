@@ -35,6 +35,7 @@ public class Totter extends Feedback
     pre => _quarters => _sync;
     pre => _thirds => _sync;
     pre => _whole => post;
+    feedbackOut => feedbackIn;
 
     {
         1200::ms => max;

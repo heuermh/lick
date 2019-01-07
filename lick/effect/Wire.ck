@@ -50,8 +50,6 @@ public class Wire extends LfoFeedback
         0.01 => feedback;
 
         hyperLfo();
-
-        spork ~ _updateAtSampleRate();
     }
 
     fun float freq()

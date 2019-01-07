@@ -36,8 +36,6 @@ public class Vibrato extends LfoEffect
 
         1::second => _delay.max;
         1::second / _vibratoRate => _delay.delay;
-
-        spork ~ _updateAtSampleRate();
     }
 
     fun float vibratoRate()

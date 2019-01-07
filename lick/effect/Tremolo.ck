@@ -26,8 +26,6 @@ public class Tremolo extends LfoEffect
 
     {
         inlet => _tremolo => wet;
-
-        spork ~ _updateAtSampleRate();
     }
 
     fun void _updateAtSampleRate()
