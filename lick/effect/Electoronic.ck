@@ -31,6 +31,7 @@ public class Electoronic extends Feedback
     pre => head1 => post;
     pre => head2 => post;
     pre => head3 => post;
+    feedbackOut => feedbackIn;
 
     {
         1.0 => head1.mix;
@@ -90,14 +91,6 @@ public class Electoronic extends Feedback
     {
         f => head3.gain;
         return f;
-    }
-
-    fun float feedback(float f)
-    {
-        f => feedbackIn.gain;
-        f => head1.feedback;
-        f => head2.feedback;
-        f => head3.feedback;
     }
 
     fun static Electoronic create(TimeSignature ts)

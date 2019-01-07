@@ -430,6 +430,7 @@ Machine.add(path + "lick/effect/Revenge.ck");
 Machine.add(path + "lick/effect/Raise.ck");
 Machine.add(path + "lick/effect/Select.ck");
 Machine.add(path + "lick/effect/ShiftEcco.ck");
+Machine.add(path + "lick/effect/Shim.ck");
 Machine.add(path + "lick/effect/Smother.ck");
 Machine.add(path + "lick/effect/Solstice.ck");
 Machine.add(path + "lick/effect/TimeModulator.ck");
