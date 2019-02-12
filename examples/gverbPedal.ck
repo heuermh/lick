@@ -115,9 +115,8 @@ FeedbackMachines.cascade(0.8) @=> FeedbackMachine fm;
 700::ms => fm.delay4.delay.max;
 700::ms => fm.delay4.delay.delay;
 
-adc => fm.input;
-0.4 => fm.dry.gain;
-0.6 => fm.wet.gain;
+adc => fm;
+0.6 => fm.mix;
 fm.dry => gverb;
 fm.wet => gverb;
 

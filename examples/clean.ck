@@ -22,6 +22,6 @@
 
 adc => dac;
 
-<<<"done">>>;
+<<<"ready">>>;
 
 1::week => now;
