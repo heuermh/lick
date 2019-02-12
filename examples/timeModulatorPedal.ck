@@ -35,8 +35,8 @@ class IncreaseRate extends Procedure
 {
     fun void run()
     {
-        tm.lfoRate() * 1.5 => tm.lfoRate;
-        <<<"rate ", tm.lfoRate()>>>;
+        tm.rate() * 1.5 => tm.rate;
+        <<<"rate ", tm.rate()>>>;
     }
 }
 
@@ -44,8 +44,8 @@ class DecreaseRate extends Procedure
 {
     fun void run()
     {
-        tm.lfoRate() * 0.75 => tm.lfoRate;
-        <<<"rate ", tm.lfoRate()>>>;
+        tm.rate() * 0.75 => tm.rate;
+        <<<"rate ", tm.rate()>>>;
     }
 }
 
@@ -53,8 +53,8 @@ class IncreaseDepth extends Procedure
 {
     fun void run()
     {
-        tm.lfoDepth() * 1.5 => tm.lfoDepth;
-        <<<"depth ", tm.lfoDepth()>>>;
+        tm.depth() * 1.5 => tm.depth;
+        <<<"depth ", tm.depth()>>>;
     }
 }
 
@@ -62,8 +62,8 @@ class DecreaseDepth extends Procedure
 {
     fun void run()
     {
-        tm.lfoDepth() * 0.75 => tm.lfoDepth;
-        <<<"depth ", tm.lfoDepth()>>>;
+        tm.depth() * 0.75 => tm.depth;
+        <<<"depth ", tm.depth()>>>;
     }
 }
 
