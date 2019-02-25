@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -22,6 +22,6 @@
 
 adc => dac;
 
-<<<"done">>>;
+<<<"ready">>>;
 
 1::week => now;

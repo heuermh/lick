@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -24,13 +24,12 @@
 // similar to Marshall Time Modulator, http://electro-music.com/forum/topic-19408-0.html
 //
 
-public class TimeModulator extends Effect
+public class TimeModulator extends LfoEffect
 {
     Delay _a;
     Delay _b; // 2x delay time of A
     Delay _c; // 4x delay time of A
     Gain _feedback;
-    Lfo _lfo;
 
     400::ms => dur _d;
 
@@ -63,10 +62,10 @@ public class TimeModulator extends Effect
         0.70 => a;
         0.20 => b;
         0.10 => c;
-        0.20 => _lfo.rate;
-        0.05 => _lfo.depth;
 
-        spork ~ _updateAtSampleRate();
+        sinLfo();
+        0.20 => rate;
+        0.05 => depth;
     }
 
     fun dur delay()

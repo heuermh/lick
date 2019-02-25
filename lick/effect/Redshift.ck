@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -41,8 +41,6 @@ public class Redshift extends LfoFeedback
         0.40 => feedback;
         lfo(0.0, 0.8, 0.0, 0.0, 0.0, 0.2);
         4000.0 => _lpf.freq;
-
-        spork ~ _updateAtSampleRate();
     }
 
     fun void _updateAtSampleRate()

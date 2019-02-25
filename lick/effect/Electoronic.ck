@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -31,6 +31,7 @@ public class Electoronic extends Feedback
     pre => head1 => post;
     pre => head2 => post;
     pre => head3 => post;
+    feedbackOut => feedbackIn;
 
     {
         1.0 => head1.mix;

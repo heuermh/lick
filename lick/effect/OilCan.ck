@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -47,9 +47,8 @@ public class OilCan extends LfoFeedback
         4.7 => width;
         9.3 => follow;
         10000.0 => cutoff;
-        hyperLfo();
 
-        spork ~ _updateAtSampleRate();
+        hyperLfo();
     }
 
     fun float timing()

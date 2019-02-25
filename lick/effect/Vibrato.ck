@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -36,8 +36,6 @@ public class Vibrato extends LfoEffect
 
         1::second => _delay.max;
         1::second / _vibratoRate => _delay.delay;
-
-        spork ~ _updateAtSampleRate();
     }
 
     fun float vibratoRate()

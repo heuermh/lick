@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -23,6 +23,8 @@
 adc => Vibrato vibrato => dac;
 
 0.9 => vibrato.mix;
+
+vibrato.stop();
 
 class Toggle extends Procedure
 {
@@ -51,35 +53,35 @@ class DecreaseRate extends Procedure
     }
 }
 
-class IncreaseLfoRate extends Procedure
+class IncreaseVibratoRate extends Procedure
 {
     fun void run()
     {
-        vibrato.lfoRate() * 1.1 => vibrato.lfoRate;
-        <<<"lfo rate", vibrato.lfoRate()>>>;
+        vibrato.vibratoRate() * 1.1 => vibrato.vibratoRate;
+        <<<"vibrato rate", vibrato.vibratoRate()>>>;
     }
 }
 
-class DecreaseLfoRate extends Procedure
+class DecreaseVibratoRate extends Procedure
 {
     fun void run()
     {
-        vibrato.lfoRate() * 0.9 => vibrato.lfoRate;
-        <<<"lfo rate", vibrato.lfoRate()>>>;
+        vibrato.vibratoRate() * 0.9 => vibrato.vibratoRate;
+        <<<"vibrato rate", vibrato.vibratoRate()>>>;
     }
 }
 
 Toggle toggle;
 IncreaseRate increaseRate;
 DecreaseRate decreaseRate;
-IncreaseLfoRate increaseLfoRate;
-DecreaseLfoRate decreaseLfoRate;
+IncreaseVibratoRate increaseVibratoRate;
+DecreaseVibratoRate decreaseVibratoRate;
 
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
 increaseRate @=> stomp.button1Down;
 decreaseRate @=> stomp.button2Down;
-increaseLfoRate @=> stomp.button3Down;
-decreaseLfoRate @=> stomp.button4Down;
+increaseVibratoRate @=> stomp.button3Down;
+decreaseVibratoRate @=> stomp.button4Down;
 
 stomp.open(0);

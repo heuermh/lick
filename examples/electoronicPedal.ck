@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2017 held jointly by the individual authors.
+    Copyright (c) 2007-2019 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -20,7 +20,13 @@
 
 */
 
-Electoronic electoronic;
+TimeSignature.common(110) @=> TimeSignature ts;
+Electoronic.create(ts) @=> Electoronic electoronic;
+
+0.8 => electoronic.mix;
+0.9 => electoronic.feedback;
+
+electoronic.stop();
 
 class Toggle extends Procedure
 {
@@ -30,9 +36,6 @@ class Toggle extends Procedure
         <<<"running", electoronic.running()>>>;
     }
 }
-
-0.80 => electoronic.mix;
-0.60 => electoronic.feedback;
 
 adc => electoronic => dac;
 
