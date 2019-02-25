@@ -41,9 +41,8 @@ public class CompositeAdsr extends AbstractAdsr
 
     fun int keyOn(int i)
     {
-        current().keyOn(i) => int rv;
-        _nextAdsr();
-        return rv;
+        _nextAdsr() @=> _adsr;
+        return _adsr.keyOn(i);
     }
 
     fun int keyOff(int i)
