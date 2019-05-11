@@ -54,3 +54,5 @@ for (0 => int i; i < 4; i++)
 }
 
 play.run(c_maj.root);
+
+<<<"done">>>;

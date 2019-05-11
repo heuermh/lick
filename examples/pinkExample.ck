@@ -55,3 +55,5 @@ swirl2.outputR => dac.chan(1);
 
 <<<"ready">>>;
 1::minute => now;
+
+<<<"done">>>;

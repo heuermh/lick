@@ -24,5 +24,5 @@ adc => Flutter flutter => Princeton princeton => dac;
 
 0.6 => flutter.mix;
 
-<<<"ok">>>;
+<<<"ready">>>;
 1::week => now;

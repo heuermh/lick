@@ -21,6 +21,9 @@
 */
 
 EchoArray echoArray;
-
 adc => echoArray => dac;
+
+0.8 => echoArray.mix;
+
 <<<"ready">>>;
+1::week => now;

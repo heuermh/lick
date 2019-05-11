@@ -43,3 +43,5 @@ for (0 => int i; i < 10; i++)
     }
     cee.depth() * 1.2 => cee.depth;
 }
+
+<<<"done">>>;

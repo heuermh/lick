@@ -24,3 +24,4 @@ adc => TimeModulator tm => dac;
 
 <<<"ready">>>;
 1::minute => now;
+<<<"done">>>;

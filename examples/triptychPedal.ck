@@ -20,12 +20,26 @@
 
 */
 
-adc => Disaster disaster => dac;
+Triptych triptych;
 
-0.1 => disaster.mixA;
-0.4 => disaster.mixB;
+0.8 => triptych.mix;
 
-<<<"ready">>>;
-1::minute => now;
+triptych.stop();
 
-<<<"done">>>;
+class Toggle extends Procedure
+{
+    fun void run()
+    {
+        triptych.toggle();
+        <<<"running", triptych.running()>>>;
+    }
+}
+
+adc => triptych => dac;
+
+Toggle toggle;
+
+StompKeyboard stomp;
+toggle @=> stomp.button0Down;
+
+stomp.open(0);

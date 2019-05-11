@@ -115,3 +115,5 @@ Loops.loop(playAmin, 0::ms, 180::ms, 4) @=> Procedure aLoop;
 Loops.append(Loops.loop(Loops.append(cLoop, aLoop), 3), playCmaj).run();
 
 1::second => now;
+
+<<<"done">>>;

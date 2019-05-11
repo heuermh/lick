@@ -30,6 +30,8 @@ Ghost ghost;
 
 adc => ghost => dac;
 
+<<<"ready">>>;
+
 1::minute => now;
 
 <<<"done">>>;

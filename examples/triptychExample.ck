@@ -20,12 +20,10 @@
 
 */
 
-adc => Disaster disaster => dac;
+Triptych triptych;
+adc => triptych => dac;
 
-0.1 => disaster.mixA;
-0.4 => disaster.mixB;
+0.8 => triptych.mix;
 
 <<<"ready">>>;
-1::minute => now;
-
-<<<"done">>>;
+1::week => now;
