@@ -426,6 +426,12 @@ public class Intervals
         return goldenRatio;
     }
 
+    fun static SupergoldenRatio supergolden()
+    {
+        SupergoldenRatio supergoldenRatio;
+        return supergoldenRatio;
+    }
+
     fun static TinRatio tin()
     {
         TinRatio tinRatio;
@@ -1114,6 +1120,15 @@ class GoldenRatio extends Interval
     "317811:196418" => ratio;
     "Golden" => name;
     "Golden ratio, to 10 decimal places" => description;
+}
+
+class SupergoldenRatio extends Interval
+{
+    269542 => antecedent;
+    183916 => consequent;
+    "269542:183916" => ratio;
+    "Supergolden" => name;
+    "Supergolden ratio, to 8 decimal places" => description;
 }
 
 class TinRatio extends Interval
