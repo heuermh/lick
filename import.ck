@@ -173,12 +173,6 @@ Machine.add(path + "lick/interpolate/Interpolate.ck");
 Machine.add(path + "lick/interpolate/Constrain.ck");
 Machine.add(path + "lick/interpolate/Interpolations.ck");
 
-// duration providers, package duration
-Machine.add(path + "lick/duration/DurProvider.ck");
-Machine.add(path + "lick/duration/Humanize.ck");
-Machine.add(path + "lick/duration/HumanizedDurProvider.ck");
-Machine.add(path + "lick/duration/TimeSignature.ck");
-
 // list, package collect
 Machine.add(path + "lick/collect/Comparator.ck");
 Machine.add(path + "lick/collect/Iterator.ck");
@@ -229,6 +223,13 @@ Machine.add(path + "lick/interval/Chords.ck");
 Machine.add(path + "lick/interval/Scale.ck");
 Machine.add(path + "lick/interval/Scales.ck");
 Machine.add(path + "lick/interval/Transpose.ck");
+
+// duration providers, package duration
+Machine.add(path + "lick/duration/DurProvider.ck");
+Machine.add(path + "lick/duration/Humanize.ck");
+Machine.add(path + "lick/duration/HumanizedDurProvider.ck");
+Machine.add(path + "lick/duration/TimeSignature.ck");
+Machine.add(path + "lick/duration/IntervalDurProvider.ck");
 
 // arp, pattern, package arp
 Machine.add(path + "lick/arp/Pattern.ck");
@@ -414,6 +415,7 @@ Machine.add(path + "lick/effect/Flutter.ck");
 Machine.add(path + "lick/effect/Freeze.ck");
 Machine.add(path + "lick/effect/FullDouble.ck");
 Machine.add(path + "lick/effect/Ghost.ck");
+Machine.add(path + "lick/effect/Golden.ck");
 Machine.add(path + "lick/effect/Harmonizer.ck");
 Machine.add(path + "lick/effect/Harmonizers.ck");
 Machine.add(path + "lick/effect/LoopReverb.ck");

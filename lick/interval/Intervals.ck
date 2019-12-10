@@ -414,6 +414,36 @@ public class Intervals
         return justMajorSeventh;
     }
 
+    fun static BronzeRatio bronze()
+    {
+        BronzeRatio bronzeRatio;
+        return bronzeRatio;
+    }
+
+    fun static GoldenRatio golden()
+    {
+        GoldenRatio goldenRatio;
+        return goldenRatio;
+    }
+
+    fun static TinRatio tin()
+    {
+        TinRatio tinRatio;
+        return tinRatio;
+    }
+
+    fun static SilverRatio silver()
+    {
+        SilverRatio silverRatio;
+        return silverRatio;
+    }
+
+    fun static PlasticRatio plastic()
+    {
+        PlasticRatio plasticRatio;
+        return plasticRatio;
+    }
+
     fun static Interval interval(float antecedent, float consequent)
     {
         Interval interval;
@@ -1066,4 +1096,49 @@ class JustMajorSeventh extends Interval
     "15:8" => ratio;
     "JustMajorSeventh" => name;
     "Just major seventh" => description;
+}
+
+class BronzeRatio extends Interval
+{
+    8 => antecedent;
+    5 => consequent;
+    "8:5" => ratio;
+    "Bronze" => name;
+    "Bronze ratio, approximation of golden ratio" => description;
+}
+
+class GoldenRatio extends Interval
+{
+    317811 => antecedent;
+    196418 => consequent;
+    "317811:196418" => ratio;
+    "Golden" => name;
+    "Golden ratio, to 10 decimal places" => description;
+}
+
+class TinRatio extends Interval
+{
+    12 => antecedent;
+    5 => consequent;
+    "12:5" => ratio;
+    "Tin" => name;
+    "Tin ratio, approximation of silver ratio" => description;
+}
+
+class SilverRatio extends Interval
+{
+    470832 => antecedent;
+    195025 => consequent;
+    "470832:195025" => ratio;
+    "Siver" => name;
+    "Silver ratio, to 10 decimal places" => description;
+}
+
+class PlasticRatio extends Interval
+{
+    549289 => antecedent;
+    414646 => consequent;
+    "549289:414646" => ratio;
+    "Plastic" => name;
+    "Plastic ratio, to 8 decimal places" => description;
 }
