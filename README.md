@@ -25,7 +25,9 @@ GNU General Public License for more details.
  - Functor objects, see e.g. http://c2.com/cgi/wiki?FunctorObject
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
- - Intervals, Chords, Scales, Arpeggiators, Patterns, Sequences, Sequencers
+ - Intervals, Chords, Scales, and Tunings
+ - Time signatures, duration providers, humanizing duration providers
+ - Arpeggiators, Patterns, Sequences, and Sequencers
  - Velocity sensitive, pitch sensitive, and handed Samples
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
