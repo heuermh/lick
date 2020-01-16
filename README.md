@@ -6,7 +6,7 @@ LiCK  Library for ChucK.
 
 ```
 LiCK  Library for ChucK.
-Copyright (c) 2007-2019 held jointly by the individual authors.
+Copyright (c) 2007-2020 held jointly by the individual authors.
 
 LiCK is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@ GNU General Public License for more details.
  - Interpolation/tween/easing functors
  - Composite procedures for building loops
  - Intervals, Chords, Scales, Arpeggiators, Patterns, Sequences, Sequencers
+ - Velocity sensitive, pitch sensitive, and handed Samples
  - Sample-based drum machine emulators
  - HID device classes (keyboard, mouse, joystick, etc.)
  - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
@@ -34,8 +35,10 @@ GNU General Public License for more details.
  - LeapMotion, Monome, ControlOSC, TouchOSC integration
  - Mono and stereo Delays, FeedbackMachines
  - WaveShaper chugen, Distortion and Tremolo chugens
- - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
+ - Sample hold, slew step, hyper triangle low frequency oscillators (LFOs)
+ - Envelope follower, envelope trigger
  - PitShift-based pitch follower, harmonizers, and effects
+ - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
  - Chugin wrappers, including C*APS, CMT, TAP, SWH, and RubberBand LADSPA plugins
  - "ChucK-Unit", an Assert class for creating unit tests
 
