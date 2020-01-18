@@ -469,6 +469,7 @@ Machine.add(path + "lick/delay/Swirl.ck");
 // synth/osc, package synth
 Machine.add(path + "lick/synth/CircleRamp.ck");
 Machine.add(path + "lick/synth/DoublePulse.ck");
+Machine.add(path + "lick/synth/Duff.ck");
 Machine.add(path + "lick/synth/Fat.ck");
 Machine.add(path + "lick/synth/Folder.ck");
 Machine.add(path + "lick/synth/Folder2.ck");
