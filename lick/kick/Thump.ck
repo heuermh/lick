@@ -21,8 +21,7 @@
 */
 
 //
-// similar to Befaco Kickall, buy one here
-//   https://www.befaco.org/en/kickall/
+// 909-ish kick, with noise
 //
 
 class F extends FloatFunction
@@ -36,17 +35,21 @@ class F extends FloatFunction
     }
 }
 
-public class Duff extends Chubgraph
+public class Thump extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;
     SinOsc _sin => WaveShaper _waveShaper => _env;
     Step _step => ADSR _pitchEnv => blackhole;
+    Noise _white => Pke _pink => LPF _noiseLpf => ADSR _noiseEnv => _vca;
 
     float _freq;
     float _shape;
     float _bend;
+    float _noise;
+    dur _attack;
     dur _decay;
+    dur _noiseDecay;
     dur _pitchDecay;
 
     F _fn;
@@ -56,7 +59,6 @@ public class Duff extends Chubgraph
         _fn @=> _waveShaper.shape;
         1.0 => _vca.gain;
 
-        _pulse => _env.attackTime;
         _pulse => _env.decayTime;
         1.0 => _env.sustainLevel;
 
@@ -64,10 +66,18 @@ public class Duff extends Chubgraph
         _pulse => _pitchEnv.decayTime;
         1.0 => _pitchEnv.sustainLevel;
 
-        20.0 => freq;
+        _pulse => _noiseEnv.decayTime;
+        1.0 => _noiseEnv.sustainLevel;
+
+        10000.0 => _noiseLpf.freq;
+
+        40.0 => freq;
         0.0 => shape;
-        20.0 => bend;
-        100.0::ms => decay;
+        200.0 => bend;
+        1.0 => noise;
+        1.0::ms => attack;
+        400.0::ms => decay;
+        20::ms => noiseDecay;
         100.0::ms => pitchDecay;
 
         spork ~ _updateAtSampleRate();
@@ -83,12 +93,14 @@ public class Duff extends Chubgraph
     fun void keyOn(int i)
     {
         i => _env.keyOn;
+        i => _noiseEnv.keyOn;
         i => _pitchEnv.keyOn;
     }
 
     fun void keyOff(int i)
     {
         i => _env.keyOff;
+        i => _noiseEnv.keyOff;
         i => _pitchEnv.keyOff;
     }
 
@@ -127,6 +139,31 @@ public class Duff extends Chubgraph
         return f;
     }
 
+    fun float noise()
+    {
+        return _noise;
+    }
+
+    fun float noise(float f)
+    {
+        f => _noise;
+        f => _pink.gain;
+        return f;
+    }
+
+    fun dur attack()
+    {
+        return _attack;
+    }
+
+    fun dur attack(dur d)
+    {
+        d => _attack;
+        _attack => _env.attackTime;
+        _attack => _noiseEnv.attackTime;
+        return d;
+    }
+
     fun dur decay()
     {
         return _decay;
@@ -136,6 +173,18 @@ public class Duff extends Chubgraph
     {
         d => _decay;
         d => _env.releaseTime;
+        return d;
+    }
+
+    fun dur noiseDecay()
+    {
+        return _noiseDecay;
+    }
+
+    fun dur noiseDecay(dur d)
+    {
+        d => _noiseDecay;
+        d => _noiseEnv.releaseTime;
         return d;
     }
 

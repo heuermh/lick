@@ -469,7 +469,6 @@ Machine.add(path + "lick/delay/Swirl.ck");
 // synth/osc, package synth
 Machine.add(path + "lick/synth/CircleRamp.ck");
 Machine.add(path + "lick/synth/DoublePulse.ck");
-Machine.add(path + "lick/synth/Duff.ck");
 Machine.add(path + "lick/synth/Fat.ck");
 Machine.add(path + "lick/synth/Folder.ck");
 Machine.add(path + "lick/synth/Folder2.ck");
@@ -482,6 +481,14 @@ Machine.add(path + "lick/synth/SubGen.ck");
 Machine.add(path + "lick/synth/SeptSubGen.ck");
 Machine.add(path + "lick/synth/VoiceOfSaturn.ck");
 Machine.add(path + "lick/synth/Wrapper.ck");
+
+// kick/bass drum synthesis, package kick
+
+Machine.add(path + "lick/kick/Boom.ck");
+Machine.add(path + "lick/kick/Duff.ck");
+Machine.add(path + "lick/kick/Kick.ck");
+Machine.add(path + "lick/kick/Thud.ck");
+Machine.add(path + "lick/kick/Thump.ck");
 
 <<<"Optional dependencies (may fail to compile):">>>;
 
