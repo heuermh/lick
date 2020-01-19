@@ -55,12 +55,12 @@ public class RolandA49
 
     fun int getRotary1()
     {
-        return _lastRotary[1];
+        return _lastRotary[0];
     }
 
     fun int getRotary2()
     {
-        return _lastRotary[2];
+        return _lastRotary[1];
     }
 
     fun int isKeyOn(int key)
@@ -133,14 +133,14 @@ public class RolandA49
                         velocity => _lastModulation;
                         spork ~ modulation.run(velocity);
                     }
-                    else if (note == 14) // k1
+                    else if (note == 74) // c1
                     {
-                        velocity => _lastRotary[1];
+                        velocity => _lastRotary[0];
                         spork ~ rotary1.run(velocity);
                     }
-                    else if (note == 15) // k2
+                    else if (note == 71) // c2
                     {
-                        velocity => _lastRotary[2];
+                        velocity => _lastRotary[0];
                         spork ~ rotary2.run(velocity);
                     }
                     else if (note == 64) // sustain pedal
@@ -161,3 +161,12 @@ public class RolandA49
         }
     }
 }
+
+/*
+
+  modulation is up and down
+  pitchBend to the left, cc1 is 0, cc2 [0, 64]
+    middle is 0, 64
+    to the right, cc1 [0, 127], cc2 [64, 127]
+
+ */
