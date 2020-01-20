@@ -24,7 +24,7 @@
 // 909-ish kick, with noise
 //
 
-class F extends FloatFunction
+class TF extends FloatFunction
 {
     float _shape;
     
@@ -52,7 +52,7 @@ public class Thump extends Chubgraph
     dur _noiseDecay;
     dur _pitchDecay;
 
-    F _fn;
+    TF _fn;
     1::ms => static dur _pulse;
 
     {
@@ -69,15 +69,15 @@ public class Thump extends Chubgraph
         _pulse => _noiseEnv.decayTime;
         1.0 => _noiseEnv.sustainLevel;
 
-        10000.0 => _noiseLpf.freq;
+        1000.0 => _noiseLpf.freq;
 
         40.0 => freq;
         0.0 => shape;
         200.0 => bend;
-        1.0 => noise;
+        0.04 => noise;
         1.0::ms => attack;
         400.0::ms => decay;
-        20::ms => noiseDecay;
+        2::ms => noiseDecay;
         100.0::ms => pitchDecay;
 
         spork ~ _updateAtSampleRate();
@@ -86,7 +86,7 @@ public class Thump extends Chubgraph
     fun void play()
     {
         1 => keyOn;
-        _pulse => now;
+        _attack => now;
         1 => keyOff;
     }
 

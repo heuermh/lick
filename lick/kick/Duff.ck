@@ -25,7 +25,7 @@
 //   https://www.befaco.org/en/kickall/
 //
 
-class F extends FloatFunction
+class DF extends FloatFunction
 {
     float _shape;
     
@@ -49,7 +49,7 @@ public class Duff extends Chubgraph
     dur _decay;
     dur _pitchDecay;
 
-    F _fn;
+    DF _fn;
     1::ms => static dur _pulse;
 
     {

@@ -38,7 +38,6 @@ public class Boom extends Chubgraph
     dur _attack;
     dur _decay;
     dur _pitchDecay;
-    dur _driftDecay;
 
     1::ms => static dur _pulse;
 
@@ -68,7 +67,7 @@ public class Boom extends Chubgraph
     fun void play()
     {
         1 => keyOn;
-        _pulse => now;
+        _attack => now;
         1 => keyOff;
     }
 
@@ -76,6 +75,7 @@ public class Boom extends Chubgraph
     {
         i => _env.keyOn;
         i => _pitchEnv.keyOn;
+        0.0 => _driftEnv.value;
         i => _driftEnv.keyOn;
     }
 

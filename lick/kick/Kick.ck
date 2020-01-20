@@ -24,7 +24,7 @@
 // Kick, with wave shaper, noise, sample, and drift
 //
 
-class F extends FloatFunction
+class KF extends FloatFunction
 {
     float _shape;
     
@@ -44,6 +44,7 @@ public class Kick extends Chubgraph
     Noise _white1 => LPF _whiteNoiseLpf => ADSR _whiteNoiseEnv => _vca;
     Noise _white2 => Pke _pink => LPF _pinkNoiseLpf => ADSR _pinkNoiseEnv => _vca;
     LPF _sampleLpf => ADSR _sampleEnv => _vca;
+    Step _driftStep => ADSR _driftEnv => blackhole;
 
     Sample @ _sample;
 
@@ -61,7 +62,7 @@ public class Kick extends Chubgraph
     dur _pitchDecay;
     dur _sampleDecay;
 
-    F _fn;
+    KF _fn;
     1::ms => static dur _pulse;
 
     {
@@ -81,22 +82,26 @@ public class Kick extends Chubgraph
         _pulse => _pinkNoiseEnv.decayTime;
         1.0 => _pinkNoiseEnv.sustainLevel;
 
-        10000.0 => _whiteNoiseLpf.freq;
-        10000.0 => _pinkNoiseLpf.freq;
-        10000.0 => _sampleLpf.freq;
+        _pulse => _driftEnv.decayTime;
+        1.0 => _driftEnv.sustainLevel;
+
+        1000.0 => _whiteNoiseLpf.freq;
+        1000.0 => _pinkNoiseLpf.freq;
+        1000.0 => _sampleLpf.freq;
 
         40.0 => freq;
         0.0 => shape;
         200.0 => bend;
-        1.0 => whiteNoise;
-        1.0 => pinkNoise;
-        1.0 => sample;
+        0.01 => whiteNoise;
+        0.01 => pinkNoise;
+        0.01 => sample;
+        4.0 => drift;
         1.0::ms => attack;
         400.0::ms => decay;
         100.0::ms => pitchDecay;
-        20.0::ms => whiteNoiseDecay;
-        20.0::ms => pinkNoiseDecay;
-        20.0::ms => sampleDecay;
+        2.0::ms => whiteNoiseDecay;
+        2.0::ms => pinkNoiseDecay;
+        2.0::ms => sampleDecay;
 
         spork ~ _updateAtSampleRate();
     }
@@ -111,7 +116,7 @@ public class Kick extends Chubgraph
     fun void play()
     {
         1 => keyOn;
-        _pulse => now;
+        _attack => now;
         1 => keyOff;
     }
 
@@ -121,6 +126,8 @@ public class Kick extends Chubgraph
         i => _pitchEnv.keyOn;
         i => _whiteNoiseEnv.keyOn;
         i => _pinkNoiseEnv.keyOn;
+        0.0 => _driftEnv.value;
+        i => _driftEnv.keyOn;
         i => _sampleEnv.keyOn;
         if (_sample != null)
         {
@@ -211,6 +218,18 @@ public class Kick extends Chubgraph
         return f;
     }
 
+    fun float drift()
+    {
+        return _drift;
+    }
+
+    fun float drift(float f)
+    {
+        f => _drift;
+        f => _driftStep.next;
+        return f;
+    }
+
     fun dur attack()
     {
         return _attack;
@@ -235,6 +254,7 @@ public class Kick extends Chubgraph
     {
         d => _decay;
         d => _env.releaseTime;
+        d => _driftEnv.attackTime;
         return d;
     }
 
@@ -291,7 +311,7 @@ public class Kick extends Chubgraph
         while (true)
         {
             1::samp => now;
-            _freq + _pitchEnv.last() => _sin.freq;
+            _freq + _pitchEnv.last() - _driftEnv.last() => _sin.freq;
         }
     }
 

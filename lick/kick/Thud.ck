@@ -57,15 +57,15 @@ public class Thud extends Chubgraph
         _pulse => _sampleEnv.decayTime;
         1.0 => _sampleEnv.sustainLevel;
 
-        10000.0 => _sampleLpf.freq;
+        1000.0 => _sampleLpf.freq;
 
         40.0 => freq;
         200.0 => bend;
-        1.0 => sample;
+        0.04 => sample;
         1.0::ms => attack;
         400.0::ms => decay;
         100.0::ms => pitchDecay;
-        20.0::ms => sampleDecay;
+        2.0::ms => sampleDecay;
 
         spork ~ _updateAtSampleRate();
     }
@@ -80,7 +80,7 @@ public class Thud extends Chubgraph
     fun void play()
     {
         1 => keyOn;
-        _pulse => now;
+        _attack => now;
         1 => keyOff;
     }
 
