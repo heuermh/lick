@@ -490,6 +490,11 @@ Machine.add(path + "lick/kick/Kick.ck");
 Machine.add(path + "lick/kick/Thud.ck");
 Machine.add(path + "lick/kick/Thump.ck");
 
+// snare drum synthesis, package snare
+
+Machine.add(path + "lick/snare/Cch.ck");
+Machine.add(path + "lick/snare/Tss.ck");
+
 <<<"Optional dependencies (may fail to compile):">>>;
 
 // depends on jwmatthys' chugins, package jwmatthys
