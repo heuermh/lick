@@ -41,8 +41,7 @@ public class Kick extends Chubgraph
     ADSR _env => Gain _vca => outlet;
     SinOsc _sin => WaveShaper _waveShaper => _env;
     Step _step => ADSR _pitchEnv => blackhole;
-    Noise _white1 => LPF _whiteNoiseLpf => ADSR _whiteNoiseEnv => _vca;
-    Noise _white2 => Pke _pink => LPF _pinkNoiseLpf => ADSR _pinkNoiseEnv => _vca;
+    Noise _noise => LPF _noiseLpf => ADSR _noiseEnv => _vca;
     LPF _sampleLpf => ADSR _sampleEnv => _vca;
     Step _driftStep => ADSR _driftEnv => blackhole;
 
@@ -52,13 +51,10 @@ public class Kick extends Chubgraph
     float _shape;
     float _bend;
     float _drift;
-    float _whiteNoise;
-    float _pinkNoise;
     float _sampleGain;
     dur _attack;
     dur _decay;
-    dur _whiteNoiseDecay;
-    dur _pinkNoiseDecay;
+    dur _noiseDecay;
     dur _pitchDecay;
     dur _sampleDecay;
 
@@ -76,31 +72,25 @@ public class Kick extends Chubgraph
         _pulse => _pitchEnv.decayTime;
         1.0 => _pitchEnv.sustainLevel;
 
-        _pulse => _whiteNoiseEnv.decayTime;
-        1.0 => _whiteNoiseEnv.sustainLevel;
-
-        _pulse => _pinkNoiseEnv.decayTime;
-        1.0 => _pinkNoiseEnv.sustainLevel;
+        _pulse => _noiseEnv.decayTime;
+        1.0 => _noiseEnv.sustainLevel;
 
         _pulse => _driftEnv.decayTime;
         1.0 => _driftEnv.sustainLevel;
 
-        1000.0 => _whiteNoiseLpf.freq;
-        1000.0 => _pinkNoiseLpf.freq;
+        1000.0 => _noiseLpf.freq;
         1000.0 => _sampleLpf.freq;
 
         40.0 => freq;
         0.0 => shape;
         200.0 => bend;
-        0.01 => whiteNoise;
-        0.01 => pinkNoise;
+        0.01 => noise;
         0.01 => sample;
         4.0 => drift;
         1.0::ms => attack;
         400.0::ms => decay;
         100.0::ms => pitchDecay;
-        2.0::ms => whiteNoiseDecay;
-        2.0::ms => pinkNoiseDecay;
+        2.0::ms => noiseDecay;
         2.0::ms => sampleDecay;
 
         spork ~ _updateAtSampleRate();
@@ -124,8 +114,7 @@ public class Kick extends Chubgraph
     {
         i => _env.keyOn;
         i => _pitchEnv.keyOn;
-        i => _whiteNoiseEnv.keyOn;
-        i => _pinkNoiseEnv.keyOn;
+        i => _noiseEnv.keyOn;
         0.0 => _driftEnv.value;
         i => _driftEnv.keyOn;
         i => _sampleEnv.keyOn;
@@ -139,8 +128,7 @@ public class Kick extends Chubgraph
     {
         i => _env.keyOff;
         i => _pitchEnv.keyOff;
-        i => _whiteNoiseEnv.keyOff;
-        i => _pinkNoiseEnv.keyOff;
+        i => _noiseEnv.keyOff;
         i => _sampleEnv.keyOff;
     }
 
@@ -179,27 +167,14 @@ public class Kick extends Chubgraph
         return f;
     }
 
-    fun float whiteNoise()
+    fun float noise()
     {
-        return _whiteNoise;
+        return _noise.gain();
     }
 
-    fun float whiteNoise(float f)
+    fun float noise(float f)
     {
-        f => _whiteNoise;
-        f => _white1.gain;
-        return f;
-    }
-
-    fun float pinkNoise()
-    {
-        return _pinkNoise;
-    }
-
-    fun float pinkNoise(float f)
-    {
-        f => _pinkNoise;
-        f => _pink.gain;
+        f => _noise.gain;
         return f;
     }
 
@@ -239,8 +214,7 @@ public class Kick extends Chubgraph
     {
         d => _attack;
         _attack => _env.attackTime;
-        _attack => _whiteNoiseEnv.attackTime;
-        _attack => _pinkNoiseEnv.attackTime;
+        _attack => _noiseEnv.attackTime;
         _attack => _sampleEnv.attackTime;
         return d;
     }
@@ -258,27 +232,15 @@ public class Kick extends Chubgraph
         return d;
     }
 
-    fun dur whiteNoiseDecay()
+    fun dur noiseDecay()
     {
-        return _whiteNoiseDecay;
+        return _noiseDecay;
     }
 
-    fun dur whiteNoiseDecay(dur d)
+    fun dur noiseDecay(dur d)
     {
-        d => _whiteNoiseDecay;
-        d => _whiteNoiseEnv.releaseTime;
-        return d;
-    }
-
-    fun dur pinkNoiseDecay()
-    {
-        return _pinkNoiseDecay;
-    }
-
-    fun dur pinkNoiseDecay(dur d)
-    {
-        d => _pinkNoiseDecay;
-        d => _pinkNoiseEnv.releaseTime;
+        d => _noiseDecay;
+        d => _noiseEnv.releaseTime;
         return d;
     }
 

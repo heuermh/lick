@@ -41,12 +41,11 @@ public class Thump extends Chubgraph
     ADSR _env => Gain _vca => outlet;
     SinOsc _sin => WaveShaper _waveShaper => _env;
     Step _step => ADSR _pitchEnv => blackhole;
-    Noise _white => Pke _pink => LPF _noiseLpf => ADSR _noiseEnv => _vca;
+    Noise _noise => LPF _noiseLpf => ADSR _noiseEnv => _vca;
 
     float _freq;
     float _shape;
     float _bend;
-    float _noise;
     dur _attack;
     dur _decay;
     dur _noiseDecay;
@@ -141,13 +140,12 @@ public class Thump extends Chubgraph
 
     fun float noise()
     {
-        return _noise;
+        return _noise.gain();
     }
 
     fun float noise(float f)
     {
-        f => _noise;
-        f => _pink.gain;
+        f => _noise.gain;
         return f;
     }
 
