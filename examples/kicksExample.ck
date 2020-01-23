@@ -68,8 +68,7 @@ while (true)
 
     n => thump.noise;
     n => thud.sample;
-    n/2.0 => kick.whiteNoise;
-    n/2.0 => kick.pinkNoise;
+    n/2.0 => kick.noise;
     n/2.0 => kick.sample;
 
     Math.random2f(0.0, 4.0) => float dr;
@@ -104,8 +103,7 @@ while (true)
 
     nd => thump.noiseDecay;
     nd => thud.sampleDecay;
-    nd => kick.whiteNoiseDecay;
-    nd => kick.pinkNoiseDecay;
+    nd => kick.noiseDecay;
     nd => kick.sampleDecay;
 
     <<<"freq", f, "bend", b, "shape", s, "noise", n, "drift", dr, "attack", (a/1::ms), "ms decay", (d/1::ms), "ms pitchDecay", (pd/1::ms), "ms noiseDecay", (nd/1::ms), "ms">>>;

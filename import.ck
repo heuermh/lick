@@ -494,6 +494,7 @@ Machine.add(path + "lick/kick/Thump.ck");
 
 Machine.add(path + "lick/snare/Cch.ck");
 Machine.add(path + "lick/snare/Tss.ck");
+Machine.add(path + "lick/snare/Dnn.ck");
 
 <<<"Optional dependencies (may fail to compile):">>>;
 
