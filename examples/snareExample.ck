@@ -20,79 +20,34 @@
 
 */
 
-Cch cch => dac;
-Tss tss => dac;
-Dnn dnn => dac;
 Snare snare => dac;
-
-140.0 => dnn.freq;
 
 TimeSignature.common(110) @=> TimeSignature ts;
 
 while (true)
 {
     Math.random2f(0.7, 0.9) => float a;
-    a => cch.accent;
-    a => tss.accent;
-    a => dnn.accent;
     a => snare.accent;
 
     Math.random2f(30.0, 400.0) => float f;
-    f => dnn.freq;
     f => snare.freq;
 
     Math.random2f(0.0, 1.0) => float t;
-    t => cch.tone;
-    t => tss.tone;
-    t => dnn.tone;
     t => snare.tone;
 
     Math.random2f(0.2, 0.7) => float n;
-    n => dnn.noise;
     n => snare.noise;
 
-    Math.random2f(0.3, 0.6) => float pw;
-    pw => dnn.pulseWidth;
-
-    Math.random2f(4.0, 300.0) => float mr;
-    mr => dnn.modulationRate;
-
     Math.random2f(0.0, 1.0) * 200::ms + 80::ms => dur d;
-    d => cch.decay;
-    d => tss.decay;
-    d => dnn.decay;
+    d => snare.decay;
 
-    <<<"accent", a, "freq", f, "tone", t, "noise", n, "pulseWidth", pw, "modulationRate", mr, "decay", (d/1::ms), "ms">>>;
+    <<<"accent", a, "freq", f, "tone", t, "noise", n, "decay", (d/1::ms), "ms">>>;
 
-    for (0 => int i; i < 4; i++)
-    {
-        <<<"cch">>>;
-        cch.play();
-
-        ts.q => now;
-    }
-
-    for (0 => int i; i < 4; i++)
-    {
-        <<<"tss">>>;
-        tss.play();
-
-        ts.q => now;
-    }
-
-    for (0 => int i; i < 4; i++)
-    {
-        <<<"dnn">>>;
-        dnn.play();
-
-        ts.q => now;
-    }
-
-    for (0 => int i; i < 4; i++)
+    for (0 => int i; i < 8; i++)
     {
         <<<"snare">>>;
         snare.play();
 
-        ts.q => now;
+        ts.e => now;
     }
 }

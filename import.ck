@@ -493,8 +493,9 @@ Machine.add(path + "lick/kick/Thump.ck");
 // snare drum synthesis, package snare
 
 Machine.add(path + "lick/snare/Cch.ck");
-Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
+Machine.add(path + "lick/snare/Tss.ck");
+Machine.add(path + "lick/snare/Snare.ck");
 
 <<<"Optional dependencies (may fail to compile):">>>;
 
