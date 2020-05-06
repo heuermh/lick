@@ -30,7 +30,9 @@ GNU General Public License for more details.
  - Arpeggiators, Patterns, Sequences, and Sequencers
  - Velocity sensitive, pitch sensitive, and handed Samples
  - Sample-based drum machine emulators
- - HID device classes (keyboard, mouse, joystick, etc.)
+ - Synthesized kick and snare drum instruments
+ - Synthesized bass, drone, and lead instruments
+ - HID device classes (keyboard, mouse, joystick, gamepad, etc.)
  - MIDI device classes (Alesis QX25, MAudio Ozone, MeeBlip, NanoPad, etc.)
  - MIDI support for iOS apps (Animoog, EchoPad, GarageBand, Filtatron, Loopy, etc.)
  - OSC support for desktop apps (IanniX, SooperLooper, etc.)
@@ -39,6 +41,7 @@ GNU General Public License for more details.
  - WaveShaper chugen, Distortion and Tremolo chugens
  - Sample hold, slew step, hyper triangle low frequency oscillators (LFOs)
  - Envelope follower, envelope trigger
+ - Attack Release (AR) and other envelope generators
  - PitShift-based pitch follower, harmonizers, and effects
  - Module, Module2, ..., Module8; chuck a Ugen into a parameter (cv)
  - Chugin wrappers, including C*APS, CMT, TAP, SWH, and RubberBand LADSPA plugins
