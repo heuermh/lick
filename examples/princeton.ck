@@ -28,7 +28,7 @@ adc => NoiseGate noiseGate => Tremolo tremolo => AnalogDelay delay => Amp amp =>
 
 4.0 => tremolo.rate;
 0.9 => tremolo.depth;
-tremolo.lfo(0.0, 0.6, 0.1, 0.3);
+tremolo.lfo(0.0, 0.6, 0.1, 0.3, 0.0, 0.0, 0.0);
 
 0.2 => delay.mix;
 0.4 => delay.feedback;
