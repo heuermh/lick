@@ -23,6 +23,7 @@
 Boom boom;
 Duff duff;
 Thump thump;
+Thwok thwok;
 
 Samples.createSample("samples/AkaiMpc60/OpenHat.wav") @=> Sample sample;
 
@@ -34,6 +35,10 @@ duff => dac;
 thump => dac;
 thud => dac;
 kick => dac;
+thwok => dac;
+
+// thwok is really loud
+0.05 => thwok.gain;
 
 20.601 => float e;
 Scales.major(e) @=> Scale emaj;
@@ -49,6 +54,7 @@ while (true)
     f => thump.freq;
     f => thud.freq;
     f => kick.freq;
+    f => thwok.freq;
 
     Math.random2f(20.0, 200.0) => float b;
 
@@ -57,6 +63,7 @@ while (true)
     b => thump.bend;
     b => thud.bend;
     b => kick.bend;
+    b => thwok.freq;
 
     Math.random2f(0.0, 0.1) => float s;
 
@@ -82,6 +89,7 @@ while (true)
     a => thump.attack;
     a => thud.attack;
     a => kick.attack;
+    a => thwok.attack;
 
     Math.random2f(0.0, 1.0) * 900::ms + 100::ms => dur d;
 
@@ -90,6 +98,7 @@ while (true)
     d => thump.decay;
     d => thud.decay;
     d => kick.decay;
+    d => thwok.decay;
 
     Math.random2f(0.1, 1.0) * 100::ms => dur pd;
 
@@ -98,6 +107,7 @@ while (true)
     pd => thump.pitchDecay;
     pd => thud.pitchDecay;
     pd => kick.pitchDecay;
+    pd => thwok.pitchDecay;
 
     Math.random2f(0.1, 1.0) * 2::ms => dur nd;
 
@@ -156,5 +166,15 @@ while (true)
     kick.play();
     ts.q => now;
     kick.play();
+    ts.q => now;
+
+    <<<"  thwok">>>;
+    thwok.play();
+    ts.q => now;
+    thwok.play();
+    ts.q => now;
+    thwok.play();
+    ts.q => now;
+    thwok.play();
     ts.q => now;
 }
