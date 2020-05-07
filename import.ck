@@ -412,6 +412,7 @@ Machine.add(path + "lick/effect/EchoArray.ck");
 Machine.add(path + "lick/effect/Electoronic.ck");
 Machine.add(path + "lick/effect/EnvelopeTremolo.ck");
 Machine.add(path + "lick/effect/Flutter.ck");
+Machine.add(path + "lick/effect/Foldback.ck");
 Machine.add(path + "lick/effect/Freeze.ck");
 Machine.add(path + "lick/effect/FullDouble.ck");
 Machine.add(path + "lick/effect/Ghost.ck");
