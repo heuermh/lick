@@ -20,10 +20,10 @@
 
 */
 
-Folder2 f => dac;
+Fold f => dac;
 
 0.8 => f.gain;
-110.0 => f.freq;
+220.0 => f.freq;
 
 <<<"ready">>>;
 while (true)

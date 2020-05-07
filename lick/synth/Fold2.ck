@@ -21,8 +21,10 @@
 */
 
 //
-// eq. 1 from https://www.desmos.com/calculator/kcdu7jnzsn
-public class Folder extends Chugen
+// eq. 2 from https://www.desmos.com/calculator/kcdu7jnzsn
+//
+
+public class Fold2 extends Chugen
 {
     0 => int _i;
     0.0 => float _a;
@@ -40,8 +42,8 @@ public class Folder extends Chugen
             0 => _i;
         }
 
-        // sin(sin(pi*x) * 8 * (a + 0.125))
-        return Math.sin(Math.sin(Math.PI * _x) * 8 * (_a + 0.125));
+        // sin(2^(3.2 * a) * sin(pi * x))
+        return Math.sin(Math.pow(2, (3.2 * _a)) * Math.sin(Math.PI * _x));
     }
 
 
@@ -65,5 +67,26 @@ public class Folder extends Chugen
     {
         f => _a;
         return _a;
+    }
+
+    static fun Fold2 create()
+    {
+        Fold2 fold2;
+        return fold2;
+    }
+
+    static fun Fold2 create(float freq)
+    {
+        Fold2 fold2;
+        freq => fold2.freq;
+        return fold2;
+    }
+
+    static fun Fold2 create(float freq, float a)
+    {
+        Fold2 fold2;
+        freq => fold2.freq;
+        a => fold2.a;
+        return fold2;
     }
 }

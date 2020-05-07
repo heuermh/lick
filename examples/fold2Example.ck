@@ -20,16 +20,16 @@
 
 */
 
-Folder f => dac;
+Fold2 f => dac;
 
 0.8 => f.gain;
-220.0 => f.freq;
+110.0 => f.freq;
 
 <<<"ready">>>;
 while (true)
 {
     800::ms => now;
-    for (0.0 => float a; a < 1.6; )
+    for (0.0 => float a; a < 3.2; )
     {
         <<<"a", a>>>;//, "_i", f._i, "last", f.last()>>>;
         a => f.a;
@@ -37,7 +37,7 @@ while (true)
         a + 0.01 => a;
     }
     100::ms => now;
-    for (1.6 => float a; a > 0.0; )
+    for (3.2 => float a; a > 0.0; )
     {
         <<<"a", a>>>;//, "_i", f._i, "last", f.last()>>>;
         a => f.a;
