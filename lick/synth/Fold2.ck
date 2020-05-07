@@ -69,20 +69,20 @@ public class Fold2 extends Chugen
         return _a;
     }
 
-    static fun Fold2 create()
+    fun static Fold2 create()
     {
         Fold2 fold2;
         return fold2;
     }
 
-    static fun Fold2 create(float freq)
+    fun static Fold2 create(float freq)
     {
         Fold2 fold2;
         freq => fold2.freq;
         return fold2;
     }
 
-    static fun Fold2 create(float freq, float a)
+    fun static Fold2 create(float freq, float a)
     {
         Fold2 fold2;
         freq => fold2.freq;

@@ -69,20 +69,20 @@ public class Fold extends Chugen
         return _a;
     }
 
-    static fun Fold create()
+    fun static Fold create()
     {
         Fold fold;
         return fold;
     }
 
-    static fun Fold create(float freq)
+    fun static Fold create(float freq)
     {
         Fold fold;
         freq => fold.freq;
         return fold;
     }
 
-    static fun Fold create(float freq, float a)
+    fun static Fold create(float freq, float a)
     {
         Fold fold;
         freq => fold.freq;
