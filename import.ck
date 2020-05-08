@@ -487,6 +487,8 @@ Machine.add(path + "lick/synth/Wrapper.ck");
 
 Machine.add(path + "lick/kick/Boom.ck");
 Machine.add(path + "lick/kick/Duff.ck");
+Machine.add(path + "lick/kick/Fwak.ck");
+Machine.add(path + "lick/kick/Fwak2.ck");
 Machine.add(path + "lick/kick/Kick.ck");
 Machine.add(path + "lick/kick/Thud.ck");
 Machine.add(path + "lick/kick/Thump.ck");

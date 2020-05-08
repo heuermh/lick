@@ -24,6 +24,8 @@ Boom boom;
 Duff duff;
 Thump thump;
 Thwok thwok;
+Fwak fwak;
+Fwak2 fwak2;
 
 Samples.createSample("samples/AkaiMpc60/OpenHat.wav") @=> Sample sample;
 
@@ -36,6 +38,8 @@ thump => dac;
 thud => dac;
 kick => dac;
 thwok => dac;
+fwak => dac;
+fwak2 => dac;
 
 // thwok is really loud
 0.05 => thwok.gain;
@@ -55,6 +59,8 @@ while (true)
     f => thud.freq;
     f => kick.freq;
     f => thwok.freq;
+    f => fwak.freq;
+    f => fwak2.freq;
 
     Math.random2f(20.0, 200.0) => float b;
 
@@ -63,7 +69,9 @@ while (true)
     b => thump.bend;
     b => thud.bend;
     b => kick.bend;
-    b => thwok.freq;
+    b => thwok.bend;
+    b => fwak.bend;
+    b => fwak2.bend;
 
     Math.random2f(0.0, 0.1) => float s;
 
@@ -90,6 +98,8 @@ while (true)
     a => thud.attack;
     a => kick.attack;
     a => thwok.attack;
+    a => fwak.attack;
+    a => fwak2.attack;
 
     Math.random2f(0.0, 1.0) * 900::ms + 100::ms => dur d;
 
@@ -99,6 +109,8 @@ while (true)
     d => thud.decay;
     d => kick.decay;
     d => thwok.decay;
+    d => fwak.decay;
+    d => fwak2.decay;
 
     Math.random2f(0.1, 1.0) * 100::ms => dur pd;
 
@@ -108,6 +120,8 @@ while (true)
     pd => thud.pitchDecay;
     pd => kick.pitchDecay;
     pd => thwok.pitchDecay;
+    pd => fwak.pitchDecay;
+    pd => fwak2.pitchDecay;
 
     Math.random2f(0.1, 1.0) * 2::ms => dur nd;
 
@@ -116,7 +130,17 @@ while (true)
     nd => kick.noiseDecay;
     nd => kick.sampleDecay;
 
-    <<<"freq", f, "bend", b, "shape", s, "noise", n, "drift", dr, "attack", (a/1::ms), "ms decay", (d/1::ms), "ms pitchDecay", (pd/1::ms), "ms noiseDecay", (nd/1::ms), "ms">>>;
+    Math.random2f(0.1, 2.0) => float fo;
+
+    fo => fwak.fold;
+    fo => fwak2.fold;
+
+    Math.random2f(0.1, 1.0) * 40::ms => dur fd;
+
+    fd => fwak.foldDecay;
+    fd => fwak2.foldDecay;
+
+    <<<"freq", f, "bend", b, "shape", s, "noise", n, "drift", dr, "fold", fo, "attack", (a/1::ms), "ms decay", (d/1::ms), "ms pitchDecay", (pd/1::ms), "ms noiseDecay", (nd/1::ms), "ms foldDecay", (fd/1::ms), "ms">>>;
 
     <<<"  boom">>>;
     boom.play();
@@ -176,5 +200,25 @@ while (true)
     thwok.play();
     ts.q => now;
     thwok.play();
+    ts.q => now;
+
+    <<<"  fwak">>>;
+    fwak.play();
+    ts.q => now;
+    fwak.play();
+    ts.q => now;
+    fwak.play();
+    ts.q => now;
+    fwak.play();
+    ts.q => now;
+
+    <<<"  fwak2">>>;
+    fwak2.play();
+    ts.q => now;
+    fwak2.play();
+    ts.q => now;
+    fwak2.play();
+    ts.q => now;
+    fwak2.play();
     ts.q => now;
 }
