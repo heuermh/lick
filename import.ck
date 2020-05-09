@@ -402,6 +402,7 @@ Machine.add(path + "lick/effect/Chew.ck");
 Machine.add(path + "lick/effect/Cooper.ck");
 Machine.add(path + "lick/effect/CrossOver2.ck");
 Machine.add(path + "lick/effect/CrossOver3.ck");
+Machine.add(path + "lick/effect/Crush.ck");
 Machine.add(path + "lick/effect/CryBaby.ck");
 Machine.add(path + "lick/effect/AutoWah.ck");
 Machine.add(path + "lick/effect/DigitalDelay.ck");
@@ -497,6 +498,7 @@ Machine.add(path + "lick/kick/Thwok.ck");
 // snare drum synthesis, package snare
 
 Machine.add(path + "lick/snare/Cch.ck");
+Machine.add(path + "lick/snare/Czh.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Snare.ck");
@@ -504,7 +506,6 @@ Machine.add(path + "lick/snare/Snare.ck");
 <<<"Optional dependencies (may fail to compile):">>>;
 
 // depends on jwmatthys' chugins, package jwmatthys
-Machine.add(path + "lick/jwmatthys/Crush.ck");
 Machine.add(path + "lick/jwmatthys/Disaster.ck");
 Machine.add(path + "lick/jwmatthys/Expo.ck");
 Machine.add(path + "lick/jwmatthys/PitchFollower.ck");

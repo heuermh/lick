@@ -20,35 +20,37 @@
 
 */
 
-// wraps Bitcrusher chugin
-public class Crush extends Effect
+Czh czh => dac;
+
+TimeSignature.common(110) @=> TimeSignature ts;
+
+while (true)
 {
-    Bitcrusher bc;
-    inlet => bc => wet;
+    Math.random2f(0.7, 0.9) => float a;
+    a => czh.accent;
 
-    fun int bits(int i)
-    {
-        return bc.bits(i);
-    }
+    Math.random2f(0.0, 1.0) => float t;
+    t => czh.tone;
 
-    fun int bits()
-    {
-        return bc.bits();
-    }
+    Math.random2f(0.6, 1.0) => float c;
+    c => czh.crush;
 
-    fun int downsample(int i)
-    {
-        return bc.downsampleFactor(i);
-    }
+    Math.random2f(2.0, 32.0) $ int => int b;
+    b => czh.bits;
 
-    fun int downsample()
-    {
-        return bc.downsampleFactor();
-    }
+    Math.random2f(2.0, 8.0) $ int => int ds;
+    ds => czh.downsample;
 
-    fun static Crush create()
+    Math.random2f(0.0, 1.0) * 200::ms + 80::ms => dur d;
+    d => czh.decay;
+
+    <<<"accent", a, "tone", t, "crush", c, "bits", b, "downsample", ds, "decay", (d/1::ms), "ms">>>;
+
+    for (0 => int i; i < 8; i++)
     {
-        Crush crush;
-        return crush;
+        <<<"czh">>>;
+        czh.play();
+
+        ts.e => now;
     }
 }
