@@ -20,6 +20,7 @@
 
 */
 
+// noise sample
 Samples.createSample("samples/AkaiMpc60/OpenHat.wav") @=> Sample sample;
 
 Kick.create(sample) @=> Kick kick;

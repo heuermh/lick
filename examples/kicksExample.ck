@@ -27,6 +27,7 @@ Thwok thwok;
 Fwak fwak;
 Fwak2 fwak2;
 
+// noise sample
 Samples.createSample("samples/AkaiMpc60/OpenHat.wav") @=> Sample sample;
 
 Thud.create(sample) @=> Thud thud;
