@@ -1,7 +1,7 @@
 lick.kick
 ---
 
-How I use LiCK in ChucK:
+How I use [LiCK](https://github.com/heuermh/lick) in [ChucK](http://chuck.cs.princeton.edu/):
 
 Clone LiCK from Github
 
