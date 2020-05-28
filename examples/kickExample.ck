@@ -47,25 +47,16 @@ while (true)
     s => kick.shape;
 
     Math.random2f(0.0, 1.0) => float n;
-    if (n < 0.33)
+    if (n < 0.66)
     {
         Math.random2f(0.01, 0.08) => float wn;
-        wn => kick.whiteNoise;
-        0.0 => kick.pinkNoise;
-        0.0 => kick.sample;
-    }
-    else if (n <0.66)
-    {
-        Math.random2f(0.01, 0.05) => float pn;
-        0.0 => kick.whiteNoise;
-        pn => kick.pinkNoise;
+        wn => kick.noise;
         0.0 => kick.sample;
     }
     else
     {
         Math.random2f(0.01, 0.20) => float sn;
-        0.0 => kick.whiteNoise;
-        0.0 => kick.pinkNoise;
+        0.0 => kick.noise;
         sn => kick.sample;
     }
 
@@ -87,11 +78,10 @@ while (true)
 
     Math.random2f(0.1, 1.0) * 2::ms => dur nd;
 
-    nd => kick.whiteNoiseDecay;
-    nd => kick.pinkNoiseDecay;
+    nd => kick.noiseDecay;
     nd => kick.sampleDecay;
 
-    <<<"freq", f, "bend", b, "shape", s, "whiteNoise", kick.whiteNoise(), "pinkNoise", kick.pinkNoise(), "sampleNoise", kick.sample(), "drift", dr, "attack", (a/1::ms), "ms decay", (d/1::ms), "ms pitchDecay", (pd/1::ms), "ms noiseDecay", (nd/1::ms), "ms">>>;
+    <<<"freq", f, "bend", b, "shape", s, "noise", kick.noise(), "sample", kick.sample(), "drift", dr, "attack", (a/1::ms), "ms decay", (d/1::ms), "ms pitchDecay", (pd/1::ms), "ms noiseDecay", (nd/1::ms), "ms">>>;
 
     for (0 => int i; i < 4; i++)
     {

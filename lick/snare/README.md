@@ -25,3 +25,4 @@ ___snare examples___
  * [examples/dnnExample.ck](https://github.com/heuermh/lick/blob/master/examples/dnnExample.ck)
  * [examples/snareExample.ck](https://github.com/heuermh/lick/blob/master/examples/snareExample.ck)
  * [examples/snaresExample.ck](https://github.com/heuermh/lick/blob/master/examples/snaresExample.ck)
+ * [examples/tssExample.ck](https://github.com/heuermh/lick/blob/master/examples/tssExample.ck)

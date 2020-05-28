@@ -26,4 +26,7 @@ ___kick examples___
  * [examples/fwak2Example.ck](https://github.com/heuermh/lick/blob/master/examples/fwak2Example.ck)
  * [examples/kickExample.ck](https://github.com/heuermh/lick/blob/master/examples/kickExample.ck)
  * [examples/kicksExample.ck](https://github.com/heuermh/lick/blob/master/examples/kicksExample.ck)
+ * [examples/thudExample.ck](https://github.com/heuermh/lick/blob/master/examples/thudExample.ck)
+ * [examples/thumpExample.ck](https://github.com/heuermh/lick/blob/master/examples/thumpExample.ck)
+ * [examples/thwokExample.ck](https://github.com/heuermh/lick/blob/master/examples/thwokExample.ck)
 
