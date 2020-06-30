@@ -418,6 +418,7 @@ Machine.add(path + "lick/effect/Freeze.ck");
 Machine.add(path + "lick/effect/FullDouble.ck");
 Machine.add(path + "lick/effect/Ghost.ck");
 Machine.add(path + "lick/effect/Golden.ck");
+Machine.add(path + "lick/effect/Hall.ck");
 Machine.add(path + "lick/effect/Harmonizer.ck");
 Machine.add(path + "lick/effect/Harmonizers.ck");
 Machine.add(path + "lick/effect/LoopReverb.ck");
