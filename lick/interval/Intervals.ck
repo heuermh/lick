@@ -685,16 +685,16 @@ class PerfectEleventh extends Interval
 
 class MinorThirteenth extends Interval
 {
-    Math.pow(2, (21.0/12.0)) => antecedent;
-    "2^(21/12):1" => ratio;
+    Math.pow(2, (20.0/12.0)) => antecedent;
+    "2^(20/12):1" => ratio;
     "MinorThirteenth" => name;
     "Equal-tempered minor thirteenth, compound of octave and minor sixth" => description;
 }
 
 class MajorThirteenth extends Interval
 {
-    Math.pow(2, (20.0/12.0)) => antecedent;
-    "2^(20/12):1" => ratio;
+    Math.pow(2, (21.0/12.0)) => antecedent;
+    "2^(21/12):1" => ratio;
     "MajorThirteenth" => name;
     "Equal-tempered major thirteenth, compound of octave and major sixth" => description;
 }
