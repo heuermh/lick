@@ -56,6 +56,7 @@ class FloatArrayListTest extends Assert
         testIterator();
         testForEach();
         testAssign();
+        testMap();
         testTransform();
         testAddAll();
         testCollect();
@@ -183,6 +184,41 @@ class FloatArrayListTest extends Assert
             iterator.next() => float value;
             assertEquals(0.0, value, 0.1);
         }
+    }
+
+    fun void testMap()
+    {
+        FloatArrayList list;
+        FloatIterator @ iterator;
+        Inverse inverse;
+        list.size(16);
+
+        list.assign(42.0);
+        list.iterator() @=> iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() => float value;
+            assertEquals(42.0, value, 0.1);
+        }
+
+        list.map(inverse);
+        list.iterator() @=> iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() => float value;
+            assertEquals(-42.0, value, 0.1);
+        }
+
+        list.map(inverse);
+        list.iterator() @=> iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() => float value;
+            assertEquals(42.0, value, 0.1);
+        }
+
+        // throws NullPointerException
+        //list.map(null);
     }
 
     fun void testTransform()

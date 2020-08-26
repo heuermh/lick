@@ -122,6 +122,12 @@ public class IntList
         // empty
     }
 
+    // alias for transform
+    fun void map(IntFunction fn)
+    {
+        transform(fn);
+    }
+
     fun void transform(IntFunction fn)
     {
         // empty

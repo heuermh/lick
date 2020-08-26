@@ -122,6 +122,12 @@ public class List
         // empty
     }
 
+    // alias for transform
+    fun void map(UnaryFunction fn)
+    {
+        transform(fn);
+    }
+
     fun void transform(UnaryFunction fn)
     {
         // empty

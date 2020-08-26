@@ -122,6 +122,12 @@ public class FloatList
         // empty
     }
 
+    // alias for transform
+    fun void map(FloatFunction fn)
+    {
+        transform(fn);
+    }
+
     fun void transform(FloatFunction fn)
     {
         // empty

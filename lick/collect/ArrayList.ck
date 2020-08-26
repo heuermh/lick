@@ -46,8 +46,7 @@ public class ArrayList extends List
 
     fun Object sample()
     {
-        Math.random2(0, size() - 1) => int index;
-        return get(index);
+        return values[Math.random2(0, size() - 1)];
     }
 
     fun void add(Object value)

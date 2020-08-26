@@ -73,6 +73,7 @@ class ArrayListTest extends Assert
         testIterator();
         testForEach();
         testAssign();
+        testMap();
         testTransform();
         testCollect();
         testCopy();
@@ -242,6 +243,33 @@ class ArrayListTest extends Assert
             iterator.next() @=> Object value;
             assertEquals(bar, value);
         }
+    }
+
+    fun void testMap()
+    {
+        ArrayList list;
+        Iterator @ iterator;
+        Nullify nullify;
+        list.size(16);
+
+        list.assign(foo);
+        list.iterator() @=> iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() @=> Object value;
+            assertEquals(foo, value);
+        }
+
+        list.map(nullify);
+        list.iterator() @=> iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() @=> Object value;
+            assertNull(value);
+        }
+
+        // throws NullPointerException
+        //list.map(null);
     }
 
     fun void testTransform()
