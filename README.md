@@ -57,6 +57,11 @@ http://chuck.cs.princeton.edu/
 
 ### LiCK optional dependencies:
 
+CCRMA ChuGins
+
+https://github.com/ccrma/chugins
+
+
 Joel Matthys' Fork of CCRMA ChuGins
 
 https://github.com/jwmatthys/chugins
