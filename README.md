@@ -40,6 +40,7 @@ GNU General Public License for more details.
  - Mono and stereo Delays, FeedbackMachines
  - WaveShaper chugen, Distortion and Tremolo chugens
  - Sample hold, slew step, hyper triangle low frequency oscillators (LFOs)
+ - Feedback, flanger, phaser, chorus, delay, reverb, etc. chugen effects
  - Envelope follower, envelope trigger
  - Attack Release (AR) and other envelope generators
  - PitShift-based pitch follower, harmonizers, and effects
