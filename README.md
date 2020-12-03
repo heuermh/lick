@@ -97,4 +97,4 @@ http://breakfastquay.com/rubberband/
 
 For further documentation, please see
 
-http://wiki.github.com/heuermh/lick
+https://github.com/heuermh/lick/wiki
