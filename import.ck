@@ -412,6 +412,7 @@ Machine.add(path + "lick/effect/Ecco.ck");
 Machine.add(path + "lick/effect/EchoArray.ck");
 Machine.add(path + "lick/effect/Electoronic.ck");
 Machine.add(path + "lick/effect/EnvelopeTremolo.ck");
+Machine.add(path + "lick/effect/FilterDelay.ck");
 Machine.add(path + "lick/effect/Flutter.ck");
 Machine.add(path + "lick/effect/Foldback.ck");
 Machine.add(path + "lick/effect/Freeze.ck");
@@ -452,6 +453,7 @@ Machine.add(path + "lick/effect/Wire.ck");
 Machine.add(path + "lick/effect/Wolftone.ck");
 Machine.add(path + "lick/effect/Woosh.ck");
 Machine.add(path + "lick/effect/Currant.ck");
+Machine.add(path + "lick/effect/Glider.ck");
 Machine.add(path + "lick/effect/MotelSix.ck");
 Machine.add(path + "lick/effect/OilCan.ck");
 
