@@ -281,6 +281,7 @@ Machine.add(path + "lick/midi/TwoPotsMidi.ck");
 Machine.add(path + "lick/midi/PodHd500Midi.ck");
 
 // devices, package device
+Machine.add(path + "lick/device/Controller128.ck");
 Machine.add(path + "lick/device/Keyboard.ck");
 Machine.add(path + "lick/device/Joystick.ck");
 Machine.add(path + "lick/device/LogitechGamepadF310.ck");
