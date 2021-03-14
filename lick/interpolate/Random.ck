@@ -20,7 +20,7 @@
 
 */
 
-public class LRandom
+public class Random
 {
     fun float evaluate()
     {
