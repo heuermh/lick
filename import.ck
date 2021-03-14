@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2020 held jointly by the individual authors.
+    Copyright (c) 2007-2021 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -21,7 +21,7 @@
 */
 
 <<<"LiCK  Library for ChucK.">>>;
-<<<"Copyright (c) 2007-2020 held jointly by the individual authors.">>>;
+<<<"Copyright (c) 2007-2021 held jointly by the individual authors.">>>;
 <<<"Licensed GNU General Public License (GPL), version 3 or later.">>>;
 
 // path to LiCK import.ck ...
@@ -281,6 +281,7 @@ Machine.add(path + "lick/midi/TwoPotsMidi.ck");
 Machine.add(path + "lick/midi/PodHd500Midi.ck");
 
 // devices, package device
+Machine.add(path + "lick/device/Controller128.ck");
 Machine.add(path + "lick/device/Keyboard.ck");
 Machine.add(path + "lick/device/Joystick.ck");
 Machine.add(path + "lick/device/LogitechGamepadF310.ck");
@@ -412,6 +413,7 @@ Machine.add(path + "lick/effect/Ecco.ck");
 Machine.add(path + "lick/effect/EchoArray.ck");
 Machine.add(path + "lick/effect/Electoronic.ck");
 Machine.add(path + "lick/effect/EnvelopeTremolo.ck");
+Machine.add(path + "lick/effect/FilterDelay.ck");
 Machine.add(path + "lick/effect/Flutter.ck");
 Machine.add(path + "lick/effect/Foldback.ck");
 Machine.add(path + "lick/effect/Freeze.ck");
@@ -452,6 +454,7 @@ Machine.add(path + "lick/effect/Wire.ck");
 Machine.add(path + "lick/effect/Wolftone.ck");
 Machine.add(path + "lick/effect/Woosh.ck");
 Machine.add(path + "lick/effect/Currant.ck");
+Machine.add(path + "lick/effect/Glider.ck");
 Machine.add(path + "lick/effect/MotelSix.ck");
 Machine.add(path + "lick/effect/OilCan.ck");
 
