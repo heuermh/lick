@@ -20,7 +20,7 @@
 
 */
 
-public class BassDelay2 extends Chubgraph
+public class BassDelay2 extends Chugraph
 {
     SinOsc _pulse;
     ADSR _adsr;

@@ -90,11 +90,11 @@ public class Mixer extends Effect
 
     fun void randomize()
     {
-        Random r;
+        LRandom r;
         randomize(r);
     }
 
-    fun void randomize(Random r)
+    fun void randomize(LRandom r)
     {
         1.0 => float remaining;
         inputs.size() => int n;

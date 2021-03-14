@@ -20,7 +20,7 @@
 
 */
 
-public class SVF extends Chubgraph
+public class SVF extends Chugraph
 {
     HPF hpf;
     LPF lpf;

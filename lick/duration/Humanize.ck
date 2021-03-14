@@ -55,32 +55,32 @@ public class Humanize
     // todo:  add swing
 
 
-    fun static dur humanize(dur value, Random random)
+    fun static dur humanize(dur value, LRandom random)
     {
         return humanize(value, 0.05, 0.05, random);
     }
 
-    fun static dur humanize(dur value, float anticipation, float delay, Random random)
+    fun static dur humanize(dur value, float anticipation, float delay, LRandom random)
     {
         return value - random.evaluate() * anticipation * value + random.evaluate() * delay * value;
     }
 
-    fun static dur anticipate(dur value, Random random)
+    fun static dur anticipate(dur value, LRandom random)
     {
         return anticipate(value, 0.1, random);
     }
 
-    fun static dur anticipate(dur value, float anticipation, Random random)
+    fun static dur anticipate(dur value, float anticipation, LRandom random)
     {
         return value - random.evaluate() * anticipation * value;
     }
 
-    fun static dur delay(dur value, Random random)
+    fun static dur delay(dur value, LRandom random)
     {
         return delay(value, 0.1, random);
     }
 
-    fun static dur delay(dur value, float delay, Random random)
+    fun static dur delay(dur value, float delay, LRandom random)
     {
         return value + random.evaluate() * delay * value;
     }

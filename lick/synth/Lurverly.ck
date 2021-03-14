@@ -20,7 +20,7 @@
 
 */
 
-public class Luverly extends Chubgraph
+public class Luverly extends Chugraph
 {
     SawOsc _saw1;
     SawOsc _saw2;

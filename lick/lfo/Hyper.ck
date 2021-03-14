@@ -33,7 +33,7 @@ class Recover extends Chugen
 // http://hammer.ampage.org/files/hypertriangleclock.gif
 //
 
-public class Hyper extends Chubgraph
+public class Hyper extends Chugraph
 {
     SinOsc _sin => FullRectifier _rect => Invert _invert => Recover _recover => outlet;
 
