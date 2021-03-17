@@ -98,12 +98,6 @@ public class LfoEffect extends Effect
         _lfo.smoothSampleHold();
     }
 
-    // @deprecated
-    fun void lfo(float saw, float sin, float sqr, float tri, float sh, float ssh)
-    {
-        lfo(saw, sin, sqr, tri, 0.0, sh, ssh);
-    }
-
     fun void lfo(float saw, float sin, float sqr, float tri, float hyper, float sh, float ssh)
     {
         _lfo.mix(saw, sin, sqr, tri, hyper, sh, ssh);
