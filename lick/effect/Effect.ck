@@ -26,7 +26,7 @@
 // inlet => MyEffect effect => wet;
 //
 
-public class Effect extends Chubgraph
+public class Effect extends Chugraph
 {
     Gain dry;
     Gain wet;

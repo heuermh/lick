@@ -20,7 +20,7 @@
 
 */
 
-public class DoublePulse extends Chubgraph
+public class DoublePulse extends Chugraph
 {
     220.0 => float _freq;
     0.2 => float _gain1;

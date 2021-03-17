@@ -25,7 +25,7 @@
 //   buy one here http://earthquakerdevices.com/shop/disastertransportsr/
 //
 
-public class Disaster extends Chubgraph
+public class Disaster extends Chugraph
 {
     Gain _inputA;
     Gain _inputB;

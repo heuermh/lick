@@ -36,7 +36,7 @@ class DF extends FloatFunction
     }
 }
 
-public class Duff extends Chubgraph
+public class Duff extends Chugraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

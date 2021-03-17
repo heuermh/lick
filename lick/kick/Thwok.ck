@@ -25,7 +25,7 @@
 // https://www.ericasynths.lv/shop/eurorack-modules/by-series/pico-series/pico-drum2/
 //
 
-public class Thwok extends Chubgraph
+public class Thwok extends Chugraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

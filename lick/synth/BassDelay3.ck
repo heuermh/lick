@@ -20,7 +20,7 @@
 
 */
 
-public class BassDelay3 extends Chubgraph
+public class BassDelay3 extends Chugraph
 {
     32 => static int VOICES;
 
