@@ -24,6 +24,6 @@ public class RandomThreshold extends Interpolation
 {
     fun float evaluate(float value)
     {
-        return Std.rand2f(0.0, value);
+        return Math.random2f(0.0, value);
     }
 }

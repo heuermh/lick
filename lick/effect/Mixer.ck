@@ -100,7 +100,7 @@ public class Mixer extends Effect
         inputs.size() => int n;
         for (0 => int i; i < n; i++)
         {
-            r.evaluate() * remaining => float g;
+            r.get() * remaining => float g;
             g => input(i).gain;
             remaining - g => remaining;
         }

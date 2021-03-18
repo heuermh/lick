@@ -20,52 +20,52 @@
 
 */
 
-public class Random
+public class Random extends FloatSupplier
 {
-    fun float evaluate()
+    fun float get()
     {
         return Math.random2f(0.0, 1.0);
     }
 
     fun int almostAlways()
     {
-        Math.floor(evaluate() + 0.9) $ int => int i;
+        Math.floor(get() + 0.9) $ int => int i;
         return i;
     }
 
     fun int frequently()
     {
-        Math.floor(evaluate() + 0.8) $ int => int i;
+        Math.floor(get() + 0.8) $ int => int i;
         return i;
     }
 
     fun int often()
     {
-        Math.floor(evaluate() + 0.66) $ int => int i;
+        Math.floor(get() + 0.66) $ int => int i;
         return i;
     }
 
     fun int coinFlip()
     {
-        Math.floor(evaluate() + 0.5) $ int => int i;
+        Math.floor(get() + 0.5) $ int => int i;
         return i;
     }
 
     fun int sometimes()
     {
-        Math.floor(evaluate() + 0.33) $ int => int i;
+        Math.floor(get() + 0.33) $ int => int i;
         return i;
     }
 
     fun int infrequently()
     {
-        Math.floor(evaluate() + 0.2) $ int => int i;
+        Math.floor(get() + 0.2) $ int => int i;
         return i;
     }
 
     fun int rarely()
     {
-        Math.floor(evaluate() + 0.1) $ int => int i;
+        Math.floor(get() + 0.1) $ int => int i;
         return i;
     }
 }

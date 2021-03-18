@@ -105,6 +105,19 @@ Machine.add(path + "lick/fn/Tanh.ck");
 Machine.add(path + "lick/fn/Trunc.ck");
 Machine.add(path + "lick/fn/Uniform.ck");
 
+// random suppliers
+Machine.add(path + "lick/fn/Random.ck");
+Machine.add(path + "lick/fn/GaussianRandom.ck");
+
+// random predicates
+Machine.add(path + "lick/fn/AlmostAlways.ck");
+Machine.add(path + "lick/fn/CoinFlip.ck");
+Machine.add(path + "lick/fn/Frequently.ck");
+Machine.add(path + "lick/fn/Infrequently.ck");
+Machine.add(path + "lick/fn/Often.ck");
+Machine.add(path + "lick/fn/Rarely.ck");
+Machine.add(path + "lick/fn/Sometimes.ck");
+
 // composite functions
 Machine.add(path + "lick/fn/CompositeDurFunction.ck");
 Machine.add(path + "lick/fn/CompositeFloatFunction.ck");
@@ -162,8 +175,6 @@ Machine.add(path + "lick/interpolate/QuarticOut.ck");
 Machine.add(path + "lick/interpolate/QuinticIn.ck");
 Machine.add(path + "lick/interpolate/QuinticInOut.ck");
 Machine.add(path + "lick/interpolate/QuinticOut.ck");
-Machine.add(path + "lick/interpolate/Random.ck");
-Machine.add(path + "lick/interpolate/GaussianRandom.ck");
 Machine.add(path + "lick/interpolate/RandomFloor.ck");
 Machine.add(path + "lick/interpolate/RandomThreshold.ck");
 Machine.add(path + "lick/interpolate/SinusoidalIn.ck");

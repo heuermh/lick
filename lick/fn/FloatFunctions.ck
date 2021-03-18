@@ -163,4 +163,46 @@ public class FloatFunctions
         Trunc trunc;
         return compose(trunc, fn);
     }
+
+    fun static FloatFunction almostAlways(FloatFunction f)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, f);
+    }
+
+    fun static FloatFunction frequently(FloatFunction f)
+    {
+        Frequently frequently;
+        condition(frequently, f);
+    }
+
+    fun static FloatFunction often(FloatFunction f)
+    {
+        Often often;
+        condition(often, f);
+    }
+
+    fun static FloatFunction sometimes(FloatFunction f)
+    {
+        Sometimes sometimes;
+        condition(sometimes, f);
+    }
+
+    fun static FloatFunction coinFlip(FloatFunction f)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, f);
+    }
+
+    fun static FloatFunction infrequently(FloatFunction f)
+    {
+        Infrequently infrequently;
+        condition(infrequently, f);
+    }
+
+    fun static FloatFunction rarely(FloatFunction f)
+    {
+        Rarely rarely;
+        condition(rarely, f);
+    }
 }

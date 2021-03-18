@@ -29,4 +29,54 @@ public class IntFunctions
         h @=> composite.h;
         return composite;
     }
+
+    fun static IntFunction condition(Predicate p, IntFunction f)
+    {
+        ConditionalIntFunction conditional;
+        p @=> conditional.p;
+        f @=> conditional.f;
+        return conditional;
+    }
+
+    fun static IntFunction almostAlways(IntFunction f)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, f);
+    }
+
+    fun static IntFunction frequently(IntFunction f)
+    {
+        Frequently frequently;
+        condition(frequently, f);
+    }
+
+    fun static IntFunction often(IntFunction f)
+    {
+        Often often;
+        condition(often, f);
+    }
+
+    fun static IntFunction sometimes(IntFunction f)
+    {
+        Sometimes sometimes;
+        condition(sometimes, f);
+    }
+
+    fun static IntFunction coinFlip(IntFunction f)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, f);
+    }
+
+    fun static IntFunction infrequently(IntFunction f)
+    {
+        Infrequently infrequently;
+        condition(infrequently, f);
+    }
+
+    fun static IntFunction rarely(IntFunction f)
+    {
+        Rarely rarely;
+        condition(rarely, f);
+    }
 }

@@ -29,4 +29,46 @@ public class IntProcedures
         r @=> conditional.r;
         return conditional;
     }
+
+    fun static IntProcedure almostAlways(IntProcedure p)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, p);
+    }
+
+    fun static IntProcedure frequently(IntProcedure p)
+    {
+        Frequently frequently;
+        condition(frequently, p);
+    }
+
+    fun static IntProcedure often(IntProcedure p)
+    {
+        Often often;
+        condition(often, p);
+    }
+
+    fun static IntProcedure sometimes(IntProcedure p)
+    {
+        Sometimes sometimes;
+        condition(sometimes, p);
+    }
+
+    fun static IntProcedure coinFlip(IntProcedure p)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, p);
+    }
+
+    fun static IntProcedure infrequently(IntProcedure p)
+    {
+        Infrequently infrequently;
+        condition(infrequently, p);
+    }
+
+    fun static IntProcedure rarely(IntProcedure p)
+    {
+        Rarely rarely;
+        condition(rarely, p);
+    }
 }

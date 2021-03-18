@@ -37,4 +37,46 @@ public class Functions
         f @=> conditional.f;
         return conditional;
     }
+
+    fun static UnaryFunction almostAlways(UnaryFunction f)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, f);
+    }
+
+    fun static UnaryFunction frequently(UnaryFunction f)
+    {
+        Frequently frequently;
+        condition(frequently, f);
+    }
+
+    fun static UnaryFunction often(UnaryFunction f)
+    {
+        Often often;
+        condition(often, f);
+    }
+
+    fun static UnaryFunction sometimes(UnaryFunction f)
+    {
+        Sometimes sometimes;
+        condition(sometimes, f);
+    }
+
+    fun static UnaryFunction coinFlip(UnaryFunction f)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, f);
+    }
+
+    fun static UnaryFunction infrequently(UnaryFunction f)
+    {
+        Infrequently infrequently;
+        condition(infrequently, f);
+    }
+
+    fun static UnaryFunction rarely(UnaryFunction f)
+    {
+        Rarely rarely;
+        condition(rarely, f);
+    }
 }

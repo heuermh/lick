@@ -29,4 +29,46 @@ public class FloatProcedures
         r @=> conditional.r;
         return conditional;
     }
+
+    fun static FloatProcedure almostAlways(FloatProcedure p)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, p);
+    }
+
+    fun static FloatProcedure frequently(FloatProcedure p)
+    {
+        Frequently frequently;
+        condition(frequently, p);
+    }
+
+    fun static FloatProcedure often(FloatProcedure p)
+    {
+        Often often;
+        condition(often, p);
+    }
+
+    fun static FloatProcedure sometimes(FloatProcedure p)
+    {
+        Sometimes sometimes;
+        condition(sometimes, p);
+    }
+
+    fun static FloatProcedure coinFlip(FloatProcedure p)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, p);
+    }
+
+    fun static FloatProcedure infrequently(FloatProcedure p)
+    {
+        Infrequently infrequently;
+        condition(infrequently, p);
+    }
+
+    fun static FloatProcedure rarely(FloatProcedure p)
+    {
+        Rarely rarely;
+        condition(rarely, p);
+    }
 }

@@ -29,4 +29,46 @@ public class DurProcedures
         r @=> conditional.r;
         return conditional;
     }
+
+    fun static DurProcedure almostAlways(DurProcedure p)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, p);
+    }
+
+    fun static DurProcedure frequently(DurProcedure p)
+    {
+        Frequently frequently;
+        condition(frequently, p);
+    }
+
+    fun static DurProcedure often(DurProcedure p)
+    {
+        Often often;
+        condition(often, p);
+    }
+
+    fun static DurProcedure sometimes(DurProcedure p)
+    {
+        Sometimes sometimes;
+        condition(sometimes, p);
+    }
+
+    fun static DurProcedure coinFlip(DurProcedure p)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, p);
+    }
+
+    fun static DurProcedure infrequently(DurProcedure p)
+    {
+        Infrequently infrequently;
+        condition(infrequently, p);
+    }
+
+    fun static DurProcedure rarely(DurProcedure p)
+    {
+        Rarely rarely;
+        condition(rarely, p);
+    }
 }

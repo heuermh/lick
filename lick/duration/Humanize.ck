@@ -29,7 +29,7 @@ public class Humanize
 
     fun static dur humanize(dur value, float anticipation, float delay)
     {
-        return value - Std.rand2f(0.0, anticipation) * value + Std.rand2f(0.0, delay) * value;
+        return value - Math.random2f(0.0, anticipation) * value + Math.random2f(0.0, delay) * value;
     }
 
     fun static dur anticipate(dur value)
@@ -39,7 +39,7 @@ public class Humanize
 
     fun static dur anticipate(dur value, float anticipation)
     {
-        return value - Std.rand2f(0.0, anticipation) * value;
+        return value - Math.random2f(0.0, anticipation) * value;
     }
 
     fun static dur delay(dur value)
@@ -49,7 +49,7 @@ public class Humanize
 
     fun static dur delay(dur value, float delay)
     {
-        return value + Std.rand2f(0.0, delay) * value;
+        return value + Math.random2f(0.0, delay) * value;
     }
 
     // todo:  add swing
@@ -62,7 +62,7 @@ public class Humanize
 
     fun static dur humanize(dur value, float anticipation, float delay, Random random)
     {
-        return value - random.evaluate() * anticipation * value + random.evaluate() * delay * value;
+        return value - random.get() * anticipation * value + random.get() * delay * value;
     }
 
     fun static dur anticipate(dur value, Random random)
@@ -72,7 +72,7 @@ public class Humanize
 
     fun static dur anticipate(dur value, float anticipation, Random random)
     {
-        return value - random.evaluate() * anticipation * value;
+        return value - random.get() * anticipation * value;
     }
 
     fun static dur delay(dur value, Random random)
@@ -82,7 +82,7 @@ public class Humanize
 
     fun static dur delay(dur value, float delay, Random random)
     {
-        return value + random.evaluate() * delay * value;
+        return value + random.get() * delay * value;
     }
 
 

@@ -29,4 +29,46 @@ public class Procedures
         r @=> conditional.r;
         return conditional;
     }
+
+    fun static Procedure almostAlways(Procedure p)
+    {
+        AlmostAlways almostAlways;
+        condition(almostAlways, p);
+    }
+
+    fun static Procedure frequently(Procedure p)
+    {
+        Frequently frequently;
+        condition(frequently, p);
+    }
+
+    fun static Procedure often(Procedure p)
+    {
+        Often often;
+        condition(often, p);
+    }
+
+    fun static Procedure sometimes(Procedure p)
+    {
+        Sometimes sometimes;
+        condition(sometimes, p);
+    }
+
+    fun static Procedure coinFlip(Procedure p)
+    {
+        CoinFlip coinFlip;
+        condition(coinFlip, p);
+    }
+
+    fun static Procedure infrequently(Procedure p)
+    {
+        Infrequently infrequently;
+        condition(infrequently, p);
+    }
+
+    fun static Procedure rarely(Procedure p)
+    {
+        Rarely rarely;
+        condition(rarely, p);
+    }
 }

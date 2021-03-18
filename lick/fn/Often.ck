@@ -20,10 +20,12 @@
 
 */
 
-public class RandomFloor extends Interpolation
+public class Often extends Predicate
 {
-    fun float evaluate(float value)
+    Random r;
+
+    fun int test()
     {
-        return Math.random2f(value, 1.0);
+        return r.often();
     }
 }
