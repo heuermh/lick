@@ -39,7 +39,7 @@ public class Redshift extends LfoFeedback
         0.2 => rate;
         0.08 => depth;
         0.40 => feedback;
-        lfo(0.0, 0.8, 0.0, 0.0, 0.0, 0.2);
+        lfo(0.0, 0.8, 0.0, 0.0, 0.0, 0.2, 0.0);
         4000.0 => _lpf.freq;
     }
 

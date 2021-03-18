@@ -24,7 +24,7 @@ adc => Tremolo tremolo => DigitalDelay delay => Amp amp => Cabinet cabinet => GV
 1.0 => tremolo.mix;
 0.4 => tremolo.depth;
 4.0 => tremolo.rate;
-tremolo.lfo(0.0, 0.8, 0.0, 0.2);
+tremolo.lfo(0.0, 0.8, 0.0, 0.2, 0.0, 0.0, 0.0);
 
 0.1 => delay.mix;
 0.1 => delay.feedback;
@@ -61,7 +61,7 @@ class TremMod extends FloatProcedure
 
         depth => tremolo.depth;
         rate => tremolo.rate;
-        tremolo.lfo(0.0, sinMix, sqrMix, 0.0);
+        tremolo.lfo(0.0, sinMix, sqrMix, 0.0, 0.0, 0.0, 0.0);
 
         Interpolate.linear(f, 0.0, 1.0, 0.05, 0.15) => float delayMix;
         Interpolate.linear(f, 0.0, 1.0, 0.3, 0.98) => float delayFeedback;

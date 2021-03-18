@@ -58,7 +58,7 @@ public class Currant extends Effect
         0.25 => _bypass.gain;
         500.0 => _hpf.freq;
 
-        lfo(0.05, 0.6, 0.0, 0.1, 0.0, 0.25);
+        lfo(0.05, 0.6, 0.0, 0.1, 0.0, 0.25, 0.0);
         rate(3.2);
         depth(1.0);
     }
