@@ -27,7 +27,7 @@
 // Buy one here:  http://www.critterandguitari.com/products/bolsa-bass
 //
 
-public class BassDelay extends Chugraph
+public class BassDelay extends Chubgraph
 {
     SinOsc _pulse;
     MonoDelay2 _delay;

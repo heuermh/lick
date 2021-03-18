@@ -25,7 +25,7 @@
 // https://www.ericasynths.lv/shop/eurorack-modules/by-series/pico-series/pico-drum2/
 //
 
-public class Fwak2 extends Chugraph
+public class Fwak2 extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

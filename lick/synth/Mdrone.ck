@@ -25,7 +25,7 @@
 // Buy a kit here:  https://foxtonemusic.com/shop/pedals/everything-else/sdiy-mdrone/
 //
 
-public class Mdrone extends Chugraph
+public class Mdrone extends Chubgraph
 {
     SqrOsc _osc1;
     SqrOsc _osc2;

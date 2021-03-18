@@ -20,7 +20,7 @@
 
 */
 
-public class SmoothSampleHold extends Chugraph
+public class SmoothSampleHold extends Chubgraph
 {
     inlet => blackhole;
     SlewStep _step => outlet;

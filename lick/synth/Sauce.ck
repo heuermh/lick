@@ -20,7 +20,7 @@
 
 */
 
-public class Sauce extends Chugraph
+public class Sauce extends Chubgraph
 {
     SinOsc _sin;
     SinOsc _sub;

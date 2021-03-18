@@ -25,7 +25,7 @@
 // Figure 12. Almost the simplest way to create a snare drum sound
 //
 
-public class Tss extends Chugraph
+public class Tss extends Chubgraph
 {
     Noise _noise => LPF _lpf => ADSR _env => Gain _vca => outlet;
     Step _step => ADSR _pitchEnv => blackhole;

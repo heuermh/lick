@@ -20,7 +20,7 @@
 
 */
 
-public class PitchFollower extends Chugraph
+public class PitchFollower extends Chubgraph
 {
     PitchTrack pitchTrack;
     FloatProcedure @ procedure;

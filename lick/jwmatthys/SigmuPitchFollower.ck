@@ -20,7 +20,7 @@
 
 */
 
-public class SigmuPitchFollower extends Chugraph
+public class SigmuPitchFollower extends Chubgraph
 {
     Sigmund sigmu;
     FloatProcedure @ procedure;

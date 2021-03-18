@@ -27,7 +27,7 @@
 // Buy one here:  http://www.critterandguitari.com/products/bolsa-bass
 //
 
-public class CircleRamp extends Chugraph
+public class CircleRamp extends Chubgraph
 {
     SinOsc osc1;
     SinOsc osc2;

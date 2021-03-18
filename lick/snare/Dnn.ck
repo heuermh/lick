@@ -25,7 +25,7 @@
 // Figure 17. How little of the snare drum model from Figure 1 survives in Figure 16
 //
 
-public class Dnn extends Chugraph
+public class Dnn extends Chubgraph
 {
     Gain _mix => LPF _lpf => ADSR _env => Gain _vca => outlet;
     PulseOsc _carrier => _mix;

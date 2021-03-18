@@ -35,7 +35,7 @@ class TF extends FloatFunction
     }
 }
 
-public class Thump extends Chugraph
+public class Thump extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

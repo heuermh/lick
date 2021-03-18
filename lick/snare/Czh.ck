@@ -25,7 +25,7 @@
 // https://www.ericasynths.lv/shop/eurorack-modules/by-series/pico-series/pico-drum2/
 //
 
-public class Czh extends Chugraph
+public class Czh extends Chubgraph
 {
     Noise _noise => LPF _lpf => Crush _bitcrush => ADSR _env => Gain _vca => outlet;
     Step _step => ADSR _pitchEnv => blackhole;

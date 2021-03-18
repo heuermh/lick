@@ -20,7 +20,7 @@
 
 */
 
-public class Fat extends Chugraph
+public class Fat extends Chubgraph
 {
     SawOsc _saw;
     SawOsc _fifth;

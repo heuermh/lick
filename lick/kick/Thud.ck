@@ -24,7 +24,7 @@
 // Kick with sample for transients
 //
 
-public class Thud extends Chugraph
+public class Thud extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

@@ -25,7 +25,7 @@
 //   http://chuck.cs.princeton.edu/doc/examples/deep/follower.ck
 //
 
-public class EnvelopeFollower extends Chugraph
+public class EnvelopeFollower extends Chubgraph
 {
     20::ms => dur _rate;
 

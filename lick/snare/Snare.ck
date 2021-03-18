@@ -25,7 +25,7 @@
 // Figure 7: The additive approach to generating drum partials
 //
 
-public class Snare extends Chugraph
+public class Snare extends Chubgraph
 {
     Gain _mix => LPF _lpf => ADSR _env => Gain _vca => outlet;
 

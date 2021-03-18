@@ -35,7 +35,7 @@ class KF extends FloatFunction
     }
 }
 
-public class Kick extends Chugraph
+public class Kick extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

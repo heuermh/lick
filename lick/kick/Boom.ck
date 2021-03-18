@@ -24,7 +24,7 @@
 // 808-ish kick, with drift
 //
 
-public class Boom extends Chugraph
+public class Boom extends Chubgraph
 {
     inlet => blackhole;
     ADSR _env => Gain _vca => outlet;

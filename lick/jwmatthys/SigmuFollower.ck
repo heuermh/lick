@@ -20,7 +20,7 @@
 
 */
 
-public class SigmuFollower extends Chugraph
+public class SigmuFollower extends Chubgraph
 {
     Sigmund sigmu;
     FloatProcedure @ gainProcedure;
