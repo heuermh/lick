@@ -22,8 +22,8 @@
 
 public class Tuning
 {
-    MidiNote @ _std[6];
-    MidiNote @ strings[6];
+    MidiNote _std[6];
+    MidiNote strings[6];
     "Standard" => string name;
     "E A D G B E" => string description;
     "s s s s s s" => string delta;
@@ -39,11 +39,11 @@ public class Tuning
         _std @=> strings;
     }
 
-    fun void init()
+    fun void _init()
     {
-        strings[0].simpleName + " " + strings[1].simpleName + " " +
-            strings[2].simpleName + " " + strings[3].simpleName + " " +
-            strings[4].simpleName + " " + strings[5].simpleName => description;
+        strings[0].simpleName() + " " + strings[1].simpleName() + " " +
+            strings[2].simpleName() + " " + strings[3].simpleName() + " " +
+            strings[4].simpleName() + " " + strings[5].simpleName() => description;
 
         _delta(0) + " " + _delta(1) + " " + _delta(2) + " " +
             _delta(3) + " " + _delta(4) + " " + _delta(5) => delta;
@@ -187,19 +187,21 @@ public class Tuning
         Tuning tuning;
         name => tuning.name;
         strings @=> tuning.strings;
-        tuning.init();
+        tuning._init();
         return tuning;
     }
 
     fun static Tuning create(string name, int s1, int s2, int s3, int s4, int s5, int s6)
     {
-        MidiNote @ s[6];
+        MidiNote s[6];
+
         MidiNote.forNote(s1) @=> s[0];
         MidiNote.forNote(s2) @=> s[1];
         MidiNote.forNote(s3) @=> s[2];
         MidiNote.forNote(s4) @=> s[3];
         MidiNote.forNote(s5) @=> s[4];
         MidiNote.forNote(s6) @=> s[5];
+
         return create(name, s);
     }
 }

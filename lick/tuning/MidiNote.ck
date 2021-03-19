@@ -118,5 +118,6 @@ public class MidiNote
         name => midiNote._name;
         simpleName => midiNote._simpleName;
         freq => midiNote._freq;
+        return midiNote;
     }
 }

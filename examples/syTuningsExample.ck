@@ -22,8 +22,10 @@
 
 SYTunings syTunings;
 
-syTunings.tuning("The Burning Spear", "Thurston") @=> Tuning burningSpear;
-<<<"The Burning Spear: ", burningSpear.name, burningSpear.description, burningSpear.delta>>>;
+<<<"by name...">>>;
+syTunings.byName("A A A A B D") @=> Tuning aaaabd;
+<<<aaaabd.name, "delta", aaaabd.delta>>>;
 
-syTunings.tuning("Marilyn Moore", "Lee") @=> Tuning marilynMoore;
-<<<"Marilyn Moore: ", marilynMoore.name, marilynMoore.description, marilynMoore.delta>>>;
+<<<"by song...">>>;
+syTunings.bySong("Wall of Sound", "Lee") @=> Tuning leeWallOfSound;
+<<<"Wall of Sound, Lee: ", leeWallOfSound.name, "delta", leeWallOfSound.delta>>>;
