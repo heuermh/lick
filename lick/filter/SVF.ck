@@ -26,7 +26,7 @@ public class SVF extends Chubgraph
     LPF lpf;
     BPF bpf;
     BRF brf;
-    0.1 => float _q;
+    0.1 => float _resonance;
     1000.0 => float _freq;
     0.5 => float _shape;
 
@@ -36,34 +36,24 @@ public class SVF extends Chubgraph
     inlet => brf => Gain _brfMix => outlet;
 
     {
-        _q => Q;
+        _resonance => resonance;
         _freq => freq;
         _shape => shape;
     }
 
-    fun float Q()
+    fun float resonance()
     {
-        return _q;
+        return _resonance;
     }
 
-    fun float Q(float f)
+    fun float resonance(float f)
     {
-        f => _q;
+        f => _resonance;
         f => hpf.Q;
         f => lpf.Q;
         f => bpf.Q;
         f => brf.Q;
         return f;
-    }
-
-    fun float resonance()
-    {
-        return Q();
-    }
-
-    fun float resonance(float f)
-    {
-        return Q(f);
     }
 
     fun float freq()

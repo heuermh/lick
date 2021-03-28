@@ -74,14 +74,14 @@ public class Wire extends LfoFeedback
         return _crossOver.spread(f);
     }
 
-    fun float Q()
+    fun float resonance()
     {
-        return _crossOver.Q();
+        return _crossOver.resonance();
     }
 
-    fun float Q(float f)
+    fun float resonance(float f)
     {
-        return _crossOver.Q(f);
+        return _crossOver.resonance(f);
     }
 
     fun float freqLfoDepth()

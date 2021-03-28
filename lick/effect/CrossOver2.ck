@@ -35,7 +35,7 @@ public class CrossOver2
     Gain out1;
     Gain out2;
 
-    1.0 => float _q;
+    1.0 => float _resonance;
     8800.0 => float _freq;
     880.0 => float _spread;
 
@@ -71,16 +71,16 @@ public class CrossOver2
         return f;
     }
 
-    fun float Q()
+    fun float resonance()
     {
-        return _q;
+        return _resonance;
     }
 
-    fun float Q(float f)
+    fun float resonance(float f)
     {
-        f => _q;
-        _q => _hpf.Q;
-        _q => _lpf.Q;
+        f => _resonance;
+        _resonance => _hpf.Q;
+        _resonance => _lpf.Q;
         return f;
     }
 
@@ -114,22 +114,22 @@ public class CrossOver2
         return crossOver;
     }
 
-    fun static CrossOver2 create(float freq, float Q)
+    fun static CrossOver2 create(float freq, float resonance)
     {
         CrossOver2 crossOver;
         freq => crossOver.freq;
         freq * 0.1 => crossOver.spread;
-        Q => crossOver.Q;
+        resonance => crossOver.resonance;
         return crossOver;
     }
 
-    fun static CrossOver2 create(UGen in, float freq, float Q, UGen out1, UGen out2)
+    fun static CrossOver2 create(UGen in, float freq, float resonance, UGen out1, UGen out2)
     {
         CrossOver2 crossOver;
         in => crossOver.in;
         freq => crossOver.freq;
         freq * 0.1 => crossOver.spread;
-        Q => crossOver.Q;
+        resonance => crossOver.resonance;
         crossOver.out1 => out1;
         crossOver.out2 => out2;
         return crossOver;

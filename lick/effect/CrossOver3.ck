@@ -38,7 +38,7 @@ public class CrossOver3
     Gain out2;
     Gain out3;
 
-    1.0 => float _q;
+    1.0 => float _resonance;
     8800.0 => float _freq1;
     2200.0 => float _freq2;
     880.0 => float _spread1;
@@ -48,14 +48,14 @@ public class CrossOver3
     in => _bpf => _gain2 => out2;
     in => _lpf => _gain3 => out3;
 
-    _updateQ();
+    _updateResonance();
     _updateFreqs();
 
-    fun void _updateQ()
+    fun void _updateResonance()
     {
-        _q => _hpf.Q;
-        _q => _bpf.Q;
-        _q => _lpf.Q;
+        _resonance => _hpf.Q;
+        _resonance => _bpf.Q;
+        _resonance => _lpf.Q;
     }
 
     fun void _updateFreqs()
@@ -113,15 +113,15 @@ public class CrossOver3
         return f;
     }
 
-    fun float Q()
+    fun float resonance()
     {
-        return _q;
+        return _resonance;
     }
 
-    fun float Q(float f)
+    fun float resonance(float f)
     {
-        f => _q;
-        _updateQ();
+        f => _resonance;
+        _updateResonance();
         return f;
     }
 
@@ -168,18 +168,18 @@ public class CrossOver3
         return crossOver;
     }
 
-    fun static CrossOver3 create(float freq1, float freq2, float Q)
+    fun static CrossOver3 create(float freq1, float freq2, float resonance)
     {
         CrossOver3 crossOver;
         freq1 => crossOver.freq1;
         freq1 * 0.1 => crossOver.spread1;
         freq2 => crossOver.freq2;
         freq2 * 0.1 => crossOver.spread2;
-        Q => crossOver.Q;
+        resonance => crossOver.resonance;
         return crossOver;
     }
 
-    fun static CrossOver3 create(UGen in, float freq1, float freq2, float Q, UGen out1, UGen out2, UGen out3)
+    fun static CrossOver3 create(UGen in, float freq1, float freq2, float resonance, UGen out1, UGen out2, UGen out3)
     {
         CrossOver3 crossOver;
         in => crossOver.in;
@@ -187,7 +187,7 @@ public class CrossOver3
         freq1 * 0.1 => crossOver.spread1;
         freq2 => crossOver.freq2;
         freq2 * 0.1 => crossOver.spread2;
-        Q => crossOver.Q;
+        resonance => crossOver.resonance;
         crossOver.out1 => out1;
         crossOver.out2 => out2;
         crossOver.out3 => out3;

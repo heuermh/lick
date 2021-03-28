@@ -34,7 +34,7 @@ crossOver.out3 => DigitalDelay delay3 => dac;
 88.0 => crossOver.spread1;
 440.0 => crossOver.freq2;
 44.0 => crossOver.spread2;
-1.0 => crossOver.Q;
+1.0 => crossOver.resonance;
 
 600::ms => delay1.max;
 600::ms => delay1.delay;
