@@ -167,42 +167,48 @@ public class FloatFunctions
     fun static FloatFunction almostAlways(FloatFunction f)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, f);
+        return condition(almostAlways, f);
     }
 
     fun static FloatFunction frequently(FloatFunction f)
     {
         Frequently frequently;
-        condition(frequently, f);
+        return condition(frequently, f);
     }
 
     fun static FloatFunction often(FloatFunction f)
     {
         Often often;
-        condition(often, f);
+        return condition(often, f);
     }
 
     fun static FloatFunction sometimes(FloatFunction f)
     {
         Sometimes sometimes;
-        condition(sometimes, f);
+        return condition(sometimes, f);
     }
 
     fun static FloatFunction coinFlip(FloatFunction f)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, f);
+        return condition(coinFlip, f);
     }
 
     fun static FloatFunction infrequently(FloatFunction f)
     {
         Infrequently infrequently;
-        condition(infrequently, f);
+        return condition(infrequently, f);
     }
 
     fun static FloatFunction rarely(FloatFunction f)
     {
         Rarely rarely;
-        condition(rarely, f);
+        return condition(rarely, f);
+    }
+
+    fun static FloatFunction mod(FloatFunction f, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, f);
     }
 }

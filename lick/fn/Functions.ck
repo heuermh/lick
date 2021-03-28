@@ -41,42 +41,48 @@ public class Functions
     fun static UnaryFunction almostAlways(UnaryFunction f)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, f);
+        return condition(almostAlways, f);
     }
 
     fun static UnaryFunction frequently(UnaryFunction f)
     {
         Frequently frequently;
-        condition(frequently, f);
+        return condition(frequently, f);
     }
 
     fun static UnaryFunction often(UnaryFunction f)
     {
         Often often;
-        condition(often, f);
+        return condition(often, f);
     }
 
     fun static UnaryFunction sometimes(UnaryFunction f)
     {
         Sometimes sometimes;
-        condition(sometimes, f);
+        return condition(sometimes, f);
     }
 
     fun static UnaryFunction coinFlip(UnaryFunction f)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, f);
+        return condition(coinFlip, f);
     }
 
     fun static UnaryFunction infrequently(UnaryFunction f)
     {
         Infrequently infrequently;
-        condition(infrequently, f);
+        return condition(infrequently, f);
     }
 
     fun static UnaryFunction rarely(UnaryFunction f)
     {
         Rarely rarely;
-        condition(rarely, f);
+        return condition(rarely, f);
+    }
+
+    fun static UnaryFunction mod(UnaryFunction f, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, f);
     }
 }

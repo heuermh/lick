@@ -33,42 +33,48 @@ public class DurProcedures
     fun static DurProcedure almostAlways(DurProcedure p)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, p);
+        return condition(almostAlways, p);
     }
 
     fun static DurProcedure frequently(DurProcedure p)
     {
         Frequently frequently;
-        condition(frequently, p);
+        return condition(frequently, p);
     }
 
     fun static DurProcedure often(DurProcedure p)
     {
         Often often;
-        condition(often, p);
+        return condition(often, p);
     }
 
     fun static DurProcedure sometimes(DurProcedure p)
     {
         Sometimes sometimes;
-        condition(sometimes, p);
+        return condition(sometimes, p);
     }
 
     fun static DurProcedure coinFlip(DurProcedure p)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, p);
+        return condition(coinFlip, p);
     }
 
     fun static DurProcedure infrequently(DurProcedure p)
     {
         Infrequently infrequently;
-        condition(infrequently, p);
+        return condition(infrequently, p);
     }
 
     fun static DurProcedure rarely(DurProcedure p)
     {
         Rarely rarely;
-        condition(rarely, p);
+        return condition(rarely, p);
+    }
+
+    fun static DurProcedure mod(DurProcedure p, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, p);
     }
 }

@@ -33,42 +33,48 @@ public class Procedures
     fun static Procedure almostAlways(Procedure p)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, p);
+        return condition(almostAlways, p);
     }
 
     fun static Procedure frequently(Procedure p)
     {
         Frequently frequently;
-        condition(frequently, p);
+        return condition(frequently, p);
     }
 
     fun static Procedure often(Procedure p)
     {
         Often often;
-        condition(often, p);
+        return condition(often, p);
     }
 
     fun static Procedure sometimes(Procedure p)
     {
         Sometimes sometimes;
-        condition(sometimes, p);
+        return condition(sometimes, p);
     }
 
     fun static Procedure coinFlip(Procedure p)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, p);
+        return condition(coinFlip, p);
     }
 
     fun static Procedure infrequently(Procedure p)
     {
         Infrequently infrequently;
-        condition(infrequently, p);
+        return condition(infrequently, p);
     }
 
     fun static Procedure rarely(Procedure p)
     {
         Rarely rarely;
-        condition(rarely, p);
+        return condition(rarely, p);
+    }
+
+    fun static Procedure mod(Procedure p, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, p);
     }
 }

@@ -41,42 +41,48 @@ public class IntFunctions
     fun static IntFunction almostAlways(IntFunction f)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, f);
+        return condition(almostAlways, f);
     }
 
     fun static IntFunction frequently(IntFunction f)
     {
         Frequently frequently;
-        condition(frequently, f);
+        return condition(frequently, f);
     }
 
     fun static IntFunction often(IntFunction f)
     {
         Often often;
-        condition(often, f);
+        return condition(often, f);
     }
 
     fun static IntFunction sometimes(IntFunction f)
     {
         Sometimes sometimes;
-        condition(sometimes, f);
+        return condition(sometimes, f);
     }
 
     fun static IntFunction coinFlip(IntFunction f)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, f);
+        return condition(coinFlip, f);
     }
 
     fun static IntFunction infrequently(IntFunction f)
     {
         Infrequently infrequently;
-        condition(infrequently, f);
+        return condition(infrequently, f);
     }
 
     fun static IntFunction rarely(IntFunction f)
     {
         Rarely rarely;
-        condition(rarely, f);
+        return condition(rarely, f);
+    }
+
+    fun static IntFunction mod(IntFunction f, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, f);
     }
 }

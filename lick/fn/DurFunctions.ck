@@ -41,42 +41,48 @@ public class DurFunctions
     fun static DurFunction almostAlways(DurFunction f)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, f);
+        return condition(almostAlways, f);
     }
 
     fun static DurFunction frequently(DurFunction f)
     {
         Frequently frequently;
-        condition(frequently, f);
+        return condition(frequently, f);
     }
 
     fun static DurFunction often(DurFunction f)
     {
         Often often;
-        condition(often, f);
+        return condition(often, f);
     }
 
     fun static DurFunction sometimes(DurFunction f)
     {
         Sometimes sometimes;
-        condition(sometimes, f);
+        return condition(sometimes, f);
     }
 
     fun static DurFunction coinFlip(DurFunction f)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, f);
+        return condition(coinFlip, f);
     }
 
     fun static DurFunction infrequently(DurFunction f)
     {
         Infrequently infrequently;
-        condition(infrequently, f);
+        return condition(infrequently, f);
     }
 
     fun static DurFunction rarely(DurFunction f)
     {
         Rarely rarely;
-        condition(rarely, f);
+        return condition(rarely, f);
+    }
+
+    fun static DurFunction mod(DurFunction f, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, f);
     }
 }

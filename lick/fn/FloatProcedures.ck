@@ -33,42 +33,48 @@ public class FloatProcedures
     fun static FloatProcedure almostAlways(FloatProcedure p)
     {
         AlmostAlways almostAlways;
-        condition(almostAlways, p);
+        return condition(almostAlways, p);
     }
 
     fun static FloatProcedure frequently(FloatProcedure p)
     {
         Frequently frequently;
-        condition(frequently, p);
+        return condition(frequently, p);
     }
 
     fun static FloatProcedure often(FloatProcedure p)
     {
         Often often;
-        condition(often, p);
+        return condition(often, p);
     }
 
     fun static FloatProcedure sometimes(FloatProcedure p)
     {
         Sometimes sometimes;
-        condition(sometimes, p);
+        return condition(sometimes, p);
     }
 
     fun static FloatProcedure coinFlip(FloatProcedure p)
     {
         CoinFlip coinFlip;
-        condition(coinFlip, p);
+        return condition(coinFlip, p);
     }
 
     fun static FloatProcedure infrequently(FloatProcedure p)
     {
         Infrequently infrequently;
-        condition(infrequently, p);
+        return condition(infrequently, p);
     }
 
     fun static FloatProcedure rarely(FloatProcedure p)
     {
         Rarely rarely;
-        condition(rarely, p);
+        return condition(rarely, p);
+    }
+
+    fun static FloatProcedure mod(FloatProcedure p, int n)
+    {
+        Mod.create(n) @=> mod;
+        return condition(mod, p);
     }
 }
