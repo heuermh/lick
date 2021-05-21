@@ -223,7 +223,7 @@ public class TimeSignature
     dur t;
     dur f;
     dur u;
-    Random random;
+    LibRandom random;
 
     fun void update()
     {
@@ -609,7 +609,7 @@ public class TimeSignature
         return timeSignature;
     }
 
-    fun static TimeSignature create(int bar, int beat, int bpm, Random random)
+    fun static TimeSignature create(int bar, int beat, int bpm, LibRandom random)
     {
         TimeSignature timeSignature;
         bar => timeSignature.bar;

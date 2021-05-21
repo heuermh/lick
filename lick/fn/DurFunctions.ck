@@ -82,7 +82,6 @@ public class DurFunctions
 
     fun static DurFunction mod(DurFunction f, int n)
     {
-        Mod.create(n) @=> mod;
-        return condition(mod, f);
+        return condition(Mod.create(n), f);
     }
 }

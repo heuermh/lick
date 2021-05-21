@@ -74,7 +74,6 @@ public class DurProcedures
 
     fun static DurProcedure mod(DurProcedure p, int n)
     {
-        Mod.create(n) @=> mod;
-        return condition(mod, p);
+        return condition(Mod.create(n), p);
     }
 }

@@ -106,7 +106,7 @@ Machine.add(path + "lick/fn/Trunc.ck");
 Machine.add(path + "lick/fn/Uniform.ck");
 
 // random suppliers
-Machine.add(path + "lick/fn/Random.ck");
+Machine.add(path + "lick/fn/LibRandom.ck");
 Machine.add(path + "lick/fn/GaussianRandom.ck");
 
 // random predicates
@@ -135,6 +135,7 @@ Machine.add(path + "lick/fn/ConditionalIntProcedure.ck");
 Machine.add(path + "lick/fn/ConditionalProcedure.ck");
 
 // convenience classes
+Machine.add(path + "lick/fn/Mod.ck");
 Machine.add(path + "lick/fn/DurFunctions.ck");
 Machine.add(path + "lick/fn/DurProcedures.ck");
 Machine.add(path + "lick/fn/Functions.ck");

@@ -22,7 +22,7 @@
 
 public class Frequently extends Predicate
 {
-    Random r;
+    LibRandom r;
 
     fun int test()
     {

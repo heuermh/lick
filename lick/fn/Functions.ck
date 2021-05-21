@@ -82,7 +82,6 @@ public class Functions
 
     fun static UnaryFunction mod(UnaryFunction f, int n)
     {
-        Mod.create(n) @=> mod;
-        return condition(mod, f);
+        return condition(Mod.create(n), f);
     }
 }

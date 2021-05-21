@@ -74,7 +74,6 @@ public class IntProcedures
 
     fun static IntProcedure mod(IntProcedure p, int n)
     {
-        Mod.create(n) @=> mod;
-        return condition(mod, p);
+        return condition(Mod.create(n), p);
     }
 }
