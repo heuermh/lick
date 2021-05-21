@@ -95,6 +95,7 @@ Machine.add(path + "lick/fn/Inverse.ck");
 Machine.add(path + "lick/fn/Log.ck");
 Machine.add(path + "lick/fn/Log10.ck");
 Machine.add(path + "lick/fn/Log2.ck");
+Machine.add(path + "lick/fn/Mod.ck");
 Machine.add(path + "lick/fn/Negate.ck");
 Machine.add(path + "lick/fn/Round.ck");
 Machine.add(path + "lick/fn/Sin.ck");

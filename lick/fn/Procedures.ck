@@ -74,7 +74,7 @@ public class Procedures
 
     fun static Procedure mod(Procedure p, int n)
     {
-        Mod.create(n) @=> mod;
+        Mod.create(n) @=> Mod mod;
         return condition(mod, p);
     }
 }

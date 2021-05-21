@@ -208,7 +208,7 @@ public class FloatFunctions
 
     fun static FloatFunction mod(FloatFunction f, int n)
     {
-        Mod.create(n) @=> mod;
+        Mod.create(n) @=> Mod mod;
         return condition(mod, f);
     }
 }

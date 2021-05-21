@@ -74,7 +74,7 @@ public class FloatProcedures
 
     fun static FloatProcedure mod(FloatProcedure p, int n)
     {
-        Mod.create(n) @=> mod;
+        Mod.create(n) @=> Mod mod;
         return condition(mod, p);
     }
 }

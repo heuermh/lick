@@ -82,7 +82,7 @@ public class IntFunctions
 
     fun static IntFunction mod(IntFunction f, int n)
     {
-        Mod.create(n) @=> mod;
+        Mod.create(n) @=> Mod mod;
         return condition(mod, f);
     }
 }
