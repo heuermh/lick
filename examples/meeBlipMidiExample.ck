@@ -82,7 +82,7 @@ for (0 => int i; i < 13; i++)
     1200::ms => now;
     meeBlip.noteOff(69, 0);
 }
-    Std.rand2f(0.025, 0.2) => lfo;
+    Math.random2f(0.025, 0.2) => lfo;
     <<<"lfoFreq", lfo>>>;
 
     meeBlip.lfoFreq(lfo);
@@ -122,7 +122,7 @@ while (true)
 
     2400::ms => now;
 
-    Std.rand2f(0.025, 0.2) => lfo;
+    Math.random2f(0.025, 0.2) => lfo;
     <<<"lfoFreq", lfo>>>;
 
     meeBlip.lfoFreq(lfo);

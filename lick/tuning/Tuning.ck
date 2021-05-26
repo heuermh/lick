@@ -67,7 +67,7 @@ public class Tuning
 
     fun MidiNote sample()
     {
-        Std.rand2(0, 5) => int i;
+        Math.random2(0, 5) => int i;
         return strings[i];
     }
 

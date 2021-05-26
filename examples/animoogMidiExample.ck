@@ -111,6 +111,6 @@ while (true)
 
     400::ms => now;
 
-    animoog.originX(Std.rand2f(0.4, 0.6));
-    animoog.originY(Std.rand2f(0.4, 0.6));
+    animoog.originX(Math.random2f(0.4, 0.6));
+    animoog.originY(Math.random2f(0.4, 0.6));
 }

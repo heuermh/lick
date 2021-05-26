@@ -232,7 +232,7 @@ class PedalToneUpArpeggiator extends Arpeggiator
         {
             return 0;
         }
-        return Std.rand2(0, intervals.size() - 1);
+        return Math.random2(0, intervals.size() - 1);
     }
 
     fun int hasNext(int index)
@@ -263,7 +263,7 @@ class PedalToneRandomArpeggiator extends Arpeggiator
         {
             return 0;
         }
-        return Std.rand2(1, intervals.size() - 1);
+        return Math.random2(1, intervals.size() - 1);
     }
 
     fun int hasNext(int index)
@@ -279,13 +279,13 @@ class RandomArpeggiator extends Arpeggiator
     fun int reset()
     {
         intervals.size() => count;
-        return Std.rand2(0, count - 1);
+        return Math.random2(0, count - 1);
     }
 
     fun int next(int index)
     {
         count--;
-        return Std.rand2(0, intervals.size() - 1);
+        return Math.random2(0, intervals.size() - 1);
     }
 
     fun int hasNext(int index)

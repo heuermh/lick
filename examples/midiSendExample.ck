@@ -39,11 +39,11 @@ midiOut.open(0);
 while (true)
 {
     1 => int channel;
-    //Std.rand2(1, 16) => int channel;
-    Std.rand2(45, 61) => int note;
-    Std.rand2(10, 127) => int velocity;
-    Std.rand2(1, 16) => int number;
-    Std.rand2(1, 121) => int value;
+    //Math.random2(1, 16) => int channel;
+    Math.random2(45, 61) => int note;
+    Math.random2(10, 127) => int velocity;
+    Math.random2(1, 16) => int number;
+    Math.random2(1, 121) => int value;
 
     1::second => now;
 

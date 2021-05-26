@@ -34,8 +34,8 @@ public class GaussianRandom extends Random
         1.0 => float s;
         while (s >= 1.0)
         {
-            2.0 * Std.randf() - 1.0 => v1;
-            2.0 * Std.randf() - 1.0 => v2;
+            2.0 * Math.randomf() - 1.0 => v1;
+            2.0 * Math.randomf() - 1.0 => v2;
             v1 * v1 + v2 * v2 => s;
         }
         if (s > 0.0)

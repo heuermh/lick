@@ -222,13 +222,13 @@ class RandomSequencer extends Sequencer
     fun int reset()
     {
         sequence.size() => count;
-        return Std.rand2(0, count - 1);
+        return Math.random2(0, count - 1);
     }
 
     fun int next(int index)
     {
         count--;
-        return Std.rand2(0, sequence.size() - 1);
+        return Math.random2(0, sequence.size() - 1);
     }
 
     fun int hasNext(int index)

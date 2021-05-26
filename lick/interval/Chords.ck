@@ -38,7 +38,8 @@ class Fifth extends Chord
 
     fun Interval sampleInterval()
     {
-        if (Std.rand2(0, 1))
+        Random r;
+        if (r.coinFlip())
         {
             return unison;
         }
@@ -93,7 +94,7 @@ class Triad extends Fifth
 
     fun Interval sampleInterval()
     {
-        Std.rand2(0, 2) => int s;
+        Math.random2(0, 2) => int s;
         if (s == 0)
         {
             return unison;
@@ -167,7 +168,7 @@ class Seventh extends Triad
 
     fun Interval sampleInterval()
     {
-        Std.rand2(0, 3) => int s;
+        Math.random2(0, 3) => int s;
         if (s == 0)
         {
             return unison;
