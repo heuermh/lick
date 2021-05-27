@@ -63,11 +63,6 @@ CCRMA ChuGins
 https://github.com/ccrma/chugins
 
 
-Joel Matthys' Fork of CCRMA ChuGins
-
-https://github.com/jwmatthys/chugins
-
-
 the C* Audio Plugin Suite
 
 http://quitte.de/dsp/caps.html

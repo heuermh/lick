@@ -502,7 +502,6 @@ Machine.add(path + "lick/synth/VoiceOfSaturn.ck");
 Machine.add(path + "lick/synth/Wrapper.ck");
 
 // kick/bass drum synthesis, package kick
-
 Machine.add(path + "lick/kick/Boom.ck");
 Machine.add(path + "lick/kick/Duff.ck");
 Machine.add(path + "lick/kick/Fwak.ck");
@@ -513,25 +512,22 @@ Machine.add(path + "lick/kick/Thump.ck");
 Machine.add(path + "lick/kick/Thwok.ck");
 
 // snare drum synthesis, package snare
-
 Machine.add(path + "lick/snare/Cch.ck");
 Machine.add(path + "lick/snare/Czh.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Snare.ck");
 
-<<<"Optional dependencies (may fail to compile):">>>;
+// depends on chugins, package chugin
+Machine.add(path + "lick/chugin/Disaster.ck");
+Machine.add(path + "lick/chugin/Expo.ck");
+Machine.add(path + "lick/chugin/PitchFollower.ck");
+Machine.add(path + "lick/chugin/SigmuFollower.ck");
+Machine.add(path + "lick/chugin/SigmuGainFollower.ck");
+Machine.add(path + "lick/chugin/SigmuPitchFollower.ck");
+Machine.add(path + "lick/chugin/Spekt.ck");
 
-// depends on jwmatthys' chugins, package jwmatthys
-Machine.add(path + "lick/jwmatthys/Disaster.ck");
-Machine.add(path + "lick/jwmatthys/Expo.ck");
-Machine.add(path + "lick/jwmatthys/PitchFollower.ck");
-Machine.add(path + "lick/jwmatthys/SigmuFollower.ck");
-Machine.add(path + "lick/jwmatthys/SigmuGainFollower.ck");
-Machine.add(path + "lick/jwmatthys/SigmuPitchFollower.ck");
-Machine.add(path + "lick/jwmatthys/Spekt.ck");
-
-// depends on jwmatthys' LADSPA chugin, package ladspa
+// depends on LADSPA chugin, package ladspa
 Machine.add(path + "lick/ladspa/Ladspa.ck");
 
 // C*APS plugins, package ladspa.caps
