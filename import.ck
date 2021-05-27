@@ -226,6 +226,10 @@ Machine.add(path + "lick/adsr/RoundRobinAdsr.ck");
 // analysis
 Machine.add(path + "lick/analysis/EnvelopeFollower.ck");
 Machine.add(path + "lick/analysis/EnvelopeTrigger.ck");
+Machine.add(path + "lick/analysis/PitchFollower.ck");
+Machine.add(path + "lick/analysis/SigmuFollower.ck");
+Machine.add(path + "lick/analysis/SigmuGainFollower.ck");
+Machine.add(path + "lick/analysis/SigmuPitchFollower.ck");
 
 // intervals, chords, scales, package interval
 Machine.add(path + "lick/interval/Interval.ck");
@@ -469,8 +473,11 @@ Machine.add(path + "lick/effect/Currant.ck");
 Machine.add(path + "lick/effect/Glider.ck");
 Machine.add(path + "lick/effect/MotelSix.ck");
 Machine.add(path + "lick/effect/OilCan.ck");
+Machine.add(path + "lick/effect/Expo.ck");
+Machine.add(path + "lick/effect/Spekt.ck");
 
 // delay stuff, package delay
+Machine.add(path + "lick/delay/Disaster.ck");
 Machine.add(path + "lick/delay/SinTrem.ck");
 Machine.add(path + "lick/delay/SqrTrem.ck");
 Machine.add(path + "lick/delay/TriTrem.ck");
@@ -517,15 +524,6 @@ Machine.add(path + "lick/snare/Czh.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Snare.ck");
-
-// depends on chugins, package chugin
-Machine.add(path + "lick/chugin/Disaster.ck");
-Machine.add(path + "lick/chugin/Expo.ck");
-Machine.add(path + "lick/chugin/PitchFollower.ck");
-Machine.add(path + "lick/chugin/SigmuFollower.ck");
-Machine.add(path + "lick/chugin/SigmuGainFollower.ck");
-Machine.add(path + "lick/chugin/SigmuPitchFollower.ck");
-Machine.add(path + "lick/chugin/Spekt.ck");
 
 // depends on LADSPA chugin, package ladspa
 Machine.add(path + "lick/ladspa/Ladspa.ck");
