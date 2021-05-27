@@ -218,21 +218,24 @@ class DownUpRepeatLastArpeggiator extends Arpeggiator
 class PedalToneUpArpeggiator extends Arpeggiator
 {
     0 => int count;
+    0 => int position;
 
     fun int reset()
     {
-        intervals.size() => count;
+        0 => position;
+        2 * intervals.size() - 3 => count;
         return 0;
     }
 
     fun int next(int index)
     {
         count--;
-        if (index % 2 == 0)
+        position++;
+        if (position % 2 == 0)
         {
             return 0;
         }
-        return Math.random2(0, intervals.size() - 1);
+        return (position / 2) + 1;
     }
 
     fun int hasNext(int index)
@@ -243,23 +246,50 @@ class PedalToneUpArpeggiator extends Arpeggiator
 
 class PedalToneDownArpeggiator extends Arpeggiator
 {
-    // todo
-}
-
-class PedalToneRandomArpeggiator extends Arpeggiator
-{
     0 => int count;
+    0 => int position;
 
     fun int reset()
     {
-        intervals.size() => count;
+        0 => position;
+        2 * intervals.size() - 3 => count;
         return 0;
     }
 
     fun int next(int index)
     {
         count--;
-        if ((index % 2) == 0)
+        position++;
+        if ((position % 2) == 0)
+        {
+            return 0;
+        }
+        return (count / 2) + 1;
+    }
+
+    fun int hasNext(int index)
+    {
+        return (count >= 0);
+    }
+}
+
+class PedalToneRandomArpeggiator extends Arpeggiator
+{
+    0 => int count;
+    0 => int position;
+
+    fun int reset()
+    {
+        0 => position;
+        2 * intervals.size() - 3 => count;
+        return 0;
+    }
+
+    fun int next(int index)
+    {
+        count--;
+        position++;
+        if ((position % 2) == 0)
         {
             return 0;
         }
@@ -350,6 +380,33 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static PedalToneUpArpeggiator pedalToneUp(Chord chord, FloatProcedure procedure)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Chord chord, FloatProcedure procedure)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Chord chord, FloatProcedure procedure)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Chord chord, FloatProcedure procedure)
     {
         RandomArpeggiator arpeggiator;
@@ -407,6 +464,33 @@ public class Arpeggiators
     fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, FloatProcedure procedure)
     {
         DownUpRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneUpArpeggiator pedalToneUp(Scale scale, FloatProcedure procedure)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Scale scale, FloatProcedure procedure)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Scale scale, FloatProcedure procedure)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
@@ -476,6 +560,36 @@ public class Arpeggiators
     fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Chord chord, FloatProcedure procedure, dur rate)
     {
         DownUpRepeatLastArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneUpArpeggiator pedalToneUp(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Chord chord, FloatProcedure procedure, dur rate)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
         chord.root @=> arpeggiator.root;
         chord.intervals @=> arpeggiator.intervals;
         procedure @=> arpeggiator.procedure;
@@ -553,6 +667,36 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static PedalToneUpArpeggiator pedalToneUp(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Scale scale, FloatProcedure procedure, dur rate)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        procedure @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Scale scale, FloatProcedure procedure, dur rate)
     {
         RandomArpeggiator arpeggiator;
@@ -618,6 +762,33 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static PedalToneUpArpeggiator pedalToneUp(Chord chord, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Chord chord, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Chord chord, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Chord chord, Pattern pattern, FloatProcedure procedure)
     {
         RandomArpeggiator arpeggiator;
@@ -675,6 +846,33 @@ public class Arpeggiators
     fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure)
     {
         DownUpRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneUpArpeggiator pedalToneUp(Scale scale, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Scale scale, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Scale scale, Pattern pattern, FloatProcedure procedure)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
@@ -751,6 +949,36 @@ public class Arpeggiators
         return arpeggiator;
     }
 
+    fun static PedalToneUpArpeggiator pedalToneUp(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
+        chord.root @=> arpeggiator.root;
+        chord.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
     fun static RandomArpeggiator random(Chord chord, Pattern pattern, FloatProcedure procedure, dur rate)
     {
         RandomArpeggiator arpeggiator;
@@ -814,6 +1042,36 @@ public class Arpeggiators
     fun static DownUpRepeatLastArpeggiator downUpRepeatLast(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
     {
         DownUpRepeatLastArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneUpArpeggiator pedalToneUp(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneUpArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneDownArpeggiator pedalToneDown(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneDownArpeggiator arpeggiator;
+        scale.root @=> arpeggiator.root;
+        scale.intervals @=> arpeggiator.intervals;
+        Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
+        DurProvider.create(rate) @=> arpeggiator.waitProvider;
+        return arpeggiator;
+    }
+
+    fun static PedalToneRandomArpeggiator pedalToneRandom(Scale scale, Pattern pattern, FloatProcedure procedure, dur rate)
+    {
+        PedalToneRandomArpeggiator arpeggiator;
         scale.root @=> arpeggiator.root;
         scale.intervals @=> arpeggiator.intervals;
         Patterns.conditionf(pattern, procedure) @=> arpeggiator.procedure;
