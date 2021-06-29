@@ -20,33 +20,39 @@
 
 */
 
-public class Glider extends Effect
+Hat hat => dac;
+
+0.8 => hat.gain;
+
+TimeSignature.common(100) @=> TimeSignature ts;
+
+while (true)
 {
-     inlet => Cee chorus => DigitalDelay shortDelay => FilterDelay longDelay => GVerb reverb => wet;
+    Math.random2f(0.4, 0.8) => float acc;
+    acc => hat.accent;
 
-     {
-        800::ms => shortDelay.max;
-        160::ms => shortDelay.delay;
-        0.8 => shortDelay.feedback;
+    Math.random2f(0.0, 2.0) * 10::ms + 1::ms => dur att;
+    att => hat.attack;
 
-        2000::ms => longDelay.max;
-        400::ms => longDelay.delay;
-        0.8 => longDelay.feedback;
-     }
+    Math.random2f(2000.0, 12000.0) => float f;
+    f => hat.freq;
 
-     fun static Glider create()
-     {
-        Glider glider;
-        return glider;
-     }
+    Math.random2f(0.50, 0.99) => float r;
+    r => hat.resonance;
 
-     fun static Glider create(dur shortDelay, dur longDelay)
-     {
-        Glider glider;
-        shortDelay => glider.shortDelay.max;
-        shortDelay => glider.shortDelay.delay;
-        longDelay => glider.longDelay.max;
-        longDelay => glider.longDelay.delay;
-        return glider;
-     }
+    Math.random2f(800.0, 2000.0) => float hp;
+    hp => hat.highPass;
+
+    Math.random2f(0.0, 1.0) * 140::ms + 60::ms => dur d;
+    d => hat.decay;
+
+    <<<"accent", acc, "attack", (att/1::ms), "ms freq", f, "resonance", r, "highPass", hp, "decay", (d/1::ms), "ms">>>;
+
+    for (0 => int i; i < 8; i++)
+    {
+        <<<"hat">>>;
+        spork ~ hat.play();
+
+        ts.s => now;
+    }
 }

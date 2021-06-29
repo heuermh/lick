@@ -525,6 +525,9 @@ Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Snare.ck");
 
+// hihat synthesis, package hat
+Machine.add(path + "lick/hat/Hat.ck");
+
 // depends on LADSPA chugin, package ladspa
 Machine.add(path + "lick/ladspa/Ladspa.ck");
 

@@ -20,33 +20,12 @@
 
 */
 
-public class Glider extends Effect
+Noise noise => BPF bpf => dac;
+
+while (true)
 {
-     inlet => Cee chorus => DigitalDelay shortDelay => FilterDelay longDelay => GVerb reverb => wet;
-
-     {
-        800::ms => shortDelay.max;
-        160::ms => shortDelay.delay;
-        0.8 => shortDelay.feedback;
-
-        2000::ms => longDelay.max;
-        400::ms => longDelay.delay;
-        0.8 => longDelay.feedback;
-     }
-
-     fun static Glider create()
-     {
-        Glider glider;
-        return glider;
-     }
-
-     fun static Glider create(dur shortDelay, dur longDelay)
-     {
-        Glider glider;
-        shortDelay => glider.shortDelay.max;
-        shortDelay => glider.shortDelay.delay;
-        longDelay => glider.longDelay.max;
-        longDelay => glider.longDelay.delay;
-        return glider;
-     }
+  Math.random2f(1200.0, 20000.0) => bpf.freq;
+  Math.random2f(0.1, 1.0) => bpf.Q;
+  <<<"freq", bpf.freq(),"resonance", bpf.Q()>>>;
+  800::ms => now;
 }
