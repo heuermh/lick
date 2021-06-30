@@ -27,19 +27,19 @@
 public class Breeze extends Effect
 {
     Mixer.create(5) @=> Mixer mixer;
-    mixer.inputs.get(0) $ Gain @=> Gain delayed;
-    mixer.inputs.get(1) $ Gain @=> Gain shifted;
-    mixer.inputs.get(2) $ Gain @=> Gain delayedShifted;
-    mixer.inputs.get(3) $ Gain @=> Gain octaveUp;
-    mixer.inputs.get(4) $ Gain @=> Gain octaveDown;
+    mixer.input(0) @=> Gain delayed;
+    mixer.input(1) @=> Gain shifted;
+    mixer.input(2) @=> Gain delayedShifted;
+    mixer.input(3) @=> Gain octaveUp;
+    mixer.input(4) @=> Gain octaveDown;
 
     mixer => Gain post => wet;
 
     Mixer.create(4) @=> Mixer feedbackMixer;
-    feedbackMixer.inputs.get(0) $ Gain @=> Gain feedback;
-    feedbackMixer.inputs.get(1) $ Gain @=> Gain shiftedFeedback;
-    feedbackMixer.inputs.get(2) $ Gain @=> Gain octaveUpFeedback;
-    feedbackMixer.inputs.get(3) $ Gain @=> Gain octaveDownFeedback;
+    feedbackMixer.input(0) @=> Gain feedback;
+    feedbackMixer.input(1) @=> Gain shiftedFeedback;
+    feedbackMixer.input(2) @=> Gain octaveUpFeedback;
+    feedbackMixer.input(3) @=> Gain octaveDownFeedback;
 
     inlet => Gain pre;
     feedbackMixer => pre;
