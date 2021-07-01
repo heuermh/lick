@@ -37,7 +37,7 @@ while (true)
     Math.random2f(2000.0, 12000.0) => float f;
     f => hat.freq;
 
-    Math.random2f(0.50, 0.99) => float r;
+    Math.random2f(0.50, 4.0) => float r;
     r => hat.resonance;
 
     Math.random2f(800.0, 2000.0) => float hp;

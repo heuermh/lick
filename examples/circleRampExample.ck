@@ -39,5 +39,8 @@ while (true)
         circle.noteOff();
         t.e => now;
     }
-    t.accel(1.2, t.q);
+    if (t.bpm <= 1000)
+    {
+        t.accel(1.2, t.q);
+    }
 }

@@ -244,7 +244,7 @@ public class TimeSignature
     {
         if (value < 1.0)
         {
-            <<<"accel(float) should use values above 1.0, was",value>>>;
+            <<<"accel(float) should use values above 1.0, was", value>>>;
         }
         CubicIn cubicIn;
         tempo((bpm * value) $ int, beat * q, cubicIn);
@@ -255,7 +255,7 @@ public class TimeSignature
     {
         if (value < 1.0)
         {
-            <<<"accel(float) should use values above 1.0, was",value>>>;
+            <<<"accel(float) should use values above 1.0, was", value>>>;
         }
         CubicIn cubicIn;
         tempo((bpm * value) $ int, length, cubicIn);
@@ -266,7 +266,7 @@ public class TimeSignature
     {
         if (value < 1.0)
         {
-            <<<"accel(float) should use values above 1.0, was",value>>>;
+            <<<"accel(float) should use values above 1.0, was", value>>>;
         }
         tempo((bpm * value) $ int, length, interpolation);
     }
@@ -276,7 +276,7 @@ public class TimeSignature
     {
         if (value > 1.0)
         {
-            <<<"decel(float) should use values below 1.0, was",value>>>;
+            <<<"decel(float) should use values below 1.0, was", value>>>;
         }
         CubicOut cubicOut;
         tempo((bpm * value) $ int, beat * q, cubicOut);
@@ -287,7 +287,7 @@ public class TimeSignature
     {
         if (value > 1.0)
         {
-            <<<"decel(float) should use values below 1.0, was",value>>>;
+            <<<"decel(float) should use values below 1.0, was", value>>>;
         }
         CubicOut cubicOut;
         tempo((bpm * value) $ int, length, cubicOut);
@@ -298,7 +298,7 @@ public class TimeSignature
     {
         if (value > 1.0)
         {
-            <<<"decel(float) should use values below 1.0, was",value>>>;
+            <<<"decel(float) should use values below 1.0, was", value>>>;
         }
         tempo((bpm * value) $ int, length, interpolation);
     }
@@ -306,7 +306,7 @@ public class TimeSignature
     // change tempo to target bpm immediately
     fun void tempo(int targetBpm)
     {
-        <<<"changing tempo from current bpm",bpm,"to target bpm",targetBpm,"immediately">>>;
+        <<<"changing tempo from current bpm", bpm, "to target bpm", targetBpm, "immediately">>>;
         targetBpm => bpm;
         update();
     }
@@ -314,7 +314,7 @@ public class TimeSignature
     // change tempo to target bpm interpolated over a length of time with the specified interpolation function
     fun void tempo(int targetBpm, dur length, Interpolation interpolation)
     {
-        <<<"changing tempo from current bpm",bpm,"to target bpm",targetBpm,"over length",length,"...">>>;
+        <<<"changing tempo from current bpm", bpm, "to target bpm", targetBpm, "over length", (length/1::ms), "ms ...">>>;
         bpm => int originalBpm;
         length / 100.0 => dur step;
 
