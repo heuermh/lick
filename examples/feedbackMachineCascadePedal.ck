@@ -20,21 +20,23 @@
 
 */
 
-adc => Cascade cascade => dac;
+adc => FeedbackMachine fm => dac;
 
-0.6 => cascade.mix;
+fm.cascade(0.8);
+fm.delay(1700::ms, 1300::ms, 1100::ms, 700::ms);
+fm.mix(0.6);
+fm.stop();
 
 class Toggle extends Procedure
 {
     fun void run()
     {
-        cascade.toggle();
-        <<<"toggle", cascade.running()>>>;
+        fm.toggle();
+        <<<"running", fm.running()>>>;
     }
 }
 
 Toggle toggle;
-
 StompKeyboard stomp;
 toggle @=> stomp.button0Down;
 

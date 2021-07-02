@@ -20,16 +20,16 @@
 
 */
 
-adc => Cascade cascade => dac;
+adc => Delta delta => dac;
 
-0.6 => cascade.mix;
+0.6 => delta.mix;
 
 class Toggle extends Procedure
 {
     fun void run()
     {
-        cascade.toggle();
-        <<<"toggle", cascade.running()>>>;
+        delta.toggle();
+        <<<"toggle", delta.running()>>>;
     }
 }
 

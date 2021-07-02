@@ -20,22 +20,29 @@
 
 */
 
-adc => Cascade cascade => dac;
+// cascading reverb, dry --> short --> medium --> long
 
-0.6 => cascade.mix;
+public class Cascade extends Effect {
 
-class Toggle extends Procedure
-{
-    fun void run()
-    {
-        cascade.toggle();
-        <<<"toggle", cascade.running()>>>;
-    }
+   GVerb short;
+   GVerb medium;
+   GVerb long;
+   HPF hpf;
+   LPF lpf;
+
+   inlet => short => medium => long => hpf => lpf => wet;
+
+   {
+        //0.0 => short.dry;
+        1.2::second => short.revtime;
+
+        //0.0 => medium.dry;
+        2.5::second => medium.revtime;
+
+        //0.0 => long.dry;
+        30::second => long.revtime;
+
+        40.0 => hpf.freq;
+        40000.0 => lpf.freq;
+     }
 }
-
-Toggle toggle;
-
-StompKeyboard stomp;
-toggle @=> stomp.button0Down;
-
-stomp.open(0);

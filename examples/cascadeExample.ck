@@ -22,20 +22,7 @@
 
 adc => Cascade cascade => dac;
 
-0.6 => cascade.mix;
+<<<"ready">>>;
+1::minute => now;
 
-class Toggle extends Procedure
-{
-    fun void run()
-    {
-        cascade.toggle();
-        <<<"toggle", cascade.running()>>>;
-    }
-}
-
-Toggle toggle;
-
-StompKeyboard stomp;
-toggle @=> stomp.button0Down;
-
-stomp.open(0);
+<<<"done">>>;
