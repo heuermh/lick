@@ -26,6 +26,6 @@ public class Interpolate
 
     fun static float linear(float value, float sourceMin, float sourceMax, float targetMin, float targetMax)
     {
-        return targetMin + (targetMax - targetMin) * ((value - sourceMin) / (sourceMax - sourceMin));
+        return Std.scalef(value, sourceMin, sourceMax, targetMin, targetMax);
     }
 }

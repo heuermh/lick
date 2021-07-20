@@ -25,28 +25,12 @@ public class Constrain
 
     fun static int constrain(int value, int min, int max)
     {
-        if (value < min)
-        {
-            return min;
-        }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
+        return Std.clamp(value, min, max);
     }
 
     fun static float constrainf(float value, float min, float max)
     {
-        if (value < min)
-        {
-           return min;
-        }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
+        return Std.clampf(value, min, max);
     }
 
     fun static dur constraind(dur value, dur min, dur max)
