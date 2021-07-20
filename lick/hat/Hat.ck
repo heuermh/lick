@@ -25,7 +25,7 @@
 // https://www.youtube.com/watch?v=86Q8SjeOGg4
 //
 
-public class Hat extends Chubgraph
+public class Hat extends Chugraph
 {
     Noise _noise => HPF _hpf => BPF _bpf => ADSR _env => Gain _vca => outlet;
 

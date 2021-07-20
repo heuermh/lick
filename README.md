@@ -51,7 +51,7 @@ GNU General Public License for more details.
 
 ### LiCK requires:
 
-chuck-1.3.3.0 (chimera) or later
+chuck-1.4.0.2 or later
 
 http://chuck.cs.princeton.edu/
 

@@ -21,7 +21,7 @@
 */
 
 // should perhaps be called SigmuEnvelopeFollower?
-public class SigmuGainFollower extends Chubgraph
+public class SigmuGainFollower extends Chugraph
 {
     Sigmund sigmu;
     FloatProcedure @ procedure;
