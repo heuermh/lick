@@ -75,7 +75,7 @@ http://tap-plugins.sourceforge.net/index.html
 
 Computer Music Toolkit (CMT)
 
-http://www.ladspa.org/cmt
+http://www.ladspa.org/cmt/overview.html
 
 
 The SWH Plugins package for the LADSPA plugin system
