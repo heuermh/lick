@@ -22,10 +22,9 @@
 
 public class Reverse extends Feedback
 {
-    600::ms => dur _max;
     600::ms => dur _delay;
     ReverseBuffer @ _reverse;
-    ReverseBuffer.create(_max) @=> _reverse;
+    ReverseBuffer.create(_delay) @=> _reverse;
 
     pre => _reverse => post;
     feedbackOut => LPF _lpf => feedbackIn;
@@ -36,19 +35,6 @@ public class Reverse extends Feedback
         8000.0 => _lpf.freq;
     }
 
-    fun dur max()
-    {
-        return _max;
-    }
-
-    fun dur max(dur d)
-    {
-        d => _max;
-        // todo: might have to disconnect/reconnect here
-        ReverseBuffer.create(d) @=> _reverse;
-        return _max;
-    }
-
     fun dur delay()
     {
         return _delay;
@@ -57,9 +43,20 @@ public class Reverse extends Feedback
     fun dur delay(dur d)
     {
         d => _delay;
-        (_max/_delay) $ int => _reverse.stride;
-        <<<"setting delay to dur", _delay, " stride", _reverse.stride()>>>;
+        // todo: might have to disconnect/reconnect here
+        ReverseBuffer.create(d) @=> _reverse;
         return _delay;
+    }
+
+    fun int stride()
+    {
+        return _reverse.stride();
+    }
+
+    fun int stride(int i)
+    {
+        i => _reverse.stride;
+        return i;
     }
 
     fun float cutoff()
@@ -85,6 +82,13 @@ public class Reverse extends Feedback
     fun static Reverse create()
     {
         Reverse reverse;
+        return reverse;
+    }
+
+    fun static Reverse create(dur delay)
+    {
+        Reverse reverse;
+        delay => reverse.delay;
         return reverse;
     }
 }

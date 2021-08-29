@@ -20,13 +20,15 @@
 
 */
 
-adc => Reverse reverse => dac;
+Reverse.create(2000::ms) @=> Reverse reverse;
+
+adc => reverse => dac;
 
 <<<"ready">>>;
-for (1 => int i; i < 13; i++)
+for (1 => int i; i < 10; i++)
 {
-    i => reverse._reverse.stride;
-    <<<"stride", reverse._reverse.stride()>>>;
+    i => reverse.stride;
+    <<<"delay", reverse.delay(), "stride", reverse.stride()>>>;
     10::second => now;
 }
 <<<"done">>>;
