@@ -34,7 +34,7 @@ public class Ruins extends LfoEffect
     GVerb down;
     Delay _upPredelay;
     Delay _downPredelay;
-    // todo: create Shift and IntervalShift effects
+    // todo: use harmonizers
     PitShift _upShift;
     PitShift _downShift;
     Intervals.perfectFifth().asc() @=> Interval _upInterval;
@@ -80,7 +80,7 @@ public class Ruins extends LfoEffect
         while (true)
         {
             1::samp => now;
-            // todo: create independent lfo predelayed reverbs, gverb may have predelay built-in
+            // todo: use single lfo or create independent lfo predelayed reverbs?
             _predelay + (_lfo.last() * _predelay) => _upPredelay.delay;
             _predelay - (_lfo.last() * _predelay) => _downPredelay.delay;
         }

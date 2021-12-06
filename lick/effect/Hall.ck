@@ -21,19 +21,21 @@
 */
 
 //
-// effect wrapper for NHHall chugin
+// effect wrapper for NHHall chugin, with predelay and feedback
 //
 
-public class Hall extends Feedback
+public class Hall extends LfoFeedback
 {
     dur _decay;
+    dur _predelay;
 
-    pre => NHHall _hall => post;
+    pre => Delay _delay => NHHall _hall => post;
     feedbackOut => feedbackIn;
 
     {
         0.0 => _hall.stereo;
-        0.02 => feedback;
+        0.0 => feedback;
+        0::ms => predelay;
         1::second => decay;
     }
 
@@ -45,7 +47,6 @@ public class Hall extends Feedback
     fun void panic()
     {
         0.0 => feedback;
-        1::second => decay;
     }
 
     fun dur decay()
@@ -58,5 +59,38 @@ public class Hall extends Feedback
         d => _decay;
         d/1::second => _hall.rt60;
         return _decay;
+    }
+
+    fun dur predelay()
+    {
+        return _predelay;
+    }
+
+    fun dur predelay(dur d)
+    {
+        d => _predelay;
+        d => _delay.delay;
+        return _predelay;
+    }
+
+    fun static Hall create()
+    {
+        Hall hall;
+        return hall;
+    }
+
+    fun static Hall create(dur decay)
+    {
+        Hall hall;
+        decay => hall.decay;
+        return hall;
+    }
+
+    fun static Hall create(dur predelay, dur decay)
+    {
+        Hall hall;
+        predelay => hall.predelay;
+        decay => hall.decay;
+        return hall;
     }
 }

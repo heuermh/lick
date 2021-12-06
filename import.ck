@@ -469,6 +469,7 @@ Machine.add(path + "lick/effect/Tremolo.ck");
 Machine.add(path + "lick/effect/Tricoder.ck");
 Machine.add(path + "lick/effect/Triphaser.ck");
 Machine.add(path + "lick/effect/Triptych.ck");
+Machine.add(path + "lick/effect/Verb.ck");
 Machine.add(path + "lick/effect/Vibrato.ck");
 Machine.add(path + "lick/effect/Wire.ck");
 Machine.add(path + "lick/effect/Wolftone.ck");
