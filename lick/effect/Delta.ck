@@ -26,9 +26,9 @@ public class Delta extends Effect {
 
    Gain _pre;
    Gain _post;
-   GVerb _short;
-   GVerb _medium;
-   GVerb _long;
+   Verb _short;
+   Verb _medium;
+   Verb _long;
    HPF hpf;
    LPF lpf;
 
@@ -39,14 +39,14 @@ public class Delta extends Effect {
    _post => hpf => lpf => wet;
 
    {
-        //0.0 => _short.dry;
-        1.2::second => _short.revtime;
+        1.0 => _short.mix;
+        1.2::second => _short.decay;
 
-        //0.0 => _medium.dry;
-        2.5::second => _medium.revtime;
+        1.0 => _medium.mix;
+        2.5::second => _medium.decay;
 
-        //0.0 => _long.dry;
-        30::second => _long.revtime;
+        1.0 => _long.mix;
+        30::second => _long.decay;
 
         40.0 => hpf.freq;
         40000.0 => lpf.freq;

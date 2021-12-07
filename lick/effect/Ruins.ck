@@ -29,35 +29,30 @@
 
 public class Ruins extends LfoEffect
 {
-    GVerb reverb;
-    GVerb up;
-    GVerb down;
-    Delay _upPredelay;
-    Delay _downPredelay;
-    // todo: use harmonizers
-    PitShift _upShift;
-    PitShift _downShift;
-    Intervals.perfectFifth().asc() @=> Interval _upInterval;
-    Intervals.perfectFourth().desc() @=> Interval _downInterval;
+    Verb reverb;
+    Verb up;
+    Verb down;
+    Harmonizers.asc(Intervals.perfectFifth()) @=> Harmonizer _upShift;
+    Harmonizers.desc(Intervals.perfectFourth()) @=> Harmonizer _downShift;
     Gain _pre;
     Gain _post;
 
     20::ms => dur _predelay;
 
     inlet => _pre => reverb => _post => wet;
-    _pre => _upPredelay => _upShift => up => _post;
-    _pre => _downPredelay => _downShift => down => _post;
+    _pre => _upShift => up => _post;
+    _pre => _downShift => down => _post;
         
     {
+        1.0 => reverb.mix;
+        1.0 => up.mix;
+        1.0 => down.mix;
+        1.0 => _upShift.mix;
+        1.0 => _downShift.mix;
+
         0.6 => reverb.gain;
         0.2 => up.gain;
         0.2 => down.gain;
-
-        1::second => _upPredelay.max;
-        1::second => _downPredelay.max;
-
-        _upInterval.evaluate(1.0) => _upShift.shift;
-        _downInterval.evaluate(1.0) => _downShift.shift;
 
         0.5 => rate;
         0.1 => depth;
@@ -81,8 +76,8 @@ public class Ruins extends LfoEffect
         {
             1::samp => now;
             // todo: use single lfo or create independent lfo predelayed reverbs?
-            _predelay + (_lfo.last() * _predelay) => _upPredelay.delay;
-            _predelay - (_lfo.last() * _predelay) => _downPredelay.delay;
+            _predelay + (_lfo.last() * _predelay) => up.predelay;
+            _predelay - (_lfo.last() * _predelay) => down.predelay;
         }
     }
 

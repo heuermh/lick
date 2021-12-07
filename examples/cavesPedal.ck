@@ -20,29 +20,23 @@
 
 */
 
-// cascading reverb, dry --> short --> medium --> long
+adc => Caves caves => dac;
 
-public class Cascade extends Effect {
+caves.stop();
+0.8 => caves.mix;
 
-   Verb short;
-   Verb medium;
-   Verb long;
-   HPF hpf;
-   LPF lpf;
-
-   inlet => short => medium => long => hpf => lpf => wet;
-
-   {
-        1.0 => short.mix;
-        1.2::second => short.decay;
-
-        1.0 => medium.mix;
-        2.5::second => medium.decay;
-
-        1.0 => long.mix;
-        30::second => long.decay;
-
-        40.0 => hpf.freq;
-        40000.0 => lpf.freq;
-     }
+class Toggle extends Procedure
+{
+    fun void run()
+    {
+        caves.toggle();
+        <<<"running", caves.running()>>>;
+    }
 }
+
+Toggle toggle;
+
+StompKeyboard stomp;
+toggle @=> stomp.button0Down;
+
+stomp.open(0);
