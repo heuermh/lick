@@ -20,19 +20,19 @@
 
 */
 
-// analog-style delay with LPF and HPF filters on feedback loop
-public class FilterDelay extends Feedback
+// analog-style delay with HPF pre filter and LPF recovery filter
+public class RecoveryDelay extends Feedback
 {
     Delay _delay;
     LPF _lpf;
     HPF _hpf;
 
-    pre => _delay => post;
-    feedbackOut => _lpf => _hpf => feedbackIn;
+    pre => _hpf => _delay => _lpf => post;
+    feedbackOut => feedbackIn;
 
     {
         0.8 => feedback;
-        20000.0 => lowPassCutoff;
+        1000.0 => lowPassCutoff;
         1.0 => lowPassResonance;
         200.0 => highPassCutoff;
         1.0 => highPassResonance;
@@ -101,29 +101,29 @@ public class FilterDelay extends Feedback
         return _hpf.Q(f);
     }
 
-    fun static FilterDelay create()
+    fun static RecoveryDelay create()
     {
-        FilterDelay filterDelay;
-        return filterDelay;
+        RecoveryDelay recoveryDelay;
+        return recoveryDelay;
     }
 
-    fun static FilterDelay create(dur delay, float feedback)
+    fun static RecoveryDelay create(dur delay, float feedback)
     {
-        FilterDelay filterDelay;
-        delay => filterDelay.delay;
-        feedback => filterDelay.feedback;
-        return filterDelay;
+        RecoveryDelay recoveryDelay;
+        delay => recoveryDelay.delay;
+        feedback => recoveryDelay.feedback;
+        return recoveryDelay;
     }
 
-    fun static FilterDelay create(dur delay, float feedback, float lowPassCutoff, float lowPassResonance, float highPassCutoff, float highPassResonance)
+    fun static RecoveryDelay create(dur delay, float feedback, float lowPassCutoff, float lowPassResonance, float highPassCutoff, float highPassResonance)
     {
-        FilterDelay filterDelay;
-        delay => filterDelay.delay;
-        feedback => filterDelay.feedback;
-        lowPassCutoff => filterDelay.lowPassCutoff;
-        lowPassResonance => filterDelay.lowPassResonance;
-        highPassCutoff => filterDelay.highPassCutoff;
-        highPassResonance => filterDelay.highPassResonance;
-        return filterDelay;
+        RecoveryDelay recoveryDelay;
+        delay => recoveryDelay.delay;
+        feedback => recoveryDelay.feedback;
+        lowPassCutoff => recoveryDelay.lowPassCutoff;
+        lowPassResonance => recoveryDelay.lowPassResonance;
+        highPassCutoff => recoveryDelay.highPassCutoff;
+        highPassResonance => recoveryDelay.highPassResonance;
+        return recoveryDelay;
     }
 }
