@@ -505,6 +505,7 @@ Machine.add(path + "lick/delay/Swirl.ck");
 // synth/osc, package synth
 Machine.add(path + "lick/synth/CircleRamp.ck");
 Machine.add(path + "lick/synth/DoublePulse.ck");
+Machine.add(path + "lick/synth/Dream.ck");
 Machine.add(path + "lick/synth/Fat.ck");
 Machine.add(path + "lick/synth/Fold.ck");
 Machine.add(path + "lick/synth/Fold2.ck");
