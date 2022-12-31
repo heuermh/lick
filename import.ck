@@ -310,6 +310,7 @@ Machine.add(path + "lick/device/MAudioOzone.ck");
 Machine.add(path + "lick/device/AlesisQX25.ck");
 Machine.add(path + "lick/device/StompKeyboard.ck");
 Machine.add(path + "lick/device/RolandA49.ck");
+Machine.add(path + "lick/device/KorgSq64.ck");
 Machine.add(path + "lick/device/PodHd500.ck");
 
 // osc, package osc
