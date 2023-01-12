@@ -23,7 +23,6 @@
 RolandTr808 tr808;
 KorgSq64 korgSq64;
 
-
 class KeyOn extends IntIntProcedure
 {
     fun void run(int arg0, int arg1)
@@ -40,11 +39,38 @@ class KeyOff extends IntProcedure
     }
 }
 
+class Play extends Procedure
+{
+    fun void run()
+    {
+        <<<"play">>>;
+    }
+}
+
+class Stop extends Procedure
+{
+    fun void run()
+    {
+        <<<"stop">>>;
+    }
+}
+
 KeyOn keyOn;
 KeyOff keyOff;
+Play play;
+Stop stop;
 
-keyOn @=> korgSq64.keyOn;
-keyOff @=> korgSq64.keyOff;
+keyOn @=> korgSq64.a.keyOn;
+keyOff @=> korgSq64.a.keyOff;
+keyOn @=> korgSq64.b.keyOn;
+keyOff @=> korgSq64.b.keyOff;
+keyOn @=> korgSq64.c.keyOn;
+keyOff @=> korgSq64.c.keyOff;
+//keyOn @=> korgSq64.d.keyOn;
+//keyOff @=> korgSq64.d.keyOff;
+
+play @=> korgSq64.play;
+stop @=> korgSq64.stop;
 
 tr808.kickA.asIntProcedure() @=> korgSq64.d1;
 tr808.kickC.asIntProcedure() @=> korgSq64.d2;

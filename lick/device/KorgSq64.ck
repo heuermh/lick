@@ -20,18 +20,55 @@
 
 */
 
+class Channel
+{
+    string name;
+    int _lastKey[125];
+    IntIntProcedure keyOn;
+    IntProcedure keyOff;
+
+    fun int isKeyOn(int key)
+    {
+        return (_lastKey[key] > 0);
+    }
+
+    fun int isKeyOff(int key)
+    {
+        return (_lastKey[key] == 0);
+    }
+
+    fun int getVelocity(int key)
+    {
+        return _lastKey[key];
+    }
+
+    fun static Channel create(string s)
+    {
+        Channel channel;
+        s => channel.name;
+        return channel;
+    }
+}
+
 public class KorgSq64
 {
     MidiIn min;
     MidiMsg msg;
 
-    // cached values
-    int _lastKey[125];
-
     // assign custom procedures
     Procedure clock;
-    IntIntProcedure keyOn;
-    IntProcedure keyOff;
+    Procedure stop;
+    Procedure play;
+    IntProcedure rotary1;
+    IntProcedure rotary2;
+    IntProcedure rotary3;
+    IntProcedure rotary4;
+
+    // channels
+    Channel.create("A") @=> Channel a;
+    Channel.create("B") @=> Channel b;
+    Channel.create("C") @=> Channel c;
+    Channel.create("D") @=> Channel d;
 
     // D sub-tracks
     IntProcedure d1;
@@ -51,21 +88,6 @@ public class KorgSq64
     IntProcedure d15;
     IntProcedure d16;
 
-    fun int isKeyOn(int key)
-    {
-        return (_lastKey[key] > 0);
-    }
-
-    fun int isKeyOff(int key)
-    {
-        return (_lastKey[key] == 0);
-    }
-
-    fun int getVelocity(int key)
-    {
-        return _lastKey[key];
-    }
-
     fun int open(int device)
     {
         min.open(device);
@@ -81,17 +103,71 @@ public class KorgSq64
 
                 //<<<control, note, velocity>>>;
 
-                if (control == 153) // key on for D sub-tracks
+                if (control == 144) // key on for channel A
                 {
                     if (velocity == 0)
                     {
-                        0 => _lastKey[note];
-                        spork ~ keyOff.run(note);
+                        0 => a._lastKey[note];
+                        spork ~ a.keyOff.run(note);
                     }
                     else
                     {
-                        velocity => _lastKey[note];
-                        spork ~ keyOn.run(note, velocity);
+                        velocity => a._lastKey[note];
+                        spork ~ a.keyOn.run(note, velocity);
+                    }
+                }
+                else if (control == 128) // key off for channel A
+                {
+                    0 => a._lastKey[note];
+                    spork ~ a.keyOff.run(note);
+                }
+                else if (control == 145) // key on for channel B
+                {
+                    if (velocity == 0)
+                    {
+                        0 => b._lastKey[note];
+                        spork ~ b.keyOff.run(note);
+                    }
+                    else
+                    {
+                        velocity => b._lastKey[note];
+                        spork ~ b.keyOn.run(note, velocity);
+                    }
+                }
+                else if (control == 129) // key off for channel B
+                {
+                    0 => b._lastKey[note];
+                    spork ~ b.keyOff.run(note);
+                }
+                else if (control == 146) // key on for channel C
+                {
+                    if (velocity == 0)
+                    {
+                        0 => c._lastKey[note];
+                        spork ~ c.keyOff.run(note);
+                    }
+                    else
+                    {
+                        velocity => c._lastKey[note];
+                        spork ~ c.keyOn.run(note, velocity);
+                    }
+                }
+                else if (control == 130) // key off for channel C
+                {
+                    0 => c._lastKey[note];
+                    spork ~ c.keyOff.run(note);
+                }
+                else if (control == 153) // key on for channel D sub-tracks
+                {
+                    if (velocity == 0)
+                    {
+                        0 => d._lastKey[note];
+                        spork ~ d.keyOff.run(note);
+                    }
+                    else
+                    {
+                        velocity => d._lastKey[note];
+                        spork ~ d.keyOn.run(note, velocity);
 
                         if (note == 35)
                         {
@@ -159,14 +235,45 @@ public class KorgSq64
                         }
                     }
                 }
-                else if (control == 137) // key off for D sub-tracks
+                else if (control == 137) // key off for channel D sub-tracks
                 {
-                    0 => _lastKey[note];
-                    spork ~ keyOff.run(note);
+                    0 => d._lastKey[note];
+                    spork ~ d.keyOff.run(note);
+                }
+                else if (control == 176) // control mode
+                {
+                    if (note == 43)
+                    {
+                        spork ~ rotary1.run(velocity);
+                    }
+                    else if (note == 39)
+                    {
+                        spork ~ rotary2.run(velocity);
+                    }
+                    else if (note == 16)
+                    {
+                        spork ~ rotary3.run(velocity);
+                    }
+                    else if (note == 17)
+                    {
+                        spork ~ rotary4.run(velocity);
+                    }
                 }
                 else if (control == 248) // clock
                 {
                     spork ~ clock.run();
+                }
+                else if (control == 250) // play
+                {
+                    spork ~ play.run();
+                }
+                else if (control == 252) // stop
+                {
+                    spork ~ stop.run();
+                }
+                else
+                {
+                    <<<"unmapped MIDI event:", control, note, velocity>>>;
                 }
             }
         }
@@ -175,9 +282,28 @@ public class KorgSq64
 
 /*
 
-For D sub-tracks 1-16:
+For channel A:
+Key on 144
+Key off 128
+
+For channel B:
+Key on 145
+Key off 129
+
+For channel C:
+Key on 146
+Key off 130
+
+For channel D sub-tracks 1-16:
 Key on 153
 Key off 137
 Notes 35 - 50, inclusive
 
+Play button 250 233 51
+Stop button 252 233 51
+
+Control mode knob 1 176 43
+Control mode knob 2 176 39
+Control mode knob 3 176 16
+Control mode knob 4 176 17
  */
