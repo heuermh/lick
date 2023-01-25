@@ -93,7 +93,7 @@ public class KorgMs20
     ResoSquare resoSquare;
     RingFizz ringFizz;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         samples.add(detunedPulse);
@@ -102,7 +102,12 @@ public class KorgMs20
         samples.add(resSawInterval);
         samples.add(resoSquare);
         samples.add(ringFizz);
+        return samples;
+    }
 
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
 
         PlaySample playSample;
         1.0 => playSample.rate;
@@ -118,5 +123,11 @@ public class KorgMs20
         <<<"down a minor third">>>;
         Intervals.minorThird().desc().evaluate(1.0) => playSample.rate;
         samples.forEach(playSample);
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

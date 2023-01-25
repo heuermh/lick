@@ -459,7 +459,7 @@ public class BigMono
     //Rim rim;
     Snare snare;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         //samples.add(bellRide);
@@ -477,9 +477,20 @@ public class BigMono
         //samples.add(ride);
         //samples.add(rim);
         samples.add(snare);
+        return samples;
+    }
 
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
         PlaySamples playSamples;
         samples.forEach(playSamples);
         <<<"done.">>>;
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

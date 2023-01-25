@@ -323,6 +323,7 @@ Machine.add(path + "lick/osc/TouchOscServer.ck");
 
 // samples, package sample
 Machine.add(path + "lick/sample/Sample.ck");
+Machine.add(path + "lick/sample/Reconnect.ck");
 Machine.add(path + "lick/sample/AdsrSample.ck");
 Machine.add(path + "lick/sample/CompositeSample.ck");
 Machine.add(path + "lick/sample/RandomSample.ck");

@@ -146,4 +146,9 @@ public class CompositeSample extends Sample
     {
         return _compositeFloatFloatProcedure;
     }
+
+    fun void reconnect(UGen ugen)
+    {
+        Reconnect.reconnect(samples, ugen);
+    }
 }

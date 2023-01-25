@@ -131,7 +131,7 @@ public class EmuDrumulator
     Rim rim;
     Snare snare;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         samples.add(clap);
@@ -146,6 +146,12 @@ public class EmuDrumulator
         samples.add(openHat);
         samples.add(rim);
         samples.add(snare);
+        return samples;
+    }
+
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
 
         PlaySample playSample;
         32 => playSample.velocity;
@@ -156,5 +162,11 @@ public class EmuDrumulator
 
         127 => playSample.velocity;
         samples.forEach(playSample);
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

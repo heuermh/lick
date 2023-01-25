@@ -227,7 +227,7 @@ public class RolandTr808
     SnareD snareD;
     SnareE snareE;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         samples.add(clap);
@@ -254,6 +254,12 @@ public class RolandTr808
         samples.add(snareC);
         samples.add(snareD);
         samples.add(snareE);
+        return samples;
+    }
+
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
 
         PlaySample playSample;
         32 => playSample.velocity;
@@ -264,5 +270,11 @@ public class RolandTr808
 
         127 => playSample.velocity;
         samples.forEach(playSample);
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

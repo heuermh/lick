@@ -112,6 +112,9 @@ public class Sample
     SampleFloatProcedure _floatProcedure;
     SampleFloatFloatProcedure _floatFloatProcedure;
 
+    // ref to last output ugen
+    UGen @ _last;
+
     {
         0.0 => buf.gain;
         this @=> _procedure.sample;
@@ -119,6 +122,7 @@ public class Sample
         this @=> _intIntProcedure.sample;
         this @=> _floatProcedure.sample;
         this @=> _floatFloatProcedure.sample;
+        dac @=> _last;
     }
 
     fun void play()
@@ -136,6 +140,14 @@ public class Sample
     fun int loop(int i)
     {
         i => buf.loop;
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        //<<<"      reconnect, buf", buf, "ugen", ugen, "_last", _last>>>;
+        buf =< _last;
+        buf => ugen;
+        ugen @=> _last;
     }
 
     fun Procedure asProcedure()

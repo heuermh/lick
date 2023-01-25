@@ -131,7 +131,7 @@ public class LellUds
     SnareC snareC;
     SnareD snareD;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         samples.add(clap);
@@ -146,6 +146,12 @@ public class LellUds
         samples.add(snareB);
         samples.add(snareC);
         samples.add(snareD);
+        return samples;
+    }
+
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
 
         PlaySample playSample;
         32 => playSample.velocity;
@@ -156,5 +162,11 @@ public class LellUds
 
         127 => playSample.velocity;
         samples.forEach(playSample);
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

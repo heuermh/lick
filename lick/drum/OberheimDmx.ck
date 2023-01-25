@@ -155,7 +155,7 @@ public class OberheimDmx
     Snare snare;
     Tamborine tamborine;
 
-    fun void demo()
+    fun ArrayList list()
     {
         ArrayList samples;
         samples.add(clap);
@@ -173,6 +173,12 @@ public class OberheimDmx
         samples.add(shaker);
         samples.add(snare);
         samples.add(tamborine);
+        return samples;
+    }
+
+    fun void demo()
+    {
+        list() @=> ArrayList samples;
 
         PlaySample playSample;
         32 => playSample.velocity;
@@ -183,5 +189,11 @@ public class OberheimDmx
 
         127 => playSample.velocity;
         samples.forEach(playSample);
+    }
+
+    fun void reconnect(UGen ugen)
+    {
+        list() @=> ArrayList samples;
+        Reconnect.reconnect(samples, ugen);
     }
 }

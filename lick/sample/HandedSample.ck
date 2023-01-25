@@ -153,4 +153,10 @@ public class HandedSample extends Sample
     {
         return _handedFloatFloatProcedure;
     }
+
+    fun void reconnect(UGen ugen)
+    {
+        Reconnect.reconnect(leftHandSamples, ugen);
+        Reconnect.reconnect(rightHandSamples, ugen);
+    }
 }
