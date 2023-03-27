@@ -6,7 +6,7 @@ LiCK  Library for ChucK.
 
 ```
 LiCK  Library for ChucK.
-Copyright (c) 2007-2022 held jointly by the individual authors.
+Copyright (c) 2007-2023 held jointly by the individual authors.
 
 LiCK is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -63,7 +63,7 @@ CCRMA ChuGins
 https://github.com/ccrma/chugins
 
 *Note:* awaiting the merge of several open pull requests, it is recommended to
-use the branch https://github.com/heuermh/chugins/tree/latest.
+use the branch https://github.com/heuermh/chugins/tree/latest
 
 
 the C* Audio Plugin Suite
