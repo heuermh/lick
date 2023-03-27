@@ -29,7 +29,12 @@ TimeSignature.common(110) @=> TimeSignature ts;
 Ecco.even(ts) @=> Ecco ecco;
 ecco => dac;
 0.8 => ecco.mix;
+0.4 => ecco.feedback1;
+0.3 => ecco.feedback2;
+0.2 => ecco.feedback3;
+0.1 => ecco.feedback4;
 akaiMpc60.reconnect(ecco);
 akaiMpc60.demo();
 
+1::minute => now;
 <<<"done">>>;
