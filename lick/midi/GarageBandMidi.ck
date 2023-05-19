@@ -534,11 +534,6 @@ class HouseDrumMachine extends DrumKit
         _garageBand.noteOn(46, velocity);
     }
 
-    fun void lowTom(int velocity)
-    {
-        _garageBand.noteOn(47, velocity);
-    }
-
     fun void crash(int velocity)
     {
         _garageBand.noteOn(49, velocity);
@@ -623,11 +618,6 @@ class HipHopDrumMachine extends DrumKit
     fun void openHat(int velocity)
     {
         _garageBand.noteOn(46, velocity);
-    }
-
-    fun void lowTom(int velocity)
-    {
-        _garageBand.noteOn(47, velocity);
     }
 
     fun void crash(int velocity)
