@@ -22,10 +22,10 @@
 
 public class AlmostAlways extends Predicate
 {
-    Random r;
+    Chance c;
 
     fun int test()
     {
-        return r.almostAlways();
+        return c.almostAlways();
     }
 }

@@ -22,10 +22,10 @@
 
 public class CoinFlip extends Predicate
 {
-    Random r;
+    Chance c;
 
     fun int test()
     {
-        return r.coinFlip();
+        return c.coinFlip();
     }
 }

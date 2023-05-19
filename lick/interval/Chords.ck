@@ -38,8 +38,8 @@ class Fifth extends Chord
 
     fun Interval sampleInterval()
     {
-        Random r;
-        if (r.coinFlip())
+        Chance c;
+        if (c.coinFlip())
         {
             return unison;
         }
@@ -177,7 +177,7 @@ class Seventh extends Triad
         {
             return third;
         }
-        else if (s == 1)
+        else if (s == 2)
         {
             return fifth;
         }

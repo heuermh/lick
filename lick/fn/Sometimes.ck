@@ -22,10 +22,10 @@
 
 public class Sometimes extends Predicate
 {
-    Random r;
+    Chance c;
 
     fun int test()
     {
-        return r.sometimes();
+        return c.sometimes();
     }
 }

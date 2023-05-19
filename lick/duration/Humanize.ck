@@ -55,64 +55,33 @@ public class Humanize
     // todo:  add swing
 
 
-    fun static dur humanize(dur value, Random random)
+    fun static dur humanize(dur value, Chance chance)
     {
-        return humanize(value, 0.05, 0.05, random);
+        return humanize(value, 0.05, 0.05, chance);
     }
 
-    fun static dur humanize(dur value, float anticipation, float delay, Random random)
+    fun static dur humanize(dur value, float anticipation, float delay, Chance chance)
     {
-        return value - random.get() * anticipation * value + random.get() * delay * value;
+        return value - chance.get() * anticipation * value + chance.get() * delay * value;
     }
 
-    fun static dur anticipate(dur value, Random random)
+    fun static dur anticipate(dur value, Chance chance)
     {
-        return anticipate(value, 0.1, random);
+        return anticipate(value, 0.1, chance);
     }
 
-    fun static dur anticipate(dur value, float anticipation, Random random)
+    fun static dur anticipate(dur value, float anticipation, Chance chance)
     {
-        return value - random.get() * anticipation * value;
+        return value - chance.get() * anticipation * value;
     }
 
-    fun static dur delay(dur value, Random random)
+    fun static dur delay(dur value, Chance chance)
     {
-        return delay(value, 0.1, random);
+        return delay(value, 0.1, chance);
     }
 
-    fun static dur delay(dur value, float delay, Random random)
+    fun static dur delay(dur value, float delay, Chance chance)
     {
-        return value + random.get() * delay * value;
-    }
-
-
-    fun dur humanizeGaussian(dur value)
-    {
-        return humanizeGaussian(value, 0.05, 0.05);
-    }
-
-    fun dur humanizeGaussian(dur value, float anticipation, float delay)
-    {
-        return value + GaussianRandom.nextGaussian() * anticipation * value - GaussianRandom.nextGaussian() * delay * value;
-    }
-
-    fun static dur anticipateGaussian(dur value)
-    {
-        return anticipateGaussian(value, 0.1);
-    }
-
-    fun static dur anticipateGaussian(dur value, float anticipation)
-    {
-        return value - GaussianRandom.nextGaussian() * anticipation * value;
-    }
-
-    fun static dur delayGaussian(dur value)
-    {
-        return delayGaussian(value, 0.1);
-    }
-
-    fun static dur delayGaussian(dur value, float delay)
-    {
-        return value + GaussianRandom.nextGaussian() * delay * value;
+        return value + chance.get() * delay * value;
     }
 }

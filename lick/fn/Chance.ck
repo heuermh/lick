@@ -20,7 +20,7 @@
 
 */
 
-public class Random extends FloatSupplier
+public class Chance extends FloatSupplier
 {
     fun float get()
     {

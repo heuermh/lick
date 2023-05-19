@@ -22,10 +22,10 @@
 
 public class Infrequently extends Predicate
 {
-    Random r;
+    Chance c;
 
     fun int test()
     {
-        return r.infrequently();
+        return c.infrequently();
     }
 }

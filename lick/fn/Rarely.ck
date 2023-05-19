@@ -22,10 +22,10 @@
 
 public class Rarely extends Predicate
 {
-    Random r;
+    Chance c;
 
     fun int test()
     {
-        return r.rarely();
+        return c.rarely();
     }
 }

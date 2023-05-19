@@ -30,7 +30,7 @@ public class IntervalDurProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         interval.evaluate(f) * durProvider.get() => dur duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 
     fun static IntervalDurProvider create(TimeSignature timeSignature, Interval interval, float f, DurProvider durProvider)

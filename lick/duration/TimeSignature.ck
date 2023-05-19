@@ -28,7 +28,7 @@ class BreveProvider extends HumanizedDurProvider
     {
         timeSignature.d => duration;
         //return super.evaluate();  not supported
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -44,7 +44,7 @@ class SemibreveProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.w => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -60,7 +60,7 @@ class MinimProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.h => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -76,7 +76,7 @@ class CrotchetProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.q => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -92,7 +92,7 @@ class TripletQuarterProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.triplet(timeSignature.q) => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -103,7 +103,7 @@ class QuaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.e => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -119,7 +119,7 @@ class DottedEighthProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.dotted(timeSignature.e) => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -130,7 +130,7 @@ class TripletEighthProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.triplet(timeSignature.e) => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -141,7 +141,7 @@ class SemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.s => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -157,7 +157,7 @@ class TripletSixteenthProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.triplet(timeSignature.s) => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -168,7 +168,7 @@ class DemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.t => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -184,7 +184,7 @@ class HemiDemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.f => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -200,7 +200,7 @@ class SemiHemiDemiSemiquaverProvider extends HumanizedDurProvider
     fun dur evaluate()
     {
         timeSignature.u => duration;
-        return Humanize.humanize(duration, anticipation, delay, timeSignature.random);
+        return Humanize.humanize(duration, anticipation, delay, timeSignature.chance);
     }
 }
 
@@ -223,7 +223,7 @@ public class TimeSignature
     dur t;
     dur f;
     dur u;
-    Random random;
+    Chance chance;
 
     fun void update()
     {
@@ -609,13 +609,13 @@ public class TimeSignature
         return timeSignature;
     }
 
-    fun static TimeSignature create(int bar, int beat, int bpm, Random random)
+    fun static TimeSignature create(int bar, int beat, int bpm, Chance chance)
     {
         TimeSignature timeSignature;
         bar => timeSignature.bar;
         beat => timeSignature.beat;
         bpm => timeSignature.bpm;
-        random @=> timeSignature.random;
+        chance @=> timeSignature.chance;
         timeSignature.update();
         return timeSignature;
     }

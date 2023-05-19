@@ -20,7 +20,7 @@
 
 */
 
-public class GaussianRandom extends Random
+public class Gaussian extends Chance
 {
     //
     // adapted without caching from org.apache.commmons.math3.random.AbstractRandomGenerator,

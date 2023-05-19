@@ -90,17 +90,17 @@ public class Mixer extends Effect
 
     fun void randomize()
     {
-        Random r;
-        randomize(r);
+        Chance c;
+        randomize(c);
     }
 
-    fun void randomize(Random r)
+    fun void randomize(Chance c)
     {
         1.0 => float remaining;
         inputs.size() => int n;
         for (0 => int i; i < n; i++)
         {
-            r.get() * remaining => float g;
+            c.get() * remaining => float g;
             g => input(i).gain;
             remaining - g => remaining;
         }
