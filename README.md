@@ -51,9 +51,10 @@ GNU General Public License for more details.
 
 ### LiCK requires:
 
-chuck-1.4.1.0 or later
+chuck-1.5.0.0 or later
 
-http://chuck.cs.princeton.edu/
+https://chuck.cs.princeton.edu/
+https://chuck.stanford.edu/
 
 
 ### LiCK optional dependencies:
@@ -61,9 +62,6 @@ http://chuck.cs.princeton.edu/
 CCRMA ChuGins
 
 https://github.com/ccrma/chugins
-
-*Note:* awaiting the merge of several open pull requests, it is recommended to
-use the branch https://github.com/heuermh/chugins/tree/latest
 
 
 the C* Audio Plugin Suite
