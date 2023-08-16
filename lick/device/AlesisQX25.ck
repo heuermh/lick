@@ -141,7 +141,7 @@ public class AlesisQX25
         return !_lastSustainPedal;
     }
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

@@ -135,7 +135,7 @@ public class IntList
 
     fun IntList collect(IntPredicate predicate)
     {
-        // empty
+        return null;
     }
 
     fun void sort(IntComparator comparator)

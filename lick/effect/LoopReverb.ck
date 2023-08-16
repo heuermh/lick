@@ -134,6 +134,8 @@ public class LoopReverb extends Effect
 
         f => d11.reverseCoefficient;
         -1.0 * f => d11.forwardCoefficient;
+
+        return f;
     }
 
     fun static LoopReverb create()

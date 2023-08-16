@@ -32,6 +32,7 @@ public class CompositeAdsr extends AbstractAdsr
     fun ADSR _nextAdsr()
     {
         // subclasses implement this
+        return null;
     }
 
     fun ADSR current()

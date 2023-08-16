@@ -246,6 +246,7 @@ public class IntArrayList extends IntList
             }
             swap(i, j);
         }
+        return -1;
     }
 
     fun void swap(int a, int b)

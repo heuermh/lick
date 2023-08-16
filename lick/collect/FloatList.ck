@@ -34,7 +34,7 @@ public class FloatList
 
     fun int size(int capacity)
     {
-        // empty
+        return -1;
     }
 
     fun float get(int index)
@@ -135,7 +135,7 @@ public class FloatList
 
     fun FloatList collect(FloatPredicate predicate)
     {
-        // empty
+        return null;
     }
 
     fun void sort(FloatComparator comparator)

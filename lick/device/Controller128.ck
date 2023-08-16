@@ -35,7 +35,7 @@ public class Controller128
     Procedure row6;
     Procedure row7;
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

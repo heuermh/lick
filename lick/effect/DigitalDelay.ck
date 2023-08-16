@@ -39,6 +39,7 @@ public class DigitalDelay extends Feedback
     fun dur delay(dur d)
     {
         d => _delay.delay;
+        return d;
     }
 
     fun dur max()
@@ -49,6 +50,7 @@ public class DigitalDelay extends Feedback
     fun dur max(dur d)
     {
         d => _delay.max;
+        return d;
     }
 
     fun static DigitalDelay create()

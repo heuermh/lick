@@ -26,7 +26,7 @@ public class TwoPotsMidi extends TwoPots
     MidiIn min;
     MidiMsg msg;
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
         while (true)

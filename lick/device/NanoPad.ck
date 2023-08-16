@@ -56,7 +56,7 @@ public class NanoPad
         return _lastY;
     }
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

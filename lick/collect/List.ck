@@ -34,7 +34,7 @@ public class List
 
     fun int size(int capacity)
     {
-        // empty
+        return -1;
     }
 
     fun Object get(int index)
@@ -135,7 +135,7 @@ public class List
 
     fun List collect(UnaryPredicate predicate)
     {
-        // empty
+        return null;
     }
 
     fun void sort(Comparator comparator)

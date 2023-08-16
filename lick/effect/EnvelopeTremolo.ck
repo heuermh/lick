@@ -49,6 +49,7 @@ public class EnvelopeTremolo extends Effect
     fun dur duration(dur d)
     {
         d => _env.duration;
+        return d;
     }
 
     fun void scale(float f)

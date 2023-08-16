@@ -68,7 +68,7 @@ public class EuclidMidi
         patterns.set(control, pattern);
     }
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

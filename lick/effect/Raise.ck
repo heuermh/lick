@@ -63,6 +63,7 @@ public class Raise extends Effect
     fun dur rate(dur d)
     {
         d => _rate;
+        return d;
     }
 
     fun Interval interval()

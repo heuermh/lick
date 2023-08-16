@@ -88,7 +88,7 @@ public class KorgSq64
     IntProcedure d15;
     IntProcedure d16;
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

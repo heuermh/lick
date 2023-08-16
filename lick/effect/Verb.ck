@@ -76,6 +76,7 @@ public class Verb extends LfoFeedback
     {
         f => _tail;
         f => _gverb.tail;
+        return f;
     }
 
     fun float damping()
@@ -99,6 +100,7 @@ public class Verb extends LfoFeedback
     {
         f => _room;
         f => _gverb.roomsize;
+        return f;
     }
 
     fun dur predelay()

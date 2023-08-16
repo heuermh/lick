@@ -34,7 +34,7 @@ public class Set
 
     fun int size(int capacity)
     {
-        // empty
+        return -1;
     }
 
     fun void add(Object value)
@@ -105,7 +105,7 @@ public class Set
 
     fun Set collect(UnaryPredicate predicate)
     {
-        // empty
+        return null;
     }
 
     fun Set copy()

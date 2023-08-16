@@ -64,7 +64,7 @@ public class PodHd500
     Procedure tunerOn;
     Procedure tunerOff;
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

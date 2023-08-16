@@ -85,6 +85,7 @@ public class Sauce extends Chugraph
         _freq => _saw.freq;
         _octave.evaluate(_freq) => _sub.freq;
         _twoOctaves.evaluate(_freq) => _sub2.freq;
+        return f;
     }
 
     fun float sin()

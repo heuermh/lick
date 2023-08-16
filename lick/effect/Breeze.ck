@@ -102,6 +102,7 @@ public class Breeze extends Effect
     fun dur delay(dur d)
     {
         d => _delay.delay;
+        return d;
     }
 
     fun dur max()
@@ -112,6 +113,7 @@ public class Breeze extends Effect
     fun dur max(dur d)
     {
         d => _delay.max;
+        return d;
     }
 
     fun float shift()

@@ -68,6 +68,7 @@ public class SVF extends Chugraph
         f => lpf.freq;
         f => bpf.freq;
         f => brf.freq;
+        return _freq;
     }
 
     fun float cutoff()

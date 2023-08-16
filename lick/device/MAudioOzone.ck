@@ -21,7 +21,7 @@
 */
 
 // receive MIDI from the M-Audio Ozone hardware
-public class Ozone // may work for other MIDI keyboards, see notes below
+public class MAudioOzone // may work for other MIDI keyboards, see notes below
 {
     MidiIn min;
     MidiMsg msg;
@@ -124,7 +124,7 @@ public class Ozone // may work for other MIDI keyboards, see notes below
         return !_lastSustainPedal;
     }
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

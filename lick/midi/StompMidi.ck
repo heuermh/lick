@@ -39,7 +39,7 @@ public class StompMidi
     Procedure button5Up;
     Procedure button5Down;
 
-    fun int open(int device)
+    fun void open(int device)
     {
         min.open(device);
 

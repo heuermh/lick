@@ -30,7 +30,7 @@ public class TwoPots
     IntProcedure pot2Msb; // cc 17
     IntProcedure pot2Lsb; // cc 49 (17+32)
 
-    fun int open(int device)
+    fun void open(int device)
     {
         <<<"open", device>>>;
     }

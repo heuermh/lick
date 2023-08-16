@@ -52,7 +52,7 @@ class F extends FloatFunction
         }
     }
 
-    fun float _even()
+    fun void _even()
     {
         _last => _stages[0];
         now => _lastTimestamp;
@@ -64,7 +64,7 @@ class F extends FloatFunction
         }
     }
 
-    fun float _odd()
+    fun void _odd()
     {
         now => _lastTimestamp;
         for (1 => int i; i < (STAGES - 1); )
