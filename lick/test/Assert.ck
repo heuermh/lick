@@ -168,6 +168,24 @@ public class Assert
         }
     }
 
+    fun void assertEquals(string expected, string actual)
+    {
+        if (expected != actual)
+        {
+            "expected: " + expected + " actual: " + actual => string errorMessage;
+            fail(errorMessage);
+        }
+    }
+
+    fun void assertEquals(string message, string expected, string actual)
+    {
+        if (expected != actual)
+        {
+            message + " expected: " + expected + " actual: " + actual => string errorMessage;
+            fail(errorMessage);
+        }
+    }
+
     fun void assertNotEquals(float expected, float actual, float delta)
     {
         if (Std.fabs(expected - actual) <= delta)
@@ -196,6 +214,24 @@ public class Assert
     }
 
     fun void assertNotEquals(string message, Object expected, Object actual)
+    {
+        if (expected == actual)
+        {
+            message + " expected: " + expected + " actual: " + actual + " expected not equals" => string errorMessage;
+            fail(errorMessage);
+        }
+    }
+
+    fun void assertNotEquals(string expected, string actual)
+    {
+        if (expected == actual)
+        {
+            "expected: " + expected + " actual: " + actual + " expected not equals" => string errorMessage;
+            fail(errorMessage);
+        }
+    }
+
+    fun void assertNotEquals(string message, string expected, string actual)
     {
         if (expected == actual)
         {
