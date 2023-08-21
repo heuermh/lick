@@ -32,7 +32,7 @@ public class Pattern extends Predicate
 
     fun int size(int capacity)
     {
-        pattern.size(capacity);
+        return pattern.size(capacity);
     }
 
     // internal iterator

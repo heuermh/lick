@@ -140,6 +140,7 @@ public class Sample
     fun int loop(int i)
     {
         i => buf.loop;
+        return i;
     }
 
     fun void reconnect(UGen ugen)

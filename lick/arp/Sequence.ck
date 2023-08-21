@@ -32,7 +32,7 @@ public class Sequence extends FloatSupplier
 
     fun int size(int capacity)
     {
-        sequence.size(capacity);
+        return sequence.size(capacity);
     }
 
     // internal iterator

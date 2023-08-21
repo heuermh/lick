@@ -101,7 +101,7 @@ public class ShiftEcco extends Effect
         update();
     }
 
-    fun float update() {
+    fun void update() {
         ts.w => _head1.max;
         ts.w => _head2.max;
         ts.w => _head3.max;
