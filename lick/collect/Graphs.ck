@@ -40,6 +40,10 @@ public class Graphs
         {
             node.outEdges.sample() $ Edge @=> Edge edge;
             edge.target @=> node;
+            // break cycle if we visited this node before
+            if( node.visited ) break;
+            // mark node as visited
+            true => node.visited;
             procedure.run(node);
         }
    }

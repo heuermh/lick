@@ -25,6 +25,7 @@ public class Node
     Object @ value;
     ArrayList inEdges;
     ArrayList outEdges;
+    int visited;
 
     fun int degree()
     {
