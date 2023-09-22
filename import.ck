@@ -450,6 +450,7 @@ Machine.add(path + "lick/effect/Mixer.ck");
 Machine.add(path + "lick/effect/Breeze.ck");
 Machine.add(path + "lick/effect/Overcome.ck");
 Machine.add(path + "lick/effect/PinkDelay.ck");
+Machine.add(path + "lick/effect/Presence.ck");
 Machine.add(path + "lick/effect/Prime.ck");
 Machine.add(path + "lick/effect/Ring.ck");
 Machine.add(path + "lick/effect/RecoveryDelay.ck");
