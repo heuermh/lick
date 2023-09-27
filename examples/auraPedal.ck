@@ -20,13 +20,46 @@
 
 */
 
-adc => Presence presence => dac;
+Aura aura;
 
-while (true)
+class Toggle extends Procedure
 {
-    Math.random2f(700.0, 2000.0) => presence.freq;
-    Math.random2f(0.1, 0.9) => presence.presence;
-
-    <<<"freq", presence.freq(), "presence", presence.presence(), "feedback", presence.feedback()>>>;
-    4::second => now;
+    fun void run()
+    {
+        aura.toggle();
+        <<<"running", aura.running()>>>;
+    }
 }
+
+class IncreaseRate extends Procedure
+{
+    fun void run()
+    {
+        aura.rate() * 1.1 => aura.rate;
+        <<<"aura rate", aura.rate()>>>;
+    }
+}
+
+class DecreaseRate extends Procedure
+{
+    fun void run()
+    {
+        aura.rate() * 0.9 => aura.rate;
+        <<<"aura rate", aura.rate()>>>;
+    }
+}
+
+adc => aura => dac;
+
+1.0 => aura.mix;
+
+Toggle toggle;
+IncreaseRate increaseRate;
+DecreaseRate decreaseRate;
+StompKeyboard stomp;
+
+toggle @=> stomp.button0Down;
+increaseRate @=> stomp.button1Down;
+decreaseRate @=> stomp.button2Down;
+
+stomp.open(0);

@@ -20,13 +20,12 @@
 
 */
 
-adc => Presence presence => dac;
+adc => Aura aura => dac;
+
+<<<"ready">>>;
 
 while (true)
 {
-    Math.random2f(700.0, 2000.0) => presence.freq;
-    Math.random2f(0.1, 0.9) => presence.presence;
-
-    <<<"freq", presence.freq(), "presence", presence.presence(), "feedback", presence.feedback()>>>;
-    4::second => now;
+    <<<"aura freq", aura.freq()>>>;
+    400::ms => now;
 }

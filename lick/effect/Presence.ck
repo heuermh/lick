@@ -24,21 +24,22 @@ public class Presence extends Feedback
 {
 
     /*
-        inlet --> pre ------------------>  gain  --------------------> post --> wet
-                   ^                                                     |
-                   |                                                     |
-                   +--- feedbackIn <-- LPF <-- invert <-- feedbackOut <--+
+        inlet --> pre ------------------->  gain  ---------------------> post --> wet
+                   ^                                                       |
+                   |                                                       |
+                   +--- feedbackIn <-- _lpf <-- _invert <-- feedbackOut <--+
 
     */
 
-    LPF lpf;
-    Invert invert;
+    LPF _lpf;
+    Invert _invert;
 
-    feedbackOut => invert => lpf => feedbackIn;
+    pre => post;
+    feedbackOut => _invert => _lpf => feedbackIn;
 
     {
-        800.0 => lpf.freq;
-        feedback(0.4);
+        0.4 => feedback;
+        800.0 => freq;
     }
 
 
@@ -56,5 +57,44 @@ public class Presence extends Feedback
     {
         f => feedbackIn.gain;
         return f;
+    }
+
+    fun float freq()
+    {
+        return _lpf.freq();
+    }
+
+    fun float freq(float f)
+    {
+        f => _lpf.freq;
+        return f;
+    }
+
+    fun float resonance()
+    {
+        return _lpf.Q();
+    }
+
+    fun float resonance(float f)
+    {
+        f => _lpf.Q;
+        return f;
+    }
+
+    fun float presence()
+    {
+        return 1.0 - feedback();
+    }
+
+    fun float presence(float f)
+    {
+        return 1.0 - feedback(1.0 - f);
+    }
+
+    fun static Presence create(float p)
+    {
+        Presence presence;
+        p => presence.presence;
+        return presence;
     }
 }

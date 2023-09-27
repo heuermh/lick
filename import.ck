@@ -477,6 +477,7 @@ Machine.add(path + "lick/effect/Vibrato.ck");
 Machine.add(path + "lick/effect/Wire.ck");
 Machine.add(path + "lick/effect/Wolftone.ck");
 Machine.add(path + "lick/effect/Woosh.ck");
+Machine.add(path + "lick/effect/Aura.ck");
 Machine.add(path + "lick/effect/Currant.ck");
 Machine.add(path + "lick/effect/Glider.ck");
 Machine.add(path + "lick/effect/MotelSix.ck");

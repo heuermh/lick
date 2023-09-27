@@ -186,4 +186,4 @@ _moreSin @=> stomp.button4Down;
 _moreTri @=> stomp.button5Down;
 // need more stomp buttons!  :)
 
-stomp.open(0);
+stomp.open(1);
