@@ -51,7 +51,7 @@ GNU General Public License for more details.
 
 ### LiCK requires:
 
-chuck-1.5.0.0 or later
+chuck-1.5.2.0 or later
 
 https://chuck.cs.princeton.edu/
 https://chuck.stanford.edu/

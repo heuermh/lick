@@ -21,78 +21,6 @@
 */
 
 
-/*
-  todo:
-
-  for some reason these need to be defined before Sample or the following incorrect compiler error will occur
-
-[Sample.ck]:line(48): function 'asProcedure@0@Sample' was defined with return type 'Procedure' -- but returning type 'SampleProcedure'
-[Sample.ck]: ...in function 'asProcedure'
-
-*/
-
-class SampleProcedure extends Procedure
-{
-    Sample @ sample;
-
-    fun void run()
-    {
-        sample.play();
-    }
-}
-
-class SampleIntProcedure extends IntProcedure
-{
-    Sample @ sample;
-    0 => int minGain;
-    127 => int maxGain;
-
-    fun void run(int gain)
-    {
-        sample.minGain + ((gain $ float) / ((minGain + maxGain) $ float)) * (sample.maxGain - sample.minGain) => sample.gain;
-        sample.play();
-    }
-}
-
-class SampleIntIntProcedure extends IntIntProcedure
-{
-    Sample @ sample;
-    0 => int minGain;
-    127 => int maxGain;
-    0 => int minRate;
-    127 => int maxRate;
-
-    fun void run(int rate, int gain)
-    {
-        sample.minRate + ((rate $ float) / ((minRate + maxRate) $ float)) * (sample.maxRate - sample.minRate) => sample.rate;
-        sample.minGain + ((gain $ float) / ((minGain + maxGain) $ float)) * (sample.maxGain - sample.minGain) => sample.gain;
-        sample.play();
-    }
-}
-
-class SampleFloatProcedure extends FloatProcedure
-{
-    Sample @ sample;
-
-    fun void run(float gain)
-    {
-        gain => sample.gain;
-        sample.play();
-    }
-}
-
-class SampleFloatFloatProcedure extends FloatFloatProcedure
-{
-    Sample @ sample;
-
-    fun void run(float rate, float gain)
-    {
-        rate => sample.rate;
-        gain => sample.gain;
-        sample.play();
-    }
-}
-
 public class Sample
 //    implements Procedure, IntProcedure, IntIntProcedure, FloatProcedure, FloatFloatProcedure
 {
@@ -174,5 +102,67 @@ public class Sample
     fun FloatFloatProcedure asFloatFloatProcedure()
     {
         return _floatFloatProcedure;
+    }
+}
+
+class SampleProcedure extends Procedure
+{
+    Sample @ sample;
+
+    fun void run()
+    {
+        sample.play();
+    }
+}
+
+class SampleIntProcedure extends IntProcedure
+{
+    Sample @ sample;
+    0 => int minGain;
+    127 => int maxGain;
+
+    fun void run(int gain)
+    {
+        sample.minGain + ((gain $ float) / ((minGain + maxGain) $ float)) * (sample.maxGain - sample.minGain) => sample.gain;
+        sample.play();
+    }
+}
+
+class SampleIntIntProcedure extends IntIntProcedure
+{
+    Sample @ sample;
+    0 => int minGain;
+    127 => int maxGain;
+    0 => int minRate;
+    127 => int maxRate;
+
+    fun void run(int rate, int gain)
+    {
+        sample.minRate + ((rate $ float) / ((minRate + maxRate) $ float)) * (sample.maxRate - sample.minRate) => sample.rate;
+        sample.minGain + ((gain $ float) / ((minGain + maxGain) $ float)) * (sample.maxGain - sample.minGain) => sample.gain;
+        sample.play();
+    }
+}
+
+class SampleFloatProcedure extends FloatProcedure
+{
+    Sample @ sample;
+
+    fun void run(float gain)
+    {
+        gain => sample.gain;
+        sample.play();
+    }
+}
+
+class SampleFloatFloatProcedure extends FloatFloatProcedure
+{
+    Sample @ sample;
+
+    fun void run(float rate, float gain)
+    {
+        rate => sample.rate;
+        gain => sample.gain;
+        sample.play();
     }
 }
