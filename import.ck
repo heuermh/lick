@@ -490,6 +490,17 @@ Machine.add(path + "lick/effect/Pass.ck");
 Machine.add(path + "lick/effect/Ruins.ck");
 Machine.add(path + "lick/effect/Spekt.ck");
 
+// dyamic effects, package effect
+Machine.add(path + "lick/effect/DynamicEffect.ck");
+Machine.add(path + "lick/effect/Comp.ck");
+Machine.add(path + "lick/effect/Duck.ck");
+Machine.add(path + "lick/effect/Expand.ck");
+Machine.add(path + "lick/effect/Gate.ck");
+Machine.add(path + "lick/effect/Limit.ck");
+Machine.add(path + "lick/effect/Ross.ck");
+Machine.add(path + "lick/effect/Eqc.ck");
+Machine.add(path + "lick/effect/Nyc.ck");
+
 // delay stuff, package delay
 Machine.add(path + "lick/delay/Disaster.ck");
 Machine.add(path + "lick/delay/SinTrem.ck");
