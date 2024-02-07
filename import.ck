@@ -1,7 +1,7 @@
 /*
 
     LiCK  Library for ChucK.
-    Copyright (c) 2007-2023 held jointly by the individual authors.
+    Copyright (c) 2007-2024 held jointly by the individual authors.
 
     This file is part of LiCK.
 
@@ -21,7 +21,7 @@
 */
 
 <<<"LiCK  Library for ChucK.">>>;
-<<<"Copyright (c) 2007-2023 held jointly by the individual authors.">>>;
+<<<"Copyright (c) 2007-2024 held jointly by the individual authors.">>>;
 <<<"Licensed GNU General Public License (GPL), version 3 or later.">>>;
 
 // path to LiCK import.ck ...
