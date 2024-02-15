@@ -349,19 +349,23 @@ Machine.add(path + "lick/loop/LoopBuilder.ck");
 
 // sample-based drum machines, package drum
 Machine.add(path + "lick/drum/AkaiMpc60.ck");
+Machine.add(path + "lick/drum/BigMono.ck");
 Machine.add(path + "lick/drum/BossDr110.ck");
 Machine.add(path + "lick/drum/CasioSa10.ck");
 Machine.add(path + "lick/drum/ElectroHarmonixDrm15.ck");
 Machine.add(path + "lick/drum/EmuDrumulator.ck");
+Machine.add(path + "lick/drum/EstradinPulsar.ck");
+Machine.add(path + "lick/drum/KorgMs20.ck");
 Machine.add(path + "lick/drum/LellUds.ck");
+Machine.add(path + "lick/drum/LinnDrum.ck");
 Machine.add(path + "lick/drum/OberheimDmx.ck");
 Machine.add(path + "lick/drum/RolandCr78.ck");
 Machine.add(path + "lick/drum/RolandTr66.ck");
 Machine.add(path + "lick/drum/RolandTr606.ck");
+Machine.add(path + "lick/drum/RolandTr707.ck");
 Machine.add(path + "lick/drum/RolandTr808.ck");
 Machine.add(path + "lick/drum/RolandTr909.ck");
-Machine.add(path + "lick/drum/BigMono.ck");
-Machine.add(path + "lick/drum/KorgMs20.ck");
+Machine.add(path + "lick/drum/YamahaRx5.ck");
 
 // noise stuff, package noise
 Machine.add(path + "lick/noise/Pk3.ck");
