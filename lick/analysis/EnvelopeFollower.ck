@@ -45,11 +45,6 @@ public class EnvelopeFollower extends Chugraph
         spork ~ _updateAtRate();
     }
 
-    fun float last()
-    {
-        return _step.last();
-    }
-
     fun dur rate()
     {
         return _rate;
