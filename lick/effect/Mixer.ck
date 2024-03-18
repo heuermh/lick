@@ -109,7 +109,6 @@ public class Mixer extends Effect
     fun static Mixer create(int n)
     {
         ArrayList inputs;
-        inputs.size(n);
         for (0 => int i; i < n; i++)
         {
             Gain gain;
@@ -120,6 +119,7 @@ public class Mixer extends Effect
         inputs @=> mixer.inputs;
         mixer.connect();
         mixer.distribute(1.0);
+
         return mixer;
     }
 }
