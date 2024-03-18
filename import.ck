@@ -523,6 +523,7 @@ Machine.add(path + "lick/delay/ScaleSmear.ck");
 Machine.add(path + "lick/delay/Swirl.ck");
 
 // synth/osc, package synth
+Machine.add(path + "lick/synth/Banks.ck");
 Machine.add(path + "lick/synth/CircleRamp.ck");
 Machine.add(path + "lick/synth/DoublePulse.ck");
 Machine.add(path + "lick/synth/Dream.ck");
