@@ -26,11 +26,12 @@
 // https://www.nonlinearcircuits.com/modules/p/sittinginaroom
 //
 
-public class Sitting extends LfoFeedback
+public class LesserSitting extends Effect
 {
     dur _delay;
     dur _fixedDelay;
 
+    Gain pre;
     Delay delay1;
     Delay delay2;
     Delay delay3;
@@ -38,10 +39,8 @@ public class Sitting extends LfoFeedback
     Delay delay5;
     Delay delay6;
     Delay delay7;
-    Delay delay8;
-    Delay delay9;
 
-    pre => delay1 => delay2 => delay3 => delay4 => delay5 => delay6 => delay7 => delay8 => delay9 => post;
+    inlet => pre => delay1 => delay2 => delay3 => delay4 => delay5 => delay6 => delay7 => wet;
 
     Gain feedback2;
     Gain feedback3;
@@ -49,7 +48,6 @@ public class Sitting extends LfoFeedback
     Gain feedback5;
     Gain feedback6;
     Gain feedback7;
-    Gain feedback8;
 
     delay2 => feedback2 => pre;
     delay3 => feedback3 => pre;
@@ -57,8 +55,6 @@ public class Sitting extends LfoFeedback
     delay5 => feedback5 => pre;
     delay6 => feedback6 => pre;
     delay7 => feedback7 => pre;
-    delay8 => feedback8 => pre;
-    // no feedback9, is already the default feedback
 
     {
         2::second => delay1.max;
@@ -67,21 +63,15 @@ public class Sitting extends LfoFeedback
         2::second => delay4.max;
         2::second => delay5.max;
         2::second => delay6.max;
-        2::second => delay8.max;
-        2::second => delay9.max;
+        2::second => delay7.max;
 
         131::ms => delay;
         71::ms => fixedDelay;
 
-        0.2 => feedback;
-        0.0 => internalFeedback;
+        0.0 => feedback;
 
-        // default to feedback6, as original module does
-        0.6 => feedback6.gain;
-
-        smoothSampleHoldLfo();
-        0.1 => rate;
-        0.1 => depth;
+        0.6 => feedback4.gain;
+        0.4 => feedback7.gain;
     }
 
     fun dur delay()
@@ -117,8 +107,6 @@ public class Sitting extends LfoFeedback
             d => delay5.max;
             d => delay6.max;
             d => delay7.max;
-            d => delay8.max;
-            d => delay9.max;
         }
         d => delay2.delay;
         d => delay3.delay;
@@ -126,18 +114,15 @@ public class Sitting extends LfoFeedback
         d => delay5.delay;
         d => delay6.delay;
         d => delay7.delay;
-        d => delay8.delay;
-        d => delay9.delay;
         return d;
     }
 
     fun void panic()
     {
         0.0 => feedback;
-        0.0 => internalFeedback;
     }
 
-    fun float internalFeedback(float f)
+    fun float feedback(float f)
     {
         f => feedback2.gain;
         f => feedback3.gain;
@@ -145,11 +130,10 @@ public class Sitting extends LfoFeedback
         f => feedback5.gain;
         f => feedback6.gain;
         f => feedback7.gain;
-        f => feedback8.gain;
         return f;
     }
 
-    fun float oddInternalFeedback(float f)
+    fun float oddFeedback(float f)
     {
         f => feedback3.gain;
         f => feedback5.gain;
@@ -157,48 +141,36 @@ public class Sitting extends LfoFeedback
         return f;
     }
 
-    fun float evenInternalFeedback(float f)
+    fun float evenFeedback(float f)
     {
         f => feedback2.gain;
         f => feedback4.gain;
         f => feedback6.gain;
-        f => feedback8.gain;
         return f;
     }
 
-    // this class can't handle modulating delay at sample rate
-    fun void _updateAtSampleRate()
+    fun static LesserSitting create()
     {
-        while (true)
-        {
-            _lfo.last() => float d;
-            _delay + (d * _delay) => delay;
-            1::samp => now;
-        }
+        LesserSitting lesserSitting;
+        return lesserSitting;
     }
 
-    fun static Sitting create()
+    fun static LesserSitting create(dur delay, dur fixedDelay)
     {
-        Sitting sitting;
-        return sitting;
+        LesserSitting lesserSitting;
+        delay => lesserSitting.delay;
+        fixedDelay => lesserSitting.fixedDelay;
+        return lesserSitting;
     }
 
-    fun static Sitting create(dur delay, dur fixedDelay)
+    fun static LesserSitting create(dur delay, dur fixedDelay, float feedback, float evenFeedback, float oddFeedback)
     {
-        Sitting sitting;
-        delay => sitting.delay;
-        fixedDelay => sitting.fixedDelay;
-        return sitting;
-    }
-
-    fun static Sitting create(dur delay, dur fixedDelay, float feedback, float evenInternalFeedback, float oddInternalFeedback)
-    {
-        Sitting sitting;
-        delay => sitting.delay;
-        fixedDelay => sitting.fixedDelay;
-        feedback => sitting.feedback;
-        evenInternalFeedback => sitting.evenInternalFeedback;
-        oddInternalFeedback => sitting.oddInternalFeedback;
-        return sitting;
+        LesserSitting lesserSitting;
+        delay => lesserSitting.delay;
+        fixedDelay => lesserSitting.fixedDelay;
+        feedback => lesserSitting.feedback;
+        evenFeedback => lesserSitting.evenFeedback;
+        oddFeedback => lesserSitting.oddFeedback;
+        return lesserSitting;
     }
 }
