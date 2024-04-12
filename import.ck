@@ -448,6 +448,7 @@ Machine.add(path + "lick/effect/Hall.ck");
 Machine.add(path + "lick/effect/Harmonizer.ck");
 Machine.add(path + "lick/effect/Harmonizers.ck");
 Machine.add(path + "lick/effect/LoopReverb.ck");
+Machine.add(path + "lick/effect/Mary.ck");
 Machine.add(path + "lick/effect/Masa.ck");
 Machine.add(path + "lick/effect/Mesmerizer.ck");
 Machine.add(path + "lick/effect/ModulatedDelay.ck");
