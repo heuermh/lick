@@ -540,6 +540,8 @@ Machine.add(path + "lick/synth/Mdrone.ck");
 Machine.add(path + "lick/synth/Poly.ck");
 Machine.add(path + "lick/synth/SawRamp.ck");
 Machine.add(path + "lick/synth/Sauce.ck");
+Machine.add(path + "lick/synth/Strange.ck");
+Machine.add(path + "lick/synth/StrangeChorus.ck");
 Machine.add(path + "lick/synth/SubGen.ck");
 Machine.add(path + "lick/synth/SeptSubGen.ck");
 Machine.add(path + "lick/synth/VoiceOfSaturn.ck");
