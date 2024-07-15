@@ -28,6 +28,8 @@
 
 public class Strange extends Chugraph
 {
+    float _resonance;
+
     SawOsc _osc;
     BPF _a;
     BPF _b;
@@ -41,9 +43,8 @@ public class Strange extends Chugraph
     _osc => _c => _mix;
 
     {
-        32.0 => _a.Q;
-        32.0 => _b.Q;
-        32.0 => _c.Q;
+        32.0 => resonance;
+
         adsr.set(120::ms, 10::ms, 0.8, 60::ms);
 
         ee();
@@ -166,6 +167,20 @@ public class Strange extends Chugraph
     fun float freq(float f)
     {
         f => _osc.freq;
+        return f;
+    }
+
+    fun float resonance()
+    {
+        return _resonance;
+    }
+
+    fun float resonance(float f)
+    {
+        f => _resonance;
+        f => _a.Q;
+        f => _b.Q;
+        f => _c.Q;
         return f;
     }
 

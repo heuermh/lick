@@ -28,6 +28,7 @@ public class StrangeChorus extends Chugraph
 {
     float _freq;
     float _spread;
+    float _resonance;
 
     Mixer.create(16) @=> Mixer _mixer;
 
@@ -59,6 +60,7 @@ public class StrangeChorus extends Chugraph
     {
         440.0 => freq;
         0.005 => spread;
+        32.0 => resonance;
 
         _chorus.add(s0);
         _chorus.add(s1);
@@ -243,6 +245,23 @@ public class StrangeChorus extends Chugraph
     fun float spread(float f)
     {
         f => _spread;
+        return f;
+    }
+
+    fun float resonance()
+    {
+        return _resonance;
+    }
+
+    fun float resonance(float f)
+    {
+        f => _resonance;
+        _chorus.iterator() @=> Iterator iterator;
+        while (iterator.hasNext())
+        {
+            iterator.next() $ Strange @=> Strange s;
+            f => s.resonance;
+        }
         return f;
     }
 }
