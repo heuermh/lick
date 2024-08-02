@@ -567,6 +567,10 @@ Machine.add(path + "lick/snare/Snare.ck");
 // hihat synthesis, package hat
 Machine.add(path + "lick/hat/Hat.ck");
 
+// fm modulation, package fm
+Machine.add(path + "lick/fm/Fm.ck");
+Machine.add(path + "lick/fm/SelfFm.ck");
+
 // depends on LADSPA chugin, package ladspa
 Machine.add(path + "lick/ladspa/Ladspa.ck");
 
