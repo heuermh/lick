@@ -392,6 +392,8 @@ Machine.add(path + "lick/dist/KijjazDist.ck");
 Machine.add(path + "lick/dist/KijjazDist2.ck");
 Machine.add(path + "lick/dist/KijjazDist3.ck");
 Machine.add(path + "lick/dist/KijjazDist4.ck");
+Machine.add(path + "lick/dist/SoftClip.ck");
+Machine.add(path = "lick/dist/SoftLimit.ck");
 
 // cv stuff, package module
 Machine.add(path + "lick/module/Module.ck");
