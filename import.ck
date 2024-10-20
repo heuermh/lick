@@ -379,6 +379,8 @@ Machine.add(path + "lick/dist/WaveShaper.ck");
 Machine.add(path + "lick/dist/BucketBrigade.ck");
 Machine.add(path + "lick/dist/Clip.ck");
 Machine.add(path + "lick/dist/Dist.ck");
+Machine.add(path + "lick/dist/Foldr.ck");
+Machine.add(path + "lick/dist/Bitr.ck");
 Machine.add(path + "lick/dist/FullRectifier.ck");
 Machine.add(path + "lick/dist/Invert.ck");
 Machine.add(path + "lick/dist/Offset.ck");
