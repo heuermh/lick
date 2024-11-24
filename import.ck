@@ -564,6 +564,7 @@ Machine.add(path + "lick/kick/Thwok.ck");
 // snare drum synthesis, package snare
 Machine.add(path + "lick/snare/Cch.ck");
 Machine.add(path + "lick/snare/Czh.ck");
+Machine.add(path + "lick/snare/Dmch.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
 Machine.add(path + "lick/snare/Snare.ck");
