@@ -43,4 +43,15 @@ public class Chord
     {
         return unison;
     }
+
+    fun float valueAt(int i)
+    {
+        return intervalAt(i).evaluate(root);
+    }
+
+    fun Interval intervalAt(int i)
+    {
+        intervals.get(i) $ Interval @=> Interval interval;
+        return interval;
+    }
 }

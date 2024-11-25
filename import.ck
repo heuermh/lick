@@ -571,6 +571,7 @@ Machine.add(path + "lick/snare/Snare.ck");
 
 // hihat synthesis, package hat
 Machine.add(path + "lick/hat/Hat.ck");
+Machine.add(path + "lick/hat/Nks.ck");
 
 // fm modulation, package fm
 Machine.add(path + "lick/fm/Fm.ck");
