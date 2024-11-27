@@ -20,62 +20,68 @@
 
 */
 
-Cch cch => dac;
-Czh czh => dac;
-Tss tss => dac;
-Dnn dnn => dac;
-Snare snare => dac;
 
-140.0 => dnn.freq;
+Gain mix;
 
-TimeSignature.common(110) @=> TimeSignature ts;
+Cch cch => mix;
+//Czh czh => mix;
+Dmch dmch => mix;
+Dnn dnn => mix;
+Snare snare => mix;
+Tss tss => mix;
+Twkz twkz => mix;
+
+mix => dac;
+
+TimeSignature.common(120) @=> TimeSignature ts;
+
+30.0f => dmch.freqDepth;
+
+2 => twkz.bitDepth;
+4000.0f => twkz.crushRate;
 
 while (true)
 {
-    Math.random2f(0.7, 0.9) => float a;
+    Math.random2f(0.7, 1.1) => float a;
     a => cch.accent;
-    a => czh.accent;
-    a => tss.accent;
+    a => dmch.accent;
     a => dnn.accent;
     a => snare.accent;
+    a => tss.accent;
+    a => twkz.accent;
 
-    Math.random2f(30.0, 400.0) => float f;
+    Math.random2f(80.0, 220.0) => float f;
+    f => dmch.freq;
     f => dnn.freq;
     f => snare.freq;
 
     Math.random2f(0.0, 1.0) => float t;
     t => cch.tone;
-    t => czh.tone;
-    t => tss.tone;
     t => dnn.tone;
     t => snare.tone;
+    t => tss.tone;
+    t => twkz.tone;
+
+    // no tone field, specifically
+    Interpolate.linear(t, 0.0f, 1.0f, 2200.0f, 4800.0f) => dmch.noiseCutoff;
 
     Math.random2f(0.2, 0.7) => float n;
+    n => dmch.noiseMix;
+    (1.0f - n) => dmch.drumMix;
     n => dnn.noise;
     n => snare.noise;
 
-    Math.random2f(0.6, 1.0) => float c;
-    c => czh.crush;
-
-    Math.random2f(4.0, 32.0) $ int => int b;
-    b => czh.bits;
-
-    Math.random2f(2.0, 8.0) $ int => int ds;
-    ds => czh.downsample;
-
-    Math.random2f(0.3, 0.6) => float pw;
-    pw => dnn.pulseWidth;
-
-    Math.random2f(4.0, 300.0) => float mr;
-    mr => dnn.modulationRate;
-
-    Math.random2f(0.0, 1.0) * 200::ms + 80::ms => dur d;
+    Math.random2f(0.0, 1.0) * 120::ms + 80::ms => dur d;
     d => cch.decay;
-    d => czh.decay;
-    d => tss.decay;
+    d => dmch.drumDecay;
+    d - 10::ms => dmch.noiseDecay;
+    d - 20::ms => dmch.freqDecay;
     d => dnn.decay;
+    d => snare.decay;
+    d => tss.decay;
+    d => twkz.decay;
 
-    <<<"accent", a, "freq", f, "tone", t, "noise", n, "crush", c, "bits", b, "downsample", ds, "pulseWidth", pw, "modulationRate", mr, "decay", (d/1::ms), "ms">>>;
+    <<<"accent", a, "freq", f, "tone", t, "noise", n, "decay", (d/1::ms), "ms">>>;
 
     for (0 => int i; i < 4; i++)
     {
@@ -87,16 +93,8 @@ while (true)
 
     for (0 => int i; i < 4; i++)
     {
-        <<<"czh">>>;
-        czh.play();
-
-        ts.q => now;
-    }
-
-    for (0 => int i; i < 4; i++)
-    {
-        <<<"tss">>>;
-        tss.play();
+        <<<"dmch">>>;
+        dmch.play();
 
         ts.q => now;
     }
@@ -113,6 +111,22 @@ while (true)
     {
         <<<"snare">>>;
         snare.play();
+
+        ts.q => now;
+    }
+
+    for (0 => int i; i < 4; i++)
+    {
+        <<<"tss">>>;
+        tss.play();
+
+        ts.q => now;
+    }
+
+    for (0 => int i; i < 4; i++)
+    {
+        <<<"twkz">>>;
+        twkz.play();
 
         ts.q => now;
     }
