@@ -567,6 +567,7 @@ Machine.add(path + "lick/snare/Czh.ck");
 Machine.add(path + "lick/snare/Dmch.ck");
 Machine.add(path + "lick/snare/Dnn.ck");
 Machine.add(path + "lick/snare/Tss.ck");
+Machine.add(path + "lick/snare/Twkz.ck");
 Machine.add(path + "lick/snare/Snare.ck");
 
 // hihat synthesis, package hat
