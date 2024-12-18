@@ -112,6 +112,7 @@ Machine.add(path + "lick/fn/Uniform.ck");
 Machine.add(path + "lick/fn/Chance.ck");
 Machine.add(path + "lick/fn/Doom.ck");
 Machine.add(path + "lick/fn/Gaussian.ck");
+Machine.add(path + "lick/fn/Xorshift.ck");
 
 // random predicates
 Machine.add(path + "lick/fn/AlmostAlways.ck");
