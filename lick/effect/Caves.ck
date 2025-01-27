@@ -20,6 +20,10 @@
 
 */
 
+@import "Effect"
+@import "DigitalDelay"
+@import "Hall"
+
 public class Caves extends Effect {
 
     Gain _pre;

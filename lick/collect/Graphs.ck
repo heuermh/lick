@@ -20,6 +20,8 @@
 
 */
 
+@import "Graph"
+
 public class Graphs
 {
     fun static void breadthFirstSearch(Graph graph, Node node, UnaryProcedure procedure)

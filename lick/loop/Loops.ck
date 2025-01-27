@@ -20,6 +20,23 @@
 
 */
 
+@import "Append"
+@import "DurAppend"
+@import "DurPrepend"
+@import "IntAppend"
+@import "IntPrepend"
+@import "FloatAppend"
+@import "FloatPrepend"
+@import "Loop"
+@import "Prepend"
+@import "Sleep"
+@import "../duration/DurProvider"
+@import "../fn/Procedure"
+@import "../fn/DurProcedure"
+@import "../fn/IntProcedure"
+@import "../fn/FloatProcedure"
+@import "../sample/Sample"
+
 public class Loops
 {
     0::ms => static dur none;

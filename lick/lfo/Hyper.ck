@@ -20,6 +20,10 @@
 
 */
 
+@import "../dist/FullRectifier"
+@import "../dist/Invert"
+@import "../interpolate/Interpolate"
+
 class Recover extends Chugen
 {
     fun float tick(float in)

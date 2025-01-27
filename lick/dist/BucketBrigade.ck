@@ -20,6 +20,10 @@
 
 */
 
+
+@import "../fn/FloatFunction"
+@import "WaveShaper"
+
 class F extends FloatFunction
 {
     512 => static int STAGES;

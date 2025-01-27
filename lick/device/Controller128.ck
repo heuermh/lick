@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/Procedure"
+
 // receive MIDI from the Controller128 hardware
 public class Controller128
 {

@@ -20,6 +20,9 @@
 
 */
 
+@import "Predicate"
+@import "IntFunction"
+
 public class ConditionalIntFunction extends IntFunction
 {
     Predicate p;

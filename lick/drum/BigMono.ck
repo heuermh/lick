@@ -20,6 +20,11 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Samples"
+@import "../sample/VelocitySensitiveSample"
+@import "../sample/HandedSample"
+
 class BellRide extends VelocitySensitiveSample
 {
     {

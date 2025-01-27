@@ -24,6 +24,10 @@
 // pitch shifter/delay with lots of options
 //
 
+@import "Effect"
+@import "Mixer"
+@import "../lfo/Lfo"
+
 public class Breeze extends Effect
 {
     Mixer.create(5) @=> Mixer mixer;

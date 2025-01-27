@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Negate extends FloatFunction
 {
     fun float evaluate(float arg)

@@ -20,6 +20,18 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "ConditionalFloatProcedure"
+@import "FloatProcedure"
+@import "Frequently"
+@import "Infrequently"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+
 public class FloatProcedures
 {
     fun static FloatProcedure condition(Predicate p, FloatProcedure r)

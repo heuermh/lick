@@ -20,6 +20,8 @@
 
 */
 
+@import "../interpolate/Interpolate"
+
 public class TriTrem extends Chugen
 {
     TriOsc lfo;

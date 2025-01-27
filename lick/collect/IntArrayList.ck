@@ -20,6 +20,9 @@
 
 */
 
+@import "IntList"
+@import "IntListIterator"
+
 public class IntArrayList extends IntList
 {
     int values[0];

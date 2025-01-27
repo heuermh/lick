@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/IntProcedure"
+
 // emulates the TwoPots midi device
 public class TwoPots
 {

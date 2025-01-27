@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/IntProcedure"
+@import "../fn/FloatFloatProcedure"
+
 public class Joystick
 {
     Hid hid;

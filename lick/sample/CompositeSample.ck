@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "Reconnect"
+
 class CompositeSampleProcedure extends Procedure
 {
     Sample @ sample;

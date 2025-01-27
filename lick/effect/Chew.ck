@@ -20,6 +20,11 @@
 
 */
 
+@import "Effect"
+@import "../dist/WaveShaper"
+@import "../fn/FloatFunction"
+@import "../lfo/Lfo"
+
 class ChewFunction extends FloatFunction
 {
     Chew @ chew;

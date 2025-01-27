@@ -20,6 +20,9 @@
 
 */
 
+@import "../dist/Offset"
+@import "../dist/Invert"
+
 public class DoublePulse extends Chugraph
 {
     220.0 => float _freq;

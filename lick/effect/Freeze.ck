@@ -25,6 +25,10 @@
 //   buy one here http://www.ehx.com/products/freeze
 //
 
+@import "Effect"
+@import "../collect/ArrayList"
+@import "../interpolate/Constrain"
+
 public class Freeze extends Effect
 {
     8 => int _size;

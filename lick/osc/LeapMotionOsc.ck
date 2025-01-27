@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatFloatFloatProcedure"
+
 class Control
 {
     string address;

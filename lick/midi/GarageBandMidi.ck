@@ -20,6 +20,11 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+@import "NoteOnMidiMsg"
+@import "NoteOffMidiMsg"
+@import "../sim/GarageBand"
+
 class DrumKit
 {
     GarageBandMidi @ _garageBand;

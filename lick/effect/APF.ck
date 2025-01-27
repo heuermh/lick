@@ -25,6 +25,8 @@
 // http://www.spinsemi.com/knowledge_base/effects.html
 //
 
+@import "Effect"
+
 public class APF extends Effect
 {
     Gain _pre;

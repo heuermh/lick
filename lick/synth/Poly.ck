@@ -20,6 +20,8 @@
 
 */
 
+@import "../lfo/Lfo"
+
 public class Poly
 {
     Gain outputL;

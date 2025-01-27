@@ -26,6 +26,8 @@
 // https://www.nonlinearcircuits.com/modules/p/sittinginaroom
 //
 
+@import "Effect"
+
 public class LesserSitting extends Effect
 {
     dur _delay;

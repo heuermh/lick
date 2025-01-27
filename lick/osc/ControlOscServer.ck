@@ -20,6 +20,13 @@
 
 */
 
+@import "../fn/FloatFloatFloatProcedure"
+@import "../fn/FloatProcedure"
+@import "../fn/IntFloatProcedure"
+@import "../fn/IntFloatFloatProcedure"
+@import "../fn/IntIntFloatProcedure"
+@import "../collect/ArrayList"
+
 class Control
 {
     string address;

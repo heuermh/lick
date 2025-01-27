@@ -20,6 +20,8 @@
 
 */
 
+@import "../sim/SooperLooper"
+
 // interacts with SooperLooper app over OSC
 public class SooperLooperOsc extends SooperLooper
 {

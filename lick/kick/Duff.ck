@@ -25,6 +25,9 @@
 //   https://www.befaco.org/en/kickall/
 //
 
+@import "../dist/WaveShaper"
+@import "../fn/FloatFunction"
+
 class DF extends FloatFunction
 {
     float _shape;

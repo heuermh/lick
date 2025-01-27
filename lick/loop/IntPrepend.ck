@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/IntProcedure"
+
 // prepends an int procedure, g proceeded by h
 public class IntPrepend extends IntProcedure
 {

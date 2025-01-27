@@ -20,6 +20,8 @@
 
 */
 
+@import "Feedback"
+
 public class FullDouble extends Feedback
 {
     LPF _lpf1;

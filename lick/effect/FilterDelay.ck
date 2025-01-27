@@ -20,6 +20,8 @@
 
 */
 
+@import "Feedback"
+
 // analog-style delay with LPF and HPF filters on feedback loop
 public class FilterDelay extends Feedback
 {

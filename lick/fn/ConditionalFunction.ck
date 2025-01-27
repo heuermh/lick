@@ -20,6 +20,9 @@
 
 */
 
+@import "Predicate"
+@import "UnaryFunction"
+
 public class ConditionalFunction extends UnaryFunction
 {
     Predicate p;

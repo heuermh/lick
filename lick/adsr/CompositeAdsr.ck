@@ -24,6 +24,9 @@
 // abstract ADSR composed from one or more ADSRs
 //
 
+@import "AbstractAdsr"
+@import "../collect/ArrayList"
+
 public class CompositeAdsr extends AbstractAdsr
 {
     ADSR @ _adsr;

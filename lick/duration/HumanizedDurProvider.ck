@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Chance"
+@import "DurProvider"
+@import "Humanize"
+
 public class HumanizedDurProvider extends DurProvider
 {
     0.05 => float anticipation;

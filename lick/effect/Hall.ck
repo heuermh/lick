@@ -24,6 +24,8 @@
 // effect wrapper for NHHall chugin, with predelay and feedback
 //
 
+@import "LfoFeedback"
+
 public class Hall extends LfoFeedback
 {
     dur _decay;

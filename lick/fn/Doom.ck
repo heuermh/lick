@@ -24,6 +24,8 @@
 // pseudorandom generator based on DOOM source code
 //
 
+@import "Chance"
+
 public class Doom extends Chance
 {
 

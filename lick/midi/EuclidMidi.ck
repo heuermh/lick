@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/IntIntProcedure"
+@import "../collect/ArrayList"
+
 class Pattern extends IntIntProcedure
 {
     IntIntProcedure procedure;

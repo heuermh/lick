@@ -26,6 +26,8 @@
 // https://www.nonlinearcircuits.com/modules/p/sittinginaroom
 //
 
+@import "LfoFeedback"
+
 public class Sitting extends LfoFeedback
 {
     dur _delay;

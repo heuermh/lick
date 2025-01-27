@@ -20,6 +20,8 @@
 
 */
 
+@import "MidiNote"
+
 public class Tuning
 {
     MidiNote _std[6];

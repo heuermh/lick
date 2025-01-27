@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/FloatFloatProcedure"
+
 // generic USB NES controller
 public class Nes
 {

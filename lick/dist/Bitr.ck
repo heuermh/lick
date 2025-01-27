@@ -20,6 +20,8 @@
 
 */
 
+@import "Foldr"
+
 public class Bitr extends Chugen
 {
     Foldr _foldr;

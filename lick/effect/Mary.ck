@@ -24,6 +24,8 @@
 // fixed-freq wah effect with LFO modulation
 //
 
+@import "LfoEffect"
+
 public class Mary extends LfoEffect
 {
     float _freq;

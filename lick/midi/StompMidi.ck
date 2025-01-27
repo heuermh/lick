@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/Procedure"
+
 // receive MIDI from the Stomp Teensy hardware
 public class StompMidi
 {

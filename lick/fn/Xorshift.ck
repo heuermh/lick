@@ -30,6 +30,8 @@
 // https://en.wikipedia.org/wiki/Xorshift
 //
 
+@import "Chance"
+
 public class Xorshift extends Chance
 {
     [

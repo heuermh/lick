@@ -20,6 +20,10 @@
 
 */
 
+@import "Loops"
+@import "../fn/Procedure"
+@import "../fn/FloatProcedure"
+
 public class LoopBuilder
 {
     Procedure _procedure;

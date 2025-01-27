@@ -20,6 +20,11 @@
 
 */
 
+@import "Feedback"
+@import "../analysis/EnvelopeFollower"
+@import "../interpolate/Constrain"
+@import "../interpolate/Interpolate"
+
 // auto feedback attenuating analog style delay
 public class Smother extends Feedback
 {

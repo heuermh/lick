@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/DurProcedure"
+
 // prepends a dur procedure, g proceeded by h
 public class DurPrepend extends DurProcedure
 {

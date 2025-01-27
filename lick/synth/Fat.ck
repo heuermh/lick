@@ -20,6 +20,10 @@
 
 */
 
+@import "../dist/Dist"
+@import "../interval/Interval"
+@import "../interval/Intervals"
+
 public class Fat extends Chugraph
 {
     SawOsc _saw;

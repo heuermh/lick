@@ -20,6 +20,8 @@
 
 */
 
+@import "IntFunction"
+
 public class NearestPrime extends IntFunction
 {
     // todo: wish these could be static

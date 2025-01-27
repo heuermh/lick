@@ -20,6 +20,11 @@
 
 */
 
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+@import "../fn/IntIntIntProcedure"
+@import "../fn/IntIntIntIntProcedure"
+
 class Control
 {
     string address;

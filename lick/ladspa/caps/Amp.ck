@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS AmpVTS LADSPA plugin, http://quitte.de/dsp/caps.html#AmpVTS
 public class Amp extends Caps
 {

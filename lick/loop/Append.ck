@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/Procedure"
+
 // appends a procedure, g followed by h
 public class Append extends Procedure
 {

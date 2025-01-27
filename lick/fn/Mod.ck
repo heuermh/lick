@@ -20,6 +20,8 @@
 
 */
 
+@import "Predicate"
+
 public class Mod extends Predicate
 {
     0 => int _i;

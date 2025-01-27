@@ -20,6 +20,9 @@
 
 */
 
+@import "WaveShaper"
+@import "../fn/FloatFunction"
+
 // see http://electro-music.com/forum/topic-19287.html&postorder=asc
 class F extends FloatFunction
 {

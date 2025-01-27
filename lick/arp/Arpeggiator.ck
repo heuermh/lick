@@ -20,6 +20,13 @@
 
 */
 
+@import "../collect/ArrayList"
+@import "../duration/DurProvider"
+@import "../fn/FloatProcedure"
+@import "../fn/Procedure"
+@import "../interval/Chord"
+@import "Patterns"
+
 public class Arpeggiator extends Procedure
 {
     ArrayList @ intervals;

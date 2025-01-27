@@ -20,6 +20,8 @@
 
 */
 
+@import "AbstractBounce"
+
 public class BounceInOut extends AbstractBounce
 {
     fun float evaluate(float value)

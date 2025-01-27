@@ -20,6 +20,40 @@
 
 */
 
+@import "Acos"
+@import "AlmostAlways"
+@import "Asin"
+@import "Atan"
+@import "Ceil"
+@import "CoinFlip"
+@import "CompositeFloatFunction"
+@import "ConditionalFloatFunction"
+@import "Cos"
+@import "Cosh"
+@import "Exp"
+@import "FloatFunction"
+@import "Floor"
+@import "Frequently"
+@import "Identity"
+@import "Infrequently"
+@import "Inverse"
+@import "Log"
+@import "Log10"
+@import "Log2"
+@import "Mod"
+@import "Negate"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Round"
+@import "Sin"
+@import "Sinh"
+@import "Sometimes"
+@import "Sqrt"
+@import "Tan"
+@import "Tanh"
+@import "Trunc"
+
 public class FloatFunctions
 {
     fun static FloatFunction compose(FloatFunction g, FloatFunction h)

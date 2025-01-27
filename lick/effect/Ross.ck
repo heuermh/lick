@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "Comp"
+
 public class Ross extends Effect
 {
     inlet => Comp _comp => outlet;

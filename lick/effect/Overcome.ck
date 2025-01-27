@@ -20,6 +20,10 @@
 
 */
 
+@import "Effect"
+@import "AnalogDelay"
+@import "../analysis/EnvelopeFollower"
+
 public class Overcome extends Effect
 {
     EnvelopeFollower _env;

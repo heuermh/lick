@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoFeedback"
+
 // band pass filtered delay with smooth sample hold lfo
 public class Slick extends LfoFeedback
 {

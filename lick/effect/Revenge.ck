@@ -25,6 +25,9 @@
 // http://fairfieldcircuitry.com/collections/effect-pedals/products/randys-revenge
 //
 
+@import "Effect"
+@import "../lfo/Lfo"
+
 public class Revenge extends Effect
 {
     Lfo _lfo;

@@ -20,6 +20,9 @@
 
 */
 
+@import "../effect/DigitalDelay"
+@import "../interpolate/Constrain"
+
 public class BassDelay3 extends Chugraph
 {
     32 => static int VOICES;
@@ -27,7 +30,7 @@ public class BassDelay3 extends Chugraph
     0 => int _voice;
     SawOsc _pulse[VOICES];
     ADSR _adsr[VOICES];
-    MonoDelay2 _delay[VOICES];
+    DigitalDelay _delay[VOICES];
 
     1.0 => float _x;
     100::ms => dur _period;
@@ -64,6 +67,7 @@ public class BassDelay3 extends Chugraph
         {
             0 => _voice;
         }
+	return _voice;
     }
  
     fun void noteOn(float freq)
@@ -92,6 +96,7 @@ public class BassDelay3 extends Chugraph
     fun float x(float f)
     {
         Constrain.constrainf(f, 1.0, 4.0) => _x;
+	return _x;
     }
 
     fun float feedback()

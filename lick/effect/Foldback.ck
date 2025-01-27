@@ -24,6 +24,8 @@
 // effect wrapper for FoldbackSaturator chugin
 //
 
+@import "Effect"
+
 public class Foldback extends Effect
 {
     FoldbackSaturator _fold;

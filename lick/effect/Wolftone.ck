@@ -20,6 +20,11 @@
 
 */
 
+@import "Effect"
+@import "../dist/Phase"
+@import "../interval/Intervals"
+
+
 public class Wolftone extends Effect
 {
     Delay _delay;

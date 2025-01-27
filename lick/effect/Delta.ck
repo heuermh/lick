@@ -22,6 +22,9 @@
 
 // multi reverb
 
+@import "Effect"
+@import "Verb"
+
 public class Delta extends Effect {
 
    Gain _pre;

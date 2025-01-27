@@ -31,6 +31,9 @@
 // and also under the cc-by-sa 3.0 license per the Share Alike clause
 //
 
+@import "Pattern"
+@import "Patterns"
+
 public class Warp
 {
 

@@ -20,6 +20,8 @@
 
 */
 
+@import "UnaryFunction"
+
 // composite of two functions, g(h(arg))
 public class CompositeFunction extends UnaryFunction
 {

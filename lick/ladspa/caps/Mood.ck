@@ -25,6 +25,10 @@
 // buy the PCB here:  http://madbeanpedals.com/projects/index.html
 //
 
+@import "Eq"
+@import "../../dist/TanhDist"
+@import "../../interpolate/Interpolate"
+
 public class Mood extends Effect
 {
     Delay _predelay;

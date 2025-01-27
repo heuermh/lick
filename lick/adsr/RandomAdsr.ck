@@ -20,6 +20,8 @@
 
 */
 
+@import "CompositeAdsr"
+
 public class RandomAdsr extends CompositeAdsr
 {
     fun ADSR _nextAdsr()

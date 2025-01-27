@@ -20,6 +20,9 @@
 
 */
 
+@import "Predicate"
+@import "DurFunction"
+
 public class ConditionalDurFunction extends DurFunction
 {
     Predicate p;

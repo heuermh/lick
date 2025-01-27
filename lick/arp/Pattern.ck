@@ -20,6 +20,9 @@
 
 */
 
+@import "../collect/IntArrayList"
+@import "../fn/Predicate"
+
 public class Pattern extends Predicate
 {
     0 => int index;

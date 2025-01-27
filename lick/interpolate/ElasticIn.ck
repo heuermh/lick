@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class ElasticIn extends Interpolation
 {
     Math.PI * 2.0 => static float PI_TIMES_2;

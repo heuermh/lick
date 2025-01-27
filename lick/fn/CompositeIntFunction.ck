@@ -20,6 +20,8 @@
 
 */
 
+@import "IntFunction"
+
 // composite of two functions, g(h(arg))
 public class CompositeIntFunction extends IntFunction
 {

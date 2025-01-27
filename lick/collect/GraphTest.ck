@@ -20,6 +20,10 @@
 
 */
 
+@import "Graph"
+@import "Node"
+@import "../test/Assert"
+
 class GraphTest extends Assert
 {
     {

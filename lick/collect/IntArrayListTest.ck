@@ -20,6 +20,9 @@
 
 */
 
+@import "IntArrayList"
+@import "../test/Assert"
+
 class NeverTrue extends IntPredicate
 {
     // empty

@@ -20,6 +20,9 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class ClosedHat extends Sample
 {
     {

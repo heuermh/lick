@@ -24,6 +24,10 @@
 // Kick, with wave shaper, noise, sample, and drift
 //
 
+@import "../dist/WaveShaper"
+@import "../sample/Sample"
+@import "../fn/FloatFunction"
+
 class KF extends FloatFunction
 {
     float _shape;

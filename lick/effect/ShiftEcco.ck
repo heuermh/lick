@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "../duration/TimeSignature"
+
 public class ShiftEcco extends Effect
 {
     TimeSignature @ ts;

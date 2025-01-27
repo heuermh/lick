@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoEffect"
+
 // needs work ;)
 public class Vibrato extends LfoEffect
 { 

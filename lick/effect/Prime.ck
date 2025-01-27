@@ -24,6 +24,9 @@
 // prime number (in ms) delay effect
 //
 
+@import "Effect"
+@import "../fn/NearestPrime"
+
 public class Prime extends Effect
 {
     NearestPrime _p;

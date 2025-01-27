@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+
 // receive MIDI from the NanoPad hardware
 public class NanoPad
 {

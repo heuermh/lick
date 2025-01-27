@@ -20,6 +20,11 @@
 
 */
 
+@import "Iterator"
+@import "../fn/UnaryProcedure"
+@import "../fn/UnaryPredicate"
+@import "../fn/UnaryFunction"
+
 public class Set
 {
     fun int size()

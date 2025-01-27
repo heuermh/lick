@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatFunction"
+
 public class WaveShaper extends Chugen
 {
     FloatFunction shape;

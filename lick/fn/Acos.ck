@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Acos extends FloatFunction
 {
     fun float evaluate(float arg)

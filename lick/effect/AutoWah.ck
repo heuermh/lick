@@ -20,6 +20,8 @@
 
 */
 
+@import "CryBaby"
+
 public class AutoWah extends CryBaby
 {
     {

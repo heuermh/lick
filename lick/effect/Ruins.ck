@@ -27,6 +27,12 @@
 // https://www.madbeanpedals.com/projects/index.html
 //
 
+@import "LfoEffect"
+@import "Verb"
+@import "Harmonizer"
+@import "Harmonizers"
+@import "../collect/ArrayList"
+
 public class Ruins extends LfoEffect
 {
     Verb reverb;

@@ -20,6 +20,10 @@
 
 */
 
+@import "Feedback"
+@import "../analysis/EnvelopeFollower"
+@import "../noise/Pke"
+
 public class PinkDelay extends Feedback
 {
     Delay _delay;

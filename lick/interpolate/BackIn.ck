@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class BackIn extends Interpolation
 {
     fun float evaluate(float value)

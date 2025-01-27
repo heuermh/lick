@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+
 // receive MIDI from POD HD500/HD500x hardware
 public class PodHd500
 {

@@ -25,6 +25,8 @@
 // Thomas Henry's Voltage Controlled Quadrature Function Generator
 //
 
+@import "Lfo"
+
 public class Quad
 {
     Lfo lfo1;

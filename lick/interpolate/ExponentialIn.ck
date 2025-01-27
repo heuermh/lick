@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class ExponentialIn extends Interpolation
 {
     fun float evaluate(float value)

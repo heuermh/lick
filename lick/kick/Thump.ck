@@ -24,6 +24,9 @@
 // 909-ish kick, with noise
 //
 
+@import "../dist/WaveShaper"
+@import "../fn/FloatFunction"
+
 class TF extends FloatFunction
 {
     float _shape;

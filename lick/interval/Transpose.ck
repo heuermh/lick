@@ -20,6 +20,12 @@
 
 */
 
+@import "Interval"
+@import "Chord"
+@import "Chords"
+@import "Scale"
+@import "Scales"
+
 public class Transpose
 {
     fun static float transpose(float value, Interval interval)

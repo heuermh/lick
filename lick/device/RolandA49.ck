@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+
 // receive MIDI from the Roland A-49 hardware
 public class RolandA49
 {

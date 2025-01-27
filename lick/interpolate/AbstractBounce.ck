@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 // abstract class, do not use directly
 //   use concrete subclasses BounceIn, BounceOut, or BounceInOut
 public class AbstractBounce extends Interpolation

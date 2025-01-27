@@ -24,6 +24,8 @@
 // abstract effect with "outboard" feedback loop
 //
 
+@import "Effect"
+
 public class Feedback extends Effect
 {
     Gain pre;

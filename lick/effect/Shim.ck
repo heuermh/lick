@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoFeedback"
+
 public class Shim extends LfoFeedback
 {
     Delay _delay;

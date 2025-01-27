@@ -20,6 +20,19 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "CompositeIntFunction"
+@import "ConditionalIntFunction"
+@import "Frequently"
+@import "Infrequently"
+@import "IntFunction"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+
 public class IntFunctions
 {
     fun static IntFunction compose(IntFunction g, IntFunction h)

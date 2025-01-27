@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/DurProcedure"
+
 // appends a dur procedure, g followed by h
 public class DurAppend extends DurProcedure
 {

@@ -20,6 +20,9 @@
 
 */
 
+@import "Cmt"
+@import "../../interpolate/Constrain"
+
 // wrapper for CMT Lo Fi LADSPA plugin, http://www.ladspa.org/cmt/plugins.html
 public class Lofi extends Cmt
 {

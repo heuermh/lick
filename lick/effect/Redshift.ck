@@ -20,6 +20,9 @@
 
 */
 
+@import "APF"
+@import "LfoFeedback"
+
 public class Redshift extends LfoFeedback
 {
     APF _apf1;

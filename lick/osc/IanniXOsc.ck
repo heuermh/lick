@@ -20,6 +20,12 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/FloatProcedure"
+@import "../fn/FloatFloatProcedure"
+@import "../fn/FloatFloatFloatProcedure"
+@import "../fn/FloatFloatFloatFloatProcedure"
+
 class Control
 {
     float id;

@@ -25,6 +25,9 @@
 // https://malekkoheavyindustry.com/product/thicken/
 //
 
+@import "Effect"
+@import "Cee"
+
 public class Masa extends Effect
 {
     Delay _delay1;

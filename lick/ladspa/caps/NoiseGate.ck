@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS NoiseGate LADSPA plugin, http://quitte.de/dsp/caps.html#NoiseGate
 public class NoiseGate extends Caps
 {

@@ -20,6 +20,9 @@
 
 */
 
+@import "Predicate"
+@import "FloatFunction"
+
 public class ConditionalFloatFunction extends FloatFunction
 {
     Predicate p;

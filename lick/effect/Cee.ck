@@ -20,6 +20,9 @@
 
 */
 
+@import "Feedback"
+@import "../lfo/Lfo"
+
 //
 // Similar to BOSS Dimension C
 // http://www.birthofasynth.com/Scott_Stites/Images/DimC/dimc_block1.jpg

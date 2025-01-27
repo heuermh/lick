@@ -25,6 +25,9 @@
 // e.g. https://www.youtube.com/watch?v=jbmah2CPROo
 //
 
+@import "../lfo/Lfo"
+@import "../adsr/Adsr"
+
 class DreamVoice extends Chugraph
 {
     PulseOsc pulse;

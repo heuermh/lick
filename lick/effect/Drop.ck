@@ -20,6 +20,11 @@
 
 */
 
+@import "Effect"
+@import "../interval/Interval"
+@import "../interval/Intervals"
+@import "../interpolate/Interpolations"
+
 public class Drop extends Effect
 {
     20::ms => dur _rate;

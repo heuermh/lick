@@ -20,6 +20,9 @@
 
 */
 
+@import "Swh"
+@import "../../interpolate/Constrain"
+
 // wrapper for SWH Plugins Bode frequency shifter LADSPA plugin,
 //   http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#tth_sEc2.10
 public class FreqShift extends Swh

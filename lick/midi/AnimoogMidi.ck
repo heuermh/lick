@@ -20,6 +20,10 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+@import "NoteOnMidiMsg"
+@import "NoteOffMidiMsg"
+
 // interacts with the Animoog iOS app over MIDI
 public class AnimoogMidi
 {

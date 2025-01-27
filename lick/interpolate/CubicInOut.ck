@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class CubicInOut extends Interpolation
 {
     fun float evaluate(float value)

@@ -20,6 +20,8 @@
 
 */
 
+@import "Chance"
+
 public class Gaussian extends Chance
 {
     //

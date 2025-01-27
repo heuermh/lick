@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatProcedure"
+
 // appends a float procedure, g followed by h
 public class FloatAppend extends FloatProcedure
 {

@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatSupplier"
+
 public class Chance extends FloatSupplier
 {
     fun float get()

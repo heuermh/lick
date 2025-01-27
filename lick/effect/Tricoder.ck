@@ -20,6 +20,11 @@
 
 */
 
+@import "Effect"
+@import "Tremolo"
+@import "CrossOver3"
+@import "../interval/Interval"
+
 public class Tricoder extends Effect
 {
     Tremolo high;

@@ -20,6 +20,19 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "ConditionalIntProcedure"
+@import "Frequently"
+@import "Infrequently"
+@import "IntProcedure"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+
+
 public class IntProcedures
 {
     fun static IntProcedure condition(Predicate p, IntProcedure r)

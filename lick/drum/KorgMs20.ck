@@ -25,6 +25,11 @@
 // http://francispreve.blogspot.de/2013/10/free-korg-ms-20-ableton-instruments.html
 //
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+@import "../sample/AdsrSample"
+@import "../interval/Intervals"
+
 class DetunedPulse extends AdsrSample
 {
     {

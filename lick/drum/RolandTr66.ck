@@ -20,6 +20,11 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Samples"
+@import "../sample/RandomSample"
+@import "../sample/Reconnect"
+
 class ClosedHat extends RandomSample
 {
     {

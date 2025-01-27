@@ -20,6 +20,12 @@
 
 */
 
+@import "IntIterator"
+@import "IntComparator"
+@import "../fn/IntProcedure"
+@import "../fn/IntPredicate"
+@import "../fn/IntFunction"
+
 public class IntList
 {
     fun int size()

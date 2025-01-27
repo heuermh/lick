@@ -20,6 +20,9 @@
 
 */
 
+@import "AdsrSample"
+@import "HandedSample"
+
 public class Samples
 {
     fun static Sample createSample(string path)

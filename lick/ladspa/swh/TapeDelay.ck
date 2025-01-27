@@ -20,6 +20,9 @@
 
 */
 
+@import "Swh"
+@import "../../interpolate/Constrain"
+
 // wrapper for SWH Plugins Tape Delay Simulation LADSPA plugin,
 //   http://plugin.org.uk/ladspa-swh/docs/ladspa-swh.html#tth_sEc2.104
 public class TapeDelay extends Swh

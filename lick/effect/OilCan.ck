@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoFeedback"
+
 public class OilCan extends LfoFeedback
 {
     pre => Delay _shortTap => post;

@@ -25,6 +25,9 @@
 // https://www.youtube.com/watch?v=zbBY7JL9nnQ
 //
 
+@import "../interval/Chord"
+@import "../interval/Chords"
+
 public class Nks extends Chugraph
 {
     SqrOsc _noise0;

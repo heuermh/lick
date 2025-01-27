@@ -20,6 +20,9 @@
 
 */
 
+@import "../interval/Interval"
+@import "../interval/Intervals"
+
 public class IntervalFm extends Chugraph
 {
     float _carrier;

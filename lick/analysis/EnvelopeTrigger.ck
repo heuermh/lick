@@ -20,6 +20,8 @@
 
 */
 
+@import "EnvelopeFollower"
+
 public class EnvelopeTrigger
 {
     ADSR adsr;

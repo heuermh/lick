@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "Verb"
+
 // cascading reverb, dry --> short --> medium --> long
 
 public class Cascade extends Effect {

@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Trunc extends FloatFunction
 {
     fun float evaluate(float arg)

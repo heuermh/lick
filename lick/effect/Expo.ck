@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 // wrapper for ExpDelay chugin
 //   see also https://github.com/jwmatthys/chugins/blob/master/ExpDelay/expdelay-help.ck
 public class Expo extends Effect

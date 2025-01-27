@@ -20,6 +20,10 @@
 
 */
 
+@import "../dist/Clip"
+@import "../interval/Interval"
+@import "../interval/Intervals"
+
 public class Sauce extends Chugraph
 {
     SinOsc _sin;

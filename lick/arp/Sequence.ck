@@ -20,6 +20,9 @@
 
 */
 
+@import "../collect/FloatArrayList"
+@import "../fn/FloatSupplier"
+
 public class Sequence extends FloatSupplier
 {
     0 => int index;

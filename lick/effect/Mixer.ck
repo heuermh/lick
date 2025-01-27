@@ -20,6 +20,10 @@
 
 */
 
+@import "Effect"
+@import "../collect/ArrayList"
+@import "../fn/Chance"
+
 public class Mixer extends Effect
 {
     ArrayList @ inputs;

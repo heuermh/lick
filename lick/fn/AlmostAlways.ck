@@ -20,6 +20,9 @@
 
 */
 
+@import "Chance"
+@import "Predicate"
+
 public class AlmostAlways extends Predicate
 {
     Chance c;

@@ -20,6 +20,9 @@
 
 */
 
+@import "Sample"
+@import "../collect/ArrayList"
+
 public class Reconnect
 {
     fun static void reconnect(Sample sample, UGen ugen)

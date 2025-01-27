@@ -20,6 +20,9 @@
 
 */
 
+@import "FloatList"
+@import "FloatListIterator"
+
 public class FloatArrayList extends FloatList
 {
     float values[0];

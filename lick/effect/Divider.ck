@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "../dist/Offset"
+
 public class Divider extends Effect
 {
     inlet => HalfRect _rect => Offset _offset => Gain _recover => wet;

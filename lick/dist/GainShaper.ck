@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatFunction"
+
 public class GainShaper extends Chugen
 {
     FloatFunction shape;

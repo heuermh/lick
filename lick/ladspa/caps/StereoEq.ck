@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS Eq10X2 LADSPA plugin, http://quitte.de/dsp/caps.html#Eq10X2
 public class StereoEq extends Caps
 {

@@ -20,11 +20,14 @@
 
 */
 
+@import "../effect/DigitalDelay"
+@import "../adsr/Adsr"
+
 public class BassDelay2 extends Chugraph
 {
     SinOsc _pulse;
     ADSR _adsr;
-    MonoDelay2 _delay;
+    DigitalDelay _delay;
 
     0.8 => _pulse.gain;
 
@@ -74,6 +77,7 @@ public class BassDelay2 extends Chugraph
     fun float x(float f)
     {
         Math.max(1.0, f) => _x;
+	return _x;
     }
 
     fun float feedback()

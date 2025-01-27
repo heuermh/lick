@@ -20,6 +20,9 @@
 
 */
 
+@import "../interpolate/Interpolations"
+@import "../interpolate/Constrain"
+
 public class SlewStep extends Chugen
 {
     0 => int _samples;

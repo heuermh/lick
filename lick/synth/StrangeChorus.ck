@@ -24,6 +24,9 @@
 // chorus of 16 strange voices with spread
 //
 
+@import "Strange"
+@import "../effect/Mixer"
+
 public class StrangeChorus extends Chugraph
 {
     float _freq;

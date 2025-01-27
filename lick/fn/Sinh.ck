@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Sinh extends FloatFunction
 {
     fun float evaluate(float arg)

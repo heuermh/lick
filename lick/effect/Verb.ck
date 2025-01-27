@@ -24,6 +24,8 @@
 // effect wrapper for GVerb chugin, with predelay and feedback
 //
 
+@import "LfoFeedback"
+
 public class Verb extends LfoFeedback
 {
     float _early;

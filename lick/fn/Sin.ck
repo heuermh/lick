@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Sin extends FloatFunction
 {
     fun float evaluate(float arg)

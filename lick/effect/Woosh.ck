@@ -20,6 +20,10 @@
 
 */
 
+@import "Feedback"
+@import "Redshift"
+@import "../analysis/EnvelopeTrigger"
+
 public class Woosh extends Feedback
 {
     Noise _noise;

@@ -25,6 +25,10 @@
 // http://www.bartonmusicalcircuits.com/fwd/
 //
 
+@import "Effect"
+@import "../dist/FullRectifier"
+@import "../lfo/Lfo"
+
 public class DualRect extends Effect
 {
     FullRectifier _rect0;

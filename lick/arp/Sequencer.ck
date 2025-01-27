@@ -20,6 +20,11 @@
 
 */
 
+@import "../collect/FloatArrayList"
+@import "../duration/DurProvider"
+@import "../fn/Procedure"
+@import "Sequence"
+
 public class Sequencer extends Procedure
 {
     Sequence sequence;

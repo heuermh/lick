@@ -20,6 +20,13 @@
 
 */
 
+@import "Effect"
+@import "Tremolo"
+@import "../interpolate/Interpolation"
+@import "../interpolate/Interpolations"
+@import "../interval/Interval"
+@import "../interval/Intervals"
+
 public class MotelSix extends Effect
 {
     0 => static int ATTACK;

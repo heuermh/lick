@@ -20,6 +20,9 @@
 
 */
 
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+
 public class Keyboard
 {
     Hid hid;

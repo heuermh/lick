@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Identity extends FloatFunction
 {
     fun float evaluate(float arg)
