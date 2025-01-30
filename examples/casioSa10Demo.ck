@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +21,7 @@ me.exit();
 */
 
 @import "../lick/drum/CasioSa10"
+
 
 CasioSa10 casioSa10;
 casioSa10.demo();

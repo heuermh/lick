@@ -1,5 +1,3 @@
-@import "../lick/drum/RolandCr78"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/drum/RolandCr78"
 
 RolandCr78 rolandCr78;
 rolandCr78.demo();

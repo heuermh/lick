@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/interval/Chords"
 @import "../lick/effect/Harmonizers"
+@import "../lick/interval/Chords"
+
 
 Chords.majorTriad(220.0) @=> Chord majorTriad;
 

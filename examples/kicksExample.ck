@@ -1,17 +1,3 @@
-@import "../lick/interval/Scales"
-@import "../lick/sample/Samples"
-@import "../lick/duration/TimeSignature"
-@import "../lick/interval/Scale"
-@import "../lick/kick/Kick"
-@import "../lick/kick/Thud"
-@import "../lick/sample/Sample"
-@import "../lick/kick/Fwak2"
-@import "../lick/kick/Fwak"
-@import "../lick/kick/Thwok"
-@import "../lick/kick/Thump"
-@import "../lick/kick/Duff"
-@import "../lick/kick/Boom"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -33,6 +19,20 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Boom"
+@import "../lick/kick/Duff"
+@import "../lick/kick/Fwak"
+@import "../lick/kick/Fwak2"
+@import "../lick/kick/Kick"
+@import "../lick/kick/Thud"
+@import "../lick/kick/Thump"
+@import "../lick/kick/Thwok"
+@import "../lick/sample/Sample"
+@import "../lick/sample/Samples"
 
 Boom boom;
 Duff duff;

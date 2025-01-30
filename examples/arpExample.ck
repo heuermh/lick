@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,11 +20,12 @@ me.exit();
 
 */
 
-@import "../lick/duration/TimeSignature"
 @import "../lick/adsr/Adsr"
 @import "../lick/arp/Arpeggiators"
+@import "../lick/duration/TimeSignature"
 @import "../lick/interval/Chords"
 @import "../lick/loop/LoopBuilder"
+
 
 TimeSignature.common(110) @=> TimeSignature t;
 

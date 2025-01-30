@@ -1,8 +1,3 @@
-@import "../lick/loop/Loops"
-@import "../lick/interval/Chords"
-@import "../lick/fn/Procedure"
-@import "../lick/interval/Chord"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/fn/Procedure"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/loop/Loops"
 
 4 => int voices;
 

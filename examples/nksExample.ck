@@ -1,6 +1,3 @@
-@import "../lick/fn/Sometimes"
-@import "../lick/hat/Nks"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/fn/Sometimes"
+@import "../lick/hat/Nks"
 
 Nks nks => dac;
 Sometimes sometimes;

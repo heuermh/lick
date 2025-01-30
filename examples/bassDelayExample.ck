@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,9 +20,10 @@ me.exit();
 
 */
 
-@import "../lick/synth/BassDelay"
-@import "../lick/interval/Scales"
 @import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scales"
+@import "../lick/synth/BassDelay"
+
 
 BassDelay bd => dac;
 

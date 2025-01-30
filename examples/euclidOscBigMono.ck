@@ -1,6 +1,3 @@
-@import "../lick/osc/EuclidOsc"
-@import "../lick/drum/BigMono"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/drum/BigMono"
+@import "../lick/osc/EuclidOsc"
 
 BigMono bigMono;
 IntIntProcedure noop;

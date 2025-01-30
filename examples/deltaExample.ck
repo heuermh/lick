@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +21,7 @@ me.exit();
 */
 
 @import "../lick/effect/Delta"
+
 
 adc => Delta delta => dac;
 

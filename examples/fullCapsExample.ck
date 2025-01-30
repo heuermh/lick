@@ -1,11 +1,3 @@
-@import "../lick/ladspa/caps/Plate"
-@import "../lick/ladspa/caps/Scape"
-@import "../lick/ladspa/caps/Cabinet"
-@import "../lick/ladspa/caps/Amp"
-@import "../lick/ladspa/caps/Saturate"
-@import "../lick/ladspa/caps/ParametricEq"
-@import "../lick/ladspa/caps/NoiseGate"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -27,6 +19,14 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/NoiseGate"
+@import "../lick/ladspa/caps/ParametricEq"
+@import "../lick/ladspa/caps/Plate"
+@import "../lick/ladspa/caps/Saturate"
+@import "../lick/ladspa/caps/Scape"
 
 // full C*APS for electric guitar example, may bring CPU to its knees
 

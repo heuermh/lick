@@ -1,7 +1,3 @@
-@import "../lick/interval/Chords"
-@import "../lick/interval/Chord"
-@import "../lick/midi/MeeBlipMidi"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/midi/MeeBlipMidi"
 
 MeeBlipMidi meeBlip;
 meeBlip.open(1);

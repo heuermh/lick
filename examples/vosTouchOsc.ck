@@ -1,6 +1,3 @@
-@import "../lick/osc/TouchOscServer"
-@import "../lick/synth/VoiceOfSaturn"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/osc/TouchOscServer"
+@import "../lick/synth/VoiceOfSaturn"
 
 80.0 => float minPitch;
 4200.0 => float maxPitch;

@@ -1,6 +1,3 @@
-@import "../lick/drum/RolandTr606"
-@import "../lick/device/NanoPad"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/device/NanoPad"
+@import "../lick/drum/RolandTr606"
 
 NanoPad nanoPad;
 RolandTr606 rolandTr606;

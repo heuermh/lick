@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +22,7 @@ me.exit();
 
 @import "../lick/effect/Effect"
 @import "../lick/ladspa/rubberband/Rubberband"
+
 
 class DcOffset extends Chugen
 {

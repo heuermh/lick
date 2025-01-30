@@ -1,10 +1,3 @@
-@import "../lick/arp/Sequencers"
-@import "../lick/loop/Loops"
-@import "../lick/arp/Sequences"
-@import "../lick/arp/Pattern"
-@import "../lick/duration/TimeSignature"
-@import "../lick/arp/Sequence"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -26,6 +19,13 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/arp/Pattern"
+@import "../lick/arp/Sequence"
+@import "../lick/arp/Sequencers"
+@import "../lick/arp/Sequences"
+@import "../lick/duration/TimeSignature"
+@import "../lick/loop/Loops"
 
 class Msg extends FloatProcedure
 {

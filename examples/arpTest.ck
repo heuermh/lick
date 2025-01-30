@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -25,6 +24,7 @@ me.exit();
 @import "../lick/duration/TimeSignature"
 @import "../lick/interval/Chords"
 @import "../lick/loop/Loops"
+
 
 class Msg extends FloatProcedure
 {

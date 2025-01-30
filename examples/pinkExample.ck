@@ -1,8 +1,3 @@
-@import "../lick/effect/Tremolo"
-@import "../lick/delay/Swirl"
-@import "../lick/noise/Pk3"
-@import "../lick/noise/Pke"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Swirl"
+@import "../lick/effect/Tremolo"
+@import "../lick/noise/Pk3"
+@import "../lick/noise/Pke"
 
 Noise n;
 0.2 => n.gain;

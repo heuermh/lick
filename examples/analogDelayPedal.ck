@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,9 +20,10 @@ me.exit();
 
 */
 
-@import "../lick/effect/AnalogDelay"
 @import "../lick/device/StompKeyboard"
+@import "../lick/effect/AnalogDelay"
 @import "../lick/interpolate/Constrain"
+
 
 AnalogDelay delay;
 

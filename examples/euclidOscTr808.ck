@@ -1,6 +1,3 @@
-@import "../lick/osc/EuclidOsc"
-@import "../lick/drum/RolandTr808"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/drum/RolandTr808"
+@import "../lick/osc/EuclidOsc"
 
 RolandTr808 tr808;
 IntIntProcedure noop;

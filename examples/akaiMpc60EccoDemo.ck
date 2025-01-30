@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +23,7 @@ me.exit();
 @import "../lick/drum/AkaiMpc60"
 @import "../lick/duration/TimeSignature"
 @import "../lick/effect/Ecco"
+
 
 <<<"demo">>>;
 AkaiMpc60 akaiMpc60;

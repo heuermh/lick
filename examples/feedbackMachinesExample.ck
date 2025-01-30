@@ -1,8 +1,3 @@
-@import "../lick/delay/FeedbackMachines"
-@import "../lick/interval/Chords"
-@import "../lick/delay/FeedbackMachine"
-@import "../lick/interval/Chord"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
 
 BeeThree bt;
 bt.noteOff(1.0);

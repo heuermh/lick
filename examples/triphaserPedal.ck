@@ -1,7 +1,3 @@
-@import "../lick/interval/Intervals"
-@import "../lick/device/StompKeyboard"
-@import "../lick/effect/Triphaser"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Triphaser"
+@import "../lick/interval/Intervals"
 
 Triphaser triphaser;
 

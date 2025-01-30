@@ -1,5 +1,3 @@
-@import "../lick/delay/Swirl"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Swirl"
 
 SinOsc osc0;
 110.0 => osc0.freq;

@@ -1,5 +1,3 @@
-@import "../lick/midi/GarageBandMidi"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/midi/GarageBandMidi"
 
 // first open a network MIDI session to GarageBand app on iPad/iPhone
 GarageBandMidi garageBand;

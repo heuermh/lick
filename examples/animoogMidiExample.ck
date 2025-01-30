@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/midi/AnimoogMidi"
 @import "../lick/interval/Chords"
+@import "../lick/midi/AnimoogMidi"
+
 
 // first open a network MIDI session to Animoog app on iPad/iPhone
 AnimoogMidi animoog;

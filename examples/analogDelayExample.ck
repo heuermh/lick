@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,16 +20,17 @@ me.exit();
 
 */
 
-@import "../lick/dist/Dist"
 @import "../lick/dist/AtanDist"
-@import "../lick/dist/TanhDist"
-@import "../lick/dist/RibbonDist"
+@import "../lick/dist/Dist"
 @import "../lick/dist/FrostburnDist"
 @import "../lick/dist/KijjazDist"
 @import "../lick/dist/KijjazDist2"
 @import "../lick/dist/KijjazDist3"
 @import "../lick/dist/KijjazDist4"
+@import "../lick/dist/RibbonDist"
+@import "../lick/dist/TanhDist"
 @import "../lick/effect/AnalogDelay"
+
 
 Dist dist;
 AtanDist atanDist;

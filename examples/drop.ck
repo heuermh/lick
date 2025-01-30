@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +20,11 @@ me.exit();
 
 */
 
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/analysis/SigmuPitchFollower"
+@import "../lick/effect/Effect"
+@import "../lick/interval/Intervals"
+
 /*
 
    after a certian amount of time, drop the freq of pitshift from identity to some interval
@@ -29,10 +33,6 @@ me.exit();
 
  */
 
-@import "../lick/interval/Intervals"
-@import "../lick/analysis/SigmuGainFollower"
-@import "../lick/analysis/SigmuPitchFollower"
-@import "../lick/effect/Effect"
 
 class GainReset extends FloatProcedure
 {

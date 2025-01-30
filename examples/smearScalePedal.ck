@@ -1,9 +1,3 @@
-@import "../lick/interpolate/Constrain"
-@import "../lick/interval/Scales"
-@import "../lick/device/StompKeyboard"
-@import "../lick/delay/Smear"
-@import "../lick/interval/Scale"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -25,6 +19,12 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Smear"
+@import "../lick/device/StompKeyboard"
+@import "../lick/interpolate/Constrain"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
 
 0 => int interval;
 440.0 => float root;

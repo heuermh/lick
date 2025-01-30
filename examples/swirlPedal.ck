@@ -1,6 +1,3 @@
-@import "../lick/device/StompKeyboard"
-@import "../lick/delay/Swirl"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Swirl"
+@import "../lick/device/StompKeyboard"
 
 SinOsc lfo0;
 0.3 => lfo0.freq;

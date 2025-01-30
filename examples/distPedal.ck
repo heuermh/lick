@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +20,13 @@ me.exit();
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/dist/AtanDist"
+@import "../lick/dist/Clip"
+@import "../lick/dist/Dist"
+@import "../lick/dist/FrostBurnDist"
+@import "../lick/dist/TanhDist"
+
 /*
                                                    5
   >-- in --+-- Gain dry --------------------------------+-- out -->
@@ -37,12 +43,6 @@ me.exit();
 
 */
 
-@import "../lick/dist/Clip"
-@import "../lick/dist/Dist"
-@import "../lick/dist/AtanDist"
-@import "../lick/dist/TanhDist"
-@import "../lick/dist/FrostBurnDist"
-@import "../lick/device/StompKeyboard"
 
 adc => Gain in;
 Gain out => dac;

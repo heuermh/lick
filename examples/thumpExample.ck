@@ -1,8 +1,3 @@
-@import "../lick/interval/Scales"
-@import "../lick/duration/TimeSignature"
-@import "../lick/interval/Scale"
-@import "../lick/kick/Thump"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Thump"
 
 Thump thump;
 

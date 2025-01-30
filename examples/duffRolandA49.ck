@@ -1,7 +1,3 @@
-@import "../lick/interpolate/Interpolate"
-@import "../lick/device/RolandA49"
-@import "../lick/kick/Duff"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/device/RolandA49"
+@import "../lick/interpolate/Interpolate"
+@import "../lick/kick/Duff"
 
 Duff duff => dac;
 RolandA49 keyboard;

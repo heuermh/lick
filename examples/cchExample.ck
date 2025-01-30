@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/snare/Cch"
 @import "../lick/duration/TimeSignature"
+@import "../lick/snare/Cch"
+
 
 Cch cch => dac;
 

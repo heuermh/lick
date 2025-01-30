@@ -1,6 +1,3 @@
-@import "../lick/effect/Effect"
-@import "../lick/dist/TanhDist"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/dist/TanhDist"
+@import "../lick/effect/Effect"
 
 class DcOffset extends Chugen
 {

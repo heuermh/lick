@@ -1,8 +1,3 @@
-@import "../lick/interval/Scales"
-@import "../lick/midi/TwoPotsMidi"
-@import "../lick/interval/Scale"
-@import "../lick/synth/SeptSubGen"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/midi/TwoPotsMidi"
+@import "../lick/synth/SeptSubGen"
 
 1::second => now;
 

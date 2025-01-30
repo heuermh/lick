@@ -1,9 +1,3 @@
-@import "../lick/ladspa/caps/Cabinet"
-@import "../lick/ladspa/caps/Amp"
-@import "../lick/effect/AnalogDelay"
-@import "../lick/effect/Tremolo"
-@import "../lick/ladspa/caps/NoiseGate"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -25,6 +19,12 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/effect/AnalogDelay"
+@import "../lick/effect/Tremolo"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/NoiseGate"
 
 adc => NoiseGate noiseGate => Tremolo tremolo => AnalogDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 

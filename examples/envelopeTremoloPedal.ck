@@ -1,7 +1,3 @@
-@import "../lick/interpolate/Constrain"
-@import "../lick/device/StompKeyboard"
-@import "../lick/effect/EnvelopeTremolo"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/EnvelopeTremolo"
+@import "../lick/interpolate/Constrain"
 
 EnvelopeTremolo envelopeTremolo;
 

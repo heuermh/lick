@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,17 +20,18 @@ me.exit();
 
 */
 
-@import "../lick/duration/TimeSignature"
+@import "../lick/dist/AtanDist"
 @import "../lick/dist/Clip"
 @import "../lick/dist/Dist"
-@import "../lick/dist/AtanDist"
-@import "../lick/dist/TanhDist"
-@import "../lick/dist/RibbonDist"
 @import "../lick/dist/FrostBurnDist"
 @import "../lick/dist/KijjazDist"
 @import "../lick/dist/KijjazDist2"
 @import "../lick/dist/KijjazDist3"
 @import "../lick/dist/KijjazDist4"
+@import "../lick/dist/RibbonDist"
+@import "../lick/dist/TanhDist"
+@import "../lick/duration/TimeSignature"
+
 
 TimeSignature.common(200) @=> TimeSignature t;
 

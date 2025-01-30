@@ -1,5 +1,3 @@
-@import "../lick/drum/KorgMs20"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/drum/KorgMs20"
 
 KorgMs20 korgMs20;
 korgMs20.demo();

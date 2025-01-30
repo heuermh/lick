@@ -1,6 +1,3 @@
-@import "../lick/device/StompKeyboard"
-@import "../lick/delay/Smear"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Smear"
+@import "../lick/device/StompKeyboard"
 
 8 => int z;
 0.8 => float m;

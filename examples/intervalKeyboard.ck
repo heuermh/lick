@@ -1,8 +1,3 @@
-@import "../lick/interval/Intervals"
-@import "../lick/device/Keyboard"
-@import "../lick/interval/Interval"
-@import "../lick/collect/ArrayList"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/collect/ArrayList"
+@import "../lick/device/Keyboard"
+@import "../lick/interval/Interval"
+@import "../lick/interval/Intervals"
 
 BeeThree bt => dac;
 440 => bt.freq;

@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,9 +20,10 @@ me.exit();
 
 */
 
-@import "../lick/kick/Boom"
-@import "../lick/interval/Scales"
 @import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Boom"
+
 
 Boom boom => dac;
 

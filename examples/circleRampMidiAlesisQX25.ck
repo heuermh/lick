@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,10 +20,11 @@ me.exit();
 
 */
 
-@import "../lick/synth/CircleRamp"
+@import "../lick/device/AlesisQX25"
 @import "../lick/ladspa/caps/Saturate"
 @import "../lick/ladspa/tap/TubeWarmth"
-@import "../lick/device/AlesisQX25"
+@import "../lick/synth/CircleRamp"
+
 
 CircleRamp circleRamp => Saturate saturate => TubeWarmth tubeWarmth => dac;
 

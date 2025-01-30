@@ -1,5 +1,3 @@
-@import "../lick/fm/Fm"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/fm/Fm"
 
 Fm fm => dac;
 

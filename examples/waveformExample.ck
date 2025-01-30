@@ -1,7 +1,3 @@
-@import "../lick/interval/Chords"
-@import "../lick/interval/Chord"
-@import "../lick/duration/TimeSignature"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
 
 // download waveforms from http://www.adventurekid.se/AKRT
 

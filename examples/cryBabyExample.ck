@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -28,6 +27,7 @@ me.exit();
 // https://ccrma.stanford.edu/realsimple/faust_strings/faust_strings.pdf
 
 @import "../lick/effect/CryBaby"
+
 
 // OK, now let's test this baby!!
 SndBuf s => CryBaby myWah => dac;

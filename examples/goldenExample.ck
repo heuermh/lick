@@ -1,6 +1,3 @@
-@import "../lick/effect/Golden"
-@import "../lick/duration/TimeSignature"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Golden"
 
 TimeSignature.common(110) @=> TimeSignature ts;
 Golden.goldenEighths(ts) @=> Golden golden;

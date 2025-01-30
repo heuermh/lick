@@ -1,10 +1,3 @@
-@import "../lick/interval/Scales"
-@import "../lick/sample/Samples"
-@import "../lick/duration/TimeSignature"
-@import "../lick/interval/Scale"
-@import "../lick/kick/Kick"
-@import "../lick/sample/Sample"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -26,6 +19,13 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Kick"
+@import "../lick/sample/Sample"
+@import "../lick/sample/Samples"
 
 // noise sample
 Samples.createSample("samples/AkaiMpc60/OpenHat.wav") @=> Sample sample;

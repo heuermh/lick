@@ -1,7 +1,3 @@
-@import "../lick/delay/FeedbackMachines"
-@import "../lick/device/StompKeyboard"
-@import "../lick/delay/FeedbackMachine"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +19,10 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/device/StompKeyboard"
 
 GVerb gverb;
 

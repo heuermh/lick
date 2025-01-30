@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +23,7 @@ me.exit();
 @import "../lick/duration/TimeSignature"
 @import "../lick/interval/Chords"
 @import "../lick/synth/Dream"
+
 
 Dream dream => NRev reverb => dac;
 

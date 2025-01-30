@@ -1,10 +1,3 @@
-@import "../lick/interval/Scales"
-@import "../lick/duration/TimeSignature"
-@import "../lick/interval/Scale"
-@import "../lick/effect/Revenge"
-@import "../lick/effect/Tremolo"
-@import "../lick/lfo/Lfo"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -26,6 +19,13 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Revenge"
+@import "../lick/effect/Tremolo"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/lfo/Lfo"
 
 class SubOsc
 {

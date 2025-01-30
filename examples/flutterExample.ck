@@ -1,6 +1,3 @@
-@import "../lick/ladspa/caps/Princeton"
-@import "../lick/effect/Flutter"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +19,9 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/effect/Flutter"
+@import "../lick/ladspa/caps/Princeton"
 
 adc => Flutter flutter => Princeton princeton => dac;
 

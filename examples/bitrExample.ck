@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -23,6 +22,7 @@ me.exit();
 
 @import "../lick/dist/Bitr"
 @import "../lick/lfo/Lfo"
+
 
 Bitr bitr;
 

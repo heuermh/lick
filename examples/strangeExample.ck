@@ -1,8 +1,3 @@
-@import "../lick/interval/Chords"
-@import "../lick/interval/Chord"
-@import "../lick/duration/TimeSignature"
-@import "../lick/synth/Strange"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/synth/Strange"
 
 Strange strange => dac;
 

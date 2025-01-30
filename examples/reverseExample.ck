@@ -1,5 +1,3 @@
-@import "../lick/effect/Reverse"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,6 +19,8 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/effect/Reverse"
 
 Reverse.create(2000::ms) @=> Reverse reverse;
 

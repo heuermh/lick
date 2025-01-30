@@ -1,8 +1,3 @@
-@import "../lick/interpolate/Constrain"
-@import "../lick/device/StompKeyboard"
-@import "../lick/delay/Trem"
-@import "../lick/duration/TimeSignature"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -24,6 +19,11 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/delay/Trem"
+@import "../lick/device/StompKeyboard"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interpolate/Constrain"
 
 TimeSignature.common(98) @=> TimeSignature ts;
 

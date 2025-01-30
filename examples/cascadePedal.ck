@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/effect/Cascade"
 @import "../lick/device/StompKeyboard"
+@import "../lick/effect/Cascade"
+
 
 adc => Cascade cascade => dac;
 

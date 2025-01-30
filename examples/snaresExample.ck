@@ -1,11 +1,3 @@
-@import "../lick/duration/TimeSignature"
-@import "../lick/snare/Twkz"
-@import "../lick/snare/Tss"
-@import "../lick/snare/Snare"
-@import "../lick/snare/Dnn"
-@import "../lick/snare/Dmch"
-@import "../lick/snare/Cch"
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -27,6 +19,14 @@ me.exit();
     along with LiCK.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+@import "../lick/duration/TimeSignature"
+@import "../lick/snare/Cch"
+@import "../lick/snare/Dmch"
+@import "../lick/snare/Dnn"
+@import "../lick/snare/Snare"
+@import "../lick/snare/Tss"
+@import "../lick/snare/Twkz"
 
 
 Gain mix;

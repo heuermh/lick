@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/effect/Effect"
 @import "../lick/analysis/PitchFollower"
+@import "../lick/effect/Effect"
+
 
 class OctavesDown extends FloatProcedure
 {

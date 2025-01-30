@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,11 +20,12 @@ me.exit();
 
 */
 
-@import "../lick/arp/Patterns"
-@import "../lick/interval/Chords"
-@import "../lick/duration/TimeSignature"
-@import "../lick/loop/Loops"
 @import "../lick/arp/Arpeggiators"
+@import "../lick/arp/Patterns"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chords"
+@import "../lick/loop/Loops"
+
 
 class FloatMsg extends FloatProcedure
 {

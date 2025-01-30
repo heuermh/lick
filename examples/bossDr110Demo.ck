@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -22,6 +21,7 @@ me.exit();
 */
 
 @import "../lick/drum/BossDr110"
+
 
 BossDr110 bossDr110;
 bossDr110.demo();

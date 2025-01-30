@@ -1,4 +1,3 @@
-me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -21,8 +20,9 @@ me.exit();
 
 */
 
-@import "../lick/drum/RolandTr808"
 @import "../lick/device/Controller128"
+@import "../lick/drum/RolandTr808"
+
 
 RolandTr808 tr808;
 Controller128 controller128;
