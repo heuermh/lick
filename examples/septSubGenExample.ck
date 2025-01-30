@@ -1,3 +1,5 @@
+@import "../lick/synth/SeptSubGen"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

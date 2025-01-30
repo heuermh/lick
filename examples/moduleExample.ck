@@ -1,3 +1,6 @@
+@import "../lick/interpolate/Interpolate"
+@import "../lick/module/Module"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

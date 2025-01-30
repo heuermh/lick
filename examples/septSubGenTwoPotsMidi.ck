@@ -1,3 +1,8 @@
+@import "../lick/interval/Scales"
+@import "../lick/midi/TwoPotsMidi"
+@import "../lick/interval/Scale"
+@import "../lick/synth/SeptSubGen"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

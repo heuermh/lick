@@ -1,3 +1,6 @@
+@import "../lick/osc/ControlOscServer"
+@import "../lick/interval/Intervals"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/drum/RolandTr606"
+@import "../lick/device/NanoPad"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

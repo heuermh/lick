@@ -1,3 +1,5 @@
+@import "../lick/analysis/EnvelopeTrigger"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

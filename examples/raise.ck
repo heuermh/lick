@@ -1,3 +1,9 @@
+@import "../lick/interval/Intervals"
+@import "../lick/effect/Effect"
+@import "../lick/analysis/SigmuPitchFollower"
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/interval/Interval"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

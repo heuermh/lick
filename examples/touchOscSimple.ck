@@ -1,3 +1,5 @@
+@import "../lick/osc/TouchOscServer"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

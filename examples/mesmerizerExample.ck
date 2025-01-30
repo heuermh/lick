@@ -1,3 +1,5 @@
+@import "../lick/effect/Mesmerizer"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

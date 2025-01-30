@@ -1,3 +1,7 @@
+@import "../lick/device/Monome"
+@import "../lick/drum/RolandTr909"
+@import "../lick/sample/Sample"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

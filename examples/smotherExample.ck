@@ -1,3 +1,5 @@
+@import "../lick/effect/Smother"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

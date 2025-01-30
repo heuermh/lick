@@ -1,3 +1,10 @@
+@import "../lick/interval/Scales"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/effect/Revenge"
+@import "../lick/effect/Tremolo"
+@import "../lick/lfo/Lfo"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

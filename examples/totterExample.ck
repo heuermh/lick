@@ -1,3 +1,5 @@
+@import "../lick/effect/Totter"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/osc/EuclidOsc"
+@import "../lick/drum/BigMono"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

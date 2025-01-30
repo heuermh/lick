@@ -1,3 +1,5 @@
+@import "../lick/effect/MotelSix"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

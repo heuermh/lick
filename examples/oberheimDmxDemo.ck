@@ -1,3 +1,5 @@
+@import "../lick/drum/OberheimDmx"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/effect/PinkDelay"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

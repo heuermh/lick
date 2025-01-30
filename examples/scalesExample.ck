@@ -1,3 +1,11 @@
+@import "../lick/arp/Arpeggiators"
+@import "../lick/interval/Scales"
+@import "../lick/loop/LoopBuilder"
+@import "../lick/interval/Scale"
+@import "../lick/delay/SinTrem"
+@import "../lick/dist/Dist"
+@import "../lick/duration/TimeSignature"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

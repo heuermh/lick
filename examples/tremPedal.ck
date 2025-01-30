@@ -1,3 +1,8 @@
+@import "../lick/interpolate/Constrain"
+@import "../lick/device/StompKeyboard"
+@import "../lick/delay/Trem"
+@import "../lick/duration/TimeSignature"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/device/KorgSq64"
+@import "../lick/drum/RolandTr808"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

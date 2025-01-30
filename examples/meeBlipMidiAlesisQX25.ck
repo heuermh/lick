@@ -1,3 +1,6 @@
+@import "../lick/device/AlesisQX25"
+@import "../lick/midi/MeeBlipMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

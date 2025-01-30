@@ -1,3 +1,5 @@
+@import "../lick/midi/EuclidMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

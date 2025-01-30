@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Mary"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

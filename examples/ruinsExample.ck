@@ -1,3 +1,5 @@
+@import "../lick/effect/Ruins"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

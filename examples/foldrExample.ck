@@ -1,3 +1,5 @@
+@import "../lick/dist/Foldr"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

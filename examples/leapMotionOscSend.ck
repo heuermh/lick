@@ -1,3 +1,5 @@
+@import "../lick/interpolate/Constrain"
+me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -131,4 +133,3 @@ while (true)
     updateCoords();
     20::ms => now;
 }
-

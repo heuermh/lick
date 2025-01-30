@@ -1,3 +1,8 @@
+@import "../lick/effect/Tremolo"
+@import "../lick/delay/Swirl"
+@import "../lick/noise/Pk3"
+@import "../lick/noise/Pke"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

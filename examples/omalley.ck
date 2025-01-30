@@ -1,3 +1,7 @@
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/effect/DigitalDelay"
+me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -91,10 +95,10 @@ class Phase extends Chugen
     }
 }
 
-in0 => Phase phase0 => MonoDelay2 delay0 => Amp amp0 => Cabinet cabinet0 => GVerb gverb0 => out0;
-in1 => Phase phase1 => MonoDelay2 delay1 => Amp amp1 => Cabinet cabinet1 => GVerb gverb1 => out1;
-in2 => Phase phase2 => MonoDelay2 delay2 => Amp amp2 => Cabinet cabinet2 => GVerb gverb2 => out2;
-in3 => Phase phase3 => MonoDelay2 delay3 => Amp amp3 => Cabinet cabinet3 => GVerb gverb3 => out3;
+in0 => Phase phase0 => DigitalDelay delay0 => Amp amp0 => Cabinet cabinet0 => GVerb gverb0 => out0;
+in1 => Phase phase1 => DigitalDelay delay1 => Amp amp1 => Cabinet cabinet1 => GVerb gverb1 => out1;
+in2 => Phase phase2 => DigitalDelay delay2 => Amp amp2 => Cabinet cabinet2 => GVerb gverb2 => out2;
+in3 => Phase phase3 => DigitalDelay delay3 => Amp amp3 => Cabinet cabinet3 => GVerb gverb3 => out3;
 
 phase1.invert();
 phase3.invert();

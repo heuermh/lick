@@ -1,3 +1,5 @@
+@import "../lick/effect/Ghost"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

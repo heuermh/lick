@@ -1,3 +1,6 @@
+@import "../lick/duration/TimeSignature"
+@import "../lick/hat/Hat"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/fm/SelfFm"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/effect/TimeModulator"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/midi/GarageBandMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

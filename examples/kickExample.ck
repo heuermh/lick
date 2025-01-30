@@ -1,3 +1,10 @@
+@import "../lick/interval/Scales"
+@import "../lick/sample/Samples"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/kick/Kick"
+@import "../lick/sample/Sample"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

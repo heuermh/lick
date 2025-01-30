@@ -1,3 +1,7 @@
+@import "../lick/interval/Chords"
+@import "../lick/interval/Chord"
+@import "../lick/midi/MeeBlipMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

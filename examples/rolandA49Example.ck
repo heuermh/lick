@@ -1,3 +1,5 @@
+@import "../lick/device/RolandA49"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

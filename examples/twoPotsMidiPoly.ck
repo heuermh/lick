@@ -1,3 +1,6 @@
+@import "../lick/midi/TwoPotsMidi"
+@import "../lick/synth/Poly"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

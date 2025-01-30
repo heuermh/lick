@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Vibrato"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

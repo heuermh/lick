@@ -1,3 +1,7 @@
+@import "../lick/interval/Chords"
+@import "../lick/interval/Chord"
+@import "../lick/fm/IntervalFm"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

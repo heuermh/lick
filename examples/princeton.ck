@@ -1,3 +1,9 @@
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/effect/AnalogDelay"
+@import "../lick/effect/Tremolo"
+@import "../lick/ladspa/caps/NoiseGate"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

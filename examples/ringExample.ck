@@ -1,3 +1,5 @@
+@import "../lick/effect/Ring"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

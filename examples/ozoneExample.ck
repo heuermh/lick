@@ -1,3 +1,5 @@
+@import "../lick/device/MAudioOzone"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

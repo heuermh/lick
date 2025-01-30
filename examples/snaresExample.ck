@@ -1,3 +1,11 @@
+@import "../lick/duration/TimeSignature"
+@import "../lick/snare/Twkz"
+@import "../lick/snare/Tss"
+@import "../lick/snare/Snare"
+@import "../lick/snare/Dnn"
+@import "../lick/snare/Dmch"
+@import "../lick/snare/Cch"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

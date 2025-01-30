@@ -1,3 +1,5 @@
+@import "../lick/osc/LeapMotionOsc"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/effect/Verb"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

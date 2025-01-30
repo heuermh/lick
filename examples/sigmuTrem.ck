@@ -1,3 +1,10 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/effect/DigitalDelay"
+@import "../lick/effect/Tremolo"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

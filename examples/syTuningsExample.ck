@@ -1,3 +1,5 @@
+@import "../lick/tuning/SYTunings"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/effect/RecoveryDelay"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

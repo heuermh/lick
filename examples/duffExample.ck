@@ -1,3 +1,5 @@
+@import "../lick/kick/Duff"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

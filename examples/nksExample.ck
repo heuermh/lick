@@ -1,3 +1,6 @@
+@import "../lick/fn/Sometimes"
+@import "../lick/hat/Nks"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

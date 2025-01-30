@@ -1,3 +1,5 @@
+@import "../lick/effect/Glider"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

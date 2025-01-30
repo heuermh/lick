@@ -1,3 +1,7 @@
+@import "../lick/interval/Intervals"
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Tricoder"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

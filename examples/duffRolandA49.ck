@@ -1,3 +1,7 @@
+@import "../lick/interpolate/Interpolate"
+@import "../lick/device/RolandA49"
+@import "../lick/kick/Duff"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

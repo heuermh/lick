@@ -1,3 +1,7 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Electoronic"
+@import "../lick/duration/TimeSignature"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

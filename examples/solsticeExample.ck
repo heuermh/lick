@@ -1,3 +1,5 @@
+@import "../lick/effect/Solstice"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

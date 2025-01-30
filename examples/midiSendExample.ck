@@ -1,3 +1,7 @@
+@import "../lick/midi/ControlChangeMidiMsg"
+@import "../lick/midi/NoteOffMidiMsg"
+@import "../lick/midi/NoteOnMidiMsg"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

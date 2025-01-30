@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/FullDouble"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

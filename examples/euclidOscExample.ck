@@ -1,3 +1,5 @@
+@import "../lick/osc/EuclidOsc"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

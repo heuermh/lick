@@ -1,3 +1,5 @@
+@import "../lick/osc/IanniXOsc"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

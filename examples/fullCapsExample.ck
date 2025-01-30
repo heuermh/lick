@@ -1,3 +1,11 @@
+@import "../lick/ladspa/caps/Plate"
+@import "../lick/ladspa/caps/Scape"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Saturate"
+@import "../lick/ladspa/caps/ParametricEq"
+@import "../lick/ladspa/caps/NoiseGate"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

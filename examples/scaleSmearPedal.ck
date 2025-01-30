@@ -1,3 +1,8 @@
+@import "../lick/interval/Scales"
+@import "../lick/device/StompKeyboard"
+@import "../lick/delay/ScaleSmear"
+@import "../lick/interval/Scale"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

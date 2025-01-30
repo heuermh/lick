@@ -1,3 +1,5 @@
+@import "../lick/lfo/SampleHold"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

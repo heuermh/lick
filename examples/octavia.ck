@@ -1,3 +1,6 @@
+@import "../lick/effect/Effect"
+@import "../lick/dist/TanhDist"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

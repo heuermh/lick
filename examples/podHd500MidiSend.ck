@@ -1,3 +1,5 @@
+@import "../lick/midi/PodHd500Midi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,5 @@
+@import "../lick/sim/MeeBlip"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

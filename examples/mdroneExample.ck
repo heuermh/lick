@@ -1,3 +1,6 @@
+@import "../lick/lfo/Lfo"
+@import "../lick/synth/Mdrone"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

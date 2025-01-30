@@ -1,3 +1,5 @@
+@import "../lick/effect/Presence"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

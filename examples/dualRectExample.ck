@@ -1,3 +1,5 @@
+@import "../lick/effect/DualRect"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Glider"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

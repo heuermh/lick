@@ -1,3 +1,5 @@
+@import "../lick/filter/SVF"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

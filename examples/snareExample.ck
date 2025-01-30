@@ -1,3 +1,6 @@
+@import "../lick/duration/TimeSignature"
+@import "../lick/snare/Snare"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

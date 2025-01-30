@@ -1,3 +1,5 @@
+@import "../lick/analysis/EnvelopeFollower"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

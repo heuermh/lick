@@ -1,3 +1,7 @@
+@import "../lick/interpolate/Constrain"
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Totter"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

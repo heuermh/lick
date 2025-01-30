@@ -1,3 +1,5 @@
+@import "../lick/device/Nes"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

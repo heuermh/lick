@@ -1,3 +1,4 @@
+me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -42,7 +43,7 @@ class BlueBox4 extends Effect
     Gain twoOctavesDown;
 
     1.0 => rubberBand.mix;
-    -1.0 => rubberBand.octave;
+    -1.0 => rubberBand.octaves;
 
     1.0 => pre.gain;
     1.0 => post.gain;
@@ -51,7 +52,7 @@ class BlueBox4 extends Effect
 
     inlet => halfRect => dcOffset => pre;
     pre => octaveDown => post;
-    pre => pitchShift => twoOctavesDown => post;
+    // pre => pitchShift => twoOctavesDown => post;
     post => wet;
 }
 

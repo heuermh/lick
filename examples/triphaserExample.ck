@@ -1,3 +1,6 @@
+@import "../lick/interval/Intervals"
+@import "../lick/effect/Triphaser"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

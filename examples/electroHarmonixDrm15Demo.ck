@@ -1,3 +1,5 @@
+@import "../lick/drum/ElectroHarmonixDrm15"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/device/Keyboard"
+@import "../lick/synth/VoiceOfSaturn"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

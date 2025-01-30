@@ -1,3 +1,5 @@
+@import "../lick/effect/Reverse"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

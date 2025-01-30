@@ -1,3 +1,7 @@
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/device/StompKeyboard"
+@import "../lick/delay/FeedbackMachine"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

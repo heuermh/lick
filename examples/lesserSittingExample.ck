@@ -1,3 +1,5 @@
+@import "../lick/effect/LesserSitting"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

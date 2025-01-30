@@ -1,3 +1,6 @@
+@import "../lick/device/Keyboard"
+@import "../lick/drum/BossDr110"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

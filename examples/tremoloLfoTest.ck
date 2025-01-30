@@ -1,3 +1,5 @@
+@import "../lick/effect/Tremolo"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

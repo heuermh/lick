@@ -1,3 +1,8 @@
+@import "../lick/loop/Loops"
+@import "../lick/interval/Chords"
+@import "../lick/fn/Procedure"
+@import "../lick/interval/Chord"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

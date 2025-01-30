@@ -1,3 +1,5 @@
+@import "../lick/effect/Shim"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

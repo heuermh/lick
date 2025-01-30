@@ -1,3 +1,4 @@
+me.exit();
 /*
 
     LiCK  Library for ChucK.

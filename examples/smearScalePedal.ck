@@ -1,3 +1,9 @@
+@import "../lick/interpolate/Constrain"
+@import "../lick/interval/Scales"
+@import "../lick/device/StompKeyboard"
+@import "../lick/delay/Smear"
+@import "../lick/interval/Scale"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

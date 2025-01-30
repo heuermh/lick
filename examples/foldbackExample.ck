@@ -1,3 +1,5 @@
+@import "../lick/effect/Foldback"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

@@ -1,3 +1,6 @@
+@import "../lick/ladspa/caps/Princeton"
+@import "../lick/effect/Flutter"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

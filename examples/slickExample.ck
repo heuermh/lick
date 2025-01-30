@@ -1,3 +1,5 @@
+@import "../lick/effect/Slick"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

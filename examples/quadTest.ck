@@ -1,3 +1,5 @@
+@import "../lick/lfo/Quad"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

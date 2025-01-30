@@ -1,3 +1,5 @@
+@import "../lick/effect/EchoArray"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

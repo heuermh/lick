@@ -1,3 +1,8 @@
+@import "../lick/interval/Intervals"
+@import "../lick/device/Keyboard"
+@import "../lick/interval/Interval"
+@import "../lick/collect/ArrayList"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

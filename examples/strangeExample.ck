@@ -1,3 +1,8 @@
+@import "../lick/interval/Chords"
+@import "../lick/interval/Chord"
+@import "../lick/duration/TimeSignature"
+@import "../lick/synth/Strange"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

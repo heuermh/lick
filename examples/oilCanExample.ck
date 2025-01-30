@@ -1,3 +1,5 @@
+@import "../lick/effect/OilCan"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

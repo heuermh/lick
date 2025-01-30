@@ -1,3 +1,8 @@
+@import "../lick/effect/Harmonizers"
+@import "../lick/interval/Scales"
+@import "../lick/effect/Harmonizer"
+@import "../lick/interval/Scale"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

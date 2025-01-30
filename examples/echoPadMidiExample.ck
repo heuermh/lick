@@ -1,3 +1,5 @@
+@import "../lick/midi/EchoPadMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

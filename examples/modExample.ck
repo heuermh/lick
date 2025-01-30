@@ -1,3 +1,5 @@
+@import "../lick/fn/Mod"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

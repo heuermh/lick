@@ -1,3 +1,5 @@
+@import "../lick/effect/Masa"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

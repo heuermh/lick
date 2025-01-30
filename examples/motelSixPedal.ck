@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/MotelSix"
+me.exit();
 /*
 
     LiCK  Library for ChucK.
@@ -95,4 +98,3 @@ decreaseRate @=> stomp.button3Down;
 togglePitchShift @=> stomp.button4Down;
 
 stomp.open(0);
-

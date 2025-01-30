@@ -1,3 +1,10 @@
+@import "../lick/arp/Arpeggiators"
+@import "../lick/interval/Chords"
+@import "../lick/loop/LoopBuilder"
+@import "../lick/arp/Arpeggiator"
+@import "../lick/interval/Chord"
+@import "../lick/duration/TimeSignature"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

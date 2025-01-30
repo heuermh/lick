@@ -1,3 +1,8 @@
+@import "../lick/interval/Scales"
+@import "../lick/interval/Scale"
+@import "../lick/effect/ShiftEcco"
+@import "../lick/duration/TimeSignature"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

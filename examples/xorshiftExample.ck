@@ -1,3 +1,5 @@
+@import "../lick/fn/Xorshift"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

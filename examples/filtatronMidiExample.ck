@@ -1,3 +1,5 @@
+@import "../lick/midi/FiltatronMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

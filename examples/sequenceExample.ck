@@ -1,3 +1,6 @@
+@import "../lick/arp/Sequences"
+@import "../lick/arp/Sequence"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

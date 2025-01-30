@@ -1,3 +1,12 @@
+@import "../lick/arp/Sequencers"
+@import "../lick/loop/Loops"
+@import "../lick/arp/Sequences"
+@import "../lick/arp/Patterns"
+@import "../lick/arp/Sequence"
+@import "../lick/arp/Pattern"
+@import "../lick/duration/TimeSignature"
+@import "../lick/drum/BossDr110"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

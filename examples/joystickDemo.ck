@@ -1,3 +1,5 @@
+@import "../lick/device/Joystick"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

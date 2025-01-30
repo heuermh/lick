@@ -1,3 +1,5 @@
+@import "../lick/midi/TwoPotsMidi"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

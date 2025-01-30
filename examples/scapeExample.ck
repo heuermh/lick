@@ -1,3 +1,5 @@
+@import "../lick/ladspa/caps/Scape"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

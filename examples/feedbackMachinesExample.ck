@@ -1,3 +1,8 @@
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/interval/Chords"
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/interval/Chord"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

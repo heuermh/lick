@@ -1,3 +1,5 @@
+@import "../lick/fn/NearestPrime"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

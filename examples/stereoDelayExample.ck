@@ -1,3 +1,5 @@
+@import "../lick/delay/StereoDelay"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

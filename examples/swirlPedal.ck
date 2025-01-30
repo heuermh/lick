@@ -1,3 +1,6 @@
+@import "../lick/device/StompKeyboard"
+@import "../lick/delay/Swirl"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

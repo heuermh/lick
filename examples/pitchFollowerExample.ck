@@ -1,3 +1,5 @@
+@import "../lick/analysis/PitchFollower"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

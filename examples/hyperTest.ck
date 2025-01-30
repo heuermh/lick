@@ -1,3 +1,5 @@
+@import "../lick/lfo/Hyper"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

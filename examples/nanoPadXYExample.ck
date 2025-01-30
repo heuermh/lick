@@ -1,3 +1,5 @@
+@import "../lick/device/NanoPad"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

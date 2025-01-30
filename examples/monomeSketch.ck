@@ -1,3 +1,5 @@
+@import "../lick/device/Monome"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

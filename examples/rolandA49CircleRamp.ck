@@ -1,3 +1,6 @@
+@import "../lick/device/RolandA49"
+@import "../lick/synth/CircleRamp"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

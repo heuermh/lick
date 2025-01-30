@@ -1,3 +1,5 @@
+@import "../lick/drum/LellUds"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

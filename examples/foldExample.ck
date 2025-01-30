@@ -1,3 +1,5 @@
+@import "../lick/synth/Fold"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

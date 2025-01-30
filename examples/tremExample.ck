@@ -1,3 +1,5 @@
+@import "../lick/delay/Trem"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

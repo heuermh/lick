@@ -1,3 +1,5 @@
+@import "../lick/device/PodHd500"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

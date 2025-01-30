@@ -1,3 +1,5 @@
+@import "../lick/lfo/SmoothSampleHold"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

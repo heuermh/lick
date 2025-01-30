@@ -1,3 +1,5 @@
+@import "../lick/effect/Pass"
+me.exit();
 /*
 
     LiCK  Library for ChucK.

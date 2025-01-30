@@ -1,3 +1,5 @@
+@import "../lick/drum/EmuDrumulator"
+me.exit();
 /*
 
     LiCK  Library for ChucK.
