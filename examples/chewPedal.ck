@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Chew"
+@import "../lick/device/StompKeyboard"
+
 Chew chew;
 
 chew.stop();

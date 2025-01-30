@@ -36,6 +36,13 @@
 
 */
 
+@import "../lick/dist/Clip"
+@import "../lick/dist/Dist"
+@import "../lick/dist/AtanDist"
+@import "../lick/dist/TanhDist"
+@import "../lick/dist/FrostBurnDist"
+@import "../lick/device/StompKeyboard"
+
 adc => Gain in;
 Gain out => dac;
 

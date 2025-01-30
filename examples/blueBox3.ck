@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Effect"
+
 class Follower extends Chugen
 {
     SqrOsc @ osc1;

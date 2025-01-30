@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/BigMono"
+
 BigMono bigMono;
 bigMono.demo();

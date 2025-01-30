@@ -26,84 +26,84 @@
 class ClosedHat extends Sample
 {
     {
-        "samples/AkaiMpc60/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/ClosedHat.wav" => buf.read;
     }
 }
 
 class Conga extends Sample
 {
     {
-        "samples/AkaiMpc60/Conga.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Conga.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/AkaiMpc60/Crash.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/AkaiMpc60/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/HighTom.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/AkaiMpc60/Kick.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Kick.wav" => buf.read;
     }
 }
 
 class LowTomA extends Sample
 {
     {
-        "samples/AkaiMpc60/LowTomA.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/LowTomA.wav" => buf.read;
     }
 }
 
 class LowTomB extends Sample
 {
     {
-        "samples/AkaiMpc60/LowTomB.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/LowTomB.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/AkaiMpc60/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/AkaiMpc60/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/OpenHat.wav" => buf.read;
     }
 }
 
 class Ride extends Sample
 {
     {
-        "samples/AkaiMpc60/Ride.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Ride.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/AkaiMpc60/Rim.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Rim.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/AkaiMpc60/Snare.wav" => buf.read;
+        me.dir() + "../../samples/AkaiMpc60/Snare.wav" => buf.read;
     }
 }
 

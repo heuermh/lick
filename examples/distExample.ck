@@ -20,6 +20,18 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/dist/Clip"
+@import "../lick/dist/Dist"
+@import "../lick/dist/AtanDist"
+@import "../lick/dist/TanhDist"
+@import "../lick/dist/RibbonDist"
+@import "../lick/dist/FrostBurnDist"
+@import "../lick/dist/KijjazDist"
+@import "../lick/dist/KijjazDist2"
+@import "../lick/dist/KijjazDist3"
+@import "../lick/dist/KijjazDist4"
+
 TimeSignature.common(200) @=> TimeSignature t;
 
 SinOsc sin => ADSR adsr;

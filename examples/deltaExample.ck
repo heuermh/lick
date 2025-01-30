@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Delta"
+
 adc => Delta delta => dac;
 
 <<<"ready">>>;

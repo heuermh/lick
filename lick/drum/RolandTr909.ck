@@ -26,119 +26,119 @@
 class Clap extends Sample
 {
     {
-        "samples/RolandTr909/Clap.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/RolandTr909/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/RolandTr909/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/ClosedHatB.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandTr909/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/Crash.wav" => buf.read;
     }
 }
 
 class HighTomA extends Sample
 {
     {
-        "samples/RolandTr909/HighTomA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/HighTomA.wav" => buf.read;
     }
 }
 
 class HighTomB extends Sample
 {
     {
-        "samples/RolandTr909/HighTomB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/HighTomB.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/RolandTr909/KickA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/RolandTr909/KickB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/KickB.wav" => buf.read;
     }
 }
 
 class LowTomA extends Sample
 {
     {
-        "samples/RolandTr909/LowTomA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/LowTomA.wav" => buf.read;
     }
 }
 
 class LowTomB extends Sample
 {
     {
-        "samples/RolandTr909/LowTomB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/LowTomB.wav" => buf.read;
     }
 }
 
 class MiddleTomA extends Sample
 {
     {
-        "samples/RolandTr909/MiddleTomA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/MiddleTomA.wav" => buf.read;
     }
 }
 
 class MiddleTomB extends Sample
 {
     {
-        "samples/RolandTr909/MiddleTomB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/MiddleTomB.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/RolandTr909/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/OpenHat.wav" => buf.read;
     }
 }
 
 class Ride extends Sample
 {
     {
-        "samples/RolandTr909/Ride.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/Ride.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/RolandTr909/Rim.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/Rim.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/RolandTr909/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/RolandTr909/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr909/SnareB.wav" => buf.read;
     }
 }
 

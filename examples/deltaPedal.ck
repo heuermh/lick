@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Delta"
+@import "../lick/device/StompKeyboard"
+
 adc => Delta delta => dac;
 
 0.6 => delta.mix;

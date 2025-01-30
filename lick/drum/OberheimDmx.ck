@@ -26,105 +26,105 @@
 class Clap extends Sample
 {
     {
-        "samples/OberheimDmx/Clap.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/OberheimDmx/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/ClosedHat.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/OberheimDmx/Crash.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/OberheimDmx/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/HighTom.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/OberheimDmx/KickA.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/OberheimDmx/KickB.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/KickB.wav" => buf.read;
     }
 }
 
 class KickC extends Sample
 {
     {
-        "samples/OberheimDmx/KickC.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/KickC.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/OberheimDmx/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/OberheimDmx/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/OberheimDmx/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/OpenHat.wav" => buf.read;
     }
 }
 
 class Ride extends Sample
 {
     {
-        "samples/OberheimDmx/Ride.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Ride.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/OberheimDmx/Rim.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Rim.wav" => buf.read;
     }
 }
 
 class Shaker extends Sample
 {
     {
-        "samples/OberheimDmx/Shaker.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Shaker.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/OberheimDmx/Snare.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Snare.wav" => buf.read;
     }
 }
 
 class Tamborine extends Sample
 {
     {
-        "samples/OberheimDmx/Tamborine.wav" => buf.read;
+        me.dir() + "../../samples/OberheimDmx/Tamborine.wav" => buf.read;
     }
 }
 

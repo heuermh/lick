@@ -20,9 +20,13 @@
 
 */
 
+@import "../lick/synth/BassDelay"
+@import "../lick/interval/Scales"
+@import "../lick/duration/TimeSignature"
+
 BassDelay bd => dac;
 
-2::second => bd.max;
+// 2::second => bd.max;
 
 2.0 => bd.x;
 0.60 => bd.feedback;

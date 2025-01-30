@@ -28,6 +28,11 @@
 
  */
 
+@import "../lick/interval/Intervals"
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/analysis/SigmuPitchFollower"
+@import "../lick/effect/Effect"
+
 class GainReset extends FloatProcedure
 {
     Drop @ _drop;

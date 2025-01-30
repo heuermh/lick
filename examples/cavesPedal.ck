@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Caves"
+@import "../lick/device/StompKeyboard"
+
 adc => Caves caves => dac;
 
 caves.stop();

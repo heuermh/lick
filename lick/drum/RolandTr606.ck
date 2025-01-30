@@ -26,56 +26,56 @@
 class ClosedHat extends Sample
 {
     {
-        "samples/RolandTr606/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/ClosedHat.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandTr606/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/RolandTr606/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/HighTom.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/RolandTr606/Kick.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/Kick.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/RolandTr606/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/RolandTr606/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/RolandTr606/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/OpenHat.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/RolandTr606/Snare.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr606/Snare.wav" => buf.read;
     }
 }
 

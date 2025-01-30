@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/sim/Animoog"
+
 Animoog animoog;
 animoog.open(0);
 

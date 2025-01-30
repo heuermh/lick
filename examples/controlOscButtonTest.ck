@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/osc/ControlOscServer"
+
 ControlOscServer controlOsc;
 
 class Status extends FloatProcedure

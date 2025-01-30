@@ -26,98 +26,98 @@
 class Clap extends Sample
 {
     {
-        "samples/YamahaRx5/Clap.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/YamahaRx5/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/YamahaRx5/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/ClosedHatB.wav" => buf.read;
     }
 }
 
 class CrashA extends Sample
 {
     {
-        "samples/YamahaRx5/CrashA.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/CrashA.wav" => buf.read;
     }
 }
 
 class CrashB extends Sample
 {
     {
-        "samples/YamahaRx5/CrashB.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/CrashB.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/YamahaRx5/Kick.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/Kick.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/YamahaRx5/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/OpenHat.wav" => buf.read;
     }
 }
 
 class RideA extends Sample
 {
     {
-        "samples/YamahaRx5/RideA.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/RideA.wav" => buf.read;
     }
 }
 
 class RideB extends Sample
 {
     {
-        "samples/YamahaRx5/RideB.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/RideB.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/YamahaRx5/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/YamahaRx5/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/SnareB.wav" => buf.read;
     }
 }
 
 class SnareC extends Sample
 {
     {
-        "samples/YamahaRx5/SnareC.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/SnareC.wav" => buf.read;
     }
 }
 
 class SnareD extends Sample
 {
     {
-        "samples/YamahaRx5/SnareD.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/SnareD.wav" => buf.read;
     }
 }
 
 class SnareE extends Sample
 {
     {
-        "samples/YamahaRx5/SnareE.wav" => buf.read;
+        me.dir() + "../../samples/YamahaRx5/SnareE.wav" => buf.read;
     }
 }
 

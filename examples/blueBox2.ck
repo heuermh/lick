@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Effect"
+@import "../lick/analysis/PitchFollower"
+
 class OctavesDown extends FloatProcedure
 {
     SqrOsc @ osc1;

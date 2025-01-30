@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/effect/Crush"
+@import "../lick/device/StompKeyboard"
+@import "../lick/interpolate/Constrain"
+
 Crush crush;
 
 5 => int bits;

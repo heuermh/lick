@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Caves"
+
 adc => Caves caves => dac;
 
 0.8 => caves.mix;

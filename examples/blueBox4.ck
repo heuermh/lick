@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Effect"
+@import "../lick/ladspa/rubberband/Rubberband"
+
 class DcOffset extends Chugen
 {
     fun float tick(float in)
@@ -38,7 +41,7 @@ class BlueBox4 extends Effect
     Gain octaveDown;
     Gain twoOctavesDown;
 
-    1.0 => rubberBad.mix;
+    1.0 => rubberBand.mix;
     -1.0 => rubberBand.octave;
 
     1.0 => pre.gain;

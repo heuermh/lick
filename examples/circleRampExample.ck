@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/synth/CircleRamp"
+@import "../lick/interval/Scales"
+@import "../lick/duration/TimeSignature"
+
 CircleRamp circle => dac;
 
 65.406 => float c;

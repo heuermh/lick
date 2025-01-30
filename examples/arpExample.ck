@@ -20,6 +20,12 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/adsr/Adsr"
+@import "../lick/arp/Arpeggiators"
+@import "../lick/interval/Chords"
+@import "../lick/loop/LoopBuilder"
+
 TimeSignature.common(110) @=> TimeSignature t;
 
 BeeThree bt => ADSR adsr => dac;

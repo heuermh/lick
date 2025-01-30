@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Currant"
+@import "../lick/device/StompKeyboard"
+
 adc => Currant currant => dac;
 
 1.0 => currant.mix;

@@ -26,84 +26,84 @@
 class Clap extends Sample
 {
     {
-        "samples/EmuDrumulator/Clap.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Clap.wav" => buf.read;
     }
 }
 
 class Clave extends Sample
 {
     {
-        "samples/EmuDrumulator/Clave.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Clave.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/EmuDrumulator/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/ClosedHat.wav" => buf.read;
     }
 }
 
 class CowBell extends Sample
 {
     {
-        "samples/EmuDrumulator/CowBell.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/CowBell.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/EmuDrumulator/Crash.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/EmuDrumulator/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/HighTom.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/EmuDrumulator/Kick.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Kick.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/EmuDrumulator/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/EmuDrumulator/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/EmuDrumulator/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/OpenHat.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/EmuDrumulator/Rim.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Rim.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/EmuDrumulator/Snare.wav" => buf.read;
+        me.dir() + "../../samples/EmuDrumulator/Snare.wav" => buf.read;
     }
 }
 

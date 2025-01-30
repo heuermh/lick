@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Aura"
+@import "../lick/device/StompKeyboard"
+
 Aura aura;
 
 class Toggle extends Procedure

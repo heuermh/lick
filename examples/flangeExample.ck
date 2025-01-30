@@ -20,7 +20,9 @@
 
 */
 
-adc => Flange flange => dac;
+@import "../lick/effect/Blueshift"
+
+adc => Blueshift flange => dac;
 
 0.8 => flange.mix;
 1.0 => flange.rate;

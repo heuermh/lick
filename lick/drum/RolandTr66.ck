@@ -28,75 +28,75 @@
 class ClosedHat extends RandomSample
 {
     {
-        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat1.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat2.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat3.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/ClosedHat4.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/ClosedHat1.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/ClosedHat2.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/ClosedHat3.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/ClosedHat4.wav"));
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandTr66/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr66/Crash.wav" => buf.read;
     }
 }
 
 class HighConga extends Sample
 {
     {
-        "samples/RolandTr66/HighConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr66/HighConga.wav" => buf.read;
     }
 }
 
 class KickA extends RandomSample
 {
     {
-        samples.add(Samples.createSample("samples/RolandTr66/KickA1.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickA2.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickA3.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickA4.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickA1.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickA2.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickA3.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickA4.wav"));
     }
 }
 
 class KickB extends RandomSample
 {
     {
-        samples.add(Samples.createSample("samples/RolandTr66/KickB1.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickB2.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickB3.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/KickB4.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickB1.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickB2.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickB3.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/KickB4.wav"));
     }
 }
 
 class LowConga extends Sample
 {
     {
-        "samples/RolandTr66/LowConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr66/LowConga.wav" => buf.read;
     }
 }
 
 class OpenHat extends RandomSample
 {
     {
-        samples.add(Samples.createSample("samples/RolandTr66/OpenHat1.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/OpenHat2.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/OpenHat1.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/OpenHat2.wav"));
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/RolandTr66/Rim.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr66/Rim.wav" => buf.read;
     }
 }
 
 class Snare extends RandomSample
 {
     {
-        samples.add(Samples.createSample("samples/RolandTr66/Snare1.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/Snare2.wav"));
-        samples.add(Samples.createSample("samples/RolandTr66/Snare3.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/Snare1.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/Snare2.wav"));
+        samples.add(Samples.createSample(me.dir() + "../../samples/RolandTr66/Snare3.wav"));
     }
 }
 

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Aura"
+
 adc => Aura aura => dac;
 
 <<<"ready">>>;

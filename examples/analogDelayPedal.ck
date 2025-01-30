@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/effect/AnalogDelay"
+@import "../lick/device/StompKeyboard"
+@import "../lick/interpolate/Constrain"
+
 AnalogDelay delay;
 
 class Toggle extends Procedure

@@ -26,98 +26,98 @@
 class Claves extends Sample
 {
     {
-        "samples/RolandCr78/Claves.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Claves.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/RolandCr78/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/ClosedHat.wav" => buf.read;
     }
 }
 
 class CowBell extends Sample
 {
     {
-        "samples/RolandCr78/CowBell.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/CowBell.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandCr78/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Crash.wav" => buf.read;
     }
 }
 
 class Guiro extends Sample
 {
     {
-        "samples/RolandCr78/Guiro.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Guiro.wav" => buf.read;
     }
 }
 
 class HighBongo extends Sample
 {
     {
-        "samples/RolandCr78/HighBongo.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/HighBongo.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/RolandCr78/Kick.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Kick.wav" => buf.read;
     }
 }
 
 class LowBongo extends Sample
 {
     {
-        "samples/RolandCr78/LowBongo.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/LowBongo.wav" => buf.read;
     }
 }
 
 class LowConga extends Sample
 {
     {
-        "samples/RolandCr78/LowConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/LowConga.wav" => buf.read;
     }
 }
 
 class Maracas extends Sample
 {
     {
-        "samples/RolandCr78/Maracas.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Maracas.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/RolandCr78/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/OpenHat.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/RolandCr78/Rim.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Rim.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/RolandCr78/Snare.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Snare.wav" => buf.read;
     }
 }
 
 class Tamborine extends Sample
 {
     {
-        "samples/RolandCr78/Tamborine.wav" => buf.read;
+        me.dir() + "../../samples/RolandCr78/Tamborine.wav" => buf.read;
     }
 }
 

@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/AkaiMpc60"
+
 AkaiMpc60 akaiMpc60;
 akaiMpc60.demo();

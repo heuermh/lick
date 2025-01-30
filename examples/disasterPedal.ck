@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/delay/Disaster"
+@import "../lick/device/StompKeyboard"
+
 adc => Disaster disaster => dac;
 
 0.80 => disaster.mixA;

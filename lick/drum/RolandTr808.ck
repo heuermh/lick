@@ -26,168 +26,168 @@
 class Clap extends Sample
 {
     {
-        "samples/RolandTr808/Clap.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/Clap.wav" => buf.read;
     }
 }
 
 class Claves extends Sample
 {
     {
-        "samples/RolandTr808/Claves.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/Claves.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/RolandTr808/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/ClosedHat.wav" => buf.read;
     }
 }
 
 class CowBell extends Sample
 {
     {
-        "samples/RolandTr808/CowBell.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/CowBell.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandTr808/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/Crash.wav" => buf.read;
     }
 }
 
 class HighConga extends Sample
 {
     {
-        "samples/RolandTr808/HighConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/HighConga.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/RolandTr808/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/HighTom.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/RolandTr808/KickA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/RolandTr808/KickB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/KickB.wav" => buf.read;
     }
 }
 
 class KickC extends Sample
 {
     {
-        "samples/RolandTr808/KickC.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/KickC.wav" => buf.read;
     }
 }
 
 class KickD extends Sample
 {
     {
-        "samples/RolandTr808/KickD.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/KickD.wav" => buf.read;
     }
 }
 
 class KickE extends Sample
 {
     {
-        "samples/RolandTr808/KickE.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/KickE.wav" => buf.read;
     }
 }
 
 class LowConga extends Sample
 {
     {
-        "samples/RolandTr808/LowConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/LowConga.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/RolandTr808/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/LowTom.wav" => buf.read;
     }
 }
 
 class Maracas extends Sample
 {
     {
-        "samples/RolandTr808/Maracas.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/Maracas.wav" => buf.read;
     }
 }
 
 class MiddleConga extends Sample
 {
     {
-        "samples/RolandTr808/MiddleConga.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/MiddleConga.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/RolandTr808/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/RolandTr808/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/OpenHat.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/RolandTr808/Rim.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/Rim.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/RolandTr808/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/RolandTr808/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/SnareB.wav" => buf.read;
     }
 }
 
 class SnareC extends Sample
 {
     {
-        "samples/RolandTr808/SnareC.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/SnareC.wav" => buf.read;
     }
 }
 
 class SnareD extends Sample
 {
     {
-        "samples/RolandTr808/SnareD.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/SnareD.wav" => buf.read;
     }
 }
 
 class SnareE extends Sample
 {
     {
-        "samples/RolandTr808/SnareE.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr808/SnareE.wav" => buf.read;
     }
 }
 

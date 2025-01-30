@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Cooper"
+
 adc => Cooper cooper => dac;
 
 0.8 => cooper.mix;

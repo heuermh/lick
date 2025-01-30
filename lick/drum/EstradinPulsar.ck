@@ -26,56 +26,56 @@
 class Clap extends Sample
 {
     {
-        "samples/EstradinPulsar/Clap.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/EstradinPulsar/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/ClosedHat.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/EstradinPulsar/Crash.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/EstradinPulsar/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/HighTom.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/EstradinPulsar/Kick.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/Kick.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/EstradinPulsar/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/EstradinPulsar/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/MiddleTom.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/EstradinPulsar/Snare.wav" => buf.read;
+        me.dir() + "../../samples/EstradinPulsar/Snare.wav" => buf.read;
     }
 }
 
