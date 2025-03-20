@@ -25,6 +25,10 @@
 // https://www.ericasynths.lv/shop/eurorack-modules/by-series/pico-series/pico-drum2/
 //
 
+@import "../effect/Crush"
+@import "../adsr/Adsr"
+@import "../interpolate/Interpolate"
+
 public class Czh extends Chugraph
 {
     Noise _noise => LPF _lpf => Crush _bitcrush => ADSR _env => Gain _vca => outlet;

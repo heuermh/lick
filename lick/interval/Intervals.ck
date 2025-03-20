@@ -20,6 +20,8 @@
 
 */
 
+@import "Interval"
+
 // see http://en.wikipedia.org/wiki/List_of_musical_intervals
 public class Intervals
 {

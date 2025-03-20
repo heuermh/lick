@@ -20,6 +20,8 @@
 
 */
 
+@import "DigitalDelay"
+
 
 //
 // inspired by DelayNoMore3

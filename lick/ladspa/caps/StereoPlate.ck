@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS PlateX2 LADSPA plugin, http://quitte.de/dsp/caps.html#PlateX2
 public class StereoPlate extends Caps
 {

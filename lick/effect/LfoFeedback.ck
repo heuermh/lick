@@ -20,6 +20,9 @@
 
 */
 
+@import "Feedback"
+@import "../lfo/Lfo"
+
 // abstract class for feedback effects + lfo
 public class LfoFeedback extends Feedback
 {

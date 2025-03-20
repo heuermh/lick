@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/Trem"
+
 Trem trem;
 1.0 => float depth;
 1.0 => float rate;

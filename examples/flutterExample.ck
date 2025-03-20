@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Flutter"
+@import "../lick/ladspa/caps/Princeton"
+
 adc => Flutter flutter => Princeton princeton => dac;
 
 0.6 => flutter.mix;

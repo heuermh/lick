@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Log2 extends FloatFunction
 {
     fun float evaluate(float arg)

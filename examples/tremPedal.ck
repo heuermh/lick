@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/delay/Trem"
+@import "../lick/device/StompKeyboard"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interpolate/Constrain"
+
 TimeSignature.common(98) @=> TimeSignature ts;
 
 1.0 => float depth;

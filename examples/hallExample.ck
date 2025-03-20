@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Hall"
+
 adc => Hall hall => dac;
 
 0.8 => hall.mix;

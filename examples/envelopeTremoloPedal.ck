@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/EnvelopeTremolo"
+@import "../lick/interpolate/Constrain"
+
 EnvelopeTremolo envelopeTremolo;
 
 envelopeTremolo.stop();

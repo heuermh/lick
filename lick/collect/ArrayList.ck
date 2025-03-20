@@ -20,6 +20,9 @@
 
 */
 
+@import "List"
+@import "ListIterator"
+
 public class ArrayList extends List
 {
     Object values[0];

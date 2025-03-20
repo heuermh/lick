@@ -20,6 +20,8 @@
 
 */
 
+@import "Scale"
+
 class IntervalListScale extends Scale
 {
     fun void forEach(FloatProcedure procedure)

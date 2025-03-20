@@ -20,6 +20,19 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "CompositeDurFunction"
+@import "ConditionalDurFunction"
+@import "DurFunction"
+@import "Frequently"
+@import "Infrequently"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+
 public class DurFunctions
 {
     fun static DurFunction compose(DurFunction g, DurFunction h)

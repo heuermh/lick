@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/StereoDelay"
+
 StereoDelay d;
 
 200::ms => d.delayL.max;

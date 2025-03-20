@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+
 // receive MIDI from the Alesis QX25 hardware
 public class AlesisQX25
 {

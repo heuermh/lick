@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/synth/Fold2"
+
 Fold2 f => dac;
 
 0.8 => f.gain;

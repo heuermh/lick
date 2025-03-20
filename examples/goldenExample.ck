@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Golden"
+
 TimeSignature.common(110) @=> TimeSignature ts;
 Golden.goldenEighths(ts) @=> Golden golden;
 

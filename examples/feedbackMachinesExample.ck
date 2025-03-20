@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+
 BeeThree bt;
 bt.noteOff(1.0);
 

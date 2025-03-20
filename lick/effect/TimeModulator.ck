@@ -24,6 +24,8 @@
 // similar to Marshall Time Modulator, http://electro-music.com/forum/topic-19408-0.html
 //
 
+@import "LfoEffect"
+
 public class TimeModulator extends LfoEffect
 {
     Delay _a;

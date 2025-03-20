@@ -20,6 +20,8 @@
 
 */
 
+@import "List"
+
 public class ListIterator extends Iterator
 {
     0 => int index;

@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class Harmonizer extends Effect
 {
     // empty, use static methods in Harmonizers to instantiate subclasses

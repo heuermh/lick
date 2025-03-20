@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS Scape LADSPA plugin, http://quitte.de/dsp/caps.html#Scape
 //   see also https://github.com/jwmatthys/chugins/blob/master/Ladspa/Scape.ck
 public class Scape extends Caps

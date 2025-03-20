@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/OilCan"
+
 adc => OilCan oilCan => dac.chan(0);
 
 <<<"ready">>>;

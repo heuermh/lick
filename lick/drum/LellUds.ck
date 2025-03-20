@@ -20,87 +20,90 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Clap extends Sample
 {
     {
-        "samples/LellUds/Clap.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/LellUds/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/LellUds/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/ClosedHatB.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/LellUds/KickA.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/LellUds/KickB.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/KickB.wav" => buf.read;
     }
 }
 
 class KickC extends Sample
 {
     {
-        "samples/LellUds/KickC.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/KickC.wav" => buf.read;
     }
 }
 
 class OpenHatA extends Sample
 {
     {
-        "samples/LellUds/OpenHatA.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/OpenHatA.wav" => buf.read;
     }
 }
 
 class OpenHatB extends Sample
 {
     {
-        "samples/LellUds/OpenHatB.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/OpenHatB.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/LellUds/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/LellUds/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/SnareB.wav" => buf.read;
     }
 }
 
 class SnareC extends Sample
 {
     {
-        "samples/LellUds/SnareC.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/SnareC.wav" => buf.read;
     }
 }
 
 class SnareD extends Sample
 {
     {
-        "samples/LellUds/SnareD.wav" => buf.read;
+        me.dir() + "../../samples/LellUds/SnareD.wav" => buf.read;
     }
 }
 

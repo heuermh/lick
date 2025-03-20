@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatProcedure"
+
 // prepends a float procedure, g proceeded by h
 public class FloatPrepend extends FloatProcedure
 {

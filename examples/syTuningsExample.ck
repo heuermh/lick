@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/tuning/SYTunings"
+
 SYTunings syTunings;
 
 <<<"by name...">>>;

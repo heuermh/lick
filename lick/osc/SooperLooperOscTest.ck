@@ -20,6 +20,9 @@
 
 */
 
+@import "SooperLooperOsc"
+@import "../test/Assert"
+
 // unit test for SooperLooperOsc
 class SooperLooperOscTest extends Assert
 {

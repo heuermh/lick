@@ -20,6 +20,8 @@
 
 */
 
+@import "ArrayList"
+
 public class Node
 {
     Object @ value;

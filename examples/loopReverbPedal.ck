@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/LoopReverb"
+@import "../lick/interpolate/Constrain"
+
 adc => LoopReverb loopReverb => dac;
 
 0.9 => loopReverb.mix;

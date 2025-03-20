@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/analysis/PitchFollower"
+
 PitchFollower pitchFollower;
 
 class Dump extends FloatProcedure

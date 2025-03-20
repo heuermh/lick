@@ -27,10 +27,13 @@
 // Buy one here:  http://www.critterandguitari.com/products/bolsa-bass
 //
 
+@import "../effect/DigitalDelay"
+@import "../interpolate/Constrain"
+
 public class BassDelay extends Chugraph
 {
     SinOsc _pulse;
-    MonoDelay2 _delay;
+    DigitalDelay _delay;
 
     1.0 => float _x;
     1.0 => _delay.mix;
@@ -72,6 +75,7 @@ public class BassDelay extends Chugraph
     fun float x(float f)
     {
         Constrain.constrainf(f, 1.0, 4.0) => _x;
+	return _x;
         //period * _x => _delay.delay;
     }
 

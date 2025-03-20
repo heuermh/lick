@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Electoronic"
+
 TimeSignature.common(110) @=> TimeSignature ts;
 Electoronic.create(ts) @=> Electoronic electoronic;
 

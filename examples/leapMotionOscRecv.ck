@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/osc/LeapMotionOsc"
+
 // receive OSC data sent by Leap Motion
 
 class Dump extends FloatFloatFloatProcedure

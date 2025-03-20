@@ -20,6 +20,10 @@
 
 */
 
+@import "../dist/WaveShaper"
+@import "../dist/Dist"
+@import "Feedback"
+
 // analog-style delay with dist and filter
 public class AnalogDelay extends Feedback
 {

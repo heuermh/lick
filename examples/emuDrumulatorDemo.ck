@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/EmuDrumulator"
+
 EmuDrumulator emuDrumulator;
 emuDrumulator.demo();

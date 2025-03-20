@@ -20,6 +20,11 @@
 
 */
 
+@import "../interpolate/CubicIn"
+@import "../interval/Interval"
+@import "HumanizedDurProvider"
+@import "TimeSignature"
+
 public class IntervalDurProvider extends HumanizedDurProvider
 {
     1.0 => float f;

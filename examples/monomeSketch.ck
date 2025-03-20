@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/Monome"
+
 class MonomeSketch extends Monome
 {
     16 => static int H;

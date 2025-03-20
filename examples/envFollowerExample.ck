@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/analysis/EnvelopeFollower"
+
 adc => EnvelopeFollower env => blackhole;
 
 while (true)

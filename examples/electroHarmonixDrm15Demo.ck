@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/ElectroHarmonixDrm15"
+
 ElectroHarmonixDrm15 drm15;
 drm15.demo();

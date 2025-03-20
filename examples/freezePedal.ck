@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Freeze"
+
 Freeze.create() @=> Freeze freeze;
 0.4 => freeze.mix;
 

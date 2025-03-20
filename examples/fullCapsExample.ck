@@ -20,6 +20,14 @@
 
 */
 
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/NoiseGate"
+@import "../lick/ladspa/caps/ParametricEq"
+@import "../lick/ladspa/caps/Plate"
+@import "../lick/ladspa/caps/Saturate"
+@import "../lick/ladspa/caps/Scape"
+
 // full C*APS for electric guitar example, may bring CPU to its knees
 
 adc => NoiseGate noiseGate => ParametricEq eq => Saturate saturate => Amp amp => Cabinet cabinet => Scape scape => Plate plate => dac;

@@ -24,6 +24,8 @@
 // ADSR adapted to an integer procedure
 //
 
+@import "AbstractAdsr"
+
 public class Adsr extends AbstractAdsr
 {
     ADSR adsr;

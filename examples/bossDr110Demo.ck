@@ -20,5 +20,8 @@
 
 */
 
+@import "../lick/drum/BossDr110"
+
+
 BossDr110 bossDr110;
 bossDr110.demo();

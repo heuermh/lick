@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Reverse"
+
 Reverse.create(2000::ms) @=> Reverse reverse;
 
 adc => reverse => dac;

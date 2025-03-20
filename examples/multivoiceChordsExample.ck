@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/fn/Procedure"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/loop/Loops"
+
 4 => int voices;
 
 Gain gain => dac;

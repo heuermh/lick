@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/filter/SVF"
+
 SVF svf => blackhole;
 
 <<<"ready">>>;

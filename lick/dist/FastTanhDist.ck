@@ -20,6 +20,9 @@
 
 */
 
+@import "WaveShaper"
+@import "../fn/FastTanh"
+
 public class FastTanhDist extends WaveShaper
 {
     {

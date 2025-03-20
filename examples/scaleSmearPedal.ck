@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/delay/ScaleSmear"
+@import "../lick/device/StompKeyboard"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+
 0 => int interval;
 440.0 => float root;
 Scales.majorBlues(root) @=> Scale scale;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/TimeModulator"
+
 adc => TimeModulator tm => dac;
 
 <<<"ready">>>;

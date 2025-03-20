@@ -25,6 +25,8 @@
 //   http://www.diystompboxes.com/smfforum/index.php?topic=97310.0
 //
 
+@import "Effect"
+
 public class Solstice extends Effect
 {
     Gain _pre;

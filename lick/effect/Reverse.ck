@@ -20,6 +20,9 @@
 
 */
 
+@import "Feedback"
+@import "ReverseBuffer"
+
 public class Reverse extends Feedback
 {
     600::ms => dur _delay;

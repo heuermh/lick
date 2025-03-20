@@ -20,6 +20,14 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/snare/Cch"
+@import "../lick/snare/Dmch"
+@import "../lick/snare/Dnn"
+@import "../lick/snare/Snare"
+@import "../lick/snare/Tss"
+@import "../lick/snare/Twkz"
+
 
 Gain mix;
 

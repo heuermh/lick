@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/delay/Smear"
+@import "../lick/device/StompKeyboard"
+
 8 => int z;
 0.8 => float m;
 20.0 => float freq;

@@ -20,6 +20,13 @@
 
 */
 
+@import "Chord"
+@import "Interval"
+@import "../fn/FloatProcedure"
+@import "../fn/Chance"
+@import "../collect/ArrayList"
+@import "../collect/Iterator"
+
 class Fifth extends Chord
 {
     Interval @ fifth;

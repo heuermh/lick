@@ -20,108 +20,111 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Clap extends Sample
 {
     {
-        "samples/RolandTr707/Clap.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/RolandTr707/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/RolandTr707/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/ClosedHatB.wav" => buf.read;
     }
 }
 
 class Cowbell extends Sample
 {
     {
-        "samples/RolandTr707/Cowbell.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/Cowbell.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/RolandTr707/Crash.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/RolandTr707/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/HighTom.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/RolandTr707/KickA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/RolandTr707/KickB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/KickB.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/RolandTr707/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/RolandTr707/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/RolandTr707/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/OpenHat.wav" => buf.read;
     }
 }
 
 class Ride extends Sample
 {
     {
-        "samples/RolandTr707/Ride.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/Ride.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/RolandTr707/Rim.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/Rim.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/RolandTr707/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/RolandTr707/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/RolandTr707/SnareB.wav" => buf.read;
     }
 }
 

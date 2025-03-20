@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Ecco"
+
 TimeSignature.common(80) @=> TimeSignature ts;
 Ecco.triplet(ts) @=> Ecco ecco;
 

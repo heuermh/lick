@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Thicken"
+
 adc => Thicken thicken => dac;
 
 class Toggle extends Procedure

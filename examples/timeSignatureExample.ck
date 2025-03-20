@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+
 TimeSignature.common(120) @=> TimeSignature t;
 
 <<<"intial tempo",t.bpm,"bpm">>>;

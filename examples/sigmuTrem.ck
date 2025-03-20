@@ -19,6 +19,13 @@
 
 */
 
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/DigitalDelay"
+@import "../lick/effect/Tremolo"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Cabinet"
+
 adc => Tremolo tremolo => DigitalDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 
 1.0 => tremolo.mix;

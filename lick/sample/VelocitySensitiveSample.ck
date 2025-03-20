@@ -20,6 +20,8 @@
 
 */
 
+@import "CompositeSample"
+
 public class VelocitySensitiveSample extends CompositeSample
 {
     fun Sample _sample()

@@ -31,6 +31,15 @@
 // and also under the cc-by-sa 3.0 license per the Share Alike clause
 //
 
+@import "../fn/DurProcedure"
+@import "../fn/FloatProcedure"
+@import "../fn/Procedure"
+@import "Pattern"
+@import "PatternedDurProcedure"
+@import "PatternedFloatProcedure"
+@import "PatternedIntProcedure"
+@import "PatternedProcedure"
+
 public class Patterns
 {
 

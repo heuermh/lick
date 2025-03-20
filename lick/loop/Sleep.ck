@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/FloatProcedure"
+
 class SleepProcedure extends Procedure
 {
     Sleep @ sleep;

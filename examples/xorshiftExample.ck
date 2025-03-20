@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/fn/Xorshift"
+
 Xorshift xorshift0;
 Xorshift.create(24) @=> Xorshift xorshift1;
 Xorshift.create(24, 79) @=> Xorshift xorshift2;

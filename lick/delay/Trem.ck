@@ -20,6 +20,8 @@
 
 */
 
+@import "../interpolate/Interpolate"
+
 public class Trem extends Chugen
 {
     SinOsc sinLfo;

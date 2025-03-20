@@ -27,6 +27,9 @@
 // Similar to Czh, but with Bitr bitcrusher instead of Bitcrush
 //
 
+@import "../dist/Bitr"
+@import "../interpolate/Interpolate"
+
 public class Twkz extends Chugraph
 {
     Noise _noise => LPF _lpf => Bitr _bitr => ADSR _env => Gain _vca => outlet;

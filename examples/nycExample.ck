@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/drum/RolandTr909"
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Nyc"
+
 RolandTr909 rolandTr909;
 
 TimeSignature.common(90) @=> TimeSignature ts;

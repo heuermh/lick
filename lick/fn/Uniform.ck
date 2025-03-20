@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Uniform extends FloatFunction
 {
     float value;

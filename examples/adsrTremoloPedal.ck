@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/AdsrTremolo"
+@import "../lick/interpolate/Constrain"
+
+
 AdsrTremolo adsrTremolo;
 
 adsrTremolo.stop();

@@ -20,6 +20,9 @@
 
 */
 
+@import "../interpolate/Constrain"
+@import "../interpolate/Interpolate"
+
 public class SVF extends Chugraph
 {
     HPF hpf;

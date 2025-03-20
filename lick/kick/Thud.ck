@@ -24,6 +24,8 @@
 // Kick with sample for transients
 //
 
+@import "../sample/Sample"
+
 public class Thud extends Chugraph
 {
     inlet => blackhole;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Pass"
+
 adc => Pass pass => dac;
 
 0.8 => pass.mix;

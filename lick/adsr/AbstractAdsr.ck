@@ -24,6 +24,8 @@
 // abstract class that looks like an ADSR
 //
 
+@import "../fn/IntProcedure"
+
 public class AbstractAdsr extends IntProcedure
 {
     float _attackRate;

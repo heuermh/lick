@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/delay/FeedbackMachines"
+@import "../lick/device/StompKeyboard"
+
 GVerb gverb;
 
 0.3 => float dry;

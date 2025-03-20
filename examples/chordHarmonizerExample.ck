@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/effect/Harmonizers"
+@import "../lick/interval/Chords"
+
+
 Chords.majorTriad(220.0) @=> Chord majorTriad;
 
 Harmonizers.asc(majorTriad) @=> Harmonizer harmonizer;

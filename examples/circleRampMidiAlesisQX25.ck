@@ -20,6 +20,12 @@
 
 */
 
+@import "../lick/device/AlesisQX25"
+@import "../lick/ladspa/caps/Saturate"
+@import "../lick/ladspa/tap/TubeWarmth"
+@import "../lick/synth/CircleRamp"
+
+
 CircleRamp circleRamp => Saturate saturate => TubeWarmth tubeWarmth => dac;
 
 circleRamp.adsr.set(5::ms, 100::ms, 0.6, 500::ms);

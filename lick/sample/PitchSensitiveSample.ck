@@ -20,6 +20,9 @@
 
 */
 
+@import "Sample"
+@import "CompositeSample"
+
 public class PitchSensitiveSample extends CompositeSample
 {
     fun Sample _sample()

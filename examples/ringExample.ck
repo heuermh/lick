@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Ring"
+
 adc => Ring ring => dac;
 
 <<<"ready">>>;

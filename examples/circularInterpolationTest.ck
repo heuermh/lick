@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/interpolate/Interpolations"
+
+
 Interpolations.circularIn() @=> Interpolation in;
 Interpolations.circularOut() @=> Interpolation out;
 Interpolations.circularInOut() @=> Interpolation inOut;

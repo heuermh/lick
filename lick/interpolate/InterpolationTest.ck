@@ -20,6 +20,41 @@
 
 */
 
+@import "BackIn"
+@import "BackInOut"
+@import "BackOut"
+@import "BounceIn"
+@import "BounceOut"
+@import "BounceInOut"
+@import "CircularIn"
+@import "CircularInOut"
+@import "CircularOut"
+@import "CubicIn"
+@import "CubicInOut"
+@import "CubicOut"
+@import "ElasticIn"
+@import "ElasticInOut"
+@import "ElasticOut"
+@import "ExponentialIn"
+@import "ExponentialInOut"
+@import "ExponentialOut"
+@import "Linear"
+@import "QuadraticIn"
+@import "QuadraticInOut"
+@import "QuadraticOut"
+@import "QuarticIn"
+@import "QuarticInOut"
+@import "QuarticOut"
+@import "QuinticIn"
+@import "QuinticInOut"
+@import "QuinticOut"
+@import "RandomFloor"
+@import "RandomThreshold"
+@import "SinusoidalIn"
+@import "SinusoidalInOut"
+@import "SinusoidalOut"
+@import "../test/Assert"
+
 // unit test for subclasses of Interpolation
 class InterpolationTest extends Assert
 {

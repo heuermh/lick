@@ -20,6 +20,14 @@
 
 */
 
+@import "../lick/arp/Arpeggiators"
+@import "../lick/delay/SinTrem"
+@import "../lick/dist/Dist"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/loop/LoopBuilder"
+
 TimeSignature.common(160) @=> TimeSignature t;
 
 SinOsc sin => ADSR adsr => Dist dist => SinTrem trem => JCRev rev => dac;

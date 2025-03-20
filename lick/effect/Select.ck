@@ -20,6 +20,9 @@
 
 */
 
+@import "DigitalDelay"
+@import "Mixer"
+
 public class Select extends Mixer
 {
     float _max;

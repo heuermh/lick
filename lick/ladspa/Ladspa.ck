@@ -20,6 +20,8 @@
 
 */
 
+@import "../effect/Effect"
+
 // abstract class, don't instantiate
 public class Ladspa extends Effect
 {

@@ -20,6 +20,9 @@
 
 */
 
+@import "ArraySet"
+@import "../test/Assert"
+
 class NeverTrue extends UnaryPredicate
 {
     // empty

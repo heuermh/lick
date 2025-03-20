@@ -20,6 +20,12 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+@import "../fn/FloatProcedure"
+@import "../fn/FloatFloatProcedure"
+@import "../collect/ArrayList"
 
 public class Sample
 //    implements Procedure, IntProcedure, IntIntProcedure, FloatProcedure, FloatFloatProcedure

@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/DurSupplier"
+
 public class DurProvider extends DurSupplier
 {
     dur duration;

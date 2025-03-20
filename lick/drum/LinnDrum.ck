@@ -20,108 +20,111 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Clap extends Sample
 {
     {
-        "samples/LinnDrum/Clap.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/LinnDrum/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/LinnDrum/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/ClosedHatB.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/LinnDrum/Crash.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/Crash.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/LinnDrum/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/HighTom.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/LinnDrum/KickA.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/LinnDrum/KickB.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/KickB.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/LinnDrum/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/LowTom.wav" => buf.read;
     }
 }
 
 class MediumTom extends Sample
 {
     {
-        "samples/LinnDrum/MediumTom.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/MediumTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/LinnDrum/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/OpenHat.wav" => buf.read;
     }
 }
 
 class RideA extends Sample
 {
     {
-        "samples/LinnDrum/RideA.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/RideA.wav" => buf.read;
     }
 }
 
 class RideB extends Sample
 {
     {
-        "samples/LinnDrum/RideB.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/RideB.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/LinnDrum/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/LinnDrum/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/SnareB.wav" => buf.read;
     }
 }
 
 class SnareC extends Sample
 {
     {
-        "samples/LinnDrum/SnareC.wav" => buf.read;
+        me.dir() + "../../samples/LinnDrum/SnareC.wav" => buf.read;
     }
 }
 

@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/OberheimDmx"
+
 OberheimDmx oberheimDmx;
 oberheimDmx.demo();

@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Cee"
+
+
 SawOsc saw;
 220.0 => saw.freq;
 

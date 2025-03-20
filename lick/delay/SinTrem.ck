@@ -20,6 +20,8 @@
 
 */
 
+@import "../interpolate/Interpolate"
+
 public class SinTrem extends Chugen
 {
     SinOsc lfo;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Shim"
+
 adc => Shim shim => dac;
 
 <<<"ready">>>;

@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/RolandCr78"
+
 RolandCr78 rolandCr78;
 rolandCr78.demo();

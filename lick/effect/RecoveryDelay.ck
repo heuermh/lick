@@ -20,6 +20,8 @@
 
 */
 
+@import "Feedback"
+
 // analog-style delay with HPF pre filter and LPF recovery filter
 public class RecoveryDelay extends Feedback
 {

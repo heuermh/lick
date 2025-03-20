@@ -33,6 +33,10 @@
 // Buy one here: http://www.parasitstudio.se/store/p7/Green_Currant_Tremolo_PCB.html
 //
 
+@import "Effect"
+@import "Tremolo"
+@import "../dist/Invert"
+
 public class Currant extends Effect
 {
     Invert _invert;

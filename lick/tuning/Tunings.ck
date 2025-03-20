@@ -20,6 +20,8 @@
 
 */
 
+@import "Tuning"
+
 public class Tunings
 {
 

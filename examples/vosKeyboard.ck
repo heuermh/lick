@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/Keyboard"
+@import "../lick/synth/VoiceOfSaturn"
+
 VoiceOfSaturn vos;
 vos.master => dac;
 

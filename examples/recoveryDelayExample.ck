@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/RecoveryDelay"
+
 adc => RecoveryDelay recoveryDelay => dac;
 
 <<<"ready">>>;

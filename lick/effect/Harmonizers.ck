@@ -20,6 +20,12 @@
 
 */
 
+@import "Harmonizer"
+@import "../interval/Interval"
+@import "../interval/Chord"
+@import "../interval/Scale"
+@import "../collect/ArrayList"
+
 class SingleIntervalHarmonizer extends Harmonizer
 {
     PitShift pitchShift;

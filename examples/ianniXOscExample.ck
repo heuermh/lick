@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/osc/IanniXOsc"
+
 class Dump extends Procedure
 {
     string name;

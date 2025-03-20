@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Wolftone"
+
 adc => Wolftone wolftone => dac;
 
 0.6 => wolftone.mix;

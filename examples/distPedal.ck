@@ -20,6 +20,13 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/dist/AtanDist"
+@import "../lick/dist/Clip"
+@import "../lick/dist/Dist"
+@import "../lick/dist/FrostBurnDist"
+@import "../lick/dist/TanhDist"
+
 /*
                                                    5
   >-- in --+-- Gain dry --------------------------------+-- out -->
@@ -35,6 +42,7 @@
            +-- Dist => ... => Gain dist4 ---------------+ 4
 
 */
+
 
 adc => Gain in;
 Gain out => dac;

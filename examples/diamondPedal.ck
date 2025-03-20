@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/delay/FeedbackMachine"
+@import "../lick/device/StompKeyboard"
+
+
 adc => FeedbackMachine fm => dac;
 
 fm.diamond(0.8);

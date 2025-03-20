@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/DigitalDelay"
+
+
 adc => DigitalDelay delay => dac;
 
 600::ms => delay.max;

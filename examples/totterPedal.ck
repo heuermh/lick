@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Totter"
+@import "../lick/interpolate/Constrain"
+
 Totter totter;
 
 totter.stop();

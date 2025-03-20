@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/drum/AkaiMpc60"
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Ecco"
+
+
 <<<"demo">>>;
 AkaiMpc60 akaiMpc60;
 //akaiMpc60.demo();

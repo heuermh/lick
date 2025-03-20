@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Blueshift"
+
+
 Blueshift blueshift => blackhole;
 
 0.1 => blueshift.rate;

@@ -20,5 +20,7 @@
 
 */
 
+@import "../lick/drum/RolandTr909"
+
 RolandTr909 rolandTr909;
 rolandTr909.demo();

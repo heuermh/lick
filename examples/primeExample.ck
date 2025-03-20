@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Prime"
+
 adc => Prime prime => dac;
 
 <<<"ready">>>;

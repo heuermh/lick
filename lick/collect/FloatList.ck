@@ -20,6 +20,12 @@
 
 */
 
+@import "FloatIterator"
+@import "FloatComparator"
+@import "../fn/FloatProcedure"
+@import "../fn/FloatPredicate"
+@import "../fn/FloatFunction"
+
 public class FloatList
 {
     fun int size()

@@ -25,6 +25,9 @@
 // http://www.holdernessmedia.com/home/ios-applications/music/echo-pad
 //
 
+@import "ControlChangeMidiMsg"
+@import "../sim/EchoPad"
+
 public class EchoPadMidi extends EchoPad
 {
     MidiOut out;

@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chords"
+@import "../lick/synth/Dream"
+
+
 Dream dream => NRev reverb => dac;
 
 0.6 => dream.gain;

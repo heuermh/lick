@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Foldback"
+
 adc => Foldback foldback => dac;
 
 foldback.stop();

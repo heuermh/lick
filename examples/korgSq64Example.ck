@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/KorgSq64"
+@import "../lick/drum/RolandTr808"
+
 RolandTr808 tr808;
 KorgSq64 korgSq64;
 

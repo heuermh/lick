@@ -20,6 +20,13 @@
 
 */
 
+@import "../lick/arp/Arpeggiators"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chords"
+@import "../lick/loop/Loops"
+@import "../lick/synth/Banks"
+
+
 TimeSignature.common(90) @=> TimeSignature t;
 
 Banks banks => ADSR adsr => dac;

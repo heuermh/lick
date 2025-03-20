@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/analysis/SigmuPitchFollower"
+@import "../lick/effect/Effect"
+@import "../lick/interval/Intervals"
+
 /*
 
    after a certian amount of time, drop the freq of pitshift from identity to some interval
@@ -27,6 +32,7 @@
    if volume drops below a cutoff, reset timer
 
  */
+
 
 class GainReset extends FloatProcedure
 {

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/synth/Poly"
+
 Poly poly;
 
 poly.outputL => LPF lpfL => dac.left;

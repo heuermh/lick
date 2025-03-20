@@ -20,6 +20,9 @@
 
 */
 
+@import "Chance"
+@import "Predicate"
+
 public class Sometimes extends Predicate
 {
     Chance c;

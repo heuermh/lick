@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/lfo/Lfo"
+@import "../lick/synth/Mdrone"
+
 Mdrone md => dac;
 
 // TODO unruly filter, _do not use headphones!_

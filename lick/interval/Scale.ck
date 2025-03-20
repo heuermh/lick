@@ -20,6 +20,10 @@
 
 */
 
+@import "Intervals"
+@import "../fn/FloatProcedure"
+@import "../collect/ArrayList"
+
 public class Scale
 {
     "Scale" => string name;

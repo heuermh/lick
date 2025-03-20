@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/AlesisQX25"
+
+
 class KeyOn extends IntIntProcedure
 {
     fun void run(int value0, int value1)

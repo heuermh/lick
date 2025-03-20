@@ -20,5 +20,8 @@
 
 */
 
+@import "../lick/drum/CasioSa10"
+
+
 CasioSa10 casioSa10;
 casioSa10.demo();

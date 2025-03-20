@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Raise"
+
 adc => Raise raise => dac;
 
 class Toggle extends Procedure

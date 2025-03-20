@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/collect/ArrayList"
+@import "../lick/device/Keyboard"
+@import "../lick/interval/Interval"
+@import "../lick/interval/Intervals"
+
 BeeThree bt => dac;
 440 => bt.freq;
 

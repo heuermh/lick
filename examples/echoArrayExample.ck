@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/EchoArray"
+
 EchoArray echoArray;
 adc => echoArray => dac;
 

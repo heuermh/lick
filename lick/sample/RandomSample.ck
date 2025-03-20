@@ -20,6 +20,8 @@
 
 */
 
+@import "CompositeSample"
+
 public class RandomSample extends CompositeSample
 {
     fun Sample _sample()

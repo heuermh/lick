@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/ShiftEcco"
+
 TimeSignature.common(110) @=> TimeSignature ts;
 ShiftEcco.create(ts) @=> ShiftEcco ecco;
 

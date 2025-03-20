@@ -20,6 +20,9 @@
 
 */
 
+@import "IntIterator"
+@import "IntList"
+
 public class IntListIterator extends IntIterator
 {
     0 => int index;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Glider"
+
 adc => Glider glider => dac;
 
 <<<"ready">>>;

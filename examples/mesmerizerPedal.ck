@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Mesmerizer"
+
 adc => Mesmerizer mesmerizer => dac;
 
 class Toggle extends Procedure

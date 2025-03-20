@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class Linear extends Interpolation
 {
     fun float evaluate(float arg)

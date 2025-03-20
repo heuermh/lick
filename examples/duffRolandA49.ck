@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/RolandA49"
+@import "../lick/interpolate/Interpolate"
+@import "../lick/kick/Duff"
+
 Duff duff => dac;
 RolandA49 keyboard;
 

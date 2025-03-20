@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Redshift"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+
 TimeSignature.common(280) @=> TimeSignature t;
 
 293.67 => float d;

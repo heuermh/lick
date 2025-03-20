@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Triphaser"
+@import "../lick/interval/Intervals"
+
 adc => Triphaser triphaser => dac;
 
 triphaser.high.hyperLfo();

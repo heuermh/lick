@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Mary"
+
 // are in and out necessary?
 adc => Pan2 in => Mary stereoMary[2] => Gain out[2] => dac;
 

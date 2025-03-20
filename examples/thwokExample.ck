@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Thwok"
+
 Thwok thwok;
 
 thwok => dac;

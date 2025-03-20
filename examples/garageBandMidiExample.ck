@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/GarageBandMidi"
+
 // first open a network MIDI session to GarageBand app on iPad/iPhone
 GarageBandMidi garageBand;
 garageBand.open(0);

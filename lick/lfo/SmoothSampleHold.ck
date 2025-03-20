@@ -20,6 +20,8 @@
 
 */
 
+@import "SlewStep"
+
 public class SmoothSampleHold extends Chugraph
 {
     inlet => blackhole;

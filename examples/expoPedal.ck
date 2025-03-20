@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Expo"
+
 adc => Expo expo => dac;
 
 10 => int reps;

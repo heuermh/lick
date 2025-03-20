@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/synth/VoiceOfSaturn"
+
 VoiceOfSaturn vos;
 vos.osc1Pitch(80.0);
 vos.osc2Pitch(24.0);

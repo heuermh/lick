@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/ShiftEcco"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+
 TimeSignature.common(110) @=> TimeSignature ts;
 ShiftEcco.create(ts) @=> ShiftEcco ecco;
 

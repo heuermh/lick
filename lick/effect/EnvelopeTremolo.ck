@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class EnvelopeTremolo extends Effect
 {
     Envelope _env;

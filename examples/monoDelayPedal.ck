@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/delay/MonoDelay"
+@import "../lick/device/StompKeyboard"
+
 MonoDelay d;
 Gain wet;
 Gain dry;

@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/drum/BigMono"
+@import "../lick/duration/TimeSignature"
+@import "../lick/loop/Loops"
+
+
 BigMono bigMono;
 TimeSignature.common(130) @=> TimeSignature t;
 

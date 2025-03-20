@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Slick"
+
 adc => Slick slick => dac;
 
 slick.stop();

@@ -20,6 +20,8 @@
 
 */
 
+@import "../sim/TwoPots"
+
 // receive MIDI from the TwoPots Teensy hardware
 public class TwoPotsMidi extends TwoPots
 {

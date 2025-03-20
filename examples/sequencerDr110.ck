@@ -20,6 +20,15 @@
 
 */
 
+@import "../lick/arp/Pattern"
+@import "../lick/arp/Patterns"
+@import "../lick/arp/Sequence"
+@import "../lick/arp/Sequencers"
+@import "../lick/arp/Sequences"
+@import "../lick/drum/BossDr110"
+@import "../lick/duration/TimeSignature"
+@import "../lick/loop/Loops"
+
 BossDr110 bossDr110;
 TimeSignature.common(106) @=> TimeSignature t;
 

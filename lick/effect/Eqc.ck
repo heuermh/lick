@@ -20,6 +20,10 @@
 
 */
 
+@import "Effect"
+@import "Comp"
+@import "../interpolate/Interpolate"
+
 // eq + compressor of sorts
 public class Eqc extends Effect
 {

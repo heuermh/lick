@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/drum/KorgMs20"
+
 KorgMs20 korgMs20;
 korgMs20.demo();
 

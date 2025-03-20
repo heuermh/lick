@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Tremolo"
+
 Tremolo tremolo => blackhole;
 
 /*

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/analysis/EnvelopeTrigger"
+
 EnvelopeTrigger trigger;
 
 adc => trigger.env => blackhole;

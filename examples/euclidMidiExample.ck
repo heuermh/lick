@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/EuclidMidi"
+
 class Dump extends IntIntProcedure
 {
     string name;

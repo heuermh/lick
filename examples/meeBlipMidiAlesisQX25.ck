@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/AlesisQX25"
+@import "../lick/midi/MeeBlipMidi"
+
 // AlesisQX25 --> MeeBlip micro MIDI mapping
 MeeBlipMidi meeBlip;
 

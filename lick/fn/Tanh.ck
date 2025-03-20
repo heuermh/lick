@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 public class Tanh extends FloatFunction
 {
     fun float evaluate(float arg)

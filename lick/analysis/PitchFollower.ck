@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatProcedure"
+
 public class PitchFollower extends Chugraph
 {
     PitchTrack pitchTrack;

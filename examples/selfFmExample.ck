@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/fm/SelfFm"
+
 SelfFm self => dac;
 
 for (0 => int i; i < 20; i++) {

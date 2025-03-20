@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/Monome"
+@import "../lick/drum/RolandTr909"
+@import "../lick/sample/Sample"
+
 class MonomeSequencer extends Monome
 {
     16 => static int H;

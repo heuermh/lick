@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatFunction"
+
 public class Interval extends FloatFunction
 {
     1.0 => float antecedent;

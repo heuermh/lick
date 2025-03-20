@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Hall"
+
 adc => Hall hall => dac;
 
 hall.stop();

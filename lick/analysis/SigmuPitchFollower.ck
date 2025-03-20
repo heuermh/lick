@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/FloatProcedure"
+
 public class SigmuPitchFollower extends Chugraph
 {
     Sigmund sigmu;

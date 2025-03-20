@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/FilterDelay"
+
 adc => FilterDelay filterDelay => dac;
 
 filterDelay.stop();

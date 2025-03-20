@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/MonoDelay"
+
 MonoDelay d;
 
 200::ms => d.delay.max;

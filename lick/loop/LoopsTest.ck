@@ -20,6 +20,11 @@
 
 */
 
+@import "Loops"
+@import "../fn/Procedure"
+@import "../fn/FloatProcedure"
+@import "../test/Assert"
+
 // unit test for Loops
 class LoopsTest extends Assert
 {

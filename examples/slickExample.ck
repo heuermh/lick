@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Slick"
+
 adc => Slick slick => dac;
 
 0.8 => slick.mix;

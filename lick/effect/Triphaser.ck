@@ -20,6 +20,11 @@
 
 */
 
+@import "Effect"
+@import "Blueshift"
+@import "CrossOver3"
+@import "../interval/Interval"
+
 public class Triphaser extends Effect
 {
     Blueshift high;

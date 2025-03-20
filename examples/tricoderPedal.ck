@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Tricoder"
+@import "../lick/interval/Intervals"
+
 Tricoder tricoder;
 
 tricoder.high.hyperLfo();

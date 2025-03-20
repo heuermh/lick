@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Smother"
+
 BeeThree bt;
 220.0 => bt.freq;
 1.0 => bt.noteOff;

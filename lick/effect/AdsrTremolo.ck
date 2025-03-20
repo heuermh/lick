@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "../adsr/Adsr"
+
 public class AdsrTremolo extends Effect
 {
     ADSR _adsr;

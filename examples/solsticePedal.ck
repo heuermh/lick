@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Solstice"
+@import "../lick/interpolate/Constrain"
+
 adc => Solstice solstice => dac;
 
 0.8 => solstice.mix;

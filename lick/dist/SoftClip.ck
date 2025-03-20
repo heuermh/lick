@@ -48,6 +48,9 @@
 
 */
 
+@import "WaveShaper"
+@import "../fn/FloatFunction"
+
 class F extends FloatFunction
 {
     fun float evaluate(float value)

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/lfo/Lfo"
+
 Lfo lfo => blackhole;
 
 for (0 => int i; i < 500; i++)

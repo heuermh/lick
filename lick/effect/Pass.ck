@@ -25,6 +25,9 @@
 // https://www.oldbloodnoise.com/pedals/sunlight
 //
 
+@import "LfoFeedback"
+@import "Hall"
+
 public class Pass extends LfoFeedback
 {
     Hall initialReverb;

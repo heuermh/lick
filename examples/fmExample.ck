@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/fm/Fm"
+
 Fm fm => dac;
 
 <<<"fm m", fm.modulator(), fm.m.freq(), "c", fm.carrier(), fm.c.freq(), "ratio", fm.ratio(), "a", fm.depth(), fm.a.gain()>>>;

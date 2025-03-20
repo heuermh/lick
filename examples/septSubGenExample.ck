@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/synth/SeptSubGen"
+
 1::second => now;
 
 SeptSubGen sept;

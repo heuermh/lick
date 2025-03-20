@@ -20,6 +20,19 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "CompositeFunction"
+@import "ConditionalFunction"
+@import "Frequently"
+@import "Infrequently"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+@import "UnaryFunction"
+
 public class Functions
 {
     fun static UnaryFunction compose(UnaryFunction g, UnaryFunction h)

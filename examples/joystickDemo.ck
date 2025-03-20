@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/Joystick"
+
 class DumpButtonUp extends IntProcedure
 {
     fun void run(int value)

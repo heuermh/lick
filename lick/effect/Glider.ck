@@ -20,6 +20,11 @@
 
 */
 
+@import "Cee"
+@import "DigitalDelay"
+@import "FilterDelay"
+@import "Effect"
+
 public class Glider extends Effect
 {
      inlet => Cee chorus => DigitalDelay shortDelay => FilterDelay longDelay => GVerb reverb => wet;

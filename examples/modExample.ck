@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/fn/Mod"
+
 Mod.create(1) @=> Mod mod1;
 Mod.create(2) @=> Mod mod2;
 Mod.create(3) @=> Mod mod3;

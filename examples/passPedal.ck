@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Pass"
+
 adc => Pass pass => dac;
 
 pass.stop();

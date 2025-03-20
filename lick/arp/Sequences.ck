@@ -20,6 +20,8 @@
 
 */
 
+@import "Sequence"
+
 public class Sequences
 {
 

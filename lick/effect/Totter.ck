@@ -25,6 +25,9 @@
 // http://www.kilpatrickaudio.com/?p=echo_centric
 //
 
+@import "AnalogDelay"
+@import "Feedback"
+
 public class Totter extends Feedback
 {
     AnalogDelay.create() @=> AnalogDelay _quarters;

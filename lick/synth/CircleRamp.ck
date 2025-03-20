@@ -27,6 +27,13 @@
 // Buy one here:  http://www.critterandguitari.com/products/bolsa-bass
 //
 
+@import "../adsr/Adsr"
+@import "../interval/Interval"
+@import "../interval/Intervals"
+@import "../interpolate/Interpolate"
+@import "../interpolate/Interpolation"
+@import "../interpolate/Interpolations"
+
 public class CircleRamp extends Chugraph
 {
     SinOsc osc1;

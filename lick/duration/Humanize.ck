@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/Chance"
+
 public class Humanize
 {
     fun static dur humanize(dur value)

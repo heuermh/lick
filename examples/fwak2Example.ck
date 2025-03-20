@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Fwak2"
+
 Fwak2 fwak2 => dac;
 
 20.601 => float e;

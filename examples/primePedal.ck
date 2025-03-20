@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Prime"
+
 adc => Prime prime => dac;
 
 prime.stop();

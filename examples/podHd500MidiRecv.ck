@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/PodHd500"
+
 class Dump extends IntProcedure
 {
     string name;

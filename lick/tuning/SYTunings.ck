@@ -30,6 +30,9 @@
    documents copyright © 1997-2017 chris lawrence (silvercircle@shaw.ca)
 
 */
+
+@import "Tuning"
+
 public class SYTunings
 {
     Tuning _byName[0];

@@ -20,6 +20,8 @@
 
 */
 
+@import "../dist/Invert"
+
 public class Luverly extends Chugraph
 {
     SawOsc _saw1;

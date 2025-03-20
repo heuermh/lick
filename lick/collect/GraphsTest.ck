@@ -20,6 +20,12 @@
 
 */
 
+@import "Graph"
+@import "Graphs"
+@import "Node"
+@import "../test/Assert"
+@import "../fn/UnaryProcedure"
+
 class Value
 {
     0 => int value;

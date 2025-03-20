@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/NanoPad"
+@import "../lick/drum/RolandTr606"
+
 NanoPad nanoPad;
 RolandTr606 rolandTr606;
 

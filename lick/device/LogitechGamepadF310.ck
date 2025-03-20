@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/FloatProcedure"
+@import "../fn/FloatFloatProcedure"
+
 public class LogitechGamepadF310 // extends Joystick
 {
     Hid hid;

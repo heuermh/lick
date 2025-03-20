@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS ToneStack LADSPA plugin, http://quitte.de/dsp/caps.html#ToneStack
 public class ToneStack extends Caps
 {

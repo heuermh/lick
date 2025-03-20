@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/IntProcedure"
+
 // appends an int procedure, g followed by h
 public class IntAppend extends IntProcedure
 {

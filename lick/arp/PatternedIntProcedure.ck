@@ -20,6 +20,8 @@
 
 */
 
+@import "Pattern"
+
 public class PatternedIntProcedure extends IntProcedure
 {
     0 => int index;

@@ -25,6 +25,9 @@
 // buy one here: http://earthquakerdevices.com/shop/Night%20Wire/cat/13097
 //
 
+@import "LfoFeedback"
+@import "CrossOver2"
+
 public class Wire extends LfoFeedback
 {
     CrossOver2 _crossOver;

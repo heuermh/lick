@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Breeze"
+
+
 adc => Breeze breeze => dac;
 
 breeze.stop();
@@ -103,6 +107,6 @@ delayDown @=> stomp.button2Down;
 shiftUp @=> stomp.button3Down;
 shiftDown @=> stomp.button4Down;
 feedbackShiftUp @=> stomp.button5Down;
-feedbackShiftDown @=> stomp.button6Down;
+// feedbackShiftDown @=> stomp.button6Down;
 
 stomp.open(0);

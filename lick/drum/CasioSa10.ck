@@ -20,94 +20,97 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Crash extends Sample
 {
     {
-        "samples/CasioSa10/Crash.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/Crash.wav" => buf.read;
     }
 }
 
 class HighConga extends Sample
 {
     {
-        "samples/CasioSa10/HighConga.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/HighConga.wav" => buf.read;
     }
 }
 
 class HighCowBell extends Sample
 {
     {
-        "samples/CasioSa10/HighCowBell.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/HighCowBell.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/CasioSa10/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/HighTom.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/CasioSa10/Kick.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/Kick.wav" => buf.read;
     }
 }
 
 class LowConga extends Sample
 {
     {
-        "samples/CasioSa10/LowConga.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/LowConga.wav" => buf.read;
     }
 }
 
 class LowCowBell extends Sample
 {
     {
-        "samples/CasioSa10/LowCowBell.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/LowCowBell.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/CasioSa10/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/LowTom.wav" => buf.read;
     }
 }
 
 class MiddleTom extends Sample
 {
     {
-        "samples/CasioSa10/MiddleTom.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/MiddleTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/CasioSa10/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/OpenHat.wav" => buf.read;
     }
 }
 
 class Ride extends Sample
 {
     {
-        "samples/CasioSa10/Ride.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/Ride.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/CasioSa10/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/CasioSa10/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/CasioSa10/SnareB.wav" => buf.read;
     }
 }
 

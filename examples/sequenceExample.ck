@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/arp/Sequence"
+@import "../lick/arp/Sequences"
+
 class Msg extends FloatProcedure
 {
     fun void run(float value)

@@ -20,6 +20,10 @@
 
 */
 
+@import "ArrayList"
+@import "Node"
+@import "Edge"
+
 public class Graph
 {
     ArrayList nodes;

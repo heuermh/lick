@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/interpolate/Interpolate"
+@import "../lick/module/Module"
+
 class SinModule extends Module
 {
     SinOsc sin;

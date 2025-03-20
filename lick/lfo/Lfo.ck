@@ -20,6 +20,10 @@
 
 */
 
+@import "Hyper"
+@import "SampleHold"
+@import "SmoothSampleHold"
+
 public class Lfo extends Chugen
 {
     SawOsc _sawLfo;

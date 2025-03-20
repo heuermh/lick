@@ -20,6 +20,14 @@
 
 */
 
+@import "CompositeSample"
+@import "PitchSensitiveSample"
+@import "RandomSample"
+@import "Reconnect"
+@import "VelocitySensitiveSample"
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+
 class HandedSampleProcedure extends Procedure
 {
     Sample @ sample;

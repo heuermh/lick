@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS Saturate LADSPA plugin, http://quitte.de/dsp/caps.html#Saturate
 public class Saturate extends Caps
 {

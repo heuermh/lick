@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/EchoArray"
+@import "../lick/interpolate/Constrain"
+
 EchoArray echoArray;
 
 0.8 => echoArray.mix;

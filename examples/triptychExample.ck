@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Triptych"
+
 Triptych triptych;
 adc => triptych => dac;
 

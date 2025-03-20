@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/sim/MeeBlip"
+
 MeeBlip meeBlip;
 meeBlip.open(0);
 

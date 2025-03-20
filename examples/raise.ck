@@ -20,6 +20,12 @@
 
 */
 
+@import "../lick/analysis/SigmuGainFollower"
+@import "../lick/analysis/SigmuPitchFollower"
+@import "../lick/effect/Effect"
+@import "../lick/interval/Interval"
+@import "../lick/interval/Intervals"
+
 /*
 
    when volume drops below a cutoff, set pitshift from follower to some interval

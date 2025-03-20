@@ -20,6 +20,9 @@
 
 */
 
+@import "Predicate"
+@import "IntProcedure"
+
 public class ConditionalIntProcedure extends IntProcedure
 {
     Predicate p;

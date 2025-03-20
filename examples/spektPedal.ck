@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Spekt"
+
 Spekt spekt;
 
 spekt.ascendingEq();

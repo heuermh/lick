@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/ladspa/caps/Scape"
+
 Scape scape;
 
 scape.about();

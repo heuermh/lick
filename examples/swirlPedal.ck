@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/delay/Swirl"
+@import "../lick/device/StompKeyboard"
+
 SinOsc lfo0;
 0.3 => lfo0.freq;
 0.8 => lfo0.gain;

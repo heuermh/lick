@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/dist/BucketBrigade"
+@import "../lick/effect/Effect"
+
 //
 // more like a bit crusher than anything else
 //   needs interpolation

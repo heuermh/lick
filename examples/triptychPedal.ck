@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Triptych"
+
 Triptych triptych;
 
 0.8 => triptych.mix;

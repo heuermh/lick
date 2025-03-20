@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Foldback"
+
 adc => Foldback f => dac;
 
 0.9 => f.mix;

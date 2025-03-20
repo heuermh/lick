@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/dist/TanhDist"
+@import "../lick/effect/Effect"
+
 class DcOffset extends Chugen
 {
     fun float tick(float in)

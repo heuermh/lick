@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/LesserSitting"
+
 adc => LesserSitting lesserSitting => dac;
 
 0.8 => lesserSitting.mix;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/Swirl"
+
 SinOsc osc;
 220.0 => osc.freq;
 0.4 => osc.gain;

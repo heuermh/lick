@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/lfo/Quad"
+
 Quad quad;
 quad.lfo1 => blackhole;
 quad.lfo2 => blackhole;

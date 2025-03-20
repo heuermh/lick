@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Cascade"
+
+
 adc => Cascade cascade => dac;
 
 0.6 => cascade.mix;

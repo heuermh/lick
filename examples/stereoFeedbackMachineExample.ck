@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/StereoFeedbackMachine"
+
 StereoFeedbackMachine fm;
 
 1200::ms => fm.delay1.delayL.max;

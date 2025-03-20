@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/drum/RolandTr808"
+@import "../lick/midi/EuclidMidi"
+
 RolandTr808 tr808;
 IntIntProcedure noop;
 

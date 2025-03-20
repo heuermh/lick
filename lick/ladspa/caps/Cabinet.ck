@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS CabinetIV LADSPA plugin, http://quitte.de/dsp/caps.html#CabinetIV
 public class Cabinet extends Caps
 {

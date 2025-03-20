@@ -20,6 +20,8 @@
 
 */
 
+@import "StereoFeedbackMachine"
+
 public class StereoFeedbackMachines
 {
     fun static StereoFeedbackMachine fourMono(float f)

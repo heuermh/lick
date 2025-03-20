@@ -20,6 +20,10 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+@import "NoteOnMidiMsg"
+@import "NoteOffMidiMsg"
+
 // interacts with a MeeBlip micro over MIDI
 public class MeeBlipMidi
 {

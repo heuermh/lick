@@ -20,6 +20,8 @@
 
 */
 
+@import "Node"
+
 public class Edge
 {
     Object @ value;

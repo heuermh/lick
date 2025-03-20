@@ -20,6 +20,9 @@
 
 */
 
+@import "../lfo/Lfo"
+@import "Presence"
+
 public class Aura extends Presence
 {
     Lfo _lfo;

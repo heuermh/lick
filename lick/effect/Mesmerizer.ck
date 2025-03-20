@@ -27,6 +27,10 @@
 // Buy one here:  http://www.catalinbread.com/PARE
 //
 
+@import "Effect"
+@import "../module/Module"
+@import "../interpolate/Interpolate"
+
 class PhasorModule extends Module
 {
     Phasor phasor => blackhole;

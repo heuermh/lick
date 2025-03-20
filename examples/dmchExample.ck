@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/snare/Dmch"
+
+
+
 Dmch dmch => dac;
 
 for (0 => int i; i < 32; i++)

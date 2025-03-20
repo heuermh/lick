@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Ruins"
+
+
 adc => Ruins ruins => dac;
 
 0.8 => ruins.mix;

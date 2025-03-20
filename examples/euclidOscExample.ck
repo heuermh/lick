@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/osc/EuclidOsc"
+
 class Dump extends IntIntIntIntProcedure
 {
     string name;

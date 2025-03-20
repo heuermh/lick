@@ -28,6 +28,8 @@
 // 0-6 are Saw 8', Square 8', Saw 4', Square 4', Saw 2', Square 2', Saw 1'
 //
 
+@import "../effect/Mixer"
+
 public class Banks extends Chugraph
 {
     SawOsc _saw8;

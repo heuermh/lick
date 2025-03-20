@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/IntIntProcedure"
+
 // receive MIDI from the M-Audio Ozone hardware
 public class MAudioOzone // may work for other MIDI keyboards, see notes below
 {

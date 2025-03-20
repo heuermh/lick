@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/interval/Chords"
+@import "../lick/midi/AnimoogMidi"
+
+
 // first open a network MIDI session to Animoog app on iPad/iPhone
 AnimoogMidi animoog;
 animoog.open(0);

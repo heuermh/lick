@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/kick/Duff"
+
 Duff duff => dac;
 
 for (20.0 => float f; f < 2000.0; f * 2 => f)

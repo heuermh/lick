@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/IntProcedure"
+@import "../fn/FloatProcedure"
+@import "../interpolate/Constrain"
+
 public class MidiNote
 {
     int _note;

@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/Chew"
+
+
 SinOsc sin;
 1.0 => sin.gain;
 220.0 => sin.freq;

@@ -20,6 +20,8 @@
 
 */
 
+@import "CompositeAdsr"
+
 public class RoundRobinAdsr extends CompositeAdsr
 {
     0 => int _index;

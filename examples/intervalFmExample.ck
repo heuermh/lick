@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/fm/IntervalFm"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+
 IntervalFm intervalFm => dac;
 
 Intervals.majorThird().asc() @=> Interval asc;

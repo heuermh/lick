@@ -20,6 +20,9 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+@import "../sim/Loopy"
+
 // interacts with the Loopy iOS app over MIDI
 public class LoopyMidi extends Loopy
 {

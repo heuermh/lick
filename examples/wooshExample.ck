@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Woosh"
+
 adc => Woosh woosh => dac;
 
 <<<"ready">>>;

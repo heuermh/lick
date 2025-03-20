@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/delay/Swirl"
+@import "../lick/effect/Tremolo"
+@import "../lick/noise/Pk3"
+@import "../lick/noise/Pke"
+
 Noise n;
 0.2 => n.gain;
 Pke pke;

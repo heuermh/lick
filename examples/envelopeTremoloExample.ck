@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/EnvelopeTremolo"
+
 EnvelopeTremolo envelopeTremolo;
 
 1.0 => envelopeTremolo.mix;

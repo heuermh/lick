@@ -20,6 +20,9 @@
 
 */
 
+@import "Tap"
+@import "../../interpolate/Constrain"
+
 // wrapper for TAP-plugins TubeWarmth LADSPA plugin,
 //   http://tap-plugins.sourceforge.net/ladspa/tubewarmth.html
 public class TubeWarmth extends Tap

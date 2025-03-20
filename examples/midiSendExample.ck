@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/midi/ControlChangeMidiMsg"
+@import "../lick/midi/NoteOffMidiMsg"
+@import "../lick/midi/NoteOnMidiMsg"
+
 // requires a MIDI loopback device, such as IAC driver on OSX
 MidiIn midiIn;
 MidiMsg midiInMsg;

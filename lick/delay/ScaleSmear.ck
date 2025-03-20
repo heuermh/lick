@@ -20,6 +20,13 @@
 
 */
 
+@import "../interval/Scale"
+@import "../interpolate/Constrain"
+@import "../fn/FloatProcedure"
+@import "../arp/Arpeggiator"
+@import "../arp/Arpeggiators"
+@import "Smear"
+
 class ApplyFreq extends FloatProcedure
 {
     ScaleSmear @ smear;

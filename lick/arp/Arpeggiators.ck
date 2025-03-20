@@ -20,6 +20,11 @@
 
 */
 
+@import "../interval/Chord"
+@import "../interval/Scale"
+@import "Arpeggiator"
+@import "Pattern"
+
 class UpArpeggiator extends Arpeggiator
 {
     // empty

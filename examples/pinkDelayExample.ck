@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/PinkDelay"
+
 BeeThree bt => PinkDelay pd => dac;
 
 220.0 => bt.freq;

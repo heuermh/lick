@@ -20,6 +20,13 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/effect/Revenge"
+@import "../lick/effect/Tremolo"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/lfo/Lfo"
+
 class SubOsc
 {
     float freq;

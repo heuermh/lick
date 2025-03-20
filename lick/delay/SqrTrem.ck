@@ -20,6 +20,8 @@
 
 */
 
+@import "../interpolate/Interpolate"
+
 public class SqrTrem extends Chugen
 {
     SqrOsc lfo;

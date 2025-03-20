@@ -20,6 +20,10 @@
 
 */
 
+@import "../fn/Procedure"
+@import "../fn/IntProcedure"
+@import "../fn/FloatFloatProcedure"
+
 public class Mouse
 {
     Hid hid;

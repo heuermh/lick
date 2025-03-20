@@ -20,14 +20,17 @@
 
 */
 
+@import "../lick/device/NanoPad"
+@import "../lick/drum/RolandTr66"
+
 NanoPad nanoPad;
 RolandTr66 rolandTr66;
 
 //rolandTr66.kick @=> nanoPad.button1 if ChucK supported multiple inheritance
 
 // assign samples to buttons
-rolandTr66.kick.asIntProcedure() @=> nanoPad.button1;
-rolandTr66.kick.asIntProcedure() @=> nanoPad.button7;
+rolandTr66.kickA.asIntProcedure() @=> nanoPad.button1;
+rolandTr66.kickB.asIntProcedure() @=> nanoPad.button7;
 rolandTr66.snare.asIntProcedure() @=> nanoPad.button2;
 rolandTr66.snare.asIntProcedure() @=> nanoPad.button8;
 rolandTr66.closedHat.asIntProcedure() @=> nanoPad.button3;
@@ -36,8 +39,8 @@ rolandTr66.crash.asIntProcedure() @=> nanoPad.button4;
 rolandTr66.rim.asIntProcedure() @=> nanoPad.button10;
 rolandTr66.lowConga.asIntProcedure() @=> nanoPad.button5;
 rolandTr66.highConga.asIntProcedure() @=> nanoPad.button11;
-rolandTr66.kick.asIntProcedure() @=> nanoPad.button6;
-rolandTr66.kick.asIntProcedure() @=> nanoPad.button12;
+// rolandTr66.kick.asIntProcedure() @=> nanoPad.button6;
+// rolandTr66.kick.asIntProcedure() @=> nanoPad.button12;
 
 // turn down gain on crash and hats
 0.25 => rolandTr66.closedHat.maxGain;

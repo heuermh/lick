@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+
 adc => Gain dry => dac;
 adc => Gen17 gen17 => Gain wet => dac;
 

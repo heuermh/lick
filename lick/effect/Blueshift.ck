@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoFeedback"
+
 public class Blueshift extends LfoFeedback
 {
     Delay _delay;

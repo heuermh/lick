@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/DualRect"
+
 SinOsc lfo0;
 SinOsc lfo1;
 

@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class Cooper extends Effect
 {
     Gain _shortPre;

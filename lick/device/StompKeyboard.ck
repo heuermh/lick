@@ -20,6 +20,8 @@
 
 */
 
+@import "../fn/Procedure"
+
 public class StompKeyboard
 {
     Hid hid;

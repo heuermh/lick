@@ -20,6 +20,8 @@
 
 */
 
+@import "../Ladspa"
+
 // abstract class, don't instantiate
 public class Caps extends Ladspa
 {

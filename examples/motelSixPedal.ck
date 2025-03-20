@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/MotelSix"
+
 MotelSix six;
 
 class Toggle extends Procedure
@@ -95,4 +98,3 @@ decreaseRate @=> stomp.button3Down;
 togglePitchShift @=> stomp.button4Down;
 
 stomp.open(0);
-

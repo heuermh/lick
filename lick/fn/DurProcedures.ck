@@ -20,6 +20,18 @@
 
 */
 
+@import "AlmostAlways"
+@import "CoinFlip"
+@import "ConditionalDurProcedure"
+@import "DurProcedure"
+@import "Frequently"
+@import "Infrequently"
+@import "Mod"
+@import "Often"
+@import "Predicate"
+@import "Rarely"
+@import "Sometimes"
+
 public class DurProcedures
 {
     fun static DurProcedure condition(Predicate p, DurProcedure r)

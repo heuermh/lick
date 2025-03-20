@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class Ring extends Effect
 {
     Gain pre;

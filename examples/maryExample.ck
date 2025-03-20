@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Mary"
+
 adc => Mary mary => dac;
 
 1.0 => mary.mix;

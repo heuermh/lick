@@ -20,6 +20,8 @@
 
 */
 
+@import "Feedback"
+
 public class DigitalDelay extends Feedback
 {
     Delay _delay;

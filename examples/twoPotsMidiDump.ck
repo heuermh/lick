@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/TwoPotsMidi"
+
 class Dump extends IntProcedure
 {
     "dump" => string name;

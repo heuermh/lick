@@ -20,6 +20,8 @@
 
 */
 
+@import "Set"
+
 class ArraySetIterator extends Iterator
 {
     0 => int index;

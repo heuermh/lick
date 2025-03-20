@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 // wraps Bitcrusher chugin
 public class Crush extends Effect
 {

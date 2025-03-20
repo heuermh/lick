@@ -20,6 +20,9 @@
 
 */
 
+@import "MonoDelay"
+@import "../effect/Effect"
+
 public class FeedbackMachine extends Effect
 {
     Gain route1to2;

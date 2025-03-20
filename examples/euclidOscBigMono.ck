@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/drum/BigMono"
+@import "../lick/osc/EuclidOsc"
+
 BigMono bigMono;
 IntIntProcedure noop;
 

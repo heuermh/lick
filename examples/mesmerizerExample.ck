@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Mesmerizer"
+
 Mesmerizer mesmerizer => dac;
 330.0 => mesmerizer.filterFreq;
 0.0 => mesmerizer.filterSpread;

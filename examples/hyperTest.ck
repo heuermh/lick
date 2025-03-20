@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/lfo/Hyper"
+
 Hyper hyper => blackhole;
 
 for (0 => int i; i < 500; i++)

@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/hat/Hat"
+
 Hat hat => dac;
 
 0.8 => hat.gain;

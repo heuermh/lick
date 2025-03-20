@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/RolandA49"
+@import "../lick/synth/CircleRamp"
+
 CircleRamp circleRamp => dac;
 
 class KeyOn extends IntIntProcedure

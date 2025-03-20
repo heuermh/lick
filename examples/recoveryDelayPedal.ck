@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/RecoveryDelay"
+
 adc => RecoveryDelay recoveryDelay => dac;
 
 recoveryDelay.stop();

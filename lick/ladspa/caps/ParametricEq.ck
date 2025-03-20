@@ -20,6 +20,9 @@
 
 */
 
+@import "Caps"
+@import "../../interpolate/Constrain"
+
 // wrapper for C*APS Eq4p LADSPA plugin, http://quitte.de/dsp/caps.html#Eq4p
 public class ParametricEq extends Caps
 {

@@ -20,6 +20,9 @@
 
 */
 
+@import "Pattern"
+@import "../fn/DurProcedure"
+
 public class PatternedDurProcedure extends DurProcedure
 {
     0 => int index;

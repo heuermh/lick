@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 // wraps Spectacle chugin
 public class Spekt extends Effect
 {

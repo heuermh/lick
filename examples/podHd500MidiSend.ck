@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/PodHd500Midi"
+
 PodHd500Midi podHd500;
 podHd500.open(0);
 

@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/effect/Harmonizer"
+@import "../lick/effect/Harmonizers"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+
 Scales.minorBlues(220.0) @=> Scale minorBlues;
 
 Harmonizers.asc(minorBlues) @=> Harmonizer harmonizer;

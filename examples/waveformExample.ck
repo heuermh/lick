@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+
 // download waveforms from http://www.adventurekid.se/AKRT
 
 SndBuf akwf;

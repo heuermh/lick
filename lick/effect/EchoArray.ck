@@ -26,6 +26,9 @@
 //   http://www.infanem.com/small-echo-array/
 //
 
+@import "Effect"
+@import "AnalogDelay"
+
 public class EchoArray extends Effect
 {
     Gain _pre;

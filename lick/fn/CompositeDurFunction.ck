@@ -20,6 +20,8 @@
 
 */
 
+@import "DurFunction"
+
 // composite of two functions, g(h(arg))
 public class CompositeDurFunction extends DurFunction
 {

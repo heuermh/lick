@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Glider"
+
 adc => Glider glider => dac;
 
 glider.stop();

@@ -27,6 +27,12 @@
 // Buy one here:  http://www.critterandguitari.com/products/bolsa-bass
 //
 
+@import "../interval/Interval"
+@import "../interval/Intervals"
+@import "../interpolate/Interpolate"
+@import "../interpolate/Interpolation"
+@import "../interpolate/Interpolations"
+
 public class SawRamp extends Chugraph
 {
     SinOsc osc1;

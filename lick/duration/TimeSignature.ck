@@ -20,6 +20,11 @@
 
 */
 
+@import "../fn/Chance"
+@import "../interpolate/CubicIn"
+@import "../interpolate/CubicOut"
+@import "HumanizedDurProvider"
+
 class BreveProvider extends HumanizedDurProvider
 {
     TimeSignature @ timeSignature;

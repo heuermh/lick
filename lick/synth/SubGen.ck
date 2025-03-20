@@ -20,6 +20,8 @@
 
 */
 
+@import "../delay/StereoDelay"
+
 public class SubGen
 {
     20.0 => float _freq;

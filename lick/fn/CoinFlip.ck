@@ -20,6 +20,9 @@
 
 */
 
+@import "Chance"
+@import "Predicate"
+
 public class CoinFlip extends Predicate
 {
     Chance c;

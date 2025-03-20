@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/effect/CrossOver2"
+@import "../lick/effect/DigitalDelay"
+
+
 CrossOver2 crossOver;
 
 // CrossOver2 is not an effect, in and out1/out2 must be chucked explicitly

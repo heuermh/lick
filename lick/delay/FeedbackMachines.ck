@@ -20,6 +20,8 @@
 
 */
 
+@import "FeedbackMachine"
+
 public class FeedbackMachines
 {
     fun static FeedbackMachine fourMono(float f)

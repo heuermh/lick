@@ -20,6 +20,12 @@
 
 */
 
+@import "Iterator"
+@import "Comparator"
+@import "../fn/UnaryProcedure"
+@import "../fn/UnaryPredicate"
+@import "../fn/UnaryFunction"
+
 public class List
 {
     fun int size()

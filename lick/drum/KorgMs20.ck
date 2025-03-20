@@ -25,45 +25,50 @@
 // http://francispreve.blogspot.de/2013/10/free-korg-ms-20-ableton-instruments.html
 //
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+@import "../sample/AdsrSample"
+@import "../interval/Intervals"
+
 class DetunedPulse extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Detuned Pulse.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Detuned Pulse.wav" => buf.read;
     }
 }
 
 class FilterFrenzy extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Filter Frenzy.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Filter Frenzy.wav" => buf.read;
     }
 }
 
 class NoiseSquare extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Noise Square.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Noise Square.wav" => buf.read;
     }
 }
 
 class ResSawInterval extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Res Saw Interval.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Res Saw Interval.wav" => buf.read;
     }
 }
 
 class ResoSquare extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Reso Square.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Reso Square.wav" => buf.read;
     }
 }
 
 class RingFizz extends AdsrSample
 {
     {
-        "samples/KorgMs20/MS20 - Ring Fizz.wav" => buf.read;
+        me.dir() + "../../samples/KorgMs20/MS20 - Ring Fizz.wav" => buf.read;
     }
 }
 

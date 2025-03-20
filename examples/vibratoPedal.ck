@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Vibrato"
+
 adc => Vibrato vibrato => dac;
 
 0.9 => vibrato.mix;

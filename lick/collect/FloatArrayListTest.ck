@@ -20,6 +20,9 @@
 
 */
 
+@import "FloatArrayList"
+@import "../test/Assert"
+
 class NeverTrue extends FloatPredicate
 {
     // empty

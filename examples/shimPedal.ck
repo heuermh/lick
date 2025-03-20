@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Shim"
+
 adc => Shim shim => dac;
 
 shim.stop();

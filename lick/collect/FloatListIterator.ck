@@ -20,6 +20,9 @@
 
 */
 
+@import "FloatIterator"
+@import "FloatList"
+
 public class FloatListIterator extends FloatIterator
 {
     0 => int index;

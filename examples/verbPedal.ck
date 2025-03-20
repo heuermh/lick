@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Verb"
+
 adc => Verb verb => dac;
 
 verb.stop();

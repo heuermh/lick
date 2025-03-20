@@ -20,6 +20,8 @@
 
 */
 
+@import "StereoDelay"
+
 public class StereoFeedbackMachine
 {
     Gain inputL;

@@ -20,6 +20,10 @@
 
 */
 
+@import "Feedback"
+@import "AnalogDelay"
+@import "../duration/TimeSignature"
+
 // fixed head tap tempo tape-style delay
 public class Electoronic extends Feedback
 {

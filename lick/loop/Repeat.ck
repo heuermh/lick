@@ -20,6 +20,11 @@
 
 */
 
+@import "../duration/DurProvider"
+@import "../fn/Procedure"
+@import "../fn/DurProcedure"
+@import "../fn/FloatProcedure"
+
 // repeat a procedure n times
 public class Repeat extends Procedure
 {

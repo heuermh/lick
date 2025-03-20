@@ -20,6 +20,8 @@
 
 */
 
+@import "DynamicEffect"
+
 public class Comp extends DynamicEffect
 {
     {

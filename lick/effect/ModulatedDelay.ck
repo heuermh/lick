@@ -20,6 +20,9 @@
 
 */
 
+@import "AnalogDelay"
+@import "../lfo/Lfo"
+
 // analog-style delay with modulated delay time
 public class ModulatedDelay extends AnalogDelay
 {

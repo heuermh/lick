@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/Controller128"
+@import "../lick/drum/RolandTr808"
+
+
 RolandTr808 tr808;
 Controller128 controller128;
 

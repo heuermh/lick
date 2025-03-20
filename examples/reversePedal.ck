@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Reverse"
+
 adc => Reverse reverse => dac;
 
 reverse.stop();

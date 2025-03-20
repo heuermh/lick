@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/effect/AdsrTremolo"
+
+
 AdsrTremolo adsrTremolo;
 
 1.0 => adsrTremolo.mix;

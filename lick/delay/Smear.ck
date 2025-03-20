@@ -20,6 +20,10 @@
 
 */
 
+@import "../effect/Effect"
+@import "../collect/ArrayList"
+@import "MonoDelay"
+
 public class Smear extends Effect
 {
     8 => int _size;

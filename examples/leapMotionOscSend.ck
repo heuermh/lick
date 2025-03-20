@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/interpolate/Constrain"
+
 // simulate OSC data sent by LeapMotion
 
 OscSend send;
@@ -131,4 +133,3 @@ while (true)
     updateCoords();
     20::ms => now;
 }
-

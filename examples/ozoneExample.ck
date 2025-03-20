@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/MAudioOzone"
+
 class DumpPitch extends IntIntProcedure
 {
     fun void run(int value0, int value1)

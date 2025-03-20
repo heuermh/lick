@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "../interpolate/Interpolate"
+
 public class Flutter extends Effect
 {
     0.0 => float _rate;

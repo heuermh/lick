@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/dist/Foldr"
+
 SinOsc sin => Foldr foldr => dac;
 
 440.0 => sin.freq;

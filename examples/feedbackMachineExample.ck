@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/delay/FeedbackMachine"
+
 FeedbackMachine fm;
 
 1200::ms => fm.delay1.delay.max;

@@ -20,6 +20,8 @@
 
 */
 
+@import "FloatFunction"
+
 // composite of two functions, g(h(arg))
 public class CompositeFloatFunction extends FloatFunction
 {

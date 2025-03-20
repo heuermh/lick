@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/Keyboard"
+@import "../lick/drum/RolandTr808"
+
 RolandTr808 rolandTr808;
 
 ArrayList keyMapping;

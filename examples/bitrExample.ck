@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/dist/Bitr"
+@import "../lick/lfo/Lfo"
+
+
 Bitr bitr;
 
 Lfo bitDepth => blackhole;

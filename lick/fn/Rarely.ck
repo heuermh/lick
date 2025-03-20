@@ -20,6 +20,9 @@
 
 */
 
+@import "Chance"
+@import "Predicate"
+
 public class Rarely extends Predicate
 {
     Chance c;

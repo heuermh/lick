@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Revenge"
+
 adc => Revenge rev => dac;
 
 1.0 => rev.mix;

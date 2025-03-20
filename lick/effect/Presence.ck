@@ -20,6 +20,9 @@
 
 */
 
+@import "Feedback"
+@import "../dist/Invert"
+
 public class Presence extends Feedback
 {
 

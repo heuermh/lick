@@ -20,6 +20,37 @@
 
 */
 
+@import "BackIn"
+@import "BackInOut"
+@import "BackOut"
+@import "CircularIn"
+@import "CircularInOut"
+@import "CircularOut"
+@import "CubicIn"
+@import "CubicInOut"
+@import "CubicOut"
+@import "ElasticIn"
+@import "ElasticInOut"
+@import "ElasticOut"
+@import "ExponentialIn"
+@import "ExponentialInOut"
+@import "ExponentialOut"
+@import "Linear"
+@import "QuadraticIn"
+@import "QuadraticInOut"
+@import "QuadraticOut"
+@import "QuarticIn"
+@import "QuarticInOut"
+@import "QuarticOut"
+@import "QuinticIn"
+@import "QuinticInOut"
+@import "QuinticOut"
+@import "RandomFloor"
+@import "RandomThreshold"
+@import "SinusoidalIn"
+@import "SinusoidalInOut"
+@import "SinusoidalOut"
+
 public class Interpolations
 {
 

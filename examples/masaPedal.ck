@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Masa"
+
 Masa masa;
 
 masa.stop();

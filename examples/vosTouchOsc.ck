@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/osc/TouchOscServer"
+@import "../lick/synth/VoiceOfSaturn"
+
 80.0 => float minPitch;
 4200.0 => float maxPitch;
 0.0 => float minLfoRate;

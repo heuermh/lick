@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/snare/Twkz"
+
 Twkz twkz => dac;
 
 TimeSignature.common(110) @=> TimeSignature ts;

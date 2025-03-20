@@ -20,6 +20,8 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+
 // send MIDI to POD HD500/HD500x hardware
 public class PodHd500Midi
 {

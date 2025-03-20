@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class DynamicEffect extends Effect
 {
     Gain sideInput => blackhole;

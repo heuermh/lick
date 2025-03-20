@@ -20,6 +20,11 @@
 
 */
 
+@import "Intervals"
+@import "../collect/ArrayList"
+@import "../fn/FloatProcedure"
+@import "../fn/Chance"
+
 public class Chord
 {
     "Chord" => string name;

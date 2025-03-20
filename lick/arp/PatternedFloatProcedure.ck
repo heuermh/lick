@@ -20,6 +20,9 @@
 
 */
 
+@import "Pattern"
+@import "../fn/FloatProcedure"
+
 public class PatternedFloatProcedure extends FloatProcedure
 {
     0 => int index;

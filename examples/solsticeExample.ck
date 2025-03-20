@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Solstice"
+
 adc => Solstice solstice => dac;
 
 0.8 => solstice.mix;

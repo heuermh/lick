@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Masa"
+
 SawOsc saw;
 440.0 => saw.freq;
 

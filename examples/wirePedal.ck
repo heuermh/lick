@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Wire"
+
 adc => Wire wire => dac;
 
 0.8 => wire.mix;

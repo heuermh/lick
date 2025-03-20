@@ -20,6 +20,8 @@
 
 */
 
+@import "LfoEffect"
+
 public class Tremolo extends LfoEffect
 {
     Gain _tremolo;

@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/osc/TouchOscServer"
+
 TouchOscServer touchOscServer;
 
 class PingLogger extends Procedure

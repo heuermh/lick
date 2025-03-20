@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/midi/TwoPotsMidi"
+@import "../lick/synth/SeptSubGen"
+
 1::second => now;
 
 SeptSubGen sept;

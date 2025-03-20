@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/midi/MeeBlipMidi"
+
 MeeBlipMidi meeBlip;
 meeBlip.open(1);
 

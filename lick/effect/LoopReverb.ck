@@ -25,6 +25,8 @@
 // http://www.spinsemi.com/knowledge_base/effects.html
 //
 
+@import "APF"
+
 public class LoopReverb extends Effect
 {
     inlet => Gain in1 => APF d1 => APF d2 => Delay d3 => Gain out1;

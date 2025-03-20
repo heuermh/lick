@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Verb"
+
 adc => Verb verb => dac;
 
 0.8 => verb.mix;

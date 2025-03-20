@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/TwoPotsMidi"
+
 TriOsc tri1 => dac;
 TriOsc tri2 => dac;
 

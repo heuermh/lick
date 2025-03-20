@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/OilCan"
+
 OilCan oilCan;
 
 oilCan.stop();

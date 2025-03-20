@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Boom"
+
+
 Boom boom => dac;
 
 0.6 => boom.gain;

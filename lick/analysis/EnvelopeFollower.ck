@@ -25,6 +25,8 @@
 //   http://chuck.cs.princeton.edu/doc/examples/deep/follower.ck
 //
 
+@import "../fn/FloatProcedure"
+
 public class EnvelopeFollower extends Chugraph
 {
     20::ms => dur _rate;

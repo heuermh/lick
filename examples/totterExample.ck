@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Totter"
+
 Totter totter;
 adc => totter => dac;
 

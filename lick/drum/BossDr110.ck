@@ -20,52 +20,55 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Clap extends Sample
 {
     {
-        "samples/BossDr110/Clap.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHat extends Sample
 {
     {
-        "samples/BossDr110/ClosedHat.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/ClosedHat.wav" => buf.read;
     }
 }
 
 class Crash extends Sample
 {
     {
-        "samples/BossDr110/Crash.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/Crash.wav" => buf.read;
     }
 }
 
 class Kick extends Sample
 {
     {
-        "samples/BossDr110/Kick.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/Kick.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/BossDr110/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/OpenHat.wav" => buf.read;
     }
 }
 
 class PedalHat extends Sample
 {
     {
-        "samples/BossDr110/PedalHat.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/PedalHat.wav" => buf.read;
     }
 }
 
 class Snare extends Sample
 {
     {
-        "samples/BossDr110/Snare.wav" => buf.read;
+        me.dir() + "../../samples/BossDr110/Snare.wav" => buf.read;
     }
 }
 

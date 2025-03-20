@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/Nes"
+
 class Msg extends Procedure
 {
     string msg;

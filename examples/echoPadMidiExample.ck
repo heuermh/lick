@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/EchoPadMidi"
+
 // first open a network MIDI session to EchoPad app on iPad/iPhone
 EchoPadMidi echoPad;
 echoPad.open(0);

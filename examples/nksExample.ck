@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/fn/Sometimes"
+@import "../lick/hat/Nks"
+
 Nks nks => dac;
 Sometimes sometimes;
 

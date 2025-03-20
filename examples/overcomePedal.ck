@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Overcome"
+
 adc => Overcome overcome => dac;
 
 overcome.stop();

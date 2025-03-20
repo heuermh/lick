@@ -25,6 +25,8 @@
 // https://www.ericasynths.lv/shop/eurorack-modules/by-series/pico-series/pico-drum2/
 //
 
+@import "../synth/Fold"
+
 public class Fwak extends Chugraph
 {
     inlet => blackhole;

@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/fn/Doom"
+
+
 Doom doom1;
 Doom doom2;
 

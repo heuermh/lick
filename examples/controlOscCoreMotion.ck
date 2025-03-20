@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/osc/ControlOscServer"
+
+
 ControlOscServer controlOsc;
 
 class Accelerometer extends FloatFloatFloatProcedure

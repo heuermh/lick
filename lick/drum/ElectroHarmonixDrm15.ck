@@ -20,80 +20,83 @@
 
 */
 
+@import "../sample/Sample"
+@import "../sample/Reconnect"
+
 class Clap extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/Clap.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/Clap.wav" => buf.read;
     }
 }
 
 class ClosedHatA extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/ClosedHatA.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/ClosedHatA.wav" => buf.read;
     }
 }
 
 class ClosedHatB extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/ClosedHatB.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/ClosedHatB.wav" => buf.read;
     }
 }
 
 class HighTom extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/HighTom.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/HighTom.wav" => buf.read;
     }
 }
 
 class KickA extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/KickA.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/KickA.wav" => buf.read;
     }
 }
 
 class KickB extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/KickB.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/KickB.wav" => buf.read;
     }
 }
 
 class LowTom extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/LowTom.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/LowTom.wav" => buf.read;
     }
 }
 
 class OpenHat extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/OpenHat.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/OpenHat.wav" => buf.read;
     }
 }
 
 class Rim extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/Rim.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/Rim.wav" => buf.read;
     }
 }
 
 class SnareA extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/SnareA.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/SnareA.wav" => buf.read;
     }
 }
 
 class SnareB extends Sample
 {
     {
-        "samples/ElectroHarmonixDrm15/SnareB.wav" => buf.read;
+        me.dir() + "../../samples/ElectroHarmonixDrm15/SnareB.wav" => buf.read;
     }
 }
 

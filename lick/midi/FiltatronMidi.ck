@@ -20,6 +20,8 @@
 
 */
 
+@import "ControlChangeMidiMsg"
+
 // interacts with the Filtatron iOS app over MIDI
 public class FiltatronMidi
 {

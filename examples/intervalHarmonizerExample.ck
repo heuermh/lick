@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/effect/Harmonizer"
+@import "../lick/effect/Harmonizers"
+@import "../lick/interval/Interval"
+@import "../lick/interval/Intervals"
+
 Intervals.perfectFourth() @=> Interval perfectFourth;
 
 Harmonizers.asc(perfectFourth) @=> Harmonizer harmonizer;

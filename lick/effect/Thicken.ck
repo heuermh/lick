@@ -20,6 +20,8 @@
 
 */
 
+@import "Effect"
+
 public class Thicken extends Effect
 {
     inlet => Delay delay => wet;

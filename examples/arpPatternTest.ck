@@ -20,6 +20,13 @@
 
 */
 
+@import "../lick/arp/Arpeggiators"
+@import "../lick/arp/Patterns"
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chords"
+@import "../lick/loop/Loops"
+
+
 class FloatMsg extends FloatProcedure
 {
     fun void run(float value)

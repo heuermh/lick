@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/device/NanoPad"
+
 class Dump extends IntProcedure
 {
   fun void run(int velocity)

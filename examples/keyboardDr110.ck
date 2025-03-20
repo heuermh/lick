@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/Keyboard"
+@import "../lick/drum/BossDr110"
+
 BossDr110 bossDr110;
 
 ArrayList keyMapping;

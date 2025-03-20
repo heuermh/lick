@@ -23,6 +23,11 @@
 //
 // multi-tap delay based on golden ratio
 
+@import "Ecco"
+@import "../duration/TimeSignature"
+@import "../duration/IntervalDurProvider"
+@import "../interval/Intervals"
+
 public class Golden extends Ecco
 {
 

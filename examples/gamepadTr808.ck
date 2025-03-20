@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/LogitechGamepadF310"
+@import "../lick/drum/RolandTr808"
+
 RolandTr808 rolandTr808;
 LogitechGamepadF310 gamepad;
 

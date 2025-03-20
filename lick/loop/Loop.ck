@@ -20,6 +20,11 @@
 
 */
 
+@import "Repeat"
+@import "../duration/DurProvider"
+@import "../fn/Procedure"
+@import "../fn/FloatProcedure"
+
 public class Loop extends Procedure
 {
     dur offset;

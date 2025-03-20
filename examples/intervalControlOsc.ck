@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/interval/Intervals"
+@import "../lick/osc/ControlOscServer"
+
 BeeThree bt => dac;
 440 => bt.freq;
 

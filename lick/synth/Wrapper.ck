@@ -20,6 +20,10 @@
 
 */
 
+@import "DoublePulse"
+@import "../effect/Effect"
+@import "../dist/Invert"
+
 public class Wrapper extends Effect
 {
     220.0 => float _freq;

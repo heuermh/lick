@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "../lfo/Lfo"
+
 // abstract class for effect + lfo
 public class LfoEffect extends Effect
 {

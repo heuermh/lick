@@ -25,6 +25,8 @@
 // Figure 7: The additive approach to generating drum partials
 //
 
+@import "../interpolate/Interpolate"
+
 public class Snare extends Chugraph
 {
     Gain _mix => LPF _lpf => ADSR _env => Gain _vca => outlet;

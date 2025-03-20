@@ -27,6 +27,9 @@
 // http://www.deathbyaudio.com/ghostdelay.html
 //
 
+@import "Effect"
+@import "AnalogDelay"
+
 public class Ghost extends Effect
 {
     float _blend;

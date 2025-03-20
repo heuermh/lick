@@ -20,6 +20,8 @@
 
 */
 
+@import "Interpolation"
+
 public class SinusoidalIn extends Interpolation
 {
     Math.PI / 2.0 => static float PI_OVER_2;

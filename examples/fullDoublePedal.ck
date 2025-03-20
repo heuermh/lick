@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/FullDouble"
+
 FullDouble fullDouble;
 
 class Toggle extends Procedure

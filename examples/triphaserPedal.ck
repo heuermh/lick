@@ -20,6 +20,10 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/Triphaser"
+@import "../lick/interval/Intervals"
+
 Triphaser triphaser;
 
 triphaser.high.hyperLfo();

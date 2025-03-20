@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/fn/NearestPrime"
+
 NearestPrime np;
 
 <<<"lower(0)", np.lower(0)>>>;

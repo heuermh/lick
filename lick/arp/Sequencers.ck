@@ -20,6 +20,10 @@
 
 */
 
+@import "Pattern"
+@import "Patterns"
+@import "Sequencer"
+
 class ForwardSequencer extends Sequencer
 {
     // empty

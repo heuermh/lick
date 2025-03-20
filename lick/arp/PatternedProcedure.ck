@@ -20,6 +20,9 @@
 
 */
 
+@import "Pattern"
+@import "../fn/Procedure"
+
 public class PatternedProcedure extends Procedure
 {
     0 => int index;

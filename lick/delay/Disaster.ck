@@ -25,6 +25,9 @@
 //   buy one here http://earthquakerdevices.com/shop/disastertransportsr/
 //
 
+@import "../effect/AnalogDelay"
+@import "../lfo/Lfo"
+
 public class Disaster extends Chugraph
 {
     Gain _inputA;

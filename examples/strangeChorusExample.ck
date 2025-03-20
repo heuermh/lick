@@ -20,6 +20,11 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Chord"
+@import "../lick/interval/Chords"
+@import "../lick/synth/StrangeChorus"
+
 StrangeChorus chorus => dac;
 
 TimeSignature.common(110) @=> TimeSignature t;

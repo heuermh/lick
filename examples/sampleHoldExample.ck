@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/lfo/SampleHold"
+
 Noise n => SampleHold sh => blackhole;
 
 400::ms => sh.hold;

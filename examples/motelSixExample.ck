@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/MotelSix"
+
 SinOsc sin => MotelSix six => dac;
 
 0.8 => sin.gain;

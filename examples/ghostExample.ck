@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/effect/Ghost"
+
 Ghost ghost;
 
 0.80 => ghost.blend;

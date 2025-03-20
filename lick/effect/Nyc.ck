@@ -20,6 +20,9 @@
 
 */
 
+@import "Effect"
+@import "Limit"
+
 // New York style drum compression effect
 public class Nyc extends Effect
 {

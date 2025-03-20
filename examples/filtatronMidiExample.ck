@@ -20,6 +20,8 @@
 
 */
 
+@import "../lick/midi/FiltatronMidi"
+
 FiltatronMidi filtatron;
 filtatron.open(0);
 

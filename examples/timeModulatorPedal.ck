@@ -20,6 +20,9 @@
 
 */
 
+@import "../lick/device/StompKeyboard"
+@import "../lick/effect/TimeModulator"
+
 adc => TimeModulator tm => dac;
 
 class Toggle extends Procedure

@@ -19,6 +19,11 @@
 
 */
 
+@import "Amp"
+@import "Cabinet"
+@import "Caps"
+@import "../../interpolate/Interpolate"
+
 public class Princeton extends Effect
 {
     0.0 => float _drive;

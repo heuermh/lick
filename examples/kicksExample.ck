@@ -20,6 +20,20 @@
 
 */
 
+@import "../lick/duration/TimeSignature"
+@import "../lick/interval/Scale"
+@import "../lick/interval/Scales"
+@import "../lick/kick/Boom"
+@import "../lick/kick/Duff"
+@import "../lick/kick/Fwak"
+@import "../lick/kick/Fwak2"
+@import "../lick/kick/Kick"
+@import "../lick/kick/Thud"
+@import "../lick/kick/Thump"
+@import "../lick/kick/Thwok"
+@import "../lick/sample/Sample"
+@import "../lick/sample/Samples"
+
 Boom boom;
 Duff duff;
 Thump thump;

@@ -20,6 +20,12 @@
 
 */
 
+@import "../lick/effect/AnalogDelay"
+@import "../lick/effect/Tremolo"
+@import "../lick/ladspa/caps/Amp"
+@import "../lick/ladspa/caps/Cabinet"
+@import "../lick/ladspa/caps/NoiseGate"
+
 adc => NoiseGate noiseGate => Tremolo tremolo => AnalogDelay delay => Amp amp => Cabinet cabinet => GVerb gverb => dac;
 
 -38.0 => noiseGate.open;
