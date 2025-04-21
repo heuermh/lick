@@ -265,4 +265,78 @@ public class Patterns
         r @=> patterned.r;
         return patterned;
     }
+
+
+    //
+    // adapted from
+    // https://github.com/heuermh/Euclidean-Pattern-Generator/blob/master/src/com/hisschemoller/sequencer/util/BjorklundGenerator.java
+
+    fun static Pattern euclidian(int steps, int pulses)
+    {
+        if (steps < 1)
+        {
+            Pattern empty;
+            empty.size(0);
+            return empty;
+        }
+        if (pulses < 1)
+        {
+            Pattern empty;
+            empty.size(steps);
+            return empty;
+        }
+        if (pulses >= steps)
+        {
+            Pattern full;
+            full.size(steps);
+            for (0 => int i; i < steps; i++)
+            {
+                full.pattern.set(i, 1);
+            }
+            return full;
+        }
+
+        // appending to string is easier than keeping track of index
+        string s;
+        steps - pulses => int pauses;
+        if (pauses >= pulses)
+        {
+            pauses / pulses => int per;
+            pauses % pulses => int rem;
+
+            for (0 => int i; i < pulses; i++)
+            {
+                "x" +=> s;
+                for (0 => int j; j < per; j++)
+                {
+                    "-" +=> s;
+                }
+                if (i < rem)
+                {
+                    "-" +=> s;
+                }
+            }
+        }
+        else
+        {
+            (pulses - pauses) / pauses => int per;
+            (pulses - pauses) % pauses => int rem;
+
+            for (0 => int i; i < pauses; i++)
+            {
+                "x" +=> s;
+                "-" +=> s;
+                for (0 => int j; j < per; j++)
+                {
+                    "x" +=> s;
+                }
+                if (i < rem)
+                {
+                    "x" +=> s;
+                }
+            }
+        }
+        //<<<steps, pulses, s, s.length()>>>;
+        return Patterns.pattern(s);
+    }
 }

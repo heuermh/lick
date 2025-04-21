@@ -75,4 +75,38 @@ public class Pattern extends Predicate
     {
         return ((_index + 1) < pattern.size());
     }
+
+    // display
+
+    fun string toString(string pulse, string pause)
+    {
+        string s;
+        for (0 => int i; i < size(); i++)
+        {
+            if (pattern.get(i))
+            {
+                pulse +=> s;
+            }
+            else
+            {
+                pause +=> s;
+            }
+        }
+        return s;
+    }
+
+    fun string toString()
+    {
+        return toString("x", "-");
+    }
+
+    fun void dump(string pulse, string pause)
+    {
+        <<<toString(pulse, pause)>>>;
+    }
+
+    fun void dump()
+    {
+        <<<toString()>>>;
+    }
 }
