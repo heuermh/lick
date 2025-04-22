@@ -339,4 +339,84 @@ public class Patterns
         //<<<steps, pulses, s, s.length()>>>;
         return Patterns.pattern(s);
     }
+
+    fun static Pattern euclidian2(int steps, int pulses)
+    {
+        if (steps < 1)
+        {
+            Pattern empty;
+            empty.size(0);
+            return empty;
+        }
+        if (pulses < 1)
+        {
+            Pattern empty;
+            empty.size(steps);
+            return empty;
+        }
+        if (pulses >= steps)
+        {
+            Pattern full;
+            full.size(steps);
+            for (0 => int i; i < steps; i++)
+            {
+                full.pattern.set(i, 1);
+            }
+            return full;
+        }
+
+        Pattern p;
+        p.size(steps);
+
+        steps - pulses => int pauses;
+        if (pauses >= pulses)
+        {
+            pauses / pulses => int per;
+            pauses % pulses => int rem;
+
+            0 => int x;
+            for (0 => int i; i < pulses; i++)
+            {
+                p.pattern.set(x, true);
+                x++;
+
+                for (0 => int j; j < per; j++)
+                {
+                    p.pattern.set(x, false);
+                    x++;
+                }
+                if (i < rem)
+                {
+                    p.pattern.set(x, false);
+                    x++;
+                }
+            }
+        }
+        else
+        {
+            (pulses - pauses) / pauses => int per;
+            (pulses - pauses) % pauses => int rem;
+
+            0 => int x;
+            for (0 => int i; i < pauses; i++)
+            {
+                p.pattern.set(x, true);
+                x++;
+                p.pattern.set(x, false);
+                x++;
+
+                for (0 => int j; j < per; j++)
+                {
+                    p.pattern.set(x, true);
+                    x++;
+                }
+                if (i < rem)
+                {
+                    p.pattern.set(x, true);
+                    x++;
+                }
+            }
+        }
+        return p;
+    }
 }

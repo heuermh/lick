@@ -25,7 +25,7 @@ for (0 => int steps; steps < 65; steps++)
     <<<steps, "steps">>>;
     for (0 => int pulses; pulses < (steps + 2); pulses++)
     {
-        <<<Patterns.euclidian(steps, pulses).toString(), steps, pulses>>>;
+        <<<Patterns.euclidian2(steps, pulses).toString(), steps, pulses>>>;
     }
 }
 <<<"done">>>;
