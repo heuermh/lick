@@ -503,6 +503,7 @@ Machine.add(path + "lick/effect/OilCan.ck");
 Machine.add(path + "lick/effect/Cascade.ck");
 Machine.add(path + "lick/effect/Caves.ck");
 Machine.add(path + "lick/effect/Delta.ck");
+Machine.add(path + "lick/effect/Discrete.ck");
 Machine.add(path + "lick/effect/Expo.ck");
 Machine.add(path + "lick/effect/Pass.ck");
 Machine.add(path + "lick/effect/Ruins.ck");
