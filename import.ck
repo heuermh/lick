@@ -112,6 +112,8 @@ Machine.add(path + "lick/fn/Uniform.ck");
 Machine.add(path + "lick/fn/Chance.ck");
 Machine.add(path + "lick/fn/Doom.ck");
 Machine.add(path + "lick/fn/Gaussian.ck");
+Machine.add(path + "lick/fn/Quasirandom.ck");
+Machine.add(path + "lick/fn/QuasirandomWalk.ck");
 Machine.add(path + "lick/fn/Xorshift.ck");
 
 // random predicates
@@ -395,6 +397,7 @@ Machine.add(path + "lick/dist/KijjazDist.ck");
 Machine.add(path + "lick/dist/KijjazDist2.ck");
 Machine.add(path + "lick/dist/KijjazDist3.ck");
 Machine.add(path + "lick/dist/KijjazDist4.ck");
+Machine.add(path + "lick/dist/KneeClip.ck");
 Machine.add(path + "lick/dist/SoftClip.ck");
 Machine.add(path + "lick/dist/SoftLimit.ck");
 
