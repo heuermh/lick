@@ -414,6 +414,8 @@ Machine.add(path + "lick/module/Module8.ck");
 // lfo stuff, package lfo
 Machine.add(path + "lick/lfo/Hyper.ck");
 Machine.add(path + "lick/lfo/SampleHold.ck");
+Machine.add(path + "lick/lfo/Slew.ck");
+Machine.add(path + "lick/lfo/NoiseFloor.ck");
 Machine.add(path + "lick/lfo/SlewStep.ck");
 Machine.add(path + "lick/lfo/SmoothSampleHold.ck");
 Machine.add(path + "lick/lfo/Lfo.ck");
