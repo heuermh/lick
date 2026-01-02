@@ -559,6 +559,8 @@ Machine.add(path + "lick/synth/SubGen.ck");
 Machine.add(path + "lick/synth/SeptSubGen.ck");
 Machine.add(path + "lick/synth/VoiceOfSaturn.ck");
 Machine.add(path + "lick/synth/Wrapper.ck");
+Machine.add(path + "lick/synth/GiuliozSupersaw.ck");
+Machine.add(path + "lick/synth/SzaboSupersaw.ck");
 
 // kick/bass drum synthesis, package kick
 Machine.add(path + "lick/kick/Boom.ck");
