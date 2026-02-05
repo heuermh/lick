@@ -419,4 +419,298 @@ public class Patterns
         }
         return p;
     }
+
+
+    // numeric repetitor
+
+    fun static Pattern[] numeric1()
+    {
+        pattern("x---x---x---x---") @=> Pattern p1;
+        pattern("--x---x---x---x-") @=> Pattern p2;
+        pattern("x-------x-------") @=> Pattern p3;
+        pattern("x---------------") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric2()
+    {
+        pattern("x---x---x---x-x-") @=> Pattern p1;
+        pattern("x-x---x---x---x-") @=> Pattern p2;
+        pattern("x-------x-------") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric3()
+    {
+        pattern("x---x---x--x--x-") @=> Pattern p1;
+        pattern("x-x---x---x--x--") @=> Pattern p2;
+        pattern("x-------x--x----") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric4()
+    {
+        pattern("x---x---x--x-x--") @=> Pattern p1;
+        pattern("--x---x---x--x-x") @=> Pattern p2;
+        pattern("x-------x--x----") @=> Pattern p3;
+        pattern("x---------------") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric5()
+    {
+        pattern("x---x---x-x---x-") @=> Pattern p1;
+        pattern("x-x---x---x-x---") @=> Pattern p2;
+        pattern("x-------x-x-----") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric6()
+    {
+        pattern("x---x---x-x--x--") @=> Pattern p1;
+        pattern("--x---x---x-x--x") @=> Pattern p2;
+        pattern("x-------x-x-----") @=> Pattern p3;
+        pattern("x---------------") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric7()
+    {
+        pattern("x---x--x---x--x-") @=> Pattern p1;
+        pattern("x-x---x--x---x--") @=> Pattern p2;
+        pattern("x----------x----") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric8()
+    {
+        pattern("x---x--x---x-x--") @=> Pattern p1;
+        pattern("--x---x--x---x-x") @=> Pattern p2;
+        pattern("x----------x----") @=> Pattern p3;
+        pattern("x---------------") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric9()
+    {
+        pattern("x---x--x--x---x-") @=> Pattern p1;
+        pattern("x-x---x--x--x---") @=> Pattern p2;
+        pattern("x---------x-----") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric10()
+    {
+        pattern("x---x--x--x--x--") @=> Pattern p1;
+        pattern("--x---x--x--x--x") @=> Pattern p2;
+        pattern("x---------x-----") @=> Pattern p3;
+        pattern("x---------------") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric11()
+    {
+        pattern("x---x-x-x---x-x-") @=> Pattern p1;
+        pattern("x-x---x-x-x---x-") @=> Pattern p2;
+        pattern("x-------x-------") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric12()
+    {
+        pattern("x---x-x-x-x-x-x-") @=> Pattern p1;
+        pattern("x-x---x-x-x-x-x-") @=> Pattern p2;
+        pattern("x-------x-x-----") @=> Pattern p3;
+        pattern("x-------------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric13()
+    {
+        pattern("x--x--x-x--x--x-") @=> Pattern p1;
+        pattern("x-x--x--x-x--x--") @=> Pattern p2;
+        pattern("x--x----x--x----") @=> Pattern p3;
+        pattern("x--x----------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric14()
+    {
+        pattern("x--x--x-x-x-x-x-") @=> Pattern p1;
+        pattern("x-x--x--x-x-x-x-") @=> Pattern p2;
+        pattern("x--x----x-x-----") @=> Pattern p3;
+        pattern("x--x----------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric15()
+    {
+        pattern("x--x-x--x-x-x-x-") @=> Pattern p1;
+        pattern("x-x--x-x--x-x-x-") @=> Pattern p2;
+        pattern("x--x----x-x-----") @=> Pattern p3;
+        pattern("x--x----------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] numeric16()
+    {
+        pattern("x--x-x-x--x-x-x-") @=> Pattern p1;
+        pattern("x-x--x-x-x--x-x-") @=> Pattern p2;
+        pattern("x--x------x-----") @=> Pattern p3;
+        pattern("x--x----------x-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+
+    // zularic repetitor
+
+    fun static Pattern[] zularic1()
+    {
+        pattern("x-x-xx-x-x-x") @=> Pattern p1;
+        pattern("x-x-xx-x-x-x") @=> Pattern p2;
+        pattern("x--xx-x--xx-") @=> Pattern p3;
+        pattern("x--xx-x--xx-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic2()
+    {
+        pattern("x--xx-x--xx-") @=> Pattern p1;
+        pattern("x--xx-x--xx-") @=> Pattern p2;
+        pattern("x-x-xx-x-x-x") @=> Pattern p3;
+        pattern("x-x-xx-x-x-x") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic3()
+    {
+        pattern("--x-xx--x-xx") @=> Pattern p1;
+        pattern("--x-xx--x-xx") @=> Pattern p2;
+        pattern("x-----x--x--") @=> Pattern p3;
+        pattern("x--xx-x--xx-") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic4()
+    {
+        pattern("x-x-x-xx-x-x") @=> Pattern p1;
+        pattern("x-x-x-xx-x-x") @=> Pattern p2;
+        pattern("x-----x--x--") @=> Pattern p3;
+        pattern("----xx----xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic5()
+    {
+        pattern("-xx-xx-xx-xx") @=> Pattern p1;
+        pattern("-xx-xx-xx-xx") @=> Pattern p2;
+        pattern("x-x-x-xx-x-x") @=> Pattern p3;
+        pattern("----xx----xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic6()
+    {
+        pattern("x-----x--x--") @=> Pattern p1;
+        pattern("x-----x--x--") @=> Pattern p2;
+        pattern("-xx-xx-xx-xx") @=> Pattern p3;
+        pattern("----xx----xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic7()
+    {
+        pattern("xx-x-x-x-x-x-x--") @=> Pattern p1;
+        pattern("xx-x-x-x-x-x-x--") @=> Pattern p2;
+        pattern("x---------------") @=> Pattern p3;
+        pattern("x--x---x---x-x--") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic8()
+    {
+        pattern("x--x--x---x-x---") @=> Pattern p1;
+        pattern("x--x--x---x-x---") @=> Pattern p2;
+        pattern("x-xx-x-xx-x-xx-x") @=> Pattern p3;
+        pattern("--xx--xx--x---xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic9()
+    {
+        pattern("x--x---x--x-x---") @=> Pattern p1;
+        pattern("x--x---x--x-x---") @=> Pattern p2;
+        pattern("x-xx-x-xx-x-xx-x") @=> Pattern p3;
+        pattern("--xx--xx--x---xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic10()
+    {
+        pattern("-x--xxx--x") @=> Pattern p1;
+        pattern("-x--xxx--x") @=> Pattern p2;
+        pattern("x-xx---xx-") @=> Pattern p3;
+        pattern("x----x----") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic11()
+    {
+        pattern("x--------") @=> Pattern p1;
+        pattern("x-xx---xx-") @=> Pattern p2;
+        pattern("x-xx---xx-") @=> Pattern p3;
+        pattern("x----x----") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic12()
+    {
+        pattern("x---------------x---------------") @=> Pattern p1;
+        pattern("x-------x-x-----x-------x-x-----") @=> Pattern p2;
+        pattern("----x-------x-------x-------x---") @=> Pattern p3;
+        pattern("------------------------------xx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic13()
+    {
+        pattern("x--------------x--") @=> Pattern p1;
+        pattern("x---x-x-----x--x--") @=> Pattern p2;
+        pattern("x---x-x-----xx-xx-") @=> Pattern p3;
+        pattern("--------x-----x--x") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic14()
+    {
+        pattern("x-------------") @=> Pattern p1;
+        pattern("----xx------x-") @=> Pattern p2;
+        pattern("----xx------x-") @=> Pattern p3;
+        pattern("x-----x---x---") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic15()
+    {
+        pattern("x-----------") @=> Pattern p1;
+        pattern("x-----x-----") @=> Pattern p2;
+        pattern("x-x-x-x---x-") @=> Pattern p3;
+        pattern("xxxxxxxxxxxx") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
+
+    fun static Pattern[] zularic16()
+    {
+        pattern("x-xx------xx----x-xx------xx----") @=> Pattern p1;
+        pattern("x---x---x---x---x-x-x----x--x-x-") @=> Pattern p2;
+        pattern("----x-xx----x-xx----x-xx----x-xx") @=> Pattern p3;
+        pattern("x---x---x---x---x---x---x---x---") @=> Pattern p4;
+        return [ p1, p2, p3, p4 ];
+    }
 }
