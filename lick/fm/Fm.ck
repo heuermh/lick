@@ -35,8 +35,8 @@ public class Fm extends Chugraph
     {
         2 => c.sync;
 
-        30.0 => depth;
-        440.0 => modulator;
+        440.0 => carrier;
+        30.0 => depth; // in hz
         0.25 => ratio;
     }
 
@@ -86,8 +86,8 @@ public class Fm extends Chugraph
     fun float ratio(float f)
     {
         f => _ratio;
-        _modulator * f => _carrier;
-        _modulator * f => c.freq;
+        _carrier * f => _modulator;
+        _carrier * f => m.freq;
         return f;
     }
 
