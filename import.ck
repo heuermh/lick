@@ -540,6 +540,7 @@ Machine.add(path + "lick/delay/Smear.ck");
 Machine.add(path + "lick/delay/ScaleSmear.ck");
 Machine.add(path + "lick/delay/Swirl.ck");
 Machine.add(path + "lick/delay/MonoInChorus6.ck");
+Machine.add(path + "lick/delay/MonoInChorus6I.ck");
 Machine.add(path + "lick/delay/MonoInChorus60.ck");
 Machine.add(path + "lick/delay/StereoInChorus6.ck");
 Machine.add(path + "lick/delay/StereoInChorus60.ck");
