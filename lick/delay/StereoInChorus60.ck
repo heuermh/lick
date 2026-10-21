@@ -43,19 +43,20 @@ public class StereoInChorus60
     Gain outputR;
 
     LPF preFilterL;
-    Delay delayL;
+    DelayL delayL;
     LPF postFilterL;
     Gain dryL;
     Gain wetL;
 
     LPF preFilterR;
-    Delay delayR;
+    DelayL delayR;
     LPF postFilterR;
     Gain dryR;
     Gain wetR;
 
     inputL => preFilterL => delayL => postFilterL => wetL => outputL;
     inputL => dryL => outputL;
+
     inputR => preFilterR => delayR => postFilterR => wetR => outputR;
     inputR => dryR => outputR;
 
@@ -65,8 +66,8 @@ public class StereoInChorus60
     TriOsc triLfoR => blackhole;
 
     {
-        200::ms => delayL.max;
-        200::ms => delayR.max;
+        20::ms => delayL.max;
+        20::ms => delayR.max;
 
         10000.0f => preFilterL.freq;
         10000.0f => preFilterR.freq;
@@ -74,10 +75,10 @@ public class StereoInChorus60
         10000.0f => postFilterL.freq;
         10000.0f => postFilterR.freq;
 
-        0.435355f => _lastMix;
+        0.5646f => _lastMix;
         OFF => _lastMode;
 
-        0.435355f => mix;
+        0.5646f => mix;
         I => mode;
 
         spork ~ _updateAtSampleRate();
@@ -107,6 +108,8 @@ public class StereoInChorus60
     fun int mode(int i)
     {
         _mode => _lastMode;
+
+        // update mix
         if (OFF == i)
         {
             0.0f => mix;
@@ -118,6 +121,36 @@ public class StereoInChorus60
                 _lastMix => mix;
             }
         }
+
+        // update other parameters
+        if (I == i)
+        {
+            0.513f => triLfoL.freq;
+            0.513f => triLfoR.freq;
+            0.0f => triLfoL.phase;
+            0.5f => triLfoR.phase;
+            1.805f => triLfoL.gain;
+            1.945f => triLfoR.gain;
+        }
+        else if (II == i)
+        {
+            0.863f => triLfoL.freq;
+            0.863f => triLfoR.freq;
+            0.0f => triLfoL.phase;
+            0.5f => triLfoR.phase;
+            1.805f => triLfoL.gain;
+            1.945f => triLfoR.gain;
+        }
+        else if (III == i)
+        {
+            9.75f => sinLfoL.freq;
+            9.75f => sinLfoR.freq;
+            0.0f => sinLfoL.phase;
+            0.5f => sinLfoR.phase;
+            0.170f => sinLfoL.gain;
+            0.185f => sinLfoR.gain;
+        }
+
         i => _mode;
         return i;
     }
@@ -130,6 +163,11 @@ public class StereoInChorus60
     fun float rate(float f)
     {
         f => _rate;
+        if (MANUAL == _mode)
+        {
+            f => triLfoL.freq;
+            f => triLfoR.freq;
+        }
         return f;
     }
 
@@ -141,6 +179,11 @@ public class StereoInChorus60
     fun float depth(float f)
     {
         f => _depth;
+        if (MANUAL == _mode)
+        {
+            _depth => triLfoL.gain;
+            _depth => triLfoR.gain;
+        }
         return f;
     }
 
@@ -152,6 +195,11 @@ public class StereoInChorus60
     fun float phase(float f)
     {
         f => _phase;
+        if (MANUAL == _mode)
+        {
+            0.0f => triLfoL.phase;
+            f => triLfoR.phase;
+        }
         return f;
     }
 
@@ -161,57 +209,15 @@ public class StereoInChorus60
         {
             1::samp => now;
 
-            if (I == _mode)
+            if (I == _mode || II == _mode || MANUAL == _mode)
             {
-                // move elsewhere for performance
-                0.513f => triLfoL.freq;
-                0.513f => triLfoR.freq;
-                0.0f => triLfoL.phase;
-                0.5f => triLfoR.phase;
-                0.00361f => triLfoL.gain;
-                0.00389f => triLfoR.gain;
-
-                (triLfoL.last() + 0.003345f) * 1::second => delayL.delay;
-                (triLfoR.last() + 0.003345f) * 1::second => delayR.delay;
-            }
-            else if (II == _mode)
-            {
-                // move elsewhere for performance
-                0.863f => triLfoL.freq;
-                0.863f => triLfoR.freq;
-                0.0f => triLfoL.phase;
-                0.5f => triLfoR.phase;
-                0.00361f => triLfoL.gain;
-                0.00389f => triLfoR.gain;
-
-                (triLfoL.last() + 0.003345f) * 1::second => delayL.delay;
-                (triLfoR.last() + 0.003345f) * 1::second => delayR.delay;
+                (triLfoL.last() + 3.345f) * 1::ms => delayL.delay;
+                (triLfoR.last() + 3.345f) * 1::ms => delayR.delay;
             }
             else if (III == _mode)
             {
-                // move elsewhere for performance
-                9.75f => sinLfoL.freq;
-                9.75f => sinLfoR.freq;
-                0.0f => sinLfoL.phase;
-                0.5f => sinLfoR.phase;
-                0.00034f => sinLfoL.gain;
-                0.00037f => sinLfoR.gain;
-
-                (sinLfoL.last() + 0.00339f) * 1::second => delayL.delay;
-                (sinLfoR.last() + 0.003465f) * 1::second => delayR.delay;
-            }
-            else if (MANUAL == _mode)
-            {
-                // move elsewhere for performance
-                _rate => triLfoL.freq;
-                _rate => triLfoR.freq;
-                0.0f => triLfoL.phase;
-                _phase => triLfoR.phase;
-                _depth => triLfoL.gain;
-                _depth => triLfoR.gain;
-
-                (triLfoL.last() + 0.003345f) * 1::second => delayL.delay;
-                (triLfoR.last() + 0.003345f) * 1::second => delayR.delay;
+                (sinLfoL.last() + 3.390f) * 1::ms => delayL.delay;
+                (sinLfoR.last() + 3.465f) * 1::ms => delayR.delay;
             }
         }
     }

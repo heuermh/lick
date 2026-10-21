@@ -43,14 +43,14 @@ public class MonoInChorus6
 
     Gain inputL;
     LPF preFilterL;
-    Delay delayL;
+    DelayL delayL;
     LPF postFilterL;
     Gain dryL;
     Gain wetL;
 
     Gain inputR;
     LPF preFilterR;
-    Delay delayR;
+    DelayL delayR;
     LPF postFilterR;
     Gain dryR;
     Gain wetR;
@@ -67,8 +67,8 @@ public class MonoInChorus6
     TriOsc triLfoR => blackhole;
 
     {
-        200::ms => delayL.max;
-        200::ms => delayR.max;
+        20::ms => delayL.max;
+        20::ms => delayR.max;
 
         10000.0f => preFilterL.freq;
         10000.0f => preFilterR.freq;
@@ -130,10 +130,8 @@ public class MonoInChorus6
             0.4f => triLfoR.freq;
             0.0f => triLfoL.phase;
             0.5f => triLfoR.phase;
-            //0.00361f => triLfoL.gain;
-            0.001805f => triLfoL.gain;
-            //0.00389f => triLfoR.gain;
-            0.001945f => triLfoR.gain;
+            1.805f => triLfoL.gain;
+            1.945f => triLfoR.gain;
         }
         else if (II == i)
         {
@@ -141,10 +139,8 @@ public class MonoInChorus6
             0.67f => triLfoR.freq;
             0.0f => triLfoL.phase;
             0.5f => triLfoR.phase;
-            //0.00361f => triLfoL.gain;
-            0.001805f => triLfoL.gain;
-            //0.00389f => triLfoR.gain;
-            0.001945f => triLfoR.gain;
+            1.805f => triLfoL.gain;
+            1.945f => triLfoR.gain;
         }
         else if (III == i)
         {
@@ -152,10 +148,8 @@ public class MonoInChorus6
             8.06f => sinLfoR.freq;
             0.0f => sinLfoL.phase;
             0.5f => sinLfoR.phase;
-            //0.00034f => sinLfoL.gain;
-            //0.00037f => sinLfoR.gain;
-            0.000170f => sinLfoL.gain;
-            0.000185f => sinLfoR.gain;
+            0.170f => sinLfoL.gain;
+            0.185f => sinLfoR.gain;
         }
 
         i => _mode;
@@ -218,13 +212,13 @@ public class MonoInChorus6
 
             if (I == _mode || II == _mode || MANUAL == _mode)
             {
-                (triLfoL.last() + 0.003345f) * 1::second => delayL.delay;
-                (triLfoR.last() + 0.003345f) * 1::second => delayR.delay;
+                (triLfoL.last() + 3.345f) * 1::ms => delayL.delay;
+                (triLfoR.last() + 3.345f) * 1::ms => delayR.delay;
             }
             else if (III == _mode)
             {
-                (sinLfoL.last() + 0.003390f) * 1::second => delayL.delay;
-                (sinLfoR.last() + 0.003465f) * 1::second => delayR.delay;
+                (sinLfoL.last() + 3.390f) * 1::ms => delayL.delay;
+                (sinLfoR.last() + 3.465f) * 1::ms => delayR.delay;
             }
         }
     }
